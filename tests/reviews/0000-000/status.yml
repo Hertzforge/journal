@@ -1,0 +1,5 @@
+# The sample's review state, read when the sample is built and when its record is rewritten.
+status: Review open        # Review open | Reviewed | Retracted
+thread: ""                 # the address of the review thread
+retraction: ""             # the reason, when retracted
+reviews: []                # - {reviewer: "", date: YYYY-MM-DD, version: 1, url: "https://..."}

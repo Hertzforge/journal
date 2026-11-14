@@ -1,0 +1,21 @@
+{
+  "from": "the website repository, built",
+  "commit": "70db5f680c78ff9c760eaefdbc94f8000b2ca10b",
+  "uncommitted_changes": false,
+  "page": "journal/index.html",
+  "taken": "2026-11-14",
+  "fonts": [
+    "atkinson-hyperlegible-mono-latin-ext-wght-normal.woff2",
+    "atkinson-hyperlegible-mono-latin-wght-normal.woff2",
+    "atkinson-hyperlegible-next-latin-ext-wght-italic.woff2",
+    "atkinson-hyperlegible-next-latin-ext-wght-normal.woff2",
+    "atkinson-hyperlegible-next-latin-wght-italic.woff2",
+    "atkinson-hyperlegible-next-latin-wght-normal.woff2",
+    "saira-latin-ext-wdth-italic.woff2",
+    "saira-latin-ext-wdth-normal.woff2",
+    "saira-latin-wdth-italic.woff2",
+    "saira-latin-wdth-normal.woff2",
+    "saira-vietnamese-wdth-italic.woff2",
+    "saira-vietnamese-wdth-normal.woff2"
+  ]
+}

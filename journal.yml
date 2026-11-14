@@ -1,0 +1,8 @@
+# Facts about the journal that every article page, citation and archive deposit repeats.
+title: Hertzforge Journal
+site: https://hertzforge.com        # where the journal is read
+path: /journal                      # the journal's section of the site
+issn: ""                            # set once assigned; until then no page or tag carries one
+first_volume_year: 2026             # volume 1; each later year is the next volume
+repository: https://github.com/Hertzforge/journal
+people_pages: false                 # set true once the site has /people/<name>/ pages; article pages then link each author to theirs

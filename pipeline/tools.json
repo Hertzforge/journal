@@ -1,0 +1,28 @@
+{
+  "note": "The tools the build runs that are not Python packages, pinned. scripts/setup.sh installs Quarto from these; a build refuses any other version. Licenses are recorded as each tool states them in its own files.",
+  "quarto": {
+    "version": "1.11.9",
+    "license": "MIT",
+    "source": "https://github.com/quarto-dev/quarto-cli/releases/download/v1.11.9/",
+    "sha256": {
+      "quarto-1.11.9-macos.tar.gz": "9fc24881f637612d80edbf16d62f01001fc7945a9a0c6ac247199002901e0a6d",
+      "quarto-1.11.9-linux-amd64.tar.gz": "9d037baa3b38ffac7217edca1d2e53760b0fab4d5749220740a32056e03a1530",
+      "quarto-1.11.9-linux-arm64.tar.gz": "8a96da89026c8cba0fc2607f62d99836eae8c5b65465b5d476af16f54c10d191"
+    },
+    "carries": {
+      "pandoc": "GPL-2.0-or-later. Run by Quarto as a separate program; nothing of it is linked into the build or copied into an article. The page template is the journal's own.",
+      "typst": "Apache-2.0. Compiles the PDF; its built-in fonts (Libertinus Serif, New Computer Modern, DejaVu Sans Mono) are under the SIL Open Font License and free licenses of their own.",
+      "deno": "MIT",
+      "dart-sass": "MIT",
+      "esbuild": "MIT"
+    }
+  },
+  "in_every_article": {
+    "plotly.js": "MIT. Carried by the plotly Python package at the version in requirements.lock; written into each page and each one-file copy.",
+    "fonts": "SIL Open Font License 1.1 (Saira, Atkinson Hyperlegible Next, Atkinson Hyperlegible Mono); the licenses are in theme/fonts/ and travel into each version's assets/fonts/.",
+    "site stylesheet, header and footer": "MIT, from the website repository"
+  },
+  "used_at_build_only": {
+    "Chrome or Chromium": "Renders each figure's static picture for kaleido, and runs the browser checks. The one already on the machine is used; none is downloaded."
+  }
+}

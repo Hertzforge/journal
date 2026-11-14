@@ -33,9 +33,11 @@ methods, results, practice and the prior work behind them.
 
 ## How to Submit
 
-Copy `templates/article/` to `articles/<working-name>/`, write the article in `article.md`, put
-the data behind each figure in `data/` and the code that draws it in `code/`, and open a pull
-request.
+Copy `templates/article/` to `articles/<working-name>/`, write the article in `article.qmd`
+(Markdown, with its facts in the block at the top), put the data behind each figure in `data/`
+and the code that draws it in `code/`, and open a pull request. The template shows how a figure,
+an equation, a table and a citation are written, and `templates/article/code/README.md` says
+what the build asks of a figure.
 
 ## What the Editors Check Before Publishing
 

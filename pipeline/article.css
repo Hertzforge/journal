@@ -1,0 +1,376 @@
+/*
+ * The article page's own styles, on top of the site's stylesheet (site.css).
+ *
+ * Every color is one of the site's tokens, so the page follows light and dark reading. Meaning
+ * never rests on color alone: each status carries a word and a mark.
+ */
+
+/* ---------- Status and sample strips, under the header ---------- */
+
+.hf-status {
+  background: #000;
+  color: var(--text);
+  border-bottom: 1px solid rgba(22, 143, 255, 0.22);
+  font-size: 0.95rem;
+}
+.hf-status .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  padding-block: 10px;
+}
+.hf-status-mark {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  color: var(--accent-hi);
+}
+.hf-status-mark svg {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+/* One mark per status: the word is never alone, and neither is the color. */
+.hf-status[data-status='review-open'] svg[data-for='review-open'],
+.hf-status[data-status='reviewed'] svg[data-for='reviewed'],
+.hf-status[data-status='retracted'] svg[data-for='retracted'] {
+  display: block;
+}
+.hf-status-name {
+  font-family: var(--font-display);
+  font-stretch: 108%;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.hf-status-text {
+  color: var(--text-2);
+}
+.hf-status-link {
+  margin-left: auto;
+}
+.hf-status[data-status='retracted'] {
+  border-bottom: 3px double var(--amber);
+}
+.hf-status[data-status='retracted'] .hf-status-mark {
+  color: var(--amber);
+}
+
+.hf-sample {
+  background: repeating-linear-gradient(135deg, #2b2100 0 14px, #1d1600 14px 28px);
+  color: #ffdf9c;
+  border-bottom: 1px solid var(--amber);
+  font-size: 0.95rem;
+}
+.hf-sample .wrap {
+  padding-block: 8px;
+}
+
+/* ---------- Title band ---------- */
+
+.hf-article .page-head h1 {
+  max-width: 26ch;
+  font-size: clamp(1.8rem, 4.4vw, 2.9rem);
+}
+.hf-kind {
+  margin: 16px 0 0;
+}
+.hf-authors {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 28px;
+  font-size: 1.08rem;
+}
+.hf-authors li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 10px;
+}
+.hf-author-name {
+  font-weight: 650;
+  color: var(--text);
+}
+.hf-orcid {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.hf-editors-note,
+.hf-evidence {
+  margin: 14px 0 0;
+  max-width: 70ch;
+  color: var(--text-2);
+}
+.hf-editors-note {
+  font-size: 0.95rem;
+}
+.hf-evidence strong {
+  color: var(--text);
+}
+.hf-evidence .tag {
+  margin-right: 6px;
+}
+
+/* ---------- About this version: version, DOI, citation, downloads ---------- */
+
+.hf-meta {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 2.4em;
+}
+.hf-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+  padding: 14px 18px;
+}
+.hf-panel > :last-child {
+  margin-bottom: 0;
+}
+.prose h2.hf-label,
+.hf-label {
+  margin: 0 0 6px;
+  padding: 0;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.hf-panel p {
+  margin: 0 0 0.5em;
+}
+.hf-version-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+}
+.hf-version-line .hf-select-label {
+  margin-left: auto;
+}
+.hf-note {
+  color: var(--text-2);
+  font-size: 0.96rem;
+}
+.hf-versions {
+  font-size: 0.94rem;
+  color: var(--text-2);
+}
+.hf-select {
+  font: inherit;
+  font-size: 0.92rem;
+  color: var(--text);
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.3em 0.6em;
+}
+.hf-notlatest {
+  margin-top: 10px;
+}
+.hf-history {
+  font-size: 0.94rem;
+  color: var(--text-2);
+}
+.hf-history ol {
+  margin: 8px 0 0;
+  padding-left: 1.3em;
+}
+.hf-history li + li {
+  margin-top: 0.3em;
+}
+.hf-ids {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 18px;
+  margin: 0;
+  font-size: 0.96rem;
+}
+.hf-ids dt {
+  color: var(--text-2);
+}
+.hf-ids dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 560px) {
+  .hf-ids {
+    grid-template-columns: 1fr;
+  }
+  .hf-ids dd {
+    margin-bottom: 6px;
+  }
+}
+.hf-citation {
+  overflow-wrap: break-word;
+}
+.hf-nowrap {
+  white-space: nowrap;
+}
+.hf-cite-files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 8px;
+}
+.hf-cite details {
+  font-size: 0.94rem;
+  color: var(--text-2);
+}
+.hf-cite pre {
+  margin: 8px 0 0;
+  font-size: 0.82rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.hf-downloads .dl {
+  margin: 0;
+}
+
+/* ---------- The article ---------- */
+
+.hf-abstract {
+  border-left: 3px solid var(--accent);
+  padding: 2px 0 2px 1.1em;
+}
+.hf-prose .hf-abstract h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.hf-prose figure {
+  margin: 1.8em 0;
+}
+.hf-prose figure figure {
+  margin: 0;
+}
+.hf-prose figcaption {
+  margin-top: 10px;
+  color: var(--text-2);
+  font-size: 0.95rem;
+}
+.hf-prose .quarto-float-caption-top {
+  margin: 0 0 8px;
+}
+.hf-figure {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+  padding: 10px;
+}
+.hf-plot {
+  width: 100%;
+  min-height: 300px;
+}
+.hf-static {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  background: #fff;
+}
+.hf-figure.is-live .hf-static {
+  display: none;
+}
+.hf-figure-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 16px;
+  margin: 8px 2px 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* A table from the article scrolls inside its own frame on a narrow screen. */
+.hf-prose .quarto-float-tbl > div,
+.hf-prose > table {
+  overflow-x: auto;
+}
+.hf-prose table {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+
+math {
+  font-size: 1.06em;
+}
+/* A long equation scrolls inside its own line instead of widening the page. */
+.hf-prose p:has(math[display='block']) {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.3em 0;
+}
+
+.csl-entry {
+  margin: 0 0 0.7em;
+  padding-left: 1.6em;
+  text-indent: -1.6em;
+  overflow-wrap: anywhere;
+}
+
+.hf-end {
+  margin-top: 2.4em;
+}
+.hf-prose .hf-end h2,
+.hf-prose .hf-abstract h2 {
+  margin-bottom: 0.5em;
+}
+.hf-reviews-list {
+  padding-left: 1.3em;
+}
+.hf-license {
+  margin-top: 2.4em;
+  padding-top: 1.2em;
+  border-top: 1px solid var(--line-soft);
+  color: var(--text-2);
+  font-size: 0.95rem;
+}
+
+/* ---------- Print: the static picture of every figure, and no controls ---------- */
+
+@media print {
+  .skip,
+  .hf-status-link,
+  .hf-select-label,
+  .hf-downloads,
+  .hf-cite-files,
+  .hf-figure-links {
+    display: none !important;
+  }
+  .hf-plot {
+    display: none !important;
+  }
+  .hf-static {
+    display: block !important;
+  }
+  .hf-status,
+  .hf-sample {
+    background: #fff !important;
+    color: #000 !important;
+    border: 1px solid #000;
+  }
+  .hf-article .page-head *,
+  .hf-status * {
+    color: #000 !important;
+    -webkit-text-fill-color: #000;
+  }
+  .hf-figure {
+    border: 0;
+    padding: 0;
+    break-inside: avoid;
+  }
+  .hf-panel {
+    border-color: #999;
+    break-inside: avoid;
+  }
+}

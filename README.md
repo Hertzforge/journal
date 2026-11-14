@@ -17,13 +17,22 @@ hertzforge.com/journal.
 
 | Path | What it holds |
 |---|---|
-| `articles/<id>/` | An article's source, with `data/` (the data behind every figure) and `code/` (the code that draws them) |
-| `published/<id>/v<n>/` | Version n as it was built: the page, the single-file download, the PDF and the bundle. Never rebuilt, never edited |
-| `reviews/<id>/` | The review record of each article, exported from its thread so it outlives the discussion |
+| `articles/<id>/` | An article's source: `article.qmd`, `references.bib`, `data/` (the data behind every figure) and `code/` (the code that draws them) |
+| `published/<id>/v<n>/` | Version n as it was built: the page, the one-file copy, the PDF and the bundle. Never rebuilt, never edited |
+| `published/<id>/record.json` | What changes after a version is frozen: which versions exist, the review status, the reviews |
+| `reviews/<id>/` | The review record of each article, exported from its thread so it outlives the discussion, and `status.yml`, its review state |
 | `people/` | One record per author and reviewer: name and ORCID iD |
 | `policies/` | The policies, the guide for authors, the guide for reviewers and the editors' checklist |
 | `templates/` | The article template and the review template |
-| `scripts/check-names.py` | The gate run before every push |
+| `journal.yml` | Facts every article repeats: the journal's title, its address, its ISSN once assigned |
+| `scripts/publish` | The one command that builds and freezes a version (`scripts/journal.py` does the work) |
+| `scripts/setup.sh` | Installs what the build needs, without administrator rights |
+| `scripts/browser-check.py` | Opens a built version in a browser and checks what only a browser can show |
+| `scripts/check-names.py` | The gate run before every push: names, licenses, and that no published version has changed |
+| `scripts/sync-theme.py` | Refreshes `theme/` from a build of the website |
+| `pipeline/` | What the build is made of: the page frame, its styles and script, the print layout, the figure runner, the figure colors, the pinned tools |
+| `theme/` | A copy of the website's stylesheet, fonts, header and footer. Each version is frozen with the copy it was built with |
+| `tests/` | The sample article, clearly marked as one, and its revision. Its builds are never committed and never published |
 
 An article's identifier is `<year>-<nnn>`: the year it was first published and a running number,
 for example `2026-001`. Titles are not in addresses, so a retitled article keeps its address.
@@ -43,6 +52,137 @@ Volume 1 is 2026.
 Changes to an article need its authors' approval. Nobody, the editors included, edits another
 author's article beyond the publication checks.
 
+## Building a Version
+
+Every version of an article has four outputs, built once from one source and frozen:
+
+1. **The article page,** in the site's style. This is the version of record.
+2. **The article in one file,** for download: interactive, with the plotting library, the
+   fonts and the figures written into it. It asks nothing of any server, so it opens offline and
+   can be carried onto a closed network.
+3. **A PDF print copy** from the same source, with a static picture of each figure. Its first
+   page says it is the print copy and gives the address and DOI of the interactive version.
+4. **A data and code bundle:** the data behind every figure and the code that draws it, with
+   what is needed to run it again.
+
+### Once on a Machine
+
+```bash
+scripts/setup.sh
+```
+
+It installs Quarto, at the version pinned in `pipeline/tools.json`, from its release tarball
+(checked against the recorded checksum) into `~/dev/tools`, and a Python environment in `.venv`
+from `requirements.lock`. No administrator rights are needed. The machine also needs a Chrome or
+Chromium browser, which renders each figure's static picture and runs the browser checks.
+
+### One Command
+
+```bash
+scripts/publish articles/2026-001
+```
+
+It reads `articles/2026-001/article.qmd`, draws every figure from `code/` and `data/`, builds
+the four outputs for the last version listed in the article's front matter, checks them, and
+freezes them in `published/2026-001/v<n>/` with a manifest of every file's hash. Then it
+rewrites the article's record and the page at the article's own address, which forwards to the
+latest version.
+
+It refuses, and builds nothing, when:
+
+- that version is already published. A published version never changes; add the next entry
+  under `versions` and build again;
+- an earlier version is missing, or is no longer what its manifest says;
+- the article lacks a required part: a title, authors, a type, an evidence level and its
+  sentence, an abstract, a note for each version, and the closing sections in order (How This
+  Was Made, Acknowledgments, References);
+- a co-authored article has an author without CRediT roles (the build writes the contribution
+  statement from them);
+- an ORCID iD fails its check digit;
+- a figure has no caption, no alternative text, no data file or no code file;
+- a figure's series differ only by color, or a figure would fetch anything from another site;
+- the version has no DOI. Reserve the DOIs first (below); `--no-doi` builds without them.
+
+And it refuses to freeze what it built when the page's parts are missing or out of order, the
+citation tags in the head are not the ones expected, the one-file copy would fetch anything, or
+the PDF's first page does not say what it is.
+
+### Publishing, Step by Step
+
+1. **Give the article its identifier** and move its source to `articles/<id>/`. Set `id`.
+2. **Reserve the DOIs on Zenodo** before building. Start the deposit in the journal's community
+   as a journal article; Zenodo reserves the DOI of this version and the DOI that always gives
+   the latest version. Put them in the front matter (`versions[].doi`, `doi_latest`). They are
+   printed on the page and in the PDF, and a frozen version cannot be given them afterward.
+3. **Set the date** of the version, and its note.
+4. **Build:** `scripts/publish articles/<id>`.
+5. **Look at it:** `.venv/bin/python scripts/browser-check.py published/<id>/v<n>`, and open the
+   page, the one-file copy and the PDF yourself.
+6. **Commit** `articles/<id>/` and `published/<id>/` and push. The gate runs first.
+7. **Deposit:** upload the four outputs from `published/<id>/v<n>/` to the reserved deposit and
+   publish it.
+8. **Open the review thread,** put its address in `reviews/<id>/status.yml`, and run
+   `.venv/bin/python scripts/journal.py record <id>`.
+9. **The website** takes the article in at its next build: it copies `published/` as it is, and
+   lists the article on the journal's home page from its record.
+
+### A New Version
+
+Change the article in `articles/<id>/`, add the next entry under `versions` with its date, its
+DOI and a note of what changed, and run `scripts/publish articles/<id>` again. It writes
+`published/<id>/v<n+1>/` and leaves every earlier version as it was. Each earlier version's page
+then says that a later one exists, because pages read the article's record; no published file
+changes.
+
+### After a Review
+
+Reviews and the review status are not part of any version. List the review in
+`reviews/<id>/status.yml`, set the status, and run
+`.venv/bin/python scripts/journal.py record <id>`. Every version's page shows the new state.
+
+### Checking That Nothing Has Changed
+
+```bash
+.venv/bin/python scripts/journal.py verify
+```
+
+It compares every published version with the manifest written when it was built. The gate runs
+the same check before every push, and also refuses a push that changes or removes a file of a
+version the remote already has.
+
+### The Sample and the Self-Test
+
+`tests/articles/0000-000/` is a sample article, marked as one on every page it produces. It
+exists to test the build and is never published: the build refuses it in `published/`, its
+output goes to `tests/published/` (not committed), and the website leaves it out unless a test
+build asks for it.
+
+```bash
+scripts/publish tests/articles/0000-000 --rebuild     # the sample's four outputs, from source
+.venv/bin/python scripts/journal.py selftest          # the whole build, twice, and the freeze rule
+```
+
+The self-test builds the sample as version 1, lays its revision over it, builds version 2, and
+checks that version 1 did not change by a byte and cannot be built again; then it unpacks the
+bundle on its own and redraws the figure from it, and runs the browser checks on both versions.
+
+### What the Build Is Made Of
+
+Quarto converts the article (Markdown, cross-references, citations, equations as MathML, the
+embedding of the one-file copy, and Typst for the PDF). Its own theme and scripts are switched
+off; the page frame is the journal's. Figures are not drawn by cells in the document: each is
+drawn by its file in `code/`, once, into an interactive figure and a static picture. The
+journal's own rules (the parts of the page and their order, the citation tags, the freeze) are
+in `scripts/journal.py`.
+
+The tools are pinned in `pipeline/tools.json` and `requirements.lock`, with their licenses. No
+part of the build, and nothing written into an article, is under GPL, AGPL or SSPL, with one
+thing to know: Quarto carries Pandoc, which is under GPL and is run as a separate program.
+Nothing of it is linked into the build or copied into an article.
+
+When the website's look changes and the journal should follow, build the website and run
+`python3 scripts/sync-theme.py`. Versions already published keep the look they were frozen with.
+
 ## Licenses
 
 | What | License | Copyright |
@@ -54,6 +194,5 @@ The journal holds no copyright in any article. Hertzforge is the venue, never th
 
 ## Status
 
-Not yet open. No article has been published, the build that turns an article's source into its
-four outputs is not chosen (Quarto is the candidate and has not been tried), and the journal has
-no ISSN yet.
+Not yet open. No article has been published and the journal has no ISSN yet. The build is in
+place and has been run end to end on the sample.

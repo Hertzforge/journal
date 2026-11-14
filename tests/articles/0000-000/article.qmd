@@ -1,0 +1,90 @@
+---
+# Filled in by the editors at publication.
+id: "0000-000"
+sample: true                                   # a sample is built only under tests/ and is never published
+doi_latest: "10.5072/hertzforge-sample"        # a placeholder under the DataCite test prefix; it resolves to nothing
+versions:
+  - version: 1
+    date: 2026-11-14
+    doi: "10.5072/hertzforge-sample.v1"        # a placeholder, as above
+    note: First published.
+
+# Filled in by the authors.
+title: "Sample Article: Not a Publication"
+type: Method Note
+evidence: simulator
+evidence_note: "Every number here was computed from an invented two-mode system. Nothing was measured."
+authors:
+  - name: Josiah Carberry
+    orcid: "https://orcid.org/0000-0002-1825-0097"
+    roles: [Conceptualization, Methodology, Software, "Writing: original draft"]
+  - name: Example Author
+    orcid: ""
+    roles: [Validation, "Writing: review and editing"]
+implemented_in:
+  label: "Nothing. This sample implements no method. A real article names the Hertzforge release or commit here."
+  url: ""
+abstract: >
+  This is a sample, written to test the build of the Hertzforge Journal. It is not a publication
+  and reports no result. It carries every part a real article must: authors, an evidence level,
+  an equation, a table, a reference list, and one interactive figure drawn by a file in its code
+  folder from a file in its data folder, with a static picture of the same figure for the PDF.
+  The system it describes is invented, and so are its authors.
+---
+
+## Purpose
+
+This document exists so that the journal's build can be run from end to end and checked. One
+command turns this source into an article page, a single file that opens offline, a PDF print
+copy, and a bundle of the data and code. Each of those is then tested: that the single file asks
+nothing of any server, that its figure stays interactive, that the PDF holds the figure as a
+picture, and that a second version leaves the first unchanged.
+
+## Method
+
+The invented system has two modes. Its driving-point accelerance is the modal sum [@ewins2000]
+
+$$
+A(\omega) = \sum_{r=1}^{2} \frac{-\omega^{2} \phi_{r}^{2}}{\omega_{r}^{2} - \omega^{2} + 2 i \zeta_{r} \omega_{r} \omega}
+$$ {#eq-accelerance}
+
+where $\omega_{r}$ is the natural frequency of mode $r$, $\zeta_{r}$ its damping ratio and
+$\phi_{r}^{2}$ its modal constant, with the values in @tbl-modes.
+
+| Mode | Natural frequency (Hz) | Damping ratio | Modal constant (1/kg) |
+|:----:|-----------------------:|--------------:|----------------------:|
+| 1    | 120                    | 0.020         | 1.0                   |
+| 2    | 310                    | 0.015         | 0.6                   |
+
+: The invented system. {#tbl-modes}
+
+Two noisy estimates of $|A(\omega)|$ were made by multiplying the reference by log-normal noise.
+The spread of the noise falls with the square root of the number of averages, as the random
+error of a spectral estimate does [@bendat2010]. The noise is drawn from a fixed seed, so
+`code/make_data.py` writes the same data file every time.
+
+## Result
+
+@fig-response shows the reference from @eq-accelerance and the two estimates. On the page the
+figure can be zoomed, panned and read point by point. In the PDF it is a picture.
+
+![The invented response and two estimates of it. The estimate from 64 averages follows the reference more closely than the estimate from 8.](figures/response.png){#fig-response fig-alt="A line chart of accelerance magnitude against frequency, from 20 to 500 hertz, on a logarithmic vertical axis. A solid reference curve has two resonance peaks, near 120 and 310 hertz, with an antiresonance between them. A dotted estimate from 8 averages scatters widely around the reference. A dashed estimate from 64 averages stays close to it." data="data/response.csv"}
+
+## Limits
+
+Nothing here is a finding. The system, the noise and the authors are invented, and the figure
+shows only that the build draws what the data file says.
+
+## How This Was Made
+
+The text, the data generator and the figure code were written with Claude Fable 5.2 (Anthropic),
+working as a coding agent, as a test fixture for the journal's build. The figure is drawn with
+Plotly. The page, the single-file copy and the PDF are built with Quarto and Typst. No person's
+research is reported.
+
+## Acknowledgments
+
+Josiah Carberry is the fictitious researcher that ORCID and Crossref use in their own examples;
+he is borrowed here for the same purpose. The modal sum is textbook material [@ewins2000].
+
+## References

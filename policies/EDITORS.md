@@ -29,14 +29,24 @@ outside the author list and the article says its authors are the journal's edito
 ## At Publication
 
 1. Assign the identifier, `<year>-<nnn>`, and move the source to `articles/<id>/`.
-2. Build version 1 and freeze it under `published/<id>/v1/`.
-3. Deposit the version on Zenodo as a journal article, in the journal's community, with the
-   authors' ORCID iDs and the license. Put the DOIs on the page.
-4. Open the article's review thread and set the status to Review open.
-5. Invite reviewers: at least one from outside the author list, aiming for two.
+2. Reserve the DOIs on Zenodo, in the journal's community, before building: start the deposit
+   as a journal article and take the DOI it reserves for this version and the one that always
+   gives the latest version. Put both in the article's front matter. They are printed on the
+   page and in the PDF, and a frozen version cannot be given them afterward.
+3. Build version 1 and freeze it under `published/<id>/v1/`: `scripts/publish articles/<id>`.
+   The build checks the article against this list where it can, and refuses to freeze a version
+   that fails. Look at the page, the one-file copy and the PDF.
+4. Upload the four outputs to the reserved deposit, with the authors' ORCID iDs and the license,
+   and publish it.
+5. Open the article's review thread, put its address in `reviews/<id>/status.yml` with the
+   status Review open, and run `python scripts/journal.py record <id>`.
+6. Invite reviewers: at least one from outside the author list, aiming for two.
+
+The steps, with the commands, are in the repository's `README.md` under Publishing an Article.
 
 ## After a Review
 
-Link the review from the article. When an invited review is posted and the authors have answered
-or revised, set the status to Reviewed. Export the thread to `reviews/<id>/` and include it in
-the next deposit.
+List the review in `reviews/<id>/status.yml` and run `python scripts/journal.py record <id>`:
+every version's page then links it, without any published version changing. When an invited
+review is posted and the authors have answered or revised, set the status there to Reviewed.
+Export the thread to `reviews/<id>/` and include it in the next deposit.

@@ -1,0 +1,15 @@
+#!/bin/bash
+# Builds and freezes one version of an article: its page, its one-file copy, its PDF and its
+# data and code bundle.
+#
+#   scripts/publish articles/2026-001             a real article
+#   scripts/publish tests/articles/0000-000       the sample (a test build, never published)
+#
+# See README.md, "Publishing an Article".
+set -euo pipefail
+HERE="$(cd "$(dirname "$0")/.." && pwd)"
+if [ ! -x "$HERE/.venv/bin/python" ]; then
+  echo "publish: the build environment is missing. Run scripts/setup.sh first."
+  exit 1
+fi
+exec "$HERE/.venv/bin/python" "$HERE/scripts/journal.py" publish "$@"
