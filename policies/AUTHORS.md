@@ -1,0 +1,59 @@
+# Guide for Authors
+
+Anyone may submit, on any topic in the journal's scope. You do not need to use Hertzforge.
+
+## Scope
+
+Vibration and shock testing, multi-input multi-output control, and structural dynamics analysis:
+methods, results, practice and the prior work behind them.
+
+## Article Types
+
+| Type | What it is |
+|---|---|
+| Research Article | A new method, law, analysis or result, with its evidence |
+| Method Note | A short, self-contained method or technique |
+| Negative Result | Something tried that did not work, and why. Kept as part of the record |
+| Proposed Standard | A proposed practice, metric or acceptance standard, versioned and open to comment. It cites the published standards as references and says where and why it departs |
+| Practice Note | How to do something well on a real test |
+| Survey | A map of prior work on a topic |
+
+## What Every Article Needs
+
+- A title, and the authors with their ORCID iDs.
+- The article type, and the evidence level: simulation, a bench, or real test hardware.
+- An abstract, and the article.
+- A contribution statement, if it is co-authored, in the CRediT roles.
+- A statement of how it was made: the tools used, AI tools included, and what for.
+- Acknowledgments that name the sources of ideas, and references.
+- The data behind every figure and the code that draws it.
+- Figures that read without color alone: series are told apart by line style or marker as well,
+  and every image has alternative text.
+
+## How to Submit
+
+Copy `templates/article/` to `articles/<working-name>/`, write the article in `article.md`, put
+the data behind each figure in `data/` and the code that draws it in `code/`, and open a pull
+request.
+
+## What the Editors Check Before Publishing
+
+That the article is in scope and complete, that its figures regenerate from its data and code,
+that it is licensed as the policies require, and that it claims no affiliation. Then it is
+published, and review opens.
+
+## After Publication
+
+Answer reviews in the article's thread. Revise as a new version when you choose to; every
+version stays available and citable.
+
+## Reporting on the Benchmark Set
+
+If your article develops a control law for multi-shaker testing, we recommend reporting it on
+the Open Benchmark Set and naming the version, the problems and the seeds. It is a
+recommendation, not a requirement.
+
+## What You Keep
+
+Your copyright and your credit. Your article is under CC BY 4.0 and its code under the MIT
+license. Nobody edits it without your approval.
