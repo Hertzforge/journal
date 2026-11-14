@@ -1,0 +1,81 @@
+study,seed,base_input,base_input_label,stress_rms_db,stress_bias_db,stress_p5_db
+random,1,envelope,Envelope of the four mounts,12.2832,11.6956,3.8505
+random,1,mean,Mean of the four mounts,7.7165,6.6369,0.5542
+random,1,true_one_axis,"True mount-averaged motion, one axis at a time",4.0757,-3.1308,-7.3721
+random,1,true_three_axes,"True motion, three axes at once",2.8839,-1.8221,-5.7260
+random,1,all_twelve,All twelve mount translations as in service,0.2799,-0.0235,-0.6460
+random,0,envelope,Envelope of the four mounts,10.6547,10.2952,5.8606
+random,0,mean,Mean of the four mounts,6.3653,4.4304,-0.8460
+random,0,true_one_axis,"True mount-averaged motion, one axis at a time",4.6744,-2.9702,-7.0886
+random,0,true_three_axes,"True motion, three axes at once",3.4817,-1.4924,-5.3323
+random,0,all_twelve,All twelve mount translations as in service,0.5072,0.0156,-0.5381
+random,2,envelope,Envelope of the four mounts,8.2728,7.5321,1.7972
+random,2,mean,Mean of the four mounts,2.8663,-0.8912,-5.0905
+random,2,true_one_axis,"True mount-averaged motion, one axis at a time",5.9526,-5.5939,-8.9592
+random,2,true_three_axes,"True motion, three axes at once",4.2985,-3.9041,-7.3481
+random,2,all_twelve,All twelve mount translations as in service,0.2714,-0.0756,-0.4904
+random,3,envelope,Envelope of the four mounts,8.0824,7.5573,3.8142
+random,3,mean,Mean of the four mounts,3.1522,1.1760,-2.6620
+random,3,true_one_axis,"True mount-averaged motion, one axis at a time",4.8662,-4.3303,-7.9271
+random,3,true_three_axes,"True motion, three axes at once",3.4307,-2.9434,-6.0668
+random,3,all_twelve,All twelve mount translations as in service,0.4343,0.0824,-0.5701
+random,4,envelope,Envelope of the four mounts,6.2518,5.4931,0.6471
+random,4,mean,Mean of the four mounts,3.1858,2.2280,-1.2429
+random,4,true_one_axis,"True mount-averaged motion, one axis at a time",3.8014,-1.0256,-7.1717
+random,4,true_three_axes,"True motion, three axes at once",2.9384,0.4356,-4.2057
+random,4,all_twelve,All twelve mount translations as in service,1.1216,-0.5870,-2.8609
+random,6,envelope,Envelope of the four mounts,11.3382,10.7212,4.2327
+random,6,mean,Mean of the four mounts,5.5460,4.3811,-2.5981
+random,6,true_one_axis,"True mount-averaged motion, one axis at a time",3.4194,-2.8716,-5.5288
+random,6,true_three_axes,"True motion, three axes at once",1.7840,-1.2605,-3.2113
+random,6,all_twelve,All twelve mount translations as in service,0.3068,-0.0094,-0.6488
+random,5,envelope,Envelope of the four mounts,9.9651,9.5166,4.9431
+random,5,mean,Mean of the four mounts,2.3813,0.4522,-3.2236
+random,5,true_one_axis,"True mount-averaged motion, one axis at a time",3.9766,-3.4487,-6.8947
+random,5,true_three_axes,"True motion, three axes at once",2.0453,-1.5184,-3.1709
+random,5,all_twelve,All twelve mount translations as in service,0.5421,-0.2337,-1.2212
+random,7,envelope,Envelope of the four mounts,10.7703,10.5737,6.5704
+random,7,mean,Mean of the four mounts,5.0898,4.5714,0.5501
+random,7,true_one_axis,"True mount-averaged motion, one axis at a time",3.6506,-2.9524,-7.2623
+random,7,true_three_axes,"True motion, three axes at once",2.9308,-2.3305,-5.7644
+random,7,all_twelve,All twelve mount translations as in service,0.3098,-0.0422,-0.5013
+random,8,envelope,Envelope of the four mounts,11.8938,11.1471,4.9957
+random,8,mean,Mean of the four mounts,3.9277,2.3217,-2.1391
+random,8,true_one_axis,"True mount-averaged motion, one axis at a time",4.9030,-4.4737,-6.8880
+random,8,true_three_axes,"True motion, three axes at once",2.6276,-2.2214,-4.8355
+random,8,all_twelve,All twelve mount translations as in service,0.4016,-0.3360,-0.6455
+random,9,envelope,Envelope of the four mounts,10.1351,9.5662,4.9213
+random,9,mean,Mean of the four mounts,5.5459,4.0810,-1.5494
+random,9,true_one_axis,"True mount-averaged motion, one axis at a time",6.2790,-5.6428,-9.4766
+random,9,true_three_axes,"True motion, three axes at once",4.3303,-3.7916,-6.8645
+random,9,all_twelve,All twelve mount translations as in service,0.4173,-0.2682,-0.8610
+shock,0,envelope,Envelope of the four mounts,4.6486,4.1079,0.9275
+shock,0,mean,Mean of the four mounts,3.1601,2.2270,-0.7526
+shock,0,true_one_axis,"True mount-averaged motion, one axis at a time",7.9671,-7.6279,-12.0604
+shock,0,true_three_axes,"True motion, three axes at once",6.4353,-5.9156,-10.4326
+shock,0,all_twelve,All twelve mount translations as in service,0.3166,-0.1139,-0.5776
+shock,1,envelope,Envelope of the four mounts,3.8278,2.1649,-3.3503
+shock,1,mean,Mean of the four mounts,3.6554,0.5893,-5.2828
+shock,1,true_one_axis,"True mount-averaged motion, one axis at a time",8.4525,-7.8386,-13.5393
+shock,1,true_three_axes,"True motion, three axes at once",6.7326,-6.0930,-12.0893
+shock,1,all_twelve,All twelve mount translations as in service,0.5407,-0.3005,-1.1477
+shock,2,envelope,Envelope of the four mounts,6.1902,5.7083,1.9726
+shock,2,mean,Mean of the four mounts,2.9657,1.7533,-2.1511
+shock,2,true_one_axis,"True mount-averaged motion, one axis at a time",6.1971,-5.7063,-10.4476
+shock,2,true_three_axes,"True motion, three axes at once",4.7584,-4.1019,-7.9239
+shock,2,all_twelve,All twelve mount translations as in service,0.5282,0.0286,-0.8835
+shock,3,envelope,Envelope of the four mounts,4.8936,4.1415,0.0177
+shock,3,mean,Mean of the four mounts,2.9428,1.5914,-2.4565
+shock,3,true_one_axis,"True mount-averaged motion, one axis at a time",7.9946,-7.2904,-12.3706
+shock,3,true_three_axes,"True motion, three axes at once",7.4697,-6.7203,-11.7813
+shock,3,all_twelve,All twelve mount translations as in service,0.3260,-0.0642,-0.6181
+shock,4,envelope,Envelope of the four mounts,7.4535,7.0899,3.4272
+shock,4,mean,Mean of the four mounts,4.0213,2.9968,-1.1351
+shock,4,true_one_axis,"True mount-averaged motion, one axis at a time",6.5146,-5.7574,-11.1760
+shock,4,true_three_axes,"True motion, three axes at once",5.3342,-4.6031,-8.9743
+shock,4,all_twelve,All twelve mount translations as in service,0.5141,0.1828,-0.3405
+shock,5,envelope,Envelope of the four mounts,9.4589,9.0656,4.2491
+shock,5,mean,Mean of the four mounts,3.6886,1.9352,-3.1130
+shock,5,true_one_axis,"True mount-averaged motion, one axis at a time",5.6584,-5.1812,-8.8899
+shock,5,true_three_axes,"True motion, three axes at once",4.9956,-4.5080,-8.0105
+shock,5,all_twelve,All twelve mount translations as in service,0.2930,-0.0507,-0.4933

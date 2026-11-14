@@ -237,5 +237,5 @@ The journal holds no copyright in any article. Hertzforge is the venue, never th
 
 ## Status
 
-Not yet open. No article has been published and the journal has no ISSN yet. The build is in
-place and has been run end to end on the sample.
+Open. The first article, 2026-001, was published on 2026-11-14 and is open for review. An ISSN
+has been applied for; until it is assigned, no page carries one.

@@ -1,0 +1,49 @@
+case_set,case_set_label,n_cases,metric,metric_label,gauges,spearman_rho
+all_rigs,All multi-shaker cases,1380,line_rms,Line dB RMS,controls,0.3631
+all_rigs,All multi-shaker cases,1380,line_rms,Line dB RMS,held_out,0.6298
+all_rigs,All multi-shaker cases,1380,b3_rms,1/3-octave band dB RMS,controls,0.3291
+all_rigs,All multi-shaker cases,1380,b3_rms,1/3-octave band dB RMS,held_out,0.6345
+all_rigs,All multi-shaker cases,1380,sum3_rms,"Sum of autospectra, 1/3-octave",controls,0.4572
+all_rigs,All multi-shaker cases,1380,sum3_rms,"Sum of autospectra, 1/3-octave",held_out,0.7995
+all_rigs,All multi-shaker cases,1380,ers10_rms,ERS Q = 10,controls,0.3597
+all_rigs,All multi-shaker cases,1380,ers10_rms,ERS Q = 10,held_out,0.7125
+all_rigs,All multi-shaker cases,1380,fds10_rms,"FDS Q = 10, b = 8",controls,0.3592
+all_rigs,All multi-shaker cases,1380,fds10_rms,"FDS Q = 10, b = 8",held_out,0.7104
+all_rigs,All multi-shaker cases,1380,grms_rms,Overall RMS (grms),controls,0.3780
+all_rigs,All multi-shaker cases,1380,grms_rms,Overall RMS (grms),held_out,0.6604
+all_rigs,All multi-shaker cases,1380,line_worst,"Worst channel, line",controls,0.2711
+all_rigs,All multi-shaker cases,1380,line_worst,"Worst channel, line",held_out,0.5495
+all_rigs,All multi-shaker cases,1380,g527_rms,Annex C global error,controls,0.1524
+all_rigs,All multi-shaker cases,1380,g527_rms,Annex C global error,held_out,0.4339
+unequal_counts,Shaker and control counts unequal,1020,line_rms,Line dB RMS,controls,0.6720
+unequal_counts,Shaker and control counts unequal,1020,line_rms,Line dB RMS,held_out,0.6754
+unequal_counts,Shaker and control counts unequal,1020,b3_rms,1/3-octave band dB RMS,controls,0.6239
+unequal_counts,Shaker and control counts unequal,1020,b3_rms,1/3-octave band dB RMS,held_out,0.6375
+unequal_counts,Shaker and control counts unequal,1020,sum3_rms,"Sum of autospectra, 1/3-octave",controls,0.8053
+unequal_counts,Shaker and control counts unequal,1020,sum3_rms,"Sum of autospectra, 1/3-octave",held_out,0.7950
+unequal_counts,Shaker and control counts unequal,1020,ers10_rms,ERS Q = 10,controls,0.6773
+unequal_counts,Shaker and control counts unequal,1020,ers10_rms,ERS Q = 10,held_out,0.7075
+unequal_counts,Shaker and control counts unequal,1020,fds10_rms,"FDS Q = 10, b = 8",controls,0.6768
+unequal_counts,Shaker and control counts unequal,1020,fds10_rms,"FDS Q = 10, b = 8",held_out,0.7062
+unequal_counts,Shaker and control counts unequal,1020,grms_rms,Overall RMS (grms),controls,0.6808
+unequal_counts,Shaker and control counts unequal,1020,grms_rms,Overall RMS (grms),held_out,0.6496
+unequal_counts,Shaker and control counts unequal,1020,line_worst,"Worst channel, line",controls,0.5185
+unequal_counts,Shaker and control counts unequal,1020,line_worst,"Worst channel, line",held_out,0.5694
+unequal_counts,Shaker and control counts unequal,1020,g527_rms,Annex C global error,controls,0.3619
+unequal_counts,Shaker and control counts unequal,1020,g527_rms,Annex C global error,held_out,0.5064
+line_law_all_rigs,"Line law only, all rigs",270,line_rms,Line dB RMS,controls,-0.0803
+line_law_all_rigs,"Line law only, all rigs",270,line_rms,Line dB RMS,held_out,0.6641
+line_law_all_rigs,"Line law only, all rigs",270,b3_rms,1/3-octave band dB RMS,controls,-0.0810
+line_law_all_rigs,"Line law only, all rigs",270,b3_rms,1/3-octave band dB RMS,held_out,0.6920
+line_law_all_rigs,"Line law only, all rigs",270,sum3_rms,"Sum of autospectra, 1/3-octave",controls,-0.0782
+line_law_all_rigs,"Line law only, all rigs",270,sum3_rms,"Sum of autospectra, 1/3-octave",held_out,0.8362
+line_law_all_rigs,"Line law only, all rigs",270,ers10_rms,ERS Q = 10,controls,-0.0776
+line_law_all_rigs,"Line law only, all rigs",270,ers10_rms,ERS Q = 10,held_out,0.7869
+line_law_all_rigs,"Line law only, all rigs",270,fds10_rms,"FDS Q = 10, b = 8",controls,-0.0780
+line_law_all_rigs,"Line law only, all rigs",270,fds10_rms,"FDS Q = 10, b = 8",held_out,0.7837
+line_law_all_rigs,"Line law only, all rigs",270,grms_rms,Overall RMS (grms),controls,-0.1235
+line_law_all_rigs,"Line law only, all rigs",270,grms_rms,Overall RMS (grms),held_out,0.7041
+line_law_all_rigs,"Line law only, all rigs",270,line_worst,"Worst channel, line",controls,-0.1739
+line_law_all_rigs,"Line law only, all rigs",270,line_worst,"Worst channel, line",held_out,0.5834
+line_law_all_rigs,"Line law only, all rigs",270,g527_rms,Annex C global error,controls,-0.0906
+line_law_all_rigs,"Line law only, all rigs",270,g527_rms,Annex C global error,held_out,0.4813

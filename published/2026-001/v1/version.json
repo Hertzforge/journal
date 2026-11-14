@@ -1,0 +1,45 @@
+{
+  "id": "2026-001",
+  "version": 1,
+  "date": "2026-11-14",
+  "first_published": "2026-11-14",
+  "note": "First published.",
+  "title": "What Is a Good Multi-Shaker Test? A Proposed Practice for Judging MIMO Vibration and Shock Tests on Flexible Articles",
+  "type": "Proposed Standard",
+  "evidence": "simulator",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    },
+    {
+      "name": "Brandon Zwink",
+      "orcid": "0000-0003-1341-2293"
+    }
+  ],
+  "doi": "10.5281/zenodo.24235533",
+  "doi_latest": "10.5281/zenodo.24235532",
+  "issn": "",
+  "volume": 1,
+  "address": "https://hertzforge.com/journal/2026-001/v1/",
+  "sample": false,
+  "outputs": {
+    "page": "index.html",
+    "single_file": "2026-001-v1.html",
+    "pdf": "2026-001-v1.pdf",
+    "bundle": "2026-001-v1-bundle.zip"
+  },
+  "built": "2026-11-14T23:44:08Z",
+  "built_with": {
+    "quarto": "1.11.9",
+    "pandoc": "pandoc 3.10",
+    "typst": "",
+    "python": "3.14.10",
+    "plotly": "7.1.0",
+    "plotly.js": "4.1.1",
+    "kaleido": "1.5.1",
+    "numpy": "2.5.4",
+    "theme": "70db5f680c78",
+    "build": "9a979f54a09e"
+  }
+}

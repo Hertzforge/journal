@@ -6,8 +6,9 @@
     scripts/zenodo.py upload  articles/2026-001   after the build: puts the frozen outputs of the
                                                   version in the draft, with the article's facts
     scripts/zenodo.py show    articles/2026-001   what Zenodo holds for the draft
-    scripts/zenodo.py publish articles/2026-001   publishes the deposit. It cannot be undone:
-                                                  a published record is never deleted
+    scripts/zenodo.py publish articles/2026-001   publishes the deposit and adds it to the journal's
+                                                  community. It cannot be undone: a published
+                                                  record is never deleted
 
 The token is read from the environment variable ZENODO_TOKEN, or from the file named in
 ZENODO_TOKEN_FILE (default ~/.config/hertzforge/zenodo_token). It needs the scopes
@@ -49,7 +50,8 @@ def token() -> str:
     return value
 
 
-def call(method: str, url: str, body: object = None, raw: bytes | None = None, kind: str = 'application/json') -> dict:
+def call(method: str, url: str, body: object = None, raw: bytes | None = None, kind: str = 'application/json',
+         fatal: bool = True) -> dict:
     if not url.startswith('http'):
         url = API + url
     data = raw if raw is not None else (json.dumps(body).encode() if body is not None else None)
@@ -62,6 +64,8 @@ def call(method: str, url: str, body: object = None, raw: bytes | None = None, k
             text = response.read().decode('utf-8')
     except urllib.error.HTTPError as error:
         detail = error.read().decode('utf-8', 'replace')[:1500]
+        if not fatal:
+            return {'_error': f'{error.code}: {detail[:200]}'}
         sys.exit(f'zenodo: {method} {url} answered {error.code}.\n{detail}')
     return json.loads(text) if text.strip() else {}
 
@@ -125,7 +129,6 @@ def metadata(front: dict) -> dict:
         'journal_title': facts['title'],
         'journal_volume': str(volume),
         'journal_pages': article_id,
-        'communities': [{'identifier': facts['zenodo_community']}],
         'related_identifiers': [
             {'identifier': f'{address}v{number}/', 'relation': 'isIdenticalTo', 'resource_type': 'publication-article', 'scheme': 'url'},
         ],
@@ -149,6 +152,9 @@ def cmd_reserve(article: pathlib.Path) -> None:
     else:
         draft = call('POST', '/deposit/depositions', {})
     reserved = draft['metadata']['prereserve_doi']['doi']
+    held = call('POST', f'/records/{draft["id"]}/draft/pids/doi').get('pids', {}).get('doi', {}).get('identifier')
+    if held and held != reserved:
+        sys.exit(f'zenodo: the draft reserved {held}, not {reserved}. Nothing else was done; look at the draft on Zenodo.')
     print(f'Draft deposit {draft["id"]} started. It is not published, and can still be deleted.')
     print(f'  doi: "{reserved}"')
     print(f'  doi_latest: "{PREFIX}{draft["conceptrecid"]}"')
@@ -182,7 +188,7 @@ def cmd_upload(article: pathlib.Path) -> None:
         call('PUT', f'{draft["links"]["bucket"]}/{urllib.parse.quote(as_name)}', raw=data, kind='application/octet-stream')
         print(f'  uploaded {as_name} ({len(data):,} bytes)')
     call('PUT', f'/deposit/depositions/{number_on_zenodo}', {'metadata': metadata(front)})
-    print('  facts set: title, authors, abstract, date, license, journal, community')
+    print('  facts set: title, authors, abstract, date, license, journal')
     print(f'Look at the draft before publishing it: {draft["links"].get("html", "")}')
 
 
@@ -194,7 +200,6 @@ def cmd_show(article: pathlib.Path) -> None:
     print(f'  authors: {"; ".join(c.get("name", "") + (" (" + c["orcid"] + ")" if c.get("orcid") else "") for c in meta.get("creators", []))}')
     print(f'  date: {meta.get("publication_date", "")}   license: {meta.get("license", "")}   version: {meta.get("version", "")}')
     print(f'  journal: {meta.get("journal_title", "")} {meta.get("journal_volume", "")}, {meta.get("journal_pages", "")}')
-    print(f'  communities: {", ".join(c.get("identifier", "") for c in meta.get("communities", []))}')
     print(f'  doi: {meta.get("prereserve_doi", {}).get("doi", "")}   all versions: {PREFIX}{draft.get("conceptrecid", "")}')
     for entry in draft.get('files', []):
         print(f'  file: {entry["filename"]} ({entry["filesize"]:,} bytes)')
@@ -212,6 +217,16 @@ def cmd_publish(article: pathlib.Path) -> None:
     print(f'Published: https://doi.org/{done.get("doi", "")}')
     print(f'  all versions: https://doi.org/{done.get("conceptdoi", "")}')
     print(f'  record: {done.get("links", {}).get("record_html", done.get("links", {}).get("html", ""))}')
+    # The record joins the journal's community after it is published. An owner or curator of
+    # the community is taken in at once; anyone else's request waits for one of them.
+    community = journal()['zenodo_community']
+    asked = call('POST', f'/records/{number_on_zenodo}/communities', {'communities': [{'id': community}]}, fatal=False)
+    if asked.get('_error'):
+        print(f'  community: not added ({asked["_error"]}). Add the record to "{community}" on its Zenodo page: Communities, Submit to community.')
+    else:
+        waiting = [str(item.get('request_id', '')) for item in asked.get('processed', []) if item.get('request_id')]
+        refused = asked.get('errors') or []
+        print(f'  community: {community}' + (f', request {", ".join(waiting)}' if waiting else '') + (f'; {refused}' if refused else ''))
 
 
 def main() -> None:

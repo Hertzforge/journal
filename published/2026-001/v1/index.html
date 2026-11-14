@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="en" data-register="reading"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Is a Good Multi-Shaker Test? A Proposed Practice for Judging MIMO Vibration and Shock Tests on Flexible Articles | Hertzforge Journal</title>
+<meta name="description" content="A single-shaker vibration test is accepted when one control accelerometer follows its target spectrum, which says little about what the article itself experienced. For tests with several shakers there is no agreed way to judge a test at all, and the standards say so. This article proposes one....">
+<link rel="canonical" href="https://hertzforge.com/journal/2026-001/v1/">
+<meta name="citation_title" content="What Is a Good Multi-Shaker Test? A Proposed Practice for Judging MIMO Vibration and Shock Tests on Flexible Articles">
+<meta name="citation_author" content="Kevin Cross">
+<meta name="citation_author" content="Brandon Zwink">
+<meta name="citation_publication_date" content="2026/11/14">
+<meta name="citation_journal_title" content="Hertzforge Journal">
+<meta name="citation_volume" content="1">
+<meta name="citation_firstpage" content="2026-001">
+<meta name="citation_doi" content="10.5281/zenodo.24235533">
+<meta name="citation_pdf_url" content="https://hertzforge.com/journal/2026-001/v1/2026-001-v1.pdf">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Hertzforge Journal">
+<meta property="og:url" content="https://hertzforge.com/journal/2026-001/v1/">
+<meta property="og:title" content="What Is a Good Multi-Shaker Test? A Proposed Practice for Judging MIMO Vibration and Shock Tests on Flexible Articles">
+<meta property="og:description" content="A single-shaker vibration test is accepted when one control accelerometer follows its target spectrum, which says little about what the article itself experienced. For tests with several shakers there is no agreed way to judge a test at all, and the standards say so. This article proposes one....">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/article.css">
+<script>(function(){var r=document.documentElement;r.classList.add('js');try{var s=localStorage.getItem('hf-theme');if(s==='light'||s==='dark')r.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="/" aria-label="Hertzforge, home"><svg class="brand-mark" viewbox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6"></rect><path d="M4 16h4l3-8 4 16 4-12 3 6 2-2h4"></path></svg><span class="wordmark"><span class="w-hertz">HERTZ</span><span class="w-forge">FORGE</span></span></a><button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Menu</span><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button><nav class="site-nav" id="site-nav" aria-label="Main"><ul><li><a href="/documentation/">Documentation</a></li><li><a href="/learn/">Learn</a></li><li><a href="/reference/">Reference</a></li><li><a href="/benchmarks/">Benchmarks</a></li><li><a href="/journal/" aria-current="page">Journal</a></li><li><a href="/community/">Community</a></li><li><a href="/about/">About</a></li></ul><div class="nav-actions"><a class="icon-btn" href="/search/" aria-label="Search the site"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.500 4a6.500 6.500 0 1 0 0 13 6.500 6.500 0 0 0 0-13Zm5 11.500L20 20"></path></svg></a><button class="icon-btn theme-toggle" type="button" aria-label="Switch between light and dark reading"><svg class="i-moon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.500A8 8 0 0 1 9.500 4a8 8 0 1 0 10.500 10.500Z"></path></svg><svg class="i-sun" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0-5v2m0 14v2M3 12h2m14 0h2M5.600 5.600 7 7m10 10 1.400 1.400M5.600 18.400 7 17M17 7l1.400-1.400"></path></svg></button><a class="icon-btn" href="https://github.com/Hertzforge/Hertzforge" aria-label="Hertzforge on GitHub"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 7 4 12l5 5m6-10 5 5-5 5"></path></svg></a><a class="btn btn-primary btn-sm" href="/download/"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"></path></svg>Download</a></div></nav></div></header>
+
+<main id="main" data-pagefind-body="">
+<article class="hf-article" data-id="2026-001" data-version="1" data-record="../record.json">
+<div class="hf-status dark" id="hf-status" data-status="review-open"><div class="wrap"><span class="hf-status-mark" aria-hidden="true"><svg data-for="review-open" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"></circle></svg><svg data-for="reviewed" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M8 12.4l2.7 2.7L16 9.6"></path></svg><svg data-for="retracted" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M6 18L18 6"></path></svg></span><strong class="hf-status-name">Review open</strong><span class="hf-status-text">Published; reviews and comments are welcome.</span> <span class="hf-status-asof">As of 2026-11-14, when this version was published; the status now is at <a href="https://hertzforge.com/journal/2026-001/">hertzforge.com/journal/2026-001/</a>.</span><a class="hf-status-link" href="#hf-reviews">Reviews</a></div></div>
+<div class="page-head dark"><div class="wrap"><p class="eyebrow">Hertzforge Journal</p><h1 class="steel">What Is a Good Multi-Shaker Test? A Proposed Practice for Judging MIMO Vibration and Shock Tests on Flexible Articles</h1><p class="hf-kind" id="hf-type"><span class="tag tag-strong">Proposed Standard</span></p><ul class="hf-authors" id="hf-authors"><li><span class="hf-author-name">Kevin Cross</span> <a class="hf-orcid" href="https://orcid.org/0009-0002-6608-9426" rel="noopener">ORCID 0009-0002-6608-9426</a></li><li><span class="hf-author-name">Brandon Zwink</span> <a class="hf-orcid" href="https://orcid.org/0000-0003-1341-2293" rel="noopener">ORCID 0000-0003-1341-2293</a></li></ul><p class="hf-editors-note">The authors of this article are the journal's editors. Its reviewers are drawn from outside the author list.</p><p class="hf-evidence" id="hf-evidence"><span class="tag">Evidence</span><strong>Simulator.</strong> Published sources, and simulations of one family of linear frame models with idealized control (Section 4.1). No hardware tests.</p></div><svg class="trace" viewbox="0 0 1200 100" preserveaspectratio="none" aria-hidden="true" focusable="false"><path class="trace-glow" d="M0 50.0L3 49.1L6 48.3L9 47.7L12 47.4L15 47.6L18 48.2L21 49.3L24 50.6L27 52.0L30 53.3L33 54.0L36 54.1L39 53.5L42 52.1L45 50.2L48 48.0L51 45.9L54 44.3L57 43.6L60 44.0L63 45.5L66 48.1L69 51.2L72 54.5L75 57.3L78 59.1L81 59.3L84 57.9L87 54.9L90 50.7L93 46.0L96 41.6L99 38.3L102 36.8L105 37.6L108 40.7L111 45.7L114 51.9L117 58.3L120 63.7L123 67.0L126 67.6L129 65.0L132 59.5L135 52.0L138 43.6L141 35.7L144 29.9L147 27.3L150 28.6L153 33.8L156 42.1L159 52.3L162 62.7L165 71.4L168 76.7L171 77.6L174 73.7L177 65.4L180 54.0L183 41.4L186 29.8L189 21.3L192 17.5L195 19.2L198 26.4L201 38.0L204 52.1L207 66.2L210 77.9L213 85.0L216 86.3L219 81.2L222 70.6L225 56.3L228 40.5L231 26.2L234 15.7L237 11.0L240 13.0L243 21.5L246 34.9L249 51.0L252 67.1L255 80.3L258 88.3L261 89.7L264 84.3L267 73.1L270 57.9L273 41.4L276 26.6L279 15.8L282 11.1L285 13.0L288 21.2L291 34.2L294 49.7L297 65.0L300 77.4L303 84.9L306 86.3L309 81.5L312 71.4L315 58.1L318 43.7L321 30.8L324 21.6L327 17.5L330 19.1L333 25.8L336 36.3L339 48.8L342 60.9L345 70.7L348 76.5L351 77.6L354 74.1L357 66.6L360 56.7L363 46.2L366 36.9L369 30.3L372 27.4L375 28.5L378 33.0L381 40.2L384 48.5L387 56.6L390 63.0L393 66.8L396 67.6L399 65.3L402 60.7L405 54.6L408 48.2L411 42.6L414 38.6L417 36.9L420 37.5L423 40.1L426 44.1L429 48.8L432 53.3L435 56.8L438 58.9L441 59.3L444 58.2L447 55.8L450 52.6L453 49.4L456 46.5L459 44.5L462 43.6L465 43.9L468 45.2L471 47.1L474 49.3L477 51.4L480 53.0L483 54.0L486 54.2L489 53.7L492 52.6L495 51.2L498 49.8L501 48.6L504 47.8L507 47.4L510 47.5L513 48.0L516 48.7L519 49.6L522 50.5L525 51.2L528 51.6L531 51.7L534 51.5L537 51.1L540 50.6L543 50.0L546 49.4L549 49.0L552 48.8L555 48.7L558 48.9L561 49.3L564 49.7L567 50.3L570 50.7L573 51.1L576 51.3L579 51.3L582 51.1L585 50.6L588 50.0L591 49.4L594 48.7L597 48.3L600 48.1L603 48.2L606 48.7L609 49.5L612 50.4L615 51.5L618 52.4L621 52.9L624 53.0L627 52.6L630 51.6L633 50.2L636 48.6L639 47.0L642 45.8L645 45.3L648 45.5L651 46.6L654 48.5L657 50.8L660 53.3L663 55.4L666 56.7L669 56.9L672 55.9L675 53.7L678 50.7L681 47.2L684 44.1L687 41.7L690 40.7L693 41.2L696 43.4L699 46.9L702 51.2L705 55.5L708 59.1L711 61.2L714 61.5L717 59.8L720 56.2L723 51.4L726 46.2L729 41.5L732 38.1L735 36.7L738 37.6L741 40.7L744 45.4L747 51.1L750 56.6L753 61.0L756 63.6L759 63.8L762 61.6L765 57.5L768 52.0L771 46.3L774 41.3L777 37.8L780 36.5L783 37.5L786 40.6L789 45.2L792 50.6L795 55.6L798 59.6L801 61.7L804 61.8L807 59.9L810 56.4L813 52.0L816 47.5L819 43.6L822 41.1L825 40.2L828 41.0L831 43.2L834 46.5L837 50.1L840 53.4L843 55.9L846 57.2L849 57.2L852 56.0L855 53.9L858 51.3L861 48.8L864 46.7L867 45.3L870 44.9L873 45.3L876 46.5L879 48.2L882 49.9L885 51.5L888 52.6L891 53.2L894 53.2L897 52.6L900 51.7L903 50.6L906 49.6L909 48.8L912 48.3L915 48.1L918 48.3L921 48.7L924 49.3L927 49.9L930 50.5L933 50.8L936 51.0L939 51.0L942 50.8L945 50.5L948 50.2L951 49.9L954 49.7L957 49.5L960 49.5L963 49.5L966 49.7L969 49.8L972 50.0L975 50.1L978 50.2L981 50.2L984 50.2L987 50.2L990 50.1L993 50.0L996 50.0L999 49.9L1002 49.9L1005 49.9L1008 49.9L1011 49.9L1014 50.0L1017 50.0L1020 50.0L1023 50.0L1026 50.0L1029 50.0L1032 50.0L1035 50.0L1038 50.0L1041 50.0L1044 50.0L1047 50.0L1050 50.0L1053 50.0L1056 50.0L1059 50.0L1062 50.0L1065 50.0L1068 50.0L1071 50.0L1074 50.0L1077 50.0L1080 50.0L1083 50.0L1086 50.0L1089 50.0L1092 50.0L1095 50.0L1098 50.0L1101 50.0L1104 50.0L1107 50.0L1110 50.0L1113 50.0L1116 50.0L1119 50.0L1122 50.0L1125 50.0L1128 50.0L1131 50.0L1134 50.0L1137 50.0L1140 50.0L1143 50.0L1146 50.0L1149 50.0L1152 50.0L1155 50.0L1158 50.0L1161 50.0L1164 50.0L1167 50.0L1170 50.0L1173 50.0L1176 50.0L1179 50.0L1182 50.0L1185 50.0L1188 50.0L1191 50.0L1194 50.0L1197 50.0L1200 50.0"></path><path class="trace-line" d="M0 50.0L3 49.1L6 48.3L9 47.7L12 47.4L15 47.6L18 48.2L21 49.3L24 50.6L27 52.0L30 53.3L33 54.0L36 54.1L39 53.5L42 52.1L45 50.2L48 48.0L51 45.9L54 44.3L57 43.6L60 44.0L63 45.5L66 48.1L69 51.2L72 54.5L75 57.3L78 59.1L81 59.3L84 57.9L87 54.9L90 50.7L93 46.0L96 41.6L99 38.3L102 36.8L105 37.6L108 40.7L111 45.7L114 51.9L117 58.3L120 63.7L123 67.0L126 67.6L129 65.0L132 59.5L135 52.0L138 43.6L141 35.7L144 29.9L147 27.3L150 28.6L153 33.8L156 42.1L159 52.3L162 62.7L165 71.4L168 76.7L171 77.6L174 73.7L177 65.4L180 54.0L183 41.4L186 29.8L189 21.3L192 17.5L195 19.2L198 26.4L201 38.0L204 52.1L207 66.2L210 77.9L213 85.0L216 86.3L219 81.2L222 70.6L225 56.3L228 40.5L231 26.2L234 15.7L237 11.0L240 13.0L243 21.5L246 34.9L249 51.0L252 67.1L255 80.3L258 88.3L261 89.7L264 84.3L267 73.1L270 57.9L273 41.4L276 26.6L279 15.8L282 11.1L285 13.0L288 21.2L291 34.2L294 49.7L297 65.0L300 77.4L303 84.9L306 86.3L309 81.5L312 71.4L315 58.1L318 43.7L321 30.8L324 21.6L327 17.5L330 19.1L333 25.8L336 36.3L339 48.8L342 60.9L345 70.7L348 76.5L351 77.6L354 74.1L357 66.6L360 56.7L363 46.2L366 36.9L369 30.3L372 27.4L375 28.5L378 33.0L381 40.2L384 48.5L387 56.6L390 63.0L393 66.8L396 67.6L399 65.3L402 60.7L405 54.6L408 48.2L411 42.6L414 38.6L417 36.9L420 37.5L423 40.1L426 44.1L429 48.8L432 53.3L435 56.8L438 58.9L441 59.3L444 58.2L447 55.8L450 52.6L453 49.4L456 46.5L459 44.5L462 43.6L465 43.9L468 45.2L471 47.1L474 49.3L477 51.4L480 53.0L483 54.0L486 54.2L489 53.7L492 52.6L495 51.2L498 49.8L501 48.6L504 47.8L507 47.4L510 47.5L513 48.0L516 48.7L519 49.6L522 50.5L525 51.2L528 51.6L531 51.7L534 51.5L537 51.1L540 50.6L543 50.0L546 49.4L549 49.0L552 48.8L555 48.7L558 48.9L561 49.3L564 49.7L567 50.3L570 50.7L573 51.1L576 51.3L579 51.3L582 51.1L585 50.6L588 50.0L591 49.4L594 48.7L597 48.3L600 48.1L603 48.2L606 48.7L609 49.5L612 50.4L615 51.5L618 52.4L621 52.9L624 53.0L627 52.6L630 51.6L633 50.2L636 48.6L639 47.0L642 45.8L645 45.3L648 45.5L651 46.6L654 48.5L657 50.8L660 53.3L663 55.4L666 56.7L669 56.9L672 55.9L675 53.7L678 50.7L681 47.2L684 44.1L687 41.7L690 40.7L693 41.2L696 43.4L699 46.9L702 51.2L705 55.5L708 59.1L711 61.2L714 61.5L717 59.8L720 56.2L723 51.4L726 46.2L729 41.5L732 38.1L735 36.7L738 37.6L741 40.7L744 45.4L747 51.1L750 56.6L753 61.0L756 63.6L759 63.8L762 61.6L765 57.5L768 52.0L771 46.3L774 41.3L777 37.8L780 36.5L783 37.5L786 40.6L789 45.2L792 50.6L795 55.6L798 59.6L801 61.7L804 61.8L807 59.9L810 56.4L813 52.0L816 47.5L819 43.6L822 41.1L825 40.2L828 41.0L831 43.2L834 46.5L837 50.1L840 53.4L843 55.9L846 57.2L849 57.2L852 56.0L855 53.9L858 51.3L861 48.8L864 46.7L867 45.3L870 44.9L873 45.3L876 46.5L879 48.2L882 49.9L885 51.5L888 52.6L891 53.2L894 53.2L897 52.6L900 51.7L903 50.6L906 49.6L909 48.8L912 48.3L915 48.1L918 48.3L921 48.7L924 49.3L927 49.9L930 50.5L933 50.8L936 51.0L939 51.0L942 50.8L945 50.5L948 50.2L951 49.9L954 49.7L957 49.5L960 49.5L963 49.5L966 49.7L969 49.8L972 50.0L975 50.1L978 50.2L981 50.2L984 50.2L987 50.2L990 50.1L993 50.0L996 50.0L999 49.9L1002 49.9L1005 49.9L1008 49.9L1011 49.9L1014 50.0L1017 50.0L1020 50.0L1023 50.0L1026 50.0L1029 50.0L1032 50.0L1035 50.0L1038 50.0L1041 50.0L1044 50.0L1047 50.0L1050 50.0L1053 50.0L1056 50.0L1059 50.0L1062 50.0L1065 50.0L1068 50.0L1071 50.0L1074 50.0L1077 50.0L1080 50.0L1083 50.0L1086 50.0L1089 50.0L1092 50.0L1095 50.0L1098 50.0L1101 50.0L1104 50.0L1107 50.0L1110 50.0L1113 50.0L1116 50.0L1119 50.0L1122 50.0L1125 50.0L1128 50.0L1131 50.0L1134 50.0L1137 50.0L1140 50.0L1143 50.0L1146 50.0L1149 50.0L1152 50.0L1155 50.0L1158 50.0L1161 50.0L1164 50.0L1167 50.0L1170 50.0L1173 50.0L1176 50.0L1179 50.0L1182 50.0L1185 50.0L1188 50.0L1191 50.0L1194 50.0L1197 50.0L1200 50.0"></path></svg></div>
+<div class="page-body"><div class="wrap"><div class="prose hf-prose">
+<section class="hf-meta" aria-label="About this version">
+<div class="hf-panel hf-version" id="hf-version"><h2 class="hf-label">Version</h2><p class="hf-version-line"><span><strong>Version 1</strong>, published 2026-11-14. First published 2026-11-14.</span><label class="hf-select-label" for="hf-version-select" id="hf-version-select-slot" hidden=""></label></p><p class="hf-note">Change note: First published. <a href="#version-history">Version history</a></p><p class="hf-versions">Versions: <strong>1 (this version)</strong>. Any later version is listed at <a href="../">the article's address</a>.</p><div class="note hf-notlatest" hidden=""></div></div>
+<div class="hf-panel" id="hf-doi"><h2 class="hf-label">Identifiers</h2><dl class="hf-ids"><dt>DOI of this version</dt><dd><a href="https://doi.org/10.5281/zenodo.24235533" rel="noopener">10.5281/zenodo.24235533</a></dd><dt>DOI that always gives the latest version</dt><dd><a href="https://doi.org/10.5281/zenodo.24235532" rel="noopener">10.5281/zenodo.24235532</a></dd></dl></div>
+<div class="hf-panel hf-cite" id="hf-cite"><h2 class="hf-label">Cite This Version</h2><p class="hf-citation">Cross, K., and Zwink, B. (2026). What Is a Good Multi-Shaker Test? A Proposed Practice for Judging MIMO Vibration and Shock Tests on Flexible Articles. <em>Hertzforge Journal</em> 1, <span class="hf-nowrap">2026-001</span>, version 1. <a href="https://doi.org/10.5281/zenodo.24235533" rel="noopener">https://doi.org/10.5281/zenodo.24235533</a></p><p class="hf-cite-files"><a class="btn btn-ghost btn-sm" href="2026-001-v1.bib" download="2026-001-v1.bib">BibTeX</a><a class="btn btn-ghost btn-sm" href="2026-001-v1.ris" download="2026-001-v1.ris">RIS</a></p><details><summary>Show the BibTeX entry</summary><pre><code>@article{cross2026hf2026001v1,
+  author = {Cross, Kevin and Zwink, Brandon},
+  title = {{What Is a Good Multi-Shaker Test? A Proposed Practice for Judging MIMO Vibration and Shock Tests on Flexible Articles}},
+  journal = {Hertzforge Journal},
+  year = {2026},
+  volume = {1},
+  number = {2026-001},
+  note = {Version 1},
+  doi = {10.5281/zenodo.24235533},
+  url = {https://hertzforge.com/journal/2026-001/v1/}
+}
+</code></pre></details></div>
+<div class="hf-downloads" id="hf-downloads"><h2 class="hf-label">Downloads</h2><ul class="dl"><li><a href="2026-001-v1.html" download="2026-001-v1.html">The Article in One File</a><span class="size">5.9 MB</span><span class="d">Opens without a network connection. It asks nothing of any server, so it can be carried onto a closed network.</span></li><li><a href="2026-001-v1.pdf" download="2026-001-v1.pdf">PDF Print Copy</a><span class="size">1.9 MB</span><span class="d">Static figures, from the same source as this page.</span></li><li><a href="2026-001-v1-bundle.zip" download="2026-001-v1-bundle.zip">Data and Code Bundle</a><span class="size">999 kB</span><span class="d">The data behind every figure and the code that draws it, with what is needed to run it again.</span></li></ul></div>
+</section>
+<nav class="hf-contents" id="hf-contents" aria-label="Contents">
+<details>
+<summary>Contents</summary>
+<ul>
+<li><a href="#summary" id="toc-summary">Summary</a></li>
+<li><a href="#the-problem" id="toc-the-problem">1. The Problem</a></li>
+<li><a href="#what-the-references-say" id="toc-what-the-references-say">2. What the References Say</a></li>
+<li><a href="#three-errors-not-one" id="toc-three-errors-not-one">3. Three Errors, Not One</a></li>
+<li><a href="#evidence-from-a-model-where-the-truth-is-known" id="toc-evidence-from-a-model-where-the-truth-is-known">4. Evidence From a Model Where the Truth Is Known</a>
+<ul>
+<li><a href="#the-test-model-and-its-limits" id="toc-the-test-model-and-its-limits">4.1 The Test Model and Its Limits</a></li>
+<li><a href="#an-exact-fit-is-the-failure" id="toc-an-exact-fit-is-the-failure">4.2 An Exact Fit Is the Failure</a></li>
+<li><a href="#what-tracks-the-truth" id="toc-what-tracks-the-truth">4.3 What Tracks the Truth</a></li>
+<li><a href="#the-floor-two-flights" id="toc-the-floor-two-flights">4.4 The Floor: Two Flights</a></li>
+<li><a href="#where-the-single-axis-over-test-comes-from" id="toc-where-the-single-axis-over-test-comes-from">4.5 Where the Single-Axis Over-Test Comes From</a></li>
+<li><a href="#line-control-band-control-and-a-wrong-model" id="toc-line-control-band-control-and-a-wrong-model">4.6 Line Control, Band Control and a Wrong Model</a></li>
+<li><a href="#modes" id="toc-modes">4.7 Modes</a></li>
+<li><a href="#shock-spectra" id="toc-shock-spectra">4.8 Shock Spectra</a></li>
+</ul></li>
+<li><a href="#the-proposed-practice-version-0.1" id="toc-the-proposed-practice-version-0.1">5. The Proposed Practice, Version 0.1</a>
+<ul>
+<li><a href="#the-report-card" id="toc-the-report-card">The Report Card</a></li>
+</ul></li>
+<li><a href="#what-to-hold-a-control-law-to" id="toc-what-to-hold-a-control-law-to">6. What To Hold a Control Law To</a></li>
+<li><a href="#what-did-not-hold" id="toc-what-did-not-hold">7. What Did Not Hold</a></li>
+<li><a href="#what-would-change-this-and-what-a-critic-would-say" id="toc-what-would-change-this-and-what-a-critic-would-say">8. What Would Change This, and What a Critic Would Say</a></li>
+<li><a href="#contribution-statement" id="toc-contribution-statement">Contribution Statement</a></li>
+<li><a href="#how-this-was-made" id="toc-how-this-was-made">How This Was Made</a></li>
+<li><a href="#acknowledgments" id="toc-acknowledgments">Acknowledgments</a></li>
+<li><a href="#references" id="toc-references">References</a></li>
+<li><a href="#implemented-in" id="toc-implemented-in">Implemented In</a></li>
+<li><a href="#version-history" id="toc-version-history">Version History</a></li>
+</ul>
+</details>
+</nav>
+<section id="abstract" class="unnumbered unlisted hf-abstract">
+<h2 class="unnumbered unlisted">Abstract</h2>
+<p>A single-shaker vibration test is accepted when one control accelerometer follows its target spectrum, which says little about what the article itself experienced. For tests with several shakers there is no agreed way to judge a test at all, and the standards say so. This article proposes one. Its starting point, seen in a published hardware test and in simulations where the stress in every part of the article is known, is that a small error at the control accelerometers does not mean a good test. A controller sets the shaker drives so that the control accelerometers read their targets. With as many shakers as controls it can make them read their targets almost exactly, whatever the rest of the article is doing: in the simulations it held every control within a tenth of a decibel of its target while stressing the article more than 10 dB above what it sees in service. Accelerometers left out of the control showed the problem; the controls did not. With fewer shakers than controls, the error left at the controls does follow how well the article is being tested. The proposals are to keep some accelerometers out of the control and use them to check the test; to report separately what the setup could reach, what the controller achieved and what the article saw; to hold the overall level tightly and the shape of the spectrum loosely; to compare spectra in frequency bands; to state the margin added where a test must not under-test; and to judge a controller by its safety and by whether it reaches what the setup can reach. The evidence is published work and simulations of one family of linear structures, with no new hardware tests; the proposed numbers are starting values, to be tried and revised.</p>
+</section>
+<h2 id="summary">Summary</h2>
+<p>A vibration test on a single shaker is judged by one accelerometer, the control, mounted on the fixture. If the control follows its target spectrum, the test is accepted. That says little about what the part itself experienced, and test engineers know it.</p>
+<p>Tests with several shakers, controlled from accelerometers on the article itself, were meant to fix this. They raise a question nobody has settled: what makes a multi-shaker test good? The standards say they do not have an answer.</p>
+<p>The usual answer is to look at the controls. If every control accelerometer is close to its target, the test is called good. Here the error at a point means how far the vibration measured there is from its target, in decibels. A controller adjusts the shaker drives until the control accelerometers read what they should. With as many shakers as control accelerometers, it can make them read almost exactly right, whatever the rest of the article is doing.</p>
+<p>In the simulations reported here, a controller with as many shakers as controls held every control accelerometer within a tenth of a decibel of its target, and the article was stressed more than 10 dB above what it sees in service. Nothing at the controls showed it. Accelerometers mounted on the article but left out of the control did show it. A hardware test published by Sandia National Laboratories found the same thing.</p>
+<p><strong>A small error at the control accelerometers does not mean a good test.</strong> With fewer shakers than controls, the controller cannot make every control exact, and the error left at the controls does follow how well the article is being tested. With as many shakers as controls, it does not.</p>
+<p>This article proposes a way to judge multi-shaker tests:</p>
+<ul>
+<li>keep some accelerometers out of the control and use them only to check the test;</li>
+<li>report separately what the setup could reach, what the controller achieved and what the article saw;</li>
+<li>hold the overall level tightly and the shape of the spectrum loosely;</li>
+<li>compare spectra in frequency bands rather than line by line;</li>
+<li>where a test must not under-test, state the margin added to make sure of it;</li>
+<li>judge a controller by whether it is safe and reaches what the setup can reach, not by how small it makes the error at the controls.</li>
+</ul>
+<p>The evidence is published work and computer simulations of one family of structures in which the stress in every part of the article is known. There are no new hardware tests. The numbers proposed are starting values, to be tried in Hertzforge and elsewhere and revised.</p>
+<h2 id="the-problem">1. The Problem</h2>
+<p>A single-axis specification is an envelope of measured or predicted responses with margin added. It is applied through a fixture that does not have the impedance of the next assembly, one axis at a time. The test is accepted when the control accelerometer, on the fixture, stays inside a band around the specification. Whether the part’s own response was above or below what it sees in service is rarely traced back. An over-response can be limited; an under-response passes unseen.</p>
+<p>Multi-shaker testing that controls on the article’s own responses, such as impedance-matched multi-axis testing (IMMAT, also called intrinsic connection excitation, ICE) and frame-style tests, removes several of these compromises and adds its own: coupling between shakers, cross terms that cannot all be matched, and local modes that put one gauge well over its target while the global motion is right. The habit carried over from single-axis practice is to ask that every control channel hold its spectrum, line by line. With more controls than shakers that cannot be met, and where it can be met it is the wrong thing to ask.</p>
+<p>The same habit governs shock. Control is kept on the table or fixture because the article’s dynamics make the loop hard to close, although the article’s dynamics are what the test is for.</p>
+<h2 id="what-the-references-say">2. What the References Say</h2>
+<p>The published standards are cited here as references. The practice proposed below departs from them where the evidence supports it.</p>
+<p><strong>Multi-exciter random.</strong> MIL-STD-810H Method 527.2 gives no tolerance in its main body: “The question of reasonable tolerances in a MET is not simple for either MET procedure” (paragraph 4.2.2), and metrics “will often need to be addressed on a test by test basis.” Annex E 5.2 offers “a reasonable starting point”: autospectra within 3 dB to 500 Hz and 6 dB above, each controlled degree of freedom within 15 percent in overall RMS, coherence within 0.1, phase within 10 degrees and unconstrained below a coherence of 0.5. Annex C defines energy-weighted global errors. No clause addresses a point that is not a control.</p>
+<p><strong>Single-axis random.</strong> MIL-STD-810H Method 514.8 holds the composite control to 3 dB below 500 Hz and 6 dB above, and under average control lets each individual channel range 6 dB below 500 Hz and 9 dB above (Table 514.8-II). SMC-S-016 allows control bandwidths to be combined when tolerance is judged.</p>
+<p><strong>Acoustic.</strong> Direct-field acoustic testing is multi-input control with many more microphones than drive groups. Control is narrowband, and acceptance is per one-third-octave band on the average of the control microphones: 3 dB per band and 1 to 1.5 dB overall (NASA-STD-7001B, SMC-S-016). NASA-HDBK-7010 states that the structural response “can differ significantly … even if the control microphones are kept within the test tolerances,” and answers with monitor microphones and article instrumentation.</p>
+<p><strong>Shock.</strong> MIL-STD-810H Method 516.8 and Method 517.3 (shaker procedure) ask -1.5/+3 dB on 90 percent of one-twelfth-octave points. For mechanical sources Method 517.3 asks -3/+6 dB on 80 to 90 percent of points; NASA-STD-7003A and SMC-S-016 ask 6 dB either way to 3 kHz and +9/-6 dB above. Method 517.3, NASA-STD-7003A, SMC-S-016 and ECSS-E-ST-10-03C each require at least half the points above nominal. Method 517.3 permits judging a zone by the average of its measurements, within stated bounds, and notes that “individual measurements may be substantially out of tolerance while the average is within tolerance.” Method 516.8 tolerances the effective duration at 0.8 to 1.2 of the reference.</p>
+<p><strong>Published multi-shaker tests.</strong> No published IMMAT (ICE) or frame test was found that states a numeric pass tolerance and reports compliance with it. Tests are judged by overlays, by one scalar, or by gauges held out of the control. Measures in use include the sum of the autospectra (Mayes and Rohe, 2016), the RMS decibel error over gauges and lines (Mayes and co-authors, 2019, who reached 1.9 dB over 14 field autospectra with four shakers) and one-sixth-octave decibel error statistics (Jacobs and co-authors, 2017). Rohe, Nelson and Schultz (Sandia National Laboratories, 2019) found that with as many shakers as control gauges the control error went to near zero while the error at two gauges held out of the control became worse than with a single shaker; the held-out error was lowest with about half as many shakers as controls. They concluded: “A smaller error on the control gauges does not necessarily mean a better test,” and “The error metric that determines a successful test likely needs further investigation.” Hale and co-authors call single-axis tolerances across all channels and cross spectra “simply not feasible.” Haynes, Thompson and Watts (Los Alamos National Laboratory): “Tolerancing guidelines for MIMO tests have not yet been established.”</p>
+<p><strong>How well the environment is known.</strong> NASA-HDBK-7005 (2001) puts flight-to-flight scatter at one point at 3 dB (one standard deviation) and spatial scatter within a zone at 5 to 6 dB. On one component, shock spectra 6 to 12 dB apart were measured across one square inch (Skousen and Soine, 2018). A fixed-base six-degree-of-freedom test of that component, with its controls held, was about 13 to 15 dB RMS from the service responses (Rohe and co-authors, 2019; the slides do not define the error measure). At a fatigue exponent of 8, 1 dB in level is a factor of 2.5 in damage.</p>
+<h2 id="three-errors-not-one">3. Three Errors, Not One</h2>
+<p>Two terms are used throughout. A <strong>rig</strong> is the article on its suspension or fixture with a given set of shakers and control gauges, as the controller sees it: the frequency response from each shaker’s force to each gauge’s acceleration. A <strong>control law</strong> is the rule by which the controller turns the targets and that frequency response into shaker drives.</p>
+<p>“Decibels off the target” answers three different questions at once.</p>
+<ol type="1">
+<li><strong>The rig.</strong> How close can this arrangement of shakers, fixture, boundary condition and article come to the target at all? This is fixed before a control law runs and can be predicted from the rig’s measured frequency response. Call the predicted best the achievable response, and its distance from the target the <strong>declared deviation</strong>.</li>
+<li><strong>The law.</strong> How close did the control law come to the achievable response, how fast, and what did it do on the way? This is the <strong>law error</strong>.</li>
+<li><strong>The article.</strong> Did the article see the damage-relevant state it sees in service? This is the <strong>fidelity error</strong>.</li>
+</ol>
+<p>A law should be held to the second. A test report should state all three. The controller computes its drives so that the control gauges match their targets, so the error left at the controls is the error of that fit, measured on the gauges it was fitted to. When the fit is exact the first two errors are zero by construction and say nothing about the third.</p>
+<h2 id="evidence-from-a-model-where-the-truth-is-known">4. Evidence From a Model Where the Truth Is Known</h2>
+<h3 id="the-test-model-and-its-limits">4.1 The Test Model and Its Limits</h3>
+<p>The studies used one family of models, each member generated from a seed number. Every seed gives a different chassis, set of components, host frame, set of service loads and lab rig. Seed 0 is shown in Figures 1 to 4. The CAD model of seed 0, built from the same geometry, is in <code>data/cad/</code> (STEP files of the article alone, the article on its host frame, and the article on its suspension with six shakers).</p>
+<div class="hf-figure hf-figure-given" data-figure="fig1_model_views">
+<img class="hf-static" src="figures/fig1_model_views.png" alt="Three shaded views of the seed 0 CAD model. Left: the test article alone, a rectangular box of square aluminum tubes about 616 by 382 by 272 mm with two long rails and three cross members in each of the top and bottom frames joined by four corner posts; three dark steel blocks stand for the lumped masses, and four short tubes carry small blocks at their ends, the components with their tip masses, marked with orange triangles; open black squares mark the four mount points at the bottom corners. Middle: the article bolted at its four mounts to a larger flat grid frame of tan tubes carrying five lumped masses; nine orange stars on the host frame mark where the service forces act and two pink crosses on the article mark the two weaker forces applied to it directly. Right: the article on four thin suspension cords at its mounts, with six blue cylindrical shaker bodies, each with a stinger and a black arrow showing its force direction; blue filled circles mark the control gauge points, open orange diamonds the held-out gauge points and orange triangles the component tips.">
+<p class="hf-figure-links">This figure: <a href="figures/fig1_model_views.png" download="fig1_model_views.png">Picture (PNG)</a></p>
+</div>
+<p><strong>Figure 1.</strong> The test model, seed 0, rendered from the CAD model. (a) The test article. (b) In service: bolted at its four mounts to the host frame, which carries the service loads. (c) In the lab: on a soft suspension, with 6 shakers, 12 control channels and 12 held-out channels. The host frame is drawn 60 mm below the article for clarity; in the model the mounts join directly. Shaker bodies, pads and cords show position and direction only. Data: <code>data/model_nodes.csv</code>, <code>data/model_elements.csv</code>, <code>data/model_rig.csv</code>, <code>data/model_service_forces.csv</code>; code: <code>code/extract_model.py</code> (writes the data from the study’s model), <code>code/cad_frame_model.py</code> (builds the CAD model with build123d, exports the STEP files and draws the figure).</p>
+<h4 id="the-article">The Article</h4>
+<p>The article is a box chassis of square aluminum tube (Young’s modulus 69 GPa, density 2,700 kg/m3, Poisson’s ratio 0.33), about 0.6 m long, 0.4 m wide and 0.3 m tall, each dimension varied by up to 10 percent from seed to seed. The top and bottom frames each have two long rails and three cross members, at the ends and the middle, and four corner posts join them. The tubes are 20 to 30 mm square with walls of 1.5 to 2.5 mm; the posts are up to 20 percent narrower with a 2 mm wall. Seed 0 measures 616 by 382 by 272 mm, with 20.2 mm tube of 2.3 mm wall and 19.8 mm posts of 2.0 mm wall.</p>
+<p>Three to five components are attached at chassis nodes. Each is a cantilevered square tube 60 to 140 mm long, pointing outward from a side or the top of the chassis, or hanging below the middle of a bottom cross member, with a tip mass of 0.05 to 0.3 kg. Each component’s tube is sized so that its first bending mode falls at a frequency drawn between 80 and 800 Hz. Seed 0 has four components, with first modes designed at 81, 86, 524 and 576 Hz and tip masses of 0.24, 0.09, 0.06 and 0.16 kg. Two to four lumped masses of 0.3 to 1.5 kg sit at other chassis nodes and stand for boxes bolted to the chassis; seed 0 has three, of 1.5, 1.1 and 1.1 kg. Seed 0 weighs 6.8 kg; the median over seeds is about 5 kg.</p>
+<p>The model is built from beam elements with six degrees of freedom per node: 66 nodes and 72 elements for seed 0. Stress is computed at the four corners of the tube section at both ends of every element, and an element’s stress is the worst of those eight points. The model reproduces closed-form results for a cantilever (first two frequencies, tip deflection and root stress) to within 0.01 percent.</p>
+<p>Damping is modal and depends on frequency. A damping value is drawn for each one-twelfth-octave band, with a median of 1.5 percent of critical and a log-normal spread, limited to 0.3 to 8 percent, and each mode takes the value of the band it falls in. A unit keeps its damping in every configuration, in service, in the lab and on a rigid base.</p>
+<h4 id="service-mounting-and-loads">Service Mounting and Loads</h4>
+<p>In service the article is bolted at the four bottom corners of its chassis to a host frame: a flat grid 1.6 by 1.0 m of 50 mm square tube with a 3 mm wall, carrying four to six lumped masses of 2 to 10 kg (seed 0: five, 43.8 kg for the whole host frame). Each mount is a stiff spring (10^8 N/m) in each of the three translations. The host frame and article float free together; nothing holds them to ground.</p>
+<p>The random service loads are 8 to 12 forces on the host frame at random points and in random directions (seed 0: nine), and two weaker forces on the article chassis itself at 15 percent of the host force amplitude. The host forces are built from six independent random sources. Each source has a smooth spectrum with a random slope and up to three broad humps between 20 Hz and 2 kHz. Each force is a random mix of the sources with random time delays of up to 1.5 ms, so the forces are partly correlated and the correlation changes with frequency. For seed 0 the coherence between pairs of host forces has a median of 0.09, and 80 percent of values lie between 0.01 and 0.40. The article is therefore loaded mostly through its mounts, by motion that differs from mount to mount. The analysis band is 20 to 2000 Hz in lines 0.5 Hz apart.</p>
+<p>The shock service loads are two or three force pulses on the host frame (half-sines of 0.2 to 1 ms, or decaying bursts at 200 to 1500 Hz) at random points, in random directions and with delays of up to 3 ms. Each pulse is followed 2 to 8 ms later by an equal and opposite pulse, so that the free host frame and article are not left drifting. The effective duration of the service shock at the article’s gauges is 9 to 89 ms, with a median of 22 ms (seed 0). Responses are computed at 20,480 samples per second over a 2 s record, and shock response spectra at Q = 10 on a one-twelfth-octave grid from 10 Hz to 2 kHz.</p>
+<h4 id="two-units">Two Units</h4>
+<p>The targets come from one unit of the article in service, unit A. The lab tests a second unit, unit B, of the same design. Unit B differs from unit A in the stiffness of every element and the mass at every component tip, each scaled by a random factor of about 3 percent per step, and in its damping. The random study ran three steps: none (the lab unit is the service unit), one step (about 3 percent) and two steps (about 6 percent). The shock study ran the first two. A perfect test of unit B therefore does not match the targets exactly, as with a real article tested to service data measured on another serial number.</p>
+<h4 id="natural-frequencies">Natural Frequencies</h4>
+<div class="table-wrap" style="--cols: 9">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Order</th>
+<th>Free on lab suspension</th>
+<th></th>
+<th></th>
+<th>Mounted in service</th>
+<th></th>
+<th></th>
+<th>On a rigid base</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>Hz</td>
+<td>Damping, %</td>
+<td>Energy in components</td>
+<td>Hz</td>
+<td>Damping, %</td>
+<td>Mass in article</td>
+<td>Hz</td>
+<td>Damping, %</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>73.8</td>
+<td>3.7</td>
+<td>0.62</td>
+<td>40.3</td>
+<td>0.56</td>
+<td>0.08</td>
+<td>48.0</td>
+<td>2.53</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>76.4</td>
+<td>2.16</td>
+<td>0.83</td>
+<td>50.4</td>
+<td>2.53</td>
+<td>0.83</td>
+<td>51.4</td>
+<td>1.47</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>77.9</td>
+<td>2.16</td>
+<td>0.91</td>
+<td>53.3</td>
+<td>1.47</td>
+<td>0.81</td>
+<td>71.2</td>
+<td>2.12</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>82.6</td>
+<td>1.03</td>
+<td>0.85</td>
+<td>61.6</td>
+<td>1.26</td>
+<td>0.13</td>
+<td>78.6</td>
+<td>2.16</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>91.0</td>
+<td>2.81</td>
+<td>0.33</td>
+<td>71.4</td>
+<td>2.12</td>
+<td>0.95</td>
+<td>79.6</td>
+<td>2.16</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>93.3</td>
+<td>2.81</td>
+<td>0.18</td>
+<td>76.0</td>
+<td>3.7</td>
+<td>0.72</td>
+<td>82.3</td>
+<td>1.03</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>98.6</td>
+<td>2.39</td>
+<td>0.18</td>
+<td>79.7</td>
+<td>2.16</td>
+<td>0.99</td>
+<td>83.6</td>
+<td>1.03</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>117.0</td>
+<td>1.39</td>
+<td>0.08</td>
+<td>80.2</td>
+<td>2.16</td>
+<td>0.92</td>
+<td>93.4</td>
+<td>2.81</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The table gives the first eight flexible modes of unit B (seed 0, one step of difference) in the three configurations. “Energy in components” is the share of the mode’s kinetic energy carried by the component tubes and tip masses; “Mass in article” is the share of the mode’s modal mass that lies in the article rather than the host frame. Below 4 kHz the article has 122 modes free on its suspension (six of them rigid-body modes on the suspension, at 1.9 to 4.9 Hz), 255 with the host frame and 117 on a rigid base. Free in the lab, the lowest modes are the two light components (designed at 81 and 86 Hz) swinging on the chassis; the first mode carried mostly by the chassis is at 117 Hz. Bolted to the host frame or to a rigid base, the article’s lowest modes fall to about 50 Hz, and modes of the host frame with little motion in the article (40 and 62 Hz) fall among them. The damping of a mode is set by its frequency, so the same values recur across the three configurations.</p>
+<div class="hf-figure hf-figure-given" data-figure="fig2_mode_shapes">
+<img class="hf-static" src="figures/fig2_mode_shapes.png" alt="Four line drawings of the article's mode shapes, free on its lab suspension. Each shows the undeformed frame as a gray dotted line, the deformed chassis in solid blue and the deformed component tubes in thick dashed orange. Mode 7 at 74 Hz, a component mode with 62 percent of its energy in the components: two of the top components swing while the chassis barely moves. Mode 14 at 117 Hz, a chassis mode with 8 percent in the components: the top frame twists and the posts lean. Mode 16 at 159 Hz, a chassis mode with 4 percent in the components: the frame bends and twists more strongly. Mode 30 at 408 Hz, a component mode with 68 percent in the components: one component moves while the chassis is nearly still.">
+<p class="hf-figure-links">This figure: <a href="code/fig2_mode_shapes.py" download="fig2_mode_shapes.py">Code</a> <a href="figures/fig2_mode_shapes.png" download="fig2_mode_shapes.png">Picture (PNG)</a></p>
+</div>
+<p><strong>Figure 2.</strong> Four modes of unit B free on its lab suspension, seed 0: the first flexible mode, the first two modes carried mostly by the chassis, and the first component mode above 300 Hz. The largest translation is drawn as 80 mm. Data: <code>data/model_mode_shapes.csv</code>, <code>data/model_modes.csv</code>, <code>data/model_nodes.csv</code>, <code>data/model_elements.csv</code>; code: <code>code/fig2_mode_shapes.py</code>.</p>
+<h4 id="targets">Targets</h4>
+<p>For random tests the target at each control channel is unit A’s response there in service. The line law is given the full set of target spectra line by line: the autospectrum at every control and the cross spectrum, with its phase and coherence, between every pair. The band law is given only the autospectra, averaged in one-third-octave (or one-sixth-octave) bands. For shock, waveform control is given unit A’s service time histories at the controls; the other shock methods are given their shock response spectra.</p>
+<h4 id="the-lab-setup">The Lab Setup</h4>
+<p>In the lab, unit B hangs on a soft suspension at its four mounts, with its rigid-body modes near 3 Hz. The shakers are ideal point forces acting along X, Y or Z at chassis nodes, with no shaker or stinger dynamics of their own. Nine rigs were run per seed: 3, 6 or 12 shakers with 6, 12 or 24 control channels.</p>
+<ul>
+<li><strong>Held-out gauges:</strong> 12 channels, three axes at each of four chassis points drawn at random (never a component base). They are never controlled and are the same for every rig of a seed.</li>
+<li><strong>Control gauges:</strong> chosen from the remaining chassis channels, component bases included and component tips never, by Effective Independence, a standard sensor-placement method that keeps the channels that best tell apart the first 6, 12 or 24 modes of the nominal article on its suspension. For seed 0 the 12 controls sit at 9 points; the 24 at 19 points, three of them component bases.</li>
+<li><strong>Shakers:</strong> placed one at a time on chassis channels. The first goes where its average response at the controls is largest; each next one goes where it best keeps the shakers able to move the controls in independent ways, judged by the ratio of the strongest to the weakest way the shakers can move the controls, averaged over 40 frequencies. A shaker may sit at a control point.</li>
+<li><strong>Component tips:</strong> measured in three axes on every test and never controlled.</li>
+</ul>
+<p>Control is idealized and converged. Every law computes its drives from the true lab frequency response of unit B, with no measurement noise, no identification error and no closed loop, except where a wrong model is used on purpose (Section 4.6). The line law sets the drive at each line by inverting the rig’s frequency response, ignoring the weakest ways of moving the controls (those weaker than 1/1000 of the strongest). The band law uses one flat, correlated drive per one-third-octave band, set so the band-averaged control autospectra match the band-averaged targets.</p>
+<div class="hf-figure hf-figure-given" data-figure="fig3_example_spectra">
+<img class="hf-static" src="figures/fig3_example_spectra.png" alt="Four panels of acceleration spectra from 20 Hz to 2 kHz, in decibels relative to the target peak. Top row, 6 shakers and 12 controls; bottom row, 12 shakers and the same 12 controls. Left column, control gauge 25Z; right column, held-out gauge 17X. Each panel shows the target as a thin black solid line and the achieved response as a thin blue dashed line, line by line, with the one-third-octave band values as open black circles (target) and orange filled triangles (achieved). Top left: the achieved response follows the target closely, with band errors of 2.7 dB RMS. Bottom left: target and achieved lie on top of each other. Top right: the held-out gauge is off in both directions, 8.4 dB RMS. Bottom right: the held-out gauge runs well above its target between about 150 and 300 Hz, by up to 19 dB in a band.">
+<p class="hf-figure-links">This figure: <a href="code/fig3_example_spectra.py" download="fig3_example_spectra.py">Code</a> <a href="figures/fig3_example_spectra.png" download="fig3_example_spectra.png">Picture (PNG)</a></p>
+</div>
+<p><strong>Figure 3.</strong> Target against achieved acceleration spectra at one control gauge and one held-out gauge, line law, seed 0, one step of difference between units. With 12 shakers on 12 controls the control is matched exactly and the held-out gauge is not (Section 4.2). Panel titles give the one-third-octave band error at that gauge. Data: <code>data/model_example_spectra.csv</code>; code: <code>code/fig3_example_spectra.py</code>.</p>
+<h4 id="the-single-axis-comparison">The Single-Axis Comparison</h4>
+<p>For the single-axis comparison, unit B’s four mounts are fixed to a rigid base and driven in X, Y and Z in sequence, each axis for the service duration. The specification for each axis is formed as it usually is: the four mount spectra of unit A in service are averaged in one-third-octave bands, the highest of the four is taken in each band, and straight lines on log-log axes, with break points at 20, 40, 80, 160, 320, 640, 1280 and 2000 Hz, are fitted as low as they can go while staying above every band (Figure 4b). Fatigue damage is summed over the three axes; for RMS stress the worst axis counts. The sequence was run at the specification and at 3 dB above it. For shock, X, Y and Z shots each match the envelope of the four mount shock response spectra in that axis.</p>
+<div class="hf-figure hf-figure-given" data-figure="fig4_drive_and_single_axis">
+<img class="hf-static" src="figures/fig4_drive_and_single_axis.png" alt="Two panels. Left: the force spectra of the six shakers of the 6-shaker, 12-control test with the line law, from 20 Hz to 2 kHz, in decibels relative to the largest; each shaker has its own color and line style and is labeled with its node and axis (25 Z, 8 Z, 22 Z, 39 X, 52 Y, 47 Y). The drives rise and fall by 30 to 40 dB across the band, with sharp peaks and notches near the article's modes. Right: the single-axis vertical specification for seed 0, in decibels relative to its peak. Gray thin lines are the four mount spectra line by line; blue open circles, squares, diamonds and downward triangles are their one-third-octave band values; a green dotted line is the mean of the four mounts; a thick orange solid line is the straight-line envelope, which touches the highest band at several frequencies and lies well above the mean elsewhere.">
+<p class="hf-figure-links">This figure: <a href="code/fig4_drive_and_single_axis.py" download="fig4_drive_and_single_axis.py">Code</a> <a href="figures/fig4_drive_and_single_axis.png" download="fig4_drive_and_single_axis.png">Picture (PNG)</a></p>
+</div>
+<p><strong>Figure 4.</strong> (a) The drive force spectra of the 6-shaker, 12-control example of Figure 3. (b) How the single-axis vertical specification is formed from the four mount spectra of unit A in service, seed 0. Data: <code>data/model_example_drive.csv</code>, <code>data/model_single_axis_z.csv</code>; code: <code>code/fig4_drive_and_single_axis.py</code>.</p>
+<h4 id="the-truth">The Truth</h4>
+<p>Because the model gives the stress in every element both in service and in the lab, a test can be judged against what the article actually experienced, for the same unit B. For random tests the truth per element is the RMS stress and a narrowband fatigue damage rate (the rate of zero crossings times the RMS stress raised to the power 8, and to the power 4). For shock it is the peak stress and a peak-count damage (the sum over stress peaks of the peak raised to the power 8). The error per element is the lab value over the service value in decibels, positive meaning over-test, and it is summarized over elements as an RMS, a mean and percentiles. A test is called good when 90 percent of its elements are within 3 dB and none is more than 6 dB over. Almost no case met that, so a looser version (90 percent within 6 dB, none more than 10 dB over) is also used.</p>
+<h4 id="size-of-the-studies-and-their-checks">Size of the Studies and Their Checks</h4>
+<p>The random study ran 1,440 distinct lab cases over 10 seeds and three unit differences; the band-law confirmation used seeds 0 to 19 at one step of difference. The shock study ran about 2,000 shots over 6 seeds. The studies were checked independently, by a separate AI agent that had built none of them: every table was reproduced from the saved results, the headline cases were rerun on seeds the developers had not seen, and each headline was tested for artifacts.</p>
+<h4 id="limits">Limits</h4>
+<p>One structural family; linear; point-force shakers with no shaker dynamics; control idealized and converged with the true frequency response (no noise, no identification error, no loop) except where a wrong model is applied on purpose; translational accelerometers only; the stress truth comes from the same model as the gauges; no hardware. Rank correlations across all cases mostly separate rigs and laws from one another; within one rig the best metric reached 0.2 to 0.45 and does not certify a single test.</p>
+<h3 id="an-exact-fit-is-the-failure">4.2 An Exact Fit Is the Failure</h3>
+<p>With as many shakers as controls, the line-by-line inverse law matched every control (0.09 dB in one-third-octave bands) and over-tested element stress by 11 dB on average; on unseen seeds, 14 to 15 dB. In shock, waveform control on square rigs held the control shock spectra to 0.3 to 1.2 dB RMS and over-tested peak stress by 8 to 11 dB (Figure 5; Figure 3 shows one case). Rohe, Nelson and Schultz measured the same on hardware.</p>
+<div class="hf-figure hf-figure-given" data-figure="fig5_exact_fit">
+<img class="hf-static" src="figures/fig5_exact_fit.png" alt="Two scatter plots side by side, random on the left and shock on the right. Each point is one simulated test run with an inverse control law. The horizontal axis is the control error in decibels on a log scale; the vertical axis is the mean element stress error in decibels, positive meaning over-test. Orange filled squares, rigs with as many shakers as controls, sit at control errors from about 0.01 to 1 dB and stress errors of about +4 to +23 dB in random and +3 to +15 dB in shock. Green open triangles, the rig with more shakers than controls, sit at near-zero control error and stress errors within a few decibels of zero. Blue open circles, rigs with fewer shakers than controls, sit at control errors of about 2 to 9 dB and stress errors of about -8 to +3 dB.">
+<p class="hf-figure-links">This figure: <a href="data/fig5_exact_fit.csv" download="fig5_exact_fit.csv">Data (CSV)</a> <a href="code/fig5_exact_fit.py" download="fig5_exact_fit.py">Code</a> <a href="figures/fig5_exact_fit.png" download="fig5_exact_fit.png">Picture (PNG)</a></p>
+</div>
+<p><strong>Figure 5.</strong> The exact-fit failure. Each point is one case: random, line law, all three unit perturbations (seeds 0 to 9); shock, waveform control, both unit perturbations (seeds 0 to 5). Control errors below 0.01 dB are drawn at 0.01 dB. The text’s figures are means over cases; on the square shock rigs one case at each unit perturbation reaches about 6 dB of control error and is inside those means. Data: <code>data/fig5_exact_fit.csv</code>; code: <code>code/fig5_exact_fit.py</code>.</p>
+<p>The cause is the exact inverse. With as many shakers as controls, the rig’s frequency response is square, and at some frequencies nearly singular: some patterns of control motion can be produced only with very large forces. To reproduce the control responses with forces applied where the service loads were not, the exact inverse drives hard in directions the controls do not see. It is not the lab boundary condition: with the lab article mounted on the service host the over-test was larger (15 dB). It depends on how many of the weakest directions the inverse ignores (+6 to +13 dB for condition limits of 100 to 10,000, the condition limit being the largest ratio kept between the strongest and the weakest direction). With more shakers than controls, the drive with the least force that matched the controls exactly left the article within 1 dB.</p>
+<p>The law with the best stress fidelity found for square rigs limited its drive in the weak directions by an amount chosen with knowledge of the stress truth, which no real test has. It had 6.8 dB of control error and put 88 percent of elements within 3 dB. Exact control had 0.09 dB of control error and put 6 percent within 3 dB. Schultz and Rohe (2026) make the same point from a simulated six-degree-of-freedom table: regularization trades “a minor amount of control response accuracy” for “potentially more reasonable results at uncontrolled locations.”</p>
+<h3 id="what-tracks-the-truth">4.3 What Tracks the Truth</h3>
+<ul>
+<li><strong>Control gauges, unless the fit is exact.</strong> On rigs where shakers and controls differ in number, the decibel error of the summed control autospectra in one-third-octave bands tracked element stress error at a rank correlation of 0.81, as well as the same metric on held-out gauges (0.79). Pooled with square rigs, the control metrics under the inverse law lose all relation to stress (-0.08 to -0.16), because the square rigs have the smallest control error and the worst stress.</li>
+<li><strong>Held-out gauges see the exact-fit failure.</strong> They are the only gauges that do. Their advantage is not an effect of where they sit.</li>
+<li><strong>The mean level.</strong> In shock, the signed mean decibel error of the shock spectra tracked the signed stress error at 0.73 to 0.76 on controls and 0.87 to 0.88 on held-out gauges.</li>
+<li><strong>Aggregates over space, in bands, and response spectra.</strong> The summed autospectra in bands and the extreme-response and fatigue-damage spectrum forms at Q = 10 tracked best (about 0.8 to 0.85 pooled). Per-channel worst-case forms were consistently weaker.</li>
+<li><strong>Not resolution.</strong> Line, one-twelfth, one-sixth and one-third-octave forms of a metric tracked stress equally (within 0.04 in rank correlation for random, 0.01 for shock spectra).</li>
+<li><strong>Not energy weighting, for random.</strong> The Annex C global error, which weights each channel by its share of reference energy, was the weakest random metric tested (0.23 on controls, 0.45 held out).</li>
+</ul>
+<div class="hf-figure hf-figure-given" data-figure="fig6_rank_correlation">
+<img class="hf-static" src="figures/fig6_rank_correlation.png" alt="Three panels of dot plots, one row per metric, for the random study. The horizontal axis is the Spearman rank correlation with element stress error, from -0.3 to 1. Blue filled circles are control gauges and orange open triangles are held-out gauges, joined by a gray line. In the left panel, all multi-shaker cases, held-out gauges lead every metric, by about 0.25 to 0.35. In the middle panel, rigs with unequal shaker and control counts, the two markers nearly coincide for every metric; the summed autospectra in one-third-octave bands is highest at about 0.8. In the right panel, the line law on all rigs, every control metric sits near -0.1 while held-out metrics reach 0.48 to 0.84. The Annex C global error is lowest in every panel.">
+<p class="hf-figure-links">This figure: <a href="data/fig6_rank_correlation.csv" download="fig6_rank_correlation.csv">Data (CSV)</a> <a href="code/fig6_rank_correlation.py" download="fig6_rank_correlation.py">Code</a> <a href="figures/fig6_rank_correlation.png" download="fig6_rank_correlation.png">Picture (PNG)</a></p>
+</div>
+<p><strong>Figure 6.</strong> What tracks the truth, random study, saved seeds 0 to 9. Spearman rank correlation of each metric with the RMS element stress error, on the control gauges and on the 12 held-out gauges, for all multi-shaker cases, for rigs whose shaker and control counts differ, and for the line law alone. Single-axis cases are left out. The shock correlations in the text are from the study tables and are not drawn. Data: <code>data/fig6_rank_correlation.csv</code>; code: <code>code/fig6_rank_correlation.py</code>.</p>
+<p>These rankings are against the RMS stress error over all elements. Against the 95th-percentile over-stress they fall to about 0.5 to 0.6 and no metric leads. Gauges say more about the article as a whole than about its worst spot.</p>
+<h3 id="the-floor-two-flights">4.4 The Floor: Two Flights</h3>
+<p>Two units 3 percent apart, in the same service environment, differed by 1.9 dB RMS line by line at the control gauges (2.7 dB at the worst control) and 1.5 dB in one-third-octave bands, for 0.9 dB RMS in element stress (Figure 7). The figures held on unseen seeds (1.85, 2.5 and 0.97 dB). At 6 percent they were 3.5, 4.8, 2.9 and 2.2 dB. A criterion of 1 dB line RMS per control fails a second flight of the same environment every time. Line metrics ran about twice the stress difference they stood for. In shock the floor was 0.8 dB in the shock spectra and 0.75 dB in peak stress.</p>
+<div class="hf-figure hf-figure-given" data-figure="fig7_floor">
+<img class="hf-static" src="figures/fig7_floor.png" alt="Three panels of jittered dot plots. Each dot is one seed with one control set; a black bar marks the mean. Random, units 3 percent apart: controls line RMS 1.89 dB, worst control 2.66 dB, controls one-third-octave bands 1.49 dB, element stress 0.92 dB. Random, units 6 percent apart: 3.53, 4.80, 2.91 and 2.15 dB. Shock, units 3 percent apart: control shock spectra 0.78 dB, element peak stress 0.75 dB. Gauge metrics are blue open circles and stress truth is orange open diamonds.">
+<p class="hf-figure-links">This figure: <a href="data/fig7_floor.csv" download="fig7_floor.csv">Data (CSV)</a> <a href="code/fig7_floor.py" download="fig7_floor.py">Code</a> <a href="figures/fig7_floor.png" download="fig7_floor.png">Picture (PNG)</a></p>
+</div>
+<p><strong>Figure 7.</strong> The floor: a second unit in the same service environment, measured on the same gauges. Random, seeds 0 to 9; shock, seeds 0 to 5. Each gauge point is one seed with one control set (6, 12 or 24 controls); the stress truth does not depend on the control set and is drawn once per set, as in the study tables. Data: <code>data/fig7_floor.csv</code>; code: <code>code/fig7_floor.py</code>.</p>
+<h3 id="where-the-single-axis-over-test-comes-from">4.5 Where the Single-Axis Over-Test Comes From</h3>
+<p>The three-axis sequence, specified in the usual way (the maximum over the four mounts, smoothed and enveloped with straight lines), over-tested element stress by 9.4 dB on average in random and 5.4 dB in peak stress in shock, and under-tested almost nothing. Taken apart on the same rigid base (Figure 8), the over-test comes from the specification:</p>
+<div class="table-wrap" style="--cols: 4">
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Base input (random; shock in brackets)</th>
+<th>Stress error, RMS over elements</th>
+<th>Mean</th>
+<th>5th percentile</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Envelope of the four mounts, as usually specified</td>
+<td>10.0 dB [6.1]</td>
+<td>+9.4 dB [+5.4]</td>
+<td>+4.2 dB [+1.2]</td>
+</tr>
+<tr class="even">
+<td>Mean of the four mounts</td>
+<td>4.6 dB [3.4]</td>
+<td>+2.9 dB [+1.9]</td>
+<td>-1.8 dB [-2.5]</td>
+</tr>
+<tr class="odd">
+<td>The true mount-averaged motion, one axis at a time</td>
+<td>4.6 dB [7.1]</td>
+<td>-3.6 dB [-6.6]</td>
+<td>-7.5 dB [-11.4]</td>
+</tr>
+<tr class="even">
+<td>The true motion, three axes at once</td>
+<td>3.1 dB [6.0]</td>
+<td>-2.1 dB [-5.3]</td>
+<td>-5.3 dB [-9.9]</td>
+</tr>
+<tr class="odd">
+<td>All twelve mount translations as in service</td>
+<td>0.5 dB [0.4]</td>
+<td>-0.2 dB [-0.1]</td>
+<td>-0.9 dB [-0.7]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="hf-figure hf-figure-given" data-figure="fig8_single_axis_decomposition">
+<img class="hf-static" src="figures/fig8_single_axis_decomposition.png" alt="Two panels, random on the left and shock on the right. Each of five rows is a base input on the same rigid base: envelope of the four mounts, mean of the four mounts, the true mount-averaged motion one axis at a time, the true motion three axes at once, and all twelve mount translations as in service. A blue filled circle marks the mean element stress error and an orange open downward triangle the 5th percentile, joined by a gray line, with thin ticks for each seed. In random the means are +9.41, +2.94, -3.64, -2.08 and about 0 dB; in shock +5.38, +1.85, -6.57, -5.32 and about 0 dB. Only the envelope keeps the 5th percentile above zero.">
+<p class="hf-figure-links">This figure: <a href="data/fig8_single_axis_decomposition.csv" download="fig8_single_axis_decomposition.csv">Data (CSV)</a> <a href="code/fig8_single_axis_decomposition.py" download="fig8_single_axis_decomposition.py">Code</a> <a href="figures/fig8_single_axis_decomposition.png" download="fig8_single_axis_decomposition.png">Picture (PNG)</a></p>
+</div>
+<p><strong>Figure 8.</strong> The single-axis over-test taken apart on one rigid base, unit perturbation 3 percent; random seeds 0 to 9, shock seeds 0 to 5. Labels give the mean over elements to two decimals; the table rounds them. Data: <code>data/fig8_single_axis_decomposition.csv</code>; code: <code>code/fig8_single_axis_decomposition.py</code>.</p>
+<p>About 6.5 dB of the random over-test is the specification: half from enveloping across four mounts, half from smoothing and straight lines. Given the true motion, a rigid base under-tests, because it cannot apply the differential motion between mounts that drives the article’s elastic modes. The over-test of the envelope is what covers that shortfall, blindly.</p>
+<p>For comparison, multi-shaker tests with shaker and control counts unequal had stress errors of 2.2 to 5.6 dB RMS, leaning low with few shakers (as run, the line law left 32 percent of elements more than 3 dB under). Raised until 95 percent of elements were covered, a multi-shaker test over-tested by about 4.2 dB on average, a mean-specification single-axis sequence by about 4.8 dB, and a three-axis rigid table with the true motion by about 3.2 dB. In this model, where the article is loaded through its mounts, the methods are within about 1 dB of each other at equal coverage. The model does not show that multi-shaker testing is closer to service as a property of the method. It shows that the envelope is where the single-axis over-test comes from, and that every method needs a stated margin once the envelope is taken away.</p>
+<h3 id="line-control-band-control-and-a-wrong-model">4.6 Line Control, Band Control and a Wrong Model</h3>
+<p>A band law (one flat correlated drive per one-third-octave band, matched to the band-averaged control autospectra) was compared with the line law.</p>
+<ul>
+<li><strong>Fidelity.</strong> Fitted by least squares in power, the band law settled 1.6 dB low at the controls, under-tested by 1.7 dB more than the line law and lost to it in most cases. Fitted symmetrically in decibels, on twenty seeds and rigs with unequal shaker and control counts, the band law gave better stress fidelity than the line law in 64 percent of paired cases, by 0.47 dB on average (95 percent interval 0.28 to 0.65 dB), with no extra under-test. The gain came from the rigs with three shakers and 12 or 24 controls (1.2 and 1.8 dB). With enough shakers (6 by 12, 12 by 24) the two laws were level or the line law was 0.1 to 0.3 dB better (Figure 9a).</li>
+<li><strong>Square rigs.</strong> The band law did not blow up (3.0 dB stress error against 13.6 dB).</li>
+<li><strong>A wrong model.</strong> On a first shot from a model whose frequencies were 1 or 3 percent off, the band law’s worst control band was 13 to 16 dB over on average where the line law’s was 19 to 23 dB; on a square rig, 7 to 11 dB against 22 to 31 dB (Figure 9b and 9c). Its stress fidelity on that first shot was better by about 0.4 dB. With a model whose damping was half the true value it had no advantage in fidelity. The power-fitted band law was safer still on a first shot (8 to 12 dB) and paid for it with 2 to 3 dB of under-test.</li>
+<li><strong>Error left at the controls.</strong> The line law is a least-squares fit in power to the full matrix, so loud channels dominate and a quiet control can be far off: at convergence with unequal counts its worst single control band was 17 dB over on average and 16 percent of control points were more than 6 dB under. The band law fitted in decibels held its worst control band to 12 dB over and halved the share more than 6 dB under.</li>
+<li><strong>Coverage.</strong> Raised to cover 95 percent of elements, the two laws cost the same (about 4.1 to 4.2 dB mean over-test). The band law’s gain is in the average, not in the tail that sets the margin.</li>
+</ul>
+<div class="hf-figure hf-figure-given" data-figure="fig9_line_vs_band">
+<img class="hf-static" src="figures/fig9_line_vs_band.png" alt="Three panels. Panel a: for each of seven rigs with unequal shaker and control counts, gray open circles show the paired difference in element stress error, band law fitted in decibels minus line law, for each of twenty seeds, and a blue diamond the mean: 3 x 6 -0.05, 3 x 12 -1.23, 3 x 24 -1.80, 6 x 12 +0.12, 6 x 24 -0.34, 12 x 6 -0.29, 12 x 24 +0.32 dB; negative means the band law is better. Panels b and c: the worst control one-third-octave band over-test, mean over cases, for four models (true model converged; frequencies +1 percent, first shot; frequencies +3 percent, first shot; damping halved, first shot). The line law is an orange solid line with filled circles, the band law fitted in power a green dotted line with open squares, the band law fitted in decibels a blue dashed line with open triangles. With unequal counts the line law runs 17 to 23 dB, the decibel-fitted band law 11 to 16 dB, the power-fitted band law 5 to 12 dB. With equal counts the line law rises from 2 dB converged to 22 and 31 dB on a first shot, while both band laws stay at or below about 11 dB.">
+<p class="hf-figure-links">This figure: <a href="code/fig9_line_vs_band.py" download="fig9_line_vs_band.py">Code</a> <a href="figures/fig9_line_vs_band.png" download="fig9_line_vs_band.png">Picture (PNG)</a></p>
+</div>
+<p><strong>Figure 9.</strong> Line control against band control, twenty seeds (0 to 19), unit perturbation 3 percent. (a) Paired element stress error difference by rig, converged with the true model. (b, c) Worst control band over-test, converged and on a first shot from a wrong model. Data: <code>data/fig9a_line_vs_band_paired.csv</code>, <code>data/fig9b_first_shot.csv</code>; code: <code>code/fig9_line_vs_band.py</code>.</p>
+<h3 id="modes">4.7 Modes</h3>
+<p>Matching the first few modes is not enough. The first 10 elastic modes carried service stress within 3 dB on 49 percent of elements; 20 modes were needed for 90 percent. A law that controlled only the leading modal coordinates of the free article was the worst multi-shaker law tested. Component stress is carried by local modes.</p>
+<h3 id="shock-spectra">4.8 Shock Spectra</h3>
+<ul>
+<li>Twenty synthesized shots to one multi-point target, matching it about equally, differed by about 1.5 dB (one standard deviation) in each element’s peak stress, and by 5 to 6 dB from the lowest to the highest (Figure 10). A per-point tolerance tighter than about 1.5 dB buys nothing for peak stress.</li>
+<li>A zone-average rule (the logarithmic mean over the control points held to the shaker tolerance of Method 517.3) sorted shots little better than chance. Among shots that passed it, the worst single control was over by a median 10.5 dB.</li>
+<li>Effective duration within 0.8 to 1.2 of the target (Method 516.8, default crest factor of 3) held at 20 percent of control points, and peak polarity at 53 percent. On a flexible article the response duration is set largely by the article’s own ring-down.</li>
+<li>Effective duration did not predict damage among same-spectrum shots in this model. Published hardware results say it can (Sisemore, Sandia National Laboratories, 2019: two resonant-plate tests in tolerance lasting 89 ms and 20 ms), so duration stays in the report.</li>
+</ul>
+<div class="hf-figure hf-figure-given" data-figure="fig10_shock_same_spectrum_spread">
+<img class="hf-static" src="figures/fig10_shock_same_spectrum_spread.png" alt="Two panels of jittered dot plots for six rigs: 6 x 6, 12 x 12, 3 x 12, 6 x 12, 3 x 24 and 6 x 24. Each blue open circle is one case (a seed and a unit) of twenty synthesized shots to one target; an orange diamond is the mean over cases. Left: the per-element standard deviation of peak stress among the twenty shots, median over elements, with means from about 1.4 to 1.7 dB. Right: the per-element range from the lowest to the highest shot, median over elements, with means from about 5.3 to 6.4 dB.">
+<p class="hf-figure-links">This figure: <a href="data/fig10_shock_same_spectrum_spread.csv" download="fig10_shock_same_spectrum_spread.csv">Data (CSV)</a> <a href="code/fig10_shock_same_spectrum_spread.py" download="fig10_shock_same_spectrum_spread.py">Code</a> <a href="figures/fig10_shock_same_spectrum_spread.png" download="fig10_shock_same_spectrum_spread.png">Picture (PNG)</a></p>
+</div>
+<p><strong>Figure 10.</strong> Shock: the spread of element peak stress among twenty synthesized shots that match one multi-point target spectrum about equally, by rig; seeds 0 to 5, both unit perturbations. Data: <code>data/fig10_shock_same_spectrum_spread.csv</code>; code: <code>code/fig10_shock_same_spectrum_spread.py</code>.</p>
+<h2 id="the-proposed-practice-version-0.1">5. The Proposed Practice, Version 0.1</h2>
+<p>Starting values are given in brackets with the evidence behind each.</p>
+<p><strong>P1. Report three errors.</strong> Before the test, the declared deviation: the predicted best response of this rig against the target, per gauge and band. After it, the law error against that prediction, and the fidelity error.</p>
+<p><strong>P2. Never read a small control error as a good test.</strong> Report the ratio of shakers to control channels and the condition of the inverse with every result. With as many shakers as controls, cap the inverse so that it ignores directions much weaker than the strongest [condition number of 10 to 30], or free the cross terms, or use a band law; better, use fewer shakers than controls [about half]. A control error near zero with as many shakers as controls is flagged as a warning.</p>
+<p><strong>P3. Reserve validation gauges.</strong> Some instrumented points with targets are kept out of the control and used only to judge. They are the only gauges that see an exact-fit failure, so they matter most as the shaker count approaches the control count. Put them where failure is feared, on components as well as structure. [The studies used 12 channels at 4 points. How few will do is not known.]</p>
+<p><strong>P4. Level first, held tightly.</strong> The mean decibel error over all gauges and bands, or over all shock spectrum points, is the test’s overall level. [Within 1.5 dB. Two units in one environment differ by about 1 dB in channel RMS; acoustic practice holds the overall level to 1 to 1.5 dB; the mean level was the strongest signed predictor of stress.]</p>
+<p><strong>P5. Pattern second, held loosely and graded.</strong> For random: the decibel error of the summed autospectra in one-third-octave bands, RMS over the bands, on the validation gauges and on the controls, with the per-channel band error reported beside it so that an over and an under that cancel in the sum are seen. For shock: the RMS decibel error over channels and spectrum points. [Grade A to 3 dB, B to 4.5 dB, C to 6 dB. In the random study a summed held-out error of 3 dB or less marked tests with element stress within 6 dB on 90 percent of elements four times in five, and 4 dB two times in three. A second flight sits near 1.5 to 2 dB. These thresholds separate rigs and laws; within one rig they grade coarsely.]</p>
+<p><strong>P6. Watch every gauge for over-test, and limit where the hardware needs it.</strong> Control and validation gauges alike, in bands. [Alarm at +6 dB in a one-third-octave band or at a shock spectrum point, the figure Method 514.8 allows an individual channel under average control below 500 Hz.] A hard stop on every gauge is not proposed: with fewer shakers than controls the line law’s worst control band ran 17 dB over on average in the model while the article as a whole was within a few decibels. Where a part must be protected, its gauge is made a limit channel with its own ceiling. The share of points over the alarm is reported. Under-test is reported and enters P7; it does not stop a run.</p>
+<p><strong>P7. State the coverage margin.</strong> Every method under-tests somewhere once the envelope is removed. Where a test must not under-test, raise the level until the 10th percentile of the validation band errors is -3 dB, and report the margin. [In the model this gave a mean over-test near 4 dB and left about 3 percent of elements more than 3 dB under. It is right on average: for a single test it missed the margin that truly covers 95 percent of elements by about 2 dB (Figure 11).] A replication test that only seeks the service state leaves the level at P4.</p>
+<div class="hf-figure hf-figure-given" data-figure="fig11_coverage_margin">
+<img class="hf-static" src="figures/fig11_coverage_margin.png" alt="A square scatter plot. Each point is one test on a rig with unequal shaker and control counts, twenty seeds. The horizontal axis is the level raise that leaves 5 percent of elements under-tested, which needs the stress truth; the vertical axis is the level raise set by rule P from the held-out gauges. Orange open circles are the line law, mean 5.4 against 5.3 dB; blue open triangles are the band law fitted in decibels, mean 4.3 against 5.1 dB. A solid diagonal marks rule equals truth and dotted lines mark 2 dB either side. The points scatter widely about the diagonal, many of them more than 2 dB away.">
+<p class="hf-figure-links">This figure: <a href="data/fig11_coverage_margin.csv" download="fig11_coverage_margin.csv">Data (CSV)</a> <a href="code/fig11_coverage_margin.py" download="fig11_coverage_margin.py">Code</a> <a href="figures/fig11_coverage_margin.png" download="fig11_coverage_margin.png">Picture (PNG)</a></p>
+</div>
+<p><strong>Figure 11.</strong> The coverage margin of P7 (rule P) against the margin that truly covers 95 percent of elements, one point per test; line law and band law fitted in decibels, converged, seeds 0 to 19, unit perturbation 3 percent, rigs with unequal counts. Data: <code>data/fig11_coverage_margin.csv</code>; code: <code>code/fig11_coverage_margin.py</code>.</p>
+<p><strong>P8. Judge in bands.</strong> One-third or one-sixth octave for random, one-sixth octave for shock spectra. Lines are a diagnostic. [Resolution did not change how well any metric tracked stress, and line errors run about twice the stress difference between two units.] Where the article has lightly damped modes that matter, add a response-spectrum check at the article’s own Q.</p>
+<p><strong>P9. Control in bands when the model is in doubt or the shakers are few, and consider it throughout.</strong> First loops, first pulses, level changes and articles whose response changes with level use a band-averaged drive fitted in decibels. [With a model 1 to 3 percent off in frequency its worst control band was 13 to 16 dB over on average against 19 to 23 dB for the line law, and on a square rig 7 to 11 dB against 22 to 31 dB. Its stress fidelity was 0.5 dB better on average, most of that with three shakers, and level with the line law where the shakers were enough.]</p>
+<p><strong>P10. Shock.</strong> Hold the mean level (P4) and grade the spectra (P5), with the watch and limits of P6. Effective duration and polarity at flexible-article control points are reported, not judged. Do not accept a multi-point shock on a zone average alone.</p>
+<p><strong>P11. Report the reference measures beside these.</strong> The share of lines inside the Method 527.2 Annex E bands, the Method 516.8 and 517.3 point counts, and the Annex C global errors are printed with every result, so a test run under a contract that cites them can be assessed either way.</p>
+<h3 id="the-report-card">The Report Card</h3>
+<div class="table-wrap" style="--cols: 3">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Line</th>
+<th>Quantity</th>
+<th>Starting tolerance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Level: mean dB error, all gauges and bands</td>
+<td>within 1.5 dB</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Pattern: summed autospectra in bands (random) or spectrum points (shock), RMS dB error, on validation gauges and on controls; per-channel error beside it</td>
+<td>A to 3 dB, B to 4.5 dB, C to 6 dB</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Worst over-test and share of points over +6 dB, any gauge, any band</td>
+<td>alarm +6 dB; limits where the hardware needs them</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Share of validation points more than 3 dB under; coverage margin applied</td>
+<td>reported; under 10 % where coverage is required</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Declared deviation (rig) and law error</td>
+<td>reported</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Shakers to controls, condition of the inverse, control error</td>
+<td>reported; a near-zero control error with shakers equal to controls is flagged</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="what-to-hold-a-control-law-to">6. What To Hold a Control Law To</h2>
+<p>A control law is a means of reaching the achievable response safely. Its measure is not how small it makes the error at the controls.</p>
+<ol type="1">
+<li><strong>Safety.</strong> Every answer in time and well formed; drive bounded; a first loop or first pulse that does not over-test when the model is a few percent wrong; a stop when it cannot proceed.</li>
+<li><strong>Reaching the achievable.</strong> Where the target can be reached, it converges. Where it cannot, it settles at the declared deviation without growing the drive.</li>
+<li><strong>Economy.</strong> Drive level and loops or pulses to settle.</li>
+</ol>
+<p>A law that does this on most realistic articles is useful and should be used, with the cases where it does not written down beside it. Laws are graded on a public set of test articles, by tier, and the grade is published with the law. Those test articles need targets that the rig cannot reach exactly and outputs that are not controls; a square rig given its own response as the target cannot show the failure of Section 4.2.</p>
+<h2 id="what-did-not-hold">7. What Did Not Hold</h2>
+<ul>
+<li><strong>Choosing how strongly to limit the inverse by cross-validation over the control gauges.</strong> It removed the square-rig over-test, but it limited the drive too much everywhere else, lost to a fixed cap, and its score did not predict stress fidelity within a rig (rank correlation 0.00 to 0.20).</li>
+<li><strong>Matching the first few modes.</strong></li>
+<li><strong>A zone statistic on control gauges</strong> as the shock counterpart of band control.</li>
+<li><strong>An energy-additive band law</strong> as a way to reach more control points with fewer shakers. It reached no more. Its first pulse over-tested 5 to 9 dB less, which is its use.</li>
+<li><strong>A gauge threshold that certifies the article.</strong> Stress within 3 dB on 90 percent of elements was met by about 1 percent of all cases, and the law with the best stress fidelity did not look good on any gauge metric.</li>
+</ul>
+<h2 id="what-would-change-this-and-what-a-critic-would-say">8. What Would Change This, and What a Critic Would Say</h2>
+<p>The evidence is one linear frame family with exact knowledge of the rig’s frequency response, and the stress truth comes from the same model as the gauges. Nothing here has met a measured article. The square-rig over-test depends on how many weak directions the inverse ignores, which is a free parameter. The coverage rule and the 6 dB truth criterion used for the thresholds were chosen after the results were seen. Ten and six seeds are thin for tail statistics.</p>
+<p>What would settle it: a frame test on hardware with strain gauges on components and accelerometers held out of the control, run with equal and unequal shaker and control counts, capped and uncapped; the same article on a single-axis table with the specification derived three ways; an article loaded by distributed pressure, where a rigid base cannot follow at all; a second structural family in the model; noise, identification error and a closed loop; articles whose response changes with level. For P2 and P3 the result that would overturn them is a square rig that reproduces service stress under exact control.</p>
+<h2 class="unnumbered" id="contribution-statement">Contribution Statement</h2>
+<p>Kevin Cross led the work. Kevin Cross: Conceptualization, Supervision, Writing: review and editing. Brandon Zwink: discussion of band control and its advantages, and review of and collaboration on the work.</p>
+<h2 class="unnumbered" id="how-this-was-made">How This Was Made</h2>
+<p>AI tools were used in this work. The literature search, the frame model, the study and figure code, the CAD model and the drafting of the text were done with Claude Code, an AI coding assistant running Anthropic’s Claude Opus and Claude Fable models, under Kevin Cross’s direction. The authors are responsible for every word, number and line of code.</p>
+<h2 class="unnumbered" id="acknowledgments">Acknowledgments</h2>
+<p>The central observation of this article was first made on hardware by Rohe, Nelson and Schultz of Sandia National Laboratories, who found that a smaller error on the control gauges does not mean a better test and called for further work on the error metric. The use of held-out gauges to judge a test, the sum of autospectra as a test measure (Mayes and Rohe), the RMS decibel error over gauges and lines (Mayes and co-authors), decibel error statistics in fractional-octave bands (Jacobs and co-authors), the evidence on spatial variability of shock response (Skousen and Soine), the hardware result on effective duration (Sisemore) and the case for regularization traded against control accuracy (Schultz and Rohe) are published work of Sandia National Laboratories, credited here to Sandia National Laboratories. The singular-value view of multi-shaker tolerances is from Hale and co-authors (Trideum Corporation, U.S. Army Redstone Test Center and NASA), and the case that MIMO tolerancing is not yet established is from Haynes, Thompson and Watts (Los Alamos National Laboratory). The acceptance practice of direct-field acoustic testing, which judges in bands on an average of many controls and adds monitor microphones, is the precedent for several of the proposals.</p>
+<p>The band-average control idea in Hertzforge is Brandon Zwink’s. The band law tested in Section 4.6 was written from its one-sentence public description, not from his code.</p>
+<h2 class="unnumbered" id="references">References</h2>
+<p><strong>Standards</strong></p>
+<ul>
+<li>MIL-STD-810H, Environmental Engineering Considerations and Laboratory Tests (2019). Methods 514.8, 516.8, 517.3 and 527.2, with Method 527.2 Annexes C, D and E.</li>
+<li>NASA-STD-7001B, Payload Vibroacoustic Test Criteria (2017).</li>
+<li>NASA-STD-7003A, Pyroshock Test Criteria (2011).</li>
+<li>NASA-HDBK-7005, Dynamic Environmental Criteria (2001).</li>
+<li>NASA-HDBK-7010, Direct Field Acoustic Testing (DFAT) (2016).</li>
+<li>SMC-S-016, Test Requirements for Launch, Upper-Stage and Space Vehicles (2014).</li>
+<li>ECSS-E-ST-10-03C Rev.&nbsp;1, Space Engineering: Testing (2022).</li>
+</ul>
+<p><strong>Papers</strong> (Sandia National Laboratories unless noted)</p>
+<ul>
+<li>Hale, Davis, Barber, Akers (2024). Use of Spectral Analysis of Singular Values as a Test Metric for IMMAT Trials. 94th Shock and Vibration Symposium. NASA Technical Reports Server 20240010959. Trideum Corporation, U.S. Army Redstone Test Center and NASA Glenn Research Center.</li>
+<li>Haynes, Thompson, Watts (2025). Motivating Multivariate Specifications for Multiple-Input, Multiple-Output Vibration Testing. In Dynamic Environments Testing, Vol. 7 (IMAC 2025), chapter
+<ol start="10" type="1">
+<li>River Publishers. Los Alamos National Laboratory.</li>
+</ol></li>
+<li>Jacobs, Ross, Tipton, Nelson, Cross, Hunter, Harvie (2017). 6-DOF Shaker Test Input Derivation from Field Test. IMAC 2017. SAND2016-11498C, OSTI 1420802.</li>
+<li>Mayes, Ankers, Daborn, Moulder, Ind (2019). Optimization of Shaker Locations for Multiple Shaker Environmental Testing. Experimental Techniques. OSTI 1574694. Sandia National Laboratories and AWE.</li>
+<li>Mayes, Rohe (2016). Physical Vibration Simulation of an Acoustic Environment with Six Shakers on an Industrial Structure. IMAC 2016. SAND2015-6983C, OSTI 1306100.</li>
+<li>Rohe, Nelson, Schultz (2019). Strategies for Shaker Placement for Impedance-Matched Multi-Axis Testing. IMAC 2019. SAND2018-11955C, OSTI 1592379.</li>
+<li>Rohe, Schultz, Schoenherr, Mayes, Skousen (2019). Comparison of Multi-Axis Testing of the BARC Structure with Varying Boundary Conditions. ESTECH 2019. SAND2019-3099C, OSTI 1639481.</li>
+<li>Schultz, Rohe (2026). Understanding 6DOF Test Methods and Their Impacts on Results. IMAC 2026. SAND2025-12387C, OSTI 17086461.</li>
+<li>Sisemore (2019). Defining Resonant Plate Shock Test Specifications in the Time Domain. 90th Shock and Vibration Symposium. SAND2019-14839C, OSTI 1643485.</li>
+<li>Skousen, Soine (2018). Boundary Conditions in Environmental Testing Round Robin. 89th Shock and Vibration Symposium. SAND2018-12499C, OSTI 1592378. Sandia National Laboratories and Kansas City National Security Campus.</li>
+</ul>
+<h2 class="unnumbered" id="implemented-in">Implemented In</h2>
+<p>Nothing in this article is implemented in a Hertzforge release yet.</p>
+<h2 class="unnumbered" id="version-history">Version History</h2>
+<p><strong>Version 1, 2026-11-14.</strong> DOI <a href="https://doi.org/10.5281/zenodo.24235533">10.5281/zenodo.24235533</a>. First published.</p>
+<div id="hf-history-later"></div>
+
+<section class="hf-end" id="hf-reviews"><h2>Reviews</h2><p>Review is public and signed, and stays open after publication.</p><div id="hf-reviews-static"><p>No invited review had been posted when this version was published.</p><p>Reviews posted since are listed at <a href="https://hertzforge.com/journal/2026-001/">https://hertzforge.com/journal/2026-001/</a>.</p></div><div id="hf-reviews-live"></div></section>
+<p class="hf-license" id="hf-license">Copyright 2026 Kevin Cross and Brandon Zwink. Text, figures and data <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>; code <a href="https://opensource.org/license/mit" rel="license noopener">MIT</a>.<br>Methods are published for research. Anyone who applies one to a test is responsible for protecting the equipment and the article under test.</p>
+</div></div></div></article></main>
+<footer class="site-footer dark"><svg class="trace" viewbox="0 0 1200 100" preserveaspectratio="none" aria-hidden="true" focusable="false"><path class="trace-glow" d="M0.0 50.0L1.7 49.8L3.3 50.9L5.0 52.4L6.7 53.7L8.3 54.4L10.0 54.3L11.7 53.4L13.3 52.2L15.0 51.0L16.7 50.1L18.3 49.4L20.0 49.1L21.7 48.7L23.3 48.2L25.0 47.4L26.7 46.5L28.3 45.7L30.0 45.4L31.7 45.6L33.3 46.4L35.0 47.7L36.7 49.2L38.3 50.4L40.0 51.4L41.7 51.9L43.3 52.1L45.0 52.3L46.7 52.7L48.3 53.4L50.0 54.4L51.7 55.4L53.3 56.2L55.0 56.5L56.7 56.4L58.3 56.1L60.0 55.8L61.7 55.8L63.3 56.2L65.0 57.0L66.7 57.8L68.3 58.2L70.0 58.0L71.7 57.0L73.3 55.5L75.0 54.0L76.7 53.1L78.3 53.1L80.0 53.9L81.7 55.2L83.3 56.1L85.0 55.8L86.7 53.6L88.3 49.5L90.0 44.1L91.7 38.5L93.3 34.0L95.0 31.8L96.7 32.6L98.3 36.2L100.0 41.5L101.7 47.2L103.3 52.0L105.0 54.9L106.7 55.6L108.3 54.7L110.0 53.2L111.7 52.2L113.3 52.2L115.0 53.2L116.7 54.5L118.3 55.0L120.0 53.6L121.7 49.9L123.3 44.3L125.0 38.1L126.7 32.8L128.3 30.2L130.0 31.3L131.7 36.0L133.3 42.9L135.0 50.2L136.7 55.6L138.3 57.5L140.0 55.4L141.7 50.3L143.3 43.9L145.0 38.5L146.7 36.0L148.3 37.3L150.0 42.0L151.7 48.4L153.3 54.3L155.0 57.8L156.7 57.6L158.3 54.0L160.0 48.4L161.7 42.8L163.3 39.6L165.0 40.1L166.7 44.4L168.3 51.3L170.0 58.7L171.7 64.0L173.3 65.3L175.0 62.1L176.7 54.8L178.3 45.5L180.0 36.6L181.7 30.5L183.3 28.7L185.0 31.7L186.7 38.5L188.3 47.4L190.0 56.4L191.7 63.6L193.3 67.7L195.0 68.4L196.7 66.1L198.3 61.4L200.0 55.4L201.7 48.9L203.3 42.7L205.0 37.4L206.7 33.6L208.3 31.8L210.0 32.3L211.7 35.3L213.3 40.3L215.0 46.5L216.7 52.6L218.3 57.2L220.0 59.4L221.7 58.8L223.3 55.8L225.0 52.0L226.7 49.2L228.3 49.0L230.0 52.6L231.7 59.8L233.3 69.4L235.0 79.2L236.7 86.9L238.3 90.5L240.0 88.9L241.7 82.5L243.3 72.7L245.0 61.7L246.7 51.7L248.3 44.3L250.0 40.2L251.7 39.2L253.3 40.6L255.0 43.1L256.7 46.1L258.3 49.3L260.0 52.6L261.7 56.2L263.3 59.9L265.0 63.1L266.7 64.6L268.3 63.3L270.0 58.2L271.7 49.5L273.3 38.4L275.0 27.4L276.7 19.4L278.3 16.9L280.0 21.1L281.7 31.7L283.3 46.2L285.0 61.0L286.7 72.2L288.3 76.9L290.0 74.0L291.7 64.8L293.3 52.3L295.0 40.7L296.7 33.6L298.3 33.0L300.0 38.8L301.7 48.5L303.3 58.4L305.0 64.4L306.7 63.6L308.3 55.6L310.0 42.0L311.7 26.5L313.3 13.4L315.0 6.5L316.7 7.6L318.3 16.4L320.0 30.2L321.7 45.3L323.3 57.7L325.0 64.5L326.7 64.6L328.3 59.1L330.0 50.4L331.7 41.5L333.3 35.4L335.0 33.5L336.7 36.0L338.3 42.1L340.0 49.9L341.7 57.7L343.3 64.3L345.0 68.9L346.7 71.6L348.3 72.7L350.0 72.1L351.7 69.9L353.3 65.7L355.0 59.2L356.7 50.4L358.3 40.2L360.0 29.9L361.7 21.4L363.3 16.2L365.0 15.6L366.7 19.4L368.3 26.5L370.0 34.9L371.7 42.4L373.3 47.3L375.0 48.8L376.7 47.3L378.3 44.4L380.0 41.7L381.7 41.0L383.3 43.3L385.0 48.4L386.7 55.3L388.3 62.5L390.0 68.5L391.7 72.1L393.3 73.0L395.0 71.5L396.7 68.3L398.3 64.1L400.0 59.5L401.7 54.7L403.3 49.9L405.0 45.2L406.7 41.5L408.3 39.7L410.0 41.0L411.7 46.5L413.3 56.0L415.0 68.5L416.7 81.7L418.3 92.5L420.0 98.1L421.7 96.4L423.3 87.4L425.0 72.8L426.7 56.0L428.3 40.9L430.0 31.1L431.7 28.6L433.3 33.0L435.0 42.3L436.7 52.7L438.3 60.7L440.0 63.9L441.7 61.7L443.3 55.5L445.0 48.3L446.7 43.4L448.3 43.1L450.0 48.0L451.7 56.3L453.3 65.1L455.0 70.8L456.7 70.5L458.3 63.6L460.0 51.4L461.7 37.4L463.3 25.7L465.0 20.1L466.7 22.3L468.3 31.7L470.0 45.4L471.7 59.3L473.3 69.0L475.0 71.7L476.7 66.8L478.3 55.9L480.0 42.4L481.7 30.2L483.3 22.5L485.0 20.8L486.7 24.5L488.3 31.5L490.0 38.8L491.7 43.7L493.3 44.9L495.0 42.7L496.7 38.6L498.3 34.9L500.0 33.8L501.7 36.2L503.3 41.8L505.0 49.1L506.7 56.0L508.3 60.6L510.0 61.9L511.7 59.9L513.3 55.9L515.0 51.4L516.7 48.0L518.3 46.7L520.0 47.5L521.7 49.6L523.3 51.7L525.0 52.9L526.7 52.9L528.3 51.7L530.0 50.1L531.7 49.1L533.3 49.1L535.0 49.9L536.7 50.8L538.3 50.7L540.0 48.5L541.7 44.0L543.3 37.5L545.0 30.3L546.7 24.0L548.3 20.0L550.0 19.1L551.7 21.1L553.3 25.1L555.0 29.6L556.7 33.5L558.3 36.0L560.0 37.6L561.7 39.3L563.3 42.3L565.0 47.7L566.7 55.7L568.3 65.5L570.0 75.5L571.7 83.9L573.3 89.0L575.0 90.4L576.7 88.2L578.3 83.9L580.0 78.7L581.7 73.7L583.3 69.3L585.0 64.8L586.7 59.2L588.3 51.4L590.0 41.6L591.7 30.8L593.3 21.7L595.0 17.2L596.7 19.8L598.3 30.6L600.0 48.3L601.7 69.4L603.3 88.8L605.0 101.6L606.7 104.1L608.3 95.1L610.0 76.9L611.7 54.3L613.3 33.5L615.0 20.3L616.7 18.3L618.3 28.1L620.0 46.6L621.7 68.6L623.3 87.9L625.0 99.3L626.7 100.1L628.3 90.6L630.0 74.1L631.7 55.2L633.3 38.9L635.0 28.7L636.7 25.8L638.3 29.1L640.0 35.8L641.7 42.6L643.3 46.8L645.0 47.2L646.7 44.1L648.3 39.3L650.0 34.8L651.7 32.3L653.3 32.5L655.0 34.9L656.7 38.2L658.3 40.9L660.0 42.2L661.7 42.0L663.3 41.1L665.0 40.8L666.7 42.2L668.3 45.7L670.0 50.5L671.7 55.2L673.3 58.1L675.0 57.7L676.7 53.9L678.3 47.5L680.0 40.6L681.7 35.6L683.3 34.6L685.0 38.5L686.7 46.7L688.3 57.1L690.0 67.0L691.7 73.5L693.3 74.8L695.0 70.5L696.7 61.6L698.3 50.3L700.0 39.2L701.7 30.3L703.3 25.1L705.0 23.8L706.7 25.6L708.3 29.2L710.0 33.4L711.7 37.1L713.3 39.8L715.0 41.5L716.7 42.3L718.3 42.3L720.0 41.6L721.7 40.3L723.3 38.6L725.0 37.2L726.7 36.9L728.3 38.6L730.0 42.9L731.7 49.5L733.3 57.3L735.0 64.2L736.7 67.8L738.3 66.0L740.0 58.2L741.7 45.3L743.3 30.2L745.0 17.0L746.7 9.9L748.3 12.1L750.0 24.4L751.7 45.1L753.3 69.7L755.0 92.7L756.7 108.8L758.3 114.1L760.0 107.7L761.7 91.7L763.3 70.5L765.0 49.6L766.7 33.9L768.3 26.3L770.0 27.3L771.7 34.9L773.3 45.4L775.0 54.9L776.7 60.7L778.3 61.8L780.0 59.1L781.7 55.0L783.3 52.1L785.0 52.1L786.7 55.5L788.3 61.2L790.0 66.9L791.7 70.6L793.3 70.7L795.0 67.2L796.7 61.7L798.3 56.4L800.0 53.7L801.7 55.1L803.3 60.3L805.0 67.8L806.7 74.8L808.3 78.4L810.0 76.9L811.7 69.7L813.3 58.5L815.0 45.9L816.7 34.9L818.3 28.0L820.0 26.1L821.7 28.6L823.3 33.6L825.0 38.3L826.7 40.6L828.3 39.4L830.0 35.1L831.7 29.3L833.3 24.5L835.0 22.8L836.7 25.4L838.3 32.2L840.0 41.8L841.7 52.1L843.3 60.9L845.0 66.8L846.7 69.0L848.3 68.3L850.0 65.7L851.7 62.7L853.3 60.2L855.0 58.8L856.7 58.0L858.3 57.2L860.0 55.8L861.7 53.3L863.3 49.9L865.0 46.1L866.7 42.6L868.3 40.0L870.0 38.6L871.7 38.2L873.3 38.4L875.0 38.6L876.7 38.8L878.3 39.1L880.0 39.8L881.7 41.3L883.3 43.7L885.0 46.5L886.7 48.6L888.3 48.9L890.0 46.5L891.7 41.2L893.3 33.9L895.0 26.2L896.7 20.5L898.3 18.8L900.0 22.4L901.7 30.9L903.3 42.9L905.0 55.5L906.7 65.9L908.3 71.6L910.0 71.9L911.7 67.5L913.3 60.3L915.0 53.1L916.7 48.2L918.3 46.8L920.0 48.6L921.7 51.9L923.3 54.2L925.0 53.5L926.7 48.8L928.3 40.8L930.0 31.6L931.7 24.4L933.3 21.9L935.0 26.0L936.7 36.3L938.3 50.7L940.0 65.8L941.7 77.8L943.3 83.8L945.0 82.8L946.7 75.5L948.3 64.6L950.0 53.6L951.7 45.8L953.3 43.1L955.0 45.9L956.7 52.8L958.3 61.3L960.0 68.7L961.7 73.1L963.3 73.7L965.0 70.9L966.7 66.4L968.3 61.7L970.0 58.2L971.7 56.3L973.3 55.6L975.0 55.2L976.7 53.9L978.3 51.4L980.0 47.9L981.7 44.4L983.3 42.3L985.0 42.7L986.7 45.8L988.3 51.2L990.0 57.2L991.7 61.8L993.3 63.4L995.0 61.1L996.7 55.3L998.3 47.3L1000.0 39.4L1001.7 33.7L1003.3 31.7L1005.0 33.9L1006.7 39.5L1008.3 46.6L1010.0 53.1L1011.7 57.2L1013.3 57.8L1015.0 54.9L1016.7 49.7L1018.3 43.5L1020.0 38.2L1021.7 35.2L1023.3 35.1L1025.0 38.2L1026.7 43.7L1028.3 50.8L1030.0 58.4L1031.7 65.4L1033.3 70.9L1035.0 74.1L1036.7 74.4L1038.3 71.5L1040.0 65.6L1041.7 57.3L1043.3 47.7L1045.0 38.2L1046.7 30.7L1048.3 26.3L1050.0 25.9L1051.7 29.2L1053.3 35.1L1055.0 41.7L1056.7 47.2L1058.3 49.9L1060.0 49.3L1061.7 46.0L1063.3 41.3L1065.0 37.2L1066.7 35.6L1068.3 37.5L1070.0 42.5L1071.7 49.5L1073.3 56.3L1075.0 60.9L1076.7 61.5L1078.3 58.1L1080.0 51.3L1081.7 43.3L1083.3 36.4L1085.0 32.5L1086.7 32.9L1088.3 37.3L1090.0 44.4L1091.7 52.1L1093.3 58.5L1095.0 62.0L1096.7 62.0L1098.3 59.0L1100.0 54.3L1101.7 49.2L1103.3 45.2L1105.0 42.7L1106.7 41.7L1108.3 41.7L1110.0 42.0L1111.7 42.1L1113.3 42.2L1115.0 42.5L1116.7 43.7L1118.3 46.3L1120.0 50.3L1121.7 55.3L1123.3 60.2L1125.0 63.8L1126.7 65.2L1128.3 63.8L1130.0 60.3L1131.7 55.6L1133.3 51.3L1135.0 48.7L1136.7 48.9L1138.3 51.7L1140.0 56.4L1141.7 61.5L1143.3 65.4L1145.0 67.0L1146.7 65.6L1148.3 61.5L1150.0 55.8L1151.7 49.8L1153.3 44.9L1155.0 42.1L1156.7 41.6L1158.3 43.1L1160.0 45.7L1161.7 48.6L1163.3 50.8L1165.0 51.9L1166.7 51.7L1168.3 50.6L1170.0 49.0L1171.7 47.4L1173.3 46.3L1175.0 45.9L1176.7 46.2L1178.3 47.1L1180.0 48.3L1181.7 49.8L1183.3 51.3L1185.0 52.6L1186.7 53.6L1188.3 54.1L1190.0 54.1L1191.7 53.5L1193.3 52.4L1195.0 51.3L1196.7 50.3L1198.3 49.7L1200.0 50.0" pathlength="1"></path><path class="trace-line" d="M0.0 50.0L1.7 49.8L3.3 50.9L5.0 52.4L6.7 53.7L8.3 54.4L10.0 54.3L11.7 53.4L13.3 52.2L15.0 51.0L16.7 50.1L18.3 49.4L20.0 49.1L21.7 48.7L23.3 48.2L25.0 47.4L26.7 46.5L28.3 45.7L30.0 45.4L31.7 45.6L33.3 46.4L35.0 47.7L36.7 49.2L38.3 50.4L40.0 51.4L41.7 51.9L43.3 52.1L45.0 52.3L46.7 52.7L48.3 53.4L50.0 54.4L51.7 55.4L53.3 56.2L55.0 56.5L56.7 56.4L58.3 56.1L60.0 55.8L61.7 55.8L63.3 56.2L65.0 57.0L66.7 57.8L68.3 58.2L70.0 58.0L71.7 57.0L73.3 55.5L75.0 54.0L76.7 53.1L78.3 53.1L80.0 53.9L81.7 55.2L83.3 56.1L85.0 55.8L86.7 53.6L88.3 49.5L90.0 44.1L91.7 38.5L93.3 34.0L95.0 31.8L96.7 32.6L98.3 36.2L100.0 41.5L101.7 47.2L103.3 52.0L105.0 54.9L106.7 55.6L108.3 54.7L110.0 53.2L111.7 52.2L113.3 52.2L115.0 53.2L116.7 54.5L118.3 55.0L120.0 53.6L121.7 49.9L123.3 44.3L125.0 38.1L126.7 32.8L128.3 30.2L130.0 31.3L131.7 36.0L133.3 42.9L135.0 50.2L136.7 55.6L138.3 57.5L140.0 55.4L141.7 50.3L143.3 43.9L145.0 38.5L146.7 36.0L148.3 37.3L150.0 42.0L151.7 48.4L153.3 54.3L155.0 57.8L156.7 57.6L158.3 54.0L160.0 48.4L161.7 42.8L163.3 39.6L165.0 40.1L166.7 44.4L168.3 51.3L170.0 58.7L171.7 64.0L173.3 65.3L175.0 62.1L176.7 54.8L178.3 45.5L180.0 36.6L181.7 30.5L183.3 28.7L185.0 31.7L186.7 38.5L188.3 47.4L190.0 56.4L191.7 63.6L193.3 67.7L195.0 68.4L196.7 66.1L198.3 61.4L200.0 55.4L201.7 48.9L203.3 42.7L205.0 37.4L206.7 33.6L208.3 31.8L210.0 32.3L211.7 35.3L213.3 40.3L215.0 46.5L216.7 52.6L218.3 57.2L220.0 59.4L221.7 58.8L223.3 55.8L225.0 52.0L226.7 49.2L228.3 49.0L230.0 52.6L231.7 59.8L233.3 69.4L235.0 79.2L236.7 86.9L238.3 90.5L240.0 88.9L241.7 82.5L243.3 72.7L245.0 61.7L246.7 51.7L248.3 44.3L250.0 40.2L251.7 39.2L253.3 40.6L255.0 43.1L256.7 46.1L258.3 49.3L260.0 52.6L261.7 56.2L263.3 59.9L265.0 63.1L266.7 64.6L268.3 63.3L270.0 58.2L271.7 49.5L273.3 38.4L275.0 27.4L276.7 19.4L278.3 16.9L280.0 21.1L281.7 31.7L283.3 46.2L285.0 61.0L286.7 72.2L288.3 76.9L290.0 74.0L291.7 64.8L293.3 52.3L295.0 40.7L296.7 33.6L298.3 33.0L300.0 38.8L301.7 48.5L303.3 58.4L305.0 64.4L306.7 63.6L308.3 55.6L310.0 42.0L311.7 26.5L313.3 13.4L315.0 6.5L316.7 7.6L318.3 16.4L320.0 30.2L321.7 45.3L323.3 57.7L325.0 64.5L326.7 64.6L328.3 59.1L330.0 50.4L331.7 41.5L333.3 35.4L335.0 33.5L336.7 36.0L338.3 42.1L340.0 49.9L341.7 57.7L343.3 64.3L345.0 68.9L346.7 71.6L348.3 72.7L350.0 72.1L351.7 69.9L353.3 65.7L355.0 59.2L356.7 50.4L358.3 40.2L360.0 29.9L361.7 21.4L363.3 16.2L365.0 15.6L366.7 19.4L368.3 26.5L370.0 34.9L371.7 42.4L373.3 47.3L375.0 48.8L376.7 47.3L378.3 44.4L380.0 41.7L381.7 41.0L383.3 43.3L385.0 48.4L386.7 55.3L388.3 62.5L390.0 68.5L391.7 72.1L393.3 73.0L395.0 71.5L396.7 68.3L398.3 64.1L400.0 59.5L401.7 54.7L403.3 49.9L405.0 45.2L406.7 41.5L408.3 39.7L410.0 41.0L411.7 46.5L413.3 56.0L415.0 68.5L416.7 81.7L418.3 92.5L420.0 98.1L421.7 96.4L423.3 87.4L425.0 72.8L426.7 56.0L428.3 40.9L430.0 31.1L431.7 28.6L433.3 33.0L435.0 42.3L436.7 52.7L438.3 60.7L440.0 63.9L441.7 61.7L443.3 55.5L445.0 48.3L446.7 43.4L448.3 43.1L450.0 48.0L451.7 56.3L453.3 65.1L455.0 70.8L456.7 70.5L458.3 63.6L460.0 51.4L461.7 37.4L463.3 25.7L465.0 20.1L466.7 22.3L468.3 31.7L470.0 45.4L471.7 59.3L473.3 69.0L475.0 71.7L476.7 66.8L478.3 55.9L480.0 42.4L481.7 30.2L483.3 22.5L485.0 20.8L486.7 24.5L488.3 31.5L490.0 38.8L491.7 43.7L493.3 44.9L495.0 42.7L496.7 38.6L498.3 34.9L500.0 33.8L501.7 36.2L503.3 41.8L505.0 49.1L506.7 56.0L508.3 60.6L510.0 61.9L511.7 59.9L513.3 55.9L515.0 51.4L516.7 48.0L518.3 46.7L520.0 47.5L521.7 49.6L523.3 51.7L525.0 52.9L526.7 52.9L528.3 51.7L530.0 50.1L531.7 49.1L533.3 49.1L535.0 49.9L536.7 50.8L538.3 50.7L540.0 48.5L541.7 44.0L543.3 37.5L545.0 30.3L546.7 24.0L548.3 20.0L550.0 19.1L551.7 21.1L553.3 25.1L555.0 29.6L556.7 33.5L558.3 36.0L560.0 37.6L561.7 39.3L563.3 42.3L565.0 47.7L566.7 55.7L568.3 65.5L570.0 75.5L571.7 83.9L573.3 89.0L575.0 90.4L576.7 88.2L578.3 83.9L580.0 78.7L581.7 73.7L583.3 69.3L585.0 64.8L586.7 59.2L588.3 51.4L590.0 41.6L591.7 30.8L593.3 21.7L595.0 17.2L596.7 19.8L598.3 30.6L600.0 48.3L601.7 69.4L603.3 88.8L605.0 101.6L606.7 104.1L608.3 95.1L610.0 76.9L611.7 54.3L613.3 33.5L615.0 20.3L616.7 18.3L618.3 28.1L620.0 46.6L621.7 68.6L623.3 87.9L625.0 99.3L626.7 100.1L628.3 90.6L630.0 74.1L631.7 55.2L633.3 38.9L635.0 28.7L636.7 25.8L638.3 29.1L640.0 35.8L641.7 42.6L643.3 46.8L645.0 47.2L646.7 44.1L648.3 39.3L650.0 34.8L651.7 32.3L653.3 32.5L655.0 34.9L656.7 38.2L658.3 40.9L660.0 42.2L661.7 42.0L663.3 41.1L665.0 40.8L666.7 42.2L668.3 45.7L670.0 50.5L671.7 55.2L673.3 58.1L675.0 57.7L676.7 53.9L678.3 47.5L680.0 40.6L681.7 35.6L683.3 34.6L685.0 38.5L686.7 46.7L688.3 57.1L690.0 67.0L691.7 73.5L693.3 74.8L695.0 70.5L696.7 61.6L698.3 50.3L700.0 39.2L701.7 30.3L703.3 25.1L705.0 23.8L706.7 25.6L708.3 29.2L710.0 33.4L711.7 37.1L713.3 39.8L715.0 41.5L716.7 42.3L718.3 42.3L720.0 41.6L721.7 40.3L723.3 38.6L725.0 37.2L726.7 36.9L728.3 38.6L730.0 42.9L731.7 49.5L733.3 57.3L735.0 64.2L736.7 67.8L738.3 66.0L740.0 58.2L741.7 45.3L743.3 30.2L745.0 17.0L746.7 9.9L748.3 12.1L750.0 24.4L751.7 45.1L753.3 69.7L755.0 92.7L756.7 108.8L758.3 114.1L760.0 107.7L761.7 91.7L763.3 70.5L765.0 49.6L766.7 33.9L768.3 26.3L770.0 27.3L771.7 34.9L773.3 45.4L775.0 54.9L776.7 60.7L778.3 61.8L780.0 59.1L781.7 55.0L783.3 52.1L785.0 52.1L786.7 55.5L788.3 61.2L790.0 66.9L791.7 70.6L793.3 70.7L795.0 67.2L796.7 61.7L798.3 56.4L800.0 53.7L801.7 55.1L803.3 60.3L805.0 67.8L806.7 74.8L808.3 78.4L810.0 76.9L811.7 69.7L813.3 58.5L815.0 45.9L816.7 34.9L818.3 28.0L820.0 26.1L821.7 28.6L823.3 33.6L825.0 38.3L826.7 40.6L828.3 39.4L830.0 35.1L831.7 29.3L833.3 24.5L835.0 22.8L836.7 25.4L838.3 32.2L840.0 41.8L841.7 52.1L843.3 60.9L845.0 66.8L846.7 69.0L848.3 68.3L850.0 65.7L851.7 62.7L853.3 60.2L855.0 58.8L856.7 58.0L858.3 57.2L860.0 55.8L861.7 53.3L863.3 49.9L865.0 46.1L866.7 42.6L868.3 40.0L870.0 38.6L871.7 38.2L873.3 38.4L875.0 38.6L876.7 38.8L878.3 39.1L880.0 39.8L881.7 41.3L883.3 43.7L885.0 46.5L886.7 48.6L888.3 48.9L890.0 46.5L891.7 41.2L893.3 33.9L895.0 26.2L896.7 20.5L898.3 18.8L900.0 22.4L901.7 30.9L903.3 42.9L905.0 55.5L906.7 65.9L908.3 71.6L910.0 71.9L911.7 67.5L913.3 60.3L915.0 53.1L916.7 48.2L918.3 46.8L920.0 48.6L921.7 51.9L923.3 54.2L925.0 53.5L926.7 48.8L928.3 40.8L930.0 31.6L931.7 24.4L933.3 21.9L935.0 26.0L936.7 36.3L938.3 50.7L940.0 65.8L941.7 77.8L943.3 83.8L945.0 82.8L946.7 75.5L948.3 64.6L950.0 53.6L951.7 45.8L953.3 43.1L955.0 45.9L956.7 52.8L958.3 61.3L960.0 68.7L961.7 73.1L963.3 73.7L965.0 70.9L966.7 66.4L968.3 61.7L970.0 58.2L971.7 56.3L973.3 55.6L975.0 55.2L976.7 53.9L978.3 51.4L980.0 47.9L981.7 44.4L983.3 42.3L985.0 42.7L986.7 45.8L988.3 51.2L990.0 57.2L991.7 61.8L993.3 63.4L995.0 61.1L996.7 55.3L998.3 47.3L1000.0 39.4L1001.7 33.7L1003.3 31.7L1005.0 33.9L1006.7 39.5L1008.3 46.6L1010.0 53.1L1011.7 57.2L1013.3 57.8L1015.0 54.9L1016.7 49.7L1018.3 43.5L1020.0 38.2L1021.7 35.2L1023.3 35.1L1025.0 38.2L1026.7 43.7L1028.3 50.8L1030.0 58.4L1031.7 65.4L1033.3 70.9L1035.0 74.1L1036.7 74.4L1038.3 71.5L1040.0 65.6L1041.7 57.3L1043.3 47.7L1045.0 38.2L1046.7 30.7L1048.3 26.3L1050.0 25.9L1051.7 29.2L1053.3 35.1L1055.0 41.7L1056.7 47.2L1058.3 49.9L1060.0 49.3L1061.7 46.0L1063.3 41.3L1065.0 37.2L1066.7 35.6L1068.3 37.5L1070.0 42.5L1071.7 49.5L1073.3 56.3L1075.0 60.9L1076.7 61.5L1078.3 58.1L1080.0 51.3L1081.7 43.3L1083.3 36.4L1085.0 32.5L1086.7 32.9L1088.3 37.3L1090.0 44.4L1091.7 52.1L1093.3 58.5L1095.0 62.0L1096.7 62.0L1098.3 59.0L1100.0 54.3L1101.7 49.2L1103.3 45.2L1105.0 42.7L1106.7 41.7L1108.3 41.7L1110.0 42.0L1111.7 42.1L1113.3 42.2L1115.0 42.5L1116.7 43.7L1118.3 46.3L1120.0 50.3L1121.7 55.3L1123.3 60.2L1125.0 63.8L1126.7 65.2L1128.3 63.8L1130.0 60.3L1131.7 55.6L1133.3 51.3L1135.0 48.7L1136.7 48.9L1138.3 51.7L1140.0 56.4L1141.7 61.5L1143.3 65.4L1145.0 67.0L1146.7 65.6L1148.3 61.5L1150.0 55.8L1151.7 49.8L1153.3 44.9L1155.0 42.1L1156.7 41.6L1158.3 43.1L1160.0 45.7L1161.7 48.6L1163.3 50.8L1165.0 51.9L1166.7 51.7L1168.3 50.6L1170.0 49.0L1171.7 47.4L1173.3 46.3L1175.0 45.9L1176.7 46.2L1178.3 47.1L1180.0 48.3L1181.7 49.8L1183.3 51.3L1185.0 52.6L1186.7 53.6L1188.3 54.1L1190.0 54.1L1191.7 53.5L1193.3 52.4L1195.0 51.3L1196.7 50.3L1198.3 49.7L1200.0 50.0" pathlength="1"></path></svg><div class="wrap"><div class="footer-grid"><div class="footer-about"><span class="wordmark"><span class="w-hertz">HERTZ</span><span class="w-forge">FORGE</span></span><p>Open-source structural dynamics testing and analysis. Free under the MIT license, developed in the open.</p></div><nav aria-label="Software"><h2>Software</h2><ul><li><a href="/download/">Download</a></li><li><a href="/documentation/">Documentation</a></li><li><a href="/learn/workflows/">Workflows</a></li><li><a href="/learn/tutorials/">Tutorials</a></li><li><a href="/reference/known-limits/">Known Limits</a></li></ul></nav><nav aria-label="Research"><h2>Research</h2><ul><li><a href="/journal/">Hertzforge Journal</a></li><li><a href="/benchmarks/">Open Benchmark Set</a></li><li><a href="/reference/laws/">Control Laws</a></li><li><a href="/reference/glossary/">Glossary</a></li><li><a href="/reference/standards/">Standards</a></li></ul></nav><nav aria-label="Community"><h2>Community</h2><ul><li><a href="/community/contribute/">Contribute</a></li><li><a href="/community/requests/">Requests</a></li><li><a href="/community/sponsors/">Sponsors</a></li><li><a href="/community/acknowledgments/">Acknowledgments</a></li><li><a href="https://github.com/Hertzforge/Hertzforge">GitHub</a></li></ul></nav><nav aria-label="About"><h2>About</h2><ul><li><a href="/about/">Why Hertzforge Exists</a></li><li><a href="/about/how-it-was-built/">How It Was Built</a></li><li><a href="/about/how-it-works/">How It Works</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="mailto:contact@hertzforge.com">Contact</a></li></ul></nav></div><div class="footer-legal"><span>Copyright 2026 Brandon Zwink and Kevin Cross. Software under the MIT license.</span><span>Hertzforge drives shakers. You are responsible for how you use it and for protecting your equipment.</span></div></div></footer>
+
+<script src="assets/article.js"></script>
+
+
+</body></html>

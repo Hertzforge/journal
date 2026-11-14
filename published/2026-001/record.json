@@ -1,0 +1,32 @@
+{
+  "id": "2026-001",
+  "title": "What Is a Good Multi-Shaker Test? A Proposed Practice for Judging MIMO Vibration and Shock Tests on Flexible Articles",
+  "type": "Proposed Standard",
+  "evidence": "simulator",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    },
+    {
+      "name": "Brandon Zwink",
+      "orcid": "0000-0003-1341-2293"
+    }
+  ],
+  "first_published": "2026-11-14",
+  "latest": 1,
+  "versions": [
+    {
+      "version": 1,
+      "date": "2026-11-14",
+      "note": "First published.",
+      "doi": "10.5281/zenodo.24235533"
+    }
+  ],
+  "doi_latest": "10.5281/zenodo.24235532",
+  "status": "Review open",
+  "retraction": "",
+  "thread": "",
+  "reviews": [],
+  "sample": false
+}
