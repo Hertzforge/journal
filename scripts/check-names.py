@@ -4,9 +4,11 @@
    tracked file. The list of names is the software repository's own (tools/check_tree.py there,
    held as hashes so the list that keeps the names out does not publish them), read from a
    checkout of it. Articles, their published versions and their reviews may cite and credit
-   published prior work and its institutions by name: those folders are read the way the
-   software's acknowledgments file is, where a credited name is allowed on a line that makes no
-   hardware claim.
+   published prior work and its institutions by name. In those folders a credited laboratory
+   (CREDITED_HERE) may be named on any line, a line about a hardware test included, because
+   articles cite hardware tests; every other listed name is refused there as anywhere. Whether
+   an article claims that Hertzforge supports hardware it does not is the editors' check
+   (policies/EDITORS.md), not this one.
 2. No strong copyleft. Every Python package the build installs (requirements.lock) is read from
    the build environment's own metadata by the software repository's license checker; GPL, AGPL
    and SSPL are refused, and so is a package whose license cannot be read. The tools that are
@@ -31,6 +33,13 @@ from importlib import metadata
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SOFTWARE = pathlib.Path(os.environ.get('HERTZFORGE_SRC', pathlib.Path.home() / 'dev' / 'sds'))
 CREDIT_FOLDERS = ('articles/', 'published/', 'reviews/', 'tests/articles/', 'tests/revision/')
+
+#: Listed names that an article, a published version or a review may hold, as the source of
+#: published work it cites or credits: the laboratory the software's own acknowledgments credit
+#: (read from the software's list), and a second laboratory, in both the forms it is listed
+#: under, allowed by the editors on 2026-11-14 for the citation of its published work. Held as
+#: hashes, as the list itself is. Add one with the software's `tools/check_tree.py --hash`.
+CREDITED_HERE = frozenset({'e2a3af9c1d2aa535', 'e07681543d5c76d6'})
 
 #: Packages whose metadata names their license in words the checker cannot read as an
 #: identifier, each with what was read by hand: {normalized name: what its own license file says}.
@@ -79,6 +88,30 @@ def frozen() -> list[str]:
     return found
 
 
+def credit_names(files, check_tree) -> list[str]:
+    """Listed names in the credit folders. A credited laboratory may be named on any line there;
+    every other listed name is a finding, as it is anywhere. The finding gives the place, never
+    the word."""
+    allowed = check_tree.CREDITED | CREDITED_HERE
+    found = []
+    for path in files:
+        rel = path.relative_to(ROOT).as_posix()
+        if path.name in check_tree.SKIPPED or rel in check_tree.NOTICES:
+            continue
+        text = check_tree._text(path)
+        if text is None:
+            continue
+        for number, line in enumerate([rel, *text.splitlines()]):
+            words = check_tree._WORD.findall(check_tree.without_references(line, check_tree.REFERENCES).lower())
+            runs = (' '.join(words[i:i + size]) for size in (1, 2, 3) for i in range(len(words) - size + 1))
+            hits = {check_tree.phrase_hash(run) for run in runs} & check_tree.NAMES
+            if number > 0:
+                hits -= allowed
+            if hits:
+                found.append(f'{rel}: {"its path" if number == 0 else f"line {number}"} names a listed organization')
+    return found
+
+
 def main() -> int:
     sys.path.insert(0, str(SOFTWARE / 'tools'))
     try:
@@ -88,10 +121,10 @@ def main() -> int:
         print(f'check-names: no software checkout at {SOFTWARE} (set HERTZFORGE_SRC)')
         return 1
     files = check_tree.tracked_files(ROOT)
-    credit = frozenset(
-        rel for rel in (path.relative_to(ROOT).as_posix() for path in files) if rel.startswith(CREDIT_FOLDERS)
-    )
-    found = check_tree.check_names(files, ROOT, credit_files=credit)
+    in_credit = [path for path in files if path.relative_to(ROOT).as_posix().startswith(CREDIT_FOLDERS)]
+    elsewhere = [path for path in files if path not in set(in_credit)]
+    found = check_tree.check_names(elsewhere, ROOT, credit_files=frozenset())
+    found += credit_names(in_credit, check_tree)
     found += licenses(check_licenses)
     found += frozen()
     for line in found:
