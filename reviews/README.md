@@ -14,4 +14,6 @@ reviews: []                # - {reviewer: "Name", date: YYYY-MM-DD, version: 1, 
 
 After changing it, run `python scripts/journal.py record <id>`. No published version changes.
 
-None yet.
+| Article | Review thread | Status |
+|---|---|---|
+| `2026-001` | https://github.com/Hertzforge/journal/discussions/1 | Review open |
