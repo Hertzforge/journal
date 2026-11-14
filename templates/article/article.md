@@ -9,8 +9,8 @@ doi_latest: ""         # always resolves to the latest version
 
 # Filled in by the authors.
 title: ""
-type: Research Article # Research Article | Method Note | Negative Result | Proposed Standard | Practice Note | Survey
-evidence: simulator    # simulator | bench | hardware
+type: Research Article # Research Article | Method Note | Negative Result | Proposed Standard | Practice Note | Survey | Perspective
+evidence: simulator    # simulator | bench | hardware; a Perspective says what it rests on instead, for example: published sources
 authors:               # in order; the author who led the work is first
   - name: ""
     orcid: ""          # https://orcid.org/0000-0000-0000-0000
