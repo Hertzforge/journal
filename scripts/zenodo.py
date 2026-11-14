@@ -129,6 +129,7 @@ def metadata(front: dict) -> dict:
         'journal_title': facts['title'],
         'journal_volume': str(volume),
         'journal_pages': article_id,
+        'communities': [{'identifier': facts['zenodo_community']}],
         'related_identifiers': [
             {'identifier': f'{address}v{number}/', 'relation': 'isIdenticalTo', 'resource_type': 'publication-article', 'scheme': 'url'},
         ],
@@ -188,7 +189,7 @@ def cmd_upload(article: pathlib.Path) -> None:
         call('PUT', f'{draft["links"]["bucket"]}/{urllib.parse.quote(as_name)}', raw=data, kind='application/octet-stream')
         print(f'  uploaded {as_name} ({len(data):,} bytes)')
     call('PUT', f'/deposit/depositions/{number_on_zenodo}', {'metadata': metadata(front)})
-    print('  facts set: title, authors, abstract, date, license, journal')
+    print('  facts set: title, authors, abstract, date, license, journal, community')
     print(f'Look at the draft before publishing it: {draft["links"].get("html", "")}')
 
 
@@ -217,16 +218,15 @@ def cmd_publish(article: pathlib.Path) -> None:
     print(f'Published: https://doi.org/{done.get("doi", "")}')
     print(f'  all versions: https://doi.org/{done.get("conceptdoi", "")}')
     print(f'  record: {done.get("links", {}).get("record_html", done.get("links", {}).get("html", ""))}')
-    # The record joins the journal's community after it is published. An owner or curator of
-    # the community is taken in at once; anyone else's request waits for one of them.
+    # The deposit named the journal's community, and Zenodo takes the record of an owner or
+    # curator of the community in when it is published. Say whether it is there.
     community = journal()['zenodo_community']
-    asked = call('POST', f'/records/{number_on_zenodo}/communities', {'communities': [{'id': community}]}, fatal=False)
-    if asked.get('_error'):
-        print(f'  community: not added ({asked["_error"]}). Add the record to "{community}" on its Zenodo page: Communities, Submit to community.')
+    held = call('GET', f'/records/{number_on_zenodo}/communities', fatal=False)
+    slugs = [hit.get('slug', '') for hit in held.get('hits', {}).get('hits', [])]
+    if community in slugs:
+        print(f'  community: {community}')
     else:
-        waiting = [str(item.get('request_id', '')) for item in asked.get('processed', []) if item.get('request_id')]
-        refused = asked.get('errors') or []
-        print(f'  community: {community}' + (f', request {", ".join(waiting)}' if waiting else '') + (f'; {refused}' if refused else ''))
+        print(f'  community: not in "{community}" yet. On the record\'s Zenodo page: Communities, Submit to community.')
 
 
 def main() -> None:
