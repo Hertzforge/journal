@@ -37,7 +37,7 @@
       set text(size: 8.5pt, fill: hf-muted)
       grid(
         columns: (1fr, auto),
-        [Interactive version: #link(address)],
+        [Version of record: #link(address)],
         counter(page).display("1 / 1", both: true),
       )
     },
@@ -95,8 +95,8 @@
     block(width: 100%, inset: 9pt, fill: rgb("#fff3d6"), stroke: 0.8pt + rgb("#b37a00"), radius: 3pt, text(weight: "semibold", notice))
   }
   block(width: 100%, inset: 11pt, stroke: 0.9pt + hf-ink, radius: 3pt)[
-    *Print copy.* This is the static print copy of an interactive article. The version of record,
-    with its interactive figures and the data and code behind them, is at \
+    *Print copy.* This is the print copy of an article whose version of record is a web page.
+    That page, with the data and code behind every figure, is at \
     #link(address) \
     #if doi != none [DOI of this version: #link("https://doi.org/" + doi)[#doi]]
   ]

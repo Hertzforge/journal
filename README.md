@@ -27,6 +27,7 @@ hertzforge.com/journal.
 | `journal.yml` | Facts every article repeats: the journal's title, its address, its ISSN once assigned. Also the list of article types: one line there adds a type |
 | `scripts/publish` | The one command that builds and freezes a version (`scripts/journal.py` does the work) |
 | `scripts/setup.sh` | Installs what the build needs, without administrator rights |
+| `scripts/zenodo.py` | Reserves a version's DOIs on Zenodo before the build, and deposits its outputs after |
 | `scripts/browser-check.py` | Opens a built version in a browser and checks what only a browser can show |
 | `scripts/check-names.py` | The gate run before every push: names, licenses, and that no published version has changed |
 | `scripts/sync-theme.py` | Refreshes `theme/` from a build of the website |
@@ -124,18 +125,22 @@ article's folder is only read.
 
 1. **Give the article its identifier** and move its source to `articles/<id>/`. Set `id`. The
    number is assigned here, by the editors, never taken from a working folder's name.
-2. **Reserve the DOIs on Zenodo** before building. Start the deposit in the journal's community
-   (`hertzforge-journal`) as a journal article; Zenodo reserves the DOI of this version and the
-   DOI that always gives the latest version. Put them in the front matter (`doi`,
-   `doi_latest`). They are printed on the page and in the PDF, and a frozen version cannot be
-   given them afterward.
+2. **Reserve the DOIs on Zenodo** before building: `.venv/bin/python scripts/zenodo.py reserve
+   articles/<id>`. It starts a draft deposit and prints the DOI of this version and the DOI that
+   always gives the latest version. Put them in the front matter (`doi`, `doi_latest`). They are
+   printed on the page and in the PDF, and a frozen version cannot be given them afterward. The
+   script reads a Zenodo token (scopes `deposit:write` and `deposit:actions`) from
+   `~/.config/hertzforge/zenodo_token`; the same can be done by hand on zenodo.org, starting an
+   upload in the journal's community (`hertzforge-journal`) as a journal article.
 3. **Set the date** of the version, and its note.
 4. **Build:** `scripts/publish articles/<id>`.
 5. **Look at it:** `.venv/bin/python scripts/browser-check.py published/<id>/v<n>`, and open the
    page, the one-file copy and the PDF yourself.
 6. **Commit** `articles/<id>/` and `published/<id>/` and push. The gate runs first.
-7. **Deposit:** upload the four outputs from `published/<id>/v<n>/` to the reserved deposit and
-   publish it.
+7. **Deposit:** `.venv/bin/python scripts/zenodo.py upload articles/<id>` puts the four outputs
+   from `published/<id>/v<n>/` in the reserved deposit, with the article's facts. Look at the
+   draft on Zenodo, then `.venv/bin/python scripts/zenodo.py publish articles/<id>`. A published
+   deposit cannot be deleted.
 8. **Open the review thread,** put its address in `reviews/<id>/status.yml`, and run
    `.venv/bin/python scripts/journal.py record <id>`.
 9. **The website** takes the article in at its next build: it copies `published/` as it is, and

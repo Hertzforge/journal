@@ -373,6 +373,12 @@ math {
   padding: 0.3em 0;
 }
 
+/* A long file name in the text or a caption breaks where it must, so a narrow screen never
+   scrolls sideways for it. */
+.hf-prose :not(pre) > code {
+  overflow-wrap: anywhere;
+}
+
 .csl-entry {
   margin: 0 0 0.7em;
   padding-left: 1.6em;
