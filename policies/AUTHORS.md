@@ -33,11 +33,13 @@ methods, results, practice and the prior work behind them.
 
 ## How to Submit
 
-Copy `templates/article/` to `articles/<working-name>/`, write the article in `article.qmd`
+Copy `templates/article/` to `articles/<working-name>/`, write the article in `article.md`
 (Markdown, with its facts in the block at the top), put the data behind each figure in `data/`
 and the code that draws it in `code/`, and open a pull request. The template shows how a figure,
 an equation, a table and a citation are written, and `templates/article/code/README.md` says
-what the build asks of a figure.
+what the build asks of a figure. The template's section names suit a research article; use your
+own where they fit better. To see your article as it will be published, run
+`scripts/publish articles/<working-name> --preview`.
 
 ## What the Editors Check Before Publishing
 

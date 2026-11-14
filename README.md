@@ -17,14 +17,14 @@ hertzforge.com/journal.
 
 | Path | What it holds |
 |---|---|
-| `articles/<id>/` | An article's source: `article.qmd`, `references.bib`, `data/` (the data behind every figure) and `code/` (the code that draws them) |
+| `articles/<id>/` | An article's source: `article.md`, `references.bib`, `data/` (the data behind every figure), `code/` (the code that draws them) and, where an article supplies pictures, `figures/` |
 | `published/<id>/v<n>/` | Version n as it was built: the page, the one-file copy, the PDF and the bundle. Never rebuilt, never edited |
 | `published/<id>/record.json` | What changes after a version is frozen: which versions exist, the review status, the reviews |
 | `reviews/<id>/` | The review record of each article, exported from its thread so it outlives the discussion, and `status.yml`, its review state |
 | `people/` | One record per author and reviewer: name and ORCID iD |
 | `policies/` | The policies, the guide for authors, the guide for reviewers and the editors' checklist |
 | `templates/` | The article template and the review template |
-| `journal.yml` | Facts every article repeats: the journal's title, its address, its ISSN once assigned |
+| `journal.yml` | Facts every article repeats: the journal's title, its address, its ISSN once assigned. Also the list of article types: one line there adds a type |
 | `scripts/publish` | The one command that builds and freezes a version (`scripts/journal.py` does the work) |
 | `scripts/setup.sh` | Installs what the build needs, without administrator rights |
 | `scripts/browser-check.py` | Opens a built version in a browser and checks what only a browser can show |
@@ -82,24 +82,25 @@ Chromium browser, which renders each figure's static picture and runs the browse
 scripts/publish articles/2026-001
 ```
 
-It reads `articles/2026-001/article.qmd`, draws every figure from `code/` and `data/`, builds
-the four outputs for the last version listed in the article's front matter, checks them, and
-freezes them in `published/2026-001/v<n>/` with a manifest of every file's hash. Then it
-rewrites the article's record and the page at the article's own address, which forwards to the
-latest version.
+It reads `articles/2026-001/article.md`, draws every figure from `code/` and `data/`, builds
+the four outputs for the version named in the article's front matter, checks them, and freezes
+them in `published/2026-001/v<n>/` with a manifest of every file's hash. Then it rewrites the
+article's record and the page at the article's own address, which forwards to the latest
+version.
 
 It refuses, and builds nothing, when:
 
-- that version is already published. A published version never changes; add the next entry
-  under `versions` and build again;
+- that version is already published. A published version never changes; set `version` to the
+  next number and build again;
 - an earlier version is missing, or is no longer what its manifest says;
-- the article lacks a required part: a title, authors, a type, an evidence level and its
-  sentence, an abstract, a note for each version, and the closing sections in order (How This
-  Was Made, Acknowledgments, References);
-- a co-authored article has an author without CRediT roles (the build writes the contribution
-  statement from them);
+- the article lacks a required part: its number, a title, authors, a type, an evidence level,
+  an abstract, a date, a note of what changed, and the closing sections in order (How This Was
+  Made, Acknowledgments, References);
+- a co-authored article has an author without CRediT roles;
 - an ORCID iD fails its check digit;
-- a figure has no caption, no alternative text, no data file or no code file;
+- a comment (`<!-- ... -->`) or a marked gap (TODO, PLACEHOLDER, "[... to be stated]") is still
+  in the text;
+- a figure has no alternative text, or one the build draws has no data file;
 - a figure's series differ only by color, or a figure would fetch anything from another site;
 - the version has no DOI. Reserve the DOIs first (below); `--no-doi` builds without them.
 
@@ -107,13 +108,27 @@ And it refuses to freeze what it built when the page's parts are missing or out 
 citation tags in the head are not the ones expected, the one-file copy would fetch anything, or
 the PDF's first page does not say what it is.
 
+### Looking at an Article Before It Is Published
+
+```bash
+scripts/publish path/to/the/article --preview
+```
+
+A preview builds the same four outputs into `_build/preview/` and freezes nothing. It works on
+any folder, wherever it is and whatever it is called, at any stage: with no number, no date and
+no DOIs yet. The page is marked as a preview. After building, it lists everything still owed
+before the article can be published, with the line of `article.md` where that helps. The
+article's folder is only read.
+
 ### Publishing, Step by Step
 
-1. **Give the article its identifier** and move its source to `articles/<id>/`. Set `id`.
+1. **Give the article its identifier** and move its source to `articles/<id>/`. Set `id`. The
+   number is assigned here, by the editors, never taken from a working folder's name.
 2. **Reserve the DOIs on Zenodo** before building. Start the deposit in the journal's community
-   as a journal article; Zenodo reserves the DOI of this version and the DOI that always gives
-   the latest version. Put them in the front matter (`versions[].doi`, `doi_latest`). They are
-   printed on the page and in the PDF, and a frozen version cannot be given them afterward.
+   (`hertzforge-journal`) as a journal article; Zenodo reserves the DOI of this version and the
+   DOI that always gives the latest version. Put them in the front matter (`doi`,
+   `doi_latest`). They are printed on the page and in the PDF, and a frozen version cannot be
+   given them afterward.
 3. **Set the date** of the version, and its note.
 4. **Build:** `scripts/publish articles/<id>`.
 5. **Look at it:** `.venv/bin/python scripts/browser-check.py published/<id>/v<n>`, and open the
@@ -128,11 +143,12 @@ the PDF's first page does not say what it is.
 
 ### A New Version
 
-Change the article in `articles/<id>/`, add the next entry under `versions` with its date, its
-DOI and a note of what changed, and run `scripts/publish articles/<id>` again. It writes
-`published/<id>/v<n+1>/` and leaves every earlier version as it was. Each earlier version's page
-then says that a later one exists, because pages read the article's record; no published file
-changes.
+Change the article in `articles/<id>/`, set `version` to the next number with its `date`, its
+`doi` and a `note` of what changed (a line, or paragraphs), and run `scripts/publish
+articles/<id>` again. It writes `published/<id>/v<n+1>/` and leaves every earlier version as it
+was. The new version's history is the notes of the versions already frozen, followed by its
+own. Each earlier version's page then says that a later one exists, because pages read the
+article's record; no published file changes.
 
 ### After a Review
 
@@ -153,7 +169,8 @@ version the remote already has.
 ### The Sample and the Self-Test
 
 `tests/articles/0000-000/` is a sample article, marked as one on every page it produces. It
-exists to test the build and is never published: the build refuses it in `published/`, its
+has numbered sections, a contents list, a wide table, a picture it supplies and a figure the
+build draws. It exists to test the build and is never published: the build refuses it in `published/`, its
 output goes to `tests/published/` (not committed), and the website leaves it out unless a test
 build asks for it.
 
@@ -163,8 +180,29 @@ scripts/publish tests/articles/0000-000 --rebuild     # the sample's four output
 ```
 
 The self-test builds the sample as version 1, lays its revision over it, builds version 2, and
-checks that version 1 did not change by a byte and cannot be built again; then it unpacks the
-bundle on its own and redraws the figure from it, and runs the browser checks on both versions.
+checks that version 1 did not change by a byte and cannot be built again. It checks that an
+article with gaps is refused for publication and built by a preview. Then it unpacks the bundle
+on its own and redraws the figure from it, and runs the browser checks on both versions.
+
+### What an Article May Hold
+
+- **Sections of its own.** Only the closing sections are fixed: How This Was Made,
+  Acknowledgments and References, last and in that order. An article may also write its own
+  Contribution Statement (before them), Implemented In and Version History (after them); where
+  it does not, the build writes the contribution statement from the authors' roles, and the
+  version history from each version's note.
+- **A contents list,** beside the text on a wide screen and folded above it on a narrow one. An
+  article with five or more sections gets one; `contents:` in the front matter says otherwise.
+- **Section numbers,** its own (written in the headings) or the build's (`number_sections: true`).
+- **Tables of any width.** Each sits in its own frame, and a wide one scrolls inside it.
+- **Two kinds of figure.** One the build draws from `code/<name>.py` is interactive on the page
+  and in the one-file copy, with a static picture behind it. A picture the article supplies in
+  `figures/` (a photograph, a drawing, a plot made elsewhere) is shown as it is. Both offer
+  their data, their code and their picture.
+- **Two ways to write a figure.** The journal's form is numbered and cross-referenced by the
+  build. Plain Markdown, with the alternative text in the brackets and the caption in the next
+  paragraph, is shown as the author wrote it.
+- **References** from `references.bib`, cited by key, or a list written by hand.
 
 ### What the Build Is Made Of
 

@@ -1,6 +1,7 @@
 # What the build needs. The pinned versions, with everything they pull in, are in requirements.lock
 # (written by `uv pip compile requirements.txt -o requirements.lock`).
 plotly          # draws the figures; its package carries the plotly.js that pages inline
+numpy           # for an article's figure code to use
 kaleido         # renders each figure's static image, with the Chrome on this machine
 pyyaml          # reads article front matter
 pypdf           # the build checks read the PDF with it

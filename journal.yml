@@ -5,4 +5,18 @@ path: /journal                      # the journal's section of the site
 issn: ""                            # set once assigned; until then no page or tag carries one
 first_volume_year: 2026             # volume 1; each later year is the next volume
 repository: https://github.com/Hertzforge/journal
+zenodo_community: hertzforge-journal  # where every version is deposited
 people_pages: false                 # set true once the site has /people/<name>/ pages; article pages then link each author to theirs
+
+# The article types. One line here adds a type to the build. The word after each says how an
+# article of that type states what it stands on: "evidence" (one of the levels below), or
+# "rests on" (a phrase of the authors' own, for an article that argues a position).
+types:
+  Research Article: evidence
+  Method Note: evidence
+  Negative Result: evidence
+  Proposed Standard: evidence
+  Practice Note: evidence
+  Survey: evidence
+  Perspective: rests on
+evidence_levels: [simulator, bench, hardware]

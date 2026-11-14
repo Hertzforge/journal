@@ -3,7 +3,9 @@
 freezes them.
 
     scripts/publish ARTICLE_DIR              build the version the article's front matter names
-    scripts/publish ARTICLE_DIR --rebuild    the same, replacing a test build (never a real one)
+    scripts/publish ARTICLE_DIR --preview    build it to look at, freezing nothing: any folder, at
+                                             any stage; what is still owed is listed
+    scripts/publish ARTICLE_DIR --rebuild    replace a test build (never a published version)
     python scripts/journal.py record ID      rewrite an article's record after its review status changes
     python scripts/journal.py verify         check every frozen version against its manifest
     python scripts/journal.py selftest       build the sample twice and prove the freeze rule
@@ -56,24 +58,34 @@ THEME = ROOT / 'theme'
 REAL_PUBLISHED = ROOT / 'published'
 REAL_REVIEWS = ROOT / 'reviews'
 WORK = ROOT / '_build' / 'work'
+PREVIEWS = ROOT / '_build' / 'preview'
 SAMPLE = ROOT / 'tests' / 'articles' / '0000-000'
 SAMPLE_REVISION = ROOT / 'tests' / 'revision' / '0000-000'
 TEST_PUBLISHED = ROOT / 'tests' / 'published'
 TEST_REVIEWS = ROOT / 'tests' / 'reviews'
 
 BODY_MARK = '<!--hf:body-->'
-SOURCE = 'article.qmd'
+SOURCE = 'article.md'
+UNASSIGNED = 'unassigned'
 
-TYPES = ('Research Article', 'Method Note', 'Negative Result', 'Proposed Standard', 'Practice Note', 'Survey', 'Perspective')
-EVIDENCE = {'simulator': 'Simulator', 'bench': 'Bench', 'hardware': 'Hardware'}
 CREDIT_ROLES = (
     'Conceptualization', 'Methodology', 'Software', 'Validation', 'Formal analysis', 'Investigation',
     'Resources', 'Data curation', 'Writing: original draft', 'Writing: review and editing',
     'Visualization', 'Supervision', 'Project administration', 'Funding acquisition',
 )
-#: The sections every article ends with, in this order. The contribution statement of a
-#: co-authored article is written by the build, from each author's roles, ahead of them.
-CLOSING = ('How This Was Made', 'Acknowledgments', 'References')
+#: The sections that close every article, in the journal's order: (title, anchor, required).
+#: An author may write the first and the last two; where one is absent the build writes it from
+#: the front matter (the contribution statement from each author's roles, the version history
+#: from each version's note).
+CLOSING = (
+    ('Contribution Statement', 'contribution-statement', False),
+    ('How This Was Made', 'how-this-was-made', True),
+    ('Acknowledgments', 'acknowledgments', True),
+    ('References', 'references', True),
+    ('Implemented In', 'implemented-in', False),
+    ('Version History', 'version-history', False),
+)
+CLOSING_TITLES = tuple(title for title, _, _ in CLOSING)
 STATUS = {
     'Review open': ('review-open', 'Published; reviews and comments are welcome.'),
     'Reviewed': ('reviewed', 'Reviewed in public; the authors have answered or revised. Review stays open.'),
@@ -81,6 +93,7 @@ STATUS = {
 }
 USE = ('Methods are published for research. Anyone who applies one to a test is responsible for '
        'protecting the equipment and the article under test.')
+PICTURES = ('png', 'jpg', 'jpeg', 'svg')
 
 esc = html.escape
 
@@ -134,6 +147,29 @@ def run(command: list[str], cwd: pathlib.Path, env: dict[str, str] | None = None
     return subprocess.run(command, cwd=cwd, env=env, capture_output=True, text=True, check=False)
 
 
+def shown(path: pathlib.Path) -> str:
+    return str(path.relative_to(ROOT) if path.is_relative_to(ROOT) else path)
+
+
+def joined(names: list[str]) -> str:
+    return names[0] if len(names) == 1 else ', '.join(names[:-1]) + ' and ' + names[-1]
+
+
+def plain(markdown: str) -> str:
+    """Markdown read as one line of plain text, for a description or a record."""
+    text = re.sub(r'\[([^\]]+)\]\([^)]*\)', r'\1', markdown)
+    text = re.sub(r'[*_`$]', '', text)
+    return ' '.join(text.split())
+
+
+def first_paragraph(markdown: str) -> str:
+    return plain(re.split(r'\n\s*\n', markdown.strip(), maxsplit=1)[0])
+
+
+def load_journal() -> dict:
+    return yaml.safe_load((ROOT / 'journal.yml').read_text(encoding='utf-8'))
+
+
 # ---------------------------------------------------------------- tools
 
 
@@ -175,6 +211,7 @@ def tool_versions(quarto: pathlib.Path) -> dict:
         'plotly': metadata.version('plotly'),
         'plotly.js': (re.search(r'plotly\.js v([\w.]+)', script) or [None, 'unknown'])[1],
         'kaleido': metadata.version('kaleido'),
+        'numpy': metadata.version('numpy'),
         'theme': theme.get('commit', '')[:12],
         'build': commit[:12] + ('+changes' if dirty else ''),
     }
@@ -196,31 +233,65 @@ def read_source(article: pathlib.Path) -> tuple[dict, str]:
     return front, match.group(2)
 
 
-def headings(body: str) -> list[tuple[int, str, int]]:
-    """(level, title, line index) of every heading outside a code block."""
+def outside_code(body: str) -> list[tuple[int, str]]:
+    """(line index, line) of every line that is not inside a fenced code block."""
     found, fenced = [], False
     for index, line in enumerate(body.splitlines()):
         if line.lstrip().startswith(('```', '~~~')):
             fenced = not fenced
-        match = None if fenced else re.match(r'(#{1,6})\s+(.+?)\s*(?:\{[^}]*\})?\s*$', line)
+            continue
+        if not fenced:
+            found.append((index, line))
+    return found
+
+
+def headings(body: str) -> list[tuple[int, str, int]]:
+    """(level, title, line index) of every heading outside a code block."""
+    found = []
+    for index, line in outside_code(body):
+        match = re.match(r'(#{1,6})\s+(.+?)\s*(?:\{[^}]*\})?\s*$', line)
         if match:
             found.append((len(match.group(1)), match.group(2), index))
     return found
 
 
-FIGURE = re.compile(r'!\[(?P<caption>[^\]]*)\]\(figures/(?P<name>[\w-]+)\.png\)(?:\{(?P<attrs>[^}]*)\})?')
+FIGURE = re.compile(
+    r'!\[(?P<text>[^\]]*)\]\(figures/(?P<name>[\w.-]+?)\.(?P<ext>' + '|'.join(PICTURES) + r')\)(?:\{(?P<attrs>[^}]*)\})?'
+)
 
 
-def figures_in(body: str) -> list[dict]:
+def figures_in(article: pathlib.Path, body: str) -> list[dict]:
+    """Every figure of the article, in order, in either of the two forms an article may write:
+
+    the journal's:  ![Caption.](figures/name.png){#fig-name fig-alt="..." data="data/file.csv"}
+                    numbered and cross-referenced by the build;
+    plain Markdown: ![Alternative text.](figures/name.png)
+                    with the caption written by the author in the paragraph that follows.
+
+    Either form may name its data (data="data/a.csv data/b.csv"); left out, data/name.csv is
+    taken when it exists.
+
+    A figure is `drawn` when the article holds no picture of it: the build then draws it, both
+    interactive and static, from code/name.py. A picture supplied in figures/ is used as it is.
+    """
     found = []
-    for match in FIGURE.finditer(body):
+    text = '\n'.join(line for _, line in outside_code(body) if not line.startswith('    '))
+    for match in FIGURE.finditer(text):
         attrs = match.group('attrs') or ''
+        name, ext = match.group('name'), match.group('ext')
+        journal_form = bool(re.search(r'#fig-[\w-]+', attrs))
+        given = (article / 'figures' / f'{name}.{ext}').is_file()
+        data = (re.search(r'\bdata="([^"]*)"', attrs) or [None, ''])[1].split()
+        if not data and (article / 'data' / f'{name}.csv').is_file():
+            data = [f'data/{name}.csv']
         found.append({
-            'name': match.group('name'),
-            'caption': match.group('caption').strip(),
-            'id': (re.search(r'#(fig-[\w-]+)', attrs) or [None, None])[1],
-            'alt': (re.search(r'fig-alt="([^"]*)"', attrs) or [None, ''])[1].strip(),
-            'data': (re.search(r'\bdata="([^"]*)"', attrs) or [None, ''])[1].strip(),
+            'name': name, 'ext': ext, 'file': f'figures/{name}.{ext}',
+            'form': 'journal' if journal_form else 'plain',
+            'drawn': not given,
+            'caption': match.group('text').strip() if journal_form else '',
+            'alt': ((re.search(r'fig-alt="([^"]*)"', attrs) or [None, ''])[1] if journal_form else match.group('text')).strip(),
+            'data': data,
+            'code': f'code/{name}.py' if (article / 'code' / f'{name}.py').is_file() else '',
         })
     return found
 
@@ -234,70 +305,87 @@ def load_people() -> dict[str, dict]:
     return people
 
 
-def understand(article: pathlib.Path, journal: dict, real: bool, need_doi: bool) -> tuple[dict, str, list[str]]:
-    """Reads and checks an article. Returns what the build needs, the body, and warnings.
-    Everything wrong is reported at once."""
+def understand(article: pathlib.Path, journal: dict, published: pathlib.Path,
+               preview: bool = False, need_doi: bool = True) -> tuple[dict, str, list[str], list[str]]:
+    """Reads and checks an article. Returns what the build needs, the body, what is still owed
+    before publication, and advice. What makes a build impossible is refused at once, all of it
+    together. What is owed stops a publication and is only listed by a preview."""
     front, body = read_source(article)
-    wrong: list[str] = []
-    warnings: list[str] = []
+    # Where the body starts in the file, so a finding can name the line an editor will see.
+    offset = len((article / SOURCE).read_text(encoding='utf-8')) - len(body)
+    offset = (article / SOURCE).read_text(encoding='utf-8')[:offset].count('\n') + 1
+    wrong: list[str] = []   # the article cannot be built
+    owed: list[str] = []    # it can be built, and cannot be published until this is settled
+    advice: list[str] = []
+    real = published == REAL_PUBLISHED and not preview
 
-    article_id = str(front.get('id') or '')
-    if not re.fullmatch(r'\d{4}-\d{3}', article_id):
-        wrong.append(f'id must be <year>-<nnn>, for example 2026-001; it is {article_id!r}')
-    elif article.name != article_id:
-        wrong.append(f'the folder is named {article.name} but the article says its id is {article_id}')
+    article_id = str(front.get('id') or '').strip()
+    if not article_id:
+        owed.append('id is not set. The editors assign <year>-<nnn> when the article is published')
+        article_id = UNASSIGNED
+    elif not re.fullmatch(r'\d{4}-\d{3}', article_id):
+        owed.append(f'id must be <year>-<nnn>, for example 2026-001; it is {article_id!r}')
+        article_id = UNASSIGNED
+    elif article.name != article_id and not preview:
+        owed.append(f'the folder is named {article.name} and the article says its id is {article_id}; '
+                    f'the source of a published article is in articles/{article_id}/')
 
     sample = bool(front.get('sample'))
-    if real and sample:
-        wrong.append('this is marked as a sample; a sample is never published. Build it under tests/')
-    if not real and not sample:
-        wrong.append('only a sample (sample: true) may be built outside articles/ and published/')
+    if not preview:
+        if real and sample:
+            wrong.append('this is marked as a sample; a sample is never published. Build it under tests/')
+        if not real and not sample:
+            wrong.append('only a sample (sample: true) is built outside articles/ and published/. '
+                         'To look at an article without publishing it, add --preview')
 
     title = str(front.get('title') or '').strip()
     if not title:
         wrong.append('title is empty')
-    kind = front.get('type')
-    if kind not in TYPES:
-        wrong.append(f'type must be one of: {", ".join(TYPES)}')
-    # A Perspective argues a position: it says what it rests on where others state an evidence level.
+
+    # What kind of article it is, and what it stands on.
+    types = journal['types']
+    kind = str(front.get('type') or '').strip()
+    if kind not in types:
+        owed.append(f'type must be one of: {", ".join(types)}')
     evidence = ' '.join(str(front.get('evidence') or '').split())
-    if kind == 'Perspective':
+    if types.get(kind) == 'rests on':
+        evidence_label = 'Rests on'
         if not evidence:
-            wrong.append('evidence is empty: a Perspective says what it rests on, for example: published sources')
-        evidence_label, evidence_shown = 'Rests on', evidence[:1].upper() + evidence[1:]
+            owed.append(f'evidence is empty: a {kind} says what it rests on, for example: published sources')
     else:
-        if evidence not in EVIDENCE:
-            wrong.append(f'evidence must be one of: {", ".join(EVIDENCE)}')
-        evidence_label, evidence_shown = 'Evidence', EVIDENCE.get(evidence, '')
+        evidence_label = 'Evidence'
+        if evidence not in journal['evidence_levels']:
+            owed.append(f'evidence must be one of: {", ".join(journal["evidence_levels"])}')
     evidence_note = ' '.join(str(front.get('evidence_note') or '').split())
     if not evidence_note:
-        wrong.append('evidence_note is empty: say in one sentence what the results come from')
+        advice.append('evidence_note is empty. A sentence there (what the results come from, and on what) '
+                      'shows beside the evidence level at the top of the page')
     abstract = str(front.get('abstract') or '').strip()
     if not abstract:
-        wrong.append('abstract is empty')
+        owed.append('abstract is empty')
 
     people = load_people()
     authors = []
     for number, entry in enumerate(front.get('authors') or [], 1):
         name = str((entry or {}).get('name') or '').strip()
         if not name:
-            wrong.append(f'author {number} has no name')
+            owed.append(f'author {number} has no name')
             continue
         try:
             orcid = orcid_id(entry.get('orcid'), name)
         except Refused as problem:
-            wrong.append(str(problem))
+            owed.append(str(problem))
             orcid = None
-        if not orcid:
-            warnings.append(f'{name} has no ORCID iD')
+        if not entry.get('orcid'):
+            advice.append(f'{name} has no ORCID iD')
         known = people.get(name)
         if known and orcid and known.get('orcid') and orcid_id(known['orcid'], name) != orcid:
-            wrong.append(f"{name}'s ORCID iD differs from the one in people/")
+            owed.append(f"{name}'s ORCID iD differs from the one in people/")
         words = name.split()
-        roles = list(entry.get('roles') or [])
+        roles = [str(role) for role in entry.get('roles') or []]
         for role in roles:
             if role not in CREDIT_ROLES:
-                wrong.append(f'{name}: {role!r} is not a CRediT role ({", ".join(CREDIT_ROLES)})')
+                owed.append(f'{name}: {role!r} is not a CRediT role ({", ".join(CREDIT_ROLES)})')
         authors.append({
             'name': name,
             'family': str(entry.get('family') or words[-1]),
@@ -308,110 +396,181 @@ def understand(article: pathlib.Path, journal: dict, real: bool, need_doi: bool)
         })
     if not authors:
         wrong.append('authors is empty')
-    if len(authors) > 1:
-        for author in authors:
-            if not author['roles']:
-                wrong.append(f'{author["name"]} has no roles; a co-authored article says who did what')
 
+    # This version, and the versions already frozen before it.
+    try:
+        number = int(front.get('version') or 1)
+        if number < 1:
+            raise ValueError
+    except (TypeError, ValueError):
+        wrong.append(f'version must be a whole number from 1; it is {front.get("version")!r}')
+        number = 1
+    home = published / article_id
     versions = []
-    for number, entry in enumerate(front.get('versions') or [], 1):
-        entry = entry or {}
-        if entry.get('version') != number:
-            wrong.append(f'versions must run 1, 2, 3 in order; entry {number} says {entry.get("version")!r}')
+    for earlier in range(1, number):
+        record = home / f'v{earlier}' / 'version.json'
+        if record.is_file():
+            frozen = json.loads(record.read_text(encoding='utf-8'))
+            versions.append({'version': earlier, 'date': frozen['date'], 'note': frozen['note'], 'doi': frozen['doi']})
+        elif preview:
+            advice.append(f'version {earlier} is not among the published versions here; this preview shows version {number} alone')
+            versions = []
+            break
+        else:
+            wrong.append(f'version {number} cannot be built: version {earlier} was never published in {shown(home)}')
+            break
+    date = ''
+    if front.get('date'):
         try:
-            date = iso(entry.get('date'), f'the date of version {number}')
+            date = iso(front.get('date'), 'date')
         except Refused as problem:
-            wrong.append(str(problem))
-            date = ''
-        note = ' '.join(str(entry.get('note') or '').split())
-        if not note:
-            wrong.append(f'version {number} has no note saying what changed')
-        doi = str(entry.get('doi') or '').strip()
-        if doi and not re.fullmatch(r'10\.\d{4,9}/\S+', doi):
-            wrong.append(f'the DOI of version {number} is not a DOI: {doi!r}')
-        versions.append({'version': number, 'date': date, 'note': note, 'doi': doi})
-    if not versions:
-        wrong.append('versions is empty; the first entry is version 1')
-    elif any(a['date'] > b['date'] for a, b in zip(versions, versions[1:]) if a['date'] and b['date']):
-        wrong.append('the versions are not in date order')
+            owed.append(str(problem))
+    if not date:
+        owed.append('date is not set: the day this version is published, YYYY-MM-DD')
+        date = datetime.date.today().isoformat()
+    if versions and date < versions[-1]['date']:
+        owed.append(f'date ({date}) is before version {versions[-1]["version"]} ({versions[-1]["date"]})')
+    note = str(front.get('note') or ('First published.' if number == 1 else '')).strip()
+    if not note:
+        owed.append('note is empty: say what changed in this version')
+    doi = str(front.get('doi') or '').strip()
     doi_latest = str(front.get('doi_latest') or '').strip()
-    if doi_latest and not re.fullmatch(r'10\.\d{4,9}/\S+', doi_latest):
-        wrong.append(f'doi_latest is not a DOI: {doi_latest!r}')
-    if versions and need_doi and not (versions[-1]['doi'] and doi_latest):
-        wrong.append('this version has no DOI, or the article has no doi_latest. Reserve both on Zenodo '
-                     'first: a frozen version cannot be given a DOI afterward. (--no-doi builds without.)')
+    for label, value in (('doi', doi), ('doi_latest', doi_latest)):
+        if value and not re.fullmatch(r'10\.\d{4,9}/\S+', value):
+            owed.append(f'{label} is not a DOI: {value!r}')
+    if need_doi and (real or preview) and not (doi and doi_latest):
+        owed.append('doi and doi_latest are not both set. Reserve them on Zenodo before publishing: a frozen '
+                    'version cannot be given a DOI afterward (--no-doi publishes without)')
+    versions.append({'version': number, 'date': date, 'note': note, 'doi': doi})
+    first = str(front.get('first_published') or '').strip()
+    if first:
+        try:
+            if iso(front.get('first_published'), 'first_published') != versions[0]['date']:
+                owed.append(f'first_published says {first}; version 1 is dated {versions[0]["date"]}. '
+                            'The field is not needed: the build takes the date from version 1')
+        except Refused as problem:
+            owed.append(str(problem))
 
     implemented = front.get('implemented_in') or {}
     if isinstance(implemented, str):
         implemented = {'label': implemented}
     implemented = {'label': str(implemented.get('label') or '').strip(), 'url': str(implemented.get('url') or '').strip()}
     if implemented['url'] and not implemented['url'].startswith('https://'):
-        wrong.append('implemented_in.url must be an https address')
+        owed.append('implemented_in.url must be an https address')
 
-    # The body: its closing sections, in order, and its figures.
+    # The body: its sections, and the ones that close it.
     found = headings(body)
     if any(level == 1 for level, _, _ in found):
-        wrong.append('the body has a level-one heading (#); the title is the only one, and sections start at ##')
-    sections = [title_ for level, title_, _ in found if level == 2]
-    if 'Contribution Statement' in sections:
-        wrong.append('remove the Contribution Statement section: the build writes it from each author\'s roles')
-    if 'Abstract' in sections:
-        wrong.append('remove the Abstract section: the build places the abstract from the front matter')
-    if tuple(sections[-len(CLOSING):]) != CLOSING:
-        wrong.append(f'the article must end with these sections, in this order: {", ".join(CLOSING)}')
+        owed.append('the body has a level-one heading (#). The title is the only one; sections start at ##')
+    sections = [(title_, index) for level, title_, index in found if level == 2]
+    names = [title_ for title_, _ in sections]
+    if 'Abstract' in names:
+        owed.append('remove the Abstract section: the build places the abstract from the front matter')
+    closing = [title_ for title_ in names if title_ in CLOSING_TITLES]
+    for title_, _, required in CLOSING:
+        if required and title_ not in closing:
+            owed.append(f'the article has no "{title_}" section')
+        if closing.count(title_) > 1:
+            owed.append(f'the article has more than one "{title_}" section')
+    in_order = [title_ for title_ in CLOSING_TITLES if title_ in closing]
+    if closing and (names[-len(closing):] != closing or closing != in_order):
+        owed.append('the closing sections must come last, in this order: ' + ', '.join(in_order)
+                    + ' (they are written: ' + ', '.join(closing) + ')')
+    wrote_statement = 'Contribution Statement' in closing
+    if len(authors) > 1:
+        for author in authors:
+            if not author['roles']:
+                owed.append(f'{author["name"]} has no CRediT roles in the front matter; a co-authored article says who did what')
+    if 'Implemented In' in closing and implemented['label']:
+        owed.append('say where the work is implemented once: in the Implemented In section, or in implemented_in')
+    if 'Version History' in closing:
+        last = sections[names.index('Version History')][1]
+        own_history = '\n'.join(body.splitlines()[last:])
+        if not re.search(rf'\bversion\s+{number}\b', own_history, re.I):
+            owed.append(f'the Version History section does not mention version {number}')
+        advice.append('the article has its own Version History section, which is shown as written. The `note` '
+                      'in the front matter is what the record, the site and later versions quote')
 
-    figures = figures_in(body)
-    if body.count('](figures/') != len(figures):
-        wrong.append('a figure is not written as ![Caption.](figures/name.png){#fig-name fig-alt="..." data="data/file"}')
+    lines = outside_code(body)
+    if closing:
+        after = sections[names.index(closing[-1])][1]
+        if any(re.fullmatch(r'\s*([-*_])(\s*\1){2,}\s*', line) for index, line in lines if index > after):
+            owed.append('remove what follows the rule (---) at the end of the article: the build writes the '
+                        'copyright and license line')
+    for index, line in lines:
+        if '<!--' in line:
+            owed.append(f'a comment is still in the text and would be published in the page\'s source (line {index + offset} '
+                        f'of {SOURCE}): {line.strip()[:70]}')
+        marker = re.search(r'\b(PLACEHOLDER|TODO|TBD)\b|\[[^\]\n]*\bto be (stated|added|written|decided|confirmed|assigned)\b[^\]\n]*\]', line)
+        if marker:
+            owed.append(f'something is still to be filled in (line {index + offset} of {SOURCE}): {marker.group(0)[:70]}')
+
+    figures = figures_in(article, body)
+    listed = sum(line.count('](figures/') for _, line in lines if not line.startswith('    '))
+    if listed != len(figures):
+        owed.append('a figure is written in a form the build does not read. Write '
+                    '![Caption.](figures/name.png){#fig-name fig-alt="..." data="data/file.csv"}')
     seen = set()
     for figure in figures:
         where = f'figure {figure["name"]}'
         if figure['name'] in seen:
-            wrong.append(f'{where} appears twice')
+            owed.append(f'{where} appears twice')
         seen.add(figure['name'])
-        if not figure['id']:
-            wrong.append(f'{where} has no id (#fig-...)')
-        if not figure['caption']:
-            wrong.append(f'{where} has no caption')
         if not figure['alt']:
-            wrong.append(f'{where} has no alternative text (fig-alt="...")')
-        if not (article / 'code' / f'{figure["name"]}.py').is_file():
-            wrong.append(f'{where}: code/{figure["name"]}.py does not exist; every figure is drawn by a file in code/')
-        if not figure['data']:
-            wrong.append(f'{where} names no data file (data="data/...")')
-        elif not figure['data'].startswith('data/') or not (article / figure['data']).is_file():
-            wrong.append(f'{where}: {figure["data"]} is not a file under data/')
+            owed.append(f'{where} has no alternative text')
+        if figure['form'] == 'journal' and not figure['caption']:
+            owed.append(f'{where} has no caption')
+        if figure['drawn']:
+            if figure['ext'] != 'png' or not figure['code']:
+                wrong.append(f'{where}: the article has no picture {figure["file"]}, and no code/{figure["name"]}.py to draw it')
+            if not figure['data']:
+                owed.append(f'{where} names no data file (data="data/...")')
+        for file in figure['data']:
+            if not file.startswith('data/') or not (article / file).is_file():
+                wrong.append(f'{where}: {file} is not a file under data/')
+    still = [figure['name'] for figure in figures if not figure['drawn']]
+    if still:
+        advice.append(f'{len(still)} of {len(figures)} figures are pictures supplied with the article ({", ".join(still)}), '
+                      'so they are not interactive on the page or in the one-file copy. A plot of data becomes interactive when '
+                      'code/<name>.py defines figure() and the picture is removed (templates/article/code/README.md)')
 
     if wrong:
         raise Refused(f'{article / SOURCE} cannot be built:\n' + '\n'.join(f'  - {line}' for line in wrong))
 
-    number = versions[-1]['version']
-    first_year = int(versions[0]['date'][:4])
+    body_sections = [title_ for title_ in names if title_ not in CLOSING_TITLES]
+    contents = front.get('contents')
+    if contents is None:
+        contents = len(body_sections) >= 5
+    number_sections = bool(front.get('number_sections'))
+    if number_sections and any(re.match(r'\d', title_) for title_ in body_sections):
+        advice.append('number_sections is on and the headings carry numbers of their own; they would be numbered twice')
+
     editors = {name for name, record in people.items() if record.get('role') == 'editor'}
-    by_line = {author['name'] for author in authors}
     editors_note = None
-    if editors and editors <= by_line:
+    if editors and editors <= {author['name'] for author in authors}:
         editors_note = ("The authors of this article are the journal's editors. Its reviewers are drawn from "
                         'outside the author list.')
     site = journal['site'].rstrip('/')
     base = f'{site}{journal["path"]}/{article_id}'
+    first_year = int(versions[0]['date'][:4])
     ctx = {
-        'id': article_id, 'n': number, 'sample': sample, 'title': title, 'kind': kind,
-        'evidence': evidence_shown, 'evidence_label': evidence_label, 'evidence_key': evidence, 'evidence_note': evidence_note,
-        'abstract': abstract, 'authors': authors, 'versions': versions,
-        'date': versions[-1]['date'], 'first': versions[0]['date'], 'note': versions[-1]['note'],
-        'doi': versions[-1]['doi'], 'doi_latest': doi_latest,
+        'id': article_id, 'n': number, 'sample': sample, 'preview': preview, 'title': title, 'kind': kind or 'Article',
+        'evidence': evidence[:1].upper() + evidence[1:], 'evidence_label': evidence_label, 'evidence_key': evidence,
+        'evidence_note': evidence_note, 'abstract': abstract, 'authors': authors, 'versions': versions,
+        'date': date, 'first': versions[0]['date'], 'note': note, 'doi': doi, 'doi_latest': doi_latest,
         'issn': str(journal.get('issn') or '').strip(), 'journal': journal['title'],
-        'volume': first_year - int(journal['first_volume_year']) + 1, 'year': versions[-1]['date'][:4],
+        'volume': first_year - int(journal['first_volume_year']) + 1, 'year': date[:4],
         'site': site, 'journal_address': f'{site}{journal["path"]}/',
         'article_address': f'{base}/', 'address': f'{base}/v{number}/',
         'stem': f'{article_id}-v{number}', 'implemented': implemented, 'editors_note': editors_note,
         'people_pages': bool(journal.get('people_pages')), 'figures': figures,
         'bibliography': 'references.bib' if (article / 'references.bib').is_file() else '',
         'benchmarks': str(front.get('benchmarks') or '').strip(),
+        'closing': closing, 'wrote_statement': wrote_statement, 'contents': bool(contents),
+        'number_sections': number_sections,
     }
     ctx.update(citation(ctx))
-    return ctx, body, warnings
+    return ctx, body, owed, advice
 
 
 # ---------------------------------------------------------------- the citation
@@ -427,18 +586,16 @@ def citation(ctx: dict) -> dict:
         return f'{author["family"]}, {initials}'.rstrip(', ')
 
     names = [short(author) for author in ctx['authors']]
-    if len(names) == 1:
-        by = names[0]
-    else:
-        by = ', '.join(names[:-1]) + ', and ' + names[-1]
+    by = names[0] if len(names) == 1 else ', '.join(names[:-1]) + ', and ' + names[-1]
     link = f'https://doi.org/{ctx["doi"]}' if ctx['doi'] else ctx['address']
-    head = f'{by} ({ctx["year"]}). {ctx["title"]}.'
+    ends = '' if ctx['title'].endswith(('.', '?', '!')) else '.'
+    head = f'{by} ({ctx["year"]}). {ctx["title"]}{ends}'
     tail = f'{ctx["volume"]}, {ctx["id"]}, version {ctx["n"]}. {link}'
 
     def tex(text: str) -> str:
         return re.sub(r'([&%$#_{}])', r'\\\1', text)
 
-    key = re.sub(r'[^a-z]', '', ctx['authors'][0]['family'].lower()) + ctx['year'] + 'hf' + ctx['id'].replace('-', '') + f'v{ctx["n"]}'
+    key = re.sub(r'[^a-z]', '', ctx['authors'][0]['family'].lower()) + ctx['year'] + 'hf' + re.sub(r'\W', '', ctx['id']) + f'v{ctx["n"]}'
     fields = [
         ('author', ' and '.join(f'{tex(a["family"])}, {tex(a["given"])}'.rstrip(', ') for a in ctx['authors'])),
         ('title', '{' + tex(ctx['title']) + '}'),
@@ -463,13 +620,6 @@ def citation(ctx: dict) -> dict:
     ]
     ris = ''.join(f'{tag}  - {value}\r\n' for tag, value in ris_lines if value or tag == 'ER')
     return {'cite_head': head, 'cite_tail': tail, 'cite_link': link, 'bibtex': bibtex, 'ris': ris}
-
-
-def plain(markdown: str) -> str:
-    """Markdown read as one line of plain text, for a description or an abstract field."""
-    text = re.sub(r'\[([^\]]+)\]\([^)]*\)', r'\1', markdown)
-    text = re.sub(r'[*_`$]', '', text)
-    return ' '.join(text.split())
 
 
 def highwire(ctx: dict) -> list[tuple[str, str]]:
@@ -520,7 +670,7 @@ def head_html(ctx: dict, variant: str) -> str:
         f'<meta name="description" content="{esc(description)}">',
         f'<link rel="canonical" href="{esc(ctx["address"])}">',
     ]
-    if ctx['sample']:
+    if ctx['sample'] or ctx['preview']:
         lines.append('<meta name="robots" content="noindex, nofollow">')
     lines += [f'<meta name="{name}" content="{esc(value)}">' for name, value in highwire(ctx)]
     lines += [
@@ -577,7 +727,11 @@ def shell_html(ctx: dict, variant: str, status: dict, sizes: dict[str, int]) -> 
         f'<span class="hf-status-text">{esc(meaning)}</span>{as_of}'
         '<a class="hf-status-link" href="#hf-reviews">Reviews</a></div></div>'
     )
-    if ctx['sample']:
+    if ctx['preview']:
+        out.append('<div class="hf-sample dark"><div class="wrap"><strong>Preview. Not published.</strong> '
+                   f'Built on {datetime.date.today().isoformat()} to look at the article. It is not a version of record, '
+                   'and its number, dates and addresses may not be final.</div></div>')
+    elif ctx['sample']:
         out.append('<div class="hf-sample dark"><div class="wrap"><strong>Sample. Not a publication.</strong> '
                    "This page exists to test the journal's build. Its authors, data and results are invented.</div></div>")
 
@@ -598,8 +752,8 @@ def shell_html(ctx: dict, variant: str, status: dict, sizes: dict[str, int]) -> 
         f'<h1 class="steel">{esc(ctx["title"])}</h1>'
         f'<p class="hf-kind" id="hf-type"><span class="tag tag-strong">{esc(ctx["kind"])}</span></p>'
         f'<ul class="hf-authors" id="hf-authors">{"".join(authors)}</ul>{editors_note}'
-        f'<p class="hf-evidence" id="hf-evidence"><span class="tag">{ctx["evidence_label"]}</span><strong>{esc(ctx["evidence"])}.</strong> '
-        f'{esc(ctx["evidence_note"])}</p>'
+        f'<p class="hf-evidence" id="hf-evidence"><span class="tag">{ctx["evidence_label"]}</span>'
+        f'<strong>{esc(ctx["evidence"])}.</strong> {esc(ctx["evidence_note"])}</p>'
         f'</div>{trace()}</div>'
     )
     out.append('<div class="page-body"><div class="wrap"><div class="prose hf-prose">')
@@ -609,10 +763,6 @@ def shell_html(ctx: dict, variant: str, status: dict, sizes: dict[str, int]) -> 
     known = ' '.join(
         (f'<strong>{v["version"]} (this version)</strong>' if v['version'] == n else f'<a href="../v{v["version"]}/">{v["version"]}</a>')
         for v in ctx['versions']
-    )
-    history = ''.join(
-        '<li>' + (f'<a href="../v{v["version"]}/">Version {v["version"]}</a>' if v['version'] != n and not single else f'Version {v["version"]}')
-        + f', {v["date"]}. {esc(v["note"])}</li>' for v in ctx['versions']
     )
     if single:
         versions_line = (f'<p class="hf-versions">Every version, and any later than this one, is at '
@@ -626,9 +776,9 @@ def shell_html(ctx: dict, variant: str, status: dict, sizes: dict[str, int]) -> 
         '<div class="hf-panel hf-version" id="hf-version"><h2 class="hf-label">Version</h2>'
         f'<p class="hf-version-line"><span><strong>Version {n}</strong>, published {ctx["date"]}. '
         f'First published {ctx["first"]}.</span>{selector}</p>'
-        f'<p class="hf-note">Change note: {esc(ctx["note"])}</p>{versions_line}'
-        '<div class="note hf-notlatest" hidden></div>'
-        f'<details class="hf-history"><summary>Version history</summary><ol>{history}</ol></details></div>'
+        f'<p class="hf-note">Change note: {esc(first_paragraph(ctx["note"]))} '
+        '<a href="#version-history">Version history</a></p>'
+        f'{versions_line}<div class="note hf-notlatest" hidden></div></div>'
     )
 
     # 5. DOIs, then the citation box with BibTeX and RIS.
@@ -666,24 +816,20 @@ def shell_html(ctx: dict, variant: str, status: dict, sizes: dict[str, int]) -> 
             return (f'<li><a href="{file}" download="{file}">{label}</a><span class="size">{human_size(sizes[file])}</span>'
                     f'<span class="d">{about}</span></li>')
 
+        moving = 'Interactive, and opens' if any(f['drawn'] for f in ctx['figures']) else 'Opens'
         out.append(
             '<div class="hf-downloads" id="hf-downloads"><h2 class="hf-label">Downloads</h2><ul class="dl">'
-            + item(f'{stem}.html', 'The Article in One File', 'Interactive, and opens without a network connection. It asks nothing of any server, so it can be carried onto a closed network.')
+            + item(f'{stem}.html', 'The Article in One File', f'{moving} without a network connection. It asks nothing of any server, so it can be carried onto a closed network.')
             + item(f'{stem}.pdf', 'PDF Print Copy', 'Static figures, from the same source as this page.')
             + item(f'{stem}-bundle.zip', 'Data and Code Bundle', 'The data behind every figure and the code that draws it, with what is needed to run it again.')
             + '</ul></div>'
         )
     out.append('</section>')
 
-    # 7 to 9: the abstract, the body and its closing sections come from the article.
+    # The contents list, then 7 to 9: the abstract, the body and its closing sections.
     out.append(BODY_MARK)
 
-    # 10. Implemented in.
-    if ctx['implemented']['label']:
-        label = esc(ctx['implemented']['label'])
-        if ctx['implemented']['url']:
-            label = f'<a href="{esc(ctx["implemented"]["url"])}" rel="noopener">{label}</a>'
-        out.append(f'<section class="hf-end" id="hf-implemented"><h2>Implemented In</h2><p>{label}</p></section>')
+    # 10. Implemented in: among the closing sections, written by the article or from its front matter.
 
     # 11. Reviews: each invited review, and the thread.
     reviews = status.get('reviews') or []
@@ -709,16 +855,14 @@ def shell_html(ctx: dict, variant: str, status: dict, sizes: dict[str, int]) -> 
     )
 
     # 12. License line.
-    holders = [a['name'] for a in ctx['authors']]
-    by = holders[0] if len(holders) == 1 else ', '.join(holders[:-1]) + ' and ' + holders[-1]
     out.append(
-        f'<p class="hf-license" id="hf-license">Copyright {ctx["first"][:4]} {esc(by)}. Text, figures and data '
-        '<a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>; code '
+        f'<p class="hf-license" id="hf-license">Copyright {ctx["first"][:4]} {esc(joined([a["name"] for a in ctx["authors"]]))}. '
+        'Text, figures and data <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>; code '
         f'<a href="https://opensource.org/license/mit" rel="license noopener">MIT</a>.<br>{USE}</p>'
     )
     out.append('</div></div></div></article></main>')
     out.append(footer)
-    if ctx['figures']:
+    if any(figure['drawn'] for figure in ctx['figures']):
         out.append('<script src="assets/plotly.min.js"></script>')
     out.append('<script src="assets/article.js"></script>')
     return '\n'.join(out) + '\n'
@@ -736,6 +880,7 @@ def print_parts(ctx: dict) -> dict[str, str]:
     year, month, day = (int(part) for part in ctx['date'].split('-'))
     authors = ', '.join(typ(a['name']) for a in ctx['authors'])
     running = f'{ctx["journal"]} {ctx["volume"]}, {ctx["id"]}, version {ctx["n"]}'
+    numbering = '"1.1"' if ctx['number_sections'] else 'none'
     show = (
         '#show: doc => article(\n'
         f'  running: {typ(running)},\n'
@@ -743,6 +888,7 @@ def print_parts(ctx: dict) -> dict[str, str]:
         f'  title: {typ(ctx["title"])},\n'
         f'  authors: ({authors},),\n'
         f'  date: datetime(year: {year}, month: {month}, day: {day}),\n'
+        f'  numbering: {numbering},\n'
         '  doc,\n)\n'
     )
 
@@ -752,10 +898,17 @@ def print_parts(ctx: dict) -> dict[str, str]:
     people = ', '.join(f'(name: {typ(a["name"])}, orcid: {opt(a["orcid"] or "")})' for a in ctx['authors'])
     version_line = f'Version {ctx["n"]}, published {ctx["date"]}. First published {ctx["first"]}.'
     cite = f'{ctx["cite_head"]} {ctx["journal"]} {ctx["cite_tail"]}'
+    notice = 'none'
+    if ctx['preview']:
+        notice = typ('Preview. Not published. Built to look at the article; it is not a version of record, and its number, '
+                     'dates and addresses may not be final.')
+    elif ctx['sample']:
+        notice = typ("Sample. Not a publication. This document exists to test the journal's build. Its authors, data and "
+                     'results are invented.')
     cover = (
         '#hf-cover(\n'
         f'  journal: {typ(ctx["journal"])},\n'
-        f'  sample: {"true" if ctx["sample"] else "false"},\n'
+        f'  notice: {notice},\n'
         f'  title: {typ(ctx["title"])},\n'
         f'  kind: {typ(ctx["kind"])},\n'
         f'  authors: ({people},),\n'
@@ -764,7 +917,7 @@ def print_parts(ctx: dict) -> dict[str, str]:
         f'  evidence: {typ(ctx["evidence"])},\n'
         f'  evidence-note: {typ(ctx["evidence_note"])},\n'
         f'  version-line: {typ(version_line)},\n'
-        f'  note: {typ(ctx["note"])},\n'
+        f'  note: {typ(first_paragraph(ctx["note"]))},\n'
         f'  address: {typ(ctx["address"])},\n'
         f'  doi: {opt(ctx["doi"])},\n'
         f'  doi-latest: {opt(ctx["doi_latest"])},\n'
@@ -772,15 +925,11 @@ def print_parts(ctx: dict) -> dict[str, str]:
         f'  citation: {typ(cite)},\n'
         ')\n'
     )
-    holders = [a['name'] for a in ctx['authors']]
-    by = holders[0] if len(holders) == 1 else ', '.join(holders[:-1]) + ' and ' + holders[-1]
     reviews = ('This article is reviewed in public. Its reviews, its review status and any later version are at '
                + ctx['article_address'])
-    license_line = f'Copyright {ctx["first"][:4]} {by}. Text, figures and data CC BY 4.0; code MIT.'
+    license_line = f'Copyright {ctx["first"][:4]} {joined([a["name"] for a in ctx["authors"]])}. Text, figures and data CC BY 4.0; code MIT.'
     back = (
         '#hf-back(\n'
-        f'  implemented: {opt(ctx["implemented"]["label"])},\n'
-        f'  implemented-url: {opt(ctx["implemented"]["url"])},\n'
         f'  reviews: {typ(reviews)},\n'
         f'  license: {typ(license_line)},\n'
         f'  use: {typ(USE)},\n'
@@ -793,28 +942,65 @@ def print_parts(ctx: dict) -> dict[str, str]:
 
 
 def quarto_source(ctx: dict, body: str) -> str:
-    """The article as Quarto reads it: the abstract placed first, the contribution statement
-    written from the authors' roles, and the closing sections given fixed anchors. The front
-    matter the journal's own rules read is not passed on."""
+    """The article as Quarto reads it. The abstract is placed first. The closing sections get
+    fixed anchors. The contribution statement and the version history are written from the front
+    matter where the article did not write them. The front matter the journal's own rules read
+    is not passed on."""
     lines = body.strip('\n').splitlines()
-    marks = {title: index for level, title, index in headings(body.strip('\n')) if level == 2 and title in CLOSING}
-    anchors = {'How This Was Made': 'how-this-was-made', 'Acknowledgments': 'acknowledgments', 'References': 'references'}
-    for title, index in marks.items():
-        lines[index] = f'## {title} {{#{anchors[title]}}}'
-    if ctx['bibliography'] and '{#refs}' not in body:
-        lines.insert(marks['References'] + 1, '\n::: {#refs}\n:::')
-    if len(ctx['authors']) > 1:
-        statement = ['## Contribution Statement {#contribution-statement}', '']
-        statement += [f'- **{a["name"]}:** {", ".join(a["roles"])}.' for a in ctx['authors']]
-        lines[marks['How This Was Made']:marks['How This Was Made']] = [*statement, '']
+    found = {title: index for level, title, index in headings('\n'.join(lines)) if level == 2 and title in CLOSING_TITLES}
+    for title, anchor, _ in CLOSING:
+        if title in found:
+            lines[found[title]] = f'## {title} {{#{anchor} .unnumbered}}'
 
-    front = {'title': ctx['title'], 'lang': 'en', 'engine': 'markdown', 'link-citations': True, 'filters': ['figures.lua']}
+    # A figure in plain Markdown keeps its place; its alternative text travels beside it.
+    def plain_figure(match: re.Match[str]) -> str:
+        if re.search(r'#fig-[\w-]+', match.group('attrs') or ''):
+            return match.group(0)
+        return f'![](figures/{match.group("name")}.{match.group("ext")}){{.hf-plain}}'
+
+    lines = [line if line.startswith('    ') else FIGURE.sub(plain_figure, line) for line in lines]
+
+    inserts: list[tuple[int, list[str]]] = []
+    if ctx['bibliography'] and '{#refs}' not in body and 'References' in found:
+        inserts.append((found['References'] + 1, ['', '::: {#refs}', ':::']))
+    if len(ctx['authors']) > 1 and not ctx['wrote_statement']:
+        statement = ['## Contribution Statement {#contribution-statement .unnumbered}', '']
+        statement += [f'- **{a["name"]}:** {", ".join(a["roles"]) or "roles not yet stated"}.' for a in ctx['authors']]
+        inserts.append((found.get('How This Was Made', len(lines)), [*statement, '']))
+    for index, block in sorted(inserts, reverse=True):
+        lines[index:index] = block
+
+    # The journal's order for what follows the references: where it is implemented, then its history.
+    if ctx['implemented']['label'] and 'Implemented In' not in found:
+        label = re.sub(r'([\\`*_\[\]<>$#])', r'\\\1', ctx['implemented']['label'])
+        if ctx['implemented']['url']:
+            label = f'[{label}]({ctx["implemented"]["url"]})'
+        lines += ['', '## Implemented In {#implemented-in .unnumbered}', '', label]
+    if 'Version History' not in found:
+        history = ['', '## Version History {#version-history .unnumbered}', '']
+        for version in ctx['versions']:
+            doi = f' DOI [{version["doi"]}](https://doi.org/{version["doi"]}).' if version['doi'] else ''
+            label = f'**Version {version["version"]}, {version["date"]}.**{doi}'
+            note = version['note'].strip()
+            if re.search(r'\n\s*\n', note) or re.match(r'\s*([-*+]|\d+\.)\s', note):
+                history += [label, '', note, '']
+            else:
+                history += [f'{label} {" ".join(note.split())}', '']
+        lines += history
+    # Versions published after this one are added here by the page, from the article's record.
+    lines += ['', '```{=html}', '<div id="hf-history-later"></div>', '```']
+
+    front = {
+        'title': ctx['title'], 'lang': 'en', 'engine': 'markdown', 'link-citations': True, 'filters': ['figures.lua'],
+        'toc': ctx['contents'], 'toc-depth': 3, 'number-sections': ctx['number_sections'],
+    }
     if ctx['bibliography']:
         front['bibliography'] = ctx['bibliography']
+    outline = ['#outline(title: [Contents], depth: 2, indent: 1em)'] if ctx['contents'] else []
     return '\n'.join([
         '---', yaml.safe_dump(front, sort_keys=False, allow_unicode=True).strip(), '---', '',
-        '::: {.hf-abstract}', '## Abstract {#abstract}', '', ctx['abstract'], ':::', '',
-        '```{=typst}', '#pagebreak()', '```', '',
+        '::: {.hf-abstract}', '## Abstract {#abstract .unnumbered .unlisted}', '', ctx['abstract'], ':::', '',
+        '```{=typst}', *outline, '#pagebreak()', '```', '',
         *lines, '',
     ])
 
@@ -832,6 +1018,7 @@ FORMATS = {
     }}},
     'print': {'format': {'typst': {
         'template-partials': ['typst-template.typ', 'typst-show.typ'], 'citeproc': True, 'keep-typ': True,
+        'toc': False, 'number-sections': False,
         'include-before-body': '_cover.typ', 'include-after-body': '_back.typ',
     }}},
 }
@@ -874,37 +1061,41 @@ def bundle(ctx: dict, work: pathlib.Path, target: pathlib.Path, versions: dict) 
     """The data behind every figure and the code that draws it, with what is needed to run it
     again. The same files always make the same zip."""
     top = f'{ctx["stem"]}-bundle'
-    holders = [a['name'] for a in ctx['authors']]
-    by = holders[0] if len(holders) == 1 else ', '.join(holders[:-1]) + ' and ' + holders[-1]
+    by = joined([a['name'] for a in ctx['authors']])
     mit = (ROOT / 'LICENSE-CODE').read_text(encoding='utf-8').split('\n\n', 2)[2]
-    figure_lines = '\n'.join(f'    python draw.py . {figure["name"]}' for figure in ctx['figures']) or '    (this article has no figures)'
-    readme = f"""# Data and Code: {ctx['title']}
-
-{by}. {ctx['journal']} {ctx['volume']}, {ctx['id']}, version {ctx['n']} ({ctx['date']}).
-
-The article: {ctx['address']}
-{('DOI of this version: https://doi.org/' + ctx['doi']) if ctx['doi'] else ''}
-
-`data/` holds the data behind every figure. `code/` holds the code that draws each one.
-`draw.py` is the journal's figure runner, as it was when this version was built.
-
-## Drawing the Figures Again
-
-Needs Python 3.10 or later and a Chrome or Chromium browser (the static pictures are rendered
-with it).
-
-    pip install -r requirements.txt
-{figure_lines}
-
-Each command writes `figures/<name>.json` (the interactive figure) and `figures/<name>.png` (its
-static picture).
-
-## License
-
-The data, and the figures drawn from it, are under Creative Commons Attribution 4.0
-International (https://creativecommons.org/licenses/by/4.0/): reuse them, with credit to the
-authors. The code is under the MIT license. Both are in `LICENSE.txt`.
-"""
+    drawn = [figure for figure in ctx['figures'] if figure['drawn']]
+    supplied = [figure for figure in ctx['figures'] if not figure['drawn']]
+    how = []
+    if drawn:
+        how += [
+            'The figures the journal draws need Python 3.10 or later and a Chrome or Chromium browser',
+            '(the static pictures are rendered with it):', '',
+            '    pip install -r requirements.txt',
+            *[f'    python draw.py . {figure["name"]}' for figure in drawn], '',
+            'Each command writes `figures/<name>.json` (the interactive figure) and `figures/<name>.png`',
+            "(its static picture). `draw.py` is the journal's figure runner, as it was when this version",
+            'was built.', '',
+        ]
+    if supplied:
+        how += [
+            'These figures are pictures the authors supplied, drawn by their own code in `code/`:',
+            ', '.join(figure['name'] for figure in supplied) + '. `code/README.md`, where there is one,',
+            'says how to run it.', '',
+        ]
+    if not ctx['figures']:
+        how += ['This article has no figures.', '']
+    doi_line = ('DOI of this version: https://doi.org/' + ctx['doi']) if ctx['doi'] else ''
+    readme = '\n'.join([
+        f'# Data and Code: {ctx["title"]}', '',
+        f'{by}. {ctx["journal"]} {ctx["volume"]}, {ctx["id"]}, version {ctx["n"]} ({ctx["date"]}).', '',
+        f'The article: {ctx["address"]}', doi_line, '',
+        '`data/` holds the data behind every figure. `code/` holds the code that draws each one.', '',
+        '## Drawing the Figures Again', '', *how,
+        '## License', '',
+        'The data, and the figures drawn from it, are under Creative Commons Attribution 4.0',
+        'International (https://creativecommons.org/licenses/by/4.0/): reuse them, with credit to the',
+        'authors. The code is under the MIT license. Both are in `LICENSE.txt`.', '',
+    ])
     license_text = (
         f'Copyright (c) {ctx["first"][:4]} {by}\n\n'
         'DATA AND FIGURES (the files in data/, and the figures drawn from them)\n\n'
@@ -912,12 +1103,13 @@ authors. The code is under the MIT license. Both are in `LICENSE.txt`.
         'https://creativecommons.org/licenses/by/4.0/legalcode\n\n'
         'CODE (the files in code/, and draw.py)\n\nMIT License\n\n' + mit
     )
-    requirements = f'plotly=={versions["plotly"]}\nkaleido=={versions["kaleido"]}\n'
-    members: list[tuple[str, bytes]] = [
-        ('README.md', readme.encode()), ('LICENSE.txt', license_text.encode()),
-        ('requirements.txt', requirements.encode()),
-        ('draw.py', (PIPELINE / 'draw.py').read_bytes()), ('palette.json', (PIPELINE / 'palette.json').read_bytes()),
-    ]
+    members: list[tuple[str, bytes]] = [('README.md', readme.encode()), ('LICENSE.txt', license_text.encode())]
+    if drawn:
+        requirements = f'plotly=={versions["plotly"]}\nkaleido=={versions["kaleido"]}\nnumpy=={versions["numpy"]}\n'
+        members += [
+            ('requirements.txt', requirements.encode()),
+            ('draw.py', (PIPELINE / 'draw.py').read_bytes()), ('palette.json', (PIPELINE / 'palette.json').read_bytes()),
+        ]
     for folder in ('data', 'code'):
         for path in sorted((work / folder).rglob('*')):
             if path.is_file():
@@ -971,7 +1163,7 @@ def write_record(published: pathlib.Path, reviews: pathlib.Path, article_id: str
         'authors': latest['authors'],
         'first_published': frozen[0]['date'],
         'latest': latest['version'],
-        'versions': [{'version': v['version'], 'date': v['date'], 'note': v['note'], 'doi': v['doi']} for v in frozen],
+        'versions': [{'version': v['version'], 'date': v['date'], 'note': first_paragraph(v['note']), 'doi': v['doi']} for v in frozen],
         'doi_latest': latest['doi_latest'],
         'status': status['status'],
         'retraction': status['retraction'],
@@ -1060,13 +1252,13 @@ def inspect(stage: pathlib.Path, ctx: dict) -> list[str]:
     # The parts of the page, top to bottom, as the journal lists them.
     order = ['id="hf-status"', '<h1', 'id="hf-type"', 'id="hf-authors"', 'id="hf-evidence"', 'id="hf-version"',
              'id="hf-version-select-slot"', 'id="hf-doi"', 'id="hf-cite"', f'href="{stem}.bib"', f'href="{stem}.ris"',
-             'id="hf-downloads"', 'id="abstract"']
+             'id="hf-downloads"']
+    if ctx['contents']:
+        order.append('id="hf-contents"')
+    order.append('id="abstract"')
     if len(ctx['authors']) > 1:
         order.append('id="contribution-statement"')
     order += ['id="how-this-was-made"', 'id="acknowledgments"', 'id="references"']
-    if ctx['implemented']['label']:
-        order.append('id="hf-implemented"')
-    order += ['id="hf-reviews"', 'id="hf-license"']
     at = -1
     for mark in order:
         found = page.find(mark, at + 1)
@@ -1074,9 +1266,25 @@ def inspect(stage: pathlib.Path, ctx: dict) -> list[str]:
             wrong.append(f'the page is missing {mark}, or has it out of order')
             break
         at = found
+    references = page.find('id="references"')
+    reviews = page.find('id="hf-reviews"')
+    # Where the article wrote these sections itself, their order was checked when it was read.
+    closing = [] if 'Version History' in ctx['closing'] else ['id="version-history"']
+    if ctx['implemented']['label'] and 'Implemented In' not in ctx['closing']:
+        closing.append('id="implemented-in"')
+    for mark in closing:
+        if not references < page.find(mark) < reviews:
+            wrong.append(f'the page is missing {mark}, or has it outside the closing sections')
+    for title, anchor, _ in CLOSING:
+        if title in ctx['closing'] and f'id="{anchor}"' not in page:
+            wrong.append(f'the page is missing the {title} section')
+    if not -1 < reviews < page.find('id="hf-license"'):
+        wrong.append('the reviews and the license line are missing or out of order')
     for figure in ctx['figures']:
-        if f'src="figures/{figure["name"]}.png"' not in page or f'data-figure="{figure["name"]}"' not in page:
-            wrong.append(f'figure {figure["name"]} is not on the page with both its picture and its interactive form')
+        if f'src="{figure["file"]}"' not in page:
+            wrong.append(f'figure {figure["name"]} is not on the page')
+        if figure['drawn'] and f'data-figure="{figure["name"]}"' not in page:
+            wrong.append(f'figure {figure["name"]} is not on the page in its interactive form')
 
     single = stage / f'{stem}.html'
     for address in outside_requests(single):
@@ -1090,15 +1298,16 @@ def inspect(stage: pathlib.Path, ctx: dict) -> list[str]:
     first = ' '.join(reader.pages[0].extract_text().split())
     if 'print copy' not in first.lower() or ctx['address'] not in first.replace(' ', ''):
         wrong.append('the first page of the PDF does not say it is the print copy and give the address')
+    raster = [figure for figure in ctx['figures'] if figure['ext'] != 'svg']
     pictures = sum(len(page_.images) for page_ in reader.pages)
-    if pictures < len(ctx['figures']):
-        wrong.append(f'the PDF holds {pictures} pictures for {len(ctx["figures"])} figures')
+    if pictures < len(raster):
+        wrong.append(f'the PDF holds {pictures} pictures for {len(raster)} figures')
 
     with zipfile.ZipFile(stage / f'{stem}-bundle.zip') as archive:
         names = archive.namelist()
     for figure in ctx['figures']:
-        for needed in (f'code/{figure["name"]}.py', figure['data']):
-            if f'{stem}-bundle/{needed}' not in names:
+        for needed in (figure['code'], *figure['data']):
+            if needed and f'{stem}-bundle/{needed}' not in names:
                 wrong.append(f'the bundle is missing {needed}')
     return wrong
 
@@ -1106,36 +1315,33 @@ def inspect(stage: pathlib.Path, ctx: dict) -> list[str]:
 # ---------------------------------------------------------------- publish
 
 
-def publish(article: pathlib.Path, published: pathlib.Path, reviews: pathlib.Path,
-            rebuild: bool = False, need_doi: bool = True, quiet: bool = False) -> pathlib.Path:
+def publish(article: pathlib.Path, published: pathlib.Path, reviews: pathlib.Path, rebuild: bool = False,
+            need_doi: bool = True, preview: bool = False, quiet: bool = False) -> pathlib.Path:
     say = (lambda *_: None) if quiet else print
     article = article.resolve()
     published = published.resolve()
-    real = published == REAL_PUBLISHED
-    journal = yaml.safe_load((ROOT / 'journal.yml').read_text(encoding='utf-8'))
-    ctx, body, warnings = understand(article, journal, real, need_doi and real)
-    for line in warnings:
-        say(f'note: {line}')
+    real = published == REAL_PUBLISHED and not preview
+    journal = load_journal()
+    ctx, body, owed, advice = understand(article, journal, published, preview, need_doi)
+    if owed and not preview:
+        raise Refused(f'{shown(article / SOURCE)} is not ready to publish:\n' + '\n'.join(f'  - {line}' for line in owed))
     home = published / ctx['id']
     target = home / f'v{ctx["n"]}'
 
     # The freeze rule, before anything is built.
     if target.exists():
-        if rebuild and not real:
+        if (rebuild and not real) or preview:
             shutil.rmtree(target)
         elif rebuild:
-            raise Refused(f'{target} is a published version. A published version is never rebuilt.')
+            raise Refused(f'{shown(target)} is a published version. A published version is never rebuilt.')
         else:
             raise Refused(
-                f'{target.relative_to(ROOT) if target.is_relative_to(ROOT) else target} already exists. A published '
-                'version never changes: a change to the article is a new version. Add the next entry under '
-                '`versions` in the front matter, with its date and what changed, and build again.'
+                f'{shown(target)} already exists. A published version never changes: a change to the article is a '
+                'new version. Set `version` to the next number in the front matter, with its date and a note of '
+                'what changed, and build again.'
             )
-    for earlier in range(1, ctx['n']):
-        if not (home / f'v{earlier}' / 'version.json').is_file():
-            raise Refused(f'version {ctx["n"]} cannot be built: version {earlier} was never published in {home}')
     broken = [line for folder in version_folders(published) if folder.parent == home for line in verify_version(folder)]
-    if broken:
+    if broken and not preview:
         raise Refused('an earlier version is not as it was frozen; nothing was built:\n' + '\n'.join(f'  - {b}' for b in broken))
 
     quarto = find_quarto()
@@ -1143,24 +1349,37 @@ def publish(article: pathlib.Path, published: pathlib.Path, reviews: pathlib.Pat
     status = read_status(reviews, ctx['id'])
 
     # A clean working copy of the article; the source folder is never written to.
-    work = WORK / ctx['stem']
+    work = WORK / (article.name if preview else ctx['stem'])
     if work.exists():
         shutil.rmtree(work)
     work.mkdir(parents=True)
+    skip = shutil.ignore_patterns('__pycache__', '.DS_Store', '._*', '@eaDir')
     for folder in ('data', 'code'):
         if (article / folder).is_dir():
-            shutil.copytree(article / folder, work / folder, ignore=shutil.ignore_patterns('__pycache__', '.DS_Store'))
+            shutil.copytree(article / folder, work / folder, ignore=skip)
         else:
             (work / folder).mkdir()
+    (work / 'figures').mkdir()
+    for figure in ctx['figures']:
+        if not figure['drawn']:
+            shutil.copyfile(article / figure['file'], work / figure['file'])
     if ctx['bibliography']:
         shutil.copyfile(article / ctx['bibliography'], work / ctx['bibliography'])
 
-    say(f'{ctx["id"]} version {ctx["n"]}: {ctx["title"]}')
+    say(f'{ctx["id"]} version {ctx["n"]}: {ctx["title"]}' + ('  (a preview: nothing is published)' if preview else ''))
     for figure in ctx['figures']:
+        if not figure['drawn']:
+            say(f'  figure   {figure["name"]}: the picture supplied with the article')
+            continue
         done = run([sys.executable, str(PIPELINE / 'draw.py'), str(work), figure['name']], work)
         if done.returncode != 0:
             raise Refused(f'figure {figure["name"]} could not be drawn:\n{(done.stdout + done.stderr).strip()}')
-        say(f'  figure   {figure["name"]}: figures/{figure["name"]}.json and .png, from {figure["data"]}')
+        say(f'  figure   {figure["name"]}: figures/{figure["name"]}.json and .png, from {", ".join(figure["data"])}')
+    # What the page filter needs to know about each figure.
+    (work / '_figures.json').write_text(json.dumps({
+        figure['file']: {'name': figure['name'], 'alt': figure['alt'], 'data': figure['data'], 'code': figure['code'],
+                         'drawn': figure['drawn']} for figure in ctx['figures']
+    }), encoding='utf-8')
 
     import plotly
 
@@ -1173,7 +1392,7 @@ def publish(article: pathlib.Path, published: pathlib.Path, reviews: pathlib.Pat
     script = (PIPELINE / 'article.js').read_text(encoding='utf-8')
     script = script.replace('/*PALETTE*/ { light: [], dark: [] }', json.dumps(palette))
     (assets / 'article.js').write_text(script, encoding='utf-8')
-    if ctx['figures']:
+    if any(figure['drawn'] for figure in ctx['figures']):
         shutil.copyfile(pathlib.Path(plotly.__file__).parent / 'package_data' / 'plotly.min.js', assets / 'plotly.min.js')
     for name in ('page-template.html', 'figures.lua'):
         shutil.copyfile(PIPELINE / name, work / name)
@@ -1214,7 +1433,7 @@ def publish(article: pathlib.Path, published: pathlib.Path, reviews: pathlib.Pat
     say('  page     index.html')
 
     # Stage the version, check it, and only then put it in place.
-    stage = WORK / f'{stem}.staged'
+    stage = WORK / f'{work.name}.staged'
     if stage.exists():
         shutil.rmtree(stage)
     stage.mkdir()
@@ -1236,17 +1455,27 @@ def publish(article: pathlib.Path, published: pathlib.Path, reviews: pathlib.Pat
     (stage / 'version.json').write_text(json.dumps(record, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
 
     wrong = inspect(stage, ctx)
-    if wrong:
+    if wrong and not preview:
         raise Refused(f'the build of {stem} failed its checks and was not published (it is in {stage}):\n'
                       + '\n'.join(f'  - {line}' for line in wrong))
+    owed += wrong
 
     write_manifest(stage)
     home.mkdir(parents=True, exist_ok=True)
     stage.rename(target)
     write_record(published, reviews, ctx['id'], journal)
-    shown = target.relative_to(ROOT) if target.is_relative_to(ROOT) else target
-    say(f'frozen: {shown}/ ({len(tree(target))} files; '
-        f'one file {human_size(sizes[f"{stem}.html"])}, PDF {human_size(sizes[f"{stem}.pdf"])}, bundle {human_size(sizes[f"{stem}-bundle.zip"])})')
+    size_line = (f'one file {human_size(sizes[f"{stem}.html"])}, PDF {human_size(sizes[f"{stem}.pdf"])}, '
+                 f'bundle {human_size(sizes[f"{stem}-bundle.zip"])}')
+    say(f'{"built, not published" if preview else "frozen"}: {shown(target)}/ ({len(tree(target))} files; {size_line})')
+    for line in advice:
+        say(f'note: {line}')
+    if preview:
+        if owed:
+            say(f'\nBefore this article can be published ({len(owed)}):')
+            for line in owed:
+                say(f'  - {line}')
+        else:
+            say('\nNothing is owed: this article would publish as it is.')
     return target
 
 
@@ -1254,27 +1483,32 @@ def publish(article: pathlib.Path, published: pathlib.Path, reviews: pathlib.Pat
 
 
 def cmd_publish(args: argparse.Namespace) -> int:
-    article = pathlib.Path(args.article).resolve()
+    article = pathlib.Path(args.article).expanduser().resolve()
+    if args.preview:
+        target = publish(article, PREVIEWS / article.name, PREVIEWS / article.name / '_reviews', preview=True,
+                         need_doi=not args.no_doi)
+        print(f'\nOpen {shown(target / "index.html")} in a browser, or check it in one:\n'
+              f'  .venv/bin/python scripts/browser-check.py {shown(target)}')
+        return 0
     root = article.parent.parent
     published = pathlib.Path(args.published).resolve() if args.published else root / 'published'
     reviews = pathlib.Path(args.reviews).resolve() if args.reviews else root / 'reviews'
     if article.parent.name != 'articles':
-        raise Refused(f'{article} is not in an articles/ folder. Real articles live in articles/<id>/; the sample in tests/articles/.')
+        raise Refused(f'{article} is not in an articles/ folder. A published article is built from articles/<id>/, and the '
+                      'sample from tests/articles/. To look at an article anywhere without publishing it, add --preview.')
     target = publish(article, published, reviews, rebuild=args.rebuild, need_doi=not args.no_doi)
     if published == REAL_PUBLISHED:
         print('\nNext, by hand: deposit the four outputs on Zenodo under the reserved DOI, open the review thread,\n'
               'set reviews/<id>/status.yml, commit published/ and push. See README.md.')
     else:
-        shown = target.relative_to(ROOT) if target.is_relative_to(ROOT) else target
-        print(f'\nA test build. To check it in a browser:  .venv/bin/python scripts/browser-check.py {shown}')
+        print(f'\nA test build. To check it in a browser:  .venv/bin/python scripts/browser-check.py {shown(target)}')
     return 0
 
 
 def cmd_record(args: argparse.Namespace) -> int:
-    journal = yaml.safe_load((ROOT / 'journal.yml').read_text(encoding='utf-8'))
     published = pathlib.Path(args.published).resolve() if args.published else REAL_PUBLISHED
     reviews = pathlib.Path(args.reviews).resolve() if args.reviews else REAL_REVIEWS
-    record = write_record(published, reviews, args.id, journal)
+    record = write_record(published, reviews, args.id, load_journal())
     print(f'{args.id}: {record["status"]}, {len(record["versions"])} version(s), {len(record["reviews"])} review(s) recorded')
     return 0
 
@@ -1292,35 +1526,45 @@ def cmd_verify(args: argparse.Namespace) -> int:
 def cmd_selftest(args: argparse.Namespace) -> int:
     """Builds the sample as version 1, revises it, builds version 2, and proves that version 1
     did not change by a byte and cannot be built again."""
-    stage = ROOT / '_build' / 'selftest' / 'articles' / '0000-000'
-    if stage.parent.parent.exists():
-        shutil.rmtree(stage.parent.parent)
+    scratch = ROOT / '_build' / 'selftest'
+    stage = scratch / 'articles' / '0000-000'
+    if scratch.exists():
+        shutil.rmtree(scratch)
     if TEST_PUBLISHED.exists():
         shutil.rmtree(TEST_PUBLISHED)
-    shutil.copytree(SAMPLE, stage, ignore=shutil.ignore_patterns('__pycache__', '.DS_Store'))
+    skip = shutil.ignore_patterns('__pycache__', '.DS_Store')
+    shutil.copytree(SAMPLE, stage, ignore=skip)
     passed: list[str] = []
 
     def check(what: str, ok: bool, detail: str = '') -> None:
         passed.append(what) if ok else None
-        print(f'  {"ok  " if ok else "FAIL"}  {what}' + (f': {detail}' if detail and not ok else ''))
+        print(f'  {"ok  " if ok else "FAIL"}  {what}' + (f': {detail}' if detail and not ok else ''), flush=True)
         if not ok:
             raise Refused(f'selftest failed: {what}')
 
-    print('1. Version 1 of the sample, from source')
+    def refused(what: str, expect: str, *args_: object, **kwargs: object) -> None:
+        try:
+            publish(*args_, quiet=True, **kwargs)
+            check(what, False, 'it was built')
+        except Refused as refusal:
+            check(what, expect in str(refusal), str(refusal)[:300])
+
+    print('1. Version 1 of the sample, from source', flush=True)
     v1 = publish(stage, TEST_PUBLISHED, TEST_REVIEWS)
     before = tree(v1)
     manifest_before = (v1 / 'MANIFEST.sha256').read_bytes()
     check('the four outputs exist', all((v1 / name).is_file() for name in ('index.html', '0000-000-v1.html', '0000-000-v1.pdf', '0000-000-v1-bundle.zip')))
+    page = (v1 / 'index.html').read_text(encoding='utf-8')
+    check('the page has a contents list, numbered sections and a table in its own scrolling frame',
+          'id="hf-contents"' in page and 'header-section-number' in page and 'class="table-wrap"' in page)
+    check('a figure the build draws is interactive, and a picture supplied with the article is shown as it is',
+          'data-figure="response"' in page and 'class="hf-figure hf-figure-given"' in page)
 
-    print('2. Building version 1 again is refused')
-    try:
-        publish(stage, TEST_PUBLISHED, TEST_REVIEWS, quiet=True)
-        check('a second build of version 1 is refused', False)
-    except Refused as refusal:
-        check('a second build of version 1 is refused', 'never changes' in str(refusal))
+    print('2. Building version 1 again is refused', flush=True)
+    refused('a second build of version 1 is refused', 'never changes', stage, TEST_PUBLISHED, TEST_REVIEWS)
     check('version 1 is untouched by the refused build', tree(v1) == before)
 
-    print('3. The article is revised (text, data and a figure change) and built as version 2')
+    print('3. The article is revised (text, data and a figure change) and built as version 2', flush=True)
     shutil.copytree(SAMPLE_REVISION, stage, dirs_exist_ok=True)
     v2 = publish(stage, TEST_PUBLISHED, TEST_REVIEWS)
     after = tree(v1)
@@ -1337,8 +1581,11 @@ def cmd_selftest(args: argparse.Namespace) -> int:
     check('the record lists both versions and names version 2 the latest',
           record['latest'] == 2 and [v['version'] for v in record['versions']] == [1, 2])
     check("the article's own address forwards to version 2", 'url=v2/' in (v1.parent / 'index.html').read_text(encoding='utf-8'))
+    history = (v2 / 'index.html').read_text(encoding='utf-8').split('id="version-history"')[1].split('id="hf-reviews"')[0]
+    check("version 2's history carries both versions, and the whole of a note written in paragraphs",
+          'Version 1, 2026-11-14' in history and 'Version 2, 2026-11-21' in history and history.count('<p>') >= 4)
 
-    print('4. A change to a frozen file is caught')
+    print('4. A change to a frozen file is caught', flush=True)
     victim = v1 / 'data' / 'response.csv'
     original = victim.read_bytes()
     victim.write_bytes(original + b'1,1\n')
@@ -1347,15 +1594,11 @@ def cmd_selftest(args: argparse.Namespace) -> int:
     check('verify reports a changed file', any('changed since it was frozen' in line for line in caught))
     check('and passes again once it is restored', not verify_version(v1))
 
-    print('5. The rules the build enforces')
-    try:
-        publish(stage, REAL_PUBLISHED, REAL_REVIEWS, quiet=True)
-        check('a sample is refused in published/', False)
-    except Refused as refusal:
-        check('a sample is refused in published/', 'sample is never published' in str(refusal))
+    print('5. The rules the build enforces', flush=True)
+    refused('a sample is refused in published/', 'sample is never published', stage, REAL_PUBLISHED, REAL_REVIEWS)
     check('no sample reached published/', not (REAL_PUBLISHED / '0000-000').exists())
-    journal = yaml.safe_load((ROOT / 'journal.yml').read_text(encoding='utf-8'))
-    ctx, _, _ = understand(stage, {**journal, 'issn': '0000-0000'}, real=False, need_doi=False)
+    journal = load_journal()
+    ctx, _, _, _ = understand(stage, {**journal, 'issn': '0000-0000'}, TEST_PUBLISHED, preview=True)
     names = [name for name, _ in highwire(ctx)]
     check('with an ISSN set, the head carries every citation tag of the spec',
           names == ['citation_title', 'citation_author', 'citation_author', 'citation_publication_date',
@@ -1366,9 +1609,32 @@ def cmd_selftest(args: argparse.Namespace) -> int:
         check('an ORCID iD with a typing error is refused', False)
     except Refused:
         check('an ORCID iD with a typing error is refused', True)
+    template = (ROOT / 'templates' / 'article' / SOURCE).read_text(encoding='utf-8')
+    guide = (ROOT / 'policies' / 'AUTHORS.md').read_text(encoding='utf-8')
+    check('every article type in journal.yml is named in the template and in the guide for authors',
+          all(name in template and name in guide for name in journal['types']))
 
-    print('6. The data and code bundle, on its own')
-    unpacked = ROOT / '_build' / 'selftest' / 'bundle'
+    print('6. An article that is not ready: what is owed stops a publication and is listed by a preview', flush=True)
+    unready = scratch / 'unready' / 'articles' / 'working-name'
+    shutil.copytree(SAMPLE, unready, ignore=skip)
+    text = (unready / SOURCE).read_text(encoding='utf-8')
+    text = text.replace('id: "0000-000"', 'id: ""').replace('date: 2026-11-14', 'date: ""')
+    text, swapped = re.subn(r'!\[[^\]]*\]\(figures/system\.png\)\{[^}]*\}',
+                            '![A drawing of two masses joined by springs.](figures/system.png)\n\n**Figure 2.** Written by hand.', text)
+    text = text.replace('## How This Was Made', '## How This Was Made\n\n<!-- OPEN: to be confirmed by the author -->')
+    (unready / SOURCE).write_text(text, encoding='utf-8')
+    check('the test article was made unready', swapped == 1 and 'id: ""' in text and 'date: ""' in text)
+    refused('an article with an open comment, no number and no date is refused for publication', 'not ready to publish',
+            unready, scratch / 'unready' / 'published', scratch / 'unready' / 'reviews')
+    target = publish(unready, PREVIEWS / 'selftest', PREVIEWS / 'selftest' / '_reviews', preview=True, quiet=True)
+    preview_page = (target / 'index.html').read_text(encoding='utf-8')
+    check('a preview of the same article is built, marked as one, and freezes nothing in published/',
+          'Preview. Not published.' in preview_page and target.is_relative_to(PREVIEWS) and not any(REAL_PUBLISHED.glob('*/v*')))
+    check('a figure in plain Markdown is shown with its alternative text, its caption as the author wrote it',
+          'alt="A drawing of two masses joined by springs."' in preview_page and '<strong>Figure 2.</strong> Written by hand.' in preview_page)
+
+    print('7. The data and code bundle, on its own', flush=True)
+    unpacked = scratch / 'bundle'
     with zipfile.ZipFile(v2 / '0000-000-v2-bundle.zip') as archive:
         archive.extractall(unpacked)
     alone = unpacked / '0000-000-v2-bundle'
@@ -1379,7 +1645,7 @@ def cmd_selftest(args: argparse.Namespace) -> int:
           (alone / 'figures' / 'response.json').read_bytes() == (v2 / 'figures' / 'response.json').read_bytes())
 
     if not args.no_browser:
-        print('7. Both versions, in a browser')
+        print('8. Both versions, in a browser', flush=True)
         for version in (v1, v2):
             done = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'browser-check.py'), str(version)], cwd=ROOT, check=False)
             check(f'the browser checks pass for {version.name}', done.returncode == 0)
@@ -1393,8 +1659,9 @@ def main(argv: list[str] | None = None) -> int:
     commands = parser.add_subparsers(dest='command', required=True)
     build = commands.add_parser('publish', help='build and freeze one version of an article')
     build.add_argument('article', help='the article folder: articles/<id>, or tests/articles/0000-000 for the sample')
+    build.add_argument('--preview', action='store_true', help='build to look at, into _build/preview/: any folder, nothing frozen')
     build.add_argument('--rebuild', action='store_true', help='replace a test build; refused for a published version')
-    build.add_argument('--no-doi', action='store_true', help='build a real article without its DOIs (it can never gain them)')
+    build.add_argument('--no-doi', action='store_true', help='publish a real article without its DOIs (it can never gain them)')
     build.add_argument('--published', help='where versions are frozen (default: published/ beside articles/)')
     build.add_argument('--reviews', help='where review status is read (default: reviews/ beside articles/)')
     build.set_defaults(run=cmd_publish)

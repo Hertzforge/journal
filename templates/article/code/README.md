@@ -32,5 +32,11 @@ What the build asks of a figure:
 - Labels use Unicode and `<sub>` or `<sup>`, not LaTeX between dollar signs.
 
 The build draws the figure twice from this one function: interactive on the page, and as a
-static picture for the PDF, for print and for readers with scripts off. Other files here (a
-script that prepares the data, for example) travel in the bundle as they are.
+static picture for the PDF, for print and for readers with scripts off. NumPy is there for the
+function to use. Other files here (a script that prepares the data, for example) travel in the
+bundle as they are.
+
+A figure is drawn this way when the article holds no picture of it. If the article supplies
+`figures/name.png` itself (a photograph, a drawing, a plot made by other code), that picture is
+shown as it is and nothing here is run for it; keep the code that made it here all the same. To
+make such a plot interactive, give `name.py` a `figure()` function and remove the picture.

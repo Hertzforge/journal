@@ -46,6 +46,10 @@
   }
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', drawAll);
 
+  // The contents list is open where it sits beside the text, and closed where it sits above it.
+  var contents = document.querySelector('.hf-contents details');
+  if (contents && window.matchMedia('(min-width: 1240px)').matches) contents.open = true;
+
   // ---------- 2. Figures ----------
 
   var figures = [];
@@ -214,15 +218,19 @@
       notice.hidden = false;
     }
 
-    // Later versions join the history.
-    var history = document.querySelector('.hf-history ol');
-    if (history) {
+    // Versions published after this one join its history.
+    var later = document.getElementById('hf-history-later');
+    if (later) {
+      later.textContent = '';
       record.versions.forEach(function (version) {
         if (Number(version.version) <= here) return;
-        var item = document.createElement('li');
-        item.appendChild(link('../v' + version.version + '/', 'Version ' + version.version));
-        item.appendChild(document.createTextNode(', ' + version.date + '. ' + (version.note || '')));
-        history.appendChild(item);
+        var entry = document.createElement('p');
+        var label = document.createElement('strong');
+        label.appendChild(link('../v' + version.version + '/', 'Version ' + version.version));
+        label.appendChild(document.createTextNode(', ' + version.date + '.'));
+        entry.appendChild(label);
+        entry.appendChild(document.createTextNode(' ' + (version.note || '') + ' (Published after this version.)'));
+        later.appendChild(entry);
       });
     }
 

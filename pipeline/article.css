@@ -119,6 +119,8 @@
 
 .hf-meta {
   display: grid;
+  /* One column that may be narrower than its longest unbroken word (an address, a DOI). */
+  grid-template-columns: minmax(0, 1fr);
   gap: 12px;
   margin-bottom: 2.4em;
 }
@@ -176,17 +178,6 @@
 .hf-notlatest {
   margin-top: 10px;
 }
-.hf-history {
-  font-size: 0.94rem;
-  color: var(--text-2);
-}
-.hf-history ol {
-  margin: 8px 0 0;
-  padding-left: 1.3em;
-}
-.hf-history li + li {
-  margin-top: 0.3em;
-}
 .hf-ids {
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -212,7 +203,7 @@
   }
 }
 .hf-citation {
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 .hf-nowrap {
   white-space: nowrap;
@@ -235,6 +226,63 @@
 }
 .hf-downloads .dl {
   margin: 0;
+}
+
+/* ---------- Contents ---------- */
+
+.hf-contents {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+  padding: 10px 16px;
+  font-size: 0.93rem;
+}
+.hf-contents summary {
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.prose .hf-contents ul {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+.prose .hf-contents ul ul {
+  margin: 0 0 4px;
+  padding-left: 1.1em;
+  font-size: 0.95em;
+}
+.prose .hf-contents li,
+.prose .hf-contents li + li {
+  margin: 0;
+  padding: 3px 0 0;
+  line-height: 1.35;
+}
+.hf-contents a {
+  color: var(--text-2);
+  text-decoration: none;
+}
+.hf-contents a:hover {
+  color: var(--link);
+  text-decoration: underline;
+}
+.hf-contents .header-section-number {
+  color: var(--muted);
+}
+@media (min-width: 1240px) {
+  /* Beside the text, where it stays in view down the length of the article. */
+  .hf-contents {
+    float: right;
+    position: sticky;
+    top: calc(var(--header-h) + 20px);
+    width: 300px;
+    margin: 0 -348px 0 0;
+    max-height: calc(100vh - var(--header-h) - 40px);
+    overflow-y: auto;
+  }
 }
 
 /* ---------- The article ---------- */
@@ -282,6 +330,15 @@
 .hf-figure.is-live .hf-static {
   display: none;
 }
+.hf-prose > .hf-figure {
+  margin-top: 1.8em;
+}
+/* A figure written in plain Markdown: the author's own caption is the paragraph that follows. */
+.hf-prose > .hf-figure + p:has(> strong:first-child) {
+  margin-top: 10px;
+  color: var(--text-2);
+  font-size: 0.95rem;
+}
 .hf-figure-links {
   display: flex;
   flex-wrap: wrap;
@@ -291,14 +348,19 @@
   color: var(--muted);
 }
 
-/* A table from the article scrolls inside its own frame on a narrow screen. */
-.hf-prose .quarto-float-tbl > div,
-.hf-prose > table {
-  overflow-x: auto;
+/* A table sits in a frame of its own; a wide one scrolls inside it and the page does not. */
+.hf-prose .table-wrap {
+  margin: 1.4em 0;
 }
-.hf-prose table {
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
+.hf-prose .table-wrap table {
+  min-width: max(540px, calc(var(--cols, 4) * 90px));
+}
+.hf-prose .quarto-float-tbl .table-wrap {
+  margin: 0;
+}
+
+.header-section-number {
+  margin-right: 0.35em;
 }
 
 math {
@@ -340,6 +402,7 @@ math {
 
 @media print {
   .skip,
+  .hf-contents,
   .hf-status-link,
   .hf-select-label,
   .hf-downloads,

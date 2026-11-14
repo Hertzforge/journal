@@ -28,11 +28,13 @@ outside the author list and the article says its authors are the journal's edito
 
 ## At Publication
 
-1. Assign the identifier, `<year>-<nnn>`, and move the source to `articles/<id>/`.
-2. Reserve the DOIs on Zenodo, in the journal's community, before building: start the deposit
-   as a journal article and take the DOI it reserves for this version and the one that always
-   gives the latest version. Put both in the article's front matter. They are printed on the
-   page and in the PDF, and a frozen version cannot be given them afterward.
+1. Assign the identifier, `<year>-<nnn>`, and move the source to `articles/<id>/`. A preview
+   (`scripts/publish <folder> --preview`) lists everything still owed at any time before this.
+2. Reserve the DOIs on Zenodo, in the journal's community (`hertzforge-journal`), before
+   building: start the deposit as a journal article and take the DOI it reserves for this
+   version and the one that always gives the latest version. Put both in the article's front
+   matter, with the date. They are printed on the page and in the PDF, and a frozen version
+   cannot be given them afterward.
 3. Build version 1 and freeze it under `published/<id>/v1/`: `scripts/publish articles/<id>`.
    The build checks the article against this list where it can, and refuses to freeze a version
    that fails. Look at the page, the one-file copy and the PDF.

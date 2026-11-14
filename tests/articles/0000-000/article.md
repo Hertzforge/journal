@@ -2,12 +2,11 @@
 # Filled in by the editors at publication.
 id: "0000-000"
 sample: true                                   # a sample is built only under tests/ and is never published
-doi_latest: "10.5072/hertzforge-sample"        # a placeholder under the DataCite test prefix; it resolves to nothing
-versions:
-  - version: 1
-    date: 2026-11-14
-    doi: "10.5072/hertzforge-sample.v1"        # a placeholder, as above
-    note: First published.
+version: 1
+date: 2026-11-14
+doi: "10.5072/hertzforge-sample.v1"            # a placeholder under the DataCite test prefix; it resolves to nothing
+doi_latest: "10.5072/hertzforge-sample"        # a placeholder, as above
+note: First published.
 
 # Filled in by the authors.
 title: "Sample Article: Not a Publication"
@@ -24,12 +23,15 @@ authors:
 implemented_in:
   label: "Nothing. This sample implements no method. A real article names the Hertzforge release or commit here."
   url: ""
+contents: true          # a contents list, though the article is short
+number_sections: true   # the build numbers the sections
 abstract: >
   This is a sample, written to test the build of the Hertzforge Journal. It is not a publication
   and reports no result. It carries every part a real article must: authors, an evidence level,
-  an equation, a table, a reference list, and one interactive figure drawn by a file in its code
-  folder from a file in its data folder, with a static picture of the same figure for the PDF.
-  The system it describes is invented, and so are its authors.
+  numbered sections and a contents list, an equation, a narrow table and a wide one, a reference
+  list, a picture supplied with the article, and one interactive figure drawn by a file in its
+  code folder from a file in its data folder, with a static picture of the same figure for the
+  PDF. The system it describes is invented, and so are its authors.
 ---
 
 ## Purpose
@@ -42,7 +44,10 @@ picture, and that a second version leaves the first unchanged.
 
 ## Method
 
-The invented system has two modes. Its driving-point accelerance is the modal sum [@ewins2000]
+### The Invented System
+
+The invented system has two modes, as a chain of two masses does (@fig-system). Its
+driving-point accelerance is the modal sum [@ewins2000]
 
 $$
 A(\omega) = \sum_{r=1}^{2} \frac{-\omega^{2} \phi_{r}^{2}}{\omega_{r}^{2} - \omega^{2} + 2 i \zeta_{r} \omega_{r} \omega}
@@ -51,12 +56,16 @@ $$ {#eq-accelerance}
 where $\omega_{r}$ is the natural frequency of mode $r$, $\zeta_{r}$ its damping ratio and
 $\phi_{r}^{2}$ its modal constant, with the values in @tbl-modes.
 
+![A system of the kind invented here: two masses in a chain, driven at the first. This is a picture supplied with the article, not a figure the build draws.](figures/system.png){#fig-system fig-alt="A drawing of two blocks in a row. The first is joined to a wall by a spring and the second to the first by another spring. An arrow marked f of t points along the chain at the first block."}
+
 | Mode | Natural frequency (Hz) | Damping ratio | Modal constant (1/kg) |
 |:----:|-----------------------:|--------------:|----------------------:|
 | 1    | 120                    | 0.020         | 1.0                   |
 | 2    | 310                    | 0.015         | 0.6                   |
 
 : The invented system. {#tbl-modes}
+
+### The Noisy Estimates
 
 Two noisy estimates of $|A(\omega)|$ were made by multiplying the reference by log-normal noise.
 The spread of the noise falls with the square root of the number of averages, as the random
@@ -70,6 +79,20 @@ figure can be zoomed, panned and read point by point. In the PDF it is a picture
 
 ![The invented response and two estimates of it. The estimate from 64 averages follows the reference more closely than the estimate from 8.](figures/response.png){#fig-response fig-alt="A line chart of accelerance magnitude against frequency, from 20 to 500 hertz, on a logarithmic vertical axis. A solid reference curve has two resonance peaks, near 120 and 310 hertz, with an antiresonance between them. A dotted estimate from 8 averages scatters widely around the reference. A dashed estimate from 64 averages stays close to it." data="data/response.csv"}
 
+## What Each Output Carries
+
+@tbl-outputs is wider than a phone's screen. On the page it scrolls inside its own frame; in the
+PDF it is set to the width of the page.
+
+| Output | Figure 1 | Figure 2 | Equations | Tables | Reference list | Opens with no network | Asks a server for anything | Made for |
+|:-------|:---------|:---------|:----------|:-------|:---------------|:----------------------|:---------------------------|:---------|
+| Article page | Picture | Interactive, with its picture behind it | MathML | In scrolling frames | Yes | No | Its own server only | Reading on the site: the version of record |
+| One-file copy | Picture | Interactive, with its picture behind it | MathML | In scrolling frames | Yes | Yes | No | Carrying onto a closed network |
+| PDF print copy | Picture | Picture | Typeset | Set to the page width | Yes | Yes | No | Printing, and where only a PDF gets through |
+| Data and code bundle | The code that drew it | Its data and the code that draws it | None | None | No | Yes | No | Running the figures again |
+
+: What each of the four outputs of a version carries. {#tbl-outputs}
+
 ## Limits
 
 Nothing here is a finding. The system, the noise and the authors are invented, and the figure
@@ -78,7 +101,7 @@ shows only that the build draws what the data file says.
 ## How This Was Made
 
 The text, the data generator and the figure code were written with Claude Fable 5.2 (Anthropic),
-working as a coding agent, as a test fixture for the journal's build. The figure is drawn with
+working as a coding agent, as a test fixture for the journal's build. The figures are drawn with
 Plotly. The page, the single-file copy and the PDF are built with Quarto and Typst. No person's
 research is reported.
 

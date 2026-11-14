@@ -11,6 +11,14 @@ $endfor$
 $for(include-before)$
 $include-before$
 $endfor$
+$if(toc)$
+<nav class="hf-contents" id="hf-contents" aria-label="Contents">
+<details>
+<summary>Contents</summary>
+$table-of-contents$
+</details>
+</nav>
+$endif$
 $body$
 $for(include-after)$
 $include-after$

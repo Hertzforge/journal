@@ -17,9 +17,11 @@
   title: "",
   authors: (),
   date: none,
+  numbering: none,
   doc,
 ) = {
   set document(title: title, author: authors, date: date)
+  set heading(numbering: numbering)
   set page(
     paper: "us-letter",
     margin: (x: 1in, top: 1.1in, bottom: 1.05in),
@@ -52,6 +54,11 @@
   show link: set text(fill: hf-blue)
   show figure.caption: set text(size: 9.5pt)
   set figure(gap: 0.9em)
+  // A table is set a size smaller, unjustified, and may run on to the next page.
+  show table: set text(size: 9pt)
+  show table: set par(justify: false)
+  show figure.where(kind: "quarto-float-tbl"): set block(breakable: true)
+  show outline.entry.where(level: 1): set block(above: 0.8em)
   doc
 }
 
@@ -63,7 +70,7 @@
 // The first page: what this copy is, where the article lives, and who wrote it.
 #let hf-cover(
   journal: "",
-  sample: false,
+  notice: none,
   title: "",
   kind: "",
   authors: (),
@@ -84,11 +91,8 @@
   v(-6pt)
   line(length: 100%, stroke: 1.2pt + hf-blue)
   v(2pt)
-  if sample {
-    block(width: 100%, inset: 9pt, fill: rgb("#fff3d6"), stroke: 0.8pt + rgb("#b37a00"), radius: 3pt)[
-      *Sample. Not a publication.* This document exists to test the journal's build. Its authors,
-      data and results are invented.
-    ]
+  if notice != none {
+    block(width: 100%, inset: 9pt, fill: rgb("#fff3d6"), stroke: 0.8pt + rgb("#b37a00"), radius: 3pt, text(weight: "semibold", notice))
   }
   block(width: 100%, inset: 11pt, stroke: 0.9pt + hf-ink, radius: 3pt)[
     *Print copy.* This is the static print copy of an interactive article. The version of record,
@@ -130,10 +134,8 @@
   line(length: 100%, stroke: 0.5pt + hf-rule)
 }
 
-// The last lines: where it is implemented, where its reviews are, and its license.
+// The last lines: where its reviews are, and its license.
 #let hf-back(
-  implemented: none,
-  implemented-url: none,
   reviews: "",
   license: "",
   use: "",
@@ -142,10 +144,6 @@
   v(1em)
   line(length: 100%, stroke: 0.5pt + hf-rule)
   set text(size: 9.5pt)
-  if implemented != none [
-    *Implemented in.* #if implemented-url != none { link(implemented-url, implemented) } else { implemented }
-    #parbreak()
-  ]
   [*Reviews.* #reviews]
   parbreak()
   license
