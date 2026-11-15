@@ -9,7 +9,7 @@ note: First published. # what changed in this version: a line, or paragraphs (wr
 
 # Filled in by the authors.
 title: ""
-type: Research Article # Research Article | Method Note | Negative Result | Proposed Standard | Practice Note | Survey | Perspective
+type: Research Article # Research Article | Method Note | Negative Result | Proposed Standard | Practice Note | System Description | Survey | Perspective
 evidence: simulator    # simulator | bench | hardware; a Perspective or a Survey says what it rests on instead, for example: published sources
 evidence_note: ""      # one sentence: what the results come from, and on what. It shows beside the evidence level
 authors:               # in order; the author who led the work is first

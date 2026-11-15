@@ -38,9 +38,12 @@ CREDIT_FOLDERS = ('articles/', 'published/', 'reviews/', 'tests/articles/', 'tes
 #: published work it cites or credits: the laboratory the software's own acknowledgments credit
 #: (read from the software's list), a second laboratory, in both the forms it is listed under,
 #: allowed by the editors on 2026-11-14 for the citation of its published work, and a third,
-#: allowed on 2026-11-15 for the same reason (the 1977 report cited by article 2026-002). Held as
-#: hashes, as the list itself is. Add one with the software's `tools/check_tree.py --hash`.
-CREDITED_HERE = frozenset({'e2a3af9c1d2aa535', 'e07681543d5c76d6', 'bef51514796755a0'})
+#: allowed on 2026-11-15 for the same reason (the 1977 report cited by article 2026-002), and the
+#: web address under which the first laboratory publishes a cited user's manual, allowed on
+#: 2026-11-15 so the citation can give that manual's own address. Held as hashes, as the list
+#: itself is. Add one with the software's `tools/check_tree.py --hash`.
+CREDITED_HERE = frozenset({'e2a3af9c1d2aa535', 'e07681543d5c76d6', 'bef51514796755a0',
+                           'd6c6d1247e12746b'})
 
 #: Packages whose metadata names their license in words the checker cannot read as an
 #: identifier, each with what was read by hand: {normalized name: what its own license file says}.

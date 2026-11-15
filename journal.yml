@@ -18,6 +18,7 @@ types:
   Negative Result: evidence
   Proposed Standard: evidence
   Practice Note: evidence
+  System Description: evidence
   Survey: rests on
   Perspective: rests on
 evidence_levels: [simulator, bench, hardware]
