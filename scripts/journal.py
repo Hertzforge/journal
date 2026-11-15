@@ -1536,6 +1536,14 @@ def cmd_selftest(args: argparse.Namespace) -> int:
     shutil.copytree(SAMPLE, stage, ignore=skip)
     passed: list[str] = []
 
+    def published_now() -> dict[str, str]:
+        """Every file under published/, manifests included, with its hash."""
+        return {path.relative_to(REAL_PUBLISHED).as_posix(): sha256(path)
+                for path in sorted(REAL_PUBLISHED.rglob('*')) if path.is_file()}
+
+    # The self-test builds only under tests/ and _build/. What is published must come through untouched.
+    published_before = published_now()
+
     def check(what: str, ok: bool, detail: str = '') -> None:
         passed.append(what) if ok else None
         print(f'  {"ok  " if ok else "FAIL"}  {what}' + (f': {detail}' if detail and not ok else ''), flush=True)
@@ -1628,8 +1636,8 @@ def cmd_selftest(args: argparse.Namespace) -> int:
             unready, scratch / 'unready' / 'published', scratch / 'unready' / 'reviews')
     target = publish(unready, PREVIEWS / 'selftest', PREVIEWS / 'selftest' / '_reviews', preview=True, quiet=True)
     preview_page = (target / 'index.html').read_text(encoding='utf-8')
-    check('a preview of the same article is built, marked as one, and freezes nothing in published/',
-          'Preview. Not published.' in preview_page and target.is_relative_to(PREVIEWS) and not any(REAL_PUBLISHED.glob('*/v*')))
+    check('a preview of the same article is built, marked as one, and adds nothing to published/',
+          'Preview. Not published.' in preview_page and target.is_relative_to(PREVIEWS) and published_now() == published_before)
     check('a figure in plain Markdown is shown with its alternative text, its caption as the author wrote it',
           'alt="A drawing of two masses joined by springs."' in preview_page and '<strong>Figure 2.</strong> Written by hand.' in preview_page)
 
@@ -1650,6 +1658,7 @@ def cmd_selftest(args: argparse.Namespace) -> int:
             done = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'browser-check.py'), str(version)], cwd=ROOT, check=False)
             check(f'the browser checks pass for {version.name}', done.returncode == 0)
 
+    check('every published file is byte for byte what it was before the self-test', published_now() == published_before)
     print(f'\nselftest: {len(passed)} checks passed. The sample is in tests/published/ (not committed, not on the site).')
     return 0
 
