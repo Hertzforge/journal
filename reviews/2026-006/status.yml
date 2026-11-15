@@ -1,0 +1,4 @@
+status: Review open        # Review open | Reviewed | Retracted
+thread: "https://github.com/Hertzforge/journal/discussions/6"
+retraction: ""             # the reason, when retracted
+reviews: []                # - {reviewer: "Name", date: YYYY-MM-DD, version: 1, url: "https://..."}
