@@ -1,0 +1,25 @@
+group,case,excitation,change_low_percent,change_high_percent,read_from,source,where_in_source
+Well-tightened bolted joints,"Catalytic converters, 45 N m, mode 1",hammer,-0.8,-0.8,text,Roettgen 2016,Table 12
+Well-tightened bolted joints,"Catalytic converters, 45 N m, mode 2",hammer,-0.2,-0.2,text,Roettgen 2016,Table 12
+Well-tightened bolted joints,"Cylinder-plate-beam, modes 7 to 15 (joint and foam-held mass)",hammer,-4,-1,text,Roettgen 2016; Mayes et al. 2016,Table 15 (one data set)
+Well-tightened bolted joints,"Brake-Reuss beam, 10 N m, modes 1 and 2",hammer,-3.8,-1.3,text,Roettgen 2016,Table 27
+Well-tightened bolted joints,"Brake-Reuss beam, 15 N m, mode 1",hammer,-3.5,-3.5,figure axis,Kuether and Brake 2016,Fig. 8
+Well-tightened bolted joints,"Brake-Reuss beam, 20 N m, mode 1",shaker,-1.2,-1.2,figure axis,Lacayo et al. 2019,Fig. 10
+Well-tightened bolted joints,"S4 beam, 2224 N preload, mode 2",hammer,-0.2,-0.1,figure axis,Wall et al. 2022,Fig. 26
+Well-tightened bolted joints,"S4 beam, 500 lb preload, mode 2",hammer,-0.5,-0.5,figure axis,"Clark et al. 2023, slides",slide 43
+Well-tightened bolted joints,"C-beam pairs, 325 in-lbf, within one run",shaker,-0.2,-0.2,figure axis,Davis et al. 2024,Fig. 13
+Lightly torqued or friction joints,"Two-beam structure, 3.39 N m, mode 1",hammer,-6,-6,figure axis,Deaner et al. 2015,Fig. 5 (text: about 7 Hz)
+Lightly torqued or friction joints,"Slug in press-fit foam cups, axial mode",shaker,-10,-8,figure axis,Kuether and Najera 2017,Fig. 8 (two assemblies)
+Lightly torqued or friction joints,"One 1/4-20 bolt, axial mode",shaker,-10,-10,text,"Khan et al. 2021, slides",slide 8
+Bolted joint in macroslip,"Brake-Reuss beam, torque not stated, mode 1",hammer,-28,-28,text,Bonney et al. 2016,section 5
+Measured at shock level,"Slug in press-fit foam cups, under shaker shock pulses",shaker shock,0,0,text,Jacobs-O'Malley and Hofer 2017,section 3.4
+Measured at shock level,"Resonant plate, bars bolted over rubber, modes 1 and 3 to 6",hammer and projectile shock,-12.7,-1.6,text,Schoenherr et al. 2022,Table 2
+Measured at shock level,"Resonant plate, bars bolted over rubber, mode 2",hammer and projectile shock,19.8,19.8,text,Schoenherr et al. 2022,Table 2
+"Bolted joint hardening, cause not identified","S4 beam, 2224 N preload, mode 1",hammer,1.6,1.6,figure axis,Wall et al. 2022,"Fig. 16 (text: about 2 %; ""some unknown mechanism other than microslip"")"
+Geometry (stretching or curvature),"Clamped cross beam, mode 1, after an initial fall",shaker,4.7,4.7,text,Renson et al. 2016,Table 1 and section 4
+Geometry (stretching or curvature),"Bolted curved panel, lowest point before rising again",shaker,-7,-3,figure axis,Bhattu et al. 2024,Fig. 8
+Geometry (stretching or curvature),"Curved beam clamped by bolted joints, mode 1",shaker,-12,-12,text,Müller et al. 2022,section 5
+Geometry (stretching or curvature),"Curved thin panel, 0.3 mm",shaker,-8,-7,figure axis,Amabili et al. 2017,Fig. 1
+Geometry (stretching or curvature),"Clamped thin plate, 0.5 mm, to about 1.75 thicknesses",shaker,13,13,figure axis,Amabili et al. 2017,Fig. 1
+Geometry (stretching or curvature),"Free-edge thin plate, 0.8 mm, to about 3 thicknesses",shaker,18,18,figure axis,Amabili et al. 2017,Fig. 1
+Geometry (stretching or curvature),"Cantilever with a clamped thin strip (benchmark)",hammer and shaker,32,32,text,Peeters et al. 2011,Table 1 and section 5.1.1

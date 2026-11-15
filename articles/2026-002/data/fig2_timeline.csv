@@ -1,0 +1,45 @@
+year,lane,label,access,what,citation
+1976,Waveform replication with several drives,Cryer et al.,abstract only,road simulator for trucks (lineage),Cryer et al. 1976
+1977,Waveform replication with several drives,Fisher,read in full,four-actuator digital shaker with a transient program,Fisher 1977
+1979,Waveform replication with several drives,Rader and Berry,read in full,two shakers; iteration proposed and not run,Rader and Berry 1979
+2002,Waveform replication with several drives,De Cuyper and Verhaegen,abstract only,seat test rig (lineage),De Cuyper and Verhaegen 2002
+2004,Waveform replication with several drives,Underwood and Keller,abstract only,more controls than shakers (no transient content known),Underwood and Keller 2004
+2010,Waveform replication with several drives,"Xu, Chen and You",abstract only,two-shaker shock test on a cantilever beam,"Xu, Chen and You 2010"
+2016,Waveform replication with several drives,Shen et al.,abstract only,six-degree-of-freedom hydraulic table (lineage),Shen et al. 2018 (online 2016)
+2017,Waveform replication with several drives,"Deng, Yan and Niu",read in full,three exciters; half-sine on three axes,"Deng, Yan and Niu 2017"
+2019,Waveform replication with several drives,Schultz,read in full,two shakers on a plate; simulation of 2 to 6 inputs,Schultz 2019
+2020,Waveform replication with several drives,Guan et al.,abstract only,dual hydraulic tables (lineage),Guan et al. 2020
+2022,Waveform replication with several drives,"Rohe, Schultz and Hunter",read in part,open-source controller with a transient environment,"Rohe, Schultz and Hunter 2022"
+2023,Waveform replication with several drives,Schultz and Carter,read in full,frame-by-frame solve; simulation,Schultz and Carter 2024 (presented 2023)
+2025,Waveform replication with several drives,"Coletti, Carter and Schultz",read in full,FRF error and pre-echo; simulation,"Coletti, Carter and Schultz 2025"
+2015,"One shaker, SRS at several points",Coleman et al.,read in full,response-limited shaker shock,"Coleman, Smallwood and Skousen 2016 (presented 2015)"
+2015,"One shaker, SRS at several points",Heitman et al.,read in full,one drive fitted to several response SRS,Heitman et al. 2016 (presented 2015)
+2023,"One shaker, SRS at several points",Babuska and Cap,read in full,slides: response limiting and optimizing,Babuska and Cap 2023
+2024,"One shaker, SRS at several points",Anaya and Babuska,read in full,slides: transmissibility from the step-up shocks,Anaya and Babuska 2024
+2026,"One shaker, SRS at several points",Ross et al.,read in full,one table input from four gauges,"Ross, Schneider and Kalinich 2026"
+2022,SRS with several drives,Zheng et al.,abstract only,closed-loop multi-shaker SRS (abstract),"Zheng, Ma, Wei and Chen 2023 (online 2022)"
+2022,SRS with several drives,CN115130506A,read in full,patent application; update law stated,"Zheng, Chen and Wei 2022"
+2026,SRS with several drives,Krieghbaum and Danforth,read in full,user report of a commercial mode,Krieghbaum and Danforth 2026
+2019,Shock on random vibration,"Zou, Li and Wang",read in full,two controllers in parallel; five exciters,"Zou, Li and Wang 2019"
+2021,Shock on random vibration,Zheng et al.,record only,title and record only,"Zheng, Ren, Chen and Chen 2021"
+2021,Shock on random vibration,CN113155385B,read in part,patent; kurtosis separation,Zheng and Chen 2022 (filed 2021)
+2022,Shock on random vibration,Ma et al.,abstract only,half-sine on random (abstract),"Ma, Chen, Lu and Zheng 2023 (online 2022)"
+2025,Shock on random vibration,Cross et al.,read in full,uncontrolled gas-gun shock with MIMO random,Cross et al. 2025
+2015,Six-degree-of-freedom tables and resonant plates,"Owens, Tipton and McDowell",read in full,six-degree-of-freedom random tests; shock by analysis,"Owens, Tipton and McDowell 2015"
+2016,Six-degree-of-freedom tables and resonant plates,Sisemore et al. (2016),read in full,six-degree-of-freedom shaker shocks; control not published,"Sisemore, Babuska and Booher 2016"
+2017,Six-degree-of-freedom tables and resonant plates,Sisemore et al. (2017),read in full,"3,424 six-degree-of-freedom shaker shocks","Sisemore, Babuska and Booher 2017"
+2018,Six-degree-of-freedom tables and resonant plates,Hopkins and Sisemore,read in full,offset impact on a resonant plate,Hopkins and Sisemore 2019 (presented 2018)
+2020,Six-degree-of-freedom tables and resonant plates,Sisemore et al. (2020),read in part,three-axis specifications; 4.78 dB,"Sisemore, Babuska and Flores 2020"
+2023,Six-degree-of-freedom tables and resonant plates,Bouma et al.,read in full,fixture design (simulation),"Bouma, Schoenherr and Soine 2023"
+2025,Six-degree-of-freedom tables and resonant plates,Alvis and Mesh,read in part,plate geometry optimization (slides),Alvis and Mesh 2025
+2019,Learning-based,Najera-Flores,read in full,slides: network for six-degree-of-freedom base input,Najera-Flores 2019
+2020,Learning-based,Larbi et al.,read in full,network beside a shaking-table loop,Larbi et al. 2020
+2023,Learning-based,Peláez-Rodríguez et al. (2023),read in full,network drive for one actuator (simulated training),Peláez-Rodríguez et al. 2023
+2024,Learning-based,Peláez-Rodríguez et al. (2024),read in full,same method extended,Peláez-Rodríguez et al. 2024
+2026,Learning-based,Watts et al. (March),read in full,SRS to waveform (arXiv),Watts et al. 2026a
+2026,Learning-based,Watts et al. (October),read in part,ensemble of models (arXiv),Watts et al. 2026b
+2026,Learning-based,Watts (slides),read in full,diffusion model (slides),Watts 2026
+2007,Controller makers' descriptions,Spectral Dynamics,read in full,multiple-exciter shock data sheet,Spectral Dynamics 2007
+2019,Controller makers' descriptions,IMV,read in part,instruction manual with SRS fitting,IMV 2019
+2023,Controller makers' descriptions,Siemens,read in full,MIMO shock release blog,Musella 2023
+2024,Controller makers' descriptions,Crystal Instruments,read in full,MIMO SRS blog,Zhuge 2024

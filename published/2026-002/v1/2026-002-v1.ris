@@ -1,0 +1,13 @@
+TY  - JOUR
+AU  - Cross, Kevin
+TI  - Shock Testing With Several Shakers: A Survey of Published Methods and Measurements
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-002
+PY  - 2026
+DA  - 2026/11/15
+ET  - Version 1
+DO  - 10.5281/zenodo.24252817
+UR  - https://hertzforge.com/journal/2026-002/v1/
+AB  - This survey maps published work on shock testing with more than one shaker: how shock tests are specified, how one shaker is driven to meet a shock specification, how several shakers reproduce a waveform or meet a shock response spectrum (SRS) at several points, how the structures under test change with test level, and what learning-based methods offer. Reproducing a waveform with several shakers is well described for the first pulse. SRS control with several shakers is not: one patent application states its update law and was demonstrated at low levels, one journal paper could be read only as an abstract, controller makers rarely state their laws, and a published user report found that a commercial mode put about five times the specified peak acceleration on one axis. Measured frequency drops are about 0.1 to 4 % for well-tightened bolted joints at low force, about 6 to 10 % for a lightly torqued joint, a single bolt and a press-fit foam-and-metal interface, and about 28 % on one beam driven into full slip, with damping rising about 1.4 to 20 times; on one friction interface, shaker shocks did not move the frequency that sine sweeps lowered. No multi-shaker SRS law tested on such a structure, no standard or tested acceptance rule for several control points, no rule for the timing between them, and no learned component in a multi-shaker shock control loop was found in a search of open English-language databases, the open web and patents, with a few Chinese-language web and patent queries, in November 2026. Several key papers could be read only as abstracts.
+ER  - 

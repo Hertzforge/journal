@@ -1,0 +1,28 @@
+{
+  "id": "2026-002",
+  "title": "Shock Testing With Several Shakers: A Survey of Published Methods and Measurements",
+  "type": "Survey",
+  "evidence": "published sources",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    }
+  ],
+  "first_published": "2026-11-15",
+  "latest": 1,
+  "versions": [
+    {
+      "version": 1,
+      "date": "2026-11-15",
+      "note": "First published.",
+      "doi": "10.5281/zenodo.24252817"
+    }
+  ],
+  "doi_latest": "10.5281/zenodo.24252816",
+  "status": "Review open",
+  "retraction": "",
+  "thread": "",
+  "reviews": [],
+  "sample": false
+}
