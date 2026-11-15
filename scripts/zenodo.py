@@ -143,13 +143,17 @@ def cmd_reserve(article: pathlib.Path) -> None:
         sys.exit(f'zenodo: this version already has a DOI in its front matter ({front["doi"]}).')
     latest = str(front.get('doi_latest') or '')
     if latest:
-        # A later version: start it from the newest published version of the same record.
-        concept = latest[len(PREFIX):]
-        found = call('GET', f'/deposit/depositions?q=conceptrecid:{concept}&all_versions=false')
-        if not found:
-            sys.exit(f'zenodo: no published record found for {latest}.')
-        started = call('POST', f'/deposit/depositions/{found[0]["id"]}/actions/newversion')
-        draft = call('GET', started['links']['latest_draft'])
+        # A later version: start it from the newest published version, which the article's
+        # record names.
+        record = json.loads((ROOT / 'published' / str(front['id']) / 'record.json').read_text(encoding='utf-8'))
+        previous = str(record['versions'][-1]['doi'])[len(PREFIX):]
+        started = call('POST', f'/deposit/depositions/{previous}/actions/newversion')
+        newest = started.get('links', {}).get('latest_draft')
+        draft = call('GET', newest) if newest else started
+        if str(draft['id']) == previous:
+            sys.exit('zenodo: Zenodo did not start a new version. Nothing else was done; look at the record on Zenodo.')
+        if f'{PREFIX}{draft["conceptrecid"]}' != latest:
+            sys.exit(f'zenodo: the new draft belongs to {PREFIX}{draft["conceptrecid"]}, not {latest}. Look at it on Zenodo.')
     else:
         draft = call('POST', '/deposit/depositions', {})
     reserved = draft['metadata']['prereserve_doi']['doi']

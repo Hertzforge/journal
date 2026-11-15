@@ -1,11 +1,16 @@
 ---
 # Filled in by the editors at publication.
 id: "2026-001"
-version: 1
-date: 2026-11-14
-doi: "10.5281/zenodo.24235533"
+version: 2
+date: 2026-11-15
+doi: "10.5281/zenodo.24252422"
 doi_latest: "10.5281/zenodo.24235532"   # always resolves to the latest version
-note: First published.
+note: >
+  Corrects the description of intrinsic connection excitation (ICE). Version 1 called it another
+  name for IMMAT. It is a similar method that does not try to match the impedance of the next
+  assembly (Section 1). ICE is taken out of the statement on published tests in Section 2, which
+  rests on a search of IMMAT and frame tests. One reference is added (Zwink, Cross and Fowler,
+  2023) and the BARC reference is marked as slides. No result or proposal changed.
 
 # Filled in by the authors.
 title: "What Is a Good Multi-Shaker Test? A Proposed Practice for Judging MIMO Vibration and Shock Tests on Flexible Articles"
@@ -92,10 +97,12 @@ around the specification. Whether the part's own response was above or below wha
 service is rarely traced back. An over-response can be limited; an under-response passes unseen.
 
 Multi-shaker testing that controls on the article's own responses, such as impedance-matched
-multi-axis testing (IMMAT, also called intrinsic connection excitation, ICE) and frame-style tests,
+multi-axis testing (IMMAT), intrinsic connection excitation (ICE) and frame-style tests,
 removes several of these compromises and adds its own: coupling between shakers, cross
 terms that cannot all be matched, and local modes that put one gauge well over its target while the
-global motion is right. The habit carried over from single-axis practice is to ask that every
+global motion is right. ICE is similar to IMMAT, but it does not try to match the impedance of the
+next assembly: the fixture is made as light and stiff as possible, and the shakers supply the
+forces at the article's connections (Zwink, Cross and Fowler, 2023). The habit carried over from single-axis practice is to ask that every
 control channel hold its spectrum, line by line. With more controls than shakers that cannot be
 met, and where it can be met it is the wrong thing to ask.
 
@@ -136,7 +143,7 @@ within stated bounds, and notes that "individual measurements may be substantial
 tolerance while the average is within tolerance." Method 516.8 tolerances the effective duration
 at 0.8 to 1.2 of the reference.
 
-**Published multi-shaker tests.** No published IMMAT (ICE) or frame test was found that states a
+**Published multi-shaker tests.** No published IMMAT or frame test was found that states a
 numeric pass tolerance and reports compliance with it. Tests are judged by overlays, by one scalar,
 or by gauges held out of the control. Measures in use include the sum of the autospectra (Mayes and
 Rohe, 2016), the RMS decibel error over gauges and lines (Mayes and co-authors, 2019, who reached
@@ -777,7 +784,7 @@ The band-average control idea in Hertzforge is Brandon Zwink's. The band law tes
 - Rohe, Nelson, Schultz (2019). Strategies for Shaker Placement for Impedance-Matched Multi-Axis
   Testing. IMAC 2019. SAND2018-11955C, OSTI 1592379.
 - Rohe, Schultz, Schoenherr, Mayes, Skousen (2019). Comparison of Multi-Axis Testing of the BARC
-  Structure with Varying Boundary Conditions. ESTECH 2019. SAND2019-3099C, OSTI 1639481.
+  Structure with Varying Boundary Conditions (slides). ESTECH 2019. SAND2019-3099C, OSTI 1639481.
 - Schultz, Rohe (2026). Understanding 6DOF Test Methods and Their Impacts on Results. IMAC 2026.
   SAND2025-12387C, OSTI 17086461.
 - Sisemore (2019). Defining Resonant Plate Shock Test Specifications in the Time Domain. 90th
@@ -785,6 +792,8 @@ The band-average control idea in Hertzforge is Brandon Zwink's. The band law tes
 - Skousen, Soine (2018). Boundary Conditions in Environmental Testing Round Robin. 89th Shock and
   Vibration Symposium. SAND2018-12499C, OSTI 1592378. Sandia National Laboratories and Kansas City National Security
   Campus.
+- Zwink, Cross, Fowler (2023). MIMO Vibration Test Design for BARC Challenge Problem. IMAC 2023.
+  SAND2022-14308C, OSTI 2005532.
 
 ## Implemented In
 

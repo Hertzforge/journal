@@ -1,0 +1,14 @@
+TY  - JOUR
+AU  - Cross, Kevin
+AU  - Zwink, Brandon
+TI  - What Is a Good Multi-Shaker Test? A Proposed Practice for Judging MIMO Vibration and Shock Tests on Flexible Articles
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-001
+PY  - 2026
+DA  - 2026/11/15
+ET  - Version 2
+DO  - 10.5281/zenodo.24252422
+UR  - https://hertzforge.com/journal/2026-001/v2/
+AB  - A single-shaker vibration test is accepted when one control accelerometer follows its target spectrum, which says little about what the article itself experienced. For tests with several shakers there is no agreed way to judge a test at all, and the standards say so. This article proposes one. Its starting point, seen in a published hardware test and in simulations where the stress in every part of the article is known, is that a small error at the control accelerometers does not mean a good test. A controller sets the shaker drives so that the control accelerometers read their targets. With as many shakers as controls it can make them read their targets almost exactly, whatever the rest of the article is doing: in the simulations it held every control within a tenth of a decibel of its target while stressing the article more than 10 dB above what it sees in service. Accelerometers left out of the control showed the problem; the controls did not. With fewer shakers than controls, the error left at the controls does follow how well the article is being tested. The proposals are to keep some accelerometers out of the control and use them to check the test; to report separately what the setup could reach, what the controller achieved and what the article saw; to hold the overall level tightly and the shape of the spectrum loosely; to compare spectra in frequency bands; to state the margin added where a test must not under-test; and to judge a controller by its safety and by whether it reaches what the setup can reach. The evidence is published work and simulations of one family of linear structures, with no new hardware tests; the proposed numbers are starting values, to be tried and revised.
+ER  - 

@@ -14,13 +14,19 @@
     }
   ],
   "first_published": "2026-11-14",
-  "latest": 1,
+  "latest": 2,
   "versions": [
     {
       "version": 1,
       "date": "2026-11-14",
       "note": "First published.",
       "doi": "10.5281/zenodo.24235533"
+    },
+    {
+      "version": 2,
+      "date": "2026-11-15",
+      "note": "Corrects the description of intrinsic connection excitation (ICE). Version 1 called it another name for IMMAT. It is a similar method that does not try to match the impedance of the next assembly (Section 1). ICE is taken out of the statement on published tests in Section 2, which rests on a search of IMMAT and frame tests. One reference is added (Zwink, Cross and Fowler, 2023) and the BARC reference is marked as slides. No result or proposal changed.",
+      "doi": "10.5281/zenodo.24252422"
     }
   ],
   "doi_latest": "10.5281/zenodo.24235532",

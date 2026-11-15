@@ -1,0 +1,45 @@
+{
+  "id": "2026-001",
+  "version": 2,
+  "date": "2026-11-15",
+  "first_published": "2026-11-14",
+  "note": "Corrects the description of intrinsic connection excitation (ICE). Version 1 called it another name for IMMAT. It is a similar method that does not try to match the impedance of the next assembly (Section 1). ICE is taken out of the statement on published tests in Section 2, which rests on a search of IMMAT and frame tests. One reference is added (Zwink, Cross and Fowler, 2023) and the BARC reference is marked as slides. No result or proposal changed.",
+  "title": "What Is a Good Multi-Shaker Test? A Proposed Practice for Judging MIMO Vibration and Shock Tests on Flexible Articles",
+  "type": "Proposed Standard",
+  "evidence": "simulator",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    },
+    {
+      "name": "Brandon Zwink",
+      "orcid": "0000-0003-1341-2293"
+    }
+  ],
+  "doi": "10.5281/zenodo.24252422",
+  "doi_latest": "10.5281/zenodo.24235532",
+  "issn": "",
+  "volume": 1,
+  "address": "https://hertzforge.com/journal/2026-001/v2/",
+  "sample": false,
+  "outputs": {
+    "page": "index.html",
+    "single_file": "2026-001-v2.html",
+    "pdf": "2026-001-v2.pdf",
+    "bundle": "2026-001-v2-bundle.zip"
+  },
+  "built": "2026-11-15T17:32:06Z",
+  "built_with": {
+    "quarto": "1.11.9",
+    "pandoc": "pandoc 3.10",
+    "typst": "",
+    "python": "3.14.10",
+    "plotly": "7.1.0",
+    "plotly.js": "4.1.1",
+    "kaleido": "1.5.1",
+    "numpy": "2.5.4",
+    "theme": "70db5f680c78",
+    "build": "4387aa8d2678+changes"
+  }
+}
