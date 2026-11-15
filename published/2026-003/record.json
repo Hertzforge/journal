@@ -10,13 +10,19 @@
     }
   ],
   "first_published": "2026-11-15",
-  "latest": 1,
+  "latest": 2,
   "versions": [
     {
       "version": 1,
       "date": "2026-11-15",
       "note": "First published.",
       "doi": "10.5281/zenodo.24254057"
+    },
+    {
+      "version": 2,
+      "date": "2026-11-15",
+      "note": "Print layout corrected; content unchanged.",
+      "doi": "10.5281/zenodo.24254728"
     }
   ],
   "doi_latest": "10.5281/zenodo.24254056",

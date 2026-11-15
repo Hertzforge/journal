@@ -1,11 +1,11 @@
 ---
 # Filled in by the editors at publication.
 id: "2026-003"
-version: 1
+version: 2
 date: 2026-11-15
-doi: "10.5281/zenodo.24254057"
+doi: "10.5281/zenodo.24254728"
 doi_latest: "10.5281/zenodo.24254056"   # always resolves to the latest version
-note: First published.
+note: "Print layout corrected; content unchanged."
 
 # Filled in by the authors.
 title: "Multi-Shaker Sine Control: What Is Published, and Where It Stops"
@@ -153,8 +153,16 @@ A sine test specification gives the frequency range, the amplitude against frequ
 rate or dwell time, the tolerances on each, and how several control points are combined into one
 reading. Tables 1 and 2 give what the standards we read require, at the clauses named.
 
+```{=typst}
+#block(sticky: true)[
+```
+
 **Table 1.** What the standards read for this survey say about sweep rate and tolerances. The
 clauses read follow each standard's name.
+
+```{=typst}
+]
+```
 
 | Standard | Sweep rate | Tolerances |
 |------------|---------------|-----------------------|
@@ -165,9 +173,17 @@ clauses read follow each standard's name.
 | ECSS-E-HB-32-26A, 5.2.3.3 | The effect of sweep rate on a resonance (Section 5) |  |
 | ISO 7626-2:1990, 9.2.3 (a mobility measurement standard, one exciter) | A sweep slow enough that the response near a resonance is within 5 % of its true value (Section 5) |  |
 
+```{=typst}
+#block(sticky: true)[
+```
+
 **Table 2.** What the same standards say about several control points and about several exciters.
 The clauses read are in Table 1; Method 527.2 of MIL-STD-810H appears only here. "Not found" is
 worded to the word searches in Section 10.
+
+```{=typst}
+]
+```
 
 | Standard | Several control points | Several exciters and phase |
 |-----------|--------------------|--------------------|
@@ -310,7 +326,7 @@ The drive starts from the measured model, $D = H^{-1} r$; the model itself is me
 phase-varied sine runs of Section 1, $H = U D^{-1}$. With $D_k$ a drive amplitude, $A_k$ the
 response and $A_r$ the reference, they define $E_q = A_r / A_k$ and print (Eq. 15)
 
-$$D_{k+1} = D_k \frac{K + 1/E_q}{K + E_q} \;\; \text{if } E_q \le 1, \qquad D_{k+1} = D_k \frac{K + 1}{K + E_q} \;\; \text{if } E_q > 1,$$
+$$D_{k+1} = D_k \frac{K + 1/E_q}{K + E_q} \quad \text{if } E_q \le 1, \qquad D_{k+1} = D_k \frac{K + 1}{K + E_q} \quad \text{if } E_q > 1,$$
 
 with "K ... the correction factor, whose size determines the accuracy and speed of convergence"
 (our translation); their Fig. 4 shows $K$ of 0.5, 1, 2 and 6, faster for smaller $K$. A note of
@@ -352,9 +368,17 @@ multi-output solution existed for sine on random other than time waveform replic
 
 ### 3.7 The Laws Side by Side
 
+```{=typst}
+#block(sticky: true)[
+```
+
 **Table 3.** The published multi-shaker sine laws found, in one notation. The update is in this
 article's notation. The model column says how the model is measured and whether it is changed
 during the test.
+
+```{=typst}
+]
+```
 
 | Law | Update | Model | Demonstrated on |
 |----------|-----------------|------------|-----------|
@@ -486,9 +510,17 @@ of change of frequency at the resonance. The ECSS loads handbook uses
 $\eta_E = (R \ln 2 / 60)/(f_k \zeta_k^2)$ with $R$ in octaves a minute (ECSS-E-HB-32-26A, 5.2.3.3),
 which is four times Davis's $\eta$ (our derivation; same physics, a different constant).
 
+```{=typst}
+#block(sticky: true)[
+```
+
 **Table 4.** Time inside the half-power bandwidth and the number of the mode's time constants it
 spends there, for a $Q$ of 50 (ours). The last column is the frequency below which $N$ is under 2;
 for another $Q$ it is $Q^2 s / 136$ hertz.
+
+```{=typst}
+]
+```
 
 | Octaves a minute | Seconds in bandwidth | $N$ at 10 Hz | $N$ at 40 Hz | $N$ at 100 Hz | $N$ under 2 below |
 |---|---|---|---|---|---|
