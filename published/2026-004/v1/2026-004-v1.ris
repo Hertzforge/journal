@@ -1,0 +1,13 @@
+TY  - JOUR
+AU  - Cross, Kevin
+TI  - Multi-Shaker Shock Control: Ideas That Did Not Work in Simulation, and Why
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-004
+PY  - 2026
+DA  - 2026/11/15
+ET  - Version 1
+DO  - 10.5281/zenodo.24254182
+UR  - https://hertzforge.com/journal/2026-004/v1/
+AB  - A shock test with several shakers is controlled from a model of the test article measured at a low level. Bolted joints soften as the level rises, so a drive computed from that model can over-test the article on the way to full level. This article reports, with numbers, the control ideas tried in simulation against that problem that did not work. A neural network, as the law's model or as the setter of how much softening to allow for, never beat a plain law built on a family of models, and where its prediction was low it put the article 5 to 8 dB above the full-level target. A modal model that changes inside each pulse passed seven of the eight structures it was developed on and failed held-out structures with modeled bolted joints that the plain law passes. A corrector that steps all controls together was not the main reason its law passed, and it fired full-level pulses 6 to 9 dB over target between the pulses that a judgment of the first, third and last full-level pulses looks at. A step rule did not replace the limit on softening, and two cures for failures under heavy measurement noise were worse, or only partly better, on the strict criteria. Twelve further ideas are listed with their evidence. The failures share causes: low-level pulses do not show the softening that matters, a law that fires a predicted drive is only as safe as its lowest prediction, and judging some pulses hides over-tests. Simulation only; nothing here has been run on shakers.
+ER  - 

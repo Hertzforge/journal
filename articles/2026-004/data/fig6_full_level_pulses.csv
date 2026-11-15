@@ -1,0 +1,121 @@
+law,seed,full_level_pulse,over_db,judged_by_first_third_last
+coupled corrector,11,1,1.1236,yes
+coupled corrector,11,2,1.1237,no
+coupled corrector,11,3,1.1235,yes
+coupled corrector,11,4,1.1239,no
+coupled corrector,11,5,1.1238,no
+coupled corrector,11,6,1.1235,no
+coupled corrector,11,7,1.1238,no
+coupled corrector,11,8,1.1237,yes
+hold rule,11,1,1.1236,yes
+hold rule,11,2,1.1237,no
+hold rule,11,3,1.1235,yes
+hold rule,11,4,1.1239,no
+hold rule,11,5,1.1238,no
+hold rule,11,6,1.1235,no
+hold rule,11,7,1.1238,no
+hold rule,11,8,1.1237,yes
+"followed family, 12 % ceiling",11,1,1.6065,yes
+"followed family, 12 % ceiling",11,2,1.4537,no
+"followed family, 12 % ceiling",11,3,1.3148,yes
+"followed family, 12 % ceiling",11,4,1.2004,no
+"followed family, 12 % ceiling",11,5,1.1092,no
+"followed family, 12 % ceiling",11,6,1.0361,no
+"followed family, 12 % ceiling",11,7,0.9788,no
+"followed family, 12 % ceiling",11,8,0.9364,yes
+coupled corrector,12,1,2.0305,yes
+coupled corrector,12,2,7.3636,no
+coupled corrector,12,3,2.0305,yes
+coupled corrector,12,4,5.3689,no
+coupled corrector,12,5,2.0301,no
+coupled corrector,12,6,2.0303,no
+coupled corrector,12,7,2.0302,no
+coupled corrector,12,8,2.0303,yes
+hold rule,12,1,2.0305,yes
+hold rule,12,2,2.0303,no
+hold rule,12,3,2.0305,yes
+hold rule,12,4,2.0303,no
+hold rule,12,5,2.0301,no
+hold rule,12,6,2.0303,no
+hold rule,12,7,2.0302,no
+hold rule,12,8,2.0303,yes
+"followed family, 12 % ceiling",12,1,1.6035,yes
+"followed family, 12 % ceiling",12,2,1.4490,no
+"followed family, 12 % ceiling",12,3,1.3091,yes
+"followed family, 12 % ceiling",12,4,1.1930,no
+"followed family, 12 % ceiling",12,5,1.0998,no
+"followed family, 12 % ceiling",12,6,1.0254,no
+"followed family, 12 % ceiling",12,7,0.9685,no
+"followed family, 12 % ceiling",12,8,0.9257,yes
+coupled corrector,13,1,2.3706,yes
+coupled corrector,13,2,5.9708,no
+coupled corrector,13,3,2.3708,yes
+coupled corrector,13,4,5.4066,no
+coupled corrector,13,5,2.3711,no
+coupled corrector,13,6,2.3710,no
+coupled corrector,13,7,2.3710,no
+coupled corrector,13,8,2.3709,yes
+hold rule,13,1,2.3706,yes
+hold rule,13,2,2.3709,no
+hold rule,13,3,2.3708,yes
+hold rule,13,4,2.3708,no
+hold rule,13,5,2.3711,no
+hold rule,13,6,2.3710,no
+hold rule,13,7,2.3710,no
+hold rule,13,8,2.3709,yes
+"followed family, 12 % ceiling",13,1,1.6039,yes
+"followed family, 12 % ceiling",13,2,1.4492,no
+"followed family, 12 % ceiling",13,3,1.3088,yes
+"followed family, 12 % ceiling",13,4,1.1926,no
+"followed family, 12 % ceiling",13,5,1.0997,no
+"followed family, 12 % ceiling",13,6,1.0257,no
+"followed family, 12 % ceiling",13,7,0.9682,no
+"followed family, 12 % ceiling",13,8,0.9255,yes
+coupled corrector,14,1,2.3342,yes
+coupled corrector,14,2,8.8724,no
+coupled corrector,14,3,2.3343,yes
+coupled corrector,14,4,6.2531,no
+coupled corrector,14,5,2.3343,no
+coupled corrector,14,6,2.3342,no
+coupled corrector,14,7,2.3343,no
+coupled corrector,14,8,2.3341,yes
+hold rule,14,1,2.3342,yes
+hold rule,14,2,2.3343,no
+hold rule,14,3,2.3343,yes
+hold rule,14,4,2.3344,no
+hold rule,14,5,2.3343,no
+hold rule,14,6,2.3342,no
+hold rule,14,7,2.3343,no
+hold rule,14,8,2.3341,yes
+"followed family, 12 % ceiling",14,1,1.6065,yes
+"followed family, 12 % ceiling",14,2,1.4522,no
+"followed family, 12 % ceiling",14,3,1.3118,yes
+"followed family, 12 % ceiling",14,4,1.1959,no
+"followed family, 12 % ceiling",14,5,1.1025,no
+"followed family, 12 % ceiling",14,6,1.0286,no
+"followed family, 12 % ceiling",14,7,0.9718,no
+"followed family, 12 % ceiling",14,8,0.9292,yes
+coupled corrector,15,1,1.1084,yes
+coupled corrector,15,2,1.1081,no
+coupled corrector,15,3,1.1081,yes
+coupled corrector,15,4,1.1081,no
+coupled corrector,15,5,1.1081,no
+coupled corrector,15,6,1.1083,no
+coupled corrector,15,7,1.1082,no
+coupled corrector,15,8,1.1082,yes
+hold rule,15,1,1.1084,yes
+hold rule,15,2,1.1081,no
+hold rule,15,3,1.1081,yes
+hold rule,15,4,1.1081,no
+hold rule,15,5,1.1081,no
+hold rule,15,6,1.1083,no
+hold rule,15,7,1.1082,no
+hold rule,15,8,1.1082,yes
+"followed family, 12 % ceiling",15,1,1.6035,yes
+"followed family, 12 % ceiling",15,2,1.4479,no
+"followed family, 12 % ceiling",15,3,1.3071,yes
+"followed family, 12 % ceiling",15,4,1.1907,no
+"followed family, 12 % ceiling",15,5,1.0978,no
+"followed family, 12 % ceiling",15,6,1.0235,no
+"followed family, 12 % ceiling",15,7,0.9660,no
+"followed family, 12 % ceiling",15,8,0.9233,yes

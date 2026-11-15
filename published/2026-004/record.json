@@ -1,0 +1,28 @@
+{
+  "id": "2026-004",
+  "title": "Multi-Shaker Shock Control: Ideas That Did Not Work in Simulation, and Why",
+  "type": "Negative Result",
+  "evidence": "simulator",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    }
+  ],
+  "first_published": "2026-11-15",
+  "latest": 1,
+  "versions": [
+    {
+      "version": 1,
+      "date": "2026-11-15",
+      "note": "First published.",
+      "doi": "10.5281/zenodo.24254182"
+    }
+  ],
+  "doi_latest": "10.5281/zenodo.24254181",
+  "status": "Review open",
+  "retraction": "",
+  "thread": "",
+  "reviews": [],
+  "sample": false
+}

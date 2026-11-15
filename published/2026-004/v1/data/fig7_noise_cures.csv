@@ -1,0 +1,12 @@
+method,noise,runs,strict,ends_at_full_level_in_tolerance,never_over_full_level_target_by_3db,realistic_strict,realistic_runs
+hold rule as it is (jump from -34 dB to -12 dB),0.0000,160,160,160,160,40,40
+hold rule as it is (jump from -34 dB to -12 dB),0.0010,160,159,159,159,40,40
+hold rule as it is (jump from -34 dB to -12 dB),0.0030,160,158,160,160,39,40
+hold rule as it is (jump from -34 dB to -12 dB),0.0100,160,139,155,159,33,40
+each probe averaged 16 times,0.0010,160,160,160,160,40,40
+each probe averaged 16 times,0.0030,160,158,160,160,39,40
+each probe averaged 16 times,0.0100,160,134,158,160,24,40
+"climb in 6 dB steps, unchecked",0.0000,160,120,160,160,40,40
+"climb in 6 dB steps, unchecked",0.0010,160,120,160,160,40,40
+"climb in 6 dB steps, unchecked",0.0030,160,125,160,160,40,40
+"climb in 6 dB steps, unchecked",0.0100,160,127,160,160,40,40

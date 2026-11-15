@@ -1,0 +1,127 @@
+law,structure,tier,noise,strict,ends_at_full_level_in_tolerance,never_over_full_level_target_by_3db,worst_absolute_db,end
+frozen,s4-linear,control,0,pass,yes,yes,0.0254,completed
+frozen,s4-linear,control,0.0010,pass,yes,yes,0.0321,completed
+frozen,hyst-moderate,realistic,0,pass,yes,yes,0.8980,completed
+frozen,hyst-moderate,realistic,0.0010,pass,yes,yes,1.0991,completed
+frozen,shaker-clip-moderate,realistic,0,pass,yes,yes,0.8489,completed
+frozen,shaker-clip-moderate,realistic,0.0010,pass,yes,yes,0.8801,completed
+frozen,soft-harden,realistic,0,fail,yes,no,4.9066,completed
+frozen,soft-harden,realistic,0.0010,pass,yes,yes,2.8024,completed
+frozen,hyst-onset,stress,0,pass,yes,yes,0.8254,completed
+frozen,hyst-onset,stress,0.0010,pass,yes,yes,1.0105,completed
+frozen,harden,stress,0,fail,yes,no,4.5105,completed
+frozen,harden,stress,0.0010,fail,yes,no,4.1133,completed
+frozen,hyst-severe,stress,0,fail,yes,no,4.0484,completed
+frozen,hyst-severe,stress,0.0010,fail,no,no,4.7088,not converged
+frozen,hyst-scatter,stress,0,fail,no,no,5.2339,not converged
+frozen,hyst-scatter,stress,0.0010,fail,no,no,4.7675,not converged
+frozen,shaker-clip-severe,stress,0,fail,no,no,3.4241,not converged
+frozen,shaker-clip-severe,stress,0.0010,fail,no,no,3.3833,not converged
+followed,s4-linear,control,0,pass,yes,yes,0.0139,completed
+followed,s4-linear,control,0.0010,pass,yes,yes,0.0180,completed
+followed,hyst-moderate,realistic,0,pass,yes,yes,0.8596,completed
+followed,hyst-moderate,realistic,0.0010,pass,yes,yes,0.8519,completed
+followed,shaker-clip-moderate,realistic,0,pass,yes,yes,0.4728,completed
+followed,shaker-clip-moderate,realistic,0.0010,pass,yes,yes,0.9287,completed
+followed,soft-harden,realistic,0,fail,yes,no,3.2097,completed
+followed,soft-harden,realistic,0.0010,fail,yes,no,4.2354,completed
+followed,hyst-onset,stress,0,pass,yes,yes,0.8217,completed
+followed,hyst-onset,stress,0.0010,pass,yes,yes,1.0281,completed
+followed,harden,stress,0,pass,yes,yes,1.6804,completed
+followed,harden,stress,0.0010,pass,yes,yes,2.8695,completed
+followed,hyst-severe,stress,0,fail,no,no,5.0685,not converged
+followed,hyst-severe,stress,0.0010,fail,no,no,6.1640,not converged
+followed,hyst-scatter,stress,0,fail,yes,no,4.6790,completed
+followed,hyst-scatter,stress,0.0010,fail,no,yes,2.6780,not converged
+followed,shaker-clip-severe,stress,0,pass,yes,yes,0.0929,completed
+followed,shaker-clip-severe,stress,0.0010,fail,yes,yes,0.1063,completed
+physics model,s4-linear,control,0,pass,yes,yes,0.0853,completed
+physics model,s4-linear,control,0.0010,fail,no,yes,-24.2519,stopped: no safe step
+physics model,hyst-moderate,realistic,0,pass,yes,yes,1.6660,completed
+physics model,hyst-moderate,realistic,0.0010,pass,yes,yes,2.7199,completed
+physics model,shaker-clip-moderate,realistic,0,fail,no,yes,-6.1623,stopped: no safe step
+physics model,shaker-clip-moderate,realistic,0.0010,fail,no,yes,-3.2745,stopped: no safe step
+physics model,soft-harden,realistic,0,fail,no,no,3.2299,stopped: no safe step
+physics model,soft-harden,realistic,0.0010,fail,no,yes,-6.1784,not converged
+physics model,hyst-onset,stress,0,fail,no,yes,-12.6592,stopped: no safe step
+physics model,hyst-onset,stress,0.0010,pass,yes,yes,0.3611,completed
+physics model,harden,stress,0,fail,no,yes,1.9560,stopped: no safe step
+physics model,harden,stress,0.0010,fail,no,yes,-4.5671,not converged
+physics model,hyst-severe,stress,0,fail,no,yes,-8.5379,stopped: no safe step
+physics model,hyst-severe,stress,0.0010,fail,no,yes,-25.9818,not converged
+physics model,hyst-scatter,stress,0,fail,no,yes,-26.8743,stopped: no safe step
+physics model,hyst-scatter,stress,0.0010,fail,no,yes,-29.6347,stopped: no safe step
+physics model,shaker-clip-severe,stress,0,fail,no,yes,-10.5649,stopped: no safe step
+physics model,shaker-clip-severe,stress,0.0010,fail,no,yes,-6.5301,stopped: no safe step
+network as the law's model,s4-linear,control,0,pass,yes,yes,0.0556,completed
+network as the law's model,s4-linear,control,0.0010,pass,yes,yes,0.1180,completed
+network as the law's model,hyst-moderate,realistic,0,pass,yes,yes,0.9681,completed
+network as the law's model,hyst-moderate,realistic,0.0010,pass,yes,yes,1.0725,completed
+network as the law's model,shaker-clip-moderate,realistic,0,pass,yes,yes,0.9240,completed
+network as the law's model,shaker-clip-moderate,realistic,0.0010,pass,yes,yes,0.9374,completed
+network as the law's model,soft-harden,realistic,0,fail,no,yes,2.6309,not converged
+network as the law's model,soft-harden,realistic,0.0010,fail,no,no,3.4733,not converged
+network as the law's model,hyst-onset,stress,0,pass,yes,yes,1.0111,completed
+network as the law's model,hyst-onset,stress,0.0010,pass,yes,yes,1.1458,completed
+network as the law's model,harden,stress,0,fail,yes,no,5.2256,completed
+network as the law's model,harden,stress,0.0010,fail,no,no,5.6320,not converged
+network as the law's model,hyst-severe,stress,0,fail,yes,no,5.9351,completed
+network as the law's model,hyst-severe,stress,0.0010,fail,no,yes,2.4237,not converged
+network as the law's model,hyst-scatter,stress,0,fail,no,no,4.4210,not converged
+network as the law's model,hyst-scatter,stress,0.0010,fail,no,no,3.4681,not converged
+network as the law's model,shaker-clip-severe,stress,0,fail,yes,yes,1.2526,completed
+network as the law's model,shaker-clip-severe,stress,0.0010,fail,yes,yes,1.2303,completed
+network sets the ceiling,s4-linear,control,0,pass,yes,yes,0.0139,completed
+network sets the ceiling,s4-linear,control,0.0010,pass,yes,yes,0.0180,completed
+network sets the ceiling,hyst-moderate,realistic,0,pass,yes,yes,0.8596,completed
+network sets the ceiling,hyst-moderate,realistic,0.0010,pass,yes,yes,0.8519,completed
+network sets the ceiling,shaker-clip-moderate,realistic,0,pass,yes,yes,0.4728,completed
+network sets the ceiling,shaker-clip-moderate,realistic,0.0010,pass,yes,yes,0.9287,completed
+network sets the ceiling,soft-harden,realistic,0,fail,yes,no,3.2097,completed
+network sets the ceiling,soft-harden,realistic,0.0010,fail,yes,no,4.2354,completed
+network sets the ceiling,hyst-onset,stress,0,pass,yes,yes,0.8217,completed
+network sets the ceiling,hyst-onset,stress,0.0010,pass,yes,yes,1.0281,completed
+network sets the ceiling,harden,stress,0,pass,yes,yes,1.6804,completed
+network sets the ceiling,harden,stress,0.0010,pass,yes,yes,2.8695,completed
+network sets the ceiling,hyst-severe,stress,0,fail,no,no,5.6056,not converged
+network sets the ceiling,hyst-severe,stress,0.0010,fail,no,no,6.9605,not converged
+network sets the ceiling,hyst-scatter,stress,0,fail,no,no,3.4230,not converged
+network sets the ceiling,hyst-scatter,stress,0.0010,fail,no,no,3.5115,not converged
+network sets the ceiling,shaker-clip-severe,stress,0,fail,yes,no,5.1600,completed
+network sets the ceiling,shaker-clip-severe,stress,0.0010,fail,yes,yes,1.9783,completed
+coupled corrector,s4-linear,control,0,pass,yes,yes,0.0139,completed
+coupled corrector,s4-linear,control,0.0010,pass,yes,yes,0.0180,completed
+coupled corrector,hyst-moderate,realistic,0,pass,yes,yes,0.8596,completed
+coupled corrector,hyst-moderate,realistic,0.0010,pass,yes,yes,0.8519,completed
+coupled corrector,shaker-clip-moderate,realistic,0,pass,yes,yes,0.4300,completed
+coupled corrector,shaker-clip-moderate,realistic,0.0010,pass,yes,yes,0.9115,completed
+coupled corrector,soft-harden,realistic,0,pass,yes,yes,2.8491,completed
+coupled corrector,soft-harden,realistic,0.0010,fail,yes,no,3.7153,completed
+coupled corrector,hyst-onset,stress,0,pass,yes,yes,0.8217,completed
+coupled corrector,hyst-onset,stress,0.0010,pass,yes,yes,1.0281,completed
+coupled corrector,harden,stress,0,pass,yes,yes,1.6804,completed
+coupled corrector,harden,stress,0.0010,fail,no,yes,1.2697,not converged
+coupled corrector,hyst-severe,stress,0,fail,no,yes,-0.3845,not converged
+coupled corrector,hyst-severe,stress,0.0010,fail,no,yes,-2.3096,not converged
+coupled corrector,hyst-scatter,stress,0,fail,no,yes,2.2561,not converged
+coupled corrector,hyst-scatter,stress,0.0010,fail,no,yes,1.2117,not converged
+coupled corrector,shaker-clip-severe,stress,0,pass,yes,yes,0.1277,completed
+coupled corrector,shaker-clip-severe,stress,0.0010,pass,yes,yes,0.6475,completed
+hold rule,s4-linear,control,0,pass,yes,yes,0.0139,completed
+hold rule,s4-linear,control,0.0010,pass,yes,yes,0.0180,completed
+hold rule,hyst-moderate,realistic,0,pass,yes,yes,0.8596,completed
+hold rule,hyst-moderate,realistic,0.0010,pass,yes,yes,0.8519,completed
+hold rule,shaker-clip-moderate,realistic,0,pass,yes,yes,0.4300,completed
+hold rule,shaker-clip-moderate,realistic,0.0010,pass,yes,yes,0.9115,completed
+hold rule,soft-harden,realistic,0,fail,yes,no,3.2026,completed
+hold rule,soft-harden,realistic,0.0010,pass,yes,yes,1.5410,completed
+hold rule,hyst-onset,stress,0,pass,yes,yes,0.8217,completed
+hold rule,hyst-onset,stress,0.0010,pass,yes,yes,1.0281,completed
+hold rule,harden,stress,0,pass,yes,yes,1.6804,completed
+hold rule,harden,stress,0.0010,pass,yes,yes,2.8695,completed
+hold rule,hyst-severe,stress,0,fail,no,no,6.4627,not converged
+hold rule,hyst-severe,stress,0.0010,fail,no,no,5.3049,not converged
+hold rule,hyst-scatter,stress,0,fail,no,no,3.6962,not converged
+hold rule,hyst-scatter,stress,0.0010,fail,no,no,3.5468,not converged
+hold rule,shaker-clip-severe,stress,0,pass,yes,yes,0.1129,completed
+hold rule,shaker-clip-severe,stress,0.0010,pass,yes,yes,0.7347,completed

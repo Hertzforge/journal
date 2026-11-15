@@ -1,0 +1,49 @@
+set,structure,level_db,largest_drop_percent
+development,moderate,-40.0000,0.2400
+development,moderate,-34.0000,0.4900
+development,moderate,-28.0000,0.9900
+development,moderate,-24.0000,1.6200
+development,moderate,-18.0000,3.0000
+development,moderate,-12.0000,3.0000
+development,moderate,-6.0000,3.0000
+development,moderate,0.0000,3.0000
+development,severe,-40.0000,0.6800
+development,severe,-34.0000,1.4100
+development,severe,-28.0000,3.0700
+development,severe,-24.0000,6.1000
+development,severe,-18.0000,8.0000
+development,severe,-12.0000,8.0000
+development,severe,-6.0000,8.0000
+development,severe,0.0000,8.0000
+development,non-saturating,-40.0000,0.8700
+development,non-saturating,-34.0000,1.2500
+development,non-saturating,-28.0000,1.7900
+development,non-saturating,-24.0000,2.2900
+development,non-saturating,-18.0000,3.3500
+development,non-saturating,-12.0000,5.0000
+development,non-saturating,-6.0000,8.3200
+development,non-saturating,0.0000,15.0000
+held-out,held-out moderate joints,-40.0000,-0.0000
+held-out,held-out moderate joints,-36.0000,0.0900
+held-out,held-out moderate joints,-30.0000,0.2600
+held-out,held-out moderate joints,-24.0000,0.4900
+held-out,held-out moderate joints,-18.0000,0.7600
+held-out,held-out moderate joints,-12.0000,1.0400
+held-out,held-out moderate joints,-6.0000,1.3200
+held-out,held-out moderate joints,0.0000,1.7000
+held-out,held-out onset,-40.0000,-0.0000
+held-out,held-out onset,-36.0000,0.0900
+held-out,held-out onset,-30.0000,0.2700
+held-out,held-out onset,-24.0000,0.5100
+held-out,held-out onset,-18.0000,0.8000
+held-out,held-out onset,-12.0000,1.0800
+held-out,held-out onset,-6.0000,1.5500
+held-out,held-out onset,0.0000,2.3100
+held-out,held-out low preload,-40.0000,-0.0000
+held-out,held-out low preload,-36.0000,0.2600
+held-out,held-out low preload,-30.0000,0.8000
+held-out,held-out low preload,-24.0000,1.7200
+held-out,held-out low preload,-18.0000,3.4400
+held-out,held-out low preload,-12.0000,4.4800
+held-out,held-out low preload,-6.0000,5.2000
+held-out,held-out low preload,0.0000,5.6700
