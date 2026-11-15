@@ -18,3 +18,5 @@ After changing it, run `python scripts/journal.py record <id>`. No published ver
 |---|---|---|
 | `2026-001` | https://github.com/Hertzforge/journal/discussions/1 | Review open |
 | `2026-002` | https://github.com/Hertzforge/journal/discussions/2 | Review open |
+| `2026-003` | https://github.com/Hertzforge/journal/discussions/3 | Review open |
+| `2026-004` | https://github.com/Hertzforge/journal/discussions/4 | Review open |
