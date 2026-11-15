@@ -1,0 +1,35 @@
+name,value,source
+interval90_db_at_30_averages,-1.43 / +1.20,"fig2a; chi-square, 60 degrees of freedom"
+interval90_db_at_60_averages,-0.98 / +0.87,"fig2a; chi-square, 120 degrees of freedom"
+interval90_db_at_64_averages,-0.95 / +0.84,"fig2a; chi-square, 128 degrees of freedom"
+interval90_db_at_120_averages,-0.68 / +0.62,"fig2a; chi-square, 240 degrees of freedom"
+interval90_db_at_200_averages,-0.52 / +0.49,"fig2a; chi-square, 400 degrees of freedom"
+p_all_400_lines_within_3db_at_16_averages,0.026,fig2b
+p_all_400_lines_within_1db_at_16_averages,2.12e-78,fig2b
+p_one_line_within_1db_at_16_averages,0.639,fig2a
+p_all_400_lines_within_3db_at_32_averages,0.890,fig2b
+p_all_400_lines_within_1db_at_32_averages,1.98e-38,fig2b
+p_one_line_within_1db_at_32_averages,0.805,fig2a
+p_all_400_lines_within_3db_at_60_averages,1.000,fig2b
+p_all_400_lines_within_1db_at_60_averages,1.86e-14,fig2b
+p_one_line_within_1db_at_60_averages,0.924,fig2a
+p_all_400_lines_within_3db_at_64_averages,1.000,fig2b
+p_all_400_lines_within_1db_at_64_averages,9.42e-13,fig2b
+p_one_line_within_1db_at_64_averages,0.933,fig2a
+p_all_400_lines_within_3db_at_128_averages,1.000,fig2b
+p_all_400_lines_within_1db_at_128_averages,0.0204,fig2b
+p_one_line_within_1db_at_128_averages,0.990,fig2a
+phase_error_90pct_deg_at_coh_0.5_32_averages,12.0,"fig2c; Monte Carlo, 20000 trials, seed 20261115"
+coherence_5_95_at_coh_0.5_32_averages,0.36 to 0.64,fig2c
+phase_error_90pct_deg_at_coh_0.9_32_averages,4.0,"fig2c; Monte Carlo, 20000 trials, seed 20261115"
+coherence_5_95_at_coh_0.9_32_averages,0.86 to 0.94,fig2c
+phase_error_90pct_deg_at_coh_0.5_64_averages,8.4,"fig2c; Monte Carlo, 20000 trials, seed 20261115"
+coherence_5_95_at_coh_0.5_64_averages,0.40 to 0.60,fig2c
+phase_error_90pct_deg_at_coh_0.9_64_averages,2.8,"fig2c; Monte Carlo, 20000 trials, seed 20261115"
+coherence_5_95_at_coh_0.9_64_averages,0.87 to 0.93,fig2c
+loop_phase_miss_limit_deg_at_coh_0.9,5.4,fig3; closed form; first negative eigenvalue on the 1 degree grid at 6
+loop_phase_miss_limit_deg_at_coh_0.7,20.1,fig3; closed form; first negative eigenvalue on the 1 degree grid at 21
+loop_phase_miss_limit_deg_at_coh_0.5,45.0,fig3; closed form; first negative eigenvalue on the 1 degree grid at 46
+averages_for_400_lines_within_1db_90pct,257,"chi-square, as fig2b"
+hann_50pct_variance_swing_db,3.01,sum of squared Hann windows at 50 % overlap
+seconds_64_frames_1hz_half_overlap,32.5,(n + 1) / 2 frames of 1 / (line spacing)

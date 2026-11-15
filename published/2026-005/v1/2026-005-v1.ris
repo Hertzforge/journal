@@ -1,0 +1,13 @@
+TY  - JOUR
+AU  - Cross, Kevin
+TI  - Multi-Shaker Random Vibration Control: What Is Published, and Where It Stops
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-005
+PY  - 2026
+DA  - 2026/11/15
+ET  - Version 1
+DO  - 10.5281/zenodo.24254415
+UR  - https://hertzforge.com/journal/2026-005/v1/
+AB  - This survey maps what is published on controlling a random vibration test with several shakers, in which accelerometers on one test article are held to target spectra and, for every pair, a target coherence and phase. It covers the standards (MIL-STD-810H Method 527.2, IEC 60068-2-86, AECTP-400 Method 421), where targets come from and how their cross terms are chosen when the measured ones cannot be met, the closed-loop laws in print (Smallwood's factor correction and the matrix power law), identification and estimation, limits and notching, shaker placement and the points not controlled, structures that change with level, what controller makers and an open-source controller publish, and newer work. Each source is described as far as it was read. Within the sources read, the published work stops short of a tolerance for points not controlled, a comparison of closed-loop laws on one setup, any reported control of a structure that changes with level, and any learning-based controller with results. Two results are the article's own arithmetic: how far spectra, coherence and phase estimated from a finite number of averages scatter, set against the standard's tolerances, and how little the phases of a three-gauge target may disagree before it cannot be played. Nothing here was run on a shaker.
+ER  - 

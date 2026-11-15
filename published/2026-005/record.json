@@ -1,0 +1,28 @@
+{
+  "id": "2026-005",
+  "title": "Multi-Shaker Random Vibration Control: What Is Published, and Where It Stops",
+  "type": "Survey",
+  "evidence": "published sources",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    }
+  ],
+  "first_published": "2026-11-15",
+  "latest": 1,
+  "versions": [
+    {
+      "version": 1,
+      "date": "2026-11-15",
+      "note": "First published.",
+      "doi": "10.5281/zenodo.24254415"
+    }
+  ],
+  "doi_latest": "10.5281/zenodo.24254414",
+  "status": "Review open",
+  "retraction": "",
+  "thread": "",
+  "reviews": [],
+  "sample": false
+}
