@@ -1,0 +1,49 @@
+section,what,value,source
+5,"seconds inside bandwidth, Q 50, 1 oct/min",1.731,ours: 60/(Q s ln2)
+5,constant 60/ln2,86.56,ours: 60/ln2
+5,"cycles inside bandwidth at 10 Hz, Q 50, 1 oct/min",17.3,ours: f T_b
+5,"cycles inside bandwidth at 100 Hz, Q 50, 1 oct/min",173.1,ours: f T_b
+5,cycles per 0.1 Hz at 1 oct/min,8.66,ECSS-E-HB-10-03A A.7.3.3; check 6/ln2 = 8.656
+5,"tau_m at 10 Hz, Q 50 (s)",1.592,ours: Q/(pi f)
+5,"tau_m at 40 Hz, Q 50 (s)",0.398,ours: Q/(pi f)
+5,constant 60 pi / ln2,271.9,ours: N = 272 f/(Q^2 s)
+5,constant 60 pi /(2 ln2) for N<2 frequency,136.0,ours: Q^2 s / 136
+"5, Table 4",row 0.5 oct/min,3.462;2.176;8.702;21.755;9.19,"ours: t_band, N, f(N=2)"
+"5, Table 4",row 1.0 oct/min,1.731;1.088;4.351;10.878;18.39,"ours: t_band, N, f(N=2)"
+"5, Table 4",row 2.0 oct/min,0.866;0.544;2.176;5.439;36.77,"ours: t_band, N, f(N=2)"
+"5, Table 4",row 4.0 oct/min,0.433;0.272;1.088;2.719;73.55,"ours: t_band, N, f(N=2)"
+5,"N at 10 Hz, Q 50, 1 oct/min (ECSS case)",1.088,ours: 272 f/(Q^2 s)
+5,ECSS case: identified frequency and damping errors,2 % ; over 70 %,ECSS-E-HB-32-26A 5.2.3.3
+5,ISO limits,54 f^2/Q^2 Hz/min ; 77.6 f/Q^2 oct/min,ISO 7626-2:1990 9.2.3 via IS 14736-2
+5,ISO eta limit,0.9,ours: 54/60
+5,ISO N limit,3.49,ours: pi/0.9
+5,"ISO log limit, 40 Hz, Q 50 (oct/min)",1.242,ours: 77.6 f/Q^2
+5,ECSS parameter over Davis parameter,4,"ours: eta_E = fdot/(f^2 zeta^2), eta_D = fdot/(4 f^2 zeta^2)"
+5,"4/N at 40 Hz, Q 50, 1 oct/min",0.919,ours: 4/N
+5,"frequency where 4/N = 0.1, Q 50, 1 oct/min (Hz)",367.7,ours: N = 40
+5,"2/N at 40 Hz, Q 50, 1 oct/min",0.46,ours: 2/N
+5,"frequency where 2/N = 0.1, Q 50, 1 oct/min (Hz)",183.9,ours: N = 20
+5,rates in use,1 ; 2 and 4 ; up to 4 ; 0.5,IEC 60068-2-6 4.1.6; ECSS-E-ST-10-03C Rev.1 tables; ECSS-E-HB-10-03A A.7.3.3
+8,2 atan(0.5) degrees,53.13,ours: 2 atan(delta)
+8,2 atan(1.0) degrees,90.0,ours: 2 atan(delta)
+8,2 atan(2.0) degrees,126.87,ours: 2 atan(delta)
+8,"one bandwidth as a frequency shift, Q 50 and Q 100 (percent)",2 ; 1,ours: 100/Q
+8,ECSS 5 percent shift at Q 50 in bandwidths,2.5,ours: 0.05 Q
+"8, Figure 3",1 percent shift at Q 25,0.25 bandwidths; 28.07 deg,ours: 0.01 Q; 2 atan
+"8, Figure 3",1 percent shift at Q 50,0.5 bandwidths; 53.13 deg,ours: 0.01 Q; 2 atan
+"8, Figure 3",1 percent shift at Q 100,1.0 bandwidths; 90.0 deg,ours: 0.01 Q; 2 atan
+3.1,Qiu 2019 test,60 kN; 5 to 200 Hz; 2 oct/min; 10 %; 10 deg; 80 Hz,Qiu and others 2019 Section 3.3
+3.1,compression factor advised,0.4 to 0.6,"Zhang, Wang, Zeng 2017 p. 1091"
+3.2,c_n start and end,0.1 ; 1.0,"US 5,299,459 col. 8"
+3.3,Musella 2019 simulation,10 to 2500 Hz; 2 Hz/s; 1 percent; 0.5 to 1 s,"Musella and others 2019 Section 5, Table 1"
+3.4,Zhang 2015 test,"K 0.5,1,2,6; 1115x50x14 mm; 143, 376 mm; 3 dB; 6 dB","Zhang, Chen, He 2015 pp. 200-201"
+3.5,Zheng 2020 result,-6 dB; 4 loops,"Zheng, Chen, Luo 2020 4.2"
+4,MVF channels,8 drives; 12 controls; 32 limit; 32 monitor; 20 actuators,Staab and others
+4,phase control accuracies,4 ; 10 ; 5 deg; 200 kN; 1400 kN,Qiu and others 2022
+4,HYDRA accuracy,2.5 %,Brinkman and Kretz
+4,plate account,four shakers; 2 ft; 5 to 80 Hz,Underwood and Keller 2001
+4,eight-actuator example,eight actuators,"Underwood, Keller, Ayres 2017"
+7,Knospe 1994,"2700, 4200 rpm; 30 s; 1500 to 5000 rpm; 2200; 2500 rpm",Knospe and others 1994 p. 122
+7,Knospe and Tamer 1996,1.17 to 1.51; 20 to 45 percent,Table 1
+7,Johnson 1982,50%,p. 32
+8,Hippold 2024 periods,about 100,abstract

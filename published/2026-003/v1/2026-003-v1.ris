@@ -1,0 +1,13 @@
+TY  - JOUR
+AU  - Cross, Kevin
+TI  - Multi-Shaker Sine Control: What Is Published, and Where It Stops
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-003
+PY  - 2026
+DA  - 2026/11/15
+ET  - Version 1
+DO  - 10.5281/zenodo.24254057
+UR  - https://hertzforge.com/journal/2026-003/v1/
+AB  - A sine test with several shakers is controlled, as published, through a model of the test article measured at a low level before the test. This survey collects what is published: five forms of control law with their equations checked against the page, what the test standards ask of a sine test and of several exciters, what vendors and facilities say they do, the effect of sweep rate on a lightly damped resonance, how limits and notching are handled, what active noise control, helicopter vibration control and rotor balancing know about holding a tone with several actuators, and what nonlinear vibration testing does with feedback. The published laws are thin on evidence: one two-axis table test, two beam tests, one simulation and one run-to-run time-domain method, none on a structure whose resonances move with level. No standard read sets a phase tolerance or a sine clause for several exciters. Two pieces of arithmetic of our own, shown in full, tie the sources together: the number of its own time constants a mode is given while a sweep crosses its bandwidth, which shows that a correction alone cannot hold a lightly damped mode below a few hundred hertz at the rates tests are run; and the largest phase error of a low-level model at a resonance that has moved, which reaches 90 degrees, where a one-channel correction stops converging, after a move of one half-power bandwidth. Where the published work stops is stated gap by gap, worded to a search without subscription databases.
+ER  - 

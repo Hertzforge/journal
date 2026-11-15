@@ -1,0 +1,11 @@
+part,label,x,y
+beam,test article (flexible),0.5,2.2
+beam,,7.5,2.2
+shaker,shaker 1,1.2,0.0
+shaker,shaker 2,4.0,0.0
+shaker,shaker 3,6.8,0.0
+control,control 1,1.2,2.45
+control,control 2,4.0,2.45
+control,control 3,6.8,2.45
+limit,limit,2.6,2.45
+controller,controller,9.0,0.3
