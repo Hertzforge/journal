@@ -36,10 +36,11 @@ CREDIT_FOLDERS = ('articles/', 'published/', 'reviews/', 'tests/articles/', 'tes
 
 #: Listed names that an article, a published version or a review may hold, as the source of
 #: published work it cites or credits: the laboratory the software's own acknowledgments credit
-#: (read from the software's list), and a second laboratory, in both the forms it is listed
-#: under, allowed by the editors on 2026-11-14 for the citation of its published work. Held as
+#: (read from the software's list), a second laboratory, in both the forms it is listed under,
+#: allowed by the editors on 2026-11-14 for the citation of its published work, and a third,
+#: allowed on 2026-11-15 for the same reason (the 1977 report cited by article 2026-002). Held as
 #: hashes, as the list itself is. Add one with the software's `tools/check_tree.py --hash`.
-CREDITED_HERE = frozenset({'e2a3af9c1d2aa535', 'e07681543d5c76d6'})
+CREDITED_HERE = frozenset({'e2a3af9c1d2aa535', 'e07681543d5c76d6', 'bef51514796755a0'})
 
 #: Packages whose metadata names their license in words the checker cannot read as an
 #: identifier, each with what was read by hand: {normalized name: what its own license file says}.
@@ -88,6 +89,17 @@ def frozen() -> list[str]:
     return found
 
 
+def _binary(line: str) -> bool:
+    """A line of a PDF that is compressed stream data rather than text. A built PDF keeps its words
+    in compressed streams, so a byte scan of it reads only its metadata and noise; four bytes of
+    noise once spelled a listed name (2026-002, 2026-11-15). The article's source, from which the
+    PDF is built, is checked as text in full, and a PDF's readable metadata is still checked."""
+    if not line:
+        return False
+    printable = sum(1 for ch in line if ch.isprintable() and ch != '�')
+    return printable / len(line) < 0.9
+
+
 def credit_names(files, check_tree) -> list[str]:
     """Listed names in the credit folders. A credited laboratory may be named on any line there;
     every other listed name is a finding, as it is anywhere. The finding gives the place, never
@@ -102,6 +114,8 @@ def credit_names(files, check_tree) -> list[str]:
         if text is None:
             continue
         for number, line in enumerate([rel, *text.splitlines()]):
+            if path.suffix == '.pdf' and number > 0 and _binary(line):
+                continue
             words = check_tree._WORD.findall(check_tree.without_references(line, check_tree.REFERENCES).lower())
             runs = (' '.join(words[i:i + size]) for size in (1, 2, 3) for i in range(len(words) - size + 1))
             hits = {check_tree.phrase_hash(run) for run in runs} & check_tree.NAMES

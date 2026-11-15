@@ -10,13 +10,14 @@ people_pages: false                 # set true once the site has /people/<name>/
 
 # The article types. One line here adds a type to the build. The word after each says how an
 # article of that type states what it stands on: "evidence" (one of the levels below), or
-# "rests on" (a phrase of the authors' own, for an article that argues a position).
+# "rests on" (a phrase of the authors' own, for an article that argues a position or maps
+# published work, for example: published sources).
 types:
   Research Article: evidence
   Method Note: evidence
   Negative Result: evidence
   Proposed Standard: evidence
   Practice Note: evidence
-  Survey: evidence
+  Survey: rests on
   Perspective: rests on
 evidence_levels: [simulator, bench, hardware]

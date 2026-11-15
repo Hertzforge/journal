@@ -16,7 +16,7 @@ methods, results, practice and the prior work behind them.
 | Negative Result | Something tried that did not work, and why. Kept as part of the record |
 | Proposed Standard | A proposed practice, metric or acceptance standard, versioned and open to comment. It cites the published standards as references and says where and why it departs |
 | Practice Note | How to do something well on a real test |
-| Survey | A map of prior work on a topic |
+| Survey | A map of prior work on a topic. It says what it rests on (for example: published sources) where other articles state an evidence level |
 | Perspective | An argued position on practice or on the field. It cites the evidence it rests on, and says what it rests on where other articles state an evidence level |
 
 ## What Every Article Needs
