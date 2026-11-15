@@ -1,0 +1,32 @@
+{
+  "id": "2026-006",
+  "title": "An Open Vibration Controller Anyone Can Change: How Hertzforge Is Built, and Why",
+  "type": "System Description",
+  "evidence": "bench",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    },
+    {
+      "name": "Brandon Zwink",
+      "orcid": "0000-0003-1341-2293"
+    }
+  ],
+  "first_published": "2026-11-15",
+  "latest": 1,
+  "versions": [
+    {
+      "version": 1,
+      "date": "2026-11-15",
+      "note": "First published.",
+      "doi": "10.5281/zenodo.24260838"
+    }
+  ],
+  "doi_latest": "10.5281/zenodo.24260837",
+  "status": "Review open",
+  "retraction": "",
+  "thread": "",
+  "reviews": [],
+  "sample": false
+}

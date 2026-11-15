@@ -1,0 +1,14 @@
+TY  - JOUR
+AU  - Cross, Kevin
+AU  - Zwink, Brandon
+TI  - An Open Vibration Controller Anyone Can Change: How Hertzforge Is Built, and Why
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-006
+PY  - 2026
+DA  - 2026/11/15
+ET  - Version 1
+DO  - 10.5281/zenodo.24260838
+UR  - https://hertzforge.com/journal/2026-006/v1/
+AB  - Hertzforge is an open-source program for structural dynamics testing that joins a vibration controller with an analysis program. Anyone may change any part of it, including the math that decides each shaker drive, so it has to be built so that a change cannot remove what protects the shaker and the article on it. This article describes how it is built and why. Three programs in three languages split the work: a Rust control service that alone drives hardware and holds every protection, a Python analysis service, and a TypeScript shell that draws and does no math, joined by one versioned protocol. A control law is a sandboxed WebAssembly file: it proposes the next drive, and the controller checks and limits what is played. Hardware sits behind an abstraction in which a backend states what it can do and what it has proven, and on real hardware a closed-loop test refuses to arm until the input and output are shown on a bench to share one clock. A simulator is one of the backends, so the same test code runs on simulated structures and on hardware, and loopback runs showed what the simulator hides. Most of these decisions were made for Eigen, an earlier controller that was never finished as a product and became Hertzforge's control side; the article says which carried over, which changed, and the defects that shaped them. The evidence is the code, its tests and loopback runs on one NI chassis.
+ER  - 
