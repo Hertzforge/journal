@@ -11,19 +11,21 @@ methods, results, practice and the prior work behind them.
 
 | Type | What it is |
 |---|---|
-| Research Article | A new method, law, analysis or result, with its evidence |
-| Method Note | A short, self-contained method or technique |
-| Negative Result | Something tried that did not work, and why. Kept as part of the record |
-| Proposed Standard | A proposed practice, metric or acceptance standard, versioned and open to comment. It cites the published standards as references and says where and why it departs |
-| Practice Note | How to do something well on a real test |
-| System Description | How a test system, or part of one, is built and why: its software, hardware, firmware or the interfaces between them, the design choices and what was rejected, and the evidence that it works as described |
-| Survey | A map of prior work on a topic. It says what it rests on (for example: published sources) where other articles state an evidence level |
-| Perspective | An argued position on practice or on the field. It cites the evidence it rests on, and says what it rests on where other articles state an evidence level |
+| Research Article | A new method, law, analysis or result, with its evidence. |
+| Method Note | A short, self-contained method or technique. |
+| Negative Result | Something tried that did not work, and why. Kept as part of the record. |
+| Proposed Standard | A proposed practice, metric or acceptance standard, versioned and open to comment. It cites the published standards as references and says where and why it departs. |
+| Practice Note | How to do something well on a real test. |
+| System Description | How a test system, or part of one, is built and why: its software, hardware, firmware or the interfaces between them, the design choices and what was rejected, and the evidence that it works as described. |
+| Survey | A map of prior work on a topic. It says what it rests on (for example: published sources) where other articles state an evidence level. |
+| Perspective | An argued position on practice or on the field. It cites the evidence it rests on, and says what it rests on where other articles state an evidence level. |
 
 ## What Every Article Needs
 
 - A title, and the authors with their ORCID iDs.
-- The article type, and the evidence level: simulation, a bench, or real test hardware.
+- The article type, and the evidence level: simulation, a bench, or real test hardware. An
+  article that argues a position or maps published work says what it rests on instead (for
+  example: published sources).
 - An abstract, and the article.
 - A contribution statement, if it is co-authored, in the CRediT roles.
 - A statement of how it was made: the tools used, AI tools included, and what for.

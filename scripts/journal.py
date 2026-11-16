@@ -166,8 +166,59 @@ def first_paragraph(markdown: str) -> str:
     return plain(re.split(r'\n\s*\n', markdown.strip(), maxsplit=1)[0])
 
 
+def types_disagree(journal: dict, guide: str, template: str) -> list[str]:
+    """Where journal.yml, the guide for authors and the article template differ on the article types.
+
+    journal.yml is the list. The guide's table and the template's two comment lines repeat it for
+    people, and the website reads it, so a type added in one place only is caught here.
+    """
+    wrong = []
+    types = journal.get('types') or {}
+    said = journal.get('type_descriptions') or {}
+    for name, word in types.items():
+        if word not in ('evidence', 'rests on'):
+            wrong.append(f'journal.yml: the word after "{name}" under types must be "evidence" or "rests on"')
+        if not str(said.get(name) or '').strip():
+            wrong.append(f'journal.yml: "{name}" has no line under type_descriptions')
+    if list(said) != list(types) and not wrong:
+        wrong.append('journal.yml: type_descriptions must name the same types as types, in the same order')
+    if wrong:
+        return wrong  # the list itself comes first; the places that repeat it are compared once it is whole
+
+    section = re.search(r'^## Article Types\n(.*?)(?=^## |\Z)', guide, re.M | re.S)
+    rows = [[cell.strip() for cell in line.strip().strip('|').split('|')]
+            for line in (section.group(1).splitlines() if section else []) if line.startswith('|')]
+    rows = [tuple(row) for row in rows[2:]]  # after the heading row and the rule under it
+    expected = [(name, str(said.get(name) or '').strip()) for name in types]
+    if rows != expected:
+        for name, text in expected:
+            if (name, text) not in rows:
+                wrong.append(f'policies/AUTHORS.md: the Article Types table needs the row | {name} | {text} |')
+        for row in rows:
+            if row not in expected:
+                wrong.append(f'policies/AUTHORS.md: the Article Types table has a row journal.yml does not: {" | ".join(row)}')
+        if not any(line.startswith('policies/AUTHORS.md') for line in wrong):
+            wrong.append('policies/AUTHORS.md: the Article Types table must list the types in the order of journal.yml')
+
+    type_line = next((line for line in template.splitlines() if line.startswith('type:')), '')
+    if ' | '.join(types) not in type_line:
+        wrong.append(f'templates/article/{SOURCE}: the comment on the type line must read: {" | ".join(types)}')
+    evidence_line = next((line for line in template.splitlines() if line.startswith('evidence:')), '')
+    for name, word in types.items():
+        if word == 'rests on' and name not in evidence_line:
+            wrong.append(f'templates/article/{SOURCE}: the comment on the evidence line must name {name} '
+                         'among the types that say what they rest on')
+    return wrong
+
+
 def load_journal() -> dict:
-    return yaml.safe_load((ROOT / 'journal.yml').read_text(encoding='utf-8'))
+    journal = yaml.safe_load((ROOT / 'journal.yml').read_text(encoding='utf-8'))
+    wrong = types_disagree(journal, (ROOT / 'policies' / 'AUTHORS.md').read_text(encoding='utf-8'),
+                           (ROOT / 'templates' / 'article' / SOURCE).read_text(encoding='utf-8'))
+    if wrong:
+        raise Refused('the article types are not the same everywhere they are listed. journal.yml is the list; '
+                      'nothing was built:\n' + '\n'.join(f'  - {line}' for line in wrong))
+    return journal
 
 
 # ---------------------------------------------------------------- tools
@@ -1619,8 +1670,14 @@ def cmd_selftest(args: argparse.Namespace) -> int:
         check('an ORCID iD with a typing error is refused', True)
     template = (ROOT / 'templates' / 'article' / SOURCE).read_text(encoding='utf-8')
     guide = (ROOT / 'policies' / 'AUTHORS.md').read_text(encoding='utf-8')
-    check('every article type in journal.yml is named in the template and in the guide for authors',
-          all(name in template and name in guide for name in journal['types']))
+    check('journal.yml, the guide for authors and the template agree on the article types, each with what it is',
+          not types_disagree(journal, guide, template))
+    added = {**journal, 'types': {**journal['types'], 'Test Type': 'evidence'}}
+    told = types_disagree({**added, 'type_descriptions': {**journal['type_descriptions'], 'Test Type': 'A type for this test.'}},
+                          guide, template)
+    check('a type added to journal.yml alone is reported: no description, no row in the guide, not in the template',
+          len(types_disagree(added, guide, template)) == 1 and len(told) == 2
+          and any('AUTHORS.md' in line for line in told) and any('templates/article' in line for line in told))
 
     print('6. An article that is not ready: what is owed stops a publication and is listed by a preview', flush=True)
     unready = scratch / 'unready' / 'articles' / 'working-name'

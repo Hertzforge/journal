@@ -7,9 +7,9 @@ do not judge whether an article is right. Review does that, in public.
 
 - [ ] **In scope:** vibration and shock testing, multi-input multi-output control, or structural
       dynamics analysis.
-- [ ] **Complete:** title; authors with ORCID iDs; type; evidence level at the top; abstract;
-      body; contribution statement if co-authored; how it was made; acknowledgments naming the
-      sources of ideas; references; license line.
+- [ ] **Complete:** title; authors with ORCID iDs; type; evidence level, or what it rests on, at
+      the top; abstract; body; contribution statement if co-authored; how it was made;
+      acknowledgments naming the sources of ideas; references; license line.
 - [ ] **Reproducible as submitted:** every figure regenerates from the article's own `data/` and
       `code/`.
 - [ ] **Licensed as the policies require:** nothing in the article or its bundle that cannot be

@@ -8,10 +8,13 @@ repository: https://github.com/Hertzforge/journal
 zenodo_community: hertzforge-journal  # where every version is deposited
 people_pages: false                 # set true once the site has /people/<name>/ pages; article pages then link each author to theirs
 
-# The article types. One line here adds a type to the build. The word after each says how an
-# article of that type states what it stands on: "evidence" (one of the levels below), or
-# "rests on" (a phrase of the authors' own, for an article that argues a position or maps
-# published work, for example: published sources).
+# The article types. This file is the one place a type is added, in two lines. Under `types`, the
+# word after its name says how an article of that type states what it stands on: "evidence" (one
+# of the levels below), or "rests on" (a phrase of the authors' own, for an article that argues a
+# position or maps published work, for example: published sources). Under `type_descriptions`, a
+# sentence or two says what the type is. The guide for authors (policies/AUTHORS.md) and the
+# article template repeat the list, and the build refuses until they agree with it. The website's
+# journal pages read both lists from this file when the site is built.
 types:
   Research Article: evidence
   Method Note: evidence
@@ -21,4 +24,13 @@ types:
   System Description: evidence
   Survey: rests on
   Perspective: rests on
+type_descriptions:
+  Research Article: "A new method, law, analysis or result, with its evidence."
+  Method Note: "A short, self-contained method or technique."
+  Negative Result: "Something tried that did not work, and why. Kept as part of the record."
+  Proposed Standard: "A proposed practice, metric or acceptance standard, versioned and open to comment. It cites the published standards as references and says where and why it departs."
+  Practice Note: "How to do something well on a real test."
+  System Description: "How a test system, or part of one, is built and why: its software, hardware, firmware or the interfaces between them, the design choices and what was rejected, and the evidence that it works as described."
+  Survey: "A map of prior work on a topic. It says what it rests on (for example: published sources) where other articles state an evidence level."
+  Perspective: "An argued position on practice or on the field. It cites the evidence it rests on, and says what it rests on where other articles state an evidence level."
 evidence_levels: [simulator, bench, hardware]

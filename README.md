@@ -24,7 +24,7 @@ hertzforge.com/journal.
 | `people/` | One record per author and reviewer: name and ORCID iD |
 | `policies/` | The policies, the guide for authors, the guide for reviewers and the editors' checklist |
 | `templates/` | The article template and the review template |
-| `journal.yml` | Facts every article repeats: the journal's title, its address, its ISSN once assigned. Also the list of article types: one line there adds a type |
+| `journal.yml` | Facts every article repeats: the journal's title, its address, its ISSN once assigned. Also the list of article types and what each is: the one place a type is added. The guide for authors and the template repeat the list and the build refuses until they agree; the website's journal pages read it from here |
 | `scripts/publish` | The one command that builds and freezes a version (`scripts/journal.py` does the work) |
 | `scripts/setup.sh` | Installs what the build needs, without administrator rights |
 | `scripts/zenodo.py` | Reserves a version's DOIs on Zenodo before the build, and deposits its outputs after |
@@ -94,9 +94,11 @@ It refuses, and builds nothing, when:
 - that version is already published. A published version never changes; set `version` to the
   next number and build again;
 - an earlier version is missing, or is no longer what its manifest says;
-- the article lacks a required part: its number, a title, authors, a type, an evidence level,
-  an abstract, a date, a note of what changed, and the closing sections in order (How This Was
-  Made, Acknowledgments, References);
+- the article lacks a required part: its number, a title, authors, a type, an evidence level
+  (or what it rests on, for a type that says that instead), an abstract, a date, a note of what
+  changed, and the closing sections in order (How This Was Made, Acknowledgments, References);
+- `journal.yml`, the guide for authors and the article template do not agree on the article
+  types;
 - a co-authored article has an author without CRediT roles;
 - an ORCID iD fails its check digit;
 - a comment (`<!-- ... -->`) or a marked gap (TODO, PLACEHOLDER, "[... to be stated]") is still

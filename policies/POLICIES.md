@@ -64,6 +64,7 @@ Every article publishes the data behind its figures and the code that draws them
 ## Evidence
 
 Every article states whether its results come from simulation, a bench or real test hardware.
+An article that argues a position or maps published work states what it rests on instead.
 
 ## Use
 
