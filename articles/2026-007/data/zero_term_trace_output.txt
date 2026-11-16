@@ -1,0 +1,22 @@
+Line 91 Hz. Loop gain H a: eigenvalues 0.394-1.196j, 1.091-0.002j; largest phase 72 degrees; |gain 2,1|^2 = 2.77; condition of the measured frequency response 49.8
+loop | Z11 | |Z21| | Z22 | gauge 2 (dB)
+0 | 1.000 | 0 | 1 | +5.67
+1 | 1.003 | 0 | 0.501 | +4.80
+2 | 1.020 | 0 | 0.251 | +4.69
+3 | 1.033 | 0 | 0.126 | +4.74
+5 | 1.046 | 0 | 0.0316 | +4.82
+10 | 1.051 | 0 | 0.001 | +4.86
+15 | 1.051 | 0 | 0.0001 | +4.87
+20 | 1.051 | 0 | 0.0001 | +4.87
+25 | 1.051 | 0 | 0.0001 | +4.87
+30 | 1.051 | 0 | 0.0001 | +4.87
+cross term that would cancel the leak: |Z21| = 1.83; gauge 2 from source 1 alone |gain 2,1|^2 Z11^2 = 3.07
+the same line, cross terms (coherence 0.64, 30 deg), gauge 2 at loop 30: +4.87 dB
+
+target | safeguards | gauge 2 RMS over the band, loop 30 (dB) | 85 to 96 Hz | 150 to 172 Hz | lines over 0.5 dB at loop 30 | worst line at loop 5 (dB) | worst line at loop 30 (dB)
+independent | without | 0.392 | 2.37 | 1.12 | 21 | -7.2 | +5.0
+independent | with | 0.322 | 2.22 | 0.52 | 14 | -17.6 | +5.0
+banded | without | 0.923 | 4.45 | 2.79 | 69 | -10.3 | -9.6
+banded | with | 0.983 | 5.37 | 2.25 | 51 | -8.6 | -16.2
+cross terms (coherence 0.64, 30 deg) | without | 0.338 | 2.37 | 0.40 | 19 | +4.9 | +5.0
+cross terms (coherence 0.64, 30 deg) | with | 0.338 | 2.37 | 0.40 | 19 | +4.9 | +5.0

@@ -1,0 +1,15 @@
+# Runs Hertzforge's shipped MIMO Random laws on the article's made-up structures. Build it
+# against a checkout of Hertzforge at main commit b587d5a1 (the laws this article describes) placed at code/hertzforge (or change the
+# two paths below). See ../README.md. Copyright 2026 Kevin Cross. MIT license.
+[package]
+name = "shipped-laws"
+version = "0.0.0"
+edition = "2021"
+publish = false
+license = "MIT"
+
+[dependencies]
+hertzforge-mimo-laws = { path = "../hertzforge/crates/hertzforge-mimo-laws" }
+hertzforge-sdm = { path = "../hertzforge/crates/hertzforge-sdm" }
+
+[workspace]

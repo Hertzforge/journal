@@ -1,0 +1,15 @@
+pinv_open: RMS error over 1,161 lines at 2 gauges, loops 0 to 30 (62 values); largest difference 3.83e-10 dB (tolerance 1e-06) agrees
+pinv_closed: error on each of 1,161 lines at 2 gauges after 0 and 5 loops (4644 values); largest difference 4.99e-10 dB (tolerance 1e-06) agrees
+pinv_closed: RMS error over the band at 2 gauges, loops 0 to 22 (46 values); largest difference 3.83e-10 dB (tolerance 1e-06) agrees
+pinv_closed, loops 23 to 30: shipped against this implementation, RMS 1.14e-03 dB, one line after 30 loops 0.53 dB; this implementation against itself with the estimate changed by 1 to 2 parts in 10^15, RMS 1.25e-03 dB, one line 0.50 dB
+shape_svd: directions kept on each of 1161 lines; largest difference 0.00e+00 lines (tolerance 0) agrees
+buzz_match: target coherence on 1161 lines; largest difference 4.99e-11  (tolerance 1e-06) agrees
+buzz_match: target phase on the lines kept; largest difference 4.80e-08 degrees (tolerance 0.001) agrees
+min_drive: drive power at 13 trade-offs, relative to the largest; largest difference 9.06e-08  (tolerance 1e-05) agrees
+min_drive: target over specification at 13 trade-offs and 2 gauges; largest difference 2.43e-07  (tolerance 1e-05) agrees
+min_drive: automatic choice (here 1e-06, shipped 1e-06); largest difference 0.00e+00 decades (tolerance 0) agrees
+band_average: drive on 921 lines, relative; largest difference 3.78e-10  (tolerance 1e-09) agrees
+band_average: threshold of the band on 921 lines; largest difference 0.00e+00 lines (tolerance 0) agrees
+
+largest difference in dB over the comparisons held to a fixed tolerance: 4.99e-10 dB
+all agree

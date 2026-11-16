@@ -1,0 +1,28 @@
+{
+  "id": "2026-007",
+  "title": "Six Control Laws for Multi-Shaker Random Vibration: What Each Does and How It Is Built",
+  "type": "System Description",
+  "evidence": "simulator",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    }
+  ],
+  "first_published": "2026-11-16",
+  "latest": 1,
+  "versions": [
+    {
+      "version": 1,
+      "date": "2026-11-16",
+      "note": "First published.",
+      "doi": "10.5281/zenodo.24291982"
+    }
+  ],
+  "doi_latest": "10.5281/zenodo.24291981",
+  "status": "Review open",
+  "retraction": "",
+  "thread": "",
+  "reviews": [],
+  "sample": false
+}

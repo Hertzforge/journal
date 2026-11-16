@@ -1,0 +1,9 @@
+order,owner,step
+1,core,Play the drive in force at the present level
+2,core,Estimate the response matrix; refer it to full level
+3,core,"Judge it: abort lines, a growing error"
+4,law,"The law: target, measured response and frequency response in; next drive out"
+5,core,"Check the drive: size, numbers, Hermitian, zero out of band; repair a small negative eigenvalue, refuse a large one"
+6,core,"Cap each drive's change: +3.5 dB, -6 dB a loop"
+7,core,Hold each drive's ceiling; limit the limit channels
+8,core,Keep it as the drive in force
