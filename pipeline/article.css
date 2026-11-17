@@ -358,6 +358,15 @@
 .hf-prose .quarto-float-tbl .table-wrap {
   margin: 0;
 }
+/* A heading may wrap, at spaces only, so a long one widens its column no more than its longest word;
+   cells are padded a little less, so a table of six columns gives its text about 50 px more. */
+.hf-prose .table-wrap th {
+  white-space: normal;
+  overflow-wrap: normal;
+}
+.hf-prose .table-wrap :is(th, td) {
+  padding: 0.55em 0.7em;
+}
 
 .header-section-number {
   margin-right: 0.35em;
