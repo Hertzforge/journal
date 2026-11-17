@@ -1,0 +1,13 @@
+TY  - JOUR
+AU  - Cross, Kevin
+TI  - The Open Benchmark Set: Public Test Problems, a Fair Run and a Scorecard for Multi-Shaker Control Laws
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-008
+PY  - 2026
+DA  - 2026/11/17
+ET  - Version 1
+DO  - 10.5281/zenodo.24311105
+UR  - https://hertzforge.com/journal/2026-008/v1/
+AB  - A control law for a multi-shaker vibration test is usually shown working on its author's own model, so two laws cannot be compared and a law's weak cases stay out of sight. This article proposes a shared set of simulated test problems, the Hertzforge Open Benchmark Set, and the rules for using it. A test problem is a structure with shakers and accelerometers, a target taken from the structure in service, the limits a run must keep to, and a fixed scorecard. The files are public and in plain formats, and a problem can be run and scored with NumPy, without Hertzforge. The first suite, MIMO Random, is published as version 0.2 of the set (DOI 10.5281/zenodo.24310742), with its code under the MIT license and its problems and documents under CC BY 4.0. Four things are asked of the set: a target the shakers cannot reach exactly; accelerometers kept out of the control and used only for scoring; where the model allows it, the stress in every part of the structure in service and on the shakers; and a second stage in which the structure changes with level both ways, its bolted joints softening and one member hardening, because a real article does both and a law that has only met a structure that does neither has not been tested. The hardening member is a tuned mass on two thin strips clamped at both ends; a cantilevered mass, the first idea, was found unable to harden by a measurable amount before it would yield. The article defines what a problem holds, what a fair run is, what the scorer reads and writes, and how problems are grouped, versioned, cited and reported on. A worked example on one structure shows a stage 1 reference run, in which six shakers matching six controls exactly left the article 11 dB over its service stress on average, what a stage 2 problem states before any law runs, and one closed-loop run of one law at its defaults on a stage 2 problem, which compares nothing. Runs of six control laws on ten structures with one effect at a time show, pooled over the laws, that both effects move the stress more than the gauges in 23 of 24 cases, and that one hardening member moved the result less than the softening joints; an independent audit on ten held-back structures bore both out. Impacts and rattles are not covered. Everything here is simulation, and the scorecard's numbers are starting values.
+ER  - 

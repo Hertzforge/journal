@@ -1,0 +1,1552 @@
+<!doctype html>
+<html lang="en" data-register="reading"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Open Benchmark Set: Public Test Problems, a Fair Run and a Scorecard for Multi-Shaker Control Laws | Hertzforge Journal</title>
+<meta name="description" content="A control law for a multi-shaker vibration test is usually shown working on its author's own model, so two laws cannot be compared and a law's weak cases stay out of sight. This article proposes a shared set of simulated test problems, the Hertzforge Open Benchmark Set, and the rules for using...">
+<link rel="canonical" href="https://hertzforge.com/journal/2026-008/v1/">
+<meta name="citation_title" content="The Open Benchmark Set: Public Test Problems, a Fair Run and a Scorecard for Multi-Shaker Control Laws">
+<meta name="citation_author" content="Kevin Cross">
+<meta name="citation_publication_date" content="2026/11/17">
+<meta name="citation_journal_title" content="Hertzforge Journal">
+<meta name="citation_volume" content="1">
+<meta name="citation_firstpage" content="2026-008">
+<meta name="citation_doi" content="10.5281/zenodo.24311105">
+<meta name="citation_pdf_url" content="https://hertzforge.com/journal/2026-008/v1/2026-008-v1.pdf">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Hertzforge Journal">
+<meta property="og:url" content="https://hertzforge.com/journal/2026-008/v1/">
+<meta property="og:title" content="The Open Benchmark Set: Public Test Problems, a Fair Run and a Scorecard for Multi-Shaker Control Laws">
+<meta property="og:description" content="A control law for a multi-shaker vibration test is usually shown working on its author's own model, so two laws cannot be compared and a law's weak cases stay out of sight. This article proposes a shared set of simulated test problems, the Hertzforge Open Benchmark Set, and the rules for using...">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/article.css">
+<script>(function(){var r=document.documentElement;r.classList.add('js');try{var s=localStorage.getItem('hf-theme');if(s==='light'||s==='dark')r.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="/" aria-label="Hertzforge, home"><svg class="brand-mark" viewbox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6"></rect><path d="M4 16h4l3-8 4 16 4-12 3 6 2-2h4"></path></svg><span class="wordmark"><span class="w-hertz">HERTZ</span><span class="w-forge">FORGE</span></span></a><button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Menu</span><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button><nav class="site-nav" id="site-nav" aria-label="Main"><ul><li><a href="/documentation/">Documentation</a></li><li><a href="/learn/">Learn</a></li><li><a href="/reference/">Reference</a></li><li><a href="/benchmarks/">Benchmarks</a></li><li><a href="/journal/" aria-current="page">Journal</a></li><li><a href="/community/">Community</a></li><li><a href="/about/">About</a></li></ul><div class="nav-actions"><a class="icon-btn" href="/search/" aria-label="Search the site"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.500 4a6.500 6.500 0 1 0 0 13 6.500 6.500 0 0 0 0-13Zm5 11.500L20 20"></path></svg></a><button class="icon-btn theme-toggle" type="button" aria-label="Switch between light and dark reading"><svg class="i-moon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.500A8 8 0 0 1 9.500 4a8 8 0 1 0 10.500 10.500Z"></path></svg><svg class="i-sun" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0-5v2m0 14v2M3 12h2m14 0h2M5.600 5.600 7 7m10 10 1.400 1.400M5.600 18.400 7 17M17 7l1.400-1.400"></path></svg></button><a class="icon-btn" href="https://github.com/Hertzforge/Hertzforge" aria-label="Hertzforge on GitHub"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 7 4 12l5 5m6-10 5 5-5 5"></path></svg></a><a class="btn btn-primary btn-sm" href="/download/"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"></path></svg>Download</a></div></nav></div></header>
+
+<main id="main" data-pagefind-body="">
+<article class="hf-article" data-id="2026-008" data-version="1" data-record="../record.json">
+<div class="hf-status dark" id="hf-status" data-status="review-open"><div class="wrap"><span class="hf-status-mark" aria-hidden="true"><svg data-for="review-open" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"></circle></svg><svg data-for="reviewed" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M8 12.4l2.7 2.7L16 9.6"></path></svg><svg data-for="retracted" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M6 18L18 6"></path></svg></span><strong class="hf-status-name">Review open</strong><span class="hf-status-text">Published; reviews and comments are welcome.</span> <span class="hf-status-asof">As of 2026-11-17, when this version was published; the status now is at <a href="https://hertzforge.com/journal/2026-008/">hertzforge.com/journal/2026-008/</a>.</span><a class="hf-status-link" href="#hf-reviews">Reviews</a></div></div>
+<div class="page-head dark"><div class="wrap"><p class="eyebrow">Hertzforge Journal</p><h1 class="steel">The Open Benchmark Set: Public Test Problems, a Fair Run and a Scorecard for Multi-Shaker Control Laws</h1><p class="hf-kind" id="hf-type"><span class="tag tag-strong">Proposed Standard</span></p><ul class="hf-authors" id="hf-authors"><li><span class="hf-author-name">Kevin Cross</span> <a class="hf-orcid" href="https://orcid.org/0009-0002-6608-9426" rel="noopener">ORCID 0009-0002-6608-9426</a></li></ul><p class="hf-evidence" id="hf-evidence"><span class="tag">Evidence</span><strong>Simulator.</strong> A specification, with worked examples on one simulated frame article in two stages: as a structure that does not change with level, and as the same structure with joints that soften and a member that hardens; and findings on what the softening and the hardening each do to a test's result, from runs of six control laws on ten simulated structures, pooled over the laws and checked by an independent audit on ten held-back structures. No hardware tests.</p></div><svg class="trace" viewbox="0 0 1200 100" preserveaspectratio="none" aria-hidden="true" focusable="false"><path class="trace-glow" d="M0 50.0L3 49.1L6 48.3L9 47.7L12 47.4L15 47.6L18 48.2L21 49.3L24 50.6L27 52.0L30 53.3L33 54.0L36 54.1L39 53.5L42 52.1L45 50.2L48 48.0L51 45.9L54 44.3L57 43.6L60 44.0L63 45.5L66 48.1L69 51.2L72 54.5L75 57.3L78 59.1L81 59.3L84 57.9L87 54.9L90 50.7L93 46.0L96 41.6L99 38.3L102 36.8L105 37.6L108 40.7L111 45.7L114 51.9L117 58.3L120 63.7L123 67.0L126 67.6L129 65.0L132 59.5L135 52.0L138 43.6L141 35.7L144 29.9L147 27.3L150 28.6L153 33.8L156 42.1L159 52.3L162 62.7L165 71.4L168 76.7L171 77.6L174 73.7L177 65.4L180 54.0L183 41.4L186 29.8L189 21.3L192 17.5L195 19.2L198 26.4L201 38.0L204 52.1L207 66.2L210 77.9L213 85.0L216 86.3L219 81.2L222 70.6L225 56.3L228 40.5L231 26.2L234 15.7L237 11.0L240 13.0L243 21.5L246 34.9L249 51.0L252 67.1L255 80.3L258 88.3L261 89.7L264 84.3L267 73.1L270 57.9L273 41.4L276 26.6L279 15.8L282 11.1L285 13.0L288 21.2L291 34.2L294 49.7L297 65.0L300 77.4L303 84.9L306 86.3L309 81.5L312 71.4L315 58.1L318 43.7L321 30.8L324 21.6L327 17.5L330 19.1L333 25.8L336 36.3L339 48.8L342 60.9L345 70.7L348 76.5L351 77.6L354 74.1L357 66.6L360 56.7L363 46.2L366 36.9L369 30.3L372 27.4L375 28.5L378 33.0L381 40.2L384 48.5L387 56.6L390 63.0L393 66.8L396 67.6L399 65.3L402 60.7L405 54.6L408 48.2L411 42.6L414 38.6L417 36.9L420 37.5L423 40.1L426 44.1L429 48.8L432 53.3L435 56.8L438 58.9L441 59.3L444 58.2L447 55.8L450 52.6L453 49.4L456 46.5L459 44.5L462 43.6L465 43.9L468 45.2L471 47.1L474 49.3L477 51.4L480 53.0L483 54.0L486 54.2L489 53.7L492 52.6L495 51.2L498 49.8L501 48.6L504 47.8L507 47.4L510 47.5L513 48.0L516 48.7L519 49.6L522 50.5L525 51.2L528 51.6L531 51.7L534 51.5L537 51.1L540 50.6L543 50.0L546 49.4L549 49.0L552 48.8L555 48.7L558 48.9L561 49.3L564 49.7L567 50.3L570 50.7L573 51.1L576 51.3L579 51.3L582 51.1L585 50.6L588 50.0L591 49.4L594 48.7L597 48.3L600 48.1L603 48.2L606 48.7L609 49.5L612 50.4L615 51.5L618 52.4L621 52.9L624 53.0L627 52.6L630 51.6L633 50.2L636 48.6L639 47.0L642 45.8L645 45.3L648 45.5L651 46.6L654 48.5L657 50.8L660 53.3L663 55.4L666 56.7L669 56.9L672 55.9L675 53.7L678 50.7L681 47.2L684 44.1L687 41.7L690 40.7L693 41.2L696 43.4L699 46.9L702 51.2L705 55.5L708 59.1L711 61.2L714 61.5L717 59.8L720 56.2L723 51.4L726 46.2L729 41.5L732 38.1L735 36.7L738 37.6L741 40.7L744 45.4L747 51.1L750 56.6L753 61.0L756 63.6L759 63.8L762 61.6L765 57.5L768 52.0L771 46.3L774 41.3L777 37.8L780 36.5L783 37.5L786 40.6L789 45.2L792 50.6L795 55.6L798 59.6L801 61.7L804 61.8L807 59.9L810 56.4L813 52.0L816 47.5L819 43.6L822 41.1L825 40.2L828 41.0L831 43.2L834 46.5L837 50.1L840 53.4L843 55.9L846 57.2L849 57.2L852 56.0L855 53.9L858 51.3L861 48.8L864 46.7L867 45.3L870 44.9L873 45.3L876 46.5L879 48.2L882 49.9L885 51.5L888 52.6L891 53.2L894 53.2L897 52.6L900 51.7L903 50.6L906 49.6L909 48.8L912 48.3L915 48.1L918 48.3L921 48.7L924 49.3L927 49.9L930 50.5L933 50.8L936 51.0L939 51.0L942 50.8L945 50.5L948 50.2L951 49.9L954 49.7L957 49.5L960 49.5L963 49.5L966 49.7L969 49.8L972 50.0L975 50.1L978 50.2L981 50.2L984 50.2L987 50.2L990 50.1L993 50.0L996 50.0L999 49.9L1002 49.9L1005 49.9L1008 49.9L1011 49.9L1014 50.0L1017 50.0L1020 50.0L1023 50.0L1026 50.0L1029 50.0L1032 50.0L1035 50.0L1038 50.0L1041 50.0L1044 50.0L1047 50.0L1050 50.0L1053 50.0L1056 50.0L1059 50.0L1062 50.0L1065 50.0L1068 50.0L1071 50.0L1074 50.0L1077 50.0L1080 50.0L1083 50.0L1086 50.0L1089 50.0L1092 50.0L1095 50.0L1098 50.0L1101 50.0L1104 50.0L1107 50.0L1110 50.0L1113 50.0L1116 50.0L1119 50.0L1122 50.0L1125 50.0L1128 50.0L1131 50.0L1134 50.0L1137 50.0L1140 50.0L1143 50.0L1146 50.0L1149 50.0L1152 50.0L1155 50.0L1158 50.0L1161 50.0L1164 50.0L1167 50.0L1170 50.0L1173 50.0L1176 50.0L1179 50.0L1182 50.0L1185 50.0L1188 50.0L1191 50.0L1194 50.0L1197 50.0L1200 50.0"></path><path class="trace-line" d="M0 50.0L3 49.1L6 48.3L9 47.7L12 47.4L15 47.6L18 48.2L21 49.3L24 50.6L27 52.0L30 53.3L33 54.0L36 54.1L39 53.5L42 52.1L45 50.2L48 48.0L51 45.9L54 44.3L57 43.6L60 44.0L63 45.5L66 48.1L69 51.2L72 54.5L75 57.3L78 59.1L81 59.3L84 57.9L87 54.9L90 50.7L93 46.0L96 41.6L99 38.3L102 36.8L105 37.6L108 40.7L111 45.7L114 51.9L117 58.3L120 63.7L123 67.0L126 67.6L129 65.0L132 59.5L135 52.0L138 43.6L141 35.7L144 29.9L147 27.3L150 28.6L153 33.8L156 42.1L159 52.3L162 62.7L165 71.4L168 76.7L171 77.6L174 73.7L177 65.4L180 54.0L183 41.4L186 29.8L189 21.3L192 17.5L195 19.2L198 26.4L201 38.0L204 52.1L207 66.2L210 77.9L213 85.0L216 86.3L219 81.2L222 70.6L225 56.3L228 40.5L231 26.2L234 15.7L237 11.0L240 13.0L243 21.5L246 34.9L249 51.0L252 67.1L255 80.3L258 88.3L261 89.7L264 84.3L267 73.1L270 57.9L273 41.4L276 26.6L279 15.8L282 11.1L285 13.0L288 21.2L291 34.2L294 49.7L297 65.0L300 77.4L303 84.9L306 86.3L309 81.5L312 71.4L315 58.1L318 43.7L321 30.8L324 21.6L327 17.5L330 19.1L333 25.8L336 36.3L339 48.8L342 60.9L345 70.7L348 76.5L351 77.6L354 74.1L357 66.6L360 56.7L363 46.2L366 36.9L369 30.3L372 27.4L375 28.5L378 33.0L381 40.2L384 48.5L387 56.6L390 63.0L393 66.8L396 67.6L399 65.3L402 60.7L405 54.6L408 48.2L411 42.6L414 38.6L417 36.9L420 37.5L423 40.1L426 44.1L429 48.8L432 53.3L435 56.8L438 58.9L441 59.3L444 58.2L447 55.8L450 52.6L453 49.4L456 46.5L459 44.5L462 43.6L465 43.9L468 45.2L471 47.1L474 49.3L477 51.4L480 53.0L483 54.0L486 54.2L489 53.7L492 52.6L495 51.2L498 49.8L501 48.6L504 47.8L507 47.4L510 47.5L513 48.0L516 48.7L519 49.6L522 50.5L525 51.2L528 51.6L531 51.7L534 51.5L537 51.1L540 50.6L543 50.0L546 49.4L549 49.0L552 48.8L555 48.7L558 48.9L561 49.3L564 49.7L567 50.3L570 50.7L573 51.1L576 51.3L579 51.3L582 51.1L585 50.6L588 50.0L591 49.4L594 48.7L597 48.3L600 48.1L603 48.2L606 48.7L609 49.5L612 50.4L615 51.5L618 52.4L621 52.9L624 53.0L627 52.6L630 51.6L633 50.2L636 48.6L639 47.0L642 45.8L645 45.3L648 45.5L651 46.6L654 48.5L657 50.8L660 53.3L663 55.4L666 56.7L669 56.9L672 55.9L675 53.7L678 50.7L681 47.2L684 44.1L687 41.7L690 40.7L693 41.2L696 43.4L699 46.9L702 51.2L705 55.5L708 59.1L711 61.2L714 61.5L717 59.8L720 56.2L723 51.4L726 46.2L729 41.5L732 38.1L735 36.7L738 37.6L741 40.7L744 45.4L747 51.1L750 56.6L753 61.0L756 63.6L759 63.8L762 61.6L765 57.5L768 52.0L771 46.3L774 41.3L777 37.8L780 36.5L783 37.5L786 40.6L789 45.2L792 50.6L795 55.6L798 59.6L801 61.7L804 61.8L807 59.9L810 56.4L813 52.0L816 47.5L819 43.6L822 41.1L825 40.2L828 41.0L831 43.2L834 46.5L837 50.1L840 53.4L843 55.9L846 57.2L849 57.2L852 56.0L855 53.9L858 51.3L861 48.8L864 46.7L867 45.3L870 44.9L873 45.3L876 46.5L879 48.2L882 49.9L885 51.5L888 52.6L891 53.2L894 53.2L897 52.6L900 51.7L903 50.6L906 49.6L909 48.8L912 48.3L915 48.1L918 48.3L921 48.7L924 49.3L927 49.9L930 50.5L933 50.8L936 51.0L939 51.0L942 50.8L945 50.5L948 50.2L951 49.9L954 49.7L957 49.5L960 49.5L963 49.5L966 49.7L969 49.8L972 50.0L975 50.1L978 50.2L981 50.2L984 50.2L987 50.2L990 50.1L993 50.0L996 50.0L999 49.9L1002 49.9L1005 49.9L1008 49.9L1011 49.9L1014 50.0L1017 50.0L1020 50.0L1023 50.0L1026 50.0L1029 50.0L1032 50.0L1035 50.0L1038 50.0L1041 50.0L1044 50.0L1047 50.0L1050 50.0L1053 50.0L1056 50.0L1059 50.0L1062 50.0L1065 50.0L1068 50.0L1071 50.0L1074 50.0L1077 50.0L1080 50.0L1083 50.0L1086 50.0L1089 50.0L1092 50.0L1095 50.0L1098 50.0L1101 50.0L1104 50.0L1107 50.0L1110 50.0L1113 50.0L1116 50.0L1119 50.0L1122 50.0L1125 50.0L1128 50.0L1131 50.0L1134 50.0L1137 50.0L1140 50.0L1143 50.0L1146 50.0L1149 50.0L1152 50.0L1155 50.0L1158 50.0L1161 50.0L1164 50.0L1167 50.0L1170 50.0L1173 50.0L1176 50.0L1179 50.0L1182 50.0L1185 50.0L1188 50.0L1191 50.0L1194 50.0L1197 50.0L1200 50.0"></path></svg></div>
+<div class="page-body"><div class="wrap"><div class="prose hf-prose">
+<section class="hf-meta" aria-label="About this version">
+<div class="hf-panel hf-version" id="hf-version"><h2 class="hf-label">Version</h2><p class="hf-version-line"><span><strong>Version 1</strong>, published 2026-11-17. First published 2026-11-17.</span><label class="hf-select-label" for="hf-version-select" id="hf-version-select-slot" hidden=""></label></p><p class="hf-note">Change note: First published. <a href="#version-history">Version history</a></p><p class="hf-versions">Versions: <strong>1 (this version)</strong>. Any later version is listed at <a href="../">the article's address</a>.</p><div class="note hf-notlatest" hidden=""></div></div>
+<div class="hf-panel" id="hf-doi"><h2 class="hf-label">Identifiers</h2><dl class="hf-ids"><dt>DOI of this version</dt><dd><a href="https://doi.org/10.5281/zenodo.24311105" rel="noopener">10.5281/zenodo.24311105</a></dd><dt>DOI that always gives the latest version</dt><dd><a href="https://doi.org/10.5281/zenodo.24311104" rel="noopener">10.5281/zenodo.24311104</a></dd></dl></div>
+<div class="hf-panel hf-cite" id="hf-cite"><h2 class="hf-label">Cite This Version</h2><p class="hf-citation">Cross, K. (2026). The Open Benchmark Set: Public Test Problems, a Fair Run and a Scorecard for Multi-Shaker Control Laws. <em>Hertzforge Journal</em> 1, <span class="hf-nowrap">2026-008</span>, version 1. <a href="https://doi.org/10.5281/zenodo.24311105" rel="noopener">https://doi.org/10.5281/zenodo.24311105</a></p><p class="hf-cite-files"><a class="btn btn-ghost btn-sm" href="2026-008-v1.bib" download="2026-008-v1.bib">BibTeX</a><a class="btn btn-ghost btn-sm" href="2026-008-v1.ris" download="2026-008-v1.ris">RIS</a></p><details><summary>Show the BibTeX entry</summary><pre><code>@article{cross2026hf2026008v1,
+  author = {Cross, Kevin},
+  title = {{The Open Benchmark Set: Public Test Problems, a Fair Run and a Scorecard for Multi-Shaker Control Laws}},
+  journal = {Hertzforge Journal},
+  year = {2026},
+  volume = {1},
+  number = {2026-008},
+  note = {Version 1},
+  doi = {10.5281/zenodo.24311105},
+  url = {https://hertzforge.com/journal/2026-008/v1/}
+}
+</code></pre></details></div>
+<div class="hf-downloads" id="hf-downloads"><h2 class="hf-label">Downloads</h2><ul class="dl"><li><a href="2026-008-v1.html" download="2026-008-v1.html">The Article in One File</a><span class="size">4.0 MB</span><span class="d">Opens without a network connection. It asks nothing of any server, so it can be carried onto a closed network.</span></li><li><a href="2026-008-v1.pdf" download="2026-008-v1.pdf">PDF Print Copy</a><span class="size">1.4 MB</span><span class="d">Static figures, from the same source as this page.</span></li><li><a href="2026-008-v1-bundle.zip" download="2026-008-v1-bundle.zip">Data and Code Bundle</a><span class="size">246 kB</span><span class="d">The data behind every figure and the code that draws it, with what is needed to run it again.</span></li></ul></div>
+</section>
+<nav class="hf-contents" id="hf-contents" aria-label="Contents">
+<details>
+<summary>Contents</summary>
+<ul>
+<li><a href="#summary" id="toc-summary">Summary</a></li>
+<li><a href="#why-a-shared-set-of-test-problems" id="toc-why-a-shared-set-of-test-problems">1. Why a Shared Set of Test Problems</a></li>
+<li><a href="#terms" id="toc-terms">2. Terms</a></li>
+<li><a href="#what-a-test-problem-is" id="toc-what-a-test-problem-is">3. What a Test Problem Is</a>
+<ul>
+<li><a href="#the-structure" id="toc-the-structure">3.1 The Structure</a></li>
+<li><a href="#the-gauges-and-their-roles" id="toc-the-gauges-and-their-roles">3.2 The Gauges and Their Roles</a></li>
+<li><a href="#the-target" id="toc-the-target">3.3 The Target</a></li>
+<li><a href="#the-limits-of-a-fair-run" id="toc-the-limits-of-a-fair-run">3.4 The Limits of a Fair Run</a></li>
+<li><a href="#what-a-control-law-is-given" id="toc-what-a-control-law-is-given">3.5 What a Control Law Is Given</a></li>
+<li><a href="#structures-seeds-and-fresh-draws" id="toc-structures-seeds-and-fresh-draws">3.6 Structures, Seeds and Fresh Draws</a></li>
+</ul></li>
+<li><a href="#structures-that-change-with-level-stage-2" id="toc-structures-that-change-with-level-stage-2">4. Structures That Change With Level (Stage 2)</a>
+<ul>
+<li><a href="#what-changes-and-what-does-not" id="toc-what-changes-and-what-does-not">4.1 What Changes, and What Does Not</a></li>
+<li><a href="#the-rule" id="toc-the-rule">4.2 The Rule</a></li>
+<li><a href="#the-hardening-member" id="toc-the-hardening-member">4.3 The Hardening Member</a></li>
+<li><a href="#the-state-in-service-and-the-state-as-tested" id="toc-the-state-in-service-and-the-state-as-tested">4.4 The State in Service and the State as Tested</a></li>
+<li><a href="#stage-2-without-hertzforge" id="toc-stage-2-without-hertzforge">4.5 Stage 2 Without Hertzforge</a></li>
+</ul></li>
+<li><a href="#the-run-result" id="toc-the-run-result">5. The Run Result</a></li>
+<li><a href="#the-scorecard" id="toc-the-scorecard">6. The Scorecard</a></li>
+<li><a href="#a-worked-example" id="toc-a-worked-example">7. A Worked Example</a>
+<ul>
+<li><a href="#the-article-and-its-problems" id="toc-the-article-and-its-problems">7.1 The Article and Its Problems</a></li>
+<li><a href="#stage-1-a-reference-run" id="toc-stage-1-a-reference-run">7.2 Stage 1: A Reference Run</a></li>
+<li><a href="#stage-2-what-is-known-before-any-law-runs" id="toc-stage-2-what-is-known-before-any-law-runs">7.3 Stage 2: What Is Known Before Any Law Runs</a></li>
+<li><a href="#stage-2-a-closed-loop-run" id="toc-stage-2-a-closed-loop-run">7.4 Stage 2: A Closed-Loop Run</a></li>
+</ul></li>
+<li><a href="#what-softening-and-hardening-each-do" id="toc-what-softening-and-hardening-each-do">8. What Softening and Hardening Each Do</a>
+<ul>
+<li><a href="#what-each-effect-does-to-the-structure" id="toc-what-each-effect-does-to-the-structure">8.1 What Each Effect Does to the Structure</a></li>
+<li><a href="#what-each-effect-does-to-the-result" id="toc-what-each-effect-does-to-the-result">8.2 What Each Effect Does to the Result</a></li>
+<li><a href="#whether-the-sizes-are-realistic" id="toc-whether-the-sizes-are-realistic">8.3 Whether the Sizes Are Realistic</a></li>
+<li><a href="#what-this-result-is-and-is-not" id="toc-what-this-result-is-and-is-not">8.4 What This Result Is and Is Not</a></li>
+</ul></li>
+<li><a href="#suites-versions-and-citation" id="toc-suites-versions-and-citation">9. Suites, Versions and Citation</a>
+<ul>
+<li><a href="#suites" id="toc-suites">9.1 Suites</a></li>
+<li><a href="#identifiers" id="toc-identifiers">9.2 Identifiers</a></li>
+<li><a href="#what-a-suite-shows-before-it-is-released" id="toc-what-a-suite-shows-before-it-is-released">9.3 What a Suite Shows Before It Is Released</a></li>
+<li><a href="#the-mimo-random-suite-version-0.2" id="toc-the-mimo-random-suite-version-0.2">9.4 The MIMO Random Suite, Version 0.2</a></li>
+</ul></li>
+<li><a href="#reporting-a-result" id="toc-reporting-a-result">10. Reporting a Result</a></li>
+<li><a href="#limits" id="toc-limits">11. Limits</a></li>
+<li><a href="#how-this-was-made" id="toc-how-this-was-made">How This Was Made</a></li>
+<li><a href="#acknowledgments" id="toc-acknowledgments">Acknowledgments</a></li>
+<li><a href="#references" id="toc-references">References</a></li>
+<li><a href="#implemented-in" id="toc-implemented-in">Implemented In</a></li>
+<li><a href="#version-history" id="toc-version-history">Version History</a></li>
+</ul>
+</details>
+</nav>
+<section id="abstract" class="unnumbered unlisted hf-abstract">
+<h2 class="unnumbered unlisted">Abstract</h2>
+<p>A control law for a multi-shaker vibration test is usually shown working on its author’s own model, so two laws cannot be compared and a law’s weak cases stay out of sight. This article proposes a shared set of simulated test problems, the Hertzforge Open Benchmark Set, and the rules for using it. A test problem is a structure with shakers and accelerometers, a target taken from the structure in service, the limits a run must keep to, and a fixed scorecard. The files are public and in plain formats, and a problem can be run and scored with NumPy, without Hertzforge. The first suite, MIMO Random, is published as version 0.2 of the set (DOI 10.5281/zenodo.24310742), with its code under the MIT license and its problems and documents under CC BY 4.0. Four things are asked of the set: a target the shakers cannot reach exactly; accelerometers kept out of the control and used only for scoring; where the model allows it, the stress in every part of the structure in service and on the shakers; and a second stage in which the structure changes with level both ways, its bolted joints softening and one member hardening, because a real article does both and a law that has only met a structure that does neither has not been tested. The hardening member is a tuned mass on two thin strips clamped at both ends; a cantilevered mass, the first idea, was found unable to harden by a measurable amount before it would yield. The article defines what a problem holds, what a fair run is, what the scorer reads and writes, and how problems are grouped, versioned, cited and reported on. A worked example on one structure shows a stage 1 reference run, in which six shakers matching six controls exactly left the article 11 dB over its service stress on average, what a stage 2 problem states before any law runs, and one closed-loop run of one law at its defaults on a stage 2 problem, which compares nothing. Runs of six control laws on ten structures with one effect at a time show, pooled over the laws, that both effects move the stress more than the gauges in 23 of 24 cases, and that one hardening member moved the result less than the softening joints; an independent audit on ten held-back structures bore both out. Impacts and rattles are not covered. Everything here is simulation, and the scorecard’s numbers are starting values.</p>
+</section>
+<h2 id="summary">Summary</h2>
+<p>A control law is the rule a vibration controller uses to turn its targets into shaker drives. A new control law for a multi-shaker test is usually shown working on a model its author built. Two laws shown on two different models cannot be compared, and a model built to show a law working seldom shows where the law fails.</p>
+<p>This article proposes a shared set of test problems, the Hertzforge Open Benchmark Set, and the rules for using it. A test problem is a simulated structure with shakers and accelerometers on it, a target for the test, the limits a run must keep to, and a fixed way of scoring the result. The files are public and in plain formats. A problem can be run in any software, or in Python with NumPy alone. Hertzforge is not needed.</p>
+<p>Four things are asked of the problems:</p>
+<ul>
+<li>The target comes from the structure in service, so the shakers cannot reach it exactly.</li>
+<li>Some accelerometers are kept out of the control and used only to score the test.</li>
+<li>Where the model allows it, the stress in every part of the structure is known, in service and on the shakers. The score can then say what the structure went through, and not only what the control accelerometers read.</li>
+<li>Every suite has two stages. At stage 1 the structure does not change with level. At stage 2 the same structure does, both ways: its bolted joints soften, so their modes fall in frequency as the vibration grows, and one member hardens, so its mode rises.</li>
+</ul>
+<p>The fourth is there because a real test article changes with level, and a control law has to measure the article at a low level and then drive it at a higher one. A law that has only been shown on a structure that stays the same at every level has been shown on an easier problem than any real test.</p>
+<p>The hardening member is a small mass carried at the middle of two thin steel strips clamped at both ends. As the mass moves, the strips stretch and grow stiffer. A mass on a cantilevered beam was the first idea; worked through, a cantilever of this size yields long before its frequency rises by a measurable amount. Section 4 gives both.</p>
+<p>The score is a scorecard. It is not a pass or a fail. It follows the practice proposed in the first article of this journal (Cross and Zwink, 2026): the overall level, the pattern at the held-out accelerometers and at the controls, the worst over-test, the under-test, what the system could reach, and whether an exact fit at the controls should be distrusted. At stage 2 it adds how far each mode moved during the run, beside how far it moves in service.</p>
+<p>This article defines the program: what a problem holds, what a fair run is, what the scorer reads and writes, and how problems are grouped, versioned, cited and reported on. It does not list the problems. Each kind of test (random, shock, sine) gets its own suite, published as its own versioned data set. The first, the MIMO Random suite, is published as version 0.2 (Cross, 2026d), and the scorecards behind Sections 7.4 and 8, with the record of their independent audit, as a separate record (Cross, 2026e).</p>
+<p>Section 7 works through one structure. At stage 1, with six shakers and six control accelerometers, a reference run matched its six controls to 0.00 dB RMS and left the article 11.2 dB over its service stress on average. Nothing at the controls showed it. The held-out accelerometers and the stress did, and the scorecard flags the run. A closed-loop check of the same point is the subject of a follow-up article (Cross, 2026c). At stage 2 the example gives what is known before any law runs: in service the member’s mode rises 0.57 percent and the article’s median mode falls 1.0 percent at the realistic size, and a system with as many shakers as control gauges (six and six), driven to reproduce the target, would raise the member’s mode 3.2 percent. One closed-loop run, of the law Hertzforge’s MIMO Random module uses by default, at its default settings, shows what a stage 2 scorecard holds. It compares nothing.</p>
+<p>Section 8 reports what the softening and the hardening each do. Six control laws were run on 10 structures with one effect at a time, against the same law on the linear structure, and the results are pooled over the laws. An independent audit ran the same cases on ten structures held back until the findings were written down. With either effect the stress moved more than the control gauges and the held-out gauges in 23 of 24 cases over both sets, so the gauges a laboratory watches show less of what the change of level does than the article’s stress does. At the strong size with twelve control gauges the softening joints raised the stress error by a median of 0.89 dB, and 0.82 dB on the held-back structures. One hardening member moved the result less than the softening joints, in both directions, with signed medians of 0.14 dB or less. No law is named; the comparison of laws is in a companion article (Cross, 2026b).</p>
+<p>Impacts, and rattles in the shaker or fixture, are not in the set. Everything here is simulation. The scorecard’s numbers are starting values, to be tried and revised.</p>
+<h2 id="why-a-shared-set-of-test-problems">1. Why a Shared Set of Test Problems</h2>
+<p>A paper on a control law reports the law’s results on a model. The model, the target, the number of shakers and the measure of success are each the author’s choice. A reader cannot tell whether a second law would have done better on the same model, or how the first law would do on a harder one.</p>
+<p>The first article of this journal (Cross and Zwink, 2026, Section 6) asked for the missing piece: control laws graded on a public set of test articles, with targets the system cannot reach exactly and with outputs that are not controls. It gave the reason. When the target is the structure’s own response to its own shakers, a controller with as many shakers as control accelerometers matches every control exactly, and the test tells nothing about the rest of the structure.</p>
+<p>A second reason concerns level. A controller measures how the system answers its shakers at a low level before the test, then drives the article at full level. If the article’s joints loosen and its frequencies fall as the level rises, or a stiff member tightens and its frequency rises, the frequency response the controller measured is wrong at full level, and wrong in a different direction for different modes. A benchmark whose structures stay the same at every level never asks a law to cope with that, and would rank laws on a problem easier than the one they will meet.</p>
+<p>Test laboratories have shared a test article before. The Boundary Conditions in Environmental Testing round robin (Skousen and Soine, 2018) is one such program. The Open Benchmark Set does the same for control laws, in simulation, where every laboratory and every author can hold an identical copy.</p>
+<p>The set is for four things: developing a law against known problems, comparing laws on equal terms, finding the cases where a law fails, and giving an article a reference that other articles can use too. It is not an acceptance test for a law, and a good scorecard on a simulated problem does not qualify a law for a real test. Whoever applies a law to a test is responsible for protecting the equipment.</p>
+<h2 id="terms">2. Terms</h2>
+<ul>
+<li><strong>Article.</strong> The structure under test.</li>
+<li><strong>Shaker and drive.</strong> A shaker applies a force to the article. Its drive is the voltage signal the controller sends it.</li>
+<li><strong>Gauge.</strong> An accelerometer channel: one point on the article, one direction.</li>
+<li><strong>Control gauge.</strong> A gauge the controller reads and tries to bring to a target.</li>
+<li><strong>Held-out gauge.</strong> A gauge that is recorded and never given to the controller. It is used only to score the test.</li>
+<li><strong>Target.</strong> What the control gauges should read. For a random test it is a set of acceleration spectra.</li>
+<li><strong>System.</strong> The article on its suspension with a given set of shakers and control gauges, as the controller sees it. The first article of this series calls it the rig, and the data set keeps that word in its field and file names (<code>rig</code>). A system with as many shakers as control gauges is called square.</li>
+<li><strong>Control law.</strong> The rule by which the controller turns the target and what it has measured of the system into drives.</li>
+<li><strong>Run.</strong> One test of one control law on one problem, from the first measurement of the system to the end of the record.</li>
+<li><strong>Problem.</strong> One structure, one target and one set of limits, under an identifier.</li>
+<li><strong>Seed.</strong> A whole number from which a structure is generated. A different seed gives a different structure of the same kind. The seed is the structure’s label in the data set, so structure 4 is the one generated from seed 4. This article counts and names structures, and says “seed” only where the data set’s field or a file name is meant. A seed is not a level.</li>
+<li><strong>Measured frequency response.</strong> The frequency response functions from each shaker drive to each control gauge, measured by the controller at a low level at the start of a run. A control law computes its drives from them.</li>
+<li><strong>Suite.</strong> The problems for one kind of test, published together as one versioned data set.</li>
+<li><strong>Scorecard.</strong> The fixed set of measures the scorer computes from a run.</li>
+<li><strong>Baseline.</strong> The scorecard of a control law that Hertzforge ships, on a problem.</li>
+<li><strong>Level.</strong> How hard the article is driven. <strong>Full level</strong> is the level of the target; a test climbs to it in steps.</li>
+<li><strong>Small-signal.</strong> The structure as it is at a very low level, where nothing has changed yet.</li>
+<li><strong>Softening.</strong> Stiffness that falls as the amplitude grows, as in a bolted joint that begins to slip. A mode that softens falls in frequency, and its damping rises.</li>
+<li><strong>Hardening.</strong> Stiffness that rises as the displacement grows. A mode that hardens rises in frequency.</li>
+<li><strong>Stage 1 and stage 2.</strong> At stage 1 the structure is the same at every level. At stage 2 the same structure changes with level: some modes soften and one hardens.</li>
+<li><strong>Member.</strong> The part of the stage 2 article that hardens (Section 4.3).</li>
+<li><strong>In service.</strong> The article mounted and loaded as it is in use, which is where the target comes from.</li>
+</ul>
+<h2 id="what-a-test-problem-is">3. What a Test Problem Is</h2>
+<p>A problem is one folder. It holds six things:</p>
+<ol type="1">
+<li>the structure, in a plain documented file, with a reference model in Python;</li>
+<li>the gauges and the role of each;</li>
+<li>the target;</li>
+<li>the limits of a fair run;</li>
+<li>what the scorer needs: the service responses, the stress where the model gives it, and at stage 2 the state of the article in service;</li>
+<li>the baselines: the scorecards of the shipped control laws on the problem. In version 0.2 they are published as a separate record (Cross, 2026e), not in the problem folders.</li>
+</ol>
+<p><a href="#tbl-folder" class="quarto-xref">Table&nbsp;1</a> lists the files of one problem from the worked example. Descriptive files are JSON. Large arrays are raw binary, little-endian, with their type, shape and units stated in <code>problem.json</code>. Units are SI: volts at the drives, m/s² at the gauges, pascals for stress. Spectral densities are one-sided, per hertz. Every file is listed in <code>problem.json</code> with its SHA-256 hash, so a result can state exactly which problem it was run on.</p>
+<div id="tbl-folder" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[27,11,62]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-folder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: The files of one problem (<code>frame-12x6-realistic</code>, structure 0, stage 2), with the size of each.
+</figcaption>
+<div aria-describedby="tbl-folder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 3">
+<table class="caption-top">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 11%">
+<col style="width: 62%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">File</th>
+<th style="text-align: right;">Size</th>
+<th style="text-align: left;">What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>problem.json</code></td>
+<td style="text-align: right;">7.7 kB</td>
+<td style="text-align: left;">The identifier, the suite and its version, the stage and the effects present, the frequency grid, the roles, what a law may be given, the article’s state in service (stage 2), the checks made when the problem was built, and the table of every other file with its type, shape, units and hash</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>structure.json</code></td>
+<td style="text-align: right;">254 kB</td>
+<td style="text-align: left;">The structure as a list of modes, each with its rule for changing with level at stage 2; every drive and gauge with its name, role, point and direction</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>geometry.json</code></td>
+<td style="text-align: right;">6.8 kB</td>
+<td style="text-align: left;">Points, beam elements and lumped masses, for drawing the structure</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>reference_model.py</code></td>
+<td style="text-align: right;">33 kB</td>
+<td style="text-align: left;">The reference model, in Python with NumPy only</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>target_banded.json</code></td>
+<td style="text-align: right;">8.8 kB</td>
+<td style="text-align: left;">The target as one-third-octave band values at each control gauge</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>target_line.c16</code></td>
+<td style="text-align: right;">8.7 MB</td>
+<td style="text-align: left;">The target as the full spectral matrix at the control gauges, line by line</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>limits.json</code></td>
+<td style="text-align: right;">3.1 kB</td>
+<td style="text-align: left;">The limits of a fair run</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>scoring/</code></td>
+<td style="text-align: right;">2.2 MB</td>
+<td style="text-align: left;">The service responses at the control gauges, the held-out gauges and the component tips; the stress in every element in service; the matrix that turns a run into stress; at stage 2, the scale of each mode’s monitor</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<h3 id="the-structure">3.1 The Structure</h3>
+<p>The structure is given as its modes of vibration. Each mode has a natural frequency, a damping ratio, a number for how strongly each shaker drives it and a number for how much each gauge moves with it. From these the small-signal response of any gauge to any shaker follows at every frequency:</p>
+<p><span id="eq-frf"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>H</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="false" form="prefix">(</mo><mi>f</mi><mo stretchy="false" form="postfix">)</mo><mo>=</mo><munder><mo>∑</mo><mi>m</mi></munder><mfrac><mrow><mi>−</mi><msup><mi>ω</mi><mn>2</mn></msup><mspace width="0.167em"></mspace><msub><mi>ϕ</mi><mrow><mi>i</mi><mi>m</mi></mrow></msub><mspace width="0.167em"></mspace><msub><mi>ψ</mi><mrow><mi>j</mi><mi>m</mi></mrow></msub></mrow><mrow><msubsup><mi>ω</mi><mi>m</mi><mn>2</mn></msubsup><mo>−</mo><msup><mi>ω</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>j</mi><msub><mi>ζ</mi><mi>m</mi></msub><msub><mi>ω</mi><mi>m</mi></msub><mi>ω</mi></mrow></mfrac><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+H_{ij}(f) = \sum_{m} \frac{-\omega^{2}\,\phi_{im}\,\psi_{jm}}{\omega_{m}^{2} - \omega^{2} + 2 j \zeta_{m} \omega_{m} \omega}
+ \qquad(1)</annotation></semantics></math></span></p>
+<p>Here <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>H</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">H_{ij}</annotation></semantics></math> is the acceleration at gauge <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> for one volt at shaker <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ω</mi><mo>=</mo><mn>2</mn><mi>π</mi><mi>f</mi></mrow><annotation encoding="application/x-tex">\omega = 2 \pi f</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ω</mi><mi>m</mi></msub><annotation encoding="application/x-tex">\omega_{m}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ζ</mi><mi>m</mi></msub><annotation encoding="application/x-tex">\zeta_{m}</annotation></semantics></math> are the natural frequency and damping ratio of mode <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ϕ</mi><mrow><mi>i</mi><mi>m</mi></mrow></msub><annotation encoding="application/x-tex">\phi_{im}</annotation></semantics></math> is the motion of gauge <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> in that mode and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ψ</mi><mrow><mi>j</mi><mi>m</mi></mrow></msub><annotation encoding="application/x-tex">\psi_{jm}</annotation></semantics></math> is how strongly shaker <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math> drives it.</p>
+<p><code>reference_model.py</code> is <a href="#eq-frf" class="quarto-xref">Equation&nbsp;1</a> written out, with the rule of Section 4.2, in about 600 lines that need only NumPy. It gives the frequency response, the stress response, the response to any set of drives and the response in time, at stage 2 by stepping the structure sample by sample the way the software’s simulator does. A reader can check their own simulator against it, or use it as the simulator.</p>
+<h3 id="the-gauges-and-their-roles">3.2 The Gauges and Their Roles</h3>
+<p>Every gauge has one role.</p>
+<ul>
+<li><strong>Control.</strong> The control law reads it, and it has a target.</li>
+<li><strong>Held out.</strong> It is recorded and never given to the law. Held-out gauges on the main structure have a target of their own, taken from service. Held-out gauges at the tips of components, and at the middle of the hardening member, have a service response to compare with.</li>
+<li><strong>Monitor.</strong> A scoring device with no physical counterpart, one for each mode, used only at stage
+<ol start="2" type="1">
+<li>Section 6 says what it is for.</li>
+</ol></li>
+</ul>
+<p>The held-out gauges are the reason the set exists. In the first article, and in the hardware test it cites (Rohe, Nelson and Schultz, 2019), the gauges left out of the control were the only ones that showed a test going wrong while the controls read well.</p>
+<h3 id="the-target">3.3 The Target</h3>
+<p>The target is the response of the article in service, at the control gauges. In the worked example the article is bolted to a larger host frame, random forces act on the host, and the target is what the article’s gauges read. On the shakers the article hangs free and is driven at a few points. The shakers push where the service loads did not, so they cannot reproduce the service response at every gauge.</p>
+<p>The target is also taken from a different unit. Unit A is the one measured in service. Unit B, a second unit of the same design with slightly different stiffness, mass and damping, is the one on the shakers, and its stress in service is the stress the test is scored against. A real test is in the same position: the specification comes from one serial number and the test article is another.</p>
+<p>At stage 2 the article in service changes with level too, by the same rule as on the shakers: each unit in service softens and hardens as much as it moves in service. The service response is found by repeating the calculation until the modes’ frequencies and damping agree with the amplitudes they produce. A stage 2 problem therefore states an absolute level, because the member’s hardening depends on how far it moves, not on a ratio. For each structure the service loads are scaled so that unit B’s member moves 0.081 mm RMS at its middle in a linear service calculation; the control level then follows from the structure. A structure whose control level would pass 30 g RMS takes the next placement of the member that keeps it under; where there is none it keeps the lowest and is flagged as above 30 g RMS, so a few structures are driven harder (Section 7.3 gives the range).</p>
+<p>How close a system can come to its target is fixed before any control law runs. The scorer computes it from the small-signal structure and the target alone and reports it on every scorecard as the declared deviation (Section 6). A law is not blamed for what the system cannot do.</p>
+<p>A problem has one target. Where two kinds of target are wanted for one structure, they are two problems. The random suite has two: <code>banded</code>, a specification of one-third-octave band values at each control gauge with no relation stated between gauges, and <code>line</code>, the full set of service spectra line by line, including the cross spectrum between every pair of control gauges.</p>
+<h3 id="the-limits-of-a-fair-run">3.4 The Limits of a Fair Run</h3>
+<p>Two runs can be compared only if they were allowed the same things. A problem’s limits file fixes:</p>
+<ul>
+<li>the frequency grid and the band;</li>
+<li>how the system may be measured before the test (the identification): how long and at what level;</li>
+<li>the level steps on the way up to full level;</li>
+<li>how long the run stays at full level and which part of it is the record;</li>
+<li>how spectra are estimated within a loop;</li>
+<li>whether the law may measure the frequency response again during the run;</li>
+<li>the measurement noise;</li>
+<li>the ceiling on each drive;</li>
+<li>the protections, meaning the stops the controller applies on its own, and their settings;</li>
+<li>what counts as the outcome.</li>
+</ul>
+<p><a href="#tbl-limits" class="quarto-xref">Table&nbsp;2</a> gives the limits of the example problems. They belong to the suite, not to this article, and are shown as an example of what a limits file fixes. They are the same at both stages. At stage 2 they matter more: the identification at 20 dB under the target sees the small-signal structure, and every step up the ladder moves the modes away from it.</p>
+<div id="tbl-limits" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[20,80]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-limits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: The limits of a fair run on the example problems (limits identifier <code>frames-fair-run/0.1-draft</code>).
+</figcaption>
+<div aria-describedby="tbl-limits-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 2">
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 80%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Item</th>
+<th style="text-align: left;">Value in the example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Grid</td>
+<td style="text-align: left;">0.5&nbsp;Hz lines from 20 to 2000&nbsp;Hz (3,961 lines), from 16,384-point frames at 8,192 samples per second</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Identification</td>
+<td style="text-align: left;">64 frames, or 10 for each shaker if that is more; 32 noise frames; starting at 0.01&nbsp;V RMS; 20&nbsp;dB under the target level</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Level steps</td>
+<td style="text-align: left;">-12, -9, -6, -3 and 0&nbsp;dB, one loop at each step below full level</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Full level</td>
+<td style="text-align: left;">30 loops; the last 15 are the record</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Estimation</td>
+<td style="text-align: left;">64 frames a loop (66 s), Hann window, 50 percent overlap, memory of 4 loops</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">The measured frequency response</td>
+<td style="text-align: left;">Measured once before the run and kept. An entry may declare that it measures it again during the run, each new measurement weighted 0.5 against the last</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Noise</td>
+<td style="text-align: left;">40&nbsp;dB under the quietest control gauge’s target, in RMS over the band</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Drive</td>
+<td style="text-align: left;">Ceiling of 5&nbsp;V RMS on each shaker; 1&nbsp;V RMS before the test</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Protections</td>
+<td style="text-align: left;">First pass at the software’s defaults: a stop when one control gauge’s error stays at or above 3&nbsp;dB without improving by 0.1&nbsp;dB for 5 loops; a stop when the change cap holds one drive back on 10 lines in 5 of the last 10 drives the law was allowed to make; an abort at the drive ceiling plus 1&nbsp;dB (5.61&nbsp;V RMS); overload fraction 0.9; one settling loop (Cross, 2026a, Section 3). Tolerance alarm and abort lines are off</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Outcome</td>
+<td style="text-align: left;">Completed, or stopped, with which protection stopped it, at which loop and why</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>The tolerance lines are off because the target cannot be reached. A run that aborts whenever a control gauge leaves a band around an unreachable target would never finish. Tolerance is a line on the scorecard.</p>
+<p>The protections are the controller’s own checks, and their defaults are protective on purpose. The primer of this journal describes them as the software’s code has them (Cross, 2026a, Section 3). In the software’s MIMO Random module two of them judge the control loop. The growing-error check stops a run when one control gauge’s error, over the band, stays at or above 3 dB without improving by 0.1 dB for 5 judged loops; the loops of the level steps count. The drive-change check stops a run when the limit on how far a drive may change has held one drive back on 10 or more lines in 5 of the last 10 drives the law was allowed to make. A third check aborts a run when a drive’s RMS voltage reaches the problem’s drive ceiling plus 1 dB: with the ceiling of 5.0 V RMS, 5.61 V RMS. It is a rule of the controller applied to the problem’s ceiling, not a separate setting. The first two stop a test early rather than let a growing error reach the shaker, the amplifier or the article, and widening them in a laboratory test is the test engineer’s decision for that test.</p>
+<p>A run that a protection stops has an outcome and may have no scores, and a table of stops says little about how laws differ. So the limits allow a second pass. When the first pass stops, the run is repeated with the same noise and with the checks widened so the run completes: no limit on the lines the drive-change check counts, an error floor of 1,000 dB with 16 loops, so that the growing-error check does not act, and an overload fraction of 1.0. The drive-voltage abort stays. Its scores are marked as such. The scorecard then carries both: what happened with the checks at their defaults, and how the law scored with them widened. A simulator has no hardware to protect, so widening them there costs nothing; for a laboratory test it is not a recommendation.</p>
+<p>Every problem assumes a sound setup. A rattle in a shaker, a stinger or a fixture is a fault in the test equipment, found and fixed before a test, and no control law is asked to work around one.</p>
+<h3 id="what-a-control-law-is-given">3.5 What a Control Law Is Given</h3>
+<p>A law is given three things: the system as it can be measured at the control gauges under the limits, the target at the control gauges, and the limits. It is never given the structure file, and so it is never told which modes will soften, which will harden, or by how much.</p>
+<p>Everything else is kept for scoring: the held-out gauges, their service responses, the stress in service, the matrix that turns a run into stress and the article’s state in service. These files are public. “Kept” means that a fair run does not pass them to the law. Nothing but honesty stops an author from tuning a law on them, and Section 3.6 is the answer to that.</p>
+<h3 id="structures-seeds-and-fresh-draws">3.6 Structures, Seeds and Fresh Draws</h3>
+<p>A structure identifier names a kind of structure, not one structure. The seed draws the dimensions, the masses, the damping, the service forces, where the gauges and shakers sit, how much each joint softens, and where the hardening member goes. A law that does well on structure 0 and poorly on structure 3 has learned structure 0.</p>
+<p>Each version of a suite therefore sets aside a range of seeds as fresh draws. They are published with the version, nobody develops or tunes a law on them, and a result on them is reported apart from results on the other structures. Once a version is out its fresh draws have been seen, so each later version names a new range. A suite may also name tuning structures, on which an author may choose a law’s settings, and which are never scored.</p>
+<p>A draw is replaced when the hardening member cannot be placed on it (Section 4.3), or when the reference simulator refuses it. The simulator refuses a structure if any mode could rise past the highest frequency it can represent, half the sample rate, 4,096 Hz. In this version structure 24, one of the structures held back for the independent audit, was refused at the strong size for that reason (one of its modes could rise to about 4,119 Hz) and was replaced, at every system and size, by structure 52. The generator of version 0.2 checks this itself: it refuses a structure on which any mode could rise past the simulator’s bound. A replaced draw goes whole and is replaced by the next unused seed above the named range; the replacement is stated.</p>
+<h2 id="structures-that-change-with-level-stage-2">4. Structures That Change With Level (Stage 2)</h2>
+<h3 id="what-changes-and-what-does-not">4.1 What Changes, and What Does Not</h3>
+<p>At stage 2 two things change with level, in one structure:</p>
+<ul>
+<li><strong>Joints soften.</strong> The chassis is bolted together. As the vibration grows its modes fall in frequency and their damping rises, each by an amount set by how much of the mode’s strain energy is in the jointed chassis.</li>
+<li><strong>One member hardens.</strong> A small mass on two thin strips (Section 4.3) stiffens as it moves. Its mode rises in frequency.</li>
+</ul>
+<p>A mode that lives mostly in the member mostly rises; a mode that lives in the chassis mostly falls; a mode shared between them does some of each. The effects are smooth: the stiffness changes with amplitude, and nothing separates, strikes or rattles. Impacts, such as a part tapping its neighbour, are not hardening in this sense and are not in the set.</p>
+<p>Each stage 2 structure comes at two sizes. <strong>Realistic</strong> is sized so that, in service, the article’s median mode falls 1 percent with its damping 1.5 times its small-signal value, and the member alone rises 1 percent at its design motion. <strong>Strong</strong> is sized for 3 percent, 3 times the damping and a 4 percent rise. These are the set’s choices, made to be in the range of published measurements of hardening structures (Section 4.3) and well short of their largest values. Each suite also carries diagnostic problems on two systems, with only the softening or only the hardening turned on, so that a result can be traced to one effect.</p>
+<h3 id="the-rule">4.2 The Rule</h3>
+<p>Each mode of a stage 2 structure carries its own rule. With <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math> the mode’s amplitude over a reference amplitude stated for that mode, its frequency and damping are</p>
+<p><span id="eq-rule"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo>=</mo><msub><mi>f</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>d</mi><mspace width="0.167em"></mspace><mi mathvariant="normal">min</mi><mo stretchy="false" form="prefix">(</mo><mn>1</mn><mo>,</mo><mi>r</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>a</mi></msup><mo>+</mo><mi>h</mi><mspace width="0.167em"></mspace><mi mathvariant="normal">min</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>h</mi></msub><mo>,</mo><mi>r</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>b</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mo>,</mo><mspace width="2.0em"></mspace><mi>ζ</mi><mo>=</mo><msub><mi>ζ</mi><mn>0</mn></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>+</mo><mi>g</mi><mspace width="0.167em"></mspace><mi mathvariant="normal">min</mi><mo stretchy="false" form="prefix">(</mo><msub><mi>c</mi><mi>g</mi></msub><mo>,</mo><mi>r</mi><msup><mo stretchy="false" form="postfix">)</mo><mi>e</mi></msup><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="2.0em"></mspace><mo stretchy="false" form="prefix">(</mo><mn>2</mn><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">
+f = f_{0}\left(1 - d\,\min(1, r)^{a} + h\,\min(c_{h}, r)^{b}\right), \qquad
+\zeta = \zeta_{0}\left(1 + g\,\min(c_{g}, r)^{e}\right)
+ \qquad(2)</annotation></semantics></math></span></p>
+<p>where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>f</mi><mn>0</mn></msub><annotation encoding="application/x-tex">f_{0}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ζ</mi><mn>0</mn></msub><annotation encoding="application/x-tex">\zeta_{0}</annotation></semantics></math> are the small-signal values, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>d</mi><annotation encoding="application/x-tex">d</annotation></semantics></math> is the drop (softening), <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math> the rise (hardening), <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math> the damping gain, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>b</mi><annotation encoding="application/x-tex">b</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>e</mi><annotation encoding="application/x-tex">e</annotation></semantics></math> their exponents, and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>h</mi></msub><annotation encoding="application/x-tex">c_{h}</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mi>g</mi></msub><annotation encoding="application/x-tex">c_{g}</annotation></semantics></math> the amplitude ratios at which the rise and the damping stop growing. The drop stops at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">r = 1</annotation></semantics></math>. A mode’s amplitude is followed sample by sample by an envelope that holds a peak and lets it decay over five cycles. The rise has exponent 2, the shape of a stiffness that grows with the square of the displacement; the drop and the damping gain have exponent 1. The caps keep every mode’s highest reachable frequency known, so a simulator can check it against its sample rate, and keep a mode driven far past its service amplitude from taking an unbounded damping.</p>
+<p><a href="#fig-level" class="quarto-xref">Figure&nbsp;1</a> shows the rule for the member’s mode and for the article’s median softening mode of the worked example. The member’s mode rises with the square of its amplitude until its cap; the article’s mode falls in proportion to its amplitude until <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">r = 1</annotation></semantics></math>, and its damping climbs and then holds.</p>
+<div id="fig-level" class="quarto-float quarto-figure quarto-figure-center" data="data/fig_level_rule.csv" alt="Two line plots side by side against r, a mode's amplitude over its reference amplitude, from 0 to 2.5. Left panel, frequency change in percent: two orange curves with circle and square markers, the member's mode at about 111 Hz, rise from zero as a parabola and level off at their caps, the strong size higher; two blue curves with triangle and diamond markers, an article mode at about 264 Hz, fall in a straight line to r = 1 and then stay flat, the strong size deeper. Right panel, damping over its small-signal value: all four curves rise in a straight line to r = 1 and then stay flat, the article mode reaching higher than the member mode and the strong size higher than the realistic.">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-level-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="hf-figure hf-figure-given" data-figure="fig_level_rule">
+<img class="hf-static" src="figures/fig_level_rule.png" alt="Two line plots side by side against r, a mode's amplitude over its reference amplitude, from 0 to 2.5. Left panel, frequency change in percent: two orange curves with circle and square markers, the member's mode at about 111 Hz, rise from zero as a parabola and level off at their caps, the strong size higher; two blue curves with triangle and diamond markers, an article mode at about 264 Hz, fall in a straight line to r = 1 and then stay flat, the strong size deeper. Right panel, damping over its small-signal value: all four curves rise in a straight line to r = 1 and then stay flat, the article mode reaching higher than the member mode and the strong size higher than the realistic.">
+<p class="hf-figure-links">This figure: <a href="data/fig_level_rule.csv" download="fig_level_rule.csv">Data (CSV)</a> <a href="code/fig_level_rule.py" download="fig_level_rule.py">Code</a> <a href="figures/fig_level_rule.png" download="fig_level_rule.png">Picture (PNG)</a></p>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-level-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: How the member’s mode and a softening mode of the article change with level, by the problem’s own rule, worked example structure 0 on six shakers and twelve controls. (a) Frequency change. (b) Damping over its small-signal value. Solid lines are the realistic size, dashed lines the strong size. The dotted line marks r = 1, where the drop stops growing.
+</figcaption>
+</figure>
+</div>
+<p>Every stated change in a problem is the change a reader would measure in a spectrum. Under random drive a mode’s amplitude wanders, and a spectrum weights each moment by its power, so the rule as a spectrum shows it is the rule averaged over the wandering amplitude. The generator sizes every term to that average: the rise on a sine amplitude of twice the RMS motion, which is where a cubic spring’s response under random drive matches its response to a sine, and the drop and the damping gain on the power-weighted average of the envelope (Section 11 states what this does and does not capture).</p>
+<h3 id="the-hardening-member">4.3 The Hardening Member</h3>
+<p>The first idea for the member was one of the article’s cantilevered components: a mass on the end of a tube, tuned into the test band and flexible enough for the tube to stiffen. Worked through, it cannot. A cantilever’s first mode stiffens as its tip swings and is softened by the mass’s own motion along the beam, and the two are closely balanced: measured cantilevers have shown either a stiffening or a softening first mode (Villanueva and others, 2013). Calculated two ways for the article’s tube components, the frequency rises by a fraction of 2 to 3 percent of the square of the tip deflection over the length, so a 1 percent rise needs the tip to swing about 0.6 of the beam’s length. At a swing of a tenth of the length the rise is 0.03 percent and the stress at the root is already 900 to 1,750 MPa, three to six times the yield stress of the aluminum tube. Even the sign of the change is not dependable on real hardware, where gravity and the clamp can tip it either way.</p>
+<p>A thin strip clamped at both ends does what the cantilever cannot. When the mass at its middle moves, the strip has to stretch, and the stretching makes a stiffness that grows with the square of the displacement. The first mode of a beam clamped at both ends, tested by Renson and others (2016), fell a little at low amplitude and then rose from 15.67 Hz to about 16.4 Hz, about 4.7 percent, as the bending stretched the beam. A thin beam clamped at the tip of a cantilever, tested by Peeters, Kerschen and Golinval (2011), is another published case of the same stretching. The member of the set (<a href="#fig-member" class="quarto-xref">Figure&nbsp;2</a>) is a mass carried at the middle of two parallel strips of type 301 stainless steel, full hard, clamped at both ends on a steel bracket that stands on the chassis where one of the cantilevered components was.</p>
+<ul>
+<li><strong>Size.</strong> At the realistic size each strip is 50 mm long between its clamps, 7.5 mm wide and 0.60 mm thick. At the strong size the strips are 28.5 by 11.3 by 0.30 mm, which stiffen about four times as fast for the same motion.</li>
+<li><strong>How much it hardens.</strong> Ideal clamps are knocked down to 0.514 of their stiffening, a ratio this set derived from the clamped thin beam of Peeters, Kerschen and Golinval (2011), to allow for clamps that let the strip’s ends draw in. With that, the realistic member alone rises 1 percent at 0.161 mm and 4 percent at 0.326 mm of motion of the mass in a sine, under 0.6 of the strip’s thickness, with a peak stress of 95 and 200 MPa against a yield stress of 965 MPa. Two separate calculations agree on these to 0.001 mm.</li>
+<li><strong>Two strips, not one.</strong> On one strip the mass twists before it bends. On two strips spaced the width of the mass apart, the rocking and pitching modes sit at least 1.6 times above the mode that moves the mass straight up and down. At the strong size the strips are short, and a steel mass of the same weight would pitch just under that mode, so the strong mass is a bar of tungsten heavy alloy, which is denser and so shorter.</li>
+<li><strong>Tuned clear of the chassis.</strong> If the member’s mode sits near a chassis mode the two share their strain energy, and neither hardens. So each structure places the member and tunes it (by the mass, keeping the strips) to the first place and frequency, from 90 to 160 Hz and if needed 80 to 250 Hz, at which the member’s mode keeps at least 0.8 of its strain energy in the strips in both units, in service and on the shakers, at both sizes. A structure with no such place is not a problem of the set.</li>
+<li><strong>Damping.</strong> The member’s own modes have at least 1 percent of critical damping, so that the scorer can resolve its peak.</li>
+</ul>
+<div id="fig-member" class="quarto-float quarto-figure quarto-figure-center" data="data/stage2_member.csv data/fig_member.csv" alt="Three panels. Left, a side-view line drawing: two hatched clamp posts stand on a chassis tube 50 mm apart, a thin strip spans between them, and a gray block 20 mm long and 20.7 mm tall sits on the strip at mid-span, with a double arrow showing its up-and-down motion. Middle, a plan-view drawing: two parallel strips, each 7.5 mm wide and 50 mm long, 51.2 mm apart, each clamped by hatched posts at both ends, with a gray rectangular mass of 166 grams of steel, 20 by 51.2 mm, spanning both strips at mid-span. Right, a line plot of frequency rise in percent against RMS motion of the mass from 0 to 0.2 mm: a blue solid curve with circles for the realistic strips rises as a parabola to 1 percent at about 0.08 mm and 6 percent at 0.2 mm; an orange dashed curve with squares for the strong strips rises four times as fast, to 4 percent at about 0.08 mm; a dash-dot vertical line at 0.081 mm marks the stated motion and dotted horizontal lines mark 1 and 4 percent.">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-member-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="hf-figure hf-figure-given" data-figure="fig_member">
+<img class="hf-static" src="figures/fig_member.png" alt="Three panels. Left, a side-view line drawing: two hatched clamp posts stand on a chassis tube 50 mm apart, a thin strip spans between them, and a gray block 20 mm long and 20.7 mm tall sits on the strip at mid-span, with a double arrow showing its up-and-down motion. Middle, a plan-view drawing: two parallel strips, each 7.5 mm wide and 50 mm long, 51.2 mm apart, each clamped by hatched posts at both ends, with a gray rectangular mass of 166 grams of steel, 20 by 51.2 mm, spanning both strips at mid-span. Right, a line plot of frequency rise in percent against RMS motion of the mass from 0 to 0.2 mm: a blue solid curve with circles for the realistic strips rises as a parabola to 1 percent at about 0.08 mm and 6 percent at 0.2 mm; an orange dashed curve with squares for the strong strips rises four times as fast, to 4 percent at about 0.08 mm; a dash-dot vertical line at 0.081 mm marks the stated motion and dotted horizontal lines mark 1 and 4 percent.">
+<p class="hf-figure-links">This figure: <a href="data/stage2_member.csv" download="stage2_member.csv">stage2_member.csv</a> <a href="data/fig_member.csv" download="fig_member.csv">fig_member.csv</a> <a href="code/fig_member.py" download="fig_member.py">Code</a> <a href="figures/fig_member.png" download="fig_member.png">Picture (PNG)</a></p>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-member-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: The hardening member of the worked example, structure 0. (a) Side view along the strips, at the realistic size, drawn to scale except the strip thickness. (b) Plan view looking down on the mass. (c) How the member alone stiffens with the RMS motion of its mass under random drive, realistic and strong sizes; the dash-dot line is the motion each size is stated at.
+</figcaption>
+</figure>
+</div>
+<div id="tbl-member" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[50,25,25]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-member-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: The member of the worked example, structure 0. The tuned frequency and the mass are chosen per structure; the strips are the same on every structure. Data: <code>data/stage2_member.csv</code>.
+</figcaption>
+<div aria-describedby="tbl-member-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 3">
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Realistic</th>
+<th style="text-align: right;">Strong</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Strips, each (length x width x thickness), mm</td>
+<td style="text-align: right;">50.0 x 7.5 x 0.60</td>
+<td style="text-align: right;">28.5 x 11.3 x 0.30</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Spacing between the strips, mm</td>
+<td style="text-align: right;">51.2</td>
+<td style="text-align: right;">76.9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Mass and material</td>
+<td style="text-align: right;">0.166&nbsp;kg, steel</td>
+<td style="text-align: right;">0.166&nbsp;kg, tungsten heavy alloy</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Mass, along x across x thick, mm</td>
+<td style="text-align: right;">20 x 51.2 x 20.7</td>
+<td style="text-align: right;">10 x 76.9 x 12.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tuned frequency, clamped rigidly, Hz</td>
+<td style="text-align: right;">110.0</td>
+<td style="text-align: right;">110.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rocking and pitching modes, Hz</td>
+<td style="text-align: right;">186, 192</td>
+<td style="text-align: right;">189, 201</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<h3 id="the-state-in-service-and-the-state-as-tested">4.4 The State in Service and the State as Tested</h3>
+<p>A stage 2 problem states, in <code>problem.json</code>, the article’s state in service: how far the member’s mode has risen, and how far the article’s other modes have fallen (10th, 50th and 90th percentiles), with their damping, for unit B at the fixed point of its rule in service. That is what the test is meant to reproduce.</p>
+<p>The structure file also states what each mode would do at full level on the shakers under one particular drive: the least-squares drive that brings the controls closest to the target on the small-signal structure. These are not a pass mark. A law that plays another drive moves the member by another amount, and on some systems the member moves less on the shakers than in service. The scorecard reports the state as tested, the article’s state during the laboratory test (Section 6), and prints the state in service beside it.</p>
+<h3 id="stage-2-without-hertzforge">4.5 Stage 2 Without Hertzforge</h3>
+<p>The reference model in every problem folder steps a stage 2 structure through time with NumPy alone, following the software’s simulator: the same envelope, the same exact step from one sample to the next for each mode, the same delays. On the structures checked, the two agree sample by sample to a few parts in 10¹² of the largest sample. A reader can therefore run a law on a stage 2 problem with nothing but the problem folder.</p>
+<p>The simulator steps each mode with a filter that matches the continuous model within the band. Modes above the band, near half the sample rate, leave a small error that each problem states in its checks (Section 9.3).</p>
+<h2 id="the-run-result">5. The Run Result</h2>
+<p>A run hands the scorer three things:</p>
+<ul>
+<li><strong>A manifest:</strong> the grid, the name of the law and the parameters it was given, the protections in force, and the outcome. When the run stopped, the manifest says which protection stopped it, at which loop, at which level, on which gauge or shaker, and in a sentence why.</li>
+<li><strong>The drives as sent:</strong> the spectral matrix of the drives over the record.</li>
+<li><strong>The gauges as read back:</strong> the autospectrum of every gauge over the record.</li>
+</ul>
+<p>At stage 2 it also hands over the band moments of the modal monitors, from which the stress as tested is computed. For six shakers this is a few megabytes. It is small enough to keep and to publish with a result, and from it anyone can run the scorer again.</p>
+<p>A run that completed is scored. A run that stopped inside its record is scored on what was recorded if that is at least 40 frames. A run that stopped earlier has an outcome and no scores.</p>
+<h2 id="the-scorecard">6. The Scorecard</h2>
+<p>The scorer is one Python file that needs only NumPy. It reads a problem folder and a run result and writes the scorecard. <a href="#tbl-blocks" class="quarto-xref">Table&nbsp;4</a> lists what the scorecard holds.</p>
+<div id="tbl-blocks" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[18,82]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-blocks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: What a scorecard holds.
+</figcaption>
+<div aria-describedby="tbl-blocks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 2">
+<table class="caption-top">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 82%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Block</th>
+<th style="text-align: left;">What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Identity</td>
+<td style="text-align: left;">The scorer’s version and hash, the suite and its version, the problem, its stage and effects, the seed, the hash of the structure file, the law and its parameters</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Outcome</td>
+<td style="text-align: left;">Completed or stopped, as in Section 5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Report card</td>
+<td style="text-align: left;">The six lines of <a href="#tbl-card" class="quarto-xref">Table&nbsp;5</a>, and beside them the reference measures taken from the published standards</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stress</td>
+<td style="text-align: left;">The RMS stress in every element on the shakers against its RMS stress in service: the RMS, mean, 5th and 95th percentiles over the elements, the share of elements within 3&nbsp;dB, the worst element, and two fatigue damage figures</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Response spectra</td>
+<td style="text-align: left;">The response a small resonant part would have if mounted at each held-out gauge and component tip (Q of 10 and of 50), on the shakers against service</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">State as tested</td>
+<td style="text-align: left;">Stage 2: each mode’s frequency change and damping as tested, signed (a fall negative, a rise positive), per mode and summarized for the softening and the hardening modes, against the stated change under the reference drive; and beside it the state in service as the problem states it, for the member’s mode and in summary for the softening modes</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>The report card is the one proposed in the first article, with its starting values.</p>
+<div id="tbl-card" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[7,63,30]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-card-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: The report card (Cross and Zwink, 2026).
+</figcaption>
+<div aria-describedby="tbl-card-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 3">
+<table class="caption-top">
+<colgroup>
+<col style="width: 7%">
+<col style="width: 63%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Line</th>
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: left;">Starting value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Level: the mean decibel error over the control and held-out gauges and all bands</td>
+<td style="text-align: left;">within 1.5&nbsp;dB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Pattern: the RMS decibel error of the summed spectra in one-third-octave bands, at the held-out gauges and at the controls, with the error per gauge beside it</td>
+<td style="text-align: left;">grade A to 3&nbsp;dB, B to 4.5&nbsp;dB, C to 6&nbsp;dB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Over-test: the worst band at any gauge, and the share of bands more than 6&nbsp;dB over</td>
+<td style="text-align: left;">alarm at +6&nbsp;dB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Under-test: the share of held-out bands more than 3&nbsp;dB under</td>
+<td style="text-align: left;">reported</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">The declared deviation (what the system can reach, against the target) and the law error (what the law achieved, against what the system can reach)</td>
+<td style="text-align: left;">reported</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Shakers and control gauges, the condition of the system, and the error left at the controls</td>
+<td style="text-align: left;">a near-zero control error with as many shakers as controls is flagged</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>Four points about how the scorecard is meant to be read.</p>
+<p><strong>It is not a verdict.</strong> Nothing on it says pass or fail. The grades on line 2 separate systems and laws from one another. They do not certify a test.</p>
+<p><strong>The stress is the truth the gauges are judged against.</strong> A model gives what no test article does: the stress everywhere, in service and on the shakers. Where a problem has it, the stress block says what the article went through, and the gauge lines can be read against it. A problem without stress truth is scored on its gauges alone.</p>
+<p><strong>The reference measures are printed, not used.</strong> The share of control lines inside the bands that MIL-STD-810H Method 527.2 Annex E offers as a starting point, and the global error of its Annex C, are computed for every run so that a result can be read by someone who works to them.</p>
+<p><strong>At stage 2 the article moved during the run.</strong> What it went through depends on the drive the law chose, because the drive changed the structure. The gauges are scored from what was measured during the test, the stress is computed from the modal monitors, and the state as tested says how far each mode moved. Beside it the problem’s state in service says how far it should have moved. A run that holds the controls on target with the member’s mode far from its state in service has tested a different article from the one in service, and the two blocks show it. The scorecard also gives the gauge and stress figures computed as if the structure had not moved, so that a reader can see how much the change of level mattered to the score.</p>
+<h2 id="a-worked-example">7. A Worked Example</h2>
+<h3 id="the-article-and-its-problems">7.1 The Article and Its Problems</h3>
+<p>The example uses structure 0 (seed 0) of the frame family of the first article (Cross and Zwink, 2026, Section 4.1), reworked for the two stages. The article is a box chassis of square aluminum tube, 616 by 382 by 272 mm, with three lumped masses, three small components on cantilevered tubes and, where the fourth component was, the hardening member (<a href="#fig-article" class="quarto-xref">Figure&nbsp;3</a>). In service it is bolted at its four corners to a host frame that carries the service forces. On the shakers it hangs on a soft suspension. The model has 96 beam elements and 125 modes; 76 of the flexible modes lie in the test band of 20 to 2000 Hz, the lowest at 74.2 Hz.</p>
+<div id="fig-article" class="quarto-float quarto-figure quarto-figure-center" data="data/fig_article_parts.csv data/fig_article_rig.csv" alt="Three shaded views of a CAD model. Left: a rectangular box of square aluminum tubes with two long rails and cross members in each of the top and bottom frames joined by four corner posts; three dark blocks are lumped masses, three short tubes carry small blocks marked with orange triangles, open black squares mark the four mount points, and an orange star marks a small orange block on a gray bracket at one top corner, the hardening member. Middle: a close-up of that member: an orange rectangular mass spans two thin red-brown strips whose ends are clamped on a gray steel bracket that stands on a chassis tube; text labels name the tuned mass, the two thin strips, the steel bracket and the chassis tube. Right: the article hanging on four thin cords, with six blue cylindrical shakers, each with a black arrow showing its force direction; blue filled circles mark control gauge points, open orange diamonds mark held-out gauge points and orange triangles mark the tip gauges, the member's mid-span included.">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-article-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="hf-figure hf-figure-given" data-figure="fig_article">
+<img class="hf-static" src="figures/fig_article.png" alt="Three shaded views of a CAD model. Left: a rectangular box of square aluminum tubes with two long rails and cross members in each of the top and bottom frames joined by four corner posts; three dark blocks are lumped masses, three short tubes carry small blocks marked with orange triangles, open black squares mark the four mount points, and an orange star marks a small orange block on a gray bracket at one top corner, the hardening member. Middle: a close-up of that member: an orange rectangular mass spans two thin red-brown strips whose ends are clamped on a gray steel bracket that stands on a chassis tube; text labels name the tuned mass, the two thin strips, the steel bracket and the chassis tube. Right: the article hanging on four thin cords, with six blue cylindrical shakers, each with a black arrow showing its force direction; blue filled circles mark control gauge points, open orange diamonds mark held-out gauge points and orange triangles mark the tip gauges, the member's mid-span included.">
+<p class="hf-figure-links">This figure: <a href="data/fig_article_parts.csv" download="fig_article_parts.csv">fig_article_parts.csv</a> <a href="data/fig_article_rig.csv" download="fig_article_rig.csv">fig_article_rig.csv</a> <a href="code/fig_article.py" download="fig_article.py">Code</a> <a href="figures/fig_article.png" download="fig_article.png">Picture (PNG)</a></p>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-article-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: The worked example’s article, structure 0. (a) The article: the tube chassis, three cantilevered components, three lumped masses and the hardening member. (b) The member close up: a tuned mass on two thin strips clamped on a steel bracket. (c) The article on the shakers, with the six shakers, twelve control channels and twelve held-out channels of problem frame-12x6, and the tip gauges.
+</figcaption>
+</figure>
+</div>
+<p>Six problems are used: two systems at stage 1 and the same two systems at both stage 2 sizes. Both systems have six shakers, the same twelve held-out channels at four chassis points, and twelve channels at the three component tips and the member’s middle. <code>frame-12x6</code> has twelve control gauges and <code>frame-6x6</code> has six, at different points, with the shakers in different places.</p>
+<h3 id="stage-1-a-reference-run">7.2 Stage 1: A Reference Run</h3>
+<p>The run scored here is a reference run. Its drives are computed directly from the structure’s own frequency response: at every line the drive is the one that brings the control gauges as close to the target as the system allows, ignoring any way of moving the controls that is more than 1,000 times weaker than the strongest. It is the idealized line-by-line law of the first article.</p>
+<p>The reference run is not a fair entry and not a baseline. A fair entry measures the system first, climbs the level steps and runs closed loop with noise. The reference run does none of that. It is used here because anyone can reproduce it from the problem folder with NumPy, and because it shows what a scorecard holds. It applies to stage 1 only: on a stage 2 structure the drive would move the modes it was computed from. <code>code/example_run.py</code> computes the drives, writes the run result and calls the scorer.</p>
+<p><a href="#tbl-stage1" class="quarto-xref">Table&nbsp;6</a> gives the two scorecards. <a href="#fig-bands" class="quarto-xref">Figure&nbsp;4</a> shows the error in every band at every control and held-out gauge, and <a href="#fig-stress" class="quarto-xref">Figure&nbsp;5</a> shows the stress in every element.</p>
+<div id="tbl-stage1" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[50,25,25]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stage1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: The scorecards of the reference run on the two stage 1 problems, structure 0. Positive stress means over-test. Data: <code>data/stage1_scorecard_summary.csv</code>, <code>data/stage1_problems.csv</code>, <code>data/stage1_scorecard_frame-12x6_s00.json</code>, <code>data/stage1_scorecard_frame-6x6_s00.json</code>.
+</figcaption>
+<div aria-describedby="tbl-stage1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 3">
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;"><code>frame-12x6/line</code></th>
+<th style="text-align: right;"><code>frame-6x6/line</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Control level, median over controls (range), g RMS</td>
+<td style="text-align: right;">10.1 (2.5 to 24.0)</td>
+<td style="text-align: right;">12.5 (2.2 to 24.0)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Line 1.</strong> Level, mean error</td>
+<td style="text-align: right;">-0.6&nbsp;dB</td>
+<td style="text-align: right;">+2.5&nbsp;dB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Line 2.</strong> Pattern at the held-out gauges, summed</td>
+<td style="text-align: right;">2.7&nbsp;dB, grade A</td>
+<td style="text-align: right;">7.8&nbsp;dB, grade below C</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pattern at the held-out gauges, per gauge</td>
+<td style="text-align: right;">6.3&nbsp;dB</td>
+<td style="text-align: right;">9.3&nbsp;dB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pattern at the controls, summed</td>
+<td style="text-align: right;">2.5&nbsp;dB, grade A</td>
+<td style="text-align: right;">0.0&nbsp;dB, grade A</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pattern at the controls, per gauge</td>
+<td style="text-align: right;">6.73&nbsp;dB</td>
+<td style="text-align: right;">0.00&nbsp;dB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Line 3.</strong> Worst band, any gauge</td>
+<td style="text-align: right;">+29.2&nbsp;dB</td>
+<td style="text-align: right;">+43.3&nbsp;dB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Share of bands more than 6&nbsp;dB over</td>
+<td style="text-align: right;">12&nbsp;%</td>
+<td style="text-align: right;">17&nbsp;%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Line 4.</strong> Held-out bands more than 3&nbsp;dB under</td>
+<td style="text-align: right;">28&nbsp;%</td>
+<td style="text-align: right;">11&nbsp;%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Line 5.</strong> Declared deviation</td>
+<td style="text-align: right;">6.73&nbsp;dB</td>
+<td style="text-align: right;">0.00&nbsp;dB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Law error</td>
+<td style="text-align: right;">0.00&nbsp;dB</td>
+<td style="text-align: right;">0.00&nbsp;dB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Line 6.</strong> Condition of the system, median over lines</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Condition of the system, largest</td>
+<td style="text-align: right;">138</td>
+<td style="text-align: right;">203</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Exact-fit flag</td>
+<td style="text-align: right;">no</td>
+<td style="text-align: right;"><strong>yes</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Stress.</strong> Mean over elements</td>
+<td style="text-align: right;">-0.4&nbsp;dB</td>
+<td style="text-align: right;">+11.2&nbsp;dB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RMS over elements</td>
+<td style="text-align: right;">2.8&nbsp;dB</td>
+<td style="text-align: right;">12.9&nbsp;dB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5th to 95th percentile</td>
+<td style="text-align: right;">-5.4 to +4.9&nbsp;dB</td>
+<td style="text-align: right;">+2.0 to +20.9&nbsp;dB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Elements within 3&nbsp;dB of service</td>
+<td style="text-align: right;">74&nbsp;%</td>
+<td style="text-align: right;">18&nbsp;%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Worst element</td>
+<td style="text-align: right;">+6.8&nbsp;dB</td>
+<td style="text-align: right;">+23.0&nbsp;dB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Member’s strips, mean</td>
+<td style="text-align: right;">+0.5&nbsp;dB</td>
+<td style="text-align: right;">+2.3&nbsp;dB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Reference.</strong> Control lines inside the Annex E starting bands</td>
+<td style="text-align: right;">65&nbsp;%</td>
+<td style="text-align: right;">100.0&nbsp;%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Shaker force, RMS, smallest to largest</td>
+<td style="text-align: right;">44 to 65&nbsp;N</td>
+<td style="text-align: right;">79 to 698&nbsp;N</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<div id="fig-bands" class="quarto-float quarto-figure quarto-figure-center" data="data/fig_stage1_band_errors.csv" alt="Two scatter plots side by side with a shared vertical axis, achieved over target in decibels, against one-third-octave band centre from 20 Hz to 2 kHz on a log axis. Control gauges are blue open circles and held-out gauges are orange open triangles, set side by side in each band; dotted lines mark 6 dB either side of the target. Left panel, six shakers and twelve control gauges: both groups scatter about zero, mostly within 10 dB, with a few bands far off either way. Right panel, six shakers and six control gauges: every blue circle lies on the zero line, while the orange triangles spread widely, most of them above zero.">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-bands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="hf-figure hf-figure-given" data-figure="fig_stage1_band_errors">
+<img class="hf-static" src="figures/fig_stage1_band_errors.png" alt="Two scatter plots side by side with a shared vertical axis, achieved over target in decibels, against one-third-octave band centre from 20 Hz to 2 kHz on a log axis. Control gauges are blue open circles and held-out gauges are orange open triangles, set side by side in each band; dotted lines mark 6 dB either side of the target. Left panel, six shakers and twelve control gauges: both groups scatter about zero, mostly within 10 dB, with a few bands far off either way. Right panel, six shakers and six control gauges: every blue circle lies on the zero line, while the orange triangles spread widely, most of them above zero.">
+<p class="hf-figure-links">This figure: <a href="data/fig_stage1_band_errors.csv" download="fig_stage1_band_errors.csv">Data (CSV)</a> <a href="code/fig_stage1_band_errors.py" download="fig_stage1_band_errors.py">Code</a> <a href="figures/fig_stage1_band_errors.png" download="fig_stage1_band_errors.png">Picture (PNG)</a></p>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bands-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: The error in each one-third-octave band at each gauge, stage 1 reference run, structure 0. (a) Six shakers and twelve control gauges: controls and held-out gauges scatter alike about the target. (b) Six shakers and six control gauges: every control sits on its target while the held-out gauges run well over.
+</figcaption>
+</figure>
+</div>
+<div id="fig-stress" class="quarto-float quarto-figure quarto-figure-center" data="data/fig_stage1_element_stress.csv" alt="A cumulative plot. The horizontal axis is element RMS stress on the shakers over its RMS stress in service, in decibels. The vertical axis is the share of elements at or below, from 0 to 100 percent. A gray band marks within 3 dB of service. A blue solid line with open circles, six shakers and twelve control gauges, lies mostly inside the gray band. An orange dashed line with open triangles, six shakers and six control gauges, lies mostly to the right of the band.">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-stress-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="hf-figure hf-figure-given" data-figure="fig_stage1_element_stress">
+<img class="hf-static" src="figures/fig_stage1_element_stress.png" alt="A cumulative plot. The horizontal axis is element RMS stress on the shakers over its RMS stress in service, in decibels. The vertical axis is the share of elements at or below, from 0 to 100 percent. A gray band marks within 3 dB of service. A blue solid line with open circles, six shakers and twelve control gauges, lies mostly inside the gray band. An orange dashed line with open triangles, six shakers and six control gauges, lies mostly to the right of the band.">
+<p class="hf-figure-links">This figure: <a href="data/fig_stage1_element_stress.csv" download="fig_stage1_element_stress.csv">Data (CSV)</a> <a href="code/fig_stage1_element_stress.py" download="fig_stage1_element_stress.py">Code</a> <a href="figures/fig_stage1_element_stress.png" download="fig_stage1_element_stress.png">Picture (PNG)</a></p>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stress-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: The stress in every beam element on the shakers against its stress in service, stage 1 reference run, structure 0. Each marker is one element, in order of its error.
+</figcaption>
+</figure>
+</div>
+<p>On <code>frame-12x6</code> the law error is zero, because the reference run reaches exactly what the system can reach. The 6.7 dB left at the controls is the system’s, not the law’s. The held-out gauges read about the same as the controls (6.3 dB against 6.7 dB per gauge), the level is -0.6 dB, and the stress is within 3 dB of service on 74 percent of the elements. Single bands are far off at single gauges, by up to 29 dB, and line 3 reports it.</p>
+<p>On <code>frame-6x6</code> the controls are matched to 0.00 dB in RMS over gauges and bands. By the controls alone, and by the reference measure, it is a near-perfect test. The held-out gauges are 9.3 dB off, the level is +2.5 dB, 18 percent of the elements are within 3 dB of their service stress, and the mean over-stress is 11.2 dB. In total the shakers put in about 8 times the force they do on <code>frame-12x6</code>. Line 6 flags the run: as many shakers as controls, and almost no error left at the controls.</p>
+<p>This is the result of the first article (Cross and Zwink, 2026, Section 4.2) on one structure of the reworked article, and it is why every problem carries held-out gauges and, where it can, stress.</p>
+<h3 id="stage-2-what-is-known-before-any-law-runs">7.3 Stage 2: What Is Known Before Any Law Runs</h3>
+<p>A stage 2 problem states its own difficulty before a law is run on it. <a href="#tbl-stage2" class="quarto-xref">Table&nbsp;7</a> gives, for the same structure and systems at both sizes, what the problem folders hold or what follows from them with no law, no run and no simulator: the level, what the system can reach, the article’s state in service, and what the modes would do on the shakers under the reference drive. <code>code/stage2_known.py</code> computes it.</p>
+<div id="tbl-stage2" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[28,18,18,18,18]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stage2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: What the four stage 2 problems of structure 0 state before any law runs. The state in service is the same for both systems, which share one article and one environment. Changes are the change a spectrum would show. The columns are the problems <code>frame-12x6-realistic</code>, <code>frame-12x6-strong</code>, <code>frame-6x6-realistic</code> and <code>frame-6x6-strong</code>; “6 x 12” is six shakers and twelve control gauges. Data: <code>data/stage2_known.csv</code>.
+</figcaption>
+<div aria-describedby="tbl-stage2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 5">
+<table class="caption-top">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">6 x 12, realistic</th>
+<th style="text-align: right;">6 x 12, strong</th>
+<th style="text-align: right;">6 x 6, realistic</th>
+<th style="text-align: right;">6 x 6, strong</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Control level, median, g RMS</td>
+<td style="text-align: right;">8.0</td>
+<td style="text-align: right;">6.6</td>
+<td style="text-align: right;">11.4</td>
+<td style="text-align: right;">9.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Declared deviation (small-signal), dB</td>
+<td style="text-align: right;">6.79</td>
+<td style="text-align: right;">6.59</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>In service (unit B).</strong> Member’s mode, change</td>
+<td style="text-align: right;">+0.57&nbsp;%</td>
+<td style="text-align: right;">+1.73&nbsp;%</td>
+<td style="text-align: right;">+0.57&nbsp;%</td>
+<td style="text-align: right;">+1.73&nbsp;%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Member’s mode, damping factor</td>
+<td style="text-align: right;">1.26</td>
+<td style="text-align: right;">1.59</td>
+<td style="text-align: right;">1.26</td>
+<td style="text-align: right;">1.59</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Member’s motion at mid-span, mm RMS</td>
+<td style="text-align: right;">0.073</td>
+<td style="text-align: right;">0.061</td>
+<td style="text-align: right;">0.073</td>
+<td style="text-align: right;">0.061</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Article’s modes, change, 10th / 50th / 90th percentile</td>
+<td style="text-align: right;">-2.1 / -1.0 / -0.3&nbsp;%</td>
+<td style="text-align: right;">-6.9 / -3.0 / -1.6&nbsp;%</td>
+<td style="text-align: right;">-2.1 / -1.0 / -0.3&nbsp;%</td>
+<td style="text-align: right;">-6.9 / -3.0 / -1.6&nbsp;%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Article’s modes, damping factor, median</td>
+<td style="text-align: right;">1.51</td>
+<td style="text-align: right;">3.03</td>
+<td style="text-align: right;">1.51</td>
+<td style="text-align: right;">3.03</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>On the shakers, reference drive.</strong> Member’s mode, change</td>
+<td style="text-align: right;">+0.58&nbsp;%</td>
+<td style="text-align: right;">+2.90&nbsp;%</td>
+<td style="text-align: right;">+3.23&nbsp;%</td>
+<td style="text-align: right;">+7.01&nbsp;%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Member’s mode, damping factor</td>
+<td style="text-align: right;">1.37</td>
+<td style="text-align: right;">2.11</td>
+<td style="text-align: right;">1.45</td>
+<td style="text-align: right;">2.20</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Softening modes in the band, change, median</td>
+<td style="text-align: right;">-1.5&nbsp;%</td>
+<td style="text-align: right;">-5.6&nbsp;%</td>
+<td style="text-align: right;">-1.5&nbsp;%</td>
+<td style="text-align: right;">-4.7&nbsp;%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Softening modes, damping factor, median (largest)</td>
+<td style="text-align: right;">1.72 (3.0)</td>
+<td style="text-align: right;">4.14 (6.0)</td>
+<td style="text-align: right;">1.76 (3.0)</td>
+<td style="text-align: right;">4.10 (6.0)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Highest frequency any mode can reach, Hz</td>
+<td style="text-align: right;">3981</td>
+<td style="text-align: right;">3985</td>
+<td style="text-align: right;">3981</td>
+<td style="text-align: right;">3985</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>Three things follow from the table before any law is run.</p>
+<p><strong>The system can still reach what it could.</strong> The declared deviation is computed on the small-signal structure, as at stage 1. The twelve-control system is 6.8 dB from its target before the structure moves at all; the six-control system can reach its target exactly.</p>
+<p><strong>On the shakers the article is driven harder than in service.</strong> In service the realistic article’s median mode falls 1.0 percent; under the reference drive on the shakers its softening modes fall 1.5 percent at the median, with more damping. A law that reproduced the service state exactly would drive the chassis’s modes less hard than the drive that best matches the controls does.</p>
+<p><strong>The system decides how far the member moves.</strong> In service the member’s mode rises 0.57 percent at the realistic size and 1.73 percent at the strong size. Under the reference drive the twelve-control system raises it 0.58 and 2.90 percent; the six-control system, with as many shakers as control gauges, which matches its six controls exactly, raises it 3.23 and 7.01 percent, several times its state in service. The exact fit at the controls overdrives the member the way it overstressed the article at stage 1.</p>
+<p>Across the 20 study structures staged for this version the state differs from structure to structure. In service the strong member’s mode changes by -0.011 to +7.44 percent (median +1.00), and the realistic member’s by -0.001 to +3.23 percent (median +0.35). Every structure’s member is set to the same linear motion in service, so the spread comes from the repeated calculation of the state in service and from how the member’s motion is shared between modes; which of the two dominates on which structure has not been worked out. The median control level of the stage 1 structure on the twelve-control system runs from 7.1 to 65.6 g RMS (median 15.8). Under the reference drive the member’s mode would fall, not rise, in 11 of the 284 stage 2 folders: those systems drive the member so little that the softening of the chassis around it outweighs its own hardening.</p>
+<h3 id="stage-2-a-closed-loop-run">7.4 Stage 2: A Closed-Loop Run</h3>
+<p>This subsection shows one run of one control law on one stage 2 problem, so that a reader can see what a stage 2 scorecard holds. It compares nothing: one law, at its defaults, on one problem and one structure. The comparison of laws on this set is the subject of a companion article (Cross, 2026b).</p>
+<p>The law is the closed-loop pseudo-inverse law (<code>pinv_closed</code>), the one Hertzforge’s MIMO Random module uses when none is named (Cross, 2026a, Section 2.2). Every setting is at its default (no parameter was given to it), and the frequency response was measured once before the run and kept. The problem is <code>frame-12x6-strong/line</code> on structure 0: six shakers, twelve control gauges, the strong size. The run was chosen by a rule fixed in advance: the module’s default law, structure 0, this system, this size. It comes from the study of the MIMO Random laws on this set (Cross, 2026b), made with the law and the simulator of the software’s main branch at commit <code>b587d5a1</code>. Its scorecard, and every other scorecard this article uses, is in the results record (Cross, 2026e).</p>
+<p>The run was made with the controller’s checks widened (Section 3.4). Those checks are protective defaults, conservative on purpose: they stop a test early rather than let a growing error reach the shaker, the amplifier or the article, and whether to widen them in a laboratory test is the test engineer’s decision for that test. The study widened them because a simulator has no hardware to protect, so that every run would complete its record. With the checks at their defaults, the same case with the same noise stopped at loop 7, its second loop at full level: one control gauge’s error had stayed above 3 dB without improving for 5 judged loops, and stood at 4.1 dB. That is a fact about the default, not about the law. Across the study’s runs at default settings on its first 5 structures, 901 of 990 stopped at the checks’ defaults (840 on the growing-error check, 61 on the drive-change check), most at the seventh loop (719) and a few as late as loop 34, and all 901 completed when the same case was run with the checks widened. On the audit’s held-back structures (Section 8), 811 of 870 stopped (792 and 19), as late as loop 35, and 810 completed once widened; the other one reached the drive-voltage abort.</p>
+<p>The run measured the frequency response, climbed the level steps to full level, and ran 35 loops of 64 frames, 30 of them at full level. The last 15 loops (989 frames) are the record, and the record is what is scored. It is one run with one draw of the measurement noise. Another draw would move every number below by an amount that one run does not measure. The study’s scorecards, this one among them, were checked by the independent audit described in Section 8: it rescored 32 runs with code of its own and agreed with the scorer to within 1.9 × 10⁻¹³ dB, and every scorecard of the audit’s own two batches (1761 and 950) was scored again from its kept files with identical results. The run is shown as an illustration; nothing is claimed from it.</p>
+<p>The scorecard (scorer 0.2.1-draft) prints the state in service beside the state as tested, both for the member’s mode and in summary for the article’s softening modes. <a href="#tbl-run" class="quarto-xref">Table&nbsp;8</a> gives that block with the stated change under the reference drive of Section 7.3 beside it, and <a href="#fig-run" class="quarto-xref">Figure&nbsp;6</a> shows every fitted mode.</p>
+<div id="tbl-run" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[31,23,23,23]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-run-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8: The state as tested in the closed-loop example, <code>pinv_closed</code> at its defaults on <code>frame-12x6-strong/line</code>, structure 0, beside the state in service and the stated change under the reference drive. As tested, the modes are those the scorer fitted; in service, the article’s modes are those with at least half their strain energy in the article, from 20 to 2000 Hz. Data: <code>data/closed_loop_summary.csv</code>, from <code>data/closed_loop_scorecard_s0_6x12_strong_pinv_closed.json</code>.
+</figcaption>
+<div aria-describedby="tbl-run-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 4">
+<table class="caption-top">
+<colgroup>
+<col style="width: 31%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">As tested</th>
+<th style="text-align: right;">In service (unit B)</th>
+<th style="text-align: right;">Reference drive</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Member’s mode, change</td>
+<td style="text-align: right;">+2.06&nbsp;%</td>
+<td style="text-align: right;">+1.73&nbsp;%</td>
+<td style="text-align: right;">+2.90&nbsp;%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Member’s mode, damping factor</td>
+<td style="text-align: right;">1.97</td>
+<td style="text-align: right;">1.59</td>
+<td style="text-align: right;">2.11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Softening modes, change, median</td>
+<td style="text-align: right;">-5.6&nbsp;%</td>
+<td style="text-align: right;">-3.0&nbsp;%</td>
+<td style="text-align: right;">-5.6&nbsp;%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Softening modes, damping factor, median</td>
+<td style="text-align: right;">4.10</td>
+<td style="text-align: right;">3.03</td>
+<td style="text-align: right;">4.14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Modes counted</td>
+<td style="text-align: right;">74 softening and the member</td>
+<td style="text-align: right;">76 article modes and the member</td>
+<td style="text-align: right;">the same modes as tested</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<div id="fig-run" class="quarto-float quarto-figure quarto-figure-center" data="data/fig_closed_loop_modes.csv data/closed_loop_summary.csv" alt="Two scatter plots side by side against the small-signal frequency of each mode, 70 Hz to 2 kHz on a log axis. Left panel, frequency change in percent: about 74 article modes fall by 0 to 9 percent; for most of them a filled blue circle (as tested) sits on or very near an open orange triangle (reference drive), with some spread above about 400 Hz; a dashed blue line at about -3 percent marks the median in service. At about 111 Hz the member's mode is above zero: a green star at about +2.1 percent, an open orange diamond at about +2.9 percent and an open black square at about +1.7 percent. Right panel, damping over its small-signal value, from 1 to 6: the article modes again pair circles with triangles, mostly between 2.5 and 6, with a dashed line at about 3 for the median in service; the member's star is at about 2.0, its diamond at about 2.1 and its square at about 1.6.">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-run-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="hf-figure hf-figure-given" data-figure="fig_closed_loop">
+<img class="hf-static" src="figures/fig_closed_loop.png" alt="Two scatter plots side by side against the small-signal frequency of each mode, 70 Hz to 2 kHz on a log axis. Left panel, frequency change in percent: about 74 article modes fall by 0 to 9 percent; for most of them a filled blue circle (as tested) sits on or very near an open orange triangle (reference drive), with some spread above about 400 Hz; a dashed blue line at about -3 percent marks the median in service. At about 111 Hz the member's mode is above zero: a green star at about +2.1 percent, an open orange diamond at about +2.9 percent and an open black square at about +1.7 percent. Right panel, damping over its small-signal value, from 1 to 6: the article modes again pair circles with triangles, mostly between 2.5 and 6, with a dashed line at about 3 for the median in service; the member's star is at about 2.0, its diamond at about 2.1 and its square at about 1.6.">
+<p class="hf-figure-links">This figure: <a href="data/fig_closed_loop_modes.csv" download="fig_closed_loop_modes.csv">fig_closed_loop_modes.csv</a> <a href="data/closed_loop_summary.csv" download="closed_loop_summary.csv">closed_loop_summary.csv</a> <a href="code/fig_closed_loop.py" download="fig_closed_loop.py">Code</a> <a href="figures/fig_closed_loop.png" download="fig_closed_loop.png">Picture (PNG)</a></p>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-run-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Each mode the scorer fitted in the closed-loop example, <code>pinv_closed</code> at its defaults on <code>frame-12x6-strong/line</code>, structure 0, against its small-signal frequency. (a) Frequency change. (b) Damping over its small-signal value. Filled circles are the article’s modes as tested and open triangles the same modes under the reference drive; the dashed line is the median of the article’s modes in service. The member’s mode is the star as tested, the open diamond under the reference drive and the open square in service.
+</figcaption>
+</figure>
+</div>
+<p>As tested, the member’s mode rose 2.06 percent, against 1.73 percent in service and 2.90 percent under the reference drive. The article’s softening modes fell 5.6 percent at the median, against 3.0 percent in service and 5.6 percent under the reference drive. Of the 75 fitted modes, 98.7 percent changed in the direction the problem states. The member’s change as tested is the scorer’s fit, which on this system has been found to read above the rule it fits (Section 11).</p>
+<p><a href="#tbl-runcard" class="quarto-xref">Table&nbsp;9</a> gives the rest of the scorecard.</p>
+<div id="tbl-runcard" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[9,55,36]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-runcard-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9: The report card and stress of the closed-loop example. Positive stress means over-test. Data: <code>data/closed_loop_summary.csv</code>.
+</figcaption>
+<div aria-describedby="tbl-runcard-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 3">
+<table class="caption-top">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 55%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Line</th>
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: right;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Level: mean error over controls, held-out gauges and bands</td>
+<td style="text-align: right;">+0.49&nbsp;dB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Pattern, held-out gauges: summed spectra (grade); per gauge</td>
+<td style="text-align: right;">2.33&nbsp;dB (A); 7.24&nbsp;dB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Pattern, controls: summed spectra (grade); per gauge</td>
+<td style="text-align: right;">2.26&nbsp;dB (A); 6.98&nbsp;dB</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Over-test: worst band; share of bands more than 6&nbsp;dB over</td>
+<td style="text-align: right;">+31.0&nbsp;dB; 20&nbsp;%</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Under-test: share of held-out bands more than 3&nbsp;dB under</td>
+<td style="text-align: right;">27&nbsp;%</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Declared deviation; law error</td>
+<td style="text-align: right;">6.59&nbsp;dB; 3.36&nbsp;dB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">Shakers and control gauges; condition, median; error left at the controls; exact-fit flag</td>
+<td style="text-align: right;">6 and 12; 15.9; 6.98&nbsp;dB; no</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stress</td>
+<td style="text-align: left;">RMS over the elements; mean; share within 3&nbsp;dB; worst element</td>
+<td style="text-align: right;">4.42&nbsp;dB; +2.34&nbsp;dB; 71&nbsp;%; +13.5&nbsp;dB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Stress, structure unmoved</td>
+<td style="text-align: left;">RMS; mean; share within 3&nbsp;dB, with the played drives taken through the small-signal structure</td>
+<td style="text-align: right;">5.45&nbsp;dB; +4.06&nbsp;dB; 32&nbsp;%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>The last row is the figure Section 6 describes: the stress the same drives would have produced had the structure not changed with level. Here it is 5.45 dB RMS with 32 percent of elements within 3 dB, against 4.42 dB and 71 percent as tested.</p>
+<p>The result is cited as Section 9.2 gives (the seed is the structure’s number):</p>
+<blockquote>
+<p>Hertzforge Open Benchmark Set, MIMO Random suite, version 0.2, problem frame-12x6-strong/line, seed 0.</p>
+</blockquote>
+<p>The scorecard is in the results record (Cross, 2026e) and in the article’s <code>data/</code>. The program that measured the frequency response, climbed the levels and recorded the run, and the program that plays a run back, are the examples <code>x4_runner</code> and <code>obs_play</code> of the crate <code>sds-control</code> in the Hertzforge repository (github.com/Hertzforge/Hertzforge). The study’s runs were made on commit <code>646c4ca4</code>, which is the main branch at <code>b587d5a1</code> with these two programs added. The same programs are on the main branch at commit <code>268c3bfd</code>, where six cases were run again and gave scorecards equal in every number.</p>
+<h2 id="what-softening-and-hardening-each-do">8. What Softening and Hardening Each Do</h2>
+<p>The study of the MIMO Random laws on this set ran, beside the full stage 2 problems, the diagnostic problems that carry one effect only: the softening joints alone, or the hardening member alone. It ran them on 10 structures (structures 0 to 9), on two systems (six shakers with twelve control gauges, and six shakers with six, as many shakers as control gauges), at both sizes, with 6 laws that Hertzforge ships, each at its default settings and each with the frequency response measured once before the run and kept: 480 runs with one effect, with the runs on the linear structure and on the full stage 2 structure of the same cases beside them. One run was made for each case, with the controller’s checks widened (Section 7.4).</p>
+<p>This section reads those runs pooled over the 6 laws. What it reports is a property of the problems, seen through six published laws: how much each effect changes the structure, and how much that moves a test’s result. It names no law and gives no result law by law. The six laws are described in the primer of this journal (Cross, 2026a); which law did what on this set is the subject of the companion article (Cross, 2026b).</p>
+<p>The findings were written down from those 10 structures first, and then checked by an independent audit on 10 more structures held back from everyone until then (structures 20 to 23, 26 to 28, 50, 51 and 52). The held-back structures were generated, staged, checked and run with the set’s own code, and their runs were made only after the findings had been written down. A separate agent ran the audit and checked the results with code of its own. The audit’s record and its scorecards are part of the results record (Cross, 2026e). It ran the same single-effect cases on the held-back structures, 480 runs. Structure 24 was refused by the simulator at the strong size (Section 3.6) and replaced by structure 52; its runs count in no result here. Below, each finding gives the study’s number and the held-back structures’ beside it.</p>
+<h3 id="what-each-effect-does-to-the-structure">8.1 What Each Effect Does to the Structure</h3>
+<p><a href="#tbl-effects-structure" class="quarto-xref">Table&nbsp;10</a> gives, for each size and system, how far the modes moved during the test against how far they move in service, as the scorecard reads them (the state as tested, Section 6).</p>
+<div id="tbl-effects-structure" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[28,18,18,18,18]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-effects-structure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;10: What each effect did to the structure in the runs with one effect, 10 structures, 6 laws. “6 x 12” is six shakers and twelve control gauges; “6 x 6” is six and six. The state in service is the same for both systems. As tested, a structure’s member is the median over the laws. Data: <code>data/effects_runs.csv</code>, <code>data/effects_summary.csv</code>.
+</figcaption>
+<div aria-describedby="tbl-effects-structure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 5">
+<table class="caption-top">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">6 x 12, realistic</th>
+<th style="text-align: right;">6 x 6, realistic</th>
+<th style="text-align: right;">6 x 12, strong</th>
+<th style="text-align: right;">6 x 6, strong</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Softening only.</strong> Modes fitted, median per run</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">70</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Their change as tested, median (10th / 90th percentile), %</td>
+<td style="text-align: right;">-1.5 (-2.6 / -0.5)</td>
+<td style="text-align: right;">-1.6 (-2.7 / -0.6)</td>
+<td style="text-align: right;">-4.4 (-8.0 / -1.7)</td>
+<td style="text-align: right;">-4.8 (-8.1 / -1.7)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Their change in service, median, %</td>
+<td style="text-align: right;">-1.0</td>
+<td style="text-align: right;">-1.0</td>
+<td style="text-align: right;">-3.0</td>
+<td style="text-align: right;">-3.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Hardening only.</strong> Member’s mode in service, median (smallest to largest), %</td>
+<td style="text-align: right;">+0.33 (+0.01 to +3.23)</td>
+<td style="text-align: right;">+0.33 (+0.01 to +3.23)</td>
+<td style="text-align: right;">+1.14 (+0.05 to +7.45)</td>
+<td style="text-align: right;">+1.14 (+0.05 to +7.45)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Member’s mode as tested, median (smallest to largest), %</td>
+<td style="text-align: right;">+1.75 (+0.50 to +3.46)</td>
+<td style="text-align: right;">+2.43 (+0.80 to +3.59)</td>
+<td style="text-align: right;">+4.92 (+1.50 to +7.20)</td>
+<td style="text-align: right;">+6.60 (+3.22 to +8.08)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Every other mode as tested, 90th percentile of the size of change, largest run, %</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.02</td>
+<td style="text-align: right;">0.11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Both.</strong> Member’s mode as tested, median, %</td>
+<td style="text-align: right;">+0.79</td>
+<td style="text-align: right;">+2.02</td>
+<td style="text-align: right;">+1.59</td>
+<td style="text-align: right;">+4.42</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p><strong>Softening moves many modes a little; hardening moves one mode more.</strong> With the joints softening, about 70 modes in the band fell during the test, by a median of 1.5 to 4.8 percent, further than in service (1.5 to 5.1 percent on the held-back structures). With the member alone hardening, its one mode rose and every other mode moved by about a tenth of a percent or less.</p>
+<p><strong>The member hardened on the shakers more than in service.</strong> In service the member’s mode rises by a median of 0.33 percent at the realistic size and 1.14 percent at the strong size. As tested, on its own, it rose by medians of 1.75 to 2.43 percent and 4.92 to 6.60 percent. On the held-back structures it rose further: by medians of 2.10 to 3.40 percent and 5.62 to 7.63 percent, from a service state that changes less (largest +2.04 percent at the strong size, against +7.45 on the study’s structures). The scorer’s fit reads the member’s rise about 1.2 times high (Section 11), so the rise the laws met was about at or above the member’s design size of 1 and 4 percent. With the softening joints active too, the member as tested rose less.</p>
+<h3 id="what-each-effect-does-to-the-result">8.2 What Each Effect Does to the Result</h3>
+<p>Three lines of the scorecard are read here: the control gauges and the held-out gauges, each as the RMS over gauges and one-third-octave bands of the decibel error against the target (line 2 of the report card, per gauge), and the stress, as the RMS over the article’s elements of the decibel error of each element’s RMS stress against its stress in service. For each run the change is the line’s value on the stage 2 structure less its value for the same law, on the same structure and system, on the linear structure. <a href="#tbl-effects-lines" class="quarto-xref">Table&nbsp;11</a> gives the changes and <a href="#fig-effects" class="quarto-xref">Figure&nbsp;7</a> shows their size.</p>
+<div id="tbl-effects-lines" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[19,17,17,17,17,13]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-effects-lines-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11: The change in three lines of the scorecard from the linear structure to the stage 2 structure, the same law on the same structure and system, pooled over 6 laws and 10 structures. Each cell gives the median size of the change regardless of sign, and in parentheses the median of the signed change (positive means the error grew), in dB, at the control gauges, at the held-out gauges and for the stress. “Over 1 dB” counts the pairs of law and structure whose stress error changed by more than 1 dB either way. Quartiles are in <code>data/effects_by_line.csv</code>.
+</figcaption>
+<div aria-describedby="tbl-effects-lines-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 6">
+<table class="caption-top">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Size, system</th>
+<th style="text-align: left;">Effect</th>
+<th style="text-align: right;">Control</th>
+<th style="text-align: right;">Held-out</th>
+<th style="text-align: right;">Stress</th>
+<th style="text-align: right;">Over 1&nbsp;dB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Realistic, 6 x 12</td>
+<td style="text-align: left;">Softening only</td>
+<td style="text-align: right;">0.11 (+0.02)</td>
+<td style="text-align: right;">0.12 (-0.01)</td>
+<td style="text-align: right;">0.27 (-0.10)</td>
+<td style="text-align: right;">1 of 60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Hardening only</td>
+<td style="text-align: right;">0.04 (+0.01)</td>
+<td style="text-align: right;">0.03 (+0.01)</td>
+<td style="text-align: right;">0.14 (-0.00)</td>
+<td style="text-align: right;">8 of 60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Both</td>
+<td style="text-align: right;">0.10 (+0.01)</td>
+<td style="text-align: right;">0.10 (+0.02)</td>
+<td style="text-align: right;">0.41 (-0.11)</td>
+<td style="text-align: right;">10 of 60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Realistic, 6 x 6</td>
+<td style="text-align: left;">Softening only</td>
+<td style="text-align: right;">0.42 (+0.31)</td>
+<td style="text-align: right;">0.36 (-0.15)</td>
+<td style="text-align: right;">0.64 (+0.07)</td>
+<td style="text-align: right;">23 of 60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Hardening only</td>
+<td style="text-align: right;">0.10 (+0.01)</td>
+<td style="text-align: right;">0.12 (+0.01)</td>
+<td style="text-align: right;">0.34 (-0.10)</td>
+<td style="text-align: right;">16 of 60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Both</td>
+<td style="text-align: right;">0.42 (+0.36)</td>
+<td style="text-align: right;">0.35 (-0.14)</td>
+<td style="text-align: right;">0.85 (-0.26)</td>
+<td style="text-align: right;">27 of 60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Strong, 6 x 12</td>
+<td style="text-align: left;">Softening only</td>
+<td style="text-align: right;">0.28 (+0.20)</td>
+<td style="text-align: right;">0.22 (+0.12)</td>
+<td style="text-align: right;">1.00 (+0.89)</td>
+<td style="text-align: right;">30 of 60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Hardening only</td>
+<td style="text-align: right;">0.08 (-0.06)</td>
+<td style="text-align: right;">0.08 (-0.03)</td>
+<td style="text-align: right;">0.36 (-0.04)</td>
+<td style="text-align: right;">16 of 60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Both</td>
+<td style="text-align: right;">0.25 (+0.13)</td>
+<td style="text-align: right;">0.24 (+0.12)</td>
+<td style="text-align: right;">1.16 (+0.97)</td>
+<td style="text-align: right;">33 of 60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Strong, 6 x 6</td>
+<td style="text-align: left;">Softening only</td>
+<td style="text-align: right;">1.00 (+0.83)</td>
+<td style="text-align: right;">0.55 (-0.14)</td>
+<td style="text-align: right;">1.94 (+1.12)</td>
+<td style="text-align: right;">46 of 60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Hardening only</td>
+<td style="text-align: right;">0.21 (+0.04)</td>
+<td style="text-align: right;">0.19 (-0.03)</td>
+<td style="text-align: right;">0.72 (-0.12)</td>
+<td style="text-align: right;">23 of 60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Both</td>
+<td style="text-align: right;">1.01 (+0.94)</td>
+<td style="text-align: right;">0.59 (-0.16)</td>
+<td style="text-align: right;">2.38 (+1.25)</td>
+<td style="text-align: right;">47 of 60</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<div id="tbl-effects-lines-heldback" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[19,17,17,17,17,13]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-effects-lines-heldback-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;12: The same as <a href="#tbl-effects-lines" class="quarto-xref">Table&nbsp;11</a> on the ten held-back structures of the independent audit (20 to 23, 26 to 28, 50, 51 and 52), pooled over 6 laws. Data: <code>data/effects_runs_audit.csv</code>, <code>data/effects_by_line.csv</code>.
+</figcaption>
+<div aria-describedby="tbl-effects-lines-heldback-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 6">
+<table class="caption-top">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Size, system</th>
+<th style="text-align: left;">Effect</th>
+<th style="text-align: right;">Control</th>
+<th style="text-align: right;">Held-out</th>
+<th style="text-align: right;">Stress</th>
+<th style="text-align: right;">Over 1&nbsp;dB</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Realistic, 6 x 12</td>
+<td style="text-align: left;">Softening only</td>
+<td style="text-align: right;">0.12 (-0.03)</td>
+<td style="text-align: right;">0.09 (-0.03)</td>
+<td style="text-align: right;">0.20 (+0.03)</td>
+<td style="text-align: right;">1 of 60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Hardening only</td>
+<td style="text-align: right;">0.03 (-0.01)</td>
+<td style="text-align: right;">0.03 (-0.01)</td>
+<td style="text-align: right;">0.15 (-0.04)</td>
+<td style="text-align: right;">2 of 60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Both</td>
+<td style="text-align: right;">0.11 (-0.01)</td>
+<td style="text-align: right;">0.10 (+0.00)</td>
+<td style="text-align: right;">0.19 (-0.00)</td>
+<td style="text-align: right;">4 of 60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Realistic, 6 x 6</td>
+<td style="text-align: left;">Softening only</td>
+<td style="text-align: right;">0.73 (+0.58)</td>
+<td style="text-align: right;">0.36 (-0.22)</td>
+<td style="text-align: right;">0.68 (-0.17)</td>
+<td style="text-align: right;">25 of 60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Hardening only</td>
+<td style="text-align: right;">0.16 (+0.04)</td>
+<td style="text-align: right;">0.12 (-0.01)</td>
+<td style="text-align: right;">0.24 (-0.03)</td>
+<td style="text-align: right;">8 of 60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Both</td>
+<td style="text-align: right;">0.69 (+0.38)</td>
+<td style="text-align: right;">0.33 (-0.19)</td>
+<td style="text-align: right;">0.73 (-0.11)</td>
+<td style="text-align: right;">25 of 60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Strong, 6 x 12</td>
+<td style="text-align: left;">Softening only</td>
+<td style="text-align: right;">0.18 (+0.07)</td>
+<td style="text-align: right;">0.16 (+0.03)</td>
+<td style="text-align: right;">0.93 (+0.82)</td>
+<td style="text-align: right;">27 of 60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Hardening only</td>
+<td style="text-align: right;">0.07 (+0.03)</td>
+<td style="text-align: right;">0.08 (-0.01)</td>
+<td style="text-align: right;">0.20 (-0.02)</td>
+<td style="text-align: right;">2 of 60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Both</td>
+<td style="text-align: right;">0.17 (+0.08)</td>
+<td style="text-align: right;">0.16 (+0.02)</td>
+<td style="text-align: right;">0.96 (+0.81)</td>
+<td style="text-align: right;">29 of 60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Strong, 6 x 6</td>
+<td style="text-align: left;">Softening only</td>
+<td style="text-align: right;">0.89 (+0.73)</td>
+<td style="text-align: right;">0.69 (-0.47)</td>
+<td style="text-align: right;">1.31 (+0.50)</td>
+<td style="text-align: right;">35 of 60</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Hardening only</td>
+<td style="text-align: right;">0.20 (+0.08)</td>
+<td style="text-align: right;">0.23 (+0.10)</td>
+<td style="text-align: right;">0.63 (+0.14)</td>
+<td style="text-align: right;">27 of 60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Both</td>
+<td style="text-align: right;">0.88 (+0.84)</td>
+<td style="text-align: right;">0.68 (-0.52)</td>
+<td style="text-align: right;">1.18 (+0.32)</td>
+<td style="text-align: right;">32 of 60</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<div id="fig-effects" class="quarto-float quarto-figure quarto-figure-center" data="data/effects_by_line.csv" alt="Four panels in a two by two grid, sharing a vertical axis of change in decibels from 0 to about 4.5. In each panel three groups sit along the horizontal axis: control gauges, held-out gauges and stress. Each group has three markers with error bars: blue open circles joined by a solid line for softening joints only, orange open triangles joined by a dashed line for the hardening member only, and gray open squares joined by a dotted line for both; beside each open marker a filled marker of the same shape and color gives the held-back structures. In nearly every panel the stress group is highest. The orange triangles lie lowest throughout, below the blue circles. Panel (a), realistic size with twelve control gauges, has every value under about 0.5 dB. Panels (b) and (c) reach about 1 to 1.2 dB at stress. Panel (d), strong size with six control gauges, is highest: stress about 1.9 dB for softening, 0.7 for hardening and 2.4 for both, with the control gauges at about 1 dB for softening and both.">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-effects-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="hf-figure hf-figure-given" data-figure="fig_effects">
+<img class="hf-static" src="figures/fig_effects.png" alt="Four panels in a two by two grid, sharing a vertical axis of change in decibels from 0 to about 4.5. In each panel three groups sit along the horizontal axis: control gauges, held-out gauges and stress. Each group has three markers with error bars: blue open circles joined by a solid line for softening joints only, orange open triangles joined by a dashed line for the hardening member only, and gray open squares joined by a dotted line for both; beside each open marker a filled marker of the same shape and color gives the held-back structures. In nearly every panel the stress group is highest. The orange triangles lie lowest throughout, below the blue circles. Panel (a), realistic size with twelve control gauges, has every value under about 0.5 dB. Panels (b) and (c) reach about 1 to 1.2 dB at stress. Panel (d), strong size with six control gauges, is highest: stress about 1.9 dB for softening, 0.7 for hardening and 2.4 for both, with the control gauges at about 1 dB for softening and both.">
+<p class="hf-figure-links">This figure: <a href="data/effects_by_line.csv" download="effects_by_line.csv">Data (CSV)</a> <a href="code/fig_effects.py" download="fig_effects.py">Code</a> <a href="figures/fig_effects.png" download="fig_effects.png">Picture (PNG)</a></p>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-effects-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: How far each effect moved three lines of the scorecard against the same law on the linear structure, pooled over six laws. Open markers joined by lines are the study’s ten structures; filled markers beside them are the audit’s ten held-back structures. Each marker is the median size of the change regardless of sign; the bars run from the first to the third quartile. (a) and (b) realistic size; (c) and (d) strong size; (a) and (c) six shakers and twelve control gauges; (b) and (d) six shakers and six control gauges.
+</figcaption>
+</figure>
+</div>
+<p><a href="#tbl-effects-lines-heldback" class="quarto-xref">Table&nbsp;12</a> gives the same for the held-back structures. Five things follow.</p>
+<p><strong>Stress moves most.</strong> The median change of the stress line was larger than that of either gauge line in 12 of the 12 combinations of size, system and effect on the study’s structures, and in 11 of 12 on the held-back ones. The exception is softening alone at the realistic size on the square system of the held-back structures, where the control gauges moved a little more (0.73 against 0.68 dB). Which gauge line moved less depends on the system: on the square system softening moved the control gauges more than the held-out gauges (1.00 against 0.55 dB at the strong size; 0.89 against 0.69 on the held-back structures). In 23 of the 24 combinations over both sets, the gauges, the control gauges a laboratory watches among them, showed less of what the change of level did to the article than its stress did.</p>
+<p><strong>Softening raised the stress error at the strong size with twelve control gauges.</strong> With the joints alone, the stress error rose against the linear structure by a median of 0.89 dB on the study’s structures (in 44 of 60 runs) and 0.82 dB on the held-back ones (in 50 of 60).</p>
+<p><strong>One hardening member moves the result less than the softening joints.</strong> On the stress line, the median size of the change with the member alone was 0.36 to 0.54 times that with the joints alone on the study’s structures, and 0.22 to 0.75 times on the held-back ones: smaller in every combination of size and system on both. Its changes go both ways, so the signed medians stay near zero: at most 0.12 dB on the study’s structures and 0.14 dB on the held-back ones. Taken law by law, the member alone moved no law’s median stress error by more than 0.18 dB on the system with more control gauges than shakers, on either set of structures. On the square system at the strong size it moved single laws by up to 1.3 dB on the study’s structures and 1.1 dB on the held-back ones, in either direction, and the direction repeated between the two sets for 3 of the six laws. That is a property of these problems, not an order among laws: there, the member alone moves a single law’s stress error by up to about a decibel, either way.</p>
+<p><strong>The size of the effect grows with the size of change and with fewer control gauges.</strong> At the realistic size with twelve control gauges every median change is under half a decibel, on both sets of structures. At the strong size on the square system the softening joints moved the stress by a median of 1.9 dB, and by more than 1 dB in 46 of 60 runs; on the held-back structures the effect was smaller, 1.3 dB and 35 of 60.</p>
+<p><strong>Where the member changes most in service, every law’s stress error rose, on one structure.</strong> Structure 4 has the member whose mode changes most in service (+3.23 percent at the realistic size, +7.45 at the strong size). With the member alone, every one of the 6 laws’ stress error rose against the linear structure, on both systems and at both sizes: by 1.8 to 2.5 dB and 2.8 to 4.5 dB with twelve control gauges, and 0.1 to 3.7 dB and 0.6 to 5.5 dB with six. This rests on one structure. None of the held-back structures has a member that changes as much in service: the one that changes most, structure 27 (+2.04 percent at the strong size), did not move every law the same way. Whether a member that changes this much in service raises every law’s stress error is not settled by one structure.</p>
+<h3 id="whether-the-sizes-are-realistic">8.3 Whether the Sizes Are Realistic</h3>
+<p>The member’s sizes were chosen to sit inside what has been measured on real hardware (Section 4.3). A mass on a thin strip clamped at both ends rises 1 percent at a mid-span deflection of 0.27 strip thicknesses and 4 percent at 0.54, with peak stresses of 95 and 200 MPa, under the strip’s endurance limit. Hardening by the same stretching has been measured on hardware: about +4.7 percent on a beam clamped at both ends (Renson and others, 2016), on a thin beam clamped at the tip of a cantilever (Peeters, Kerschen and Golinval, 2011), and on thin flat plates, whose damping grew by more than 250 percent at amplitudes above 1.5 times their thickness (Amabili, Ferrari and Balasubramanian, 2017). The 1 and 4 percent of the two sizes are of the order of the one measured rise quoted here. A mass on a tube cantilever, the first idea, cannot rise by 0.03 percent before it yields (Section 4.3). No published measurement of hardening on a production test article was found, so how often a real article carries a member like this one is not known.</p>
+<h3 id="what-this-result-is-and-is-not">8.4 What This Result Is and Is Not</h3>
+<ul>
+<li><strong>One hardening member.</strong> Each structure has one member, with one mode that hardens. A structure with several hardening parts, or one whose hardening part carries more of the motion, may show a larger effect.</li>
+<li><strong>10 structures and two systems.</strong> The diagnostic problems were run on six shakers with twelve control gauges and with six. The other systems of the set were run with both effects together, not one at a time.</li>
+<li><strong>One run per case.</strong> Each case was run once, with one draw of the measurement noise. How much a second draw would move each change is not measured.</li>
+<li><strong>Simulation only.</strong> No hardware was involved.</li>
+<li><strong>The member’s rise as the scorer fits it reads about 1.2 times high</strong> (Section 11).</li>
+<li><strong>The runs are those with the controller’s checks widened</strong> (Section 7.4). At the checks’ defaults most runs stopped before their record, so the comparison could not be made there.</li>
+<li><strong>Checked on ten held-back structures.</strong> The findings were checked by the independent audit described at the start of this section. Where the size differed between the two sets, the text says which way; the one finding that did not repeat, the direction in which hardening moved single laws on the square system at the strong size, is stated as such, and the finding on the structure whose member changes most in service rests on that one structure.</li>
+</ul>
+<h2 id="suites-versions-and-citation">9. Suites, Versions and Citation</h2>
+<h3 id="suites">9.1 Suites</h3>
+<p>The problems for one kind of test are a suite: MIMO Random, MIMO Shock, and others as they are built. A suite is published as a data set of its own, with its own version number and its own DOI. It holds the problem folders, the reference model, the limits and the scorer. The baselines, the shipped laws’ scorecards on its problems, are published beside it.</p>
+<p>Every suite has a stage 1 and a stage 2 on the same structures, so that a law’s result on the structure that changes with level can be set against its result on the same structure when it does not. Within a suite, problems are grouped by what makes them hard: more control gauges than shakers, as many as the shakers, a system that is poorly conditioned, and at stage 2 the realistic and strong sizes and the diagnostic problems with one effect only.</p>
+<p>A suite version is frozen. A change to a structure, a target, a limit or a fresh-draw range is a new version. A scorecard records the suite version, the scorer version and the hashes, so a result can always be traced to the files it was made from.</p>
+<h3 id="identifiers">9.2 Identifiers</h3>
+<p>A structure identifier gives the kind of structure, its size, control gauges first, and at stage 2 its size of change: <code>frame-12x6</code> is the frame article with twelve control gauges and six shakers at stage 1, and <code>frame-12x6-realistic</code> the same at stage 2, realistic size. A problem identifier adds the target: <code>frame-12x6-realistic/line</code>. The seed completes it.</p>
+<p>A result is cited by suite, version, problem and seed:</p>
+<blockquote>
+<p>Hertzforge Open Benchmark Set, MIMO Random suite, version 0.2, problem frame-12x6-realistic/line, seed 0.</p>
+</blockquote>
+<p>The suite itself is cited by its DOI (Section 9.4).</p>
+<h3 id="what-a-suite-shows-before-it-is-released">9.3 What a Suite Shows Before It Is Released</h3>
+<p>A suite is released with the evidence that its files are what they claim to be:</p>
+<ul>
+<li>every file hashed and listed;</li>
+<li>the reference model checked against the model that generated the structure;</li>
+<li>the reference model checked against the simulator of the software that produced the baselines, at stage 2 sample by sample in time;</li>
+<li>the rule checked by reading it back from the simulator’s own records;</li>
+<li>the step’s error against the continuous model, for every stage 2 problem;</li>
+<li>the scorer checked against an independent calculation of every number it reports;</li>
+<li>for every problem, what the system can reach against its target, computed with no law involved;</li>
+<li>the evidence level, which for every problem so far is simulation.</li>
+</ul>
+<p>For the 388 problem folders of version 0.2, the reference model agrees with the generating model to 2.3e-15 of the largest value on every gauge, shaker and line, and the stress response to 3.1e-15. On stage 2 structures the reference model’s time stepper and the software’s simulator agree to a few parts in 10¹² of the largest sample; the rule read back from the simulator’s own free decays matches its formula to 1 part in 10⁴ of the frequency, and its damping is flat past the cap to about 1 part in 10⁹. The step’s error against the continuous model has a median under 0.008 dB and a 95th percentile of 0.05 to 0.38 dB in every problem, larger only near modes close to half the sample rate. No mode can reach a frequency above 4006 Hz, under the 4,096 Hz limit of the sample rate.</p>
+<h3 id="the-mimo-random-suite-version-0.2">9.4 The MIMO Random Suite, Version 0.2</h3>
+<p>The MIMO Random suite is published as version 0.2 of the Hertzforge Open Benchmark Set (Cross, 2026d), DOI 10.5281/zenodo.24310742; the DOI 10.5281/zenodo.24310741 always resolves to the latest version. It holds 388 problem folders on five systems, the reference model, the scorer, the problem maker, the generator that made the structures, their tests, a document that describes every file and field of a problem folder and of a scorecard, and the release notes. The code and the documents are also kept as a repository, https://github.com/Hertzforge/benchmarks, at tag <code>v0.2</code>. The code is under the MIT license; the problems and the documents are under the Creative Commons Attribution 4.0 license (CC BY 4.0).</p>
+<p>The problems’ format is named <code>0.2-draft</code> in every problem file. The format may change in a later version of the set; each published version of the set is fixed, and any change to its files is a new version.</p>
+<p>The scorecards of the control law study on this version, and of its independent audit on ten structures held back from it, are a separate record (Cross, 2026e), DOI 10.5281/zenodo.24310746, with the held-back problems and the audit’s own record. They are the baselines of version 0.2.</p>
+<h2 id="reporting-a-result">10. Reporting a Result</h2>
+<p>A result on the set is a run result (Section 5) and its scorecard, with:</p>
+<ul>
+<li>the suite, its version, the problem, its stage and the seed;</li>
+<li>the control law, its parameters, and whether it kept the frequency response measured before the run or measured it again during the run;</li>
+<li>the authors, and a link to the article or the code;</li>
+<li>whether the run was on a fresh draw.</li>
+</ul>
+<p>Reported results are listed beside the baselines. The list sorts and filters. It does not rank laws by one number, because the scorecard has no single number that would mean it. A law reported on stage 1 alone is listed as such.</p>
+<p>A law tuned for the set is a legitimate entry, reported with its parameters. A result on the fresh draws shows whether the tuning carries to a structure the author had not seen.</p>
+<p>An article that develops a control law is asked to report it on the set at both stages and to name the suite version, the problems and the seeds. This is a recommendation to authors. Using Hertzforge is not required.</p>
+<h2 id="limits">11. Limits</h2>
+<p><strong>What the set covers.</strong></p>
+<ul>
+<li><strong>Simulation.</strong> Every problem is a model. A scorecard says how a law behaves on that model. There are no shaker, amplifier or cable dynamics beyond what the problem states.</li>
+<li><strong>Smooth changes only.</strong> Softening joints and one hardening member. Impacts are not in the set: no tapping, no parts that separate, and no rattles of loose or ill-spaced parts. A rattle in the shaker or the fixture is a defect of the setup, to be found and fixed, so every problem assumes a sound setup.</li>
+<li><strong>One hardening member.</strong> Each stage 2 structure has one member, with one mode that hardens. Any conclusion about hardening rests on that mode, on each structure.</li>
+<li><strong>One level per structure.</strong> Each structure is stated at one absolute level, set by the member’s motion in service. A law’s result at another level is not covered. The median control level of the twelve-control system runs from 7.1 to 65.6 g RMS over the study structures. Two structures are above 30 g RMS: structure 5 at 42.1 and structure 33 at 65.6. On those two structures no level at or under 30 g RMS passed the set’s checks, and the lowest that did was taken.</li>
+<li><strong>One stated change does not settle.</strong> The change a problem states under the reference drive is found by repeating the rule until it stops changing. On one problem (structure 15, twelve control gauges and twelve shakers, realistic size) it still moves by about 1 part in 10⁵ from one step to the next, back and forth; that problem’s stated changes are from the last step.</li>
+</ul>
+<p><strong>How the rule stands for a real structure.</strong></p>
+<ul>
+<li><strong>Against a true cubic spring under random drive</strong> (one mode, 1.5 percent damping), the rule is a fair stand-in to about a 4 percent rise: its spectral peak rose 1.17 and 3.5 percent where the spring’s rose 0.98 and 3.3; the peak widened 1.12 and 1.53 times against 1.13 and 1.63; and the coherence between drive and response at the peak fell to 0.94 and 0.72 against 0.95 and 0.65. At a 10 percent rise the rule widens the peak less (2.3 times against 3.25) and moves the mean frequency less (7.7 against 9.0 percent). The rule makes no harmonics, where a cubic spring puts energy at three times its frequency.</li>
+<li><strong>A mode follows its own amplitude.</strong> A real member stiffens with its total motion, which several modes share. The rule gives each mode the stiffening of its own motion only, which is exact when one mode carries the member’s motion and gives each mode part of the effect when several do. The same holds for the joints.</li>
+<li><strong>The envelope lags for heavily damped modes.</strong> The amplitude the rule follows can fall no faster than a damping of 1 over 2π times five cycles, 3.2 percent. A mode damped more than that, as many high-frequency modes are at full level on the shakers, has an amplitude that lags its true decay. This matters for anything a law sees in a transient (a level step, an abort), not for the steady state. It also shows in the scorecard: on the strong size, on the structures checked, heavily damped softening modes read up to 1.8 percentage points short of their stated change.</li>
+<li><strong>The step’s error.</strong> The simulator’s step is matched to the continuous model within the band. Checked against the continuous model at the gauges, its error had a median of 0.006 dB and a 95th percentile of about 0.13 dB, with isolated points up to 5.9 dB on structures with modes above 2 kHz, near half the sample rate. Each problem states its own figures (Section 9.3).</li>
+<li><strong>The scorer’s fit of the member.</strong> The scorer finds each mode’s change by fitting the spectrum as tested. On the six-shaker, twelve-control systems checked, its fitted rise for the member reads 1.17 to 1.22 times the rule’s value while the rise is below its cap. Past the cap the member’s peak is skewed, and its fitted damping is not to be read as a damping.</li>
+<li><strong>Stated changes are averages.</strong> Every stated change is the change a spectrum would show under random drive, from a power-weighted average of the rule. A single moment of a run can sit well above or below it.</li>
+</ul>
+<p><strong>How the sizes were chosen.</strong></p>
+<ul>
+<li><strong>The hardening rests on one measured clamp.</strong> The knock-down of 0.514 on ideal clamps comes from one published clamped thin beam (Peeters, Kerschen and Golinval, 2011). Without it the same motion gives about twice the rise.</li>
+<li><strong>The sizes are the set’s choices.</strong> The realistic and strong softening and the member’s damping gain are judgment, chosen to sit inside published measurements of hardening and of damping that grows with amplitude, not taken from a measurement of this article.</li>
+<li><strong>Structures are filtered.</strong> A structure on which the member cannot be placed clear of the chassis modes, or which the reference simulator refuses, is replaced (Section 3.6). The set therefore holds only articles on which hardening can be shown, which is a selection, stated with each version.</li>
+<li><strong>The tier sizes are design values.</strong> The 1 and 4 percent rises of the realistic and strong sizes are the member’s change at its design motion. In service the member’s mode changes by about 0 to +3.2 percent at the realistic size and about 0 to +7.4 percent at the strong size across the study structures (Section 7.3), for three reasons: a mode follows its own amplitude where a real member follows its total motion; on some structures the chassis’s modes, not the member’s own, move the member; and the state in service is itself found with the rule. On some systems the reference drive moves the member less than service does. Each problem states its realized state, and a structure’s hardening must be read from it, not assumed from the size’s name. Setting the level from the member mode’s own motion is the first change planned for a later version.</li>
+<li><strong>The member past its strength.</strong> On structure 1’s systems with as many shakers as control gauges, at full level on the shakers, the member’s strips reach about 1,500 MPa at three times their RMS stress, past the strip’s yield of 965 MPa. The simulation stays valid because the rise is capped, but a real strip would not survive it.</li>
+</ul>
+<p><strong>What the program does not yet have.</strong></p>
+<ul>
+<li><strong>The example is one structure.</strong> At stage 1 it is a reference run, not a fair entry. At stage 2 it is what the problems state before a law runs, and one run of one law at its defaults with one draw of the measurement noise, made with the controller’s checks widened. None of it compares laws.</li>
+<li><strong>The controller’s checks were widened.</strong> The closed-loop run of Section 7.4 and every run behind Section 8 were made with the checks widened so the run completes. At their defaults, which are protective on purpose, most of the study’s runs stopped before their record. What the laws do on a laboratory test with the checks at their defaults is not shown here, and widening them there is the test engineer’s decision.</li>
+<li><strong>The starting values are provisional.</strong> They are those of the first article and will change as that practice is revised. Run results keep what was sent and measured, so a result can be scored again under new values.</li>
+<li><strong>The reference measures have not been checked clause by clause against the standards.</strong> The 1.0 dB threshold of the exact-fit flag is this article’s choice.</li>
+<li><strong>The run program belongs to Hertzforge.</strong> The set holds the reference model, which can step a stage 2 structure in time, and the scorer. The program that measures the frequency response, climbs the level steps and runs a law closed loop under the limits is part of Hertzforge (Section 7.4). Outside Hertzforge, a fair run means building that loop to the limits file.</li>
+<li><strong>Nothing here has passed through real converters.</strong> Every problem is run inside one computer. A planned next step is a bench form of the set: the controller’s own input and output hardware wired to a separate low-cost box that plays the structure’s response in real time, so that a control law meets real conversion delay, noise and clocks before it meets a shaker. Results from it would be reported at the evidence level bench, and it will be described in its own article when it has run.</li>
+<li><strong>No result from hardware.</strong> Every scorecard in this article and in the results record (Cross, 2026e) is from simulation. No problem of the set has been run on a shaker.</li>
+<li><strong>A public benchmark can be fitted to.</strong> The fresh draws limit this and do not remove it.</li>
+</ul>
+<h2 class="unnumbered" id="how-this-was-made">How This Was Made</h2>
+<p>The problem format, the reference model, the scorer, the worked example, the figures and the drafting of this text were done with Claude Code, an AI coding assistant, running Anthropic’s Claude Opus models under the author’s direction. The author is responsible for every word, number and line of code.</p>
+<h2 class="unnumbered" id="acknowledgments">Acknowledgments</h2>
+<p>The use of gauges held out of the control to judge a multi-shaker test, and the observation that a smaller error at the controls does not mean a better test, are from Rohe, Nelson and Schultz of Sandia National Laboratories. The round robin cited in Section 1 is that of Skousen and Soine (Sandia National Laboratories and Kansas City National Security Campus). The clamped thin beam from which the member’s size is derived is that of Peeters, Kerschen and Golinval.</p>
+<h2 class="unnumbered" id="references">References</h2>
+<ul>
+<li>Amabili, Ferrari, Balasubramanian (2017). Nonlinear Identification of Damping in Large Amplitude Vibrations of Plates and Shells. 9th European Nonlinear Dynamics Conference (ENOC 2017), Budapest.</li>
+<li>Cross (2026a). Six Control Laws for Multi-Shaker Random Vibration: What Each Does and How It Is Built. Hertzforge Journal 1, 2026-007. https://doi.org/10.5281/zenodo.24291981</li>
+<li>Cross (2026b). Six Control Laws for Multi-Shaker Random Vibration: How Each Scores on the Open Benchmark Set. Hertzforge Journal 1, 2026-009, version 1. https://doi.org/10.5281/zenodo.24311107</li>
+<li>Cross (2026c). When the Control Gauges Read Right and the Stress Is Wrong: A Closed-Loop Check of the Proposed Practice for Multi-Shaker Tests. Hertzforge Journal 1, 2026-010, version 1. https://doi.org/10.5281/zenodo.24311109</li>
+<li>Cross (2026d). Hertzforge Open Benchmark Set: MIMO Random Suite, Version 0.2. Data set, Zenodo. https://doi.org/10.5281/zenodo.24310742</li>
+<li>Cross (2026e). Hertzforge Open Benchmark Set, MIMO Random Suite: Results of the Control Law Study and Its Independent Audit, Version 0.2. Data set, Zenodo. https://doi.org/10.5281/zenodo.24310746</li>
+<li>Cross, Zwink (2026). What Is a Good Multi-Shaker Test? A Proposed Practice for Judging MIMO Vibration and Shock Tests on Flexible Articles. Hertzforge Journal 1, 2026-001, version 2. https://doi.org/10.5281/zenodo.24252422</li>
+<li>MIL-STD-810H, Environmental Engineering Considerations and Laboratory Tests (2019). Method 527.2, Annexes C and E.</li>
+<li>Peeters, Kerschen, Golinval (2011). Modal Testing of Nonlinear Vibrating Structures Based on Nonlinear Normal Modes: Experimental Demonstration. Mechanical Systems and Signal Processing 25(4), 1227-1247. https://doi.org/10.1016/j.ymssp.2010.11.006</li>
+<li>Renson, Ehrhardt, Barton, Neild, Cooper (2016). Connecting Nonlinear Normal Modes to the Forced Response of a Geometric Nonlinear Structure With Closely Spaced Modes. Proceedings of ISMA 2016, International Conference on Noise and Vibration Engineering.</li>
+<li>Rohe, Nelson, Schultz (2019). Strategies for Shaker Placement for Impedance-Matched Multi-Axis Testing. IMAC 2019. SAND2018-11955C, OSTI 1592379. Sandia National Laboratories.</li>
+<li>Skousen, Soine (2018). Boundary Conditions in Environmental Testing Round Robin. 89th Shock and Vibration Symposium. SAND2018-12499C, OSTI 1592378. Sandia National Laboratories and Kansas City National Security Campus.</li>
+<li>Villanueva, Karabalin, Matheny, Chi, Sader, Roukes (2013). Nonlinearity in Nanomechanical Cantilevers. Physical Review B 87, 024304. https://doi.org/10.1103/PhysRevB.87.024304</li>
+</ul>
+<h2 class="unnumbered" id="implemented-in">Implemented In</h2>
+<p>The reference model, the scorer and the problems are version 0.2 of the Hertzforge Open Benchmark Set (Cross, 2026d; https://github.com/Hertzforge/benchmarks, tag <code>v0.2</code>). The control law of Section 7.4, the simulator and the controller’s checks are Hertzforge’s, at main commit <code>b587d5a1</code>; the run program and the player are on the main branch at commit <code>268c3bfd</code>.</p>
+<h2 class="unnumbered" id="version-history">Version History</h2>
+<p><strong>Version 1, 2026-11-17.</strong> DOI <a href="https://doi.org/10.5281/zenodo.24311105">10.5281/zenodo.24311105</a>. First published.</p>
+<div id="hf-history-later"></div>
+
+<section class="hf-end" id="hf-reviews"><h2>Reviews</h2><p>Review is public and signed, and stays open after publication.</p><div id="hf-reviews-static"><p>No invited review had been posted when this version was published.</p><p>Reviews posted since are listed at <a href="https://hertzforge.com/journal/2026-008/">https://hertzforge.com/journal/2026-008/</a>.</p></div><div id="hf-reviews-live"></div></section>
+<p class="hf-license" id="hf-license">Copyright 2026 Kevin Cross. Text, figures and data <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>; code <a href="https://opensource.org/license/mit" rel="license noopener">MIT</a>.<br>Methods are published for research. Anyone who applies one to a test is responsible for protecting the equipment and the article under test.</p>
+</div></div></div></article></main>
+<footer class="site-footer dark"><svg class="trace" viewbox="0 0 1200 100" preserveaspectratio="none" aria-hidden="true" focusable="false"><path class="trace-glow" d="M0.0 50.0L1.7 49.8L3.3 50.9L5.0 52.4L6.7 53.7L8.3 54.4L10.0 54.3L11.7 53.4L13.3 52.2L15.0 51.0L16.7 50.1L18.3 49.4L20.0 49.1L21.7 48.7L23.3 48.2L25.0 47.4L26.7 46.5L28.3 45.7L30.0 45.4L31.7 45.6L33.3 46.4L35.0 47.7L36.7 49.2L38.3 50.4L40.0 51.4L41.7 51.9L43.3 52.1L45.0 52.3L46.7 52.7L48.3 53.4L50.0 54.4L51.7 55.4L53.3 56.2L55.0 56.5L56.7 56.4L58.3 56.1L60.0 55.8L61.7 55.8L63.3 56.2L65.0 57.0L66.7 57.8L68.3 58.2L70.0 58.0L71.7 57.0L73.3 55.5L75.0 54.0L76.7 53.1L78.3 53.1L80.0 53.9L81.7 55.2L83.3 56.1L85.0 55.8L86.7 53.6L88.3 49.5L90.0 44.1L91.7 38.5L93.3 34.0L95.0 31.8L96.7 32.6L98.3 36.2L100.0 41.5L101.7 47.2L103.3 52.0L105.0 54.9L106.7 55.6L108.3 54.7L110.0 53.2L111.7 52.2L113.3 52.2L115.0 53.2L116.7 54.5L118.3 55.0L120.0 53.6L121.7 49.9L123.3 44.3L125.0 38.1L126.7 32.8L128.3 30.2L130.0 31.3L131.7 36.0L133.3 42.9L135.0 50.2L136.7 55.6L138.3 57.5L140.0 55.4L141.7 50.3L143.3 43.9L145.0 38.5L146.7 36.0L148.3 37.3L150.0 42.0L151.7 48.4L153.3 54.3L155.0 57.8L156.7 57.6L158.3 54.0L160.0 48.4L161.7 42.8L163.3 39.6L165.0 40.1L166.7 44.4L168.3 51.3L170.0 58.7L171.7 64.0L173.3 65.3L175.0 62.1L176.7 54.8L178.3 45.5L180.0 36.6L181.7 30.5L183.3 28.7L185.0 31.7L186.7 38.5L188.3 47.4L190.0 56.4L191.7 63.6L193.3 67.7L195.0 68.4L196.7 66.1L198.3 61.4L200.0 55.4L201.7 48.9L203.3 42.7L205.0 37.4L206.7 33.6L208.3 31.8L210.0 32.3L211.7 35.3L213.3 40.3L215.0 46.5L216.7 52.6L218.3 57.2L220.0 59.4L221.7 58.8L223.3 55.8L225.0 52.0L226.7 49.2L228.3 49.0L230.0 52.6L231.7 59.8L233.3 69.4L235.0 79.2L236.7 86.9L238.3 90.5L240.0 88.9L241.7 82.5L243.3 72.7L245.0 61.7L246.7 51.7L248.3 44.3L250.0 40.2L251.7 39.2L253.3 40.6L255.0 43.1L256.7 46.1L258.3 49.3L260.0 52.6L261.7 56.2L263.3 59.9L265.0 63.1L266.7 64.6L268.3 63.3L270.0 58.2L271.7 49.5L273.3 38.4L275.0 27.4L276.7 19.4L278.3 16.9L280.0 21.1L281.7 31.7L283.3 46.2L285.0 61.0L286.7 72.2L288.3 76.9L290.0 74.0L291.7 64.8L293.3 52.3L295.0 40.7L296.7 33.6L298.3 33.0L300.0 38.8L301.7 48.5L303.3 58.4L305.0 64.4L306.7 63.6L308.3 55.6L310.0 42.0L311.7 26.5L313.3 13.4L315.0 6.5L316.7 7.6L318.3 16.4L320.0 30.2L321.7 45.3L323.3 57.7L325.0 64.5L326.7 64.6L328.3 59.1L330.0 50.4L331.7 41.5L333.3 35.4L335.0 33.5L336.7 36.0L338.3 42.1L340.0 49.9L341.7 57.7L343.3 64.3L345.0 68.9L346.7 71.6L348.3 72.7L350.0 72.1L351.7 69.9L353.3 65.7L355.0 59.2L356.7 50.4L358.3 40.2L360.0 29.9L361.7 21.4L363.3 16.2L365.0 15.6L366.7 19.4L368.3 26.5L370.0 34.9L371.7 42.4L373.3 47.3L375.0 48.8L376.7 47.3L378.3 44.4L380.0 41.7L381.7 41.0L383.3 43.3L385.0 48.4L386.7 55.3L388.3 62.5L390.0 68.5L391.7 72.1L393.3 73.0L395.0 71.5L396.7 68.3L398.3 64.1L400.0 59.5L401.7 54.7L403.3 49.9L405.0 45.2L406.7 41.5L408.3 39.7L410.0 41.0L411.7 46.5L413.3 56.0L415.0 68.5L416.7 81.7L418.3 92.5L420.0 98.1L421.7 96.4L423.3 87.4L425.0 72.8L426.7 56.0L428.3 40.9L430.0 31.1L431.7 28.6L433.3 33.0L435.0 42.3L436.7 52.7L438.3 60.7L440.0 63.9L441.7 61.7L443.3 55.5L445.0 48.3L446.7 43.4L448.3 43.1L450.0 48.0L451.7 56.3L453.3 65.1L455.0 70.8L456.7 70.5L458.3 63.6L460.0 51.4L461.7 37.4L463.3 25.7L465.0 20.1L466.7 22.3L468.3 31.7L470.0 45.4L471.7 59.3L473.3 69.0L475.0 71.7L476.7 66.8L478.3 55.9L480.0 42.4L481.7 30.2L483.3 22.5L485.0 20.8L486.7 24.5L488.3 31.5L490.0 38.8L491.7 43.7L493.3 44.9L495.0 42.7L496.7 38.6L498.3 34.9L500.0 33.8L501.7 36.2L503.3 41.8L505.0 49.1L506.7 56.0L508.3 60.6L510.0 61.9L511.7 59.9L513.3 55.9L515.0 51.4L516.7 48.0L518.3 46.7L520.0 47.5L521.7 49.6L523.3 51.7L525.0 52.9L526.7 52.9L528.3 51.7L530.0 50.1L531.7 49.1L533.3 49.1L535.0 49.9L536.7 50.8L538.3 50.7L540.0 48.5L541.7 44.0L543.3 37.5L545.0 30.3L546.7 24.0L548.3 20.0L550.0 19.1L551.7 21.1L553.3 25.1L555.0 29.6L556.7 33.5L558.3 36.0L560.0 37.6L561.7 39.3L563.3 42.3L565.0 47.7L566.7 55.7L568.3 65.5L570.0 75.5L571.7 83.9L573.3 89.0L575.0 90.4L576.7 88.2L578.3 83.9L580.0 78.7L581.7 73.7L583.3 69.3L585.0 64.8L586.7 59.2L588.3 51.4L590.0 41.6L591.7 30.8L593.3 21.7L595.0 17.2L596.7 19.8L598.3 30.6L600.0 48.3L601.7 69.4L603.3 88.8L605.0 101.6L606.7 104.1L608.3 95.1L610.0 76.9L611.7 54.3L613.3 33.5L615.0 20.3L616.7 18.3L618.3 28.1L620.0 46.6L621.7 68.6L623.3 87.9L625.0 99.3L626.7 100.1L628.3 90.6L630.0 74.1L631.7 55.2L633.3 38.9L635.0 28.7L636.7 25.8L638.3 29.1L640.0 35.8L641.7 42.6L643.3 46.8L645.0 47.2L646.7 44.1L648.3 39.3L650.0 34.8L651.7 32.3L653.3 32.5L655.0 34.9L656.7 38.2L658.3 40.9L660.0 42.2L661.7 42.0L663.3 41.1L665.0 40.8L666.7 42.2L668.3 45.7L670.0 50.5L671.7 55.2L673.3 58.1L675.0 57.7L676.7 53.9L678.3 47.5L680.0 40.6L681.7 35.6L683.3 34.6L685.0 38.5L686.7 46.7L688.3 57.1L690.0 67.0L691.7 73.5L693.3 74.8L695.0 70.5L696.7 61.6L698.3 50.3L700.0 39.2L701.7 30.3L703.3 25.1L705.0 23.8L706.7 25.6L708.3 29.2L710.0 33.4L711.7 37.1L713.3 39.8L715.0 41.5L716.7 42.3L718.3 42.3L720.0 41.6L721.7 40.3L723.3 38.6L725.0 37.2L726.7 36.9L728.3 38.6L730.0 42.9L731.7 49.5L733.3 57.3L735.0 64.2L736.7 67.8L738.3 66.0L740.0 58.2L741.7 45.3L743.3 30.2L745.0 17.0L746.7 9.9L748.3 12.1L750.0 24.4L751.7 45.1L753.3 69.7L755.0 92.7L756.7 108.8L758.3 114.1L760.0 107.7L761.7 91.7L763.3 70.5L765.0 49.6L766.7 33.9L768.3 26.3L770.0 27.3L771.7 34.9L773.3 45.4L775.0 54.9L776.7 60.7L778.3 61.8L780.0 59.1L781.7 55.0L783.3 52.1L785.0 52.1L786.7 55.5L788.3 61.2L790.0 66.9L791.7 70.6L793.3 70.7L795.0 67.2L796.7 61.7L798.3 56.4L800.0 53.7L801.7 55.1L803.3 60.3L805.0 67.8L806.7 74.8L808.3 78.4L810.0 76.9L811.7 69.7L813.3 58.5L815.0 45.9L816.7 34.9L818.3 28.0L820.0 26.1L821.7 28.6L823.3 33.6L825.0 38.3L826.7 40.6L828.3 39.4L830.0 35.1L831.7 29.3L833.3 24.5L835.0 22.8L836.7 25.4L838.3 32.2L840.0 41.8L841.7 52.1L843.3 60.9L845.0 66.8L846.7 69.0L848.3 68.3L850.0 65.7L851.7 62.7L853.3 60.2L855.0 58.8L856.7 58.0L858.3 57.2L860.0 55.8L861.7 53.3L863.3 49.9L865.0 46.1L866.7 42.6L868.3 40.0L870.0 38.6L871.7 38.2L873.3 38.4L875.0 38.6L876.7 38.8L878.3 39.1L880.0 39.8L881.7 41.3L883.3 43.7L885.0 46.5L886.7 48.6L888.3 48.9L890.0 46.5L891.7 41.2L893.3 33.9L895.0 26.2L896.7 20.5L898.3 18.8L900.0 22.4L901.7 30.9L903.3 42.9L905.0 55.5L906.7 65.9L908.3 71.6L910.0 71.9L911.7 67.5L913.3 60.3L915.0 53.1L916.7 48.2L918.3 46.8L920.0 48.6L921.7 51.9L923.3 54.2L925.0 53.5L926.7 48.8L928.3 40.8L930.0 31.6L931.7 24.4L933.3 21.9L935.0 26.0L936.7 36.3L938.3 50.7L940.0 65.8L941.7 77.8L943.3 83.8L945.0 82.8L946.7 75.5L948.3 64.6L950.0 53.6L951.7 45.8L953.3 43.1L955.0 45.9L956.7 52.8L958.3 61.3L960.0 68.7L961.7 73.1L963.3 73.7L965.0 70.9L966.7 66.4L968.3 61.7L970.0 58.2L971.7 56.3L973.3 55.6L975.0 55.2L976.7 53.9L978.3 51.4L980.0 47.9L981.7 44.4L983.3 42.3L985.0 42.7L986.7 45.8L988.3 51.2L990.0 57.2L991.7 61.8L993.3 63.4L995.0 61.1L996.7 55.3L998.3 47.3L1000.0 39.4L1001.7 33.7L1003.3 31.7L1005.0 33.9L1006.7 39.5L1008.3 46.6L1010.0 53.1L1011.7 57.2L1013.3 57.8L1015.0 54.9L1016.7 49.7L1018.3 43.5L1020.0 38.2L1021.7 35.2L1023.3 35.1L1025.0 38.2L1026.7 43.7L1028.3 50.8L1030.0 58.4L1031.7 65.4L1033.3 70.9L1035.0 74.1L1036.7 74.4L1038.3 71.5L1040.0 65.6L1041.7 57.3L1043.3 47.7L1045.0 38.2L1046.7 30.7L1048.3 26.3L1050.0 25.9L1051.7 29.2L1053.3 35.1L1055.0 41.7L1056.7 47.2L1058.3 49.9L1060.0 49.3L1061.7 46.0L1063.3 41.3L1065.0 37.2L1066.7 35.6L1068.3 37.5L1070.0 42.5L1071.7 49.5L1073.3 56.3L1075.0 60.9L1076.7 61.5L1078.3 58.1L1080.0 51.3L1081.7 43.3L1083.3 36.4L1085.0 32.5L1086.7 32.9L1088.3 37.3L1090.0 44.4L1091.7 52.1L1093.3 58.5L1095.0 62.0L1096.7 62.0L1098.3 59.0L1100.0 54.3L1101.7 49.2L1103.3 45.2L1105.0 42.7L1106.7 41.7L1108.3 41.7L1110.0 42.0L1111.7 42.1L1113.3 42.2L1115.0 42.5L1116.7 43.7L1118.3 46.3L1120.0 50.3L1121.7 55.3L1123.3 60.2L1125.0 63.8L1126.7 65.2L1128.3 63.8L1130.0 60.3L1131.7 55.6L1133.3 51.3L1135.0 48.7L1136.7 48.9L1138.3 51.7L1140.0 56.4L1141.7 61.5L1143.3 65.4L1145.0 67.0L1146.7 65.6L1148.3 61.5L1150.0 55.8L1151.7 49.8L1153.3 44.9L1155.0 42.1L1156.7 41.6L1158.3 43.1L1160.0 45.7L1161.7 48.6L1163.3 50.8L1165.0 51.9L1166.7 51.7L1168.3 50.6L1170.0 49.0L1171.7 47.4L1173.3 46.3L1175.0 45.9L1176.7 46.2L1178.3 47.1L1180.0 48.3L1181.7 49.8L1183.3 51.3L1185.0 52.6L1186.7 53.6L1188.3 54.1L1190.0 54.1L1191.7 53.5L1193.3 52.4L1195.0 51.3L1196.7 50.3L1198.3 49.7L1200.0 50.0" pathlength="1"></path><path class="trace-line" d="M0.0 50.0L1.7 49.8L3.3 50.9L5.0 52.4L6.7 53.7L8.3 54.4L10.0 54.3L11.7 53.4L13.3 52.2L15.0 51.0L16.7 50.1L18.3 49.4L20.0 49.1L21.7 48.7L23.3 48.2L25.0 47.4L26.7 46.5L28.3 45.7L30.0 45.4L31.7 45.6L33.3 46.4L35.0 47.7L36.7 49.2L38.3 50.4L40.0 51.4L41.7 51.9L43.3 52.1L45.0 52.3L46.7 52.7L48.3 53.4L50.0 54.4L51.7 55.4L53.3 56.2L55.0 56.5L56.7 56.4L58.3 56.1L60.0 55.8L61.7 55.8L63.3 56.2L65.0 57.0L66.7 57.8L68.3 58.2L70.0 58.0L71.7 57.0L73.3 55.5L75.0 54.0L76.7 53.1L78.3 53.1L80.0 53.9L81.7 55.2L83.3 56.1L85.0 55.8L86.7 53.6L88.3 49.5L90.0 44.1L91.7 38.5L93.3 34.0L95.0 31.8L96.7 32.6L98.3 36.2L100.0 41.5L101.7 47.2L103.3 52.0L105.0 54.9L106.7 55.6L108.3 54.7L110.0 53.2L111.7 52.2L113.3 52.2L115.0 53.2L116.7 54.5L118.3 55.0L120.0 53.6L121.7 49.9L123.3 44.3L125.0 38.1L126.7 32.8L128.3 30.2L130.0 31.3L131.7 36.0L133.3 42.9L135.0 50.2L136.7 55.6L138.3 57.5L140.0 55.4L141.7 50.3L143.3 43.9L145.0 38.5L146.7 36.0L148.3 37.3L150.0 42.0L151.7 48.4L153.3 54.3L155.0 57.8L156.7 57.6L158.3 54.0L160.0 48.4L161.7 42.8L163.3 39.6L165.0 40.1L166.7 44.4L168.3 51.3L170.0 58.7L171.7 64.0L173.3 65.3L175.0 62.1L176.7 54.8L178.3 45.5L180.0 36.6L181.7 30.5L183.3 28.7L185.0 31.7L186.7 38.5L188.3 47.4L190.0 56.4L191.7 63.6L193.3 67.7L195.0 68.4L196.7 66.1L198.3 61.4L200.0 55.4L201.7 48.9L203.3 42.7L205.0 37.4L206.7 33.6L208.3 31.8L210.0 32.3L211.7 35.3L213.3 40.3L215.0 46.5L216.7 52.6L218.3 57.2L220.0 59.4L221.7 58.8L223.3 55.8L225.0 52.0L226.7 49.2L228.3 49.0L230.0 52.6L231.7 59.8L233.3 69.4L235.0 79.2L236.7 86.9L238.3 90.5L240.0 88.9L241.7 82.5L243.3 72.7L245.0 61.7L246.7 51.7L248.3 44.3L250.0 40.2L251.7 39.2L253.3 40.6L255.0 43.1L256.7 46.1L258.3 49.3L260.0 52.6L261.7 56.2L263.3 59.9L265.0 63.1L266.7 64.6L268.3 63.3L270.0 58.2L271.7 49.5L273.3 38.4L275.0 27.4L276.7 19.4L278.3 16.9L280.0 21.1L281.7 31.7L283.3 46.2L285.0 61.0L286.7 72.2L288.3 76.9L290.0 74.0L291.7 64.8L293.3 52.3L295.0 40.7L296.7 33.6L298.3 33.0L300.0 38.8L301.7 48.5L303.3 58.4L305.0 64.4L306.7 63.6L308.3 55.6L310.0 42.0L311.7 26.5L313.3 13.4L315.0 6.5L316.7 7.6L318.3 16.4L320.0 30.2L321.7 45.3L323.3 57.7L325.0 64.5L326.7 64.6L328.3 59.1L330.0 50.4L331.7 41.5L333.3 35.4L335.0 33.5L336.7 36.0L338.3 42.1L340.0 49.9L341.7 57.7L343.3 64.3L345.0 68.9L346.7 71.6L348.3 72.7L350.0 72.1L351.7 69.9L353.3 65.7L355.0 59.2L356.7 50.4L358.3 40.2L360.0 29.9L361.7 21.4L363.3 16.2L365.0 15.6L366.7 19.4L368.3 26.5L370.0 34.9L371.7 42.4L373.3 47.3L375.0 48.8L376.7 47.3L378.3 44.4L380.0 41.7L381.7 41.0L383.3 43.3L385.0 48.4L386.7 55.3L388.3 62.5L390.0 68.5L391.7 72.1L393.3 73.0L395.0 71.5L396.7 68.3L398.3 64.1L400.0 59.5L401.7 54.7L403.3 49.9L405.0 45.2L406.7 41.5L408.3 39.7L410.0 41.0L411.7 46.5L413.3 56.0L415.0 68.5L416.7 81.7L418.3 92.5L420.0 98.1L421.7 96.4L423.3 87.4L425.0 72.8L426.7 56.0L428.3 40.9L430.0 31.1L431.7 28.6L433.3 33.0L435.0 42.3L436.7 52.7L438.3 60.7L440.0 63.9L441.7 61.7L443.3 55.5L445.0 48.3L446.7 43.4L448.3 43.1L450.0 48.0L451.7 56.3L453.3 65.1L455.0 70.8L456.7 70.5L458.3 63.6L460.0 51.4L461.7 37.4L463.3 25.7L465.0 20.1L466.7 22.3L468.3 31.7L470.0 45.4L471.7 59.3L473.3 69.0L475.0 71.7L476.7 66.8L478.3 55.9L480.0 42.4L481.7 30.2L483.3 22.5L485.0 20.8L486.7 24.5L488.3 31.5L490.0 38.8L491.7 43.7L493.3 44.9L495.0 42.7L496.7 38.6L498.3 34.9L500.0 33.8L501.7 36.2L503.3 41.8L505.0 49.1L506.7 56.0L508.3 60.6L510.0 61.9L511.7 59.9L513.3 55.9L515.0 51.4L516.7 48.0L518.3 46.7L520.0 47.5L521.7 49.6L523.3 51.7L525.0 52.9L526.7 52.9L528.3 51.7L530.0 50.1L531.7 49.1L533.3 49.1L535.0 49.9L536.7 50.8L538.3 50.7L540.0 48.5L541.7 44.0L543.3 37.5L545.0 30.3L546.7 24.0L548.3 20.0L550.0 19.1L551.7 21.1L553.3 25.1L555.0 29.6L556.7 33.5L558.3 36.0L560.0 37.6L561.7 39.3L563.3 42.3L565.0 47.7L566.7 55.7L568.3 65.5L570.0 75.5L571.7 83.9L573.3 89.0L575.0 90.4L576.7 88.2L578.3 83.9L580.0 78.7L581.7 73.7L583.3 69.3L585.0 64.8L586.7 59.2L588.3 51.4L590.0 41.6L591.7 30.8L593.3 21.7L595.0 17.2L596.7 19.8L598.3 30.6L600.0 48.3L601.7 69.4L603.3 88.8L605.0 101.6L606.7 104.1L608.3 95.1L610.0 76.9L611.7 54.3L613.3 33.5L615.0 20.3L616.7 18.3L618.3 28.1L620.0 46.6L621.7 68.6L623.3 87.9L625.0 99.3L626.7 100.1L628.3 90.6L630.0 74.1L631.7 55.2L633.3 38.9L635.0 28.7L636.7 25.8L638.3 29.1L640.0 35.8L641.7 42.6L643.3 46.8L645.0 47.2L646.7 44.1L648.3 39.3L650.0 34.8L651.7 32.3L653.3 32.5L655.0 34.9L656.7 38.2L658.3 40.9L660.0 42.2L661.7 42.0L663.3 41.1L665.0 40.8L666.7 42.2L668.3 45.7L670.0 50.5L671.7 55.2L673.3 58.1L675.0 57.7L676.7 53.9L678.3 47.5L680.0 40.6L681.7 35.6L683.3 34.6L685.0 38.5L686.7 46.7L688.3 57.1L690.0 67.0L691.7 73.5L693.3 74.8L695.0 70.5L696.7 61.6L698.3 50.3L700.0 39.2L701.7 30.3L703.3 25.1L705.0 23.8L706.7 25.6L708.3 29.2L710.0 33.4L711.7 37.1L713.3 39.8L715.0 41.5L716.7 42.3L718.3 42.3L720.0 41.6L721.7 40.3L723.3 38.6L725.0 37.2L726.7 36.9L728.3 38.6L730.0 42.9L731.7 49.5L733.3 57.3L735.0 64.2L736.7 67.8L738.3 66.0L740.0 58.2L741.7 45.3L743.3 30.2L745.0 17.0L746.7 9.9L748.3 12.1L750.0 24.4L751.7 45.1L753.3 69.7L755.0 92.7L756.7 108.8L758.3 114.1L760.0 107.7L761.7 91.7L763.3 70.5L765.0 49.6L766.7 33.9L768.3 26.3L770.0 27.3L771.7 34.9L773.3 45.4L775.0 54.9L776.7 60.7L778.3 61.8L780.0 59.1L781.7 55.0L783.3 52.1L785.0 52.1L786.7 55.5L788.3 61.2L790.0 66.9L791.7 70.6L793.3 70.7L795.0 67.2L796.7 61.7L798.3 56.4L800.0 53.7L801.7 55.1L803.3 60.3L805.0 67.8L806.7 74.8L808.3 78.4L810.0 76.9L811.7 69.7L813.3 58.5L815.0 45.9L816.7 34.9L818.3 28.0L820.0 26.1L821.7 28.6L823.3 33.6L825.0 38.3L826.7 40.6L828.3 39.4L830.0 35.1L831.7 29.3L833.3 24.5L835.0 22.8L836.7 25.4L838.3 32.2L840.0 41.8L841.7 52.1L843.3 60.9L845.0 66.8L846.7 69.0L848.3 68.3L850.0 65.7L851.7 62.7L853.3 60.2L855.0 58.8L856.7 58.0L858.3 57.2L860.0 55.8L861.7 53.3L863.3 49.9L865.0 46.1L866.7 42.6L868.3 40.0L870.0 38.6L871.7 38.2L873.3 38.4L875.0 38.6L876.7 38.8L878.3 39.1L880.0 39.8L881.7 41.3L883.3 43.7L885.0 46.5L886.7 48.6L888.3 48.9L890.0 46.5L891.7 41.2L893.3 33.9L895.0 26.2L896.7 20.5L898.3 18.8L900.0 22.4L901.7 30.9L903.3 42.9L905.0 55.5L906.7 65.9L908.3 71.6L910.0 71.9L911.7 67.5L913.3 60.3L915.0 53.1L916.7 48.2L918.3 46.8L920.0 48.6L921.7 51.9L923.3 54.2L925.0 53.5L926.7 48.8L928.3 40.8L930.0 31.6L931.7 24.4L933.3 21.9L935.0 26.0L936.7 36.3L938.3 50.7L940.0 65.8L941.7 77.8L943.3 83.8L945.0 82.8L946.7 75.5L948.3 64.6L950.0 53.6L951.7 45.8L953.3 43.1L955.0 45.9L956.7 52.8L958.3 61.3L960.0 68.7L961.7 73.1L963.3 73.7L965.0 70.9L966.7 66.4L968.3 61.7L970.0 58.2L971.7 56.3L973.3 55.6L975.0 55.2L976.7 53.9L978.3 51.4L980.0 47.9L981.7 44.4L983.3 42.3L985.0 42.7L986.7 45.8L988.3 51.2L990.0 57.2L991.7 61.8L993.3 63.4L995.0 61.1L996.7 55.3L998.3 47.3L1000.0 39.4L1001.7 33.7L1003.3 31.7L1005.0 33.9L1006.7 39.5L1008.3 46.6L1010.0 53.1L1011.7 57.2L1013.3 57.8L1015.0 54.9L1016.7 49.7L1018.3 43.5L1020.0 38.2L1021.7 35.2L1023.3 35.1L1025.0 38.2L1026.7 43.7L1028.3 50.8L1030.0 58.4L1031.7 65.4L1033.3 70.9L1035.0 74.1L1036.7 74.4L1038.3 71.5L1040.0 65.6L1041.7 57.3L1043.3 47.7L1045.0 38.2L1046.7 30.7L1048.3 26.3L1050.0 25.9L1051.7 29.2L1053.3 35.1L1055.0 41.7L1056.7 47.2L1058.3 49.9L1060.0 49.3L1061.7 46.0L1063.3 41.3L1065.0 37.2L1066.7 35.6L1068.3 37.5L1070.0 42.5L1071.7 49.5L1073.3 56.3L1075.0 60.9L1076.7 61.5L1078.3 58.1L1080.0 51.3L1081.7 43.3L1083.3 36.4L1085.0 32.5L1086.7 32.9L1088.3 37.3L1090.0 44.4L1091.7 52.1L1093.3 58.5L1095.0 62.0L1096.7 62.0L1098.3 59.0L1100.0 54.3L1101.7 49.2L1103.3 45.2L1105.0 42.7L1106.7 41.7L1108.3 41.7L1110.0 42.0L1111.7 42.1L1113.3 42.2L1115.0 42.5L1116.7 43.7L1118.3 46.3L1120.0 50.3L1121.7 55.3L1123.3 60.2L1125.0 63.8L1126.7 65.2L1128.3 63.8L1130.0 60.3L1131.7 55.6L1133.3 51.3L1135.0 48.7L1136.7 48.9L1138.3 51.7L1140.0 56.4L1141.7 61.5L1143.3 65.4L1145.0 67.0L1146.7 65.6L1148.3 61.5L1150.0 55.8L1151.7 49.8L1153.3 44.9L1155.0 42.1L1156.7 41.6L1158.3 43.1L1160.0 45.7L1161.7 48.6L1163.3 50.8L1165.0 51.9L1166.7 51.7L1168.3 50.6L1170.0 49.0L1171.7 47.4L1173.3 46.3L1175.0 45.9L1176.7 46.2L1178.3 47.1L1180.0 48.3L1181.7 49.8L1183.3 51.3L1185.0 52.6L1186.7 53.6L1188.3 54.1L1190.0 54.1L1191.7 53.5L1193.3 52.4L1195.0 51.3L1196.7 50.3L1198.3 49.7L1200.0 50.0" pathlength="1"></path></svg><div class="wrap"><div class="footer-grid"><div class="footer-about"><span class="wordmark"><span class="w-hertz">HERTZ</span><span class="w-forge">FORGE</span></span><p>Open-source structural dynamics testing and analysis. Free under the MIT license, developed in the open.</p></div><nav aria-label="Software"><h2>Software</h2><ul><li><a href="/download/">Download</a></li><li><a href="/documentation/">Documentation</a></li><li><a href="/learn/workflows/">Workflows</a></li><li><a href="/learn/tutorials/">Tutorials</a></li><li><a href="/reference/known-limits/">Known Limits</a></li></ul></nav><nav aria-label="Research"><h2>Research</h2><ul><li><a href="/journal/">Hertzforge Journal</a></li><li><a href="/benchmarks/">Open Benchmark Set</a></li><li><a href="/reference/laws/">Control Laws</a></li><li><a href="/reference/glossary/">Glossary</a></li><li><a href="/reference/standards/">Standards</a></li></ul></nav><nav aria-label="Community"><h2>Community</h2><ul><li><a href="/community/contribute/">Contribute</a></li><li><a href="/community/requests/">Requests</a></li><li><a href="/community/sponsors/">Sponsors</a></li><li><a href="/community/acknowledgments/">Acknowledgments</a></li><li><a href="https://github.com/Hertzforge/Hertzforge">GitHub</a></li></ul></nav><nav aria-label="About"><h2>About</h2><ul><li><a href="/about/">Why Hertzforge Exists</a></li><li><a href="/about/how-it-was-built/">How It Was Built</a></li><li><a href="/about/how-it-works/">How It Works</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="mailto:contact@hertzforge.com">Contact</a></li></ul></nav></div><div class="footer-legal"><span>Copyright 2026 Brandon Zwink and Kevin Cross. Software under the MIT license.</span><span>Hertzforge drives shakers. You are responsible for how you use it and for protecting your equipment.</span></div></div></footer>
+
+<script src="assets/article.js"></script>
+
+
+</body></html>

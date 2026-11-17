@@ -1,0 +1,228 @@
+{
+ "schema": "hertzforge-benchmark-scorecard/0.2.1-draft",
+ "scorer": {
+  "file": "scorer.py",
+  "version": "0.2.1-draft",
+  "sha256": "e429acf32eecc91c448322e7c0dfd2dc8ac98c01e54e1cf6e768f394311d35e1"
+ },
+ "set": {
+  "name": "Hertzforge Open Benchmark Set",
+  "version": "0.2-draft",
+  "suite": "MIMO Random",
+  "tier": "Frames"
+ },
+ "evidence_level": "simulator",
+ "problem": {
+  "id": "frame-6x6/line",
+  "structure": "frame-6x6",
+  "target": "line",
+  "seed": 0,
+  "structure_sha256": "004df0813cb81ed66978a11da93135d3c2ac4e0f03a55c02446b677913d2e2f7",
+  "limits": "frames-fair-run/0.1-draft",
+  "stage": 1,
+  "effects": [],
+  "format": "0.2-draft"
+ },
+ "run": {
+  "case_id": "frame-6x6_s00_reference_inverse",
+  "law": "reference_inverse",
+  "law_parameters": {
+   "condition_limit": 1000.0,
+   "target": "line"
+  },
+  "model": "exact",
+  "noise_seed": null,
+  "software_commit": null,
+  "frames_per_loop": null,
+  "full_level_loops_asked": null
+ },
+ "outcome": {
+  "completed": true,
+  "protections": null,
+  "record": {
+   "status": "not a time record",
+   "frames": null,
+   "loops_recorded": null,
+   "loops_asked": null
+  },
+  "full_level_loops": null,
+  "stop": null,
+  "scored": true
+ },
+ "scored": true,
+ "route": "drive",
+ "report_card": {
+  "scorecard": "mimo-metrics-report-card/0.1-provisional",
+  "provisional": true,
+  "line_1_level": {
+   "mean_error_db": 2.540956108568057,
+   "starting_value_db": 1.5,
+   "within": false,
+   "what": "mean dB error over controls and held-out gauges and one-third-octave bands"
+  },
+  "line_2_pattern": {
+   "held_out": {
+    "summed_rms_db": 7.785404000729616,
+    "per_channel_rms_db": 9.326214038849217,
+    "grade": "below C"
+   },
+   "controls": {
+    "summed_rms_db": 6.052003222031459e-14,
+    "per_channel_rms_db": 6.824459057045072e-13,
+    "grade": "A"
+   },
+   "grades_db": {
+    "A": 3.0,
+    "B": 4.5,
+    "C": 6.0
+   },
+   "what": "RMS dB error of the summed autospectra in one-third-octave bands, with the per-channel band error beside it"
+  },
+  "line_3_over_test": {
+   "worst_band_db": 43.29005044340498,
+   "share_of_bands_over_alarm": 0.1746031746031746,
+   "worst_line_db": 51.523223518484464,
+   "share_of_lines_over_alarm": 0.1397795169569974,
+   "alarm_db": 6.0,
+   "alarm": true,
+   "what": "controls and held-out gauges, any band"
+  },
+  "line_4_under_test": {
+   "share_of_held_out_bands_more_than_3_db_under": 0.1111111111111111,
+   "share_of_control_bands_more_than_6_db_under": 0.0,
+   "held_out_band_error_p10_db": -3.530902019609644,
+   "what": "reported; it does not stop a run"
+  },
+  "line_5_declared": {
+   "declared_deviation_rms_db": 1.739097442928176e-14,
+   "declared_deviation_max_db": 8.196783465702862e-14,
+   "declared_deviation_min_db": -6.364561279251741e-14,
+   "law_error_rms_db": 6.853525151278879e-13,
+   "what": "what the system can reach at its controls against the target, and the played response against that, one-third-octave bands"
+  },
+  "line_6_rig": {
+   "drives": 6,
+   "controls": 6,
+   "condition_median": 16.57318129784002,
+   "condition_p95": 61.60112424460513,
+   "condition_max": 203.22475355610334,
+   "control_residual_rms_db": 6.824459057045072e-13,
+   "exact_fit_flag": true,
+   "exact_fit_flag_under_db": 1.0,
+   "what": "condition of the control response matrix over the band lines; a near-zero control residual with as many drives as controls is flagged"
+  },
+  "reference_r1": {
+   "share_of_control_lines_inside": 1.0,
+   "controls_with_overall_rms_inside_15_percent": 1.0,
+   "what": "3 dB to 500 Hz and 6 dB above, per line and control; overall RMS per control within 15 percent",
+   "source": "MIMO acceptance proposal, line R1; not yet checked against the text of the standard"
+  },
+  "reference_r3": {
+   "global_error_rms_db": 1.6023462603918806e-13,
+   "global_error_max_abs_db": 3.054534511487305e-12,
+   "share_of_lines_beyond_3_db": 0.0,
+   "what": "per line, the dB error over the controls weighted by each control's share of the reference",
+   "source": "as an earlier study computed it (g527); not yet checked against the text of the standard"
+  }
+ },
+ "stress": {
+  "rms": 12.91078531839493,
+  "bias": 11.229050754258608,
+  "p5": 2.0499008043867333,
+  "p95": 20.902301714446395,
+  "in3": 0.17708333333333334,
+  "max": 22.950928668983813,
+  "d8_rms": 47.532522852856054,
+  "d8_bias": 41.83157184677419,
+  "d4_rms": 21.761923801427713,
+  "d4_bias": 19.38983794647879
+ },
+ "ers": {
+  "q10_tip": {
+   "mean": 6.4570308260672125,
+   "rms": 9.69679585549541,
+   "max": 36.240516229214016,
+   "min": -9.736776703078334
+  },
+  "q10_held": {
+   "mean": 6.657879643302627,
+   "rms": 11.14120121881848,
+   "max": 41.43145511663412,
+   "min": -11.834874601150286
+  },
+  "q50_tip": {
+   "mean": 5.243275716000432,
+   "rms": 8.899928157169613,
+   "max": 40.636322674570984,
+   "min": -13.415369641936334
+  },
+  "q50_held": {
+   "mean": 5.598427180650343,
+   "rms": 10.437890938917224,
+   "max": 45.520516200313594,
+   "min": -17.124747962490147
+  }
+ },
+ "card": {
+  "c_b3_rms": 6.824459057045072e-13,
+  "c_sum3_rms": 6.052003222031459e-14,
+  "c_line_rms": 2.329524641591776e-12,
+  "h_b3_rms": 9.326214038849217,
+  "h_sum3_rms": 7.785404000729616,
+  "h_line_rms": 7.8793772621533025,
+  "level_mean": 2.540956108568057,
+  "worst_over_b3": 43.29005044340498,
+  "worst_over_line": 51.523223518484464,
+  "share_over6_b3": 0.1746031746031746,
+  "share_over6_line": 0.1397795169569974,
+  "held_under3_b3": 0.1111111111111111,
+  "ctrl_under6_b3": 0.0,
+  "declared_b3_rms": 1.739097442928176e-14,
+  "declared_b3_max": 8.196783465702862e-14,
+  "declared_b3_min": -6.364561279251741e-14,
+  "vs_declared_b3_rms": 6.853525151278879e-13,
+  "drive_rms": [
+   78.83707522817608,
+   397.6268547436532,
+   166.44308930083793,
+   559.7730797516822,
+   697.8193951516752,
+   229.19980829126465
+  ],
+  "drive_line_to_band_db": [
+   11.106199738993826,
+   11.391247553478403,
+   10.667114165341605,
+   12.41830715094563,
+   11.397781545680656,
+   11.280588736554165
+  ]
+ },
+ "scored_on": "gauges and stress",
+ "drive": {
+  "vrms": [
+   0.05648816568866,
+   0.28490670903266424,
+   0.11925943192268378,
+   0.40108736131504075,
+   0.5000000000000037,
+   0.1642257365470964
+  ],
+  "rms_n": [
+   78.83707522817608,
+   397.6268547436532,
+   166.44308930083793,
+   559.7730797516822,
+   697.8193951516752,
+   229.19980829126465
+  ],
+  "line_to_band_db": [
+   11.106199738993826,
+   11.391247553478403,
+   10.667114165341605,
+   12.41830715094563,
+   11.397781545680656,
+   11.280588736554165
+  ]
+ }
+}

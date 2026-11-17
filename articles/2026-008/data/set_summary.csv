@@ -1,0 +1,27 @@
+key,value
+folders,388
+study_folders,380
+study_seeds,20
+study_seed_list,0 1 2 3 4 5 6 7 8 9 12 13 14 15 17 19 32 33 34 35
+replacement_seeds,32 33 34 35
+rigs,5
+variants,linear realistic realistic_hard realistic_soft strong strong_hard strong_soft
+service_member_realistic_min_pct,-0.0013015213813916127
+service_member_realistic_median_pct,0.3469774389917468
+service_member_realistic_max_pct,3.22652702037336
+service_member_strong_min_pct,-0.010598783638093856
+service_member_strong_median_pct,1.0033692062883404
+service_member_strong_max_pct,7.439342404027327
+control_g_rms_median_min,7.081613853029492
+control_g_rms_median_max,65.6184659843112
+control_g_rms_median_median,15.783968571150922
+level_folders,284
+member_target_net_negative,11
+frf_parity_max,2.303881929360451e-15
+stress_parity_max,3.0570423692483513e-15
+step_residual_median_max,0.007954168110595213
+step_residual_p95_min,0.046212635442400334
+step_residual_p95_max,0.3753368153382787
+step_residual_max_max,35.7373972267868
+highest_reachable_hz,4006.1318248821353
+runner_case_equal_all,True

@@ -1,0 +1,1295 @@
+{
+ "schema": "hertzforge-benchmark-scorecard/0.2.1-draft",
+ "scorer": {
+  "file": "scorer.py",
+  "version": "0.2.1-draft",
+  "sha256": "e429acf32eecc91c448322e7c0dfd2dc8ac98c01e54e1cf6e768f394311d35e1"
+ },
+ "set": {
+  "name": "Hertzforge Open Benchmark Set",
+  "version": "0.2-draft",
+  "suite": "MIMO Random",
+  "tier": "Frames"
+ },
+ "evidence_level": "simulator",
+ "problem": {
+  "id": "frame-12x6-strong/line",
+  "structure": "frame-12x6-strong",
+  "target": "line",
+  "seed": 0,
+  "structure_sha256": "ca4843fcce4c85b052ce159ce0ce43a77f01b19013005fc4d80d57bfbd08f130",
+  "limits": "frames-fair-run/0.1-draft",
+  "stage": 2,
+  "effects": [
+   "softening",
+   "hardening"
+  ],
+  "format": "0.2-draft"
+ },
+ "run": {
+  "case_id": "s0_6x12_strong_pinv_closed_default_line_hold_divopen",
+  "law": "pinv_closed",
+  "law_parameters": {},
+  "model": "Hold",
+  "noise_seed": 167464471,
+  "software_commit": "646c4ca4525cf6eca2428367359c30a5a6d0bd3e",
+  "frames_per_loop": 64,
+  "full_level_loops_asked": 30
+ },
+ "outcome": {
+  "completed": true,
+  "protections": "opened",
+  "record": {
+   "status": "complete",
+   "frames": 989,
+   "loops_recorded": 15,
+   "loops_asked": 15
+  },
+  "full_level_loops": 30,
+  "stop": null,
+  "scored": true
+ },
+ "scored": true,
+ "route": "played_modal",
+ "report_card": {
+  "scorecard": "mimo-metrics-report-card/0.1-provisional",
+  "provisional": true,
+  "line_1_level": {
+   "mean_error_db": 0.49463300891707773,
+   "starting_value_db": 1.5,
+   "within": true,
+   "what": "mean dB error over controls and held-out gauges and one-third-octave bands"
+  },
+  "line_2_pattern": {
+   "held_out": {
+    "summed_rms_db": 2.334326425827812,
+    "per_channel_rms_db": 7.241368041579131,
+    "grade": "A"
+   },
+   "controls": {
+    "summed_rms_db": 2.2551206745204215,
+    "per_channel_rms_db": 6.983557698062948,
+    "grade": "A"
+   },
+   "grades_db": {
+    "A": 3.0,
+    "B": 4.5,
+    "C": 6.0
+   },
+   "what": "RMS dB error of the summed autospectra in one-third-octave bands, with the per-channel band error beside it"
+  },
+  "line_3_over_test": {
+   "worst_band_db": 31.015482182027547,
+   "share_of_bands_over_alarm": 0.20238095238095238,
+   "worst_line_db": 38.14284568261489,
+   "share_of_lines_over_alarm": 0.22232390810401415,
+   "alarm_db": 6.0,
+   "alarm": true,
+   "what": "controls and held-out gauges, any band"
+  },
+  "line_4_under_test": {
+   "share_of_held_out_bands_more_than_3_db_under": 0.26587301587301587,
+   "share_of_control_bands_more_than_6_db_under": 0.11507936507936507,
+   "held_out_band_error_p10_db": -8.065309915911056,
+   "what": "reported; it does not stop a run"
+  },
+  "line_5_declared": {
+   "declared_deviation_rms_db": 6.587635295882949,
+   "declared_deviation_max_db": 14.839569797333516,
+   "declared_deviation_min_db": -30.412780757784134,
+   "law_error_rms_db": 3.363264977332241,
+   "what": "what the system can reach at its controls against the target, and the played response against that, one-third-octave bands"
+  },
+  "line_6_rig": {
+   "drives": 6,
+   "controls": 12,
+   "condition_median": 15.862770101288763,
+   "condition_p95": 39.7743364390613,
+   "condition_max": 123.23163818314461,
+   "control_residual_rms_db": 6.983557698062948,
+   "exact_fit_flag": false,
+   "exact_fit_flag_under_db": 1.0,
+   "what": "condition of the control response matrix over the band lines; a near-zero control residual with as many drives as controls is flagged"
+  },
+  "reference_r1": {
+   "share_of_control_lines_inside": 0.5645670285281494,
+   "controls_with_overall_rms_inside_15_percent": 0.25,
+   "what": "3 dB to 500 Hz and 6 dB above, per line and control; overall RMS per control within 15 percent",
+   "source": "MIMO acceptance proposal, line R1; not yet checked against the text of the standard"
+  },
+  "reference_r3": {
+   "global_error_rms_db": 10.119078303642826,
+   "global_error_max_abs_db": 29.157082748624884,
+   "share_of_lines_beyond_3_db": 0.8323655642514517,
+   "what": "per line, the dB error over the controls weighted by each control's share of the reference",
+   "source": "as an earlier study computed it (g527); not yet checked against the text of the standard"
+  }
+ },
+ "stress": {
+  "rms": 4.417343741045205,
+  "bias": 2.3354217736290193,
+  "p5": -2.8864572424284765,
+  "p95": 10.68097139117766,
+  "in3": 0.7083333333333334,
+  "max": 13.533353639719705,
+  "d8_rms": 16.741090520087074,
+  "d8_bias": 9.071323752225295,
+  "d4_rms": 8.010576603754757,
+  "d4_bias": 4.444765537405462
+ },
+ "ers": {
+  "q10_tip": {
+   "mean": 1.403786396871612,
+   "rms": 3.8977072136538515,
+   "max": 15.212246243849687,
+   "min": -10.060646204817017
+  },
+  "q10_held": {
+   "mean": 0.9272806534095235,
+   "rms": 5.911842089580536,
+   "max": 23.542818481028984,
+   "min": -17.130715968796
+  },
+  "q50_tip": {
+   "mean": 1.4998410550680212,
+   "rms": 4.909832687292694,
+   "max": 21.03235199047136,
+   "min": -14.12149106927667
+  },
+  "q50_held": {
+   "mean": 1.2112949809919265,
+   "rms": 6.995183005692604,
+   "max": 30.006325725823025,
+   "min": -21.829974544978676
+  }
+ },
+ "card": {
+  "c_b3_rms": 6.983557698062948,
+  "c_sum3_rms": 2.2551206745204215,
+  "c_line_rms": 9.117005680407857,
+  "h_b3_rms": 7.241368041579131,
+  "h_sum3_rms": 2.334326425827812,
+  "h_line_rms": 9.803613308200765,
+  "level_mean": 0.49463300891707773,
+  "worst_over_b3": 31.015482182027547,
+  "worst_over_line": 38.14284568261489,
+  "share_over6_b3": 0.20238095238095238,
+  "share_over6_line": 0.22232390810401415,
+  "held_under3_b3": 0.26587301587301587,
+  "ctrl_under6_b3": 0.11507936507936507,
+  "declared_b3_rms": 6.587635295882949,
+  "declared_b3_max": 14.839569797333516,
+  "declared_b3_min": -30.412780757784134,
+  "vs_declared_b3_rms": 3.363264977332241,
+  "drive_rms": [
+   34.91063319476053,
+   37.624726839199184,
+   43.50431405636598,
+   36.35367168292971,
+   35.97658342991058,
+   53.55556278118583
+  ],
+  "drive_line_to_band_db": [
+   9.249688788710102,
+   8.711104667517455,
+   8.629815076058568,
+   9.441819269842345,
+   8.806540505543031,
+   9.592620731781903
+  ]
+ },
+ "scored_on": "gauges and stress",
+ "drive": {
+  "vrms": [
+   0.2694829236337863,
+   0.2904336146808045,
+   0.3358194529783391,
+   0.2806220579066723,
+   0.27771123001292897,
+   0.4134072720655431
+  ],
+  "rms_n": [
+   34.91063319476053,
+   37.624726839199184,
+   43.50431405636598,
+   36.35367168292971,
+   35.97658342991058,
+   53.55556278118583
+  ],
+  "line_to_band_db": [
+   9.249688788710102,
+   8.711104667517455,
+   8.629815076058568,
+   9.441819269842345,
+   8.806540505543031,
+   9.592620731781903
+  ]
+ },
+ "by_drive_route": {
+  "stress": {
+   "rms": 5.445142316216098,
+   "bias": 4.061414211714559,
+   "p5": -1.868957687542988,
+   "p95": 11.598676808616407,
+   "in3": 0.3229166666666667,
+   "max": 14.785221852517376,
+   "d8_rms": 22.22301991043696,
+   "d8_bias": 17.305933661538617,
+   "d4_rms": 11.43427620161231,
+   "d4_bias": 9.189027285881037
+  },
+  "card": {
+   "c_b3_rms": 7.341494361412401,
+   "c_sum3_rms": 2.1239415844089726,
+   "c_line_rms": 9.248216128210997,
+   "h_b3_rms": 7.844611207904258,
+   "h_sum3_rms": 4.010486372942754,
+   "h_line_rms": 10.57834549571079,
+   "level_mean": 2.7032156934738296,
+   "worst_over_b3": 32.131372010292,
+   "worst_over_line": 39.05206417989525,
+   "share_over6_b3": 0.2837301587301587,
+   "share_over6_line": 0.34676638895901707,
+   "held_under3_b3": 0.15079365079365079,
+   "ctrl_under6_b3": 0.0873015873015873,
+   "declared_b3_rms": 6.587635295882949,
+   "declared_b3_max": 14.839569797333516,
+   "declared_b3_min": -30.412780757784134,
+   "vs_declared_b3_rms": 4.951907506184777,
+   "drive_rms": [
+    34.91063319476053,
+    37.624726839199184,
+    43.50431405636598,
+    36.35367168292971,
+    35.97658342991058,
+    53.55556278118583
+   ],
+   "drive_line_to_band_db": [
+    9.249688788710102,
+    8.711104667517455,
+    8.629815076058568,
+    9.441819269842345,
+    8.806540505543031,
+    9.592620731781903
+   ]
+  },
+  "what": "the same figures with the played drive taken through the small-signal model; not the score"
+ },
+ "structure_state": {
+  "kind": "jointed",
+  "modes_fitted": 75,
+  "drop_pct_p10_p50_p90": [
+   1.5087033056088184,
+   5.573205571463147,
+   8.495088152765558
+  ],
+  "zfac_p10_p50_p90": [
+   2.5956180132316597,
+   4.085375126112085,
+   5.992181010987415
+  ],
+  "target_drop_pct_p10_p50_p90": [
+   2.0050042770262966,
+   5.586856074488223,
+   8.61544405320182
+  ],
+  "target_zfac_p10_p50_p90": [
+   2.6176105727406997,
+   4.136562119934012,
+   5.995092776219658
+  ],
+  "drop_over_target_p50": null,
+  "zrise_over_target_p50": 0.9997763282291121,
+  "signed": {
+   "what": "each mode's frequency change as played, signed: negative is a drop (softening), positive a rise (hardening); percent of the small-signal frequency, against the target at full level",
+   "all": {
+    "modes_fitted": 75,
+    "change_pct_p10_p50_p90": [
+     -8.495088152765558,
+     -5.573205571463147,
+     -1.508703305608817
+    ],
+    "target_change_pct_p10_p50_p90": [
+     -8.61544405320182,
+     -5.586856074488223,
+     -2.005004277026296
+    ],
+    "error_pct_points_p10_p50_p90": [
+     -0.06118272710198047,
+     0.005439477187219044,
+     0.5717048319946284
+    ],
+    "abs_error_pct_points_p50": 0.0347597234234831,
+    "zfac_p10_p50_p90": [
+     2.5956180132316597,
+     4.085375126112085,
+     5.992181010987415
+    ],
+    "target_zfac_p10_p50_p90": [
+     2.6176105727406997,
+     4.136562119934012,
+     5.995092776219658
+    ],
+    "change_over_target_p50": 0.9984042547970537,
+    "sign_right_share": 0.9866666666666667
+   },
+   "by_effect": {
+    "softening": {
+     "modes_fitted": 74,
+     "change_pct_p10_p50_p90": [
+      -8.508451777525723,
+      -5.613235876548406,
+      -1.6570597898620214
+     ],
+     "target_change_pct_p10_p50_p90": [
+      -8.622194075321552,
+      -5.619834702473698,
+      -2.120435321993729
+     ],
+     "error_pct_points_p10_p50_p90": [
+      -0.0488905499457226,
+      0.005713732850287645,
+      0.5733306507448943
+     ],
+     "abs_error_pct_points_p50": 0.030320943801914746,
+     "zfac_p10_p50_p90": [
+      2.7059297728789202,
+      4.102340447305826,
+      5.992753951891509
+     ],
+     "target_zfac_p10_p50_p90": [
+      2.727553721079842,
+      4.137896388256555,
+      5.995177045678837
+     ],
+     "change_over_target_p50": 0.998499705962892,
+     "sign_right_share": 0.9864864864864865
+    },
+    "hardening": {
+     "modes_fitted": 1,
+     "change_pct_p10_p50_p90": [
+      2.060565546687676,
+      2.060565546687676,
+      2.060565546687676
+     ],
+     "target_change_pct_p10_p50_p90": [
+      2.8951579795390536,
+      2.8951579795390536,
+      2.8951579795390536
+     ],
+     "error_pct_points_p10_p50_p90": [
+      -0.8345924328513776,
+      -0.8345924328513776,
+      -0.8345924328513776
+     ],
+     "abs_error_pct_points_p50": 0.8345924328513776,
+     "zfac_p10_p50_p90": [
+      1.9707211359264554,
+      1.9707211359264554,
+      1.9707211359264554
+     ],
+     "target_zfac_p10_p50_p90": [
+      2.109401929595978,
+      2.109401929595978,
+      2.109401929595978
+     ],
+     "change_over_target_p50": 0.71172818935972,
+     "sign_right_share": 1.0
+    }
+   },
+   "modes": [
+    {
+     "mode": 6,
+     "effect": "softening",
+     "f0_hz": 74.1053337705362,
+     "f_played_hz": 69.11102081700969,
+     "change": -0.06739478387603215,
+     "target_change": -0.06684531769147961,
+     "zfac": 5.994472774603793,
+     "target_zfac": 5.949614085994379
+    },
+    {
+     "mode": 7,
+     "effect": "softening",
+     "f0_hz": 77.31412898484494,
+     "f_played_hz": 70.80821739354425,
+     "change": -0.08414906404204558,
+     "target_change": -0.08412072699081408,
+     "zfac": 6.000105674012151,
+     "target_zfac": 5.999952186597811
+    },
+    {
+     "mode": 9,
+     "effect": "softening",
+     "f0_hz": 91.9641017474974,
+     "f_played_hz": 85.88028037814595,
+     "change": -0.0661543064494402,
+     "target_change": -0.0662038917942328,
+     "zfac": 3.539631304700426,
+     "target_zfac": 3.5395147745401725
+    },
+    {
+     "mode": 10,
+     "effect": "softening",
+     "f0_hz": 93.30046574684705,
+     "f_played_hz": 87.12210170356357,
+     "change": -0.0662200771864021,
+     "target_change": -0.06627009901103764,
+     "zfac": 3.5392491009676013,
+     "target_zfac": 3.5400772588897853
+    },
+    {
+     "mode": 11,
+     "effect": "hardening",
+     "f0_hz": 110.8408976906466,
+     "f_played_hz": 113.12484704009941,
+     "change": 0.02060565546687676,
+     "target_change": 0.028951579795390536,
+     "zfac": 1.9707211359264554,
+     "target_zfac": 2.109401929595978
+    },
+    {
+     "mode": 12,
+     "effect": "softening",
+     "f0_hz": 115.7298395923909,
+     "f_played_hz": 108.98494855216852,
+     "change": -0.05828134786999095,
+     "target_change": -0.05822220472633288,
+     "zfac": 5.5754490746741086,
+     "target_zfac": 5.5737949491122585
+    },
+    {
+     "mode": 13,
+     "effect": "softening",
+     "f0_hz": 133.00331145532746,
+     "f_played_hz": 127.99750752980118,
+     "change": -0.037636686415943865,
+     "target_change": -0.03766866534891267,
+     "zfac": 3.7836521474146574,
+     "target_zfac": 3.77830377859624
+    },
+    {
+     "mode": 14,
+     "effect": "softening",
+     "f0_hz": 156.17208854917408,
+     "f_played_hz": 146.94869473165198,
+     "change": -0.05905916929975563,
+     "target_change": -0.05908665367703303,
+     "zfac": 5.370123592382585,
+     "target_zfac": 5.375214738199555
+    },
+    {
+     "mode": 15,
+     "effect": "softening",
+     "f0_hz": 162.84093562831615,
+     "f_played_hz": 148.19205013052476,
+     "change": -0.0899582493877793,
+     "target_change": -0.0899999935956386,
+     "zfac": 4.168822181377656,
+     "target_zfac": 4.172600149247653
+    },
+    {
+     "mode": 16,
+     "effect": "softening",
+     "f0_hz": 178.69507026945215,
+     "f_played_hz": 167.05488652223843,
+     "change": -0.06513992652210054,
+     "target_change": -0.0651998064072341,
+     "zfac": 5.05521009053087,
+     "target_zfac": 5.055481897549935
+    },
+    {
+     "mode": 17,
+     "effect": "softening",
+     "f0_hz": 181.99198745729305,
+     "f_played_hz": 165.62081705348953,
+     "change": -0.08995544602009053,
+     "target_change": -0.08999202702676257,
+     "zfac": 5.947959425106348,
+     "target_zfac": 5.949017084109039
+    },
+    {
+     "mode": 18,
+     "effect": "softening",
+     "f0_hz": 186.1092423996075,
+     "f_played_hz": 185.97217957890078,
+     "change": -0.0007364643417999694,
+     "target_change": -0.0005873658252123493,
+     "zfac": 1.0367744514581003,
+     "target_zfac": 1.0308468058351026
+    },
+    {
+     "mode": 19,
+     "effect": "softening",
+     "f0_hz": 198.17671269083712,
+     "f_played_hz": 198.17760228906408,
+     "change": 4.488914034705971e-06,
+     "target_change": -1.9738171969096996e-05,
+     "zfac": 1.0053222320102322,
+     "target_zfac": 1.0030473725192788
+    },
+    {
+     "mode": 20,
+     "effect": "softening",
+     "f0_hz": 199.46043718225206,
+     "f_played_hz": 187.6344021152964,
+     "change": -0.059290129080334375,
+     "target_change": -0.059261264769821964,
+     "zfac": 6.00038203529608,
+     "target_zfac": 6.0
+    },
+    {
+     "mode": 21,
+     "effect": "softening",
+     "f0_hz": 213.8035185606273,
+     "f_played_hz": 201.7166365506965,
+     "change": -0.05653266181633665,
+     "target_change": -0.05652813330459172,
+     "zfac": 5.518731672124138,
+     "target_zfac": 5.519742610957889
+    },
+    {
+     "mode": 22,
+     "effect": "softening",
+     "f0_hz": 224.0125356396707,
+     "f_played_hz": 211.93729449114883,
+     "change": -0.053904309926410376,
+     "target_change": -0.05392774116532284,
+     "zfac": 4.795243258878442,
+     "target_zfac": 4.784830793652858
+    },
+    {
+     "mode": 23,
+     "effect": "softening",
+     "f0_hz": 251.2893625637909,
+     "f_played_hz": 240.92217680829063,
+     "change": -0.04125596742229187,
+     "target_change": -0.04127636922270417,
+     "zfac": 4.1393895843892325,
+     "target_zfac": 4.1392306565791
+    },
+    {
+     "mode": 24,
+     "effect": "softening",
+     "f0_hz": 263.17697219730667,
+     "f_played_hz": 247.4482760791359,
+     "change": -0.059764712645066775,
+     "target_change": -0.059798135619079096,
+     "zfac": 6.004589167349809,
+     "target_zfac": 5.999969178968792
+    },
+    {
+     "mode": 25,
+     "effect": "softening",
+     "f0_hz": 264.89543572566004,
+     "f_played_hz": 249.085901846317,
+     "change": -0.059682167931788155,
+     "target_change": -0.059668884957013835,
+     "zfac": 5.9973556028033626,
+     "target_zfac": 5.9982862447575895
+    },
+    {
+     "mode": 26,
+     "effect": "softening",
+     "f0_hz": 315.24084578078083,
+     "f_played_hz": 310.96466378414544,
+     "change": -0.013564809427040636,
+     "target_change": -0.013562639436149104,
+     "zfac": 2.806040932515594,
+     "target_zfac": 2.8045584116916804
+    },
+    {
+     "mode": 27,
+     "effect": "softening",
+     "f0_hz": 317.868391849261,
+     "f_played_hz": 313.55750539005567,
+     "change": -0.013561859466824977,
+     "target_change": -0.013503770640089452,
+     "zfac": 2.8054499942368953,
+     "target_zfac": 2.7967178772347454
+    },
+    {
+     "mode": 28,
+     "effect": "softening",
+     "f0_hz": 342.8954852904901,
+     "f_played_hz": 318.9624014160522,
+     "change": -0.06979702241971064,
+     "target_change": -0.06981559105604451,
+     "zfac": 6.000252089752756,
+     "target_zfac": 5.999739316943323
+    },
+    {
+     "mode": 29,
+     "effect": "softening",
+     "f0_hz": 382.79605461465695,
+     "f_played_hz": 348.34154252323094,
+     "change": -0.0900074900879263,
+     "target_change": -0.08999070602759929,
+     "zfac": 6.000281807939816,
+     "target_zfac": 5.999483893082061
+    },
+    {
+     "mode": 30,
+     "effect": "softening",
+     "f0_hz": 406.54629155895736,
+     "f_played_hz": 392.24014466615205,
+     "change": -0.03518946597187356,
+     "target_change": -0.04391675188938249,
+     "zfac": 3.9970224543908093,
+     "target_zfac": 4.052523523776461
+    },
+    {
+     "mode": 31,
+     "effect": "softening",
+     "f0_hz": 420.9359321631803,
+     "f_played_hz": 412.45511901596603,
+     "change": -0.02014751533239656,
+     "target_change": -0.025547693995554455,
+     "zfac": 2.8600148255459037,
+     "target_zfac": 2.77556793699148
+    },
+    {
+     "mode": 32,
+     "effect": "softening",
+     "f0_hz": 428.93671796507056,
+     "f_played_hz": 399.43617381468255,
+     "change": -0.06877598236481663,
+     "target_change": -0.07184274007483238,
+     "zfac": 5.949013956671017,
+     "target_zfac": 5.9945871594645865
+    },
+    {
+     "mode": 33,
+     "effect": "softening",
+     "f0_hz": 465.86595440049257,
+     "f_played_hz": 437.78139450184574,
+     "change": -0.060284636886135834,
+     "target_change": -0.06194525029451625,
+     "zfac": 3.901771278131164,
+     "target_zfac": 3.7644852336218464
+    },
+    {
+     "mode": 34,
+     "effect": "softening",
+     "f0_hz": 530.5218730693545,
+     "f_played_hz": 487.5910315774898,
+     "change": -0.08092190665671639,
+     "target_change": -0.08134481226870327,
+     "zfac": 5.988743365562848,
+     "target_zfac": 5.995429854056373
+    },
+    {
+     "mode": 35,
+     "effect": "softening",
+     "f0_hz": 543.5612894733491,
+     "f_played_hz": 531.0234561097169,
+     "change": -0.023066089521901034,
+     "target_change": -0.02556648408389306,
+     "zfac": 3.5106615437308704,
+     "target_zfac": 3.5915702702176926
+    },
+    {
+     "mode": 36,
+     "effect": "softening",
+     "f0_hz": 559.4719709580095,
+     "f_played_hz": 544.115039788981,
+     "change": -0.02744897325728779,
+     "target_change": -0.027674328728307218,
+     "zfac": 3.801119096914679,
+     "target_zfac": 3.805244450979564
+    },
+    {
+     "mode": 37,
+     "effect": "softening",
+     "f0_hz": 601.7554423997994,
+     "f_played_hz": 567.2599760443119,
+     "change": -0.057324726832415074,
+     "target_change": -0.05749360985800689,
+     "zfac": 4.624449268426809,
+     "target_zfac": 4.630549310879394
+    },
+    {
+     "mode": 38,
+     "effect": "softening",
+     "f0_hz": 638.5477913960692,
+     "f_played_hz": 581.0767507371241,
+     "change": -0.09000272404559573,
+     "target_change": -0.08999300227506746,
+     "zfac": 5.998891381270674,
+     "target_zfac": 5.9996113809530796
+    },
+    {
+     "mode": 39,
+     "effect": "softening",
+     "f0_hz": 700.9995363225743,
+     "f_played_hz": 647.1561913150522,
+     "change": -0.07680938747831834,
+     "target_change": -0.07578756741717085,
+     "zfac": 5.04245217076835,
+     "target_zfac": 4.996647939922473
+    },
+    {
+     "mode": 40,
+     "effect": "softening",
+     "f0_hz": 740.3828089433946,
+     "f_played_hz": 699.119752985206,
+     "change": -0.05573205571463147,
+     "target_change": -0.05586856074488222,
+     "zfac": 4.137034655868805,
+     "target_zfac": 4.169925049517255
+    },
+    {
+     "mode": 41,
+     "effect": "softening",
+     "f0_hz": 766.530787804955,
+     "f_played_hz": 722.7325664810663,
+     "change": -0.05713824156927827,
+     "target_change": -0.057117256956437434,
+     "zfac": 4.242827942739787,
+     "target_zfac": 4.240774861460478
+    },
+    {
+     "mode": 42,
+     "effect": "softening",
+     "f0_hz": 788.9581574587652,
+     "f_played_hz": 765.6640012682255,
+     "change": -0.029525211153871744,
+     "target_change": -0.029630908108532972,
+     "zfac": 2.6999150701388017,
+     "target_zfac": 2.7112243669473557
+    },
+    {
+     "mode": 43,
+     "effect": "softening",
+     "f0_hz": 797.2519540841773,
+     "f_played_hz": 778.5674277744151,
+     "change": -0.023436162450332976,
+     "target_change": -0.0260185855488142,
+     "zfac": 2.352204743235571,
+     "target_zfac": 2.5026081442038874
+    },
+    {
+     "mode": 44,
+     "effect": "softening",
+     "f0_hz": 812.9940360372179,
+     "f_played_hz": 785.5338396214607,
+     "change": -0.03377662713198559,
+     "target_change": -0.03583219171531893,
+     "zfac": 4.31917769938017,
+     "target_zfac": 4.449885576586324
+    },
+    {
+     "mode": 45,
+     "effect": "softening",
+     "f0_hz": 874.1471608507206,
+     "f_played_hz": 821.6834932738958,
+     "change": -0.06001697417373886,
+     "target_change": -0.057385084002544384,
+     "zfac": 4.907823842582716,
+     "target_zfac": 4.693511666676024
+    },
+    {
+     "mode": 46,
+     "effect": "softening",
+     "f0_hz": 885.2183444457555,
+     "f_played_hz": 830.1890250937288,
+     "change": -0.06216468478913095,
+     "target_change": -0.061511283460466304,
+     "zfac": 4.997370474970272,
+     "target_zfac": 4.959089059907848
+    },
+    {
+     "mode": 47,
+     "effect": "softening",
+     "f0_hz": 908.1534604542121,
+     "f_played_hz": 849.9019565731442,
+     "change": -0.06414279790547017,
+     "target_change": -0.06316928285687551,
+     "zfac": 5.1435924713654,
+     "target_zfac": 5.065805555844435
+    },
+    {
+     "mode": 48,
+     "effect": "softening",
+     "f0_hz": 953.6085948098654,
+     "f_played_hz": 913.6396992318458,
+     "change": -0.04191331306738977,
+     "target_change": -0.04195274204088251,
+     "zfac": 4.119305768499567,
+     "target_zfac": 4.1221074958929025
+    },
+    {
+     "mode": 49,
+     "effect": "softening",
+     "f0_hz": 963.9960987240597,
+     "f_played_hz": 923.8163408233454,
+     "change": -0.041680415464228626,
+     "target_change": -0.041332818229993795,
+     "zfac": 4.085375126112085,
+     "target_zfac": 4.075973306066488
+    },
+    {
+     "mode": 50,
+     "effect": "softening",
+     "f0_hz": 968.6688354470054,
+     "f_played_hz": 933.9863778217407,
+     "change": -0.03580424635965507,
+     "target_change": -0.03581059827247346,
+     "zfac": 4.9653325924723255,
+     "target_zfac": 4.967457582989862
+    },
+    {
+     "mode": 51,
+     "effect": "softening",
+     "f0_hz": 998.4105985723647,
+     "f_played_hz": 964.4317061977636,
+     "change": -0.034032984448670534,
+     "target_change": -0.034087379220542724,
+     "zfac": 4.819732671484683,
+     "target_zfac": 4.776541777916157
+    },
+    {
+     "mode": 52,
+     "effect": "softening",
+     "f0_hz": 1026.4975787005803,
+     "f_played_hz": 951.400171701224,
+     "change": -0.07315887397846599,
+     "target_change": -0.07558391856180369,
+     "zfac": 4.662250115590569,
+     "target_zfac": 4.754542145179226
+    },
+    {
+     "mode": 53,
+     "effect": "softening",
+     "f0_hz": 1045.0714323596278,
+     "f_played_hz": 965.2528251515946,
+     "change": -0.07637622150651824,
+     "target_change": -0.07651487900613108,
+     "zfac": 4.797484505345898,
+     "target_zfac": 4.800786446798604
+    },
+    {
+     "mode": 54,
+     "effect": "softening",
+     "f0_hz": 1056.2673097767538,
+     "f_played_hz": 995.5069474531417,
+     "change": -0.05752366068817749,
+     "target_change": -0.06314315988310781,
+     "zfac": 3.987220135959126,
+     "target_zfac": 4.136562119934012
+    },
+    {
+     "mode": 55,
+     "effect": "softening",
+     "f0_hz": 1077.9896785618237,
+     "f_played_hz": 1029.4855458056115,
+     "change": -0.04499498809758817,
+     "target_change": -0.048512162532163616,
+     "zfac": 3.3265272100610552,
+     "target_zfac": 3.409784486078099
+    },
+    {
+     "mode": 56,
+     "effect": "softening",
+     "f0_hz": 1100.9619297263064,
+     "f_played_hz": 1009.0315240547822,
+     "change": -0.08350007678683102,
+     "target_change": -0.0864244414168075,
+     "zfac": 4.528249220132622,
+     "target_zfac": 4.742330992160083
+    },
+    {
+     "mode": 57,
+     "effect": "softening",
+     "f0_hz": 1116.3602810174716,
+     "f_played_hz": 1080.8736537565887,
+     "change": -0.031787790970617236,
+     "target_change": -0.03400994195589746,
+     "zfac": 2.344502223444892,
+     "target_zfac": 2.473250074201878
+    },
+    {
+     "mode": 58,
+     "effect": "softening",
+     "f0_hz": 1117.9487046542663,
+     "f_played_hz": 1052.777317226627,
+     "change": -0.058295507795944945,
+     "target_change": -0.06653095382133989,
+     "zfac": 3.2954925032563147,
+     "target_zfac": 3.881885072769122
+    },
+    {
+     "mode": 59,
+     "effect": "softening",
+     "f0_hz": 1162.4610412667182,
+     "f_played_hz": 1105.920134111755,
+     "change": -0.04863896952051938,
+     "target_change": -0.0410888159638213,
+     "zfac": 3.6545850153140993,
+     "target_zfac": 3.19929952025202
+    },
+    {
+     "mode": 60,
+     "effect": "softening",
+     "f0_hz": 1183.9376724940548,
+     "f_played_hz": 1080.2486560624043,
+     "change": -0.08757979312645892,
+     "target_change": -0.08770300206369708,
+     "zfac": 5.689007531845428,
+     "target_zfac": 5.694347702673984
+    },
+    {
+     "mode": 61,
+     "effect": "softening",
+     "f0_hz": 1224.639799694757,
+     "f_played_hz": 1198.180679977953,
+     "change": -0.02160563434521623,
+     "target_change": -0.023053543916551344,
+     "zfac": 2.5260866419602315,
+     "target_zfac": 2.5552013766029287
+    },
+    {
+     "mode": 62,
+     "effect": "softening",
+     "f0_hz": 1237.6365390928706,
+     "f_played_hz": 1198.4989968243633,
+     "change": -0.031622807692146315,
+     "target_change": -0.03343487434936454,
+     "zfac": 3.2966455735943194,
+     "target_zfac": 3.255530094168206
+    },
+    {
+     "mode": 63,
+     "effect": "softening",
+     "f0_hz": 1274.5111932194643,
+     "f_played_hz": 1267.0379301731296,
+     "change": -0.0058636307676961374,
+     "target_change": -0.037374209748644915,
+     "zfac": 3.2434331932305134,
+     "target_zfac": 3.5212850092713044
+    },
+    {
+     "mode": 64,
+     "effect": "softening",
+     "f0_hz": 1318.4398881422605,
+     "f_played_hz": 1299.3209980360457,
+     "change": -0.01450114660377444,
+     "target_change": -0.02985091699318554,
+     "zfac": 2.7199640792725304,
+     "target_zfac": 2.7656566493841734
+    },
+    {
+     "mode": 65,
+     "effect": "softening",
+     "f0_hz": 1340.0413660482507,
+     "f_played_hz": 1300.2574517441933,
+     "change": -0.029688571794898477,
+     "target_change": -0.042869330791737825,
+     "zfac": 3.3671718117254645,
+     "target_zfac": 3.535687977916331
+    },
+    {
+     "mode": 66,
+     "effect": "softening",
+     "f0_hz": 1364.1403980015305,
+     "f_played_hz": 1309.5710754289678,
+     "change": -0.04000271720748605,
+     "target_change": -0.04578479827744297,
+     "zfac": 3.4527262588663974,
+     "target_zfac": 3.7081319890979483
+    },
+    {
+     "mode": 67,
+     "effect": "softening",
+     "f0_hz": 1383.9113921773746,
+     "f_played_hz": 1261.0951105647607,
+     "change": -0.08874576964019432,
+     "target_change": -0.08868379129291315,
+     "zfac": 5.983420940168258,
+     "target_zfac": 5.9758886611932756
+    },
+    {
+     "mode": 68,
+     "effect": "softening",
+     "f0_hz": 1396.6593101178146,
+     "f_played_hz": 1288.5827188139915,
+     "change": -0.0773822152051572,
+     "target_change": -0.08524950735343229,
+     "zfac": 5.0985198284733775,
+     "target_zfac": 5.784614407851879
+    },
+    {
+     "mode": 69,
+     "effect": "softening",
+     "f0_hz": 1414.655533633467,
+     "f_played_hz": 1293.723101964673,
+     "change": -0.08548542651806224,
+     "target_change": -0.08674955630823866,
+     "zfac": 5.809849457042855,
+     "target_zfac": 5.869541658125486
+    },
+    {
+     "mode": 70,
+     "effect": "softening",
+     "f0_hz": 1445.2801384423365,
+     "f_played_hz": 1321.3594687607865,
+     "change": -0.08574162640545702,
+     "target_change": -0.08574943920483424,
+     "zfac": 5.842780493425986,
+     "target_zfac": 5.814948301351867
+    },
+    {
+     "mode": 71,
+     "effect": "softening",
+     "f0_hz": 1473.4444231072207,
+     "f_played_hz": 1446.9494661844126,
+     "change": -0.017981646614763536,
+     "target_change": -0.020411842921388423,
+     "zfac": 2.773458845212256,
+     "target_zfac": 2.931076125965617
+    },
+    {
+     "mode": 72,
+     "effect": "softening",
+     "f0_hz": 1503.67174550692,
+     "f_played_hz": 1472.6729865531397,
+     "change": -0.02061537635884081,
+     "target_change": -0.01980884266951266,
+     "zfac": 2.943362892687683,
+     "target_zfac": 2.8740265908736937
+    },
+    {
+     "mode": 73,
+     "effect": "softening",
+     "f0_hz": 1533.5962412435067,
+     "f_played_hz": 1495.6416875890461,
+     "change": -0.024748726316442538,
+     "target_change": -0.024489904674639074,
+     "zfac": 3.3685858402581856,
+     "target_zfac": 3.3168810949266607
+    },
+    {
+     "mode": 74,
+     "effect": "softening",
+     "f0_hz": 1587.5287367084352,
+     "f_played_hz": 1492.6135710454557,
+     "change": -0.059787998458393554,
+     "target_change": -0.06183008637656773,
+     "zfac": 2.7967052962129775,
+     "target_zfac": 2.765655547388977
+    },
+    {
+     "mode": 75,
+     "effect": "softening",
+     "f0_hz": 1606.2260652638415,
+     "f_played_hz": 1508.7158495606977,
+     "change": -0.060707653680820206,
+     "target_change": -0.0628330526622276,
+     "zfac": 2.761405500386948,
+     "target_zfac": 2.7942967831752363
+    },
+    {
+     "mode": 76,
+     "effect": "softening",
+     "f0_hz": 1691.8484561995438,
+     "f_played_hz": 1632.0296676129674,
+     "change": -0.035357060715088706,
+     "target_change": -0.04219974269077387,
+     "zfac": 3.552452081834458,
+     "target_zfac": 3.9281353648544792
+    },
+    {
+     "mode": 77,
+     "effect": "softening",
+     "f0_hz": 1759.2863398160396,
+     "f_played_hz": 1691.4567050559772,
+     "change": -0.03855519890363901,
+     "target_change": -0.04270824534213524,
+     "zfac": 3.913907509387507,
+     "target_zfac": 4.165879012183808
+    },
+    {
+     "mode": 78,
+     "effect": "softening",
+     "f0_hz": 1801.755063499156,
+     "f_played_hz": 1742.2037678593717,
+     "change": -0.03305182643645843,
+     "target_change": -0.03601179079663086,
+     "zfac": 3.4108976690587376,
+     "target_zfac": 3.669482778378921
+    },
+    {
+     "mode": 79,
+     "effect": "softening",
+     "f0_hz": 1952.9678817259542,
+     "f_played_hz": 1866.0183763372188,
+     "change": -0.044521728289711016,
+     "target_change": -0.0389401666765955,
+     "zfac": 3.66044576842394,
+     "target_zfac": 3.238298900431863
+    },
+    {
+     "mode": 80,
+     "effect": "softening",
+     "f0_hz": 1957.004761863943,
+     "f_played_hz": 1925.7594924651453,
+     "change": -0.0159658627345588,
+     "target_change": -0.016152196613117176,
+     "zfac": 1.952401098318984,
+     "target_zfac": 1.9284357779600367
+    },
+    {
+     "mode": 81,
+     "effect": "softening",
+     "f0_hz": 1986.4994145787252,
+     "f_played_hz": 1957.8703627012083,
+     "change": -0.014411809873897341,
+     "target_change": -0.014641672760838498,
+     "zfac": 1.8333016638639532,
+     "target_zfac": 1.8416101635707254
+    }
+   ]
+  },
+  "service_line": {
+   "what": "the state as played beside the state in service (unit B): the member's mode, and the softening modes in summary; changes in percent of the small-signal frequency, differences in percentage points (played less service)",
+   "unit": "B",
+   "member": {
+    "mode": 11,
+    "f0_hz": 110.8408976906466,
+    "resolved": true,
+    "fitted": true,
+    "change_pct_played": 2.060565546687676,
+    "change_pct_service": 1.7347269734413473,
+    "change_pct_target": 2.8951579795390536,
+    "difference_pct_points": 0.3258385732463287,
+    "zfac_played": 1.9707211359264554,
+    "zfac_service": 1.5929815622347738,
+    "zfac_difference": 0.37773957369168154,
+    "service_f0_hz": 106.55000147720921
+   },
+   "softening": {
+    "modes_played": 74,
+    "modes_service": 76,
+    "change_pct_played_p10_p50_p90": [
+     -8.508451777525723,
+     -5.613235876548406,
+     -1.6570597898620214
+    ],
+    "change_pct_service_p10_p50_p90": [
+     -6.861782385411513,
+     -3.006790591187136,
+     -1.5626552744422428
+    ],
+    "difference_pct_points_p10_p50_p90": [
+     -1.6466693921142097,
+     -2.6064452853612696,
+     -0.09440451541977857
+    ],
+    "zfac_played_p10_p50_p90": [
+     2.7059297728789202,
+     4.102340447305826,
+     5.992753951891509
+    ],
+    "zfac_service_p10_p50_p90": [
+     1.9392212044347585,
+     3.0264192003885606,
+     5.390019848618234
+    ],
+    "zfac_difference_p10_p50_p90": [
+     0.7667085684441617,
+     1.0759212469172654,
+     0.6027341032732751
+    ]
+   }
+  }
+ },
+ "job": {
+  "seed": 0,
+  "ns": 6,
+  "nc": 12,
+  "rig": "6x12",
+  "cls": "nonsquare",
+  "variant": "strong",
+  "change": "strong",
+  "stage": 2,
+  "law": "pinv_closed",
+  "setting": "default",
+  "ref": "line",
+  "frf": "hold",
+  "block": "A",
+  "id": "s0_6x12_strong_pinv_closed_default_line_hold_divopen",
+  "base_id": "s0_6x12_strong_pinv_closed_default_line_hold",
+  "protections": "opened",
+  "prot": "open",
+  "loops_at_full": 30,
+  "frames_per_loop": 64,
+  "record_loops": 15
+ },
+ "runner_outcome": {
+  "completed": true,
+  "trip": null,
+  "stopped_after_seed": false,
+  "trip_record": null,
+  "record_window_status": "complete",
+  "record_frames_drive": 989,
+  "record_frames_response": 989,
+  "record_loops_recorded": 15,
+  "record_loops_asked": 15,
+  "run_error": null,
+  "gate": {
+   "passed": true,
+   "worst_condition": 56.98958236640389,
+   "low_coherence_controls": [],
+   "ill_conditioned_lines": 0
+  },
+  "gate_overridden": false,
+  "loops_total": 35,
+  "loops_at_full": 30,
+  "first_full_loop_within_1_db": null,
+  "final_max_error_db": 22.30977326936061,
+  "final_max_worst_line_db": 40.70142980215409,
+  "law_calls": 34,
+  "repaired_lines": 0,
+  "capped_drive_lines": 0
+ },
+ "default_stop": {
+  "guard": "divergence",
+  "loop": 7,
+  "level_db": 0.0,
+  "at_full_level": true,
+  "full_level_loops_done": 1,
+  "control": 0,
+  "control_name": "c01",
+  "drive": null,
+  "error_db": 4.075486552053442,
+  "lines": null,
+  "consecutive_loops": 5,
+  "words": "Control 0's error grew for 5 loops in a row, to 4.1 dB."
+ },
+ "twin_of": "s0_6x12_strong_pinv_closed_default_line_hold",
+ "batch": {
+  "version": 1,
+  "batch": "main",
+  "mode": "census",
+  "protections": "opened",
+  "problem": "problems/frame-12x6-strong_s00",
+  "problem_sha256": "997bb59fb2453574b61c325cbd2faec6be41d3134b68cb4b8a8302eb2eb427a0",
+  "structure_sha256": "ca4843fcce4c85b052ce159ce0ce43a77f01b19013005fc4d80d57bfbd08f130",
+  "case": "case file s0_6x12_strong_pinv_closed_default_line_hold_divopen.json (not included)",
+  "run_dir": "run folder s0_6x12_strong_pinv_closed_default_line_hold_divopen (the kept files the card was scored from; not included)",
+  "runner": "x4_runner, the study's build of the run program (not included; its SHA-256 is runner_sha256)",
+  "runner_sha256": "e8a47aa4fdb6964edf04ef12fcccb2c109642d499ab7f5349d056d7712a298b1",
+  "code_commit": "646c4ca4525cf6eca2428367359c30a5a6d0bd3e",
+  "code_parts": "main=b587d5a1 pr214=in-main level-rule=7f93a366 runner=60538c01 build=8b04024c head=646c4ca4",
+  "study_gate": "rebuilt on main: HEAD is main b587d5a1b2368b942f29ff9eb81c8d19f4c47703 (214 in it) plus the study examples",
+  "results_allowed": true,
+  "runner_wall_s": 449.733704333,
+  "case_wall_s": 0.01629805564880371,
+  "task_wall_s": 450.2260959148407,
+  "run_wall_s": 449.78058385849,
+  "score_wall_s": 0.4292140007019043,
+  "kept_bytes": 7439637,
+  "wall_loop_median_s": 12.415066,
+  "scored_from": "kept files (response autospectra float32), so the card can be scored again exactly"
+ }
+}
