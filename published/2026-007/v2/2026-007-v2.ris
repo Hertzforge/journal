@@ -1,0 +1,13 @@
+TY  - JOUR
+AU  - Cross, Kevin
+TI  - Six Control Laws for Multi-Shaker Random Vibration: What Each Does and How It Is Built
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-007
+PY  - 2026
+DA  - 2026/11/17
+ET  - Version 2
+DO  - 10.5281/zenodo.24310228
+UR  - https://hertzforge.com/journal/2026-007/v2/
+AB  - A multi-shaker random vibration test drives several shakers at once so that a set of accelerometers on the test article follow target spectra and, for every pair of them, a target coherence and phase. The rule that turns the targets and a measurement of the system into shaker drives is the control law. Hertzforge, an open-source structural dynamics suite, ships six: the pseudo-inverse with a closed-loop correction of a factor of the target (the default), the same pseudo-inverse without feedback, a shape-constrained law that drives only the directions the system responds to most, a law that takes its cross terms from the article's own response to uncorrelated drive, a law that chooses the cross terms needing the least drive, and Brandon Zwink's band-average law, which matches averages over fractional-octave bands rather than single frequency lines. This article explains in plain terms what a multi-shaker controller does, and for each law states what it does, the problem it solves as an equation, the derivation, the algorithm step by step with the file and function that does each step, every setting with its default and range, how it handles the edge cases, what it gives up by design, and where the build differs from its published source. It describes the protections that can stop a run whatever the law asks for, and how a reader can plug in a law of their own. Each law's equations, as written here, were implemented again without Hertzforge and compared with the shipped law on small made-up structures: the largest difference is 5e-10 dB in the pseudo-inverse laws' errors and 2e-7 relative in the minimum-drive law's solve, except in the closed loop after 22 loops, where a change of one part in 10^15 moves single lines as far. The article reports no score. A companion article reports how each law scores on the Open Benchmark Set.
+ER  - 

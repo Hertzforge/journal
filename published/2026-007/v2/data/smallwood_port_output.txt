@@ -1,0 +1,314 @@
+=== target: independent
+--- build (factor.rs)
+  loop | g2 91 Hz | g2 161 Hz | worst line (dB, Hz, gauge) | drive power 91 Hz | drive power summed over band
+    0 |   +5.67 |   +5.57 |   +7.28 at 89.5 g2 |   45.8455 | 547483.193
+    1 |   +4.80 |   +3.67 |   +4.81 at 90.5 g2 |   40.7712 | 509825.751
+    2 |   +4.69 |   +3.09 |   +4.69 at 91.0 g2 |   40.7735 | 493299.168
+    3 |   +4.74 |   +2.97 |   -6.62 at 157.0 g2 |   41.4657 | 486239.145
+    4 |   +4.79 |   +2.96 |   -8.12 at 157.5 g2 |   42.0155 | 483221.978
+    5 |   +4.82 |   +2.96 |   -7.23 at 88.5 g2 |   42.3589 | 481950.400
+    6 |   +4.84 |   +2.97 |   +4.92 at 91.5 g2 |   42.5574 | 481421.253
+    7 |   +4.85 |   +2.97 |   +4.96 at 91.5 g2 |   42.6687 | 481209.031
+    8 |   +4.86 |   +2.97 |   +4.99 at 91.5 g2 |   42.7302 | 481131.005
+    9 |   +4.86 |   +2.97 |   +5.01 at 91.5 g2 |   42.7641 | 481108.565
+   10 |   +4.86 |   +2.97 |   +5.02 at 91.5 g2 |   42.7827 | 481109.483
+   15 |   +4.87 |   +2.97 |   +5.04 at 91.5 g2 |   42.8041 | 481165.173
+   20 |   +4.87 |   +2.97 |   +5.05 at 91.5 g2 |   42.8052 | 481206.406
+   25 |   +4.87 |   +2.97 |   +5.05 at 91.5 g2 |   42.8053 | 481250.716
+   30 |   +4.87 |   +2.97 |   +5.05 at 91.5 g2 |   42.8053 | 481276.652
+  loop 30 gauge 2 RMS: band 0.392, 85-96 Hz 2.37, 150-172 Hz 1.12; lines over 0.5 dB (both gauges) 21
+  loop 30 gauge 2, 89 to 94 Hz: 89.0:+0.47 89.5:+1.73 90.0:+2.99 90.5:+4.11 91.0:+4.87 91.5:+5.05 92.0:+4.61 92.5:+3.75 93.0:+2.69 93.5:+1.60 94.0:+0.55
+--- Smallwood, as printed, e=0.5
+  loop | g2 91 Hz | g2 161 Hz | worst line (dB, Hz, gauge) | drive power 91 Hz | drive power summed over band
+    0 |   +5.67 |   +5.57 |   +7.28 at 89.5 g2 |   45.8455 | 547483.193
+    1 |   +2.04 |   +1.69 |   -2.94 at 270.5 g1 |   51.2593 | 512128.979
+    2 |   +1.32 |   -0.68 |   +3.64 at 89.0 g2 |   39.9498 | 495420.397
+    3 |   +0.64 |   -5.71 |   -6.60 at 90.5 g2 |   37.8414 | 488147.930
+    4 |   +0.38 |   -5.35 |   -5.35 at 161.0 g2 |   37.2653 | 485039.475
+    5 |   +0.39 |   -2.43 |   -7.59 at 162.0 g2 |   37.3437 | 483725.357
+    6 |   +0.40 |   -0.58 |   -9.71 at 163.0 g2 |   37.3869 | 483205.377
+    7 |   +0.40 |   +1.54 |  -10.33 at 89.5 g2 |   37.4062 | 483046.129
+    8 |   +0.40 |   +1.32 |   -8.93 at 163.5 g2 |   37.4148 | 483028.470
+    9 |   +0.40 |   -0.06 |   -6.22 at 163.5 g2 |   37.4186 | 483083.806
+   10 |   +0.40 |   -1.65 |   -4.86 at 163.0 g2 |   37.4203 | 483195.455
+   15 |   +0.40 |   +2.52 |   +4.95 at 91.5 g2 |   37.4216 | 483803.327
+   20 |   +0.40 |   -0.20 |  -12.53 at 90.5 g2 |   37.4217 | 483833.156
+   25 |   +0.40 |   -0.65 |   +5.04 at 91.5 g2 |   37.4217 | 483829.838
+   30 |   +0.40 |   -4.23 |   +5.04 at 91.5 g2 |   37.4217 | 483826.583
+  loop 30 gauge 2 RMS: band 0.256, 85-96 Hz 1.54, 150-172 Hz 0.74; lines over 0.5 dB (both gauges) 12
+  loop 30 gauge 2, 89 to 94 Hz: 89.0:-0.01 89.5:-0.04 90.0:-1.00 90.5:+1.60 91.0:+0.40 91.5:+5.04 92.0:+4.61 92.5:+1.28 93.0:+0.31 93.5:-0.06 94.0:-0.05
+--- Smallwood, column-1 read as columns 2:N, e=0.5
+  loop | g2 91 Hz | g2 161 Hz | worst line (dB, Hz, gauge) | drive power 91 Hz | drive power summed over band
+    0 |   +5.67 |   +5.57 |   +7.28 at 89.5 g2 |   45.8455 | 547483.193
+    1 |   +2.04 |   +1.69 |   -2.94 at 270.5 g1 |   51.2593 | 512128.979
+    2 |   +1.32 |   -0.43 |   +3.64 at 89.0 g2 |   39.9498 | 495407.647
+    3 |   +0.95 |   -5.54 |   -6.29 at 90.5 g2 |   37.2676 | 488130.596
+    4 |   +0.99 |   -5.80 |   -5.80 at 161.0 g2 |   36.7822 | 485022.880
+    5 |   +1.29 |   -2.65 |   -7.34 at 162.0 g2 |   37.0201 | 483708.893
+    6 |   +1.62 |   -0.83 |   -7.89 at 163.5 g2 |   37.1786 | 483190.937
+    7 |   +2.00 |   +1.30 |   -9.94 at 163.5 g2 |   37.3371 | 483032.298
+    8 |   +2.63 |   +1.56 |  -17.13 at 89.5 g2 |   37.1869 | 483027.409
+    9 |   +3.15 |   +0.45 |   -8.23 at 163.0 g2 |   37.7852 | 483080.544
+   10 |   +3.57 |   -0.12 |   -6.71 at 163.0 g2 |   38.5936 | 483194.856
+   15 |   +4.55 |   +0.48 |   +4.95 at 91.5 g2 |   41.5434 | 483826.288
+   20 |   +4.79 |   -0.22 |   +5.02 at 91.5 g2 |   42.4864 | 483859.365
+   25 |   +4.85 |   +0.31 |   +5.04 at 91.5 g2 |   42.7282 | 483858.842
+   30 |   +4.86 |   -0.37 |   -5.09 at 160.5 g2 |   42.7869 | 483856.714
+  loop 30 gauge 2 RMS: band 0.332, 85-96 Hz 2.05, 150-172 Hz 0.89; lines over 0.5 dB (both gauges) 13
+  loop 30 gauge 2, 89 to 94 Hz: 89.0:+0.00 89.5:-0.02 90.0:-1.01 90.5:+0.32 91.0:+4.86 91.5:+5.04 92.0:+4.61 92.5:+3.75 93.0:+2.69 93.5:-0.07 94.0:-0.05
+--- Smallwood, as printed, e=1 (his example)
+  loop | g2 91 Hz | g2 161 Hz | worst line (dB, Hz, gauge) | drive power 91 Hz | drive power summed over band
+    0 |   +5.67 |   +5.57 |   +7.28 at 89.5 g2 |   45.8455 | 547483.193
+    1 |   -3.87 |   -0.98 |  +10.18 at 89.0 g2 |   63.8449 | 478117.882
+    2 |   +1.02 |   +4.54 |  -12.49 at 92.0 g2 |   59.2077 | 484705.545
+    3 |   +0.83 |   -2.67 |  -15.45 at 92.5 g2 |   29.3725 | 482973.703
+    4 |   +0.62 |   +7.44 |   +9.99 at 160.5 g2 |   43.1495 | 483707.540
+    5 |   +4.63 |   +4.02 |   -7.70 at 91.0 g1 |   19.6514 | 483501.766
+    6 |   +5.51 |   -1.21 |   +6.75 at 258.5 g2 |   33.8028 | 483753.377
+    7 |   +6.12 |  -10.22 |  +10.60 at 159.0 g2 |   48.7181 | 483636.230
+    8 |   +5.58 |   +0.60 |   +6.20 at 159.0 g2 |   46.6845 | 483693.673
+    9 |   +5.27 |   +5.00 |   -5.62 at 92.0 g2 |   45.0822 | 483677.742
+   10 |   +5.07 |  +10.10 |  +10.10 at 161.0 g2 |   43.9641 | 483611.995
+   15 |   +4.87 |   +3.39 |   +6.09 at 159.5 g2 |   42.8407 | 483674.720
+   20 |   +4.87 |   +2.99 |   +5.05 at 91.5 g2 |   42.8064 | 483736.028
+   25 |   +4.87 |   +2.98 |   +5.72 at 88.5 g2 |   42.8053 | 483689.273
+   30 |   +4.87 |   +2.97 |   +9.47 at 159.5 g2 |   42.8053 | 483715.597
+  loop 30 gauge 2 RMS: band 0.658, 85-96 Hz 2.84, 150-172 Hz 2.01; lines over 0.5 dB (both gauges) 120
+  loop 30 gauge 2, 89 to 94 Hz: 89.0:+1.17 89.5:+2.22 90.0:+2.99 90.5:+4.11 91.0:+4.87 91.5:+5.05 92.0:+4.61 92.5:-0.26 93.0:+0.00 93.5:-0.00 94.0:-0.00
+--- Smallwood, as printed, e=0.25
+  loop | g2 91 Hz | g2 161 Hz | worst line (dB, Hz, gauge) | drive power 91 Hz | drive power summed over band
+    0 |   +5.67 |   +5.57 |   +7.28 at 89.5 g2 |   45.8455 | 547483.193
+    1 |   +4.03 |   +3.73 |   +4.08 at 159.0 g2 |   47.6559 | 529638.197
+    2 |   +3.75 |   +3.10 |   +3.75 at 91.0 g2 |   44.2489 | 515940.272
+    3 |   +3.55 |   +2.57 |   +3.55 at 91.0 g2 |   41.9183 | 506140.125
+    4 |   +3.45 |   +2.15 |   +3.53 at 91.5 g2 |   40.3834 | 499152.935
+    5 |   +3.42 |   +1.83 |   +3.59 at 91.5 g2 |   39.4453 | 494184.693
+    6 |   +3.45 |   +1.64 |   -3.77 at 89.5 g2 |   38.9637 | 490643.557
+    7 |   +3.53 |   +1.43 |   -4.63 at 90.0 g2 |   38.8398 | 488127.199
+    8 |   +3.66 |   +1.34 |   -8.49 at 90.0 g2 |   39.0037 | 486338.453
+    9 |   +3.80 |   +1.34 |   -8.34 at 90.0 g2 |   39.3253 | 485070.078
+   10 |   +3.93 |   +1.36 |   -9.04 at 160.0 g2 |   39.6415 | 484176.878
+   15 |   +4.38 |   +1.39 |   +4.62 at 91.5 g2 |   40.9579 | 482500.359
+   20 |   +4.61 |   +1.40 |   -9.02 at 164.0 g2 |   41.7886 | 482454.300
+   25 |   +4.74 |   +1.40 |   -5.70 at 164.0 g2 |   42.2624 | 482815.791
+   30 |   +4.80 |   +1.40 |   +4.99 at 91.5 g2 |   42.5203 | 483406.161
+  loop 30 gauge 2 RMS: band 0.340, 85-96 Hz 2.26, 150-172 Hz 0.67; lines over 0.5 dB (both gauges) 20
+  loop 30 gauge 2, 89 to 94 Hz: 89.0:-0.00 89.5:-0.00 90.0:+0.05 90.5:+4.03 91.0:+4.80 91.5:+4.99 92.0:+4.56 92.5:+3.71 93.0:+1.53 93.5:+0.40 94.0:-3.00
+=== target: cross terms (coherence 0.64, 30 deg)
+--- build (factor.rs)
+  loop | g2 91 Hz | g2 161 Hz | worst line (dB, Hz, gauge) | drive power 91 Hz | drive power summed over band
+    0 |   +7.20 |   -0.43 |   +9.71 at 89.5 g2 |   22.6270 | 348046.526
+    1 |   +4.68 |   -6.32 |   -7.73 at 161.5 g2 |   30.7187 | 324969.847
+    2 |   +4.36 |   -3.21 |   -7.51 at 162.5 g2 |   30.9738 | 314632.241
+    3 |   +4.31 |   -0.52 |   -5.84 at 88.5 g2 |   32.5459 | 310161.833
+    4 |   +4.37 |   +2.78 |   +4.81 at 92.0 g2 |   34.3861 | 308229.177
+    5 |   +4.45 |   +2.97 |   +4.86 at 92.0 g2 |   36.1021 | 307402.940
+    6 |   +4.54 |   +3.14 |   +4.92 at 91.5 g2 |   37.5661 | 307059.109
+    7 |   +4.61 |   +2.79 |   +4.96 at 91.5 g2 |   38.7595 | 306910.882
+    8 |   +4.67 |   +1.59 |   +4.99 at 91.5 g2 |   39.7065 | 306854.263
+    9 |   +4.71 |   -1.26 |   +5.01 at 91.5 g2 |   40.4455 | 306834.439
+   10 |   +4.75 |   -7.45 |   -7.45 at 161.0 g2 |   41.0155 | 306828.019
+   15 |   +4.84 |   +0.11 |   +5.04 at 91.5 g2 |   42.3700 | 306830.012
+   20 |   +4.86 |   +0.14 |   +5.05 at 91.5 g2 |   42.7014 | 306833.587
+   25 |   +4.87 |   +0.16 |   +5.05 at 91.5 g2 |   42.7806 | 306834.657
+   30 |   +4.87 |   +0.17 |   +5.05 at 91.5 g2 |   42.7994 | 306836.637
+  loop 30 gauge 2 RMS: band 0.338, 85-96 Hz 2.37, 150-172 Hz 0.40; lines over 0.5 dB (both gauges) 19
+  loop 30 gauge 2, 89 to 94 Hz: 89.0:-0.00 89.5:+1.74 90.0:+2.98 90.5:+4.11 91.0:+4.87 91.5:+5.05 92.0:+4.61 92.5:+3.75 93.0:+2.70 93.5:+1.60 94.0:-0.07
+--- Smallwood, as printed, e=0.5
+  loop | g2 91 Hz | g2 161 Hz | worst line (dB, Hz, gauge) | drive power 91 Hz | drive power summed over band
+    0 |   +7.20 |   -0.43 |   +9.71 at 89.5 g2 |   22.6270 | 348046.526
+    1 |   +4.72 |   -5.47 |   +7.07 at 89.5 g2 |   30.9469 | 326348.428
+    2 |   +4.33 |   -0.19 |   -6.87 at 162.5 g2 |   30.8258 | 316139.879
+    3 |   +4.30 |   +3.59 |   -5.06 at 163.5 g2 |   32.5026 | 311386.157
+    4 |   +4.37 |   +5.21 |   +5.21 at 161.0 g2 |   34.3829 | 309146.156
+    5 |   +4.45 |   +5.10 |   +5.10 at 161.0 g2 |   36.1055 | 308057.330
+    6 |   +4.54 |   +3.15 |   +4.92 at 91.5 g2 |   37.5693 | 307519.882
+    7 |   +4.61 |   -1.92 |   -6.96 at 160.0 g2 |   38.7615 | 307233.157
+    8 |   +4.67 |  -11.97 |  -11.97 at 161.0 g2 |   39.7077 | 307081.662
+    9 |   +4.71 |   +0.06 |   +5.01 at 91.5 g2 |   40.4461 | 306995.678
+   10 |   +4.75 |   +0.56 |   +5.02 at 91.5 g2 |   41.0159 | 306943.056
+   15 |   +4.84 |   +0.77 |   +5.04 at 91.5 g2 |   42.3700 | 306862.437
+   20 |   +4.86 |   +0.77 |   +5.05 at 91.5 g2 |   42.7014 | 306852.077
+   25 |   +4.87 |   +0.77 |   +5.05 at 91.5 g2 |   42.7806 | 306851.445
+   30 |   +4.87 |   +0.77 |   +5.05 at 91.5 g2 |   42.7994 | 306851.979
+  loop 30 gauge 2 RMS: band 0.336, 85-96 Hz 2.25, 150-172 Hz 0.21; lines over 0.5 dB (both gauges) 31
+  loop 30 gauge 2, 89 to 94 Hz: 89.0:-0.00 89.5:+0.73 90.0:-0.35 90.5:+4.11 91.0:+4.87 91.5:+5.05 92.0:+4.61 92.5:+3.75 93.0:+2.70 93.5:+1.56 94.0:-0.21
+--- Smallwood, column-1 read as columns 2:N, e=0.5
+  loop | g2 91 Hz | g2 161 Hz | worst line (dB, Hz, gauge) | drive power 91 Hz | drive power summed over band
+    0 |   +7.20 |   -0.43 |   +9.71 at 89.5 g2 |   22.6270 | 348046.526
+    1 |   +4.72 |   -5.47 |   +7.07 at 89.5 g2 |   30.9469 | 326352.356
+    2 |   +4.33 |   -0.19 |   -6.87 at 162.5 g2 |   30.8258 | 316140.633
+    3 |   +4.30 |   +3.59 |   -5.06 at 163.5 g2 |   32.5026 | 311387.446
+    4 |   +4.37 |   +5.21 |   +5.21 at 161.0 g2 |   34.3829 | 309148.424
+    5 |   +4.45 |   +5.10 |   +5.10 at 161.0 g2 |   36.1055 | 308062.573
+    6 |   +4.54 |   +3.15 |   +4.92 at 91.5 g2 |   37.5693 | 307519.561
+    7 |   +4.61 |   -1.92 |   -7.07 at 160.0 g2 |   38.7615 | 307235.016
+    8 |   +4.67 |  -11.97 |  -11.97 at 161.0 g2 |   39.7077 | 307080.402
+    9 |   +4.71 |   +0.06 |   +5.01 at 91.5 g2 |   40.4461 | 306991.788
+   10 |   +4.75 |   +1.26 |   +5.02 at 91.5 g2 |   41.0159 | 306939.520
+   15 |   +4.84 |   +3.46 |   +5.04 at 91.5 g2 |   42.3700 | 306862.695
+   20 |   +4.86 |   +0.27 |   +5.05 at 91.5 g2 |   42.7014 | 306855.444
+   25 |   +4.87 |   +0.41 |   +5.05 at 91.5 g2 |   42.7806 | 306855.668
+   30 |   +4.87 |   +0.71 |   +5.05 at 91.5 g2 |   42.7994 | 306856.549
+  loop 30 gauge 2 RMS: band 0.329, 85-96 Hz 2.28, 150-172 Hz 0.36; lines over 0.5 dB (both gauges) 24
+  loop 30 gauge 2, 89 to 94 Hz: 89.0:+0.00 89.5:+1.58 90.0:+0.99 90.5:+4.11 91.0:+4.87 91.5:+5.05 92.0:+4.61 92.5:+3.75 93.0:+2.70 93.5:+1.60 94.0:-0.21
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+warning: D(j,j) too large
+--- Smallwood, as printed, e=1 (his example)
+  loop | g2 91 Hz | g2 161 Hz | worst line (dB, Hz, gauge) | drive power 91 Hz | drive power summed over band
+    0 |   +7.20 |   -0.43 |   +9.71 at 89.5 g2 |   22.6270 | 348046.526
+    1 |   +1.38 |   -0.42 |  -13.70 at 159.5 g2 |   46.7703 | 305058.138
+    2 |   -1.33 |   +8.94 |  +11.56 at 86.0 g2 |   28.9430 | 308019.018
+    3 |   -1.28 |   +1.59 |  -12.92 at 159.0 g2 |   23.5851 | 307039.211
+    4 |   -4.54 |   +5.71 |   -9.37 at 161.5 g1 |   21.2156 | 307014.543
+    5 |   -0.04 |   +5.76 |  -15.17 at 159.0 g2 |    7.7539 | 306985.312
+    6 |   +4.49 |   +4.70 |   +8.65 at 414.5 g2 |   25.9809 | 306876.261
+    7 |   +4.37 |   +3.93 |  +17.67 at 413.5 g2 |   32.3329 | 306890.314
+    8 |   +4.64 |   +3.45 |  +35.16 at 416.5 g2 |   37.8072 | 309594.697
+    9 |   +4.76 |   +3.21 |  +29.14 at 416.5 g2 |   40.3568 | 307596.895
+   10 |   +4.82 |   +3.09 |  +23.12 at 416.5 g2 |   41.5810 | 307111.142
+   15 |   +4.87 |   +2.98 |  +99.01 at 416.5 g2 |   42.7669 | 6650279275.788
+   20 |   +4.87 |   +2.97 | +114.08 at 413.5 g2 |   42.8041 | 135737968395.635
+   25 |   +4.87 |   +2.97 | +112.95 at 413.0 g2 |   42.8052 | 96324516235.211
+   30 |   +4.87 |   +2.97 | +132.73 at 412.5 g2 |   42.8053 | 8555509500475.028
+  loop 30 gauge 2 RMS: band 6.152, 85-96 Hz 3.20, 150-172 Hz 1.46; lines over 0.5 dB (both gauges) 156
+  loop 30 gauge 2, 89 to 94 Hz: 89.0:+1.50 89.5:+3.57 90.0:+2.99 90.5:+4.11 91.0:+4.87 91.5:+5.05 92.0:+4.61 92.5:+3.75 93.0:+2.69 93.5:+1.58 94.0:-0.00
+--- Smallwood, as printed, e=0.25
+  loop | g2 91 Hz | g2 161 Hz | worst line (dB, Hz, gauge) | drive power 91 Hz | drive power summed over band
+    0 |   +7.20 |   -0.43 |   +9.71 at 89.5 g2 |   22.6270 | 348046.526
+    1 |   +6.04 |   -3.57 |   -6.91 at 270.0 g1 |   25.8490 | 337103.627
+    2 |   +4.68 |   -4.93 |   -6.36 at 269.5 g1 |   27.9410 | 329050.588
+    3 |   +4.46 |   -3.29 |   -6.54 at 162.0 g2 |   28.1111 | 323172.362
+    4 |   +4.34 |   -1.14 |   -6.14 at 162.5 g2 |   28.7437 | 318883.573
+    5 |   +4.30 |   +0.46 |   -5.45 at 163.0 g2 |   29.7153 | 315748.378
+    6 |   +4.30 |   +0.49 |   -4.70 at 163.0 g2 |   30.7860 | 313453.060
+    7 |   +4.32 |   +0.52 |   +4.69 at 92.0 g2 |   31.8487 | 311768.823
+    8 |   +4.35 |   +1.35 |   +4.74 at 92.0 g2 |   32.8770 | 310528.890
+    9 |   +4.39 |   +1.67 |   +4.77 at 92.0 g2 |   33.8536 | 309613.952
+   10 |   +4.43 |   +1.61 |   +4.80 at 92.0 g2 |   34.7677 | 308936.115
+   15 |   +4.61 |   -0.07 |   +4.93 at 91.5 g2 |   38.3145 | 307407.559
+   20 |   +4.72 |   -1.07 |   +5.00 at 91.5 g2 |   40.4005 | 307025.933
+   25 |   +4.79 |   +0.41 |   +5.03 at 91.5 g2 |   41.5440 | 306915.146
+   30 |   +4.83 |   +0.12 |   +5.04 at 91.5 g2 |   42.1507 | 306878.228
+  loop 30 gauge 2 RMS: band 0.363, 85-96 Hz 2.43, 150-172 Hz 0.20; lines over 0.5 dB (both gauges) 48
+  loop 30 gauge 2, 89 to 94 Hz: 89.0:+0.80 89.5:+1.76 90.0:+3.00 90.5:+4.05 91.0:+4.83 91.5:+5.04 92.0:+4.68 92.5:+3.81 93.0:+2.77 93.5:+1.77 94.0:-1.60
+=== one at a time (independent target; port as printed, e = 0.5, one feature replaced by the build's)
+  none                             independent: g2 RMS 85-96 1.54, 150-172 0.74; 91 Hz +0.40
+  none                             cross terms: g2 RMS 85-96 2.25, 150-172 0.21; 91 Hz +4.87
+  step                             independent: g2 RMS 85-96 2.05, 150-172 0.89; 91 Hz +4.86
+  step                             cross terms: g2 RMS 85-96 2.28, 150-172 0.36; 91 Hz +4.87
+  zero                             independent: g2 RMS 85-96 2.37, 150-172 1.19; 91 Hz +4.87
+  zero                             cross terms: g2 RMS 85-96 2.25, 150-172 0.21; 91 Hz +4.87
+  divisor                          independent: g2 RMS 85-96 1.55, 150-172 1.44; 91 Hz +0.40
+  divisor                          cross terms: g2 RMS 85-96 2.27, 150-172 0.52; 91 Hz +4.87
+  limit                            independent: g2 RMS 85-96 1.59, 150-172 1.70; 91 Hz +4.77
+  limit                            cross terms: g2 RMS 85-96 2.25, 150-172 0.70; 91 Hz +4.87
+  order                            independent: g2 RMS 85-96 1.92, 150-172 0.45; 91 Hz +4.87
+  order                            cross terms: g2 RMS 85-96 2.25, 150-172 0.12; 91 Hz +4.87
+  step+zero                        independent: g2 RMS 85-96 2.37, 150-172 1.19; 91 Hz +4.87
+  step+zero                        cross terms: g2 RMS 85-96 2.28, 150-172 0.36; 91 Hz +4.87
+  step+zero+order                  independent: g2 RMS 85-96 2.37, 150-172 1.19; 91 Hz +4.87
+  step+zero+order                  cross terms: g2 RMS 85-96 2.36, 150-172 0.62; 91 Hz +4.87
+  step+zero+divisor+limit+order    independent: g2 RMS 85-96 2.37, 150-172 1.11; 91 Hz +4.87
+  step+zero+divisor+limit+order    cross terms: g2 RMS 85-96 2.35, 150-172 0.70; 91 Hz +4.87

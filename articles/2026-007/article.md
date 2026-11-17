@@ -1,11 +1,11 @@
 ---
 # Filled in by the editors at publication.
 id: "2026-007"
-version: 1
-date: 2026-11-16
-doi: "10.5281/zenodo.24291982"
+version: 2
+date: 2026-11-17
+doi: "10.5281/zenodo.24310228"
 doi_latest: "10.5281/zenodo.24291981"
-note: First published.
+note: "The layout of the tables is changed: column widths are set to fit what each column holds. No word and no number of the text changed."
 
 # Filled in by the authors.
 title: "Six Control Laws for Multi-Shaker Random Vibration: What Each Does and How It Is Built"
@@ -248,7 +248,7 @@ Hertzforge at main commit b587d5a1.
 **Table 1.** The six control laws Hertzforge ships for multi-shaker random vibration.
 
 | Id | Law | Source | What it changes | File |
-|:---|:---|:---|:---|:---|
+|:-----------------------------------------|:-----------------------------------------------------|:-----------------------------------------------------------------------|:-----------------------------------------------------------------|:-----------------------------------------------------------------|
 | `pinv_closed` | Pseudo-inverse, closed loop (the default) | Smallwood [@smallwood1999]; regularization after Schultz [@schultz2018] | The shared closed loop on the full system | `pinv.rs` |
 | `pinv_open` | Pseudo-inverse, open loop | The same | No feedback: @eq-pinv every loop | `open_loop.rs` |
 | `shape_svd` | Shape-constrained | Schultz and Avitabile [@schultz2019; @schultz2020] | Drives only the system's strongest directions on each line | `shape.rs` |
@@ -410,7 +410,7 @@ the build's changes (`factor.rs`, module documentation).
 **Table 2.** Where the shared loop as built at b587d5a1 differs from the correction in Smallwood's Appendix A and his factorization with zeros (Equation 8), read from the scan of SAND98-2044C.
 
 | Item | Smallwood's appendix | The build |
-|:---|:---|:---|
+|:-----------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------|
 | Floor | 10⁻⁴ times the largest element of the target, a power | 10⁻⁴ times the square root of the largest target autospectrum, in the factor's units |
 | Convergence factor | One value, or one per element | One value |
 | Rank | Rows and columns of the factor past the rank of the measured frequency response are zeroed | The loop runs in the reduced coordinates of the directions kept |
@@ -420,7 +420,7 @@ the build's changes (`factor.rs`, module documentation).
 | Second form on a zero term | Not used: only for a cross term that is not zero | Used, so a term at zero stays there |
 | Zero cross term | Set to the floor after the update | Left at zero |
 | Order of the forms | The first form is solved whole; the second replaces terms after the update, and later columns use first-form values | The second form replaces terms inside the solve, and later columns use its values |
-| Diagonal limit | Each diagonal correction at most half of the larger of its own and the first diagonal term, alone | +3.5 dB and -6 dB of its own term, with the column's first-form terms scaled alike |
+| Diagonal limit | Each diagonal correction at most half of the larger of its own and the first diagonal term, alone | +3.5 dB and -6 dB of its own term, with the column's first-form terms scaled alike |
 | Diagonal at zero | Set to the floor when zero or negative, from the second column on; a negative first term stops the solve | Every live diagonal under the floor is set to it |
 | Column collapse | A column whose diagonal is under the floor has its cross terms set to a hundredth of the floor, phase kept | Its cross terms are set to their previous values times the ratio of the new diagonal to the old |
 | Zero pivot | Its whole row and column are zero at the factorization (Equation 8) | Its column only, below 10⁻¹⁰ of the gauge's target |
@@ -493,11 +493,11 @@ settings (`PseudoInverseConfig::rule`) and hands every call to `FactorLoop` (Sec
 **Table 3.** The settings of `pinv_closed` (`support.rs`, `regularization_params`, `convergence_param`, `cap_params`, `rank_tolerance_param`, `weighting_param`).
 
 | Parameter | Default | Range | What it changes |
-|:---|:---|:---|:---|
+|:-----------------------------------------------------------|:-----------------------------|:--------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `regularization` | truncated | truncated, tikhonov, none | How weak directions are treated (@eq-filter) |
 | `regularization_amount` | 10⁻³ | 0 to 1 | The amount of @eq-filter, relative to the largest singular value |
 | `convergence` | 0.5 | 0.1 to 1 | The convergence factor: the share of each correction applied |
-| `cap_up_db`, `cap_down_db` | 3.5 dB, 6.0 dB | 0.1 to 3.5 dB, 0.1 to 6.0 dB | The per-loop limits of steps 5 and 10 |
+| `cap_up_db`, `cap_down_db` | 3.5 dB, 6.0 dB | 0.1 to 3.5 dB, 0.1 to 6.0 dB | The per-loop limits of steps 5 and 10 |
 | `rank_tolerance` | 10⁻⁶ | 0 to 0.1 | Singular values counted as sources; above the truncation amount it drops sources truncation kept, at or below it nothing |
 | `weighting` | none | none, reference | Each gauge's error equal, or relative to its target |
 
@@ -594,7 +594,7 @@ coordinates of the $m$ kept directions whenever $m$ is less than the number of g
 **Table 5.** The settings of `shape_svd`. The per-loop limits (+3.5 dB, -6 dB) and the rank tolerance (10⁻⁶) are fixed.
 
 | Parameter | Default | Range | What it changes |
-|:---|:---|:---|:---|
+|:-----------------------------------------------------|:-----------------------------|:--------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `selection` | ratio | ratio, count | How the number of directions is set on each line |
 | `ratio` | 0.2 | 0.1 to 0.5 | Keep singular values at or above this times the largest |
 | `max_shapes` | 1,024 | 1 to 1,024 | Most directions kept, with selection by ratio |
@@ -660,7 +660,7 @@ modified target with truncation at $10^{-3}$, no weighting, and the fixed per-lo
 **Table 6.** The settings of `buzz_match`. The loop's regularization is truncation at 10⁻³ and its per-loop limits are the default law's.
 
 | Parameter | Default | Range | What it changes |
-|:---|:---|:---|:---|
+|:-----------------------------------------------------------|:--------------------------|:-----------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `coherence_floor` | 0.1 | 0 to 1 | Pairs whose identification coherence is under this are left independent |
 | `convergence` | 0.5 | 0.1 to 1 | The shared loop's convergence factor |
 
@@ -779,10 +779,10 @@ a floor for every gauge, so no gauge is given up for the others.
 **Table 7.** The settings of `min_drive`. The loop's regularization is truncation at 10⁻³ and its per-loop limits are the default law's.
 
 | Parameter | Default | Range | What it changes |
-|:---|:---|:---|:---|
+|:-----------------------------------------------------|:-----------------------------|:--------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `tradeoff` | auto | auto, fixed | Chosen by @eq-knee, or set |
 | `tradeoff_value` | 1 | 10⁻⁶ to 10⁶ | The relative trade-off, when fixed |
-| `shortfall_db` | 3 dB | 0 to 20 dB | The largest shortfall, when automatic |
+| `shortfall_db` | 3 dB | 0 to 20 dB | The largest shortfall, when automatic |
 | `residual` | relative | relative, absolute | Each gauge's error relative to its specification, or in its own units |
 | `convergence` | 0.5 | 0.1 to 1 | The shared loop's convergence factor |
 
@@ -923,7 +923,7 @@ boundary; the arithmetic is `BandAverage` in `crates/hertzforge-law-band-average
 **Table 8.** The settings of `band_average` for the solve and the gain correction (`band_average.rs`, `parameters`). The knee rule takes the first threshold within 0.1 dB of the band's best error.
 
 | Parameter | Default | Range | What it changes |
-|:---|:---|:---|:---|
+|:--------------------------------------------------------------|:--------------------------|:-----------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `oct_order` | 6 | 1 to 48 | Bands per octave |
 | `kappa_rule` | front | front, knee, lcurve | How the sweep picks each threshold: the common price, each band's knee, or its L-curve corner |
 | `drive_reduction` | 0 | 0 to 0.99 | Share of the drive energy to give up, along the front |
@@ -932,7 +932,7 @@ boundary; the arithmetic is `BandAverage` in `crates/hertzforge-law-band-average
 | `constrained_solve` | on | on, off | The re-fit over drives that ask for no negative power |
 | `gain_correction` | on | on, off | The gain correction of @eq-gain |
 | `gain_correction_rate` | 0.25 | 0 to 1 | Its rate |
-| `channel_check_db` | 20 dB | 0 to 200 dB | How far from its prediction a gauge is left out of the correction and the update; 0 is off |
+| `channel_check_db` | 20 dB | 0 to 200 dB | How far from its prediction a gauge is left out of the correction and the update; 0 is off |
 | `drive_rms_limit` | 0 (off) | 0 to 10⁹ V | Hold each drive under this RMS by moving along the front |
 | `cross_terms` | off | off, reference, buzz | Fit the autospectra only, the target's cross terms too, or the buzz-test cross terms |
 | `coherence_floor` | 0.1 | 0 to 1 | The buzz-test floor of Section 2.5 |
@@ -948,7 +948,7 @@ boundary; the arithmetic is `BandAverage` in `crates/hertzforge-law-band-average
 **Table 9.** The settings of `band_average` for the frequency response update.
 
 | Parameter | Default | Range | What it changes |
-|:---|:---|:---|:---|
+|:-----------------------------------------------------------------|:-----------------------|:-----------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `use_tf_update` | off | on, off | Solve again from the controller's updated frequency response; the test's update mode must be on too |
 | `estimate_frames` | 20 | 1 to 100,000 | Frames the controller's estimate must hold before an update is used |
 | `drive_condition_number` | 100 | 1 to 10¹² | The largest condition number of a band's drive under the update |
@@ -1007,9 +1007,9 @@ check made it, at which loop and level, and with the message listed after Table 
 **Table 10.** The protections that change a law's drive without stopping the run (`guards.rs` of `crates/hertzforge-mimo-random`).
 
 | Protection | What it does | Default |
-|:---|:---|:---|
+|:-----------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------|
 | Drive check | Refuses a drive of the wrong size, with a value that is not a number, not Hermitian (within 10⁻⁹), or not zero outside the band. Repairs, and counts, a negative eigenvalue between 10⁻⁶ and 10⁻³ of the line's largest by clamping it and restoring the diagonal; refuses a larger one (`guards.rs`, `check_output`) | As stated |
-| Change cap | Holds each drive's autospectrum to a largest rise and fall per loop, by a scaling that keeps every coherence and phase (`cap_change`) | +3.5 dB, -6 dB; settable to 6 dB and 20 dB |
+| Change cap | Holds each drive's autospectrum to a largest rise and fall per loop, by a scaling that keeps every coherence and phase (`cap_change`) | +3.5 dB, -6 dB; settable to 6 dB and 20 dB |
 | Drive ceiling | Scales each drive down to its RMS voltage ceiling (`apply_ceilings`) | Set per shaker |
 | Limit channels | Scales a line's whole drive down where a limit channel's predicted response would pass its ceiling (`limit_responses`) | Set per channel |
 
@@ -1024,12 +1024,12 @@ check made it, at which loop and level, and with the message listed after Table 
 **Table 11.** The checks that end a run (`service.rs` and `config.rs` (`Protections`) of `crates/hertzforge-mimo-random`, and `LawGuards` in `crates/hertzforge-random/src/service/config.rs`). "Stop" is a controlled ramp of the drive down by 40 dB over 2 s by default; "abort" takes the drive to zero at once. While the soft start climbs, the alarm and abort lines are widened by 6 dB.
 
 | Check | What it judges | Default | Ends the run |
-|:---|:---|:---|:---|
+|:--------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------|:--------------------------------|
 | Law guards | A law call that errors, fails, is late, or returns a refused drive is not used, and the drive in force is kept | A quarter of the loop's acquisition time; 3 in a row | Stop |
 | Abort lines | The lines on which a gauge's autospectrum, from the averaged estimate, is outside its abort lines, once the estimate holds 16 degrees of freedom (`check_envelope`) | 10 lines on one gauge | Abort |
-| Growing error | Each gauge's RMS error over the band in decibels, from this loop's own estimate, against what the system can reach with more gauges than shakers and against the target otherwise (`errors_of`). A judged loop at or above the floor that does not improve on the gauge's best by 0.1 dB adds one to a count; a loop under the floor, or an improvement, resets it (`check_divergence`) | 3 dB floor, 5 loops | Abort |
+| Growing error | Each gauge's RMS error over the band in decibels, from this loop's own estimate, against what the system can reach with more gauges than shakers and against the target otherwise (`errors_of`). A judged loop at or above the floor that does not improve on the gauge's best by 0.1 dB adds one to a count; a loop under the floor, or an improvement, resets it (`check_divergence`) | 3 dB floor, 5 loops | Abort |
 | Change cap held | For each drive, the lines on which the change cap held it back in at least 5 of the last 10 drives the law produced and the controller accepted (`check_cap_divergence`, `accept`) | 10 lines of one drive | Abort |
-| Drive voltage | A drive's measured RMS against its abort level | The ceiling plus 1 dB | Abort |
+| Drive voltage | A drive's measured RMS against its abort level | The ceiling plus 1 dB | Abort |
 | Limit channel | A limit channel's measured spectrum against its ceiling and a margin | Set per channel | Abort |
 | Kinematic limits, faults | A kinematic limit of an input channel, or a fault of the acquisition | Set per channel | Abort |
 
@@ -1128,15 +1128,15 @@ Table 12 lists what was compared.
 **Table 12.** The numerical check of the article's equations against the shipped laws. Values in decibels are written by the shipped program to ten significant digits, which sets the floor near 1e-10 dB.
 
 | Law | What was compared | On what | Largest difference |
-|:---|:---|:---|:---|
-| `pinv_open` | Each gauge's RMS error over the band, every loop | 2 gauges, 2 shakers, 1,161 lines, 31 loops, measured frequency response 3 percent off | 3.8e-10 dB |
-| `pinv_closed` | Each gauge's error on every line after 0 and 5 loops | The same | 5.0e-10 dB |
-| `pinv_closed` | Each gauge's RMS error over the band, loops 0 to 22 | The same | 3.8e-10 dB |
-| `pinv_closed` | The same, loops 23 to 30 | The same | 1.1e-3 dB; one line, 0.53 dB (see below) |
+|:-----------------------------------------|:-----------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------|:-----------------------------------------------------------------------------|
+| `pinv_open` | Each gauge's RMS error over the band, every loop | 2 gauges, 2 shakers, 1,161 lines, 31 loops, measured frequency response 3 percent off | 3.8e-10 dB |
+| `pinv_closed` | Each gauge's error on every line after 0 and 5 loops | The same | 5.0e-10 dB |
+| `pinv_closed` | Each gauge's RMS error over the band, loops 0 to 22 | The same | 3.8e-10 dB |
+| `pinv_closed` | The same, loops 23 to 30 | The same | 1.1e-3 dB; one line, 0.53 dB (see below) |
 | `shape_svd` | Directions kept on each line | 6 gauges, 4 shakers, 1,161 lines | None differ |
 | `buzz_match` | The target's coherence and phase of one pair | 2 gauges, 3 shakers, 1,161 lines | 5.0e-11 in coherence, 4.8e-8 degrees |
 | `min_drive` | Drive power and the target's autospectra at every point of the trade-off grid, and the automatic choice | One line of a 2 by 2 structure, 13 trade-offs | 9.1e-8 of the largest drive power; 2.4e-7 in a target ratio; same choice |
-| `band_average` | The first solve's drive and each band's threshold | 1 gauge, 1 shaker, 921 lines in 40 to 500 Hz | 3.8e-10 relative in the drive; no threshold differs |
+| `band_average` | The first solve's drive and each band's threshold | 1 gauge, 1 shaker, 921 lines in 40 to 500 Hz | 3.8e-10 relative in the drive; no threshold differs |
 
 ```{=typst}
 ]
@@ -1400,7 +1400,7 @@ $Z$ starts there. Table 14 follows the first eight loops.
 **Table 14.** The shared loop on one line of the worked example, at the default settings: each gauge's error in dB, the factor's terms $Z_{11}$, $Z_{21}$ and $Z_{22}$, and the drive power in V²/Hz.
 
 | Loop | Gauge 1 (dB) | Gauge 2 (dB) | Diagonal 1 | Cross term | Diagonal 2 | Drive power |
-|:---|:---|:---|:---|:---|:---|:---|
+|:--------------------|:--------------------------------------------|:--------------------------------------------|:--------------------------------------------|:-----------------------------------------------------|:--------------------------------------------|:--------------------------------------------|
 | 0 | +1.272 | +3.622 | 1.0000 | 0 | 0.7071 | 3.4305 |
 | 1 | +0.494 | +0.935 | 0.9150 | 0 | 0.4768 | 2.8487 |
 | 2 | +0.175 | +0.037 | 0.8820 | 0 | 0.4138 | 2.6423 |

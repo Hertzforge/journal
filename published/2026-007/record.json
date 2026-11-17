@@ -10,13 +10,19 @@
     }
   ],
   "first_published": "2026-11-16",
-  "latest": 1,
+  "latest": 2,
   "versions": [
     {
       "version": 1,
       "date": "2026-11-16",
       "note": "First published.",
       "doi": "10.5281/zenodo.24291982"
+    },
+    {
+      "version": 2,
+      "date": "2026-11-17",
+      "note": "The layout of the tables is changed: column widths are set to fit what each column holds. No word and no number of the text changed.",
+      "doi": "10.5281/zenodo.24310228"
     }
   ],
   "doi_latest": "10.5281/zenodo.24291981",
