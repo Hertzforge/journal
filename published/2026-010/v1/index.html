@@ -1,0 +1,1117 @@
+<!doctype html>
+<html lang="en" data-register="reading"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When the Control Gauges Read Right and the Stress Is Wrong: A Closed-Loop Check of the Proposed Practice for Multi-Shaker Tests | Hertzforge Journal</title>
+<meta name="description" content="A multi-shaker vibration test is usually judged by its control accelerometers: if they read their targets, the test is called good. The first article of this series proposed a practice for judging such tests. Its starting point, from idealized simulations and a published hardware test, was that...">
+<link rel="canonical" href="https://hertzforge.com/journal/2026-010/v1/">
+<meta name="citation_title" content="When the Control Gauges Read Right and the Stress Is Wrong: A Closed-Loop Check of the Proposed Practice for Multi-Shaker Tests">
+<meta name="citation_author" content="Kevin Cross">
+<meta name="citation_publication_date" content="2026/11/17">
+<meta name="citation_journal_title" content="Hertzforge Journal">
+<meta name="citation_volume" content="1">
+<meta name="citation_firstpage" content="2026-010">
+<meta name="citation_doi" content="10.5281/zenodo.24311109">
+<meta name="citation_pdf_url" content="https://hertzforge.com/journal/2026-010/v1/2026-010-v1.pdf">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Hertzforge Journal">
+<meta property="og:url" content="https://hertzforge.com/journal/2026-010/v1/">
+<meta property="og:title" content="When the Control Gauges Read Right and the Stress Is Wrong: A Closed-Loop Check of the Proposed Practice for Multi-Shaker Tests">
+<meta property="og:description" content="A multi-shaker vibration test is usually judged by its control accelerometers: if they read their targets, the test is called good. The first article of this series proposed a practice for judging such tests. Its starting point, from idealized simulations and a published hardware test, was that...">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/article.css">
+<script>(function(){var r=document.documentElement;r.classList.add('js');try{var s=localStorage.getItem('hf-theme');if(s==='light'||s==='dark')r.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="/" aria-label="Hertzforge, home"><svg class="brand-mark" viewbox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6"></rect><path d="M4 16h4l3-8 4 16 4-12 3 6 2-2h4"></path></svg><span class="wordmark"><span class="w-hertz">HERTZ</span><span class="w-forge">FORGE</span></span></a><button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Menu</span><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button><nav class="site-nav" id="site-nav" aria-label="Main"><ul><li><a href="/documentation/">Documentation</a></li><li><a href="/learn/">Learn</a></li><li><a href="/reference/">Reference</a></li><li><a href="/benchmarks/">Benchmarks</a></li><li><a href="/journal/" aria-current="page">Journal</a></li><li><a href="/community/">Community</a></li><li><a href="/about/">About</a></li></ul><div class="nav-actions"><a class="icon-btn" href="/search/" aria-label="Search the site"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.500 4a6.500 6.500 0 1 0 0 13 6.500 6.500 0 0 0 0-13Zm5 11.500L20 20"></path></svg></a><button class="icon-btn theme-toggle" type="button" aria-label="Switch between light and dark reading"><svg class="i-moon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.500A8 8 0 0 1 9.500 4a8 8 0 1 0 10.500 10.500Z"></path></svg><svg class="i-sun" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0-5v2m0 14v2M3 12h2m14 0h2M5.600 5.600 7 7m10 10 1.400 1.400M5.600 18.400 7 17M17 7l1.400-1.400"></path></svg></button><a class="icon-btn" href="https://github.com/Hertzforge/Hertzforge" aria-label="Hertzforge on GitHub"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 7 4 12l5 5m6-10 5 5-5 5"></path></svg></a><a class="btn btn-primary btn-sm" href="/download/"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"></path></svg>Download</a></div></nav></div></header>
+
+<main id="main" data-pagefind-body="">
+<article class="hf-article" data-id="2026-010" data-version="1" data-record="../record.json">
+<div class="hf-status dark" id="hf-status" data-status="review-open"><div class="wrap"><span class="hf-status-mark" aria-hidden="true"><svg data-for="review-open" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"></circle></svg><svg data-for="reviewed" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M8 12.4l2.7 2.7L16 9.6"></path></svg><svg data-for="retracted" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M6 18L18 6"></path></svg></span><strong class="hf-status-name">Review open</strong><span class="hf-status-text">Published; reviews and comments are welcome.</span> <span class="hf-status-asof">As of 2026-11-17, when this version was published; the status now is at <a href="https://hertzforge.com/journal/2026-010/">hertzforge.com/journal/2026-010/</a>.</span><a class="hf-status-link" href="#hf-reviews">Reviews</a></div></div>
+<div class="page-head dark"><div class="wrap"><p class="eyebrow">Hertzforge Journal</p><h1 class="steel">When the Control Gauges Read Right and the Stress Is Wrong: A Closed-Loop Check of the Proposed Practice for Multi-Shaker Tests</h1><p class="hf-kind" id="hf-type"><span class="tag tag-strong">Research Article</span></p><ul class="hf-authors" id="hf-authors"><li><span class="hf-author-name">Kevin Cross</span> <a class="hf-orcid" href="https://orcid.org/0009-0002-6608-9426" rel="noopener">ORCID 0009-0002-6608-9426</a></li></ul><p class="hf-evidence" id="hf-evidence"><span class="tag">Evidence</span><strong>Simulator.</strong> Closed-loop runs of six control laws through Hertzforge's multiple-shaker random control service on its simulator, with measurement noise, on 20 generated frame structures of the Open Benchmark Set (version 0.2) in five setups, linear and at two sizes of nonlinearity, with the main findings repeated on ten structures held back from the study. No hardware tests.</p></div><svg class="trace" viewbox="0 0 1200 100" preserveaspectratio="none" aria-hidden="true" focusable="false"><path class="trace-glow" d="M0 50.0L3 49.1L6 48.3L9 47.7L12 47.4L15 47.6L18 48.2L21 49.3L24 50.6L27 52.0L30 53.3L33 54.0L36 54.1L39 53.5L42 52.1L45 50.2L48 48.0L51 45.9L54 44.3L57 43.6L60 44.0L63 45.5L66 48.1L69 51.2L72 54.5L75 57.3L78 59.1L81 59.3L84 57.9L87 54.9L90 50.7L93 46.0L96 41.6L99 38.3L102 36.8L105 37.6L108 40.7L111 45.7L114 51.9L117 58.3L120 63.7L123 67.0L126 67.6L129 65.0L132 59.5L135 52.0L138 43.6L141 35.7L144 29.9L147 27.3L150 28.6L153 33.8L156 42.1L159 52.3L162 62.7L165 71.4L168 76.7L171 77.6L174 73.7L177 65.4L180 54.0L183 41.4L186 29.8L189 21.3L192 17.5L195 19.2L198 26.4L201 38.0L204 52.1L207 66.2L210 77.9L213 85.0L216 86.3L219 81.2L222 70.6L225 56.3L228 40.5L231 26.2L234 15.7L237 11.0L240 13.0L243 21.5L246 34.9L249 51.0L252 67.1L255 80.3L258 88.3L261 89.7L264 84.3L267 73.1L270 57.9L273 41.4L276 26.6L279 15.8L282 11.1L285 13.0L288 21.2L291 34.2L294 49.7L297 65.0L300 77.4L303 84.9L306 86.3L309 81.5L312 71.4L315 58.1L318 43.7L321 30.8L324 21.6L327 17.5L330 19.1L333 25.8L336 36.3L339 48.8L342 60.9L345 70.7L348 76.5L351 77.6L354 74.1L357 66.6L360 56.7L363 46.2L366 36.9L369 30.3L372 27.4L375 28.5L378 33.0L381 40.2L384 48.5L387 56.6L390 63.0L393 66.8L396 67.6L399 65.3L402 60.7L405 54.6L408 48.2L411 42.6L414 38.6L417 36.9L420 37.5L423 40.1L426 44.1L429 48.8L432 53.3L435 56.8L438 58.9L441 59.3L444 58.2L447 55.8L450 52.6L453 49.4L456 46.5L459 44.5L462 43.6L465 43.9L468 45.2L471 47.1L474 49.3L477 51.4L480 53.0L483 54.0L486 54.2L489 53.7L492 52.6L495 51.2L498 49.8L501 48.6L504 47.8L507 47.4L510 47.5L513 48.0L516 48.7L519 49.6L522 50.5L525 51.2L528 51.6L531 51.7L534 51.5L537 51.1L540 50.6L543 50.0L546 49.4L549 49.0L552 48.8L555 48.7L558 48.9L561 49.3L564 49.7L567 50.3L570 50.7L573 51.1L576 51.3L579 51.3L582 51.1L585 50.6L588 50.0L591 49.4L594 48.7L597 48.3L600 48.1L603 48.2L606 48.7L609 49.5L612 50.4L615 51.5L618 52.4L621 52.9L624 53.0L627 52.6L630 51.6L633 50.2L636 48.6L639 47.0L642 45.8L645 45.3L648 45.5L651 46.6L654 48.5L657 50.8L660 53.3L663 55.4L666 56.7L669 56.9L672 55.9L675 53.7L678 50.7L681 47.2L684 44.1L687 41.7L690 40.7L693 41.2L696 43.4L699 46.9L702 51.2L705 55.5L708 59.1L711 61.2L714 61.5L717 59.8L720 56.2L723 51.4L726 46.2L729 41.5L732 38.1L735 36.7L738 37.6L741 40.7L744 45.4L747 51.1L750 56.6L753 61.0L756 63.6L759 63.8L762 61.6L765 57.5L768 52.0L771 46.3L774 41.3L777 37.8L780 36.5L783 37.5L786 40.6L789 45.2L792 50.6L795 55.6L798 59.6L801 61.7L804 61.8L807 59.9L810 56.4L813 52.0L816 47.5L819 43.6L822 41.1L825 40.2L828 41.0L831 43.2L834 46.5L837 50.1L840 53.4L843 55.9L846 57.2L849 57.2L852 56.0L855 53.9L858 51.3L861 48.8L864 46.7L867 45.3L870 44.9L873 45.3L876 46.5L879 48.2L882 49.9L885 51.5L888 52.6L891 53.2L894 53.2L897 52.6L900 51.7L903 50.6L906 49.6L909 48.8L912 48.3L915 48.1L918 48.3L921 48.7L924 49.3L927 49.9L930 50.5L933 50.8L936 51.0L939 51.0L942 50.8L945 50.5L948 50.2L951 49.9L954 49.7L957 49.5L960 49.5L963 49.5L966 49.7L969 49.8L972 50.0L975 50.1L978 50.2L981 50.2L984 50.2L987 50.2L990 50.1L993 50.0L996 50.0L999 49.9L1002 49.9L1005 49.9L1008 49.9L1011 49.9L1014 50.0L1017 50.0L1020 50.0L1023 50.0L1026 50.0L1029 50.0L1032 50.0L1035 50.0L1038 50.0L1041 50.0L1044 50.0L1047 50.0L1050 50.0L1053 50.0L1056 50.0L1059 50.0L1062 50.0L1065 50.0L1068 50.0L1071 50.0L1074 50.0L1077 50.0L1080 50.0L1083 50.0L1086 50.0L1089 50.0L1092 50.0L1095 50.0L1098 50.0L1101 50.0L1104 50.0L1107 50.0L1110 50.0L1113 50.0L1116 50.0L1119 50.0L1122 50.0L1125 50.0L1128 50.0L1131 50.0L1134 50.0L1137 50.0L1140 50.0L1143 50.0L1146 50.0L1149 50.0L1152 50.0L1155 50.0L1158 50.0L1161 50.0L1164 50.0L1167 50.0L1170 50.0L1173 50.0L1176 50.0L1179 50.0L1182 50.0L1185 50.0L1188 50.0L1191 50.0L1194 50.0L1197 50.0L1200 50.0"></path><path class="trace-line" d="M0 50.0L3 49.1L6 48.3L9 47.7L12 47.4L15 47.6L18 48.2L21 49.3L24 50.6L27 52.0L30 53.3L33 54.0L36 54.1L39 53.5L42 52.1L45 50.2L48 48.0L51 45.9L54 44.3L57 43.6L60 44.0L63 45.5L66 48.1L69 51.2L72 54.5L75 57.3L78 59.1L81 59.3L84 57.9L87 54.9L90 50.7L93 46.0L96 41.6L99 38.3L102 36.8L105 37.6L108 40.7L111 45.7L114 51.9L117 58.3L120 63.7L123 67.0L126 67.6L129 65.0L132 59.5L135 52.0L138 43.6L141 35.7L144 29.9L147 27.3L150 28.6L153 33.8L156 42.1L159 52.3L162 62.7L165 71.4L168 76.7L171 77.6L174 73.7L177 65.4L180 54.0L183 41.4L186 29.8L189 21.3L192 17.5L195 19.2L198 26.4L201 38.0L204 52.1L207 66.2L210 77.9L213 85.0L216 86.3L219 81.2L222 70.6L225 56.3L228 40.5L231 26.2L234 15.7L237 11.0L240 13.0L243 21.5L246 34.9L249 51.0L252 67.1L255 80.3L258 88.3L261 89.7L264 84.3L267 73.1L270 57.9L273 41.4L276 26.6L279 15.8L282 11.1L285 13.0L288 21.2L291 34.2L294 49.7L297 65.0L300 77.4L303 84.9L306 86.3L309 81.5L312 71.4L315 58.1L318 43.7L321 30.8L324 21.6L327 17.5L330 19.1L333 25.8L336 36.3L339 48.8L342 60.9L345 70.7L348 76.5L351 77.6L354 74.1L357 66.6L360 56.7L363 46.2L366 36.9L369 30.3L372 27.4L375 28.5L378 33.0L381 40.2L384 48.5L387 56.6L390 63.0L393 66.8L396 67.6L399 65.3L402 60.7L405 54.6L408 48.2L411 42.6L414 38.6L417 36.9L420 37.5L423 40.1L426 44.1L429 48.8L432 53.3L435 56.8L438 58.9L441 59.3L444 58.2L447 55.8L450 52.6L453 49.4L456 46.5L459 44.5L462 43.6L465 43.9L468 45.2L471 47.1L474 49.3L477 51.4L480 53.0L483 54.0L486 54.2L489 53.7L492 52.6L495 51.2L498 49.8L501 48.6L504 47.8L507 47.4L510 47.5L513 48.0L516 48.7L519 49.6L522 50.5L525 51.2L528 51.6L531 51.7L534 51.5L537 51.1L540 50.6L543 50.0L546 49.4L549 49.0L552 48.8L555 48.7L558 48.9L561 49.3L564 49.7L567 50.3L570 50.7L573 51.1L576 51.3L579 51.3L582 51.1L585 50.6L588 50.0L591 49.4L594 48.7L597 48.3L600 48.1L603 48.2L606 48.7L609 49.5L612 50.4L615 51.5L618 52.4L621 52.9L624 53.0L627 52.6L630 51.6L633 50.2L636 48.6L639 47.0L642 45.8L645 45.3L648 45.5L651 46.6L654 48.5L657 50.8L660 53.3L663 55.4L666 56.7L669 56.9L672 55.9L675 53.7L678 50.7L681 47.2L684 44.1L687 41.7L690 40.7L693 41.2L696 43.4L699 46.9L702 51.2L705 55.5L708 59.1L711 61.2L714 61.5L717 59.8L720 56.2L723 51.4L726 46.2L729 41.5L732 38.1L735 36.7L738 37.6L741 40.7L744 45.4L747 51.1L750 56.6L753 61.0L756 63.6L759 63.8L762 61.6L765 57.5L768 52.0L771 46.3L774 41.3L777 37.8L780 36.5L783 37.5L786 40.6L789 45.2L792 50.6L795 55.6L798 59.6L801 61.7L804 61.8L807 59.9L810 56.4L813 52.0L816 47.5L819 43.6L822 41.1L825 40.2L828 41.0L831 43.2L834 46.5L837 50.1L840 53.4L843 55.9L846 57.2L849 57.2L852 56.0L855 53.9L858 51.3L861 48.8L864 46.7L867 45.3L870 44.9L873 45.3L876 46.5L879 48.2L882 49.9L885 51.5L888 52.6L891 53.2L894 53.2L897 52.6L900 51.7L903 50.6L906 49.6L909 48.8L912 48.3L915 48.1L918 48.3L921 48.7L924 49.3L927 49.9L930 50.5L933 50.8L936 51.0L939 51.0L942 50.8L945 50.5L948 50.2L951 49.9L954 49.7L957 49.5L960 49.5L963 49.5L966 49.7L969 49.8L972 50.0L975 50.1L978 50.2L981 50.2L984 50.2L987 50.2L990 50.1L993 50.0L996 50.0L999 49.9L1002 49.9L1005 49.9L1008 49.9L1011 49.9L1014 50.0L1017 50.0L1020 50.0L1023 50.0L1026 50.0L1029 50.0L1032 50.0L1035 50.0L1038 50.0L1041 50.0L1044 50.0L1047 50.0L1050 50.0L1053 50.0L1056 50.0L1059 50.0L1062 50.0L1065 50.0L1068 50.0L1071 50.0L1074 50.0L1077 50.0L1080 50.0L1083 50.0L1086 50.0L1089 50.0L1092 50.0L1095 50.0L1098 50.0L1101 50.0L1104 50.0L1107 50.0L1110 50.0L1113 50.0L1116 50.0L1119 50.0L1122 50.0L1125 50.0L1128 50.0L1131 50.0L1134 50.0L1137 50.0L1140 50.0L1143 50.0L1146 50.0L1149 50.0L1152 50.0L1155 50.0L1158 50.0L1161 50.0L1164 50.0L1167 50.0L1170 50.0L1173 50.0L1176 50.0L1179 50.0L1182 50.0L1185 50.0L1188 50.0L1191 50.0L1194 50.0L1197 50.0L1200 50.0"></path></svg></div>
+<div class="page-body"><div class="wrap"><div class="prose hf-prose">
+<section class="hf-meta" aria-label="About this version">
+<div class="hf-panel hf-version" id="hf-version"><h2 class="hf-label">Version</h2><p class="hf-version-line"><span><strong>Version 1</strong>, published 2026-11-17. First published 2026-11-17.</span><label class="hf-select-label" for="hf-version-select" id="hf-version-select-slot" hidden=""></label></p><p class="hf-note">Change note: First published. <a href="#version-history">Version history</a></p><p class="hf-versions">Versions: <strong>1 (this version)</strong>. Any later version is listed at <a href="../">the article's address</a>.</p><div class="note hf-notlatest" hidden=""></div></div>
+<div class="hf-panel" id="hf-doi"><h2 class="hf-label">Identifiers</h2><dl class="hf-ids"><dt>DOI of this version</dt><dd><a href="https://doi.org/10.5281/zenodo.24311109" rel="noopener">10.5281/zenodo.24311109</a></dd><dt>DOI that always gives the latest version</dt><dd><a href="https://doi.org/10.5281/zenodo.24311108" rel="noopener">10.5281/zenodo.24311108</a></dd></dl></div>
+<div class="hf-panel hf-cite" id="hf-cite"><h2 class="hf-label">Cite This Version</h2><p class="hf-citation">Cross, K. (2026). When the Control Gauges Read Right and the Stress Is Wrong: A Closed-Loop Check of the Proposed Practice for Multi-Shaker Tests. <em>Hertzforge Journal</em> 1, <span class="hf-nowrap">2026-010</span>, version 1. <a href="https://doi.org/10.5281/zenodo.24311109" rel="noopener">https://doi.org/10.5281/zenodo.24311109</a></p><p class="hf-cite-files"><a class="btn btn-ghost btn-sm" href="2026-010-v1.bib" download="2026-010-v1.bib">BibTeX</a><a class="btn btn-ghost btn-sm" href="2026-010-v1.ris" download="2026-010-v1.ris">RIS</a></p><details><summary>Show the BibTeX entry</summary><pre><code>@article{cross2026hf2026010v1,
+  author = {Cross, Kevin},
+  title = {{When the Control Gauges Read Right and the Stress Is Wrong: A Closed-Loop Check of the Proposed Practice for Multi-Shaker Tests}},
+  journal = {Hertzforge Journal},
+  year = {2026},
+  volume = {1},
+  number = {2026-010},
+  note = {Version 1},
+  doi = {10.5281/zenodo.24311109},
+  url = {https://hertzforge.com/journal/2026-010/v1/}
+}
+</code></pre></details></div>
+<div class="hf-downloads" id="hf-downloads"><h2 class="hf-label">Downloads</h2><ul class="dl"><li><a href="2026-010-v1.html" download="2026-010-v1.html">The Article in One File</a><span class="size">5.2 MB</span><span class="d">Opens without a network connection. It asks nothing of any server, so it can be carried onto a closed network.</span></li><li><a href="2026-010-v1.pdf" download="2026-010-v1.pdf">PDF Print Copy</a><span class="size">1.7 MB</span><span class="d">Static figures, from the same source as this page.</span></li><li><a href="2026-010-v1-bundle.zip" download="2026-010-v1-bundle.zip">Data and Code Bundle</a><span class="size">281 kB</span><span class="d">The data behind every figure and the code that draws it, with what is needed to run it again.</span></li></ul></div>
+</section>
+<nav class="hf-contents" id="hf-contents" aria-label="Contents">
+<details>
+<summary>Contents</summary>
+<ul>
+<li><a href="#summary" id="toc-summary">Summary</a></li>
+<li><a href="#the-first-article" id="toc-the-first-article">1. The First Article</a></li>
+<li><a href="#the-test" id="toc-the-test">2. The Test</a>
+<ul>
+<li><a href="#the-structure" id="toc-the-structure">2.1 The Structure</a></li>
+<li><a href="#the-five-setups" id="toc-the-five-setups">2.2 The Five Setups</a></li>
+<li><a href="#driven-measured-judged" id="toc-driven-measured-judged">2.3 Driven, Measured, Judged</a></li>
+<li><a href="#kinds-of-law" id="toc-kinds-of-law">2.4 Kinds of Law</a></li>
+<li><a href="#the-controllers-checks" id="toc-the-controllers-checks">2.5 The Controller’s Checks</a></li>
+<li><a href="#the-runs" id="toc-the-runs">2.6 The Runs</a></li>
+<li><a href="#the-independent-audit" id="toc-the-independent-audit">2.7 The Independent Audit</a></li>
+</ul></li>
+<li><a href="#linear-structures" id="toc-linear-structures">3. Linear Structures</a>
+<ul>
+<li><a href="#shakers-added" id="toc-shakers-added">3.1 Shakers Added</a></li>
+<li><a href="#fewer-control-gauges" id="toc-fewer-control-gauges">3.2 Fewer Control Gauges</a></li>
+<li><a href="#tuned-settings" id="toc-tuned-settings">3.3 Tuned Settings</a></li>
+<li><a href="#which-measurement-warns" id="toc-which-measurement-warns">3.4 Which Measurement Warns</a></li>
+<li><a href="#report-card-lines" id="toc-report-card-lines">3.5 Report Card Lines</a></li>
+</ul></li>
+<li><a href="#nonlinear-structures" id="toc-nonlinear-structures">4. Nonlinear Structures</a></li>
+<li><a href="#measuring-again" id="toc-measuring-again">5. Measuring Again</a></li>
+<li><a href="#what-the-checks-show" id="toc-what-the-checks-show">6. What the Checks Show</a></li>
+<li><a href="#limits" id="toc-limits">7. Limits</a></li>
+<li><a href="#contribution-statement" id="toc-contribution-statement">Contribution Statement</a></li>
+<li><a href="#how-this-was-made" id="toc-how-this-was-made">How This Was Made</a></li>
+<li><a href="#acknowledgments" id="toc-acknowledgments">Acknowledgments</a></li>
+<li><a href="#references" id="toc-references">References</a></li>
+<li><a href="#implemented-in" id="toc-implemented-in">Implemented In</a></li>
+<li><a href="#version-history" id="toc-version-history">Version History</a></li>
+</ul>
+</details>
+</nav>
+<section id="abstract" class="unnumbered unlisted hf-abstract">
+<h2 class="unnumbered unlisted">Abstract</h2>
+<p>A multi-shaker vibration test is usually judged by its control accelerometers: if they read their targets, the test is called good. The first article of this series proposed a practice for judging such tests. Its starting point, from idealized simulations and a published hardware test, was that with as many shakers as control accelerometers a controller can make the controls read right while the article is stressed well above what it sees in service, and that accelerometers held out of the control are the ones that show it. That article named the checks that would settle the point. A simulator can make four of them: measurement noise, a frequency response measured on the shakers rather than known exactly, a closed control loop, and structures whose response changes with level, and it can use more structures than that article had. This article reports what those checks show, from a study of six control laws run closed loop through Hertzforge’s control service on 20 generated frame structures in five setups, with each main finding repeated by an independent audit on ten structures held back from the study. On the same 12 control gauges, adding shakers until there were as many shakers as gauges lowered the control-gauge error of the module’s default law by 1.2 dB and raised the stress error by 8.8 dB on all 20 structures (8.5 dB on all ten held-back structures). A setting that limits the drive in the weak directions left the control gauges where they were and lowered the stress error by 6.4 dB (6.3 dB held back). With as many shakers as control gauges, the held-out gauges tracked the stress error and the control gauges did not. A law that limits its drive in the weak directions, and a law that works on band averages, did not show the over-test. Everything here is simulation, and nothing has met hardware.</p>
+</section>
+<h2 id="summary">Summary</h2>
+<p>A vibration test with several shakers is controlled from a set of accelerometers on the article, the control gauges. The controller adjusts the shaker drives until the control gauges read their target spectra. If they do, the test is usually called good.</p>
+<p>The first article of this series <span class="citation" data-cites="cross2026">(<a href="#ref-cross2026" role="doc-biblioref">Cross and Zwink 2026</a>)</span> showed, in simulations where the stress in every part of the article was known, that this is not enough. With as many shakers as control gauges, a controller that inverts the measured response exactly made every control gauge read within a tenth of a decibel of its target, and the article was stressed about 11 dB more than in service. Gauges left out of the control, the held-out gauges, showed it; the control gauges did not. On hardware, Rohe, Nelson and Schultz <span class="citation" data-cites="rohe2019">(<a href="#ref-rohe2019" role="doc-biblioref">Rohe et al. 2019</a>)</span> had found that with as many shakers as control gauges the error at the control gauges went nearly to zero while the error at two gauges held out of the control grew large. That article’s simulations were idealized: the controller knew the article’s response exactly, there was no noise and no loop, and the article did not change with level. Its Section 8 listed what would settle the matter.</p>
+<p>This article reports a study that makes the checks a simulator can make. Six control laws ran closed loop through Hertzforge’s own control software, with measurement noise, each measuring the article’s response on the shakers before the test, on 20 generated frame structures, in five arrangements of shakers and control gauges, on structures that do not change with level and on the same structures with joints that soften and a member that hardens. The stress in every beam element on the shakers was compared with its stress in service. An independent audit then ran the main comparisons again on ten structures that nobody had generated or seen while the findings were being written.</p>
+<p>What it found, each with the audit’s verdict:</p>
+<ul>
+<li><strong>More shakers on the same control gauges, more over-test.</strong> On the same twelve control gauges, going from six shakers to twelve lowered the default law’s control-gauge error by 1.2 dB and raised its stress error by 8.8 dB, on all 20 structures. Audit: holds; the stress error rose by 8.5 dB on all ten held-back structures.</li>
+<li><strong>Fewer control gauges, more over-test, comparing two setups.</strong> Six shakers on six control gauges against six on twelve: the control-gauge error was 2.7 dB lower and the stress error 7.4 dB higher, on all 20 structures. The two setups place their shakers differently, so this compares two setups, not the count of control gauges alone. Audit: holds; 8.7 dB on all ten held-back structures.</li>
+<li><strong>Two tests alike at the control gauges can be far apart in stress.</strong> With six shakers and six control gauges, a setting that ignores the weakest drive directions left the control-gauge error where it was and lowered the stress error by 6.4 dB, on all 10 structures run. Audit: holds; 6.3 dB on all ten, the control gauges again unchanged.</li>
+<li><strong>With as many shakers as control gauges, the held-out gauges track the stress and the control gauges do not.</strong> Rank correlation with the stress error: +0.85 at the held-out gauges, +0.25 at the control gauges (held back: +0.81 and +0.27). Audit: holds.</li>
+<li><strong>Two lines of the report card did not separate good tests from bad.</strong> The over-test alarm fired on every run. The exact-fit flag almost never fired, because in a closed loop with noise the control error never came near zero, while the over-test it was meant to catch happened in most runs. Audit: holds; the alarm fired on every held-back run and the flag on none.</li>
+</ul>
+<p>The failure belongs to the control laws that invert the whole measured response. A law that limits its drive in the weak directions, and a law that works on band averages, did not over-test on these setups. The finding of the first article holds without an exact fit: the control gauges need only read about right, not exactly right, for the stress to be wrong.</p>
+<h2 id="the-first-article">1. The First Article</h2>
+<p>The first article <span class="citation" data-cites="cross2026">(<a href="#ref-cross2026" role="doc-biblioref">Cross and Zwink 2026</a>)</span> proposed a practice for judging multi-shaker tests. Two of its proposals are tested here. P2: never read a small control error as a good test; with as many shakers as control gauges, cap the inverse so that it ignores directions much weaker than the strongest, or free the cross terms, or use a band law; better, use fewer shakers than control gauges. P3: keep some gauges out of the control and use them only to judge the test, because they are the only gauges that see an exact-fit failure. Its report card puts these into lines: line 2 grades the pattern of the spectra at the held-out gauges and at the control gauges, line 3 raises an alarm when any band at any gauge is more than 6 dB over its target, and line 6 flags “a near-zero control error with shakers equal to controls”.</p>
+<p>The evidence was idealized. Every law computed its drives from the true frequency response of the article, with no noise, no measurement error and no loop. The article was linear, and most of its random results rest on ten structures, which its Section 8 calls thin. That section lists what would settle the matter. Four of the items can be checked in a simulator and are checked here: noise, identification error, a closed loop, and articles whose response changes with level. This study also uses more structures, from the same family. A second structural family, also on the list, is not attempted, and the other items need hardware.</p>
+<p>This article reads one set of runs by the setup of the control problem: how many shakers, how many control gauges, and which gauges warn. The benchmark article <span class="citation" data-cites="obs2026">(<a href="#ref-obs2026" role="doc-biblioref">Cross 2026e</a>)</span> defines the problems and the scorecard and reads the runs by the effect of softening and hardening; the control law study <span class="citation" data-cites="laws2026">(<a href="#ref-laws2026" role="doc-biblioref">Cross 2026c</a>)</span> reads them law by law. How each law works is described in the primer on the six laws <span class="citation" data-cites="primer2026">(<a href="#ref-primer2026" role="doc-biblioref">Cross 2026d</a>)</span>. The problems are published as a data set <span class="citation" data-cites="obsdata2026">(<a href="#ref-obsdata2026" role="doc-biblioref">Cross 2026b</a>)</span>, and the study’s scorecards with the audit’s record as a second one <span class="citation" data-cites="obsresults2026">(<a href="#ref-obsresults2026" role="doc-biblioref">Cross 2026a</a>)</span>. Nothing here grades a law.</p>
+<h2 id="the-test">2. The Test</h2>
+<h3 id="the-structure">2.1 The Structure</h3>
+<p>Each structure is a box chassis of square aluminum tube, about 0.6 by 0.4 by 0.3 m, with small components on cantilevered tubes (three on structure 0), lumped masses standing for boxes bolted to the chassis, and a hardening member: a small mass on two thin steel strips clamped at both ends, which stiffens as it moves (<a href="#fig-setups" class="quarto-xref">Figure&nbsp;1</a> a). It is the frame family of the first article, reworked for the benchmark <span class="citation" data-cites="obs2026">(<a href="#ref-obs2026" role="doc-biblioref">Cross 2026e</a>)</span>. The model is made of beam elements, 96 of them for structure 0, which has 76 flexible modes between 20 and 2000 Hz.</p>
+<p>Every structure is generated from a whole number, its seed, which is its label in the data set. A different seed gives a different structure of the same kind: its dimensions, masses, damping, service loads, where its gauges and shakers go, how much its joints soften and where its member sits. The study used 20 structures, labeled by their seeds: 0 to 9, 12 to 15, 17 and 19, and 32 to 35. Four seeds in the first twenty (10, 11, 16 and 18) gave structures on which the member could not be placed, and the next unused seeds took their place, as the benchmark’s rules require. Seeds 20 to 29 were held back for the audit (Section 2.7) and were not generated, run or read by the study.</p>
+<p>In service the article is bolted at its four bottom corners to a larger host frame, and random forces act on the host. The targets are what a first unit of the design reads in service. The unit on the shakers is a second unit of the same design with slightly different stiffness, mass and damping, as when a test article is not the serial number the specification came from. On the shakers the article hangs on a soft suspension.</p>
+<h3 id="the-five-setups">2.2 The Five Setups</h3>
+<div id="fig-setups" class="quarto-float quarto-figure quarto-figure-center" alt="Six shaded renderings of the same box-shaped frame of square aluminum tubes, seen from above and one corner. Panel a, the article alone: gray tubes forming top and bottom frames joined by corner posts, three dark gray steel blocks for the lumped masses, three short tubes carrying small blocks at their ends for the components, an orange mass on two thin red strips at one top corner for the hardening member, yellow triangles at the three component tips and the member, and open black squares at the four bottom corners for the mount points. Panels b to f show the same article hanging on thin cords with dark blue cylindrical shaker bodies, each with a black arrow pointing into the frame along its force direction, filled blue circles for control gauge points, open orange diamonds for the four held-out gauge points, which sit at the same places in every panel, and the yellow tip triangles. Panel b, 3 shakers and 12 control gauges. Panel c, 6 shakers on the same 12 control gauges, the first three shakers those of b. Panel d, 12 shakers and 24 control gauges spread over the frame. Panel e, 6 shakers and 6 control gauges, with the shakers in different places from panel c. Panel f, 12 shakers on the same 12 control gauges as b and c, the first six shakers those of c. A legend below the panels names each symbol." data="data/fig_setups_parts.csv data/fig_setups_rig.csv data/fig_setups_frame.csv">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-setups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="hf-figure hf-figure-given" data-figure="fig_setups">
+<img class="hf-static" src="figures/fig_setups.png" alt="Six shaded renderings of the same box-shaped frame of square aluminum tubes, seen from above and one corner. Panel a, the article alone: gray tubes forming top and bottom frames joined by corner posts, three dark gray steel blocks for the lumped masses, three short tubes carrying small blocks at their ends for the components, an orange mass on two thin red strips at one top corner for the hardening member, yellow triangles at the three component tips and the member, and open black squares at the four bottom corners for the mount points. Panels b to f show the same article hanging on thin cords with dark blue cylindrical shaker bodies, each with a black arrow pointing into the frame along its force direction, filled blue circles for control gauge points, open orange diamonds for the four held-out gauge points, which sit at the same places in every panel, and the yellow tip triangles. Panel b, 3 shakers and 12 control gauges. Panel c, 6 shakers on the same 12 control gauges, the first three shakers those of b. Panel d, 12 shakers and 24 control gauges spread over the frame. Panel e, 6 shakers and 6 control gauges, with the shakers in different places from panel c. Panel f, 12 shakers on the same 12 control gauges as b and c, the first six shakers those of c. A legend below the panels names each symbol.">
+<p class="hf-figure-links">This figure: <a href="data/fig_setups_parts.csv" download="fig_setups_parts.csv">fig_setups_parts.csv</a> <a href="data/fig_setups_rig.csv" download="fig_setups_rig.csv">fig_setups_rig.csv</a> <a href="data/fig_setups_frame.csv" download="fig_setups_frame.csv">fig_setups_frame.csv</a> <a href="code/fig_setups.py" download="fig_setups.py">Code</a> <a href="figures/fig_setups.png" download="fig_setups.png">Picture (PNG)</a></p>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-setups-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The article of structure 0 and the five systems, rendered from the beam model. (a) The article: the tube chassis, the three components on cantilevered tubes with their tip masses, the lumped masses, the hardening member, the four mount points and the tip gauges. (b) to (f) The article on its shakers in each system: each shaker body with its force direction, the control gauge points, the held-out gauge points and the tip gauges. Shakers and suspension cords show position and direction only. The stress is read in every beam element.
+</figcaption>
+</figure>
+</div>
+<p>A <strong>setup</strong> here is one arrangement of shakers and control gauges on the article. The article on its shakers with its gauges in one setup, as the controller sees it, is a <strong>system</strong>; the first article of the series calls it the rig. Five setups were run on every structure (<a href="#fig-setups" class="quarto-xref">Figure&nbsp;1</a>): 3 shakers with 12 control gauges, 6 with 12, 12 with 24, 6 with 6, and 12 with 12. The first three have more control gauges than shakers; the last two have as many shakers as control gauges. Each gauge is one accelerometer channel, one point in one direction.</p>
+<ul>
+<li><strong>Control gauges</strong> are read by the controller, which drives the shakers to bring them to their targets. They are chosen by a standard sensor-placement method (Effective Independence) on the chassis and the component bases.</li>
+<li><strong>Held-out gauges</strong> are recorded and never given to the controller. There are 12, three directions at each of four chassis points, the same in every setup of a structure. They have targets of their own from service and are used only to judge the test.</li>
+<li><strong>Tip gauges</strong>, 12 channels at the three component tips and the middle of the hardening member, are never controlled. They have a service response to compare with.</li>
+<li><strong>Shakers</strong> push at chassis points in one direction each. Each is an ideal point force with no dynamics of its own. They are placed one at a time, each where it best keeps the shakers able to move the control gauges in independent ways.</li>
+</ul>
+<p>How the setups relate matters for reading the results. On every structure, the setups with 3, 6 and 12 shakers on 12 control gauges share the same 12 control gauges, and their shakers are nested: the 3 are the first 3 of the 6, and the 6 are the first 6 of the 12. Going from 6 shakers to 12 on those gauges adds shakers and changes nothing else. The setup with 6 shakers and 6 control gauges is different: its shakers are placed anew for its own control gauges. Over the 20 structures it shares 0 to 2 of its 6 shaker positions and 1 to 4 of its control gauges with the setup of 6 shakers and 12 control gauges. The same holds between 12 shakers on 12 control gauges and 12 on 24 (1 to 5 shakers and 1 to 10 gauges shared). The held-out gauges are the same in every setup.</p>
+<h3 id="driven-measured-judged">2.3 Driven, Measured, Judged</h3>
+<p>Each run is one control law on one structure in one setup, run through Hertzforge’s multiple-shaker random control service, the code that runs a real test, on its simulator. The runs were made by the study’s run program and its player, the examples <code>x4_runner</code> and <code>obs_play</code> of the crate <code>sds-control</code> in the Hertzforge repository (github.com/Hertzforge/Hertzforge), on commit <code>646c4ca4</code>. The same programs are on the repository’s main branch at commit <code>268c3bfd</code>, where six cases rerun gave scorecards equal in every number. The run follows the problem’s limits <span class="citation" data-cites="obs2026">(<a href="#ref-obs2026" role="doc-biblioref">Cross 2026e</a>)</span>:</p>
+<ol type="1">
+<li>With the drives off, the noise floor is measured.</li>
+<li>The system’s frequency response, from each shaker’s drive to each control gauge, is measured with uncorrelated random drive about 20 dB under the target level. This is <strong>the measured frequency response</strong>: the controller’s only knowledge of the article. It carries the noise of the measurement, and on a structure that changes with level it is the article as it is at low level.</li>
+<li>The law computes a first drive from the targets and the measured frequency response, and the level rises in steps of 3 dB from 12 dB under the target to full level, one loop at each step.</li>
+<li>At full level the loop runs 30 times. In each loop the controller plays the drive, estimates the spectra at the control gauges, and the law corrects the drive. The last 15 loops are the record.</li>
+</ol>
+<p>Measurement noise is 40 dB under the quietest control gauge’s target. The analysis band is 20 to 2000 Hz in lines 0.5 Hz apart. The <strong>target</strong> at the control gauges is the full set of service spectra line by line, with the cross spectrum between every pair, except for the band-average law, which runs the banded specification: the service spectra as one-third-octave band values, with no cross terms, as it is designed to be. The comparisons between that law and the others are therefore comparisons of a law with its own form of target.</p>
+<p>What is judged:</p>
+<ul>
+<li><strong>Control-gauge error</strong>: at each control gauge and each one-third-octave band, how far the spectrum measured over the record is from the target, in decibels; then the RMS over gauges and bands. This is the per-gauge error of line 2 of the report card.</li>
+<li><strong>Held-out-gauge error</strong>: the same at the 12 held-out gauges.</li>
+<li><strong>Summed error</strong>: the same, but on the sum of the spectra over the gauges of a group, so that one gauge over and another under can cancel. This is the measure that line 2 grades.</li>
+<li><strong>Stress error</strong>: for each beam element, its RMS stress on the shakers over its RMS stress in the same unit in service, in decibels, positive meaning over-test. The stress error of a run is the RMS of that over the elements, and the <strong>stress mean</strong> is its mean. The stress comes from the same model as the gauges, so it is a truth no real test has.</li>
+</ul>
+<p>Lower is closer for every error. A change in an error is the error of one run minus that of another, on the same structure.</p>
+<h3 id="kinds-of-law">2.4 Kinds of Law</h3>
+<p>Hertzforge ships six laws for this test, described with their equations and defaults in the primer <span class="citation" data-cites="primer2026">(<a href="#ref-primer2026" role="doc-biblioref">Cross 2026d</a>)</span>. This article names a law only where a result differs by the kind of law, and the kinds are three (<a href="#tbl-kinds" class="quarto-xref">Table&nbsp;1</a>).</p>
+<div id="tbl-kinds" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[20,44,36]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-kinds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: The three kinds of control law in the study, with the primer’s sections.
+</figcaption>
+<div aria-describedby="tbl-kinds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 3">
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 44%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Kind</th>
+<th style="text-align: left;">What it does</th>
+<th style="text-align: left;">Laws (code names)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Inverts the whole measured response</td>
+<td style="text-align: left;">At each frequency line it inverts the measured response from shakers to control gauges and drives to make the control spectra and cross spectra match</td>
+<td style="text-align: left;"><code>pinv_closed</code> (the module’s default, primer Section 2.2), <code>pinv_open</code> (no loop correction, 2.3), <code>buzz_match</code> (2.5), <code>min_drive</code> (2.6)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Limits its drive in the weak directions</td>
+<td style="text-align: left;">It drives only the directions in which the system responds most strongly on each line</td>
+<td style="text-align: left;"><code>shape_svd</code> (2.4)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Works on band averages</td>
+<td style="text-align: left;">It sets one flat drive per fractional-octave band, matched to the band-averaged control spectra</td>
+<td style="text-align: left;"><code>band_average</code> (Brandon Zwink’s law, 2.7)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>Each law ran at its default settings on every structure and setup. On the first ten structures, in the two setups with six shakers, each law also ran at one tuned setting, chosen beforehand on two other structures (structures 30 and 31, used for nothing else) as the setting with the smallest held-out-gauge error. For the default law on the setups with as many shakers as control gauges, the tuned setting damps the weak directions (Tikhonov regularization, amount 0.1); for the open-loop form of the same law it ignores directions more than 10 times weaker than the strongest. Both limit the drive in the weak directions, which is what P2 of the first article proposes. The tuned settings were chosen on a build whose control-law, simulator and controller code is identical to the study’s.</p>
+<h3 id="the-controllers-checks">2.5 The Controller’s Checks</h3>
+<p>The control module has checks that stop a run on its own (primer Section 3). The growing-error check stops a run when one control gauge’s error stays at or above 3 dB without improving by 0.1 dB for 5 judged loops, the loops of the level ramp included. The drive-change check stops it when the cap on how fast a drive may change has held a drive back on 10 or more lines in 5 of the last 10 drives the law was allowed to make. The drive-voltage abort is the drive ceiling plus 1 dB: with the problem’s 5.0 V ceiling, 5.61 V RMS. These defaults are conservative on purpose. They protect the shaker, the amplifier and the article, and widening them is the test engineer’s decision for their own equipment and article.</p>
+<p>A simulator has no hardware to protect, so the study widened the checks so that a run would complete: no limit on the count of lines outside abort lines, a stop only after 16 loops without improvement, and an overload fraction of 1.0. On the first five structures every case was also run with the checks at their defaults: 990 runs, of which 901 stopped (840 on the growing-error check, 61 on the drive-change check), most at the seventh loop and a few as late as the 34th, and all 901 completed once the checks were widened. On the ten held-back structures, 811 of 870 runs at the default checks stopped (792 and 19), at loops 6 to 35, and 810 completed once widened. A run stopped by a default check is a fact about the default, not a failure of the law.</p>
+<p>The results here are each case’s completed run with the checks widened where it exists, else its completed run at the default checks. For the linear structures at default settings that is 598 cases: 577 run with the checks widened and 21 that completed at the default checks. Three cases have no result: one law, on the setup with three shakers, reached the drive-voltage abort even with the checks widened, and the cases are left out (one such run on the held-back structures). Most runs at the default checks would have stopped early, so the results describe what each law does when it is let run, not what a laboratory running the defaults would see.</p>
+<h3 id="the-runs">2.6 The Runs</h3>
+<div id="tbl-runs" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[44,15,15,17,9]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-runs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: The study’s runs this article uses. Each case was run once. The scorecards of every run are in the results record <span class="citation" data-cites="obsresults2026">(<a href="#ref-obsresults2026" role="doc-biblioref">Cross 2026a</a>)</span>.
+</figcaption>
+<div aria-describedby="tbl-runs-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 5">
+<table class="caption-top">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 17%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Runs</th>
+<th style="text-align: left;">Structures</th>
+<th style="text-align: left;">Setups</th>
+<th style="text-align: left;">Stages</th>
+<th style="text-align: right;">Cases</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Each law at its default settings, the measured frequency response measured once and kept</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">all five</td>
+<td style="text-align: left;">linear, realistic, strong</td>
+<td style="text-align: right;">1,797</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Each law at its tuned setting, the same</td>
+<td style="text-align: left;">10 (structures 0 to 9)</td>
+<td style="text-align: left;">6 with 6, 6 with 12</td>
+<td style="text-align: left;">all three</td>
+<td style="text-align: right;">360</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Each law at its defaults, the frequency response measured again during the test</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">6 with 6, 6 with 12</td>
+<td style="text-align: left;">realistic, strong</td>
+<td style="text-align: right;">240</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p><strong>Stages.</strong> At stage 1 the structure is linear: it is the same at every level. At stage 2 the same structure changes with level: its bolted joints soften (stiffness falls as the motion grows, so those modes fall in frequency) and the member hardens (stiffness rises with its displacement, so its mode rises). Stage 2 comes in two sizes, realistic and strong. The benchmark article <span class="citation" data-cites="obs2026">(<a href="#ref-obs2026" role="doc-biblioref">Cross 2026e</a>)</span> describes both effects and their sizes.</p>
+<p><strong>Measured once and kept, or measured again.</strong> In most runs the measured frequency response is measured once before the test and kept. In one set of runs the law measures it again during the test and blends the new estimate with the old, so that it follows a structure that changes with level.</p>
+<p><strong>Spread.</strong> Every result is given as the median over structures with the first and third quartiles in brackets, the number of structures that moved up or down by more than 0.2 dB, and where it matters the structure with the largest change. Each case was run once, so the spread from one run to the next of the same case is not measured. Differences under 0.2 dB are not claimed.</p>
+<h3 id="the-independent-audit">2.7 The Independent Audit</h3>
+<p>Five comparisons (the five findings of the Summary) were written down, with the study’s numbers and the test each would be held to, before ten further structures were generated. The audit then ran them on those ten held-back structures (seeds 20 to 23, 26 to 28, 50, 51 and 52; 50 and 51 replace 25 and 29, on which the member could not be placed), as a separate agent with its own code, using the set’s own generator, the study’s runner build and the scorer. Structure 24 was refused by the simulator at the strong size (one mode could rise past its 4,096 Hz bound) and was replaced by structure 52; its completed runs count in no verdict. Every verdict was computed by code that first reproduces the study’s numbers from its scorecards exactly. The audit’s scorecards, its held-back problems and its record are part of the results record <span class="citation" data-cites="obsresults2026">(<a href="#ref-obsresults2026" role="doc-biblioref">Cross 2026a</a>)</span>.</p>
+<p>The audit’s rule: a result <strong>holds</strong> when the held-back structures move the same way and their median falls inside the study’s quartiles; where the direction is the same but the median falls outside, the size differed, and the text says which way. A result opposite in direction, or under 0.2 dB on the held-back structures, does not hold, except where the study itself found no clear change, which such a result agrees with. The audit did not run the cases that measure the frequency response again during the test, and one run per case leaves run-to-run noise unmeasured there too.</p>
+<div style="page-break-after: always;"></div>
+<h2 id="linear-structures">3. Linear Structures</h2>
+<p><a href="#tbl-baseline" class="quarto-xref">Table&nbsp;3</a> sets the scene: each kind of law on each setup, at its defaults.</p>
+<div id="tbl-baseline" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[25,15,15,15,15,15]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-baseline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Control-gauge, held-out-gauge and stress errors (dB, median over 20 structures) for the default law, which inverts the whole measured response, the law that limits its drive in the weak directions, and the band-average law (on its banded specification). Linear structures, default settings, frequency response measured once and kept. “Weak directions” is the law that limits its drive in the weak directions; “band averages”, the band-average law. “6 x 12” is 6 shakers and 12 control gauges, and so on. Every law and the quartiles: <code>data/by_setup_linear.csv</code>.
+</figcaption>
+<div aria-describedby="tbl-baseline-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 6">
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Law and error</th>
+<th style="text-align: right;">3 x 12</th>
+<th style="text-align: right;">6 x 12</th>
+<th style="text-align: right;">12 x 24</th>
+<th style="text-align: right;">6 x 6</th>
+<th style="text-align: right;">12 x 12</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Default law: control</td>
+<td style="text-align: right;">7.86</td>
+<td style="text-align: right;">6.01</td>
+<td style="text-align: right;">5.74</td>
+<td style="text-align: right;">3.10</td>
+<td style="text-align: right;">4.72</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Default law: held-out</td>
+<td style="text-align: right;">8.06</td>
+<td style="text-align: right;">6.50</td>
+<td style="text-align: right;">5.43</td>
+<td style="text-align: right;">10.07</td>
+<td style="text-align: right;">11.18</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Default law: stress</td>
+<td style="text-align: right;">4.87</td>
+<td style="text-align: right;">3.40</td>
+<td style="text-align: right;">2.71</td>
+<td style="text-align: right;">11.13</td>
+<td style="text-align: right;">12.81</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Weak directions: stress</td>
+<td style="text-align: right;">5.56</td>
+<td style="text-align: right;">3.83</td>
+<td style="text-align: right;">3.40</td>
+<td style="text-align: right;">3.21</td>
+<td style="text-align: right;">3.58</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Band averages: control</td>
+<td style="text-align: right;">6.81</td>
+<td style="text-align: right;">4.11</td>
+<td style="text-align: right;">3.14</td>
+<td style="text-align: right;">2.00</td>
+<td style="text-align: right;">2.19</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Band averages: held-out</td>
+<td style="text-align: right;">6.76</td>
+<td style="text-align: right;">5.43</td>
+<td style="text-align: right;">3.80</td>
+<td style="text-align: right;">6.34</td>
+<td style="text-align: right;">4.72</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Band averages: stress</td>
+<td style="text-align: right;">4.29</td>
+<td style="text-align: right;">3.13</td>
+<td style="text-align: right;">2.20</td>
+<td style="text-align: right;">3.12</td>
+<td style="text-align: right;">2.61</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>On the setups with more control gauges than shakers, the three kinds sit within about 2 dB of one another in stress, and lower control error goes with lower stress. On the two setups with as many shakers as control gauges, the default law reads lower at its control gauges than it did with twelve control gauges and six shakers, and its stress error is 11 to 13 dB, the article over-tested by about 10 to 12 dB on average. The other two kinds stay near 3 dB.</p>
+<h3 id="shakers-added">3.1 Shakers Added</h3>
+<p>The cleanest view of the setup is the one that changes only the number of shakers. On the same 12 control gauges, <a href="#fig-paired" class="quarto-xref">Figure&nbsp;2</a> (a) follows each structure from 3 shakers to 6 to 12.</p>
+<div id="fig-paired" class="quarto-float quarto-figure quarto-figure-center" alt="Four scatter plots of stress error in decibels, from about 2 to 20, against control-gauge error in decibels. In panel a, the default law on the same 12 control gauges: green open downward triangles for 3 shakers sit at control errors of 7 to 10 dB and stress errors of 3 to 8 dB; blue open circles for 6 shakers sit to their left, at control errors near 5 to 7 dB and stress errors of 2 to 5.5 dB; orange filled squares for 12 shakers sit further left at control errors of 3 to 6.5 dB but high, at stress errors of 4.5 to 18 dB. Gray lines join each structure's three points, running left and down from 3 to 6 shakers and then left and sharply up to 12. Panel b, the band-average law on the same gauges: the three groups step left and slightly down, from 6 to 8 dB of control error at 3 shakers to about 1.5 to 3 dB at 12, all with stress errors between about 1.7 and 6 dB. Panel c, the default law, 6 shakers on 12 control gauges as blue open circles at control errors of 5 to 7 dB and stress errors of 2 to 5.5 dB, joined to pink filled diamonds for 6 shakers on 6 control gauges at control errors of 2 to 4.5 dB and stress errors of 5 to 19.5 dB. Panel d, the band-average law: the pink diamonds sit at 1.5 to 3.3 dB of control error and 2 to 5.3 dB of stress error, beside the blue circles at 3 to 5.5 dB and 2 to 4.6 dB." data="data/fig_paired_setups.csv">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-paired-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="hf-figure hf-figure-given" data-figure="fig_paired">
+<img class="hf-static" src="figures/fig_paired.png" alt="Four scatter plots of stress error in decibels, from about 2 to 20, against control-gauge error in decibels. In panel a, the default law on the same 12 control gauges: green open downward triangles for 3 shakers sit at control errors of 7 to 10 dB and stress errors of 3 to 8 dB; blue open circles for 6 shakers sit to their left, at control errors near 5 to 7 dB and stress errors of 2 to 5.5 dB; orange filled squares for 12 shakers sit further left at control errors of 3 to 6.5 dB but high, at stress errors of 4.5 to 18 dB. Gray lines join each structure's three points, running left and down from 3 to 6 shakers and then left and sharply up to 12. Panel b, the band-average law on the same gauges: the three groups step left and slightly down, from 6 to 8 dB of control error at 3 shakers to about 1.5 to 3 dB at 12, all with stress errors between about 1.7 and 6 dB. Panel c, the default law, 6 shakers on 12 control gauges as blue open circles at control errors of 5 to 7 dB and stress errors of 2 to 5.5 dB, joined to pink filled diamonds for 6 shakers on 6 control gauges at control errors of 2 to 4.5 dB and stress errors of 5 to 19.5 dB. Panel d, the band-average law: the pink diamonds sit at 1.5 to 3.3 dB of control error and 2 to 5.3 dB of stress error, beside the blue circles at 3 to 5.5 dB and 2 to 4.6 dB.">
+<p class="hf-figure-links">This figure: <a href="data/fig_paired_setups.csv" download="fig_paired_setups.csv">Data (CSV)</a> <a href="figures/fig_paired.png" download="fig_paired.png">Picture (PNG)</a></p>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-paired-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Control-gauge error against stress error, structure by structure, as the setup changes. Each gray line joins one structure’s runs. Top: the same 12 control gauges with 3, 6 and 12 shakers. Bottom: 6 shakers on 12 control gauges, and 6 shakers placed anew for 6 control gauges. Left: the module’s default law, which inverts the whole measured response. Right: the band-average law, on its banded specification. Linear structures, default settings.
+</figcaption>
+</figure>
+</div>
+<div id="tbl-added" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[18,21,21,23,17]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-added-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Twelve shakers minus six, on the same 12 control gauges, same structure and law (dB, median [quartiles] over 20 structures). Linear structures, default settings. For the other two laws that invert the whole response the range of their medians is given; each is in <code>data/setup_analysis.txt</code>. The columns are the control-gauge, held-out-gauge and stress errors, and the structures up and down in stress.
+</figcaption>
+<div aria-describedby="tbl-added-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 5">
+<table class="caption-top">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 23%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Kind of law</th>
+<th style="text-align: left;">Control</th>
+<th style="text-align: left;">Held-out</th>
+<th style="text-align: left;">Stress</th>
+<th style="text-align: left;">Up / down</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Default law</td>
+<td style="text-align: left;">-1.21 [-1.90, -0.77]</td>
+<td style="text-align: left;">+4.78 [+3.97, +5.18]</td>
+<td style="text-align: left;">+8.82 [+8.20, +10.33]</td>
+<td style="text-align: left;">20 / 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Open-loop form of the default law</td>
+<td style="text-align: left;">-1.07 [-1.76, +0.09]</td>
+<td style="text-align: left;">+4.83 [+3.68, +5.61]</td>
+<td style="text-align: left;">+9.10 [+7.86, +11.37]</td>
+<td style="text-align: left;">20 / 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Other two laws that invert the whole response</td>
+<td style="text-align: left;">-0.74 to -0.61</td>
+<td style="text-align: left;">+1.78 to +5.11</td>
+<td style="text-align: left;">+2.74 to +9.82</td>
+<td style="text-align: left;">16 to 20 / 0 to 2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Limits its drive in the weak directions</td>
+<td style="text-align: left;">-0.43 [-0.57, -0.14]</td>
+<td style="text-align: left;">-0.52 [-0.67, -0.21]</td>
+<td style="text-align: left;">-0.21 [-0.61, +0.08]</td>
+<td style="text-align: left;">4 / 10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Works on band averages</td>
+<td style="text-align: left;">-1.79 [-2.50, -1.56]</td>
+<td style="text-align: left;">-0.88 [-1.13, -0.50]</td>
+<td style="text-align: left;">-0.46 [-0.94, -0.24]</td>
+<td style="text-align: left;">1 / 16</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>Going from 3 shakers to 6 lowered every error for every kind of law: control gauges, held-out gauges and stress fell together (the default law by 1.9, 1.3 and 1.3 dB). Going from 6 to 12 split the kinds (<a href="#tbl-added" class="quarto-xref">Table&nbsp;4</a>). For the laws that invert the whole measured response, the control gauges read closer to their targets and the article was stressed far more: the default law’s stress error rose by 8.8 dB on all 20 structures (largest, structure 0, +15.0 dB), and its stress mean, the average over-test, by 10.7 dB. The held-out gauges rose by 4.8 dB and showed it. The open-loop form, which computes its drive afresh each loop with no correction from the last, moved the same way by about the same amounts (stress +9.1 dB, 20 of 20). For the law that limits its drive in the weak directions and for the band-average law, twelve shakers did slightly better than six on every measure.</p>
+<p><strong>Audit: holds.</strong> On the ten held-back structures, twelve shakers against six raised the default law’s stress error by 8.53 dB (study 8.82), on all ten. Its control-gauge error fell by 0.95 dB (study 1.21), on 8 of 10. Its held-out-gauge error rose on all ten, by less than on the study’s structures: 3.50 dB against 4.78. The band-average law’s stress error fell by 0.74 dB (study 0.46), on 8 of 10. The law that limits its weak directions moved by under 0.2 dB (-0.09 dB), which agrees with the study’s small change.</p>
+<h3 id="fewer-control-gauges">3.2 Fewer Control Gauges</h3>
+<p>The second comparison fixed before the audit is six shakers on six control gauges against six shakers on twelve (<a href="#fig-paired" class="quarto-xref">Figure&nbsp;2</a> c and d), and twelve on twelve against twelve on twenty-four. These change more than the count of control gauges: the shakers are placed anew for the new control gauges (Section 2.2). Read them as two setups of the same structure, one with as many shakers as control gauges and one with twice as many control gauges as shakers; they do not isolate the number of control gauges.</p>
+<div id="tbl-s1" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[20,21,21,25,13]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-s1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: Six shakers on six control gauges minus six shakers on twelve, same structure and law (dB, median [quartiles] over 20 structures, and structures up or down in stress by more than 0.2 dB). Linear structures, default settings. The first four laws invert the whole response, <code>shape_svd</code> limits its drive in the weak directions and <code>band_average</code> works on band averages (<a href="#tbl-kinds" class="quarto-xref">Table&nbsp;1</a>). The columns are the control-gauge, held-out-gauge and stress errors, and the structures up and down in stress.
+</figcaption>
+<div aria-describedby="tbl-s1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 5">
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 21%">
+<col style="width: 21%">
+<col style="width: 25%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Law</th>
+<th style="text-align: left;">Control</th>
+<th style="text-align: left;">Held-out</th>
+<th style="text-align: left;">Stress</th>
+<th style="text-align: left;">Up / down</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>pinv_closed</code> (default)</td>
+<td style="text-align: left;">-2.65 [-3.29, -2.28]</td>
+<td style="text-align: left;">+3.67 [+2.35, +5.02]</td>
+<td style="text-align: left;">+7.39 [+5.65, +9.05]</td>
+<td style="text-align: left;">20 / 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pinv_open</code></td>
+<td style="text-align: left;">-0.84 [-1.31, +0.28]</td>
+<td style="text-align: left;">+6.15 [+4.30, +7.20]</td>
+<td style="text-align: left;">+11.50 [+10.04, +13.14]</td>
+<td style="text-align: left;">20 / 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>buzz_match</code></td>
+<td style="text-align: left;">-2.24 [-2.90, -1.75]</td>
+<td style="text-align: left;">+3.87 [+2.68, +5.13]</td>
+<td style="text-align: left;">+8.15 [+5.38, +8.92]</td>
+<td style="text-align: left;">20 / 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>min_drive</code></td>
+<td style="text-align: left;">-1.63 [-2.13, -1.20]</td>
+<td style="text-align: left;">+2.63 [+0.85, +3.15]</td>
+<td style="text-align: left;">+2.61 [+2.19, +3.78]</td>
+<td style="text-align: left;">18 / 1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>shape_svd</code></td>
+<td style="text-align: left;">-0.84 [-1.13, -0.64]</td>
+<td style="text-align: left;">+0.39 [-0.27, +0.87]</td>
+<td style="text-align: left;">-0.13 [-0.89, +0.22]</td>
+<td style="text-align: left;">5 / 10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>band_average</code></td>
+<td style="text-align: left;">-2.12 [-2.55, -1.68]</td>
+<td style="text-align: left;">+1.10 [+0.34, +1.83]</td>
+<td style="text-align: left;">+0.39 [-0.42, +0.70]</td>
+<td style="text-align: left;">12 / 7</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>With six shakers, the setup with six control gauges read 2.65 dB lower at the control gauges than the setup with twelve, and 3.67 dB higher at the held-out gauges and 7.39 dB higher in stress, on all 20 structures (<a href="#tbl-s1" class="quarto-xref">Table&nbsp;5</a>). The largest rise in stress was on structure 8, +16.0 dB. The other three laws that invert the whole response moved the same way in stress, by +2.6 to +11.5 dB; the open-loop form by the most. For the law that limits its drive in the weak directions (-0.13 dB) and the band-average law (+0.39 dB, quartiles -0.42 to +0.70) the stress did not move clearly.</p>
+<p>With twelve shakers, twelve control gauges against twenty-four: the stress error rose by +9.40 [+7.59, +10.57] for the default law, +10.26, +9.80 and +2.71 for the other three that invert the whole response, each on 18 to 20 of 20 structures, and by +0.28 and +0.12 for the law that limits its weak directions and the band-average law.</p>
+<p><strong>Audit: holds.</strong> On the ten held-back structures the default law’s six-gauge setup read 2.40 dB lower at the control gauges (study 2.65) and 8.71 dB higher in stress (study 7.39), on all ten. Its held-out error rose on all ten by more than on the study’s structures: 5.29 dB against 3.67 (the buzz-test law likewise, 5.22 against 3.87). The open-loop form’s stress rose by 10.26 dB (study 11.50), on all ten. With twelve shakers the default law’s stress rose by 9.35 dB (study 9.40), on all ten. For the law that limits its weak directions and the band-average law the held-back structures agree with “no clear move”: -0.54 and +0.41 dB with six shakers (6 and 7 of 10 in the study’s direction), -0.24 and +0.07 dB with twelve.</p>
+<h3 id="tuned-settings">3.3 Tuned Settings</h3>
+<p>On six shakers and six control gauges, the first ten structures were also run with each law at its tuned setting. For the two forms of the pseudo-inverse, the laws that invert the whole response with and without the loop correction, the tuned setting limits the drive in the weak directions (Section 2.4). It was chosen on two other structures by the held-out-gauge error, without the stress.</p>
+<div id="tbl-s2" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[18,22,22,24,14]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-s2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: Tuned setting minus default, six shakers on six control gauges, same structure (dB, median [quartiles] over 10 structures). Linear structures. The columns are the control-gauge, held-out-gauge and stress errors, and the structures down in stress.
+</figcaption>
+<div aria-describedby="tbl-s2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 5">
+<table class="caption-top">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 22%">
+<col style="width: 22%">
+<col style="width: 24%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Law</th>
+<th style="text-align: left;">Control</th>
+<th style="text-align: left;">Held-out</th>
+<th style="text-align: left;">Stress</th>
+<th style="text-align: left;">Down in stress</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Default law (<code>pinv_closed</code>)</td>
+<td style="text-align: left;">+0.23 [-0.29, +0.38]</td>
+<td style="text-align: left;">-3.05 [-3.32, -2.57]</td>
+<td style="text-align: left;">-6.39 [-8.41, -4.50]</td>
+<td style="text-align: left;">10 of 10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Open-loop form (<code>pinv_open</code>)</td>
+<td style="text-align: left;">-0.88 [-1.25, +0.64]</td>
+<td style="text-align: left;">-5.03 [-5.50, -3.16]</td>
+<td style="text-align: left;">-11.57 [-12.32, -9.26]</td>
+<td style="text-align: left;">10 of 10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>For the default law, the two tests are alike at the control gauges: the control-gauge error changed by +0.23 dB, 5 structures up and 4 down. In stress they are far apart: the tuned setting lowered the stress error by 6.39 dB on all ten structures (largest, structure 8, -12.3 dB). The held-out gauges fell by 3.05 dB and showed the difference. An engineer comparing the two runs by their control gauges alone would have had no reason to prefer one. For the open-loop form the stress fell by 11.57 dB on all ten.</p>
+<p>On six shakers and twelve control gauges, the tuned setting chosen for that setup changed the default law’s stress error by +0.15 dB, within the spread: the gain is on the setup with as many shakers as control gauges. For the other four laws the tuned setting moved the stress error by less than 0.8 dB in median on either setup.</p>
+<p><strong>Audit: holds.</strong> On the ten held-back structures the tuned setting lowered the default law’s stress error by 6.30 dB (study 6.39), on all ten, and left its control-gauge error unchanged (-0.07 dB, 5 of 10 each way), as on the study’s structures. Its held-out error fell on all ten, by more than on the study’s structures: 3.41 dB against 3.05. For the open-loop form the stress fell on all ten by less than on the study’s structures: 9.09 dB against 11.57.</p>
+<h3 id="which-measurement-warns">3.4 Which Measurement Warns</h3>
+<p>An engineer has no stress truth. What could have told them a test was over-stressing the article? <a href="#fig-tracks" class="quarto-xref">Figure&nbsp;3</a> plots each run’s stress error against its control-gauge error and its held-out-gauge error, and <a href="#tbl-s3" class="quarto-xref">Table&nbsp;7</a> gives the rank correlations.</p>
+<div id="fig-tracks" class="quarto-float quarto-figure quarto-figure-center" alt="Four scatter plots. Top left, as many shakers as control gauges: stress error from about 2 to 23 dB against control-gauge error from about 1 to 8 dB, blue filled circles for 6 shakers on 6 gauges and orange open triangles for 12 on 12; the points fill the plot with no clear trend, and runs with stress errors above 15 dB sit at control errors from 2.5 to 7 dB. Top right, the same runs against held-out-gauge error from about 3.5 to 17 dB: the points rise along a band from about 2 dB of stress at 4 dB held-out to about 20 dB at 16 dB held-out. Bottom left and right, more control gauges than shakers, on log axes: green open downward triangles for 3 shakers on 12, pink open squares for 6 on 12 and yellow filled diamonds for 12 on 24. Both plots show a rising cloud from about 2 dB of stress at 3 dB of gauge error to about 8 dB at 10 dB, and a separate group of green triangles at gauge errors of 20 to 30 dB and stress errors of 14 to 30 dB." data="data/fig_what_tracks.csv">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-tracks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="hf-figure hf-figure-given" data-figure="fig_what_tracks">
+<img class="hf-static" src="figures/fig_what_tracks.png" alt="Four scatter plots. Top left, as many shakers as control gauges: stress error from about 2 to 23 dB against control-gauge error from about 1 to 8 dB, blue filled circles for 6 shakers on 6 gauges and orange open triangles for 12 on 12; the points fill the plot with no clear trend, and runs with stress errors above 15 dB sit at control errors from 2.5 to 7 dB. Top right, the same runs against held-out-gauge error from about 3.5 to 17 dB: the points rise along a band from about 2 dB of stress at 4 dB held-out to about 20 dB at 16 dB held-out. Bottom left and right, more control gauges than shakers, on log axes: green open downward triangles for 3 shakers on 12, pink open squares for 6 on 12 and yellow filled diamonds for 12 on 24. Both plots show a rising cloud from about 2 dB of stress at 3 dB of gauge error to about 8 dB at 10 dB, and a separate group of green triangles at gauge errors of 20 to 30 dB and stress errors of 14 to 30 dB.">
+<p class="hf-figure-links">This figure: <a href="data/fig_what_tracks.csv" download="fig_what_tracks.csv">Data (CSV)</a> <a href="figures/fig_what_tracks.png" download="fig_what_tracks.png">Picture (PNG)</a></p>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tracks-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Stress error against the control-gauge error (left) and the held-out-gauge error (right), one marker per run, six laws pooled. Top: the setups with as many shakers as control gauges (240 runs). Bottom: the setups with more control gauges than shakers (358 runs), on logarithmic axes. Linear structures, default settings.
+</figcaption>
+</figure>
+</div>
+<div id="tbl-s3" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[27,9,17,17,15,15]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-s3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: Spearman rank correlation of each gauge error with the stress error, over runs, six laws pooled, on the study’s structures and on the held-back structures. “Equal” is the setups with as many shakers as control gauges, “more gauges” those with more control gauges than shakers. Linear structures, default settings.
+</figcaption>
+<div aria-describedby="tbl-s3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 6">
+<table class="caption-top">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 9%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 15%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Setups</th>
+<th style="text-align: right;">Runs</th>
+<th style="text-align: right;">Control, per gauge</th>
+<th style="text-align: right;">Held-out, per gauge</th>
+<th style="text-align: right;">Control, summed</th>
+<th style="text-align: right;">Held-out, summed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Equal: study</td>
+<td style="text-align: right;">240</td>
+<td style="text-align: right;">+0.25</td>
+<td style="text-align: right;">+0.85</td>
+<td style="text-align: right;">-0.09</td>
+<td style="text-align: right;">+0.91</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Equal: held back</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">+0.27</td>
+<td style="text-align: right;">+0.81</td>
+<td style="text-align: right;">-0.16</td>
+<td style="text-align: right;">+0.88</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">More gauges: study</td>
+<td style="text-align: right;">358</td>
+<td style="text-align: right;">+0.72</td>
+<td style="text-align: right;">+0.55</td>
+<td style="text-align: right;">+0.67</td>
+<td style="text-align: right;">+0.63</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">More gauges: held back</td>
+<td style="text-align: right;">179</td>
+<td style="text-align: right;">+0.63</td>
+<td style="text-align: right;">+0.71</td>
+<td style="text-align: right;">+0.64</td>
+<td style="text-align: right;">+0.68</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>With as many shakers as control gauges, the held-out gauges tracked the stress error (+0.85 per gauge, +0.91 summed) and the control gauges did not (+0.25 per gauge, -0.09 summed). With more control gauges than shakers, the two groups tracked alike: the control gauges a little better on the study’s structures, the held-out gauges a little better on the held-back ones. These are the patterns the first article found under idealized control (its Section 4.3, for the summed spectra: 0.81 at the controls and 0.79 held out with unequal counts, and -0.08 to -0.16 at the controls under the inverse law once square systems were pooled in).</p>
+<p><strong>Audit: holds.</strong> The test fixed beforehand was that, with as many shakers as control gauges, the held-out gauges’ correlation exceed the control gauges’ by at least 0.30 on the held-back structures. It did, by 0.54 per gauge (+0.81 against +0.27), against 0.60 on the study’s structures.</p>
+<p>Pooled correlations mostly separate setups and laws. Within one setup they are weaker: on 6 shakers and 6 control gauges +0.17 at the control gauges and +0.78 at the held-out gauges, on 12 and 12 +0.31 and +0.89, but on 6 shakers and 12 control gauges +0.14 and -0.17, where every law is within a few decibels of the truth and no gauge sorts the runs. The first article said the same of its own correlations within one setup.</p>
+<p>The rank correlation does not say whether a gauge warns in the right direction. <a href="#tbl-warn" class="quarto-xref">Table&nbsp;8</a> counts, for each sign an engineer could read, how many of the over-testing runs it caught and how many other runs it also flagged. An over-testing run here is one whose stress mean is more than 3 dB over service.</p>
+<div id="tbl-warn" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[64,18,18]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-warn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8: Which signs caught the over-testing runs on the setups with as many shakers as control gauges: 240 runs, 150 of them with the stress mean more than 3 dB over service. Linear structures, default settings, six laws pooled. Each sign is read from the gauges.
+</figcaption>
+<div aria-describedby="tbl-warn-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 3">
+<table class="caption-top">
+<colgroup>
+<col style="width: 64%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Sign</th>
+<th style="text-align: right;">Over-tests caught</th>
+<th style="text-align: right;">Others flagged</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Control pattern (line 2) graded C or worse: summed control error over 4.5&nbsp;dB</td>
+<td style="text-align: right;">1 of 150</td>
+<td style="text-align: right;">1 of 90</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Held-out pattern (line 2) graded C or worse: summed held-out error over 4.5&nbsp;dB</td>
+<td style="text-align: right;">144 of 150</td>
+<td style="text-align: right;">22 of 90</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Level (line 1) outside 1.5&nbsp;dB: mean error over the control and held-out gauges and bands</td>
+<td style="text-align: right;">141 of 150</td>
+<td style="text-align: right;">12 of 90</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Control gauges read more than 1.5&nbsp;dB high on average</td>
+<td style="text-align: right;">73 of 150</td>
+<td style="text-align: right;">1 of 90</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Held-out gauges read more than 1.5&nbsp;dB high on average</td>
+<td style="text-align: right;">148 of 150</td>
+<td style="text-align: right;">16 of 90</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tip gauges: response spectrum at Q of 10 more than 1.5&nbsp;dB high on average</td>
+<td style="text-align: right;">146 of 150</td>
+<td style="text-align: right;">13 of 90</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Over-test alarm (line 3): any band at any gauge more than 6&nbsp;dB over</td>
+<td style="text-align: right;">150 of 150</td>
+<td style="text-align: right;">90 of 90</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>On these setups the held-out gauges, read for their pattern or for their average level, caught nearly every over-test, as did the gauges at the component tips. The control gauges read high on average in half of the over-testing runs, and their pattern grade caught one. The alarm caught every over-test and flagged every other run as well (Section 3.5).</p>
+<p>With more control gauges than shakers, 21 of 358 runs over-tested by more than 3 dB on average. Sixteen of them are one law on the setup with three shakers: the law that chooses the cross terms needing the least drive. In those runs the control and held-out gauges read 4 to 21 dB low on average while the stress was 11 to 29 dB high: the law put its drive into narrow lines that over-stressed the article while the band averages at the gauges read low. Every gauge measure flagged those runs as far from their targets, but the average level pointed the wrong way. The control law study reports that law’s runs on that setup.</p>
+<p>The counts in <a href="#tbl-warn" class="quarto-xref">Table&nbsp;8</a> and the within-setup correlations were not among the comparisons fixed before the audit, and the audit did not test them.</p>
+<h3 id="report-card-lines">3.5 Report Card Lines</h3>
+<p>The scorecard of each run is written by the benchmark’s scorer <span class="citation" data-cites="obs2026">(<a href="#ref-obs2026" role="doc-biblioref">Cross 2026e</a>)</span>, which applies the report card of the first article. Before reading its lines as evidence about the proposed practice, the scorer was checked against that article’s text.</p>
+<ul>
+<li><strong>Line 1, the level.</strong> The scorer takes the mean decibel error over the control and held-out gauges and their bands; the first article says “all gauges”, and the scorer leaves out the tip gauges.</li>
+<li><strong>Line 2, the pattern.</strong> The first article grades the RMS decibel error of the summed spectra in one-third-octave bands, at the held-out gauges and at the control gauges, A to 3 dB, B to 4.5 dB, C to 6 dB. The scorer computes the same.</li>
+<li><strong>Line 3, the over-test alarm.</strong> The first article raises an alarm at +6 dB in a one-third-octave band at any control or held-out gauge, and reports the share of bands over it. The scorer computes the same.</li>
+<li><strong>Line 6, the exact-fit flag.</strong> The first article flags “a near-zero control error with shakers equal to controls” and gives no number. The scorer flags a run when there are at least as many shakers as control gauges and the per-gauge control error is under 1.0 dB. The 1.0 dB is the benchmark article’s choice, not the first article’s. The scorer therefore applies this line with a threshold the practice does not state, and its count of flags says nothing about the practice.</li>
+</ul>
+<div id="tbl-s4" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[24,17,19,19,21]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-s4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9: Report card lines as the scorer applied them: the pattern grades of line 2 at the control and held-out gauges, stress within 3 dB RMS, the exact-fit flag (at the scorer’s 1.0 dB) and the over-test alarm. Linear structures, default settings, six laws pooled, on the study’s structures and on the held-back structures. “Equal” is the setups with as many shakers as control gauges, “more gauges” those with more control gauges than shakers.
+</figcaption>
+<div aria-describedby="tbl-s4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 5">
+<table class="caption-top">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 17%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Equal: study</th>
+<th style="text-align: right;">Equal: held back</th>
+<th style="text-align: right;">More gauges: study</th>
+<th style="text-align: right;">More gauges: held back</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Runs</td>
+<td style="text-align: right;">240</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">358</td>
+<td style="text-align: right;">179</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Control A or B</td>
+<td style="text-align: right;">238</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">304</td>
+<td style="text-align: right;">159</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Held-out A or B</td>
+<td style="text-align: right;">74</td>
+<td style="text-align: right;">43</td>
+<td style="text-align: right;">253</td>
+<td style="text-align: right;">138</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stress within 3&nbsp;dB</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">129</td>
+<td style="text-align: right;">57</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Exact-fit flag</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Alarm</td>
+<td style="text-align: right;">240</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">358</td>
+<td style="text-align: right;">179</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>With as many shakers as control gauges, the control pattern graded A or B in 238 of 240 runs, while the stress error was within 3 dB in 41. The held-out pattern graded A or B in 74.</p>
+<p>What can be said of line 6 without the scorer’s threshold is what the control error was. On the setups with as many shakers as control gauges, the per-gauge control error was at least 0.91 dB in every run, with a median of 3.90 dB; it was under 2 dB in 20 of 240 runs and under 3 dB in 73. The summed control error had a median of 1.72 dB. In a closed loop with noise, the control error did not come near zero, while the over-test that an exact fit causes happened in 150 of the 240 runs. A flag keyed to a near-zero control error has little to fire on in such runs, whatever its threshold.</p>
+<p>The over-test alarm fired in all 598 runs on the linear structures, and in all 1,797 runs at default settings over the three stages. The worst band of a run was at least 9.4 dB over its target, with a median of 22.8 dB. It fired on every one of the 170 linear runs whose stress error was within 3 dB. The first article foresaw part of this: it did not propose a hard stop on every gauge, because the worst control band ran well over even when the article as a whole was close. The share of bands over the alarm, which the line also reports, was higher on the setups with as many shakers as control gauges (median 20.7 percent) than on the others (10.2 percent).</p>
+<p><strong>Audit: holds.</strong> The test fixed beforehand was that the flag fire in under 5 percent of the runs with as many shakers as control gauges and the alarm in over 95 percent of all runs. On the held-back structures the flag fired in none of 120 runs and the alarm in all 299, and the control pattern graded A or B in all 120 runs with as many shakers as control gauges while the stress was within 3 dB in 17.</p>
+<h2 id="nonlinear-structures">4. Nonlinear Structures</h2>
+<p>The same comparisons were made at stage 2, at both sizes. None of them was among the comparisons fixed before the audit, and the audit did not test them.</p>
+<div id="tbl-stage2" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[29,13,12,13,21,12]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stage2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;10: The setup comparisons at stage 2, default law (dB, median over 20 structures, or 10 for the tuned setting; quartiles for the stress). The columns are the default law’s control-gauge, held-out-gauge and stress errors, and the structures up and down in stress. “6 x 12” is 6 shakers and 12 control gauges, and so on. Every law: <code>data/setup_analysis.txt</code>.
+</figcaption>
+<div aria-describedby="tbl-stage2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 6">
+<table class="caption-top">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 13%">
+<col style="width: 12%">
+<col style="width: 13%">
+<col style="width: 21%">
+<col style="width: 12%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Comparison</th>
+<th style="text-align: left;">Stage</th>
+<th style="text-align: left;">Control</th>
+<th style="text-align: left;">Held-out</th>
+<th style="text-align: left;">Stress</th>
+<th style="text-align: left;">Up / down</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">6 x 6 minus 6 x 12</td>
+<td style="text-align: left;">realistic</td>
+<td style="text-align: left;">-1.28</td>
+<td style="text-align: left;">+2.52</td>
+<td style="text-align: left;">+5.48 [+3.69, +6.91]</td>
+<td style="text-align: left;">20 / 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">strong</td>
+<td style="text-align: left;">-1.16</td>
+<td style="text-align: left;">+1.87</td>
+<td style="text-align: left;">+4.78 [+3.06, +7.92]</td>
+<td style="text-align: left;">20 / 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">12 x 12 minus 12 x 24</td>
+<td style="text-align: left;">realistic</td>
+<td style="text-align: left;">-0.28</td>
+<td style="text-align: left;">+4.30</td>
+<td style="text-align: left;">+6.69 [+5.81, +8.38]</td>
+<td style="text-align: left;">20 / 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">strong</td>
+<td style="text-align: left;">+0.78</td>
+<td style="text-align: left;">+3.54</td>
+<td style="text-align: left;">+9.29 [+6.89, +10.82]</td>
+<td style="text-align: left;">20 / 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">12 x 12 minus 6 x 12</td>
+<td style="text-align: left;">realistic</td>
+<td style="text-align: left;">-0.33</td>
+<td style="text-align: left;">+3.39</td>
+<td style="text-align: left;">+6.90 [+5.15, +8.66]</td>
+<td style="text-align: left;">20 / 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">strong</td>
+<td style="text-align: left;">+0.28</td>
+<td style="text-align: left;">+2.41</td>
+<td style="text-align: left;">+8.42 [+5.99, +10.11]</td>
+<td style="text-align: left;">20 / 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6 x 6, tuned minus default</td>
+<td style="text-align: left;">realistic</td>
+<td style="text-align: left;">-0.74</td>
+<td style="text-align: left;">-2.20</td>
+<td style="text-align: left;">-3.65 [-6.18, -2.96]</td>
+<td style="text-align: left;">0 / 10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">strong</td>
+<td style="text-align: left;">-0.67</td>
+<td style="text-align: left;">-1.46</td>
+<td style="text-align: left;">-3.11 [-3.76, -2.48]</td>
+<td style="text-align: left;">0 / 10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>The setup effect held at both sizes for the laws that invert the whole response: every one of their comparisons raised the stress error on 19 or 20 of 20 structures. With nonlinearity, the control-gauge error no longer always fell as the stress rose: for twelve shakers on twelve control gauges at the strong size it rose a little (+0.78 dB), and for the open-loop form of the default law it rose by 1.2 to 3.9 dB in every comparison. For the law that limits its weak directions and the band-average law, the stress changes were within about 0.9 dB in median, the largest being the band-average law on six shakers and six control gauges at the strong size (+0.84 [+0.08, +2.24] dB, 14 structures up and 4 down).</p>
+<div id="tbl-stage2-corr" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[24,17,17,21,21]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stage2-corr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11: Rank correlation of the per-gauge error with the stress error, and report card counts, at stage 2: rank correlations in the rows for the control and held-out gauges, counts of runs in the others. “Equal” is the setups with as many shakers as control gauges, “more gauges” those with more control gauges than shakers. Six laws pooled, default settings.
+</figcaption>
+<div aria-describedby="tbl-stage2-corr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 5">
+<table class="caption-top">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 21%">
+<col style="width: 21%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Equal: realistic</th>
+<th style="text-align: right;">Equal: strong</th>
+<th style="text-align: right;">More gauges: realistic</th>
+<th style="text-align: right;">More gauges: strong</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Runs</td>
+<td style="text-align: right;">240</td>
+<td style="text-align: right;">240</td>
+<td style="text-align: right;">359</td>
+<td style="text-align: right;">360</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Control gauges</td>
+<td style="text-align: right;">+0.50</td>
+<td style="text-align: right;">+0.53</td>
+<td style="text-align: right;">+0.67</td>
+<td style="text-align: right;">+0.23</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Held-out gauges</td>
+<td style="text-align: right;">+0.83</td>
+<td style="text-align: right;">+0.75</td>
+<td style="text-align: right;">+0.55</td>
+<td style="text-align: right;">+0.27</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Control A or B</td>
+<td style="text-align: right;">222</td>
+<td style="text-align: right;">194</td>
+<td style="text-align: right;">305</td>
+<td style="text-align: right;">306</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Stress within 3&nbsp;dB</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">42</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Exact-fit flag</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>With as many shakers as control gauges the held-out gauges still tracked the stress better than the control gauges, by a smaller margin than on the linear structures (0.33 and 0.22, against 0.60). With more control gauges than shakers at the strong size, neither group tracked the stress well (+0.23 and +0.27). The over-test alarm fired on every run at both sizes.</p>
+<h2 id="measuring-again">5. Measuring Again</h2>
+<p>A structure that changes with level moves away from the frequency response measured at low level. Measuring it again during the test is one answer. On the first ten structures, at both stage 2 sizes, each law ran with the response measured again and blended into the old one each loop.</p>
+<div id="tbl-update" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[14,15,15,15,26,15]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-update-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;12: Frequency response measured again during the test minus measured once and kept, default law, same structure (dB, median over 10 structures; quartiles for the stress). The columns are the default law’s control-gauge, held-out-gauge and stress errors, and the structures up and down in stress. “6 x 12” is 6 shakers and 12 control gauges, and so on. Every law: <code>data/setup_analysis.txt</code>.
+</figcaption>
+<div aria-describedby="tbl-update-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 6">
+<table class="caption-top">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 26%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Setup</th>
+<th style="text-align: left;">Stage</th>
+<th style="text-align: left;">Control</th>
+<th style="text-align: left;">Held-out</th>
+<th style="text-align: left;">Stress</th>
+<th style="text-align: left;">Up / down</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">6 x 6</td>
+<td style="text-align: left;">realistic</td>
+<td style="text-align: left;">+1.73</td>
+<td style="text-align: left;">+2.16</td>
+<td style="text-align: left;">+4.85 [+4.63, +5.14]</td>
+<td style="text-align: left;">10 / 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">strong</td>
+<td style="text-align: left;">+1.61</td>
+<td style="text-align: left;">+1.81</td>
+<td style="text-align: left;">+3.75 [+2.39, +4.89]</td>
+<td style="text-align: left;">10 / 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6 x 12</td>
+<td style="text-align: left;">realistic</td>
+<td style="text-align: left;">+0.10</td>
+<td style="text-align: left;">+0.11</td>
+<td style="text-align: left;">+0.23 [+0.07, +0.45]</td>
+<td style="text-align: left;">5 / 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;">strong</td>
+<td style="text-align: left;">+0.15</td>
+<td style="text-align: left;">+0.43</td>
+<td style="text-align: left;">+1.00 [+0.46, +1.64]</td>
+<td style="text-align: left;">9 / 0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>For the default law, measuring again made the test worse, and much worse on the setup with as many shakers as control gauges: +4.85 dB of stress error at the realistic size, on all ten structures, against +0.23 dB on the setup with twelve control gauges. The same was true of the open-loop form and the buzz-test form of the inverse. Here the control gauges did show it: their error rose by 1.6 to 1.7 dB with the stress. For the law that limits its weak directions and the band-average law, the change was within 0.2 dB in median on both setups. The audit did not run these cases.</p>
+<h2 id="what-the-checks-show">6. What the Checks Show</h2>
+<p>The first article’s Section 8 asked for noise, identification error, a closed loop and articles that change with level, and called its ten structures thin. Within one family of frame structures, this study made those checks, and the findings read against the first article as follows.</p>
+<ul>
+<li><strong>The failure does not need an exact fit.</strong> Under idealized control the first article’s controls matched to 0.09 dB. In a closed loop with noise the control gauges read 3 to 5 dB from their targets on the setups with as many shakers as control gauges, far from an exact fit, and the stress was still about 10 to 13 dB over on average for three of the four laws that invert the whole response (4 to 5 dB for the fourth). The comparisons of setups that show it held on the held-back structures.</li>
+<li><strong>The setup decides it.</strong> Adding shakers to the same control gauges until there were as many of each raised the stress error by 8.8 dB for the default law (8.5 dB held back); a setting that limits the drive in the weak directions removed most of it while leaving the control gauges where they were (6.4 dB, 6.3 dB held back).</li>
+<li><strong>The held-out gauges are the measurement that warns.</strong> With as many shakers as control gauges they tracked the stress, and the control gauges did not, on the study’s structures and on the held-back ones.</li>
+<li><strong>It depends on the kind of law.</strong> The laws that limit their drive in the weak directions or work on band averages did not over-test on these setups; capping the inverse or using a band law is what P2 of the first article proposes for this case.</li>
+<li><strong>Two report card lines, as the scorer applies them, did not separate good runs from bad on these structures,</strong> on the study’s structures or the held-back ones.</li>
+</ul>
+<p>What this suggests for the next version of the proposed practice is not settled here. The practice is revised in its own article.</p>
+<h2 id="limits">7. Limits</h2>
+<ul>
+<li><strong>Simulation only.</strong> Every run is inside one computer. The shakers are ideal point forces with no dynamics of their own, and the gauges are perfect apart from the added noise. Nothing here has met hardware.</li>
+<li><strong>The truth comes from the same model as the gauges.</strong> The stress truth is computed from the same modal model that produces the gauge readings, so the gauges and the truth share every simplification of the model.</li>
+<li><strong>One family of structures.</strong> All 30 structures, study and held back, are frames of one design family, loaded in service through their mounts. A second family, or an article loaded by distributed pressure, could behave differently.</li>
+<li><strong>The number of structures.</strong> Twenty for the comparisons at default settings and ten held back; ten for the tuned setting and for measuring the response again. Quartiles over ten structures are coarse.</li>
+<li><strong>One run per case.</strong> Each case was run once with one noise record. How much a result moves from one run to the next of the same case is not measured, so the spread given is over structures only.</li>
+<li><strong>The default checks.</strong> Most runs would have stopped early at the controller’s default checks. The results describe each law let run to the end with the checks widened, not what a laboratory running the defaults would see.</li>
+<li><strong>Different targets.</strong> The band-average law runs the banded specification and the other laws the full line-by-line spectra and cross spectra, so a comparison between them is of each law with its own form of target.</li>
+<li><strong>Setups that change more than one thing.</strong> The comparisons of six against twelve control gauges, and of twelve against twenty-four, also move the shakers. Only the comparison of 3, 6 and 12 shakers on the same 12 control gauges changes one thing.</li>
+<li><strong>The default law’s loop.</strong> The findings on adding shakers and on tuning rest on the default law, whose shared closed loop has two known limits (primer Section 6): where the measured frequency response is off near a mode, a gauge can be held high, because a cross term may not grow while its gauge reads high; and a term at zero stays at zero. A line-by-line port of the published correction algorithm holds a gauge high in the same way when the target has cross terms. The open-loop form, which has no such loop, showed the same over-test (stress +9.1 dB with twelve shakers against six, +11.5 dB with six control gauges against twelve, and its tuned setting lowered the stress by 11.6 dB), so these findings do not rest on those limits; no run was rerun for them.</li>
+<li><strong>What the audit did not check.</strong> The audit tested the five comparisons of the Summary. It did not run the cases that measure the frequency response again, and it did not test the results at stage 2, the counts of warning signs or the correlations within one setup.</li>
+<li><strong>Small differences.</strong> Differences under 0.2 dB are not claimed.</li>
+</ul>
+<h2 class="unnumbered" id="contribution-statement">Contribution Statement</h2>
+<p>Kevin Cross led the work, set its direction and is responsible for the article.</p>
+<h2 class="unnumbered" id="how-this-was-made">How This Was Made</h2>
+<p>The study code, the analysis, the audit, the figures and the drafting of the text were done with Claude Code, an AI coding assistant running Anthropic’s Claude Opus models, under Kevin Cross’s direction. The author is responsible for every word, number and line of code.</p>
+<h2 class="unnumbered" id="acknowledgments">Acknowledgments</h2>
+<p>The observation this article checks was first made on hardware by Rohe, Nelson and Schultz of Sandia National Laboratories <span class="citation" data-cites="rohe2019">(<a href="#ref-rohe2019" role="doc-biblioref">Rohe et al. 2019</a>)</span>: “A smaller error on the control gauge responses does not necessarily indicate a better test.” The regularization of the inverse (Schultz <span class="citation" data-cites="schultz2018">(<a href="#ref-schultz2018" role="doc-biblioref">Schultz 2019</a>)</span>) and the case for trading “a minor amount of control response accuracy” for it (Schultz and Rohe <span class="citation" data-cites="schultz2026">(<a href="#ref-schultz2026" role="doc-biblioref">Schultz and Rohe 2026</a>)</span>) are published work of Sandia National Laboratories, credited here to Sandia National Laboratories. The band-average law is Brandon Zwink’s.</p>
+<h2 class="unnumbered" id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-obsresults2026" class="csl-entry" role="listitem">
+Cross, Kevin. 2026a. <em>Hertzforge Open Benchmark Set, MIMO Random Suite: Results of the Control Law Study and Its Independent Audit, Version 0.2</em>. Data set, Zenodo. <a href="https://doi.org/10.5281/zenodo.24310746">https://doi.org/10.5281/zenodo.24310746</a>.
+</div>
+<div id="ref-obsdata2026" class="csl-entry" role="listitem">
+Cross, Kevin. 2026b. <em>Hertzforge Open Benchmark Set: MIMO Random Suite, Version 0.2</em>. Data set, Zenodo. <a href="https://doi.org/10.5281/zenodo.24310742">https://doi.org/10.5281/zenodo.24310742</a>.
+</div>
+<div id="ref-laws2026" class="csl-entry" role="listitem">
+Cross, Kevin. 2026c. <span>“Six Control Laws for Multi-Shaker Random Vibration: How Each Scores on the Open Benchmark Set.”</span> <em>Hertzforge Journal</em> 1: 2026–09. <a href="https://doi.org/10.5281/zenodo.24311107">https://doi.org/10.5281/zenodo.24311107</a>.
+</div>
+<div id="ref-primer2026" class="csl-entry" role="listitem">
+Cross, Kevin. 2026d. <span>“Six Control Laws for Multi-Shaker Random Vibration: What Each Does and How It Is Built.”</span> <em>Hertzforge Journal</em> 1: 2026–07. <a href="https://doi.org/10.5281/zenodo.24291981">https://doi.org/10.5281/zenodo.24291981</a>.
+</div>
+<div id="ref-obs2026" class="csl-entry" role="listitem">
+Cross, Kevin. 2026e. <span>“The Open Benchmark Set: Public Test Problems, a Fair Run and a Scorecard for Multi-Shaker Control Laws.”</span> <em>Hertzforge Journal</em> 1: 2026–08. <a href="https://doi.org/10.5281/zenodo.24311105">https://doi.org/10.5281/zenodo.24311105</a>.
+</div>
+<div id="ref-cross2026" class="csl-entry" role="listitem">
+Cross, Kevin, and Brandon Zwink. 2026. <span>“What Is a Good Multi-Shaker Test? A Proposed Practice for Judging MIMO Vibration and Shock Tests on Flexible Articles.”</span> <em>Hertzforge Journal</em> 1: 2026–01. <a href="https://doi.org/10.5281/zenodo.24252422">https://doi.org/10.5281/zenodo.24252422</a>.
+</div>
+<div id="ref-rohe2019" class="csl-entry" role="listitem">
+Rohe, Daniel P., Garrett D. Nelson, and Ryan A. Schultz. 2019. <span>“Strategies for Shaker Placement for Impedance-Matched Multi-Axis Testing.”</span> <em>Sensors and Instrumentation, Aircraft/Aerospace, Energy Harvesting and Dynamic Environments Testing, Volume 7, Proceedings of IMAC XXXVII</em>, 195–212. <a href="https://doi.org/10.1007/978-3-030-12676-6_18">https://doi.org/10.1007/978-3-030-12676-6_18</a>.
+</div>
+<div id="ref-schultz2018" class="csl-entry" role="listitem">
+Schultz, Ryan A. 2019. <span>“A Demonstration of Force Estimation and Regularization Methods for Multi-Shaker Testing.”</span> <em>Sensors and Instrumentation, Aircraft/Aerospace, Energy Harvesting and Dynamic Environments Testing, Volume 7, Proceedings of IMAC XXXVII</em>, 229–43. <a href="https://doi.org/10.1007/978-3-030-12676-6_21">https://doi.org/10.1007/978-3-030-12676-6_21</a>.
+</div>
+<div id="ref-schultz2026" class="csl-entry" role="listitem">
+Schultz, Ryan, and Daniel P. Rohe. 2026. <span>“Understanding 6DOF Test Methods and Their Impacts on Results.”</span> <em>IMAC XLIV, International Modal Analysis Conference, Palm Springs, California</em>. <a href="https://www.osti.gov/biblio/17086461">https://www.osti.gov/biblio/17086461</a>.
+</div>
+</div>
+<h2 class="unnumbered" id="implemented-in">Implemented In</h2>
+<p>Nothing in this article is implemented in a Hertzforge release yet.</p>
+<h2 class="unnumbered" id="version-history">Version History</h2>
+<p><strong>Version 1, 2026-11-17.</strong> DOI <a href="https://doi.org/10.5281/zenodo.24311109">10.5281/zenodo.24311109</a>. First published.</p>
+<div id="hf-history-later"></div>
+
+<section class="hf-end" id="hf-reviews"><h2>Reviews</h2><p>Review is public and signed, and stays open after publication.</p><div id="hf-reviews-static"><p>No invited review had been posted when this version was published.</p><p>Reviews posted since are listed at <a href="https://hertzforge.com/journal/2026-010/">https://hertzforge.com/journal/2026-010/</a>.</p></div><div id="hf-reviews-live"></div></section>
+<p class="hf-license" id="hf-license">Copyright 2026 Kevin Cross. Text, figures and data <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>; code <a href="https://opensource.org/license/mit" rel="license noopener">MIT</a>.<br>Methods are published for research. Anyone who applies one to a test is responsible for protecting the equipment and the article under test.</p>
+</div></div></div></article></main>
+<footer class="site-footer dark"><svg class="trace" viewbox="0 0 1200 100" preserveaspectratio="none" aria-hidden="true" focusable="false"><path class="trace-glow" d="M0.0 50.0L1.7 49.8L3.3 50.9L5.0 52.4L6.7 53.7L8.3 54.4L10.0 54.3L11.7 53.4L13.3 52.2L15.0 51.0L16.7 50.1L18.3 49.4L20.0 49.1L21.7 48.7L23.3 48.2L25.0 47.4L26.7 46.5L28.3 45.7L30.0 45.4L31.7 45.6L33.3 46.4L35.0 47.7L36.7 49.2L38.3 50.4L40.0 51.4L41.7 51.9L43.3 52.1L45.0 52.3L46.7 52.7L48.3 53.4L50.0 54.4L51.7 55.4L53.3 56.2L55.0 56.5L56.7 56.4L58.3 56.1L60.0 55.8L61.7 55.8L63.3 56.2L65.0 57.0L66.7 57.8L68.3 58.2L70.0 58.0L71.7 57.0L73.3 55.5L75.0 54.0L76.7 53.1L78.3 53.1L80.0 53.9L81.7 55.2L83.3 56.1L85.0 55.8L86.7 53.6L88.3 49.5L90.0 44.1L91.7 38.5L93.3 34.0L95.0 31.8L96.7 32.6L98.3 36.2L100.0 41.5L101.7 47.2L103.3 52.0L105.0 54.9L106.7 55.6L108.3 54.7L110.0 53.2L111.7 52.2L113.3 52.2L115.0 53.2L116.7 54.5L118.3 55.0L120.0 53.6L121.7 49.9L123.3 44.3L125.0 38.1L126.7 32.8L128.3 30.2L130.0 31.3L131.7 36.0L133.3 42.9L135.0 50.2L136.7 55.6L138.3 57.5L140.0 55.4L141.7 50.3L143.3 43.9L145.0 38.5L146.7 36.0L148.3 37.3L150.0 42.0L151.7 48.4L153.3 54.3L155.0 57.8L156.7 57.6L158.3 54.0L160.0 48.4L161.7 42.8L163.3 39.6L165.0 40.1L166.7 44.4L168.3 51.3L170.0 58.7L171.7 64.0L173.3 65.3L175.0 62.1L176.7 54.8L178.3 45.5L180.0 36.6L181.7 30.5L183.3 28.7L185.0 31.7L186.7 38.5L188.3 47.4L190.0 56.4L191.7 63.6L193.3 67.7L195.0 68.4L196.7 66.1L198.3 61.4L200.0 55.4L201.7 48.9L203.3 42.7L205.0 37.4L206.7 33.6L208.3 31.8L210.0 32.3L211.7 35.3L213.3 40.3L215.0 46.5L216.7 52.6L218.3 57.2L220.0 59.4L221.7 58.8L223.3 55.8L225.0 52.0L226.7 49.2L228.3 49.0L230.0 52.6L231.7 59.8L233.3 69.4L235.0 79.2L236.7 86.9L238.3 90.5L240.0 88.9L241.7 82.5L243.3 72.7L245.0 61.7L246.7 51.7L248.3 44.3L250.0 40.2L251.7 39.2L253.3 40.6L255.0 43.1L256.7 46.1L258.3 49.3L260.0 52.6L261.7 56.2L263.3 59.9L265.0 63.1L266.7 64.6L268.3 63.3L270.0 58.2L271.7 49.5L273.3 38.4L275.0 27.4L276.7 19.4L278.3 16.9L280.0 21.1L281.7 31.7L283.3 46.2L285.0 61.0L286.7 72.2L288.3 76.9L290.0 74.0L291.7 64.8L293.3 52.3L295.0 40.7L296.7 33.6L298.3 33.0L300.0 38.8L301.7 48.5L303.3 58.4L305.0 64.4L306.7 63.6L308.3 55.6L310.0 42.0L311.7 26.5L313.3 13.4L315.0 6.5L316.7 7.6L318.3 16.4L320.0 30.2L321.7 45.3L323.3 57.7L325.0 64.5L326.7 64.6L328.3 59.1L330.0 50.4L331.7 41.5L333.3 35.4L335.0 33.5L336.7 36.0L338.3 42.1L340.0 49.9L341.7 57.7L343.3 64.3L345.0 68.9L346.7 71.6L348.3 72.7L350.0 72.1L351.7 69.9L353.3 65.7L355.0 59.2L356.7 50.4L358.3 40.2L360.0 29.9L361.7 21.4L363.3 16.2L365.0 15.6L366.7 19.4L368.3 26.5L370.0 34.9L371.7 42.4L373.3 47.3L375.0 48.8L376.7 47.3L378.3 44.4L380.0 41.7L381.7 41.0L383.3 43.3L385.0 48.4L386.7 55.3L388.3 62.5L390.0 68.5L391.7 72.1L393.3 73.0L395.0 71.5L396.7 68.3L398.3 64.1L400.0 59.5L401.7 54.7L403.3 49.9L405.0 45.2L406.7 41.5L408.3 39.7L410.0 41.0L411.7 46.5L413.3 56.0L415.0 68.5L416.7 81.7L418.3 92.5L420.0 98.1L421.7 96.4L423.3 87.4L425.0 72.8L426.7 56.0L428.3 40.9L430.0 31.1L431.7 28.6L433.3 33.0L435.0 42.3L436.7 52.7L438.3 60.7L440.0 63.9L441.7 61.7L443.3 55.5L445.0 48.3L446.7 43.4L448.3 43.1L450.0 48.0L451.7 56.3L453.3 65.1L455.0 70.8L456.7 70.5L458.3 63.6L460.0 51.4L461.7 37.4L463.3 25.7L465.0 20.1L466.7 22.3L468.3 31.7L470.0 45.4L471.7 59.3L473.3 69.0L475.0 71.7L476.7 66.8L478.3 55.9L480.0 42.4L481.7 30.2L483.3 22.5L485.0 20.8L486.7 24.5L488.3 31.5L490.0 38.8L491.7 43.7L493.3 44.9L495.0 42.7L496.7 38.6L498.3 34.9L500.0 33.8L501.7 36.2L503.3 41.8L505.0 49.1L506.7 56.0L508.3 60.6L510.0 61.9L511.7 59.9L513.3 55.9L515.0 51.4L516.7 48.0L518.3 46.7L520.0 47.5L521.7 49.6L523.3 51.7L525.0 52.9L526.7 52.9L528.3 51.7L530.0 50.1L531.7 49.1L533.3 49.1L535.0 49.9L536.7 50.8L538.3 50.7L540.0 48.5L541.7 44.0L543.3 37.5L545.0 30.3L546.7 24.0L548.3 20.0L550.0 19.1L551.7 21.1L553.3 25.1L555.0 29.6L556.7 33.5L558.3 36.0L560.0 37.6L561.7 39.3L563.3 42.3L565.0 47.7L566.7 55.7L568.3 65.5L570.0 75.5L571.7 83.9L573.3 89.0L575.0 90.4L576.7 88.2L578.3 83.9L580.0 78.7L581.7 73.7L583.3 69.3L585.0 64.8L586.7 59.2L588.3 51.4L590.0 41.6L591.7 30.8L593.3 21.7L595.0 17.2L596.7 19.8L598.3 30.6L600.0 48.3L601.7 69.4L603.3 88.8L605.0 101.6L606.7 104.1L608.3 95.1L610.0 76.9L611.7 54.3L613.3 33.5L615.0 20.3L616.7 18.3L618.3 28.1L620.0 46.6L621.7 68.6L623.3 87.9L625.0 99.3L626.7 100.1L628.3 90.6L630.0 74.1L631.7 55.2L633.3 38.9L635.0 28.7L636.7 25.8L638.3 29.1L640.0 35.8L641.7 42.6L643.3 46.8L645.0 47.2L646.7 44.1L648.3 39.3L650.0 34.8L651.7 32.3L653.3 32.5L655.0 34.9L656.7 38.2L658.3 40.9L660.0 42.2L661.7 42.0L663.3 41.1L665.0 40.8L666.7 42.2L668.3 45.7L670.0 50.5L671.7 55.2L673.3 58.1L675.0 57.7L676.7 53.9L678.3 47.5L680.0 40.6L681.7 35.6L683.3 34.6L685.0 38.5L686.7 46.7L688.3 57.1L690.0 67.0L691.7 73.5L693.3 74.8L695.0 70.5L696.7 61.6L698.3 50.3L700.0 39.2L701.7 30.3L703.3 25.1L705.0 23.8L706.7 25.6L708.3 29.2L710.0 33.4L711.7 37.1L713.3 39.8L715.0 41.5L716.7 42.3L718.3 42.3L720.0 41.6L721.7 40.3L723.3 38.6L725.0 37.2L726.7 36.9L728.3 38.6L730.0 42.9L731.7 49.5L733.3 57.3L735.0 64.2L736.7 67.8L738.3 66.0L740.0 58.2L741.7 45.3L743.3 30.2L745.0 17.0L746.7 9.9L748.3 12.1L750.0 24.4L751.7 45.1L753.3 69.7L755.0 92.7L756.7 108.8L758.3 114.1L760.0 107.7L761.7 91.7L763.3 70.5L765.0 49.6L766.7 33.9L768.3 26.3L770.0 27.3L771.7 34.9L773.3 45.4L775.0 54.9L776.7 60.7L778.3 61.8L780.0 59.1L781.7 55.0L783.3 52.1L785.0 52.1L786.7 55.5L788.3 61.2L790.0 66.9L791.7 70.6L793.3 70.7L795.0 67.2L796.7 61.7L798.3 56.4L800.0 53.7L801.7 55.1L803.3 60.3L805.0 67.8L806.7 74.8L808.3 78.4L810.0 76.9L811.7 69.7L813.3 58.5L815.0 45.9L816.7 34.9L818.3 28.0L820.0 26.1L821.7 28.6L823.3 33.6L825.0 38.3L826.7 40.6L828.3 39.4L830.0 35.1L831.7 29.3L833.3 24.5L835.0 22.8L836.7 25.4L838.3 32.2L840.0 41.8L841.7 52.1L843.3 60.9L845.0 66.8L846.7 69.0L848.3 68.3L850.0 65.7L851.7 62.7L853.3 60.2L855.0 58.8L856.7 58.0L858.3 57.2L860.0 55.8L861.7 53.3L863.3 49.9L865.0 46.1L866.7 42.6L868.3 40.0L870.0 38.6L871.7 38.2L873.3 38.4L875.0 38.6L876.7 38.8L878.3 39.1L880.0 39.8L881.7 41.3L883.3 43.7L885.0 46.5L886.7 48.6L888.3 48.9L890.0 46.5L891.7 41.2L893.3 33.9L895.0 26.2L896.7 20.5L898.3 18.8L900.0 22.4L901.7 30.9L903.3 42.9L905.0 55.5L906.7 65.9L908.3 71.6L910.0 71.9L911.7 67.5L913.3 60.3L915.0 53.1L916.7 48.2L918.3 46.8L920.0 48.6L921.7 51.9L923.3 54.2L925.0 53.5L926.7 48.8L928.3 40.8L930.0 31.6L931.7 24.4L933.3 21.9L935.0 26.0L936.7 36.3L938.3 50.7L940.0 65.8L941.7 77.8L943.3 83.8L945.0 82.8L946.7 75.5L948.3 64.6L950.0 53.6L951.7 45.8L953.3 43.1L955.0 45.9L956.7 52.8L958.3 61.3L960.0 68.7L961.7 73.1L963.3 73.7L965.0 70.9L966.7 66.4L968.3 61.7L970.0 58.2L971.7 56.3L973.3 55.6L975.0 55.2L976.7 53.9L978.3 51.4L980.0 47.9L981.7 44.4L983.3 42.3L985.0 42.7L986.7 45.8L988.3 51.2L990.0 57.2L991.7 61.8L993.3 63.4L995.0 61.1L996.7 55.3L998.3 47.3L1000.0 39.4L1001.7 33.7L1003.3 31.7L1005.0 33.9L1006.7 39.5L1008.3 46.6L1010.0 53.1L1011.7 57.2L1013.3 57.8L1015.0 54.9L1016.7 49.7L1018.3 43.5L1020.0 38.2L1021.7 35.2L1023.3 35.1L1025.0 38.2L1026.7 43.7L1028.3 50.8L1030.0 58.4L1031.7 65.4L1033.3 70.9L1035.0 74.1L1036.7 74.4L1038.3 71.5L1040.0 65.6L1041.7 57.3L1043.3 47.7L1045.0 38.2L1046.7 30.7L1048.3 26.3L1050.0 25.9L1051.7 29.2L1053.3 35.1L1055.0 41.7L1056.7 47.2L1058.3 49.9L1060.0 49.3L1061.7 46.0L1063.3 41.3L1065.0 37.2L1066.7 35.6L1068.3 37.5L1070.0 42.5L1071.7 49.5L1073.3 56.3L1075.0 60.9L1076.7 61.5L1078.3 58.1L1080.0 51.3L1081.7 43.3L1083.3 36.4L1085.0 32.5L1086.7 32.9L1088.3 37.3L1090.0 44.4L1091.7 52.1L1093.3 58.5L1095.0 62.0L1096.7 62.0L1098.3 59.0L1100.0 54.3L1101.7 49.2L1103.3 45.2L1105.0 42.7L1106.7 41.7L1108.3 41.7L1110.0 42.0L1111.7 42.1L1113.3 42.2L1115.0 42.5L1116.7 43.7L1118.3 46.3L1120.0 50.3L1121.7 55.3L1123.3 60.2L1125.0 63.8L1126.7 65.2L1128.3 63.8L1130.0 60.3L1131.7 55.6L1133.3 51.3L1135.0 48.7L1136.7 48.9L1138.3 51.7L1140.0 56.4L1141.7 61.5L1143.3 65.4L1145.0 67.0L1146.7 65.6L1148.3 61.5L1150.0 55.8L1151.7 49.8L1153.3 44.9L1155.0 42.1L1156.7 41.6L1158.3 43.1L1160.0 45.7L1161.7 48.6L1163.3 50.8L1165.0 51.9L1166.7 51.7L1168.3 50.6L1170.0 49.0L1171.7 47.4L1173.3 46.3L1175.0 45.9L1176.7 46.2L1178.3 47.1L1180.0 48.3L1181.7 49.8L1183.3 51.3L1185.0 52.6L1186.7 53.6L1188.3 54.1L1190.0 54.1L1191.7 53.5L1193.3 52.4L1195.0 51.3L1196.7 50.3L1198.3 49.7L1200.0 50.0" pathlength="1"></path><path class="trace-line" d="M0.0 50.0L1.7 49.8L3.3 50.9L5.0 52.4L6.7 53.7L8.3 54.4L10.0 54.3L11.7 53.4L13.3 52.2L15.0 51.0L16.7 50.1L18.3 49.4L20.0 49.1L21.7 48.7L23.3 48.2L25.0 47.4L26.7 46.5L28.3 45.7L30.0 45.4L31.7 45.6L33.3 46.4L35.0 47.7L36.7 49.2L38.3 50.4L40.0 51.4L41.7 51.9L43.3 52.1L45.0 52.3L46.7 52.7L48.3 53.4L50.0 54.4L51.7 55.4L53.3 56.2L55.0 56.5L56.7 56.4L58.3 56.1L60.0 55.8L61.7 55.8L63.3 56.2L65.0 57.0L66.7 57.8L68.3 58.2L70.0 58.0L71.7 57.0L73.3 55.5L75.0 54.0L76.7 53.1L78.3 53.1L80.0 53.9L81.7 55.2L83.3 56.1L85.0 55.8L86.7 53.6L88.3 49.5L90.0 44.1L91.7 38.5L93.3 34.0L95.0 31.8L96.7 32.6L98.3 36.2L100.0 41.5L101.7 47.2L103.3 52.0L105.0 54.9L106.7 55.6L108.3 54.7L110.0 53.2L111.7 52.2L113.3 52.2L115.0 53.2L116.7 54.5L118.3 55.0L120.0 53.6L121.7 49.9L123.3 44.3L125.0 38.1L126.7 32.8L128.3 30.2L130.0 31.3L131.7 36.0L133.3 42.9L135.0 50.2L136.7 55.6L138.3 57.5L140.0 55.4L141.7 50.3L143.3 43.9L145.0 38.5L146.7 36.0L148.3 37.3L150.0 42.0L151.7 48.4L153.3 54.3L155.0 57.8L156.7 57.6L158.3 54.0L160.0 48.4L161.7 42.8L163.3 39.6L165.0 40.1L166.7 44.4L168.3 51.3L170.0 58.7L171.7 64.0L173.3 65.3L175.0 62.1L176.7 54.8L178.3 45.5L180.0 36.6L181.7 30.5L183.3 28.7L185.0 31.7L186.7 38.5L188.3 47.4L190.0 56.4L191.7 63.6L193.3 67.7L195.0 68.4L196.7 66.1L198.3 61.4L200.0 55.4L201.7 48.9L203.3 42.7L205.0 37.4L206.7 33.6L208.3 31.8L210.0 32.3L211.7 35.3L213.3 40.3L215.0 46.5L216.7 52.6L218.3 57.2L220.0 59.4L221.7 58.8L223.3 55.8L225.0 52.0L226.7 49.2L228.3 49.0L230.0 52.6L231.7 59.8L233.3 69.4L235.0 79.2L236.7 86.9L238.3 90.5L240.0 88.9L241.7 82.5L243.3 72.7L245.0 61.7L246.7 51.7L248.3 44.3L250.0 40.2L251.7 39.2L253.3 40.6L255.0 43.1L256.7 46.1L258.3 49.3L260.0 52.6L261.7 56.2L263.3 59.9L265.0 63.1L266.7 64.6L268.3 63.3L270.0 58.2L271.7 49.5L273.3 38.4L275.0 27.4L276.7 19.4L278.3 16.9L280.0 21.1L281.7 31.7L283.3 46.2L285.0 61.0L286.7 72.2L288.3 76.9L290.0 74.0L291.7 64.8L293.3 52.3L295.0 40.7L296.7 33.6L298.3 33.0L300.0 38.8L301.7 48.5L303.3 58.4L305.0 64.4L306.7 63.6L308.3 55.6L310.0 42.0L311.7 26.5L313.3 13.4L315.0 6.5L316.7 7.6L318.3 16.4L320.0 30.2L321.7 45.3L323.3 57.7L325.0 64.5L326.7 64.6L328.3 59.1L330.0 50.4L331.7 41.5L333.3 35.4L335.0 33.5L336.7 36.0L338.3 42.1L340.0 49.9L341.7 57.7L343.3 64.3L345.0 68.9L346.7 71.6L348.3 72.7L350.0 72.1L351.7 69.9L353.3 65.7L355.0 59.2L356.7 50.4L358.3 40.2L360.0 29.9L361.7 21.4L363.3 16.2L365.0 15.6L366.7 19.4L368.3 26.5L370.0 34.9L371.7 42.4L373.3 47.3L375.0 48.8L376.7 47.3L378.3 44.4L380.0 41.7L381.7 41.0L383.3 43.3L385.0 48.4L386.7 55.3L388.3 62.5L390.0 68.5L391.7 72.1L393.3 73.0L395.0 71.5L396.7 68.3L398.3 64.1L400.0 59.5L401.7 54.7L403.3 49.9L405.0 45.2L406.7 41.5L408.3 39.7L410.0 41.0L411.7 46.5L413.3 56.0L415.0 68.5L416.7 81.7L418.3 92.5L420.0 98.1L421.7 96.4L423.3 87.4L425.0 72.8L426.7 56.0L428.3 40.9L430.0 31.1L431.7 28.6L433.3 33.0L435.0 42.3L436.7 52.7L438.3 60.7L440.0 63.9L441.7 61.7L443.3 55.5L445.0 48.3L446.7 43.4L448.3 43.1L450.0 48.0L451.7 56.3L453.3 65.1L455.0 70.8L456.7 70.5L458.3 63.6L460.0 51.4L461.7 37.4L463.3 25.7L465.0 20.1L466.7 22.3L468.3 31.7L470.0 45.4L471.7 59.3L473.3 69.0L475.0 71.7L476.7 66.8L478.3 55.9L480.0 42.4L481.7 30.2L483.3 22.5L485.0 20.8L486.7 24.5L488.3 31.5L490.0 38.8L491.7 43.7L493.3 44.9L495.0 42.7L496.7 38.6L498.3 34.9L500.0 33.8L501.7 36.2L503.3 41.8L505.0 49.1L506.7 56.0L508.3 60.6L510.0 61.9L511.7 59.9L513.3 55.9L515.0 51.4L516.7 48.0L518.3 46.7L520.0 47.5L521.7 49.6L523.3 51.7L525.0 52.9L526.7 52.9L528.3 51.7L530.0 50.1L531.7 49.1L533.3 49.1L535.0 49.9L536.7 50.8L538.3 50.7L540.0 48.5L541.7 44.0L543.3 37.5L545.0 30.3L546.7 24.0L548.3 20.0L550.0 19.1L551.7 21.1L553.3 25.1L555.0 29.6L556.7 33.5L558.3 36.0L560.0 37.6L561.7 39.3L563.3 42.3L565.0 47.7L566.7 55.7L568.3 65.5L570.0 75.5L571.7 83.9L573.3 89.0L575.0 90.4L576.7 88.2L578.3 83.9L580.0 78.7L581.7 73.7L583.3 69.3L585.0 64.8L586.7 59.2L588.3 51.4L590.0 41.6L591.7 30.8L593.3 21.7L595.0 17.2L596.7 19.8L598.3 30.6L600.0 48.3L601.7 69.4L603.3 88.8L605.0 101.6L606.7 104.1L608.3 95.1L610.0 76.9L611.7 54.3L613.3 33.5L615.0 20.3L616.7 18.3L618.3 28.1L620.0 46.6L621.7 68.6L623.3 87.9L625.0 99.3L626.7 100.1L628.3 90.6L630.0 74.1L631.7 55.2L633.3 38.9L635.0 28.7L636.7 25.8L638.3 29.1L640.0 35.8L641.7 42.6L643.3 46.8L645.0 47.2L646.7 44.1L648.3 39.3L650.0 34.8L651.7 32.3L653.3 32.5L655.0 34.9L656.7 38.2L658.3 40.9L660.0 42.2L661.7 42.0L663.3 41.1L665.0 40.8L666.7 42.2L668.3 45.7L670.0 50.5L671.7 55.2L673.3 58.1L675.0 57.7L676.7 53.9L678.3 47.5L680.0 40.6L681.7 35.6L683.3 34.6L685.0 38.5L686.7 46.7L688.3 57.1L690.0 67.0L691.7 73.5L693.3 74.8L695.0 70.5L696.7 61.6L698.3 50.3L700.0 39.2L701.7 30.3L703.3 25.1L705.0 23.8L706.7 25.6L708.3 29.2L710.0 33.4L711.7 37.1L713.3 39.8L715.0 41.5L716.7 42.3L718.3 42.3L720.0 41.6L721.7 40.3L723.3 38.6L725.0 37.2L726.7 36.9L728.3 38.6L730.0 42.9L731.7 49.5L733.3 57.3L735.0 64.2L736.7 67.8L738.3 66.0L740.0 58.2L741.7 45.3L743.3 30.2L745.0 17.0L746.7 9.9L748.3 12.1L750.0 24.4L751.7 45.1L753.3 69.7L755.0 92.7L756.7 108.8L758.3 114.1L760.0 107.7L761.7 91.7L763.3 70.5L765.0 49.6L766.7 33.9L768.3 26.3L770.0 27.3L771.7 34.9L773.3 45.4L775.0 54.9L776.7 60.7L778.3 61.8L780.0 59.1L781.7 55.0L783.3 52.1L785.0 52.1L786.7 55.5L788.3 61.2L790.0 66.9L791.7 70.6L793.3 70.7L795.0 67.2L796.7 61.7L798.3 56.4L800.0 53.7L801.7 55.1L803.3 60.3L805.0 67.8L806.7 74.8L808.3 78.4L810.0 76.9L811.7 69.7L813.3 58.5L815.0 45.9L816.7 34.9L818.3 28.0L820.0 26.1L821.7 28.6L823.3 33.6L825.0 38.3L826.7 40.6L828.3 39.4L830.0 35.1L831.7 29.3L833.3 24.5L835.0 22.8L836.7 25.4L838.3 32.2L840.0 41.8L841.7 52.1L843.3 60.9L845.0 66.8L846.7 69.0L848.3 68.3L850.0 65.7L851.7 62.7L853.3 60.2L855.0 58.8L856.7 58.0L858.3 57.2L860.0 55.8L861.7 53.3L863.3 49.9L865.0 46.1L866.7 42.6L868.3 40.0L870.0 38.6L871.7 38.2L873.3 38.4L875.0 38.6L876.7 38.8L878.3 39.1L880.0 39.8L881.7 41.3L883.3 43.7L885.0 46.5L886.7 48.6L888.3 48.9L890.0 46.5L891.7 41.2L893.3 33.9L895.0 26.2L896.7 20.5L898.3 18.8L900.0 22.4L901.7 30.9L903.3 42.9L905.0 55.5L906.7 65.9L908.3 71.6L910.0 71.9L911.7 67.5L913.3 60.3L915.0 53.1L916.7 48.2L918.3 46.8L920.0 48.6L921.7 51.9L923.3 54.2L925.0 53.5L926.7 48.8L928.3 40.8L930.0 31.6L931.7 24.4L933.3 21.9L935.0 26.0L936.7 36.3L938.3 50.7L940.0 65.8L941.7 77.8L943.3 83.8L945.0 82.8L946.7 75.5L948.3 64.6L950.0 53.6L951.7 45.8L953.3 43.1L955.0 45.9L956.7 52.8L958.3 61.3L960.0 68.7L961.7 73.1L963.3 73.7L965.0 70.9L966.7 66.4L968.3 61.7L970.0 58.2L971.7 56.3L973.3 55.6L975.0 55.2L976.7 53.9L978.3 51.4L980.0 47.9L981.7 44.4L983.3 42.3L985.0 42.7L986.7 45.8L988.3 51.2L990.0 57.2L991.7 61.8L993.3 63.4L995.0 61.1L996.7 55.3L998.3 47.3L1000.0 39.4L1001.7 33.7L1003.3 31.7L1005.0 33.9L1006.7 39.5L1008.3 46.6L1010.0 53.1L1011.7 57.2L1013.3 57.8L1015.0 54.9L1016.7 49.7L1018.3 43.5L1020.0 38.2L1021.7 35.2L1023.3 35.1L1025.0 38.2L1026.7 43.7L1028.3 50.8L1030.0 58.4L1031.7 65.4L1033.3 70.9L1035.0 74.1L1036.7 74.4L1038.3 71.5L1040.0 65.6L1041.7 57.3L1043.3 47.7L1045.0 38.2L1046.7 30.7L1048.3 26.3L1050.0 25.9L1051.7 29.2L1053.3 35.1L1055.0 41.7L1056.7 47.2L1058.3 49.9L1060.0 49.3L1061.7 46.0L1063.3 41.3L1065.0 37.2L1066.7 35.6L1068.3 37.5L1070.0 42.5L1071.7 49.5L1073.3 56.3L1075.0 60.9L1076.7 61.5L1078.3 58.1L1080.0 51.3L1081.7 43.3L1083.3 36.4L1085.0 32.5L1086.7 32.9L1088.3 37.3L1090.0 44.4L1091.7 52.1L1093.3 58.5L1095.0 62.0L1096.7 62.0L1098.3 59.0L1100.0 54.3L1101.7 49.2L1103.3 45.2L1105.0 42.7L1106.7 41.7L1108.3 41.7L1110.0 42.0L1111.7 42.1L1113.3 42.2L1115.0 42.5L1116.7 43.7L1118.3 46.3L1120.0 50.3L1121.7 55.3L1123.3 60.2L1125.0 63.8L1126.7 65.2L1128.3 63.8L1130.0 60.3L1131.7 55.6L1133.3 51.3L1135.0 48.7L1136.7 48.9L1138.3 51.7L1140.0 56.4L1141.7 61.5L1143.3 65.4L1145.0 67.0L1146.7 65.6L1148.3 61.5L1150.0 55.8L1151.7 49.8L1153.3 44.9L1155.0 42.1L1156.7 41.6L1158.3 43.1L1160.0 45.7L1161.7 48.6L1163.3 50.8L1165.0 51.9L1166.7 51.7L1168.3 50.6L1170.0 49.0L1171.7 47.4L1173.3 46.3L1175.0 45.9L1176.7 46.2L1178.3 47.1L1180.0 48.3L1181.7 49.8L1183.3 51.3L1185.0 52.6L1186.7 53.6L1188.3 54.1L1190.0 54.1L1191.7 53.5L1193.3 52.4L1195.0 51.3L1196.7 50.3L1198.3 49.7L1200.0 50.0" pathlength="1"></path></svg><div class="wrap"><div class="footer-grid"><div class="footer-about"><span class="wordmark"><span class="w-hertz">HERTZ</span><span class="w-forge">FORGE</span></span><p>Open-source structural dynamics testing and analysis. Free under the MIT license, developed in the open.</p></div><nav aria-label="Software"><h2>Software</h2><ul><li><a href="/download/">Download</a></li><li><a href="/documentation/">Documentation</a></li><li><a href="/learn/workflows/">Workflows</a></li><li><a href="/learn/tutorials/">Tutorials</a></li><li><a href="/reference/known-limits/">Known Limits</a></li></ul></nav><nav aria-label="Research"><h2>Research</h2><ul><li><a href="/journal/">Hertzforge Journal</a></li><li><a href="/benchmarks/">Open Benchmark Set</a></li><li><a href="/reference/laws/">Control Laws</a></li><li><a href="/reference/glossary/">Glossary</a></li><li><a href="/reference/standards/">Standards</a></li></ul></nav><nav aria-label="Community"><h2>Community</h2><ul><li><a href="/community/contribute/">Contribute</a></li><li><a href="/community/requests/">Requests</a></li><li><a href="/community/sponsors/">Sponsors</a></li><li><a href="/community/acknowledgments/">Acknowledgments</a></li><li><a href="https://github.com/Hertzforge/Hertzforge">GitHub</a></li></ul></nav><nav aria-label="About"><h2>About</h2><ul><li><a href="/about/">Why Hertzforge Exists</a></li><li><a href="/about/how-it-was-built/">How It Was Built</a></li><li><a href="/about/how-it-works/">How It Works</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="mailto:contact@hertzforge.com">Contact</a></li></ul></nav></div><div class="footer-legal"><span>Copyright 2026 Brandon Zwink and Kevin Cross. Software under the MIT license.</span><span>Hertzforge drives shakers. You are responsible for how you use it and for protecting your equipment.</span></div></div></footer>
+
+<script src="assets/article.js"></script>
+
+
+</body></html>

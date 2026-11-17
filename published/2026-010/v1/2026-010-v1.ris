@@ -1,0 +1,13 @@
+TY  - JOUR
+AU  - Cross, Kevin
+TI  - When the Control Gauges Read Right and the Stress Is Wrong: A Closed-Loop Check of the Proposed Practice for Multi-Shaker Tests
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-010
+PY  - 2026
+DA  - 2026/11/17
+ET  - Version 1
+DO  - 10.5281/zenodo.24311109
+UR  - https://hertzforge.com/journal/2026-010/v1/
+AB  - A multi-shaker vibration test is usually judged by its control accelerometers: if they read their targets, the test is called good. The first article of this series proposed a practice for judging such tests. Its starting point, from idealized simulations and a published hardware test, was that with as many shakers as control accelerometers a controller can make the controls read right while the article is stressed well above what it sees in service, and that accelerometers held out of the control are the ones that show it. That article named the checks that would settle the point. A simulator can make four of them: measurement noise, a frequency response measured on the shakers rather than known exactly, a closed control loop, and structures whose response changes with level, and it can use more structures than that article had. This article reports what those checks show, from a study of six control laws run closed loop through Hertzforge's control service on 20 generated frame structures in five setups, with each main finding repeated by an independent audit on ten structures held back from the study. On the same 12 control gauges, adding shakers until there were as many shakers as gauges lowered the control-gauge error of the module's default law by 1.2 dB and raised the stress error by 8.8 dB on all 20 structures (8.5 dB on all ten held-back structures). A setting that limits the drive in the weak directions left the control gauges where they were and lowered the stress error by 6.4 dB (6.3 dB held back). With as many shakers as control gauges, the held-out gauges tracked the stress error and the control gauges did not. A law that limits its drive in the weak directions, and a law that works on band averages, did not show the over-test. Everything here is simulation, and nothing has met hardware.
+ER  - 

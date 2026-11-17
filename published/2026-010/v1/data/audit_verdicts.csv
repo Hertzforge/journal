@@ -1,0 +1,36 @@
+claim,what,study_n,study_median,study_q1,study_q3,audit_n,audit_median,audit_q1,audit_q3,verdict,audit_structures_same_sign
+S1,"6x6 minus 6x12, pinv_closed, ctrl",20,-2.6477,-3.2870,-2.2813,10,-2.4032,-2.9868,-1.8168,holds,10
+S1,"6x6 minus 6x12, pinv_closed, held",20,3.6655,2.3506,5.0182,10,5.2947,3.0369,6.0745,weaker,10
+S1,"6x6 minus 6x12, pinv_closed, stress",20,7.3876,5.6546,9.0467,10,8.7073,5.2998,9.9348,holds,10
+S1,"12x12 minus 12x24, pinv_closed, stress",20,9.3980,7.5945,10.5741,10,9.3451,5.6018,11.8923,holds,10
+S1,"6x6 minus 6x12, pinv_open, ctrl",20,-0.8409,-1.3140,0.2759,10,-0.9907,-1.6396,-0.4251,holds,8
+S1,"6x6 minus 6x12, pinv_open, held",20,6.1459,4.3008,7.2041,10,7.0149,4.5664,7.4236,holds,10
+S1,"6x6 minus 6x12, pinv_open, stress",20,11.5026,10.0396,13.1385,10,10.2643,7.2443,12.1376,holds,10
+S1,"12x12 minus 12x24, pinv_open, stress",20,10.2612,8.0372,13.6637,10,8.1808,6.1931,12.6054,holds,10
+S1,"6x6 minus 6x12, shape_svd, ctrl",20,-0.8371,-1.1339,-0.6372,10,-0.7124,-1.0254,-0.2248,holds,8
+S1,"6x6 minus 6x12, shape_svd, held",20,0.3935,-0.2711,0.8717,10,0.4838,-0.4716,1.3857,holds,7
+S1,"6x6 minus 6x12, shape_svd, stress",20,-0.1329,-0.8861,0.2187,10,-0.5397,-1.1639,0.1264,holds,6
+S1,"12x12 minus 12x24, shape_svd, stress",20,0.2794,-0.2605,0.7766,10,-0.2351,-0.4955,0.2307,does not hold,3
+S1,"6x6 minus 6x12, buzz_match, ctrl",20,-2.2372,-2.9049,-1.7540,10,-2.0178,-2.5175,-1.3375,holds,10
+S1,"6x6 minus 6x12, buzz_match, held",20,3.8706,2.6765,5.1262,10,5.2153,2.8933,6.2214,weaker,10
+S1,"6x6 minus 6x12, buzz_match, stress",20,8.1507,5.3780,8.9167,10,8.2609,5.1393,10.4516,holds,10
+S1,"12x12 minus 12x24, buzz_match, stress",20,9.7985,7.8211,10.7444,10,9.8133,7.6630,12.0026,holds,10
+S1,"6x6 minus 6x12, min_drive, ctrl",20,-1.6279,-2.1270,-1.1954,10,-1.8491,-2.9710,-1.4057,holds,10
+S1,"6x6 minus 6x12, min_drive, held",20,2.6305,0.8486,3.1505,10,2.4683,0.8620,3.2438,holds,9
+S1,"6x6 minus 6x12, min_drive, stress",20,2.6068,2.1915,3.7787,10,2.2777,0.6709,3.1837,holds,8
+S1,"12x12 minus 12x24, min_drive, stress",20,2.7089,1.3406,4.5694,10,3.5004,0.7879,8.1443,holds,8
+S1,"6x6 minus 6x12, band_average, ctrl",20,-2.1162,-2.5515,-1.6800,10,-2.0945,-2.8783,-1.6998,holds,10
+S1,"6x6 minus 6x12, band_average, held",20,1.0951,0.3416,1.8308,10,1.4834,-0.0109,2.4226,holds,7
+S1,"6x6 minus 6x12, band_average, stress",20,0.3888,-0.4161,0.7019,10,0.4144,0.0096,1.4840,holds,7
+S1,"12x12 minus 12x24, band_average, stress",20,0.1208,-0.2252,0.5582,10,0.0702,-0.3651,0.8006,does not hold,5
+S2,"6x6 linear tuned minus default, pinv_closed, ctrl",10,0.2276,-0.2927,0.3840,10,-0.0681,-0.2559,0.3525,does not hold,5
+S2,"6x6 linear tuned minus default, pinv_closed, held",10,-3.0492,-3.3249,-2.5657,10,-3.4067,-4.1973,-2.9206,weaker,10
+S2,"6x6 linear tuned minus default, pinv_closed, stress",10,-6.3925,-8.4147,-4.5011,10,-6.2986,-8.1788,-5.3739,holds,10
+S2,"6x6 linear tuned minus default, pinv_open, ctrl",10,-0.8770,-1.2543,0.6409,10,-0.7231,-1.4202,0.3332,holds,7
+S2,"6x6 linear tuned minus default, pinv_open, held",10,-5.0332,-5.5027,-3.1595,10,-4.9319,-6.2712,-3.9632,holds,10
+S2,"6x6 linear tuned minus default, pinv_open, stress",10,-11.5686,-12.3231,-9.2561,10,-9.0932,-12.1173,-6.4229,weaker,10
+S5,"12x12 minus 6x12, pinv_closed, ctrl",20,-1.2050,-1.8963,-0.7702,10,-0.9481,-1.3663,-0.2087,holds,8
+S5,"12x12 minus 6x12, pinv_closed, held",20,4.7813,3.9677,5.1799,10,3.4967,2.9678,5.0407,weaker,10
+S5,"12x12 minus 6x12, pinv_closed, stress",20,8.8236,8.2034,10.3260,10,8.5312,5.7480,10.7352,holds,10
+S5,"12x12 minus 6x12, shape_svd, stress",20,-0.2094,-0.6144,0.0813,10,-0.0879,-0.5158,0.0272,does not hold,7
+S5,"12x12 minus 6x12, band_average, stress",20,-0.4596,-0.9431,-0.2388,10,-0.7361,-1.3140,-0.1661,holds,8

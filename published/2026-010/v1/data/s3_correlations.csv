@@ -1,0 +1,7 @@
+stage,setups,runs,control_band,held_band,control_summed,held_summed,level_all,tip_q10_mean
+linear,same count,240,0.248,0.850,-0.088,0.907,0.895,0.904
+linear,more control gauges,358,0.717,0.554,0.673,0.631,0.565,0.618
+realistic,same count,240,0.501,0.833,0.564,0.895,0.890,0.898
+realistic,more control gauges,359,0.675,0.547,0.569,0.520,0.580,0.603
+strong,same count,240,0.533,0.754,0.671,0.806,0.828,0.835
+strong,more control gauges,360,0.233,0.270,0.088,0.232,0.327,0.147

@@ -1,0 +1,660 @@
+RESULTS OF RECORD
+  linear, default settings, measured response kept: 598 cases, checks widened 577, completed at default checks 21; structures 20
+  realistic, default settings, measured response kept: 599 cases, checks widened 591, completed at default checks 8; structures 20
+  strong, default settings, measured response kept: 600 cases, checks widened 600, completed at default checks 0; structures 20
+
+BASELINE: linear, default settings, by setup, median [quartiles] over structures, pooled over laws then by law
+  3x12   pinv_closed   n 20 control  7.86 held-out  8.06 stress RMS  4.87 [ 4.18,  5.92] mean -3.04
+  3x12   pinv_open     n 20 control  7.92 held-out  8.14 stress RMS  4.89 [ 4.23,  6.05] mean -3.05
+  3x12   buzz_match    n 20 control  6.92 held-out  6.92 stress RMS  3.82 [ 3.09,  4.64] mean -1.66
+  3x12   min_drive     n 18 control 22.73 held-out 23.27 stress RMS 19.94 [18.25, 21.50] mean +19.27
+  3x12   shape_svd     n 20 control  8.14 held-out  8.17 stress RMS  5.56 [ 4.73,  6.43] mean -4.05
+  3x12   band_average  n 20 control  6.81 held-out  6.76 stress RMS  4.29 [ 3.90,  4.62] mean -2.79
+  6x12   pinv_closed   n 20 control  6.01 held-out  6.50 stress RMS  3.40 [ 2.53,  4.14] mean +0.13
+  6x12   pinv_open     n 20 control  5.51 held-out  6.17 stress RMS  3.13 [ 2.66,  3.91] mean -0.04
+  6x12   buzz_match    n 20 control  5.59 held-out  6.32 stress RMS  2.75 [ 2.43,  3.67] mean +0.20
+  6x12   min_drive     n 20 control  4.51 held-out  5.95 stress RMS  3.26 [ 2.90,  3.72] mean -1.39
+  6x12   shape_svd     n 20 control  6.77 held-out  6.66 stress RMS  3.83 [ 3.13,  4.81] mean -2.25
+  6x12   band_average  n 20 control  4.11 held-out  5.43 stress RMS  3.13 [ 2.76,  3.67] mean -1.73
+  12x24  pinv_closed   n 20 control  5.74 held-out  5.43 stress RMS  2.71 [ 2.42,  3.18] mean +1.39
+  12x24  pinv_open     n 20 control  4.20 held-out  4.28 stress RMS  2.20 [ 1.97,  2.46] mean +0.51
+  12x24  buzz_match    n 20 control  5.31 held-out  5.56 stress RMS  2.84 [ 2.36,  3.32] mean +1.36
+  12x24  min_drive     n 20 control  3.97 held-out  4.69 stress RMS  2.57 [ 2.35,  3.07] mean -0.20
+  12x24  shape_svd     n 20 control  6.20 held-out  5.83 stress RMS  3.40 [ 2.86,  4.04] mean -1.74
+  12x24  band_average  n 20 control  3.14 held-out  3.80 stress RMS  2.20 [ 2.09,  2.59] mean -0.98
+  6x6    pinv_closed   n 20 control  3.10 held-out 10.07 stress RMS 11.13 [ 9.47, 12.41] mean +10.13
+  6x6    pinv_open     n 20 control  4.85 held-out 11.91 stress RMS 14.35 [13.35, 16.87] mean +13.14
+  6x6    buzz_match    n 20 control  3.28 held-out  9.83 stress RMS 11.00 [ 8.49, 12.05] mean +9.98
+  6x6    min_drive     n 20 control  3.10 held-out  7.73 stress RMS  6.12 [ 5.43,  8.10] mean +3.62
+  6x6    shape_svd     n 20 control  5.71 held-out  6.86 stress RMS  3.21 [ 2.86,  3.96] mean -1.34
+  6x6    band_average  n 20 control  2.00 held-out  6.34 stress RMS  3.12 [ 2.63,  4.35] mean -0.10
+  12x12  pinv_closed   n 20 control  4.72 held-out 11.18 stress RMS 12.81 [10.76, 13.54] mean +11.89
+  12x12  pinv_open     n 20 control  4.62 held-out 10.76 stress RMS 12.74 [10.59, 15.28] mean +11.97
+  12x12  buzz_match    n 20 control  4.86 held-out 11.02 stress RMS 12.49 [11.27, 13.82] mean +11.80
+  12x12  min_drive     n 20 control  3.91 held-out  7.43 stress RMS  6.23 [ 4.04,  7.24] mean +4.60
+  12x12  shape_svd     n 20 control  6.41 held-out  6.42 stress RMS  3.58 [ 3.01,  4.57] mean -2.13
+  12x12  band_average  n 20 control  2.19 held-out  4.72 stress RMS  2.61 [ 2.10,  2.89] mean -0.13
+
+S1 (linear). Six shakers: six control gauges minus twelve (6x6 minus 6x12), same structure and law, default settings
+  pinv_closed   control -2.65 [-3.29, -2.28], 0 up, 20 down of 20; largest structure 0 (-5.02)
+                held-out +3.67 [+2.35, +5.02], 20 up, 0 down of 20; largest structure 8 (+9.81)
+                stress RMS +7.39 [+5.65, +9.05], 20 up, 0 down of 20; largest structure 8 (+15.99)
+                stress mean +9.34 [+6.76, +11.03], 20 up, 0 down of 20
+  pinv_open     control -0.84 [-1.31, +0.28], 6 up, 13 down of 20; largest structure 0 (-3.85)
+                held-out +6.15 [+4.30, +7.20], 20 up, 0 down of 20; largest structure 8 (+11.32)
+                stress RMS +11.50 [+10.04, +13.14], 20 up, 0 down of 20; largest structure 8 (+19.55)
+                stress mean +13.19 [+11.56, +16.10], 20 up, 0 down of 20
+  buzz_match    control -2.24 [-2.90, -1.75], 0 up, 20 down of 20; largest structure 0 (-4.04)
+                held-out +3.87 [+2.68, +5.13], 20 up, 0 down of 20; largest structure 35 (+8.93)
+                stress RMS +8.15 [+5.38, +8.92], 20 up, 0 down of 20; largest structure 8 (+14.38)
+                stress mean +9.65 [+6.86, +10.82], 20 up, 0 down of 20
+  min_drive     control -1.63 [-2.13, -1.20], 2 up, 17 down of 20; largest structure 0 (-3.68)
+                held-out +2.63 [+0.85, +3.15], 17 up, 2 down of 20; largest structure 35 (+7.07)
+                stress RMS +2.61 [+2.19, +3.78], 18 up, 1 down of 20; largest structure 35 (+8.88)
+                stress mean +4.92 [+3.48, +9.20], 19 up, 1 down of 20
+  shape_svd     control -0.84 [-1.13, -0.64], 1 up, 18 down of 20; largest structure 4 (-2.66)
+                held-out +0.39 [-0.27, +0.87], 12 up, 6 down of 20; largest structure 6 (+2.36)
+                stress RMS -0.13 [-0.89, +0.22], 5 up, 10 down of 20; largest structure 32 (-2.75)
+                stress mean +1.17 [+0.58, +1.90], 16 up, 3 down of 20
+  band_average  control -2.12 [-2.55, -1.68], 0 up, 20 down of 20; largest structure 0 (-3.83)
+                held-out +1.10 [+0.34, +1.83], 15 up, 3 down of 20; largest structure 35 (+4.96)
+                stress RMS +0.39 [-0.42, +0.70], 12 up, 7 down of 20; largest structure 3 (-2.11)
+                stress mean +1.57 [+0.72, +2.97], 16 up, 3 down of 20
+S1b (linear). Twelve shakers: twelve control gauges minus twenty-four (12x12 minus 12x24)
+  pinv_closed   control -0.95 [-1.74, -0.28], 2 up, 16 down of 20; largest structure 15 (-2.62)
+                held-out +5.64 [+4.79, +6.51], 20 up, 0 down of 20; largest structure 34 (+9.79)
+                stress RMS +9.40 [+7.59, +10.57], 20 up, 0 down of 20; largest structure 9 (+15.91)
+                stress mean +10.24 [+9.31, +11.19], 20 up, 0 down of 20
+  pinv_open     control +0.08 [-0.58, +1.28], 10 up, 9 down of 20; largest structure 9 (+3.28)
+                held-out +6.67 [+4.87, +7.79], 20 up, 0 down of 20; largest structure 34 (+11.34)
+                stress RMS +10.26 [+8.04, +13.66], 20 up, 0 down of 20; largest structure 0 (+18.03)
+                stress mean +11.22 [+9.16, +13.38], 20 up, 0 down of 20
+  buzz_match    control -0.87 [-1.65, +0.36], 6 up, 13 down of 20; largest structure 3 (-2.08)
+                held-out +5.65 [+5.02, +6.79], 20 up, 0 down of 20; largest structure 0 (+9.62)
+                stress RMS +9.80 [+7.82, +10.74], 20 up, 0 down of 20; largest structure 9 (+15.90)
+                stress mean +10.37 [+9.01, +11.59], 20 up, 0 down of 20
+  min_drive     control -0.36 [-1.04, +0.58], 8 up, 11 down of 20; largest structure 15 (-2.81)
+                held-out +3.04 [+0.97, +3.86], 18 up, 1 down of 20; largest structure 19 (+5.87)
+                stress RMS +2.71 [+1.34, +4.57], 18 up, 2 down of 20; largest structure 2 (+7.90)
+                stress mean +4.92 [+2.86, +5.53], 20 up, 0 down of 20
+  shape_svd     control +0.18 [+0.04, +0.44], 9 up, 3 down of 20; largest structure 19 (+1.70)
+                held-out +0.39 [-0.08, +0.54], 12 up, 3 down of 20; largest structure 35 (+1.02)
+                stress RMS +0.28 [-0.26, +0.78], 10 up, 7 down of 20; largest structure 35 (+1.76)
+                stress mean -0.22 [-0.51, +0.13], 5 up, 11 down of 20
+  band_average  control -0.86 [-1.17, -0.56], 0 up, 19 down of 20; largest structure 8 (-1.99)
+                held-out +0.71 [+0.22, +1.60], 15 up, 2 down of 20; largest structure 3 (+2.18)
+                stress RMS +0.12 [-0.23, +0.56], 10 up, 7 down of 20; largest structure 0 (+1.13)
+                stress mean +0.47 [+0.07, +0.91], 12 up, 3 down of 20
+
+S1 (realistic). Six shakers: six control gauges minus twelve (6x6 minus 6x12), same structure and law, default settings
+  pinv_closed   control -1.28 [-2.33, -0.88], 1 up, 18 down of 20; largest structure 0 (-5.25)
+                held-out +2.52 [+1.09, +4.36], 20 up, 0 down of 20; largest structure 8 (+9.06)
+                stress RMS +5.48 [+3.69, +6.91], 20 up, 0 down of 20; largest structure 8 (+14.79)
+                stress mean +6.67 [+4.90, +9.17], 20 up, 0 down of 20
+  pinv_open     control +1.17 [-0.17, +2.05], 13 up, 5 down of 20; largest structure 34 (+4.50)
+                held-out +5.48 [+3.99, +7.47], 20 up, 0 down of 20; largest structure 8 (+12.05)
+                stress RMS +10.41 [+8.93, +14.10], 20 up, 0 down of 20; largest structure 8 (+19.62)
+                stress mean +12.94 [+11.33, +16.92], 20 up, 0 down of 20
+  buzz_match    control -0.93 [-1.69, -0.25], 2 up, 16 down of 20; largest structure 0 (-3.56)
+                held-out +3.28 [+2.26, +4.67], 20 up, 0 down of 20; largest structure 8 (+8.20)
+                stress RMS +6.02 [+5.34, +7.84], 20 up, 0 down of 20; largest structure 8 (+13.60)
+                stress mean +7.87 [+5.86, +9.49], 20 up, 0 down of 20
+  min_drive     control -0.68 [-1.43, -0.10], 4 up, 14 down of 20; largest structure 0 (-2.68)
+                held-out +2.74 [+0.95, +3.65], 17 up, 2 down of 20; largest structure 8 (+6.20)
+                stress RMS +2.67 [+1.29, +5.10], 20 up, 0 down of 20; largest structure 8 (+10.59)
+                stress mean +5.99 [+3.36, +9.34], 20 up, 0 down of 20
+  shape_svd     control -0.70 [-1.00, -0.44], 1 up, 17 down of 20; largest structure 4 (-2.39)
+                held-out +0.64 [-0.11, +0.90], 13 up, 5 down of 20; largest structure 6 (+2.22)
+                stress RMS -0.25 [-0.83, +0.14], 4 up, 11 down of 20; largest structure 5 (+3.83)
+                stress mean +1.35 [+0.66, +2.02], 16 up, 3 down of 20
+  band_average  control -2.12 [-2.89, -1.65], 0 up, 20 down of 20; largest structure 12 (-3.89)
+                held-out +0.96 [+0.36, +1.75], 15 up, 4 down of 20; largest structure 35 (+5.06)
+                stress RMS +0.71 [-0.04, +0.96], 12 up, 4 down of 20; largest structure 8 (+2.60)
+                stress mean +2.15 [+0.81, +3.31], 16 up, 2 down of 20
+S1b (realistic). Twelve shakers: twelve control gauges minus twenty-four (12x12 minus 12x24)
+  pinv_closed   control -0.28 [-0.78, +0.49], 8 up, 11 down of 20; largest structure 9 (+1.57)
+                held-out +4.30 [+3.15, +5.15], 20 up, 0 down of 20; largest structure 15 (+5.96)
+                stress RMS +6.69 [+5.81, +8.38], 20 up, 0 down of 20; largest structure 9 (+11.23)
+                stress mean +7.79 [+6.84, +8.74], 20 up, 0 down of 20
+  pinv_open     control +2.62 [+1.15, +3.72], 20 up, 0 down of 20; largest structure 34 (+5.90)
+                held-out +6.96 [+5.52, +7.49], 20 up, 0 down of 20; largest structure 34 (+11.87)
+                stress RMS +10.26 [+8.79, +12.54], 20 up, 0 down of 20; largest structure 9 (+17.89)
+                stress mean +11.97 [+9.94, +13.32], 20 up, 0 down of 20
+  buzz_match    control +0.52 [-0.26, +0.98], 12 up, 6 down of 20; largest structure 0 (+2.64)
+                held-out +4.52 [+3.81, +5.83], 20 up, 0 down of 20; largest structure 0 (+7.45)
+                stress RMS +7.05 [+6.06, +8.37], 20 up, 0 down of 20; largest structure 9 (+13.10)
+                stress mean +8.05 [+6.83, +9.00], 20 up, 0 down of 20
+  min_drive     control +0.92 [+0.01, +1.91], 14 up, 3 down of 20; largest structure 35 (+2.97)
+                held-out +4.08 [+2.84, +4.64], 19 up, 0 down of 20; largest structure 34 (+7.09)
+                stress RMS +5.58 [+4.15, +7.37], 19 up, 1 down of 20; largest structure 9 (+10.53)
+                stress mean +7.24 [+5.81, +8.83], 19 up, 1 down of 20
+  shape_svd     control +0.28 [+0.06, +0.46], 11 up, 3 down of 20; largest structure 19 (+1.68)
+                held-out +0.37 [-0.05, +0.58], 12 up, 5 down of 20; largest structure 13 (+0.99)
+                stress RMS +0.00 [-0.41, +0.58], 7 up, 6 down of 20; largest structure 35 (+1.59)
+                stress mean -0.16 [-0.56, +0.56], 7 up, 10 down of 20
+  band_average  control -0.82 [-1.21, -0.64], 0 up, 17 down of 20; largest structure 8 (-2.19)
+                held-out +0.69 [+0.14, +1.47], 14 up, 4 down of 20; largest structure 3 (+2.17)
+                stress RMS +0.39 [-0.10, +0.70], 12 up, 5 down of 20; largest structure 0 (+1.59)
+                stress mean +0.63 [-0.06, +1.34], 12 up, 4 down of 20
+
+S1 (strong). Six shakers: six control gauges minus twelve (6x6 minus 6x12), same structure and law, default settings
+  pinv_closed   control -1.16 [-1.77, -0.67], 1 up, 18 down of 20; largest structure 5 (-3.97)
+                held-out +1.87 [+1.26, +3.78], 17 up, 1 down of 20; largest structure 8 (+8.86)
+                stress RMS +4.78 [+3.06, +7.92], 20 up, 0 down of 20; largest structure 8 (+13.10)
+                stress mean +6.55 [+3.57, +9.05], 20 up, 0 down of 20
+  pinv_open     control +1.75 [+0.32, +2.38], 16 up, 3 down of 20; largest structure 8 (+5.17)
+                held-out +5.74 [+3.72, +6.69], 20 up, 0 down of 20; largest structure 8 (+12.52)
+                stress RMS +10.41 [+7.46, +12.08], 20 up, 0 down of 20; largest structure 8 (+19.13)
+                stress mean +13.00 [+8.76, +14.98], 20 up, 0 down of 20
+  buzz_match    control -0.63 [-1.51, +0.05], 2 up, 14 down of 20; largest structure 5 (-3.37)
+                held-out +2.28 [+1.72, +4.07], 20 up, 0 down of 20; largest structure 8 (+8.19)
+                stress RMS +5.87 [+3.81, +7.82], 19 up, 0 down of 20; largest structure 8 (+13.10)
+                stress mean +7.03 [+4.43, +8.69], 20 up, 0 down of 20
+  min_drive     control -0.55 [-1.17, +0.49], 7 up, 13 down of 20; largest structure 5 (-3.14)
+                held-out +2.80 [+1.62, +3.61], 18 up, 0 down of 20; largest structure 8 (+7.29)
+                stress RMS +5.39 [+3.44, +7.68], 20 up, 0 down of 20; largest structure 8 (+12.04)
+                stress mean +6.79 [+5.14, +9.92], 20 up, 0 down of 20
+  shape_svd     control -0.51 [-1.15, -0.17], 2 up, 14 down of 20; largest structure 4 (-3.13)
+                held-out +0.58 [-0.06, +1.09], 13 up, 4 down of 20; largest structure 5 (+2.59)
+                stress RMS +0.29 [-0.31, +1.60], 10 up, 7 down of 20; largest structure 35 (+3.57)
+                stress mean +1.40 [+0.13, +2.74], 15 up, 4 down of 20
+  band_average  control -2.68 [-3.38, -1.79], 0 up, 20 down of 20; largest structure 0 (-4.01)
+                held-out +0.82 [-0.01, +1.50], 14 up, 4 down of 20; largest structure 35 (+4.67)
+                stress RMS +0.84 [+0.08, +2.24], 14 up, 4 down of 20; largest structure 35 (+5.00)
+                stress mean +2.21 [+0.70, +3.92], 19 up, 1 down of 20
+S1b (strong). Twelve shakers: twelve control gauges minus twenty-four (12x12 minus 12x24)
+  pinv_closed   control +0.78 [+0.09, +1.38], 14 up, 3 down of 20; largest structure 9 (+2.11)
+                held-out +3.54 [+2.12, +4.41], 19 up, 0 down of 20; largest structure 9 (+5.52)
+                stress RMS +9.29 [+6.89, +10.82], 20 up, 0 down of 20; largest structure 3 (+15.13)
+                stress mean +9.45 [+7.58, +11.44], 20 up, 0 down of 20
+  pinv_open     control +3.86 [+2.62, +5.18], 20 up, 0 down of 20; largest structure 34 (+6.98)
+                held-out +6.38 [+5.42, +7.50], 20 up, 0 down of 20; largest structure 34 (+11.17)
+                stress RMS +10.70 [+8.96, +12.65], 20 up, 0 down of 20; largest structure 5 (+15.26)
+                stress mean +11.35 [+10.12, +13.27], 20 up, 0 down of 20
+  buzz_match    control +1.18 [+0.53, +2.06], 18 up, 0 down of 20; largest structure 0 (+3.31)
+                held-out +4.23 [+2.78, +4.73], 20 up, 0 down of 20; largest structure 0 (+7.26)
+                stress RMS +7.50 [+5.06, +9.32], 20 up, 0 down of 20; largest structure 5 (+11.87)
+                stress mean +7.93 [+5.80, +10.21], 20 up, 0 down of 20
+  min_drive     control +2.37 [+2.04, +3.13], 20 up, 0 down of 20; largest structure 0 (+5.06)
+                held-out +4.75 [+3.32, +5.65], 20 up, 0 down of 20; largest structure 0 (+8.60)
+                stress RMS +8.01 [+6.12, +10.57], 19 up, 1 down of 20; largest structure 17 (+14.06)
+                stress mean +8.77 [+7.24, +11.24], 19 up, 1 down of 20
+  shape_svd     control +0.27 [-0.06, +0.44], 10 up, 3 down of 20; largest structure 19 (+1.78)
+                held-out +0.20 [-0.12, +0.50], 10 up, 5 down of 20; largest structure 2 (+1.34)
+                stress RMS +0.03 [-0.36, +0.29], 7 up, 8 down of 20; largest structure 6 (+1.24)
+                stress mean +0.06 [-0.46, +1.10], 9 up, 7 down of 20
+  band_average  control -0.90 [-1.26, -0.60], 0 up, 19 down of 20; largest structure 8 (-1.93)
+                held-out +0.73 [+0.21, +1.35], 15 up, 4 down of 20; largest structure 13 (+1.80)
+                stress RMS +0.01 [-0.44, +1.67], 8 up, 7 down of 20; largest structure 34 (+2.55)
+                stress mean +0.53 [-0.25, +1.71], 13 up, 6 down of 20
+
+S1c (linear), not one of the claims fixed in advance. The same twelve control gauges, twelve shakers minus six (12x12 minus 6x12; the six shakers of 6x12 are the first six of 12x12 on every structure)
+  pinv_closed   control -1.21 [-1.90, -0.77], 1 up, 17 down of 20; largest structure 15 (-3.25)
+                held-out +4.78 [+3.97, +5.18], 20 up, 0 down of 20; largest structure 34 (+8.91)
+                stress RMS +8.82 [+8.20, +10.33], 20 up, 0 down of 20; largest structure 0 (+15.04)
+                stress mean +10.69 [+9.90, +12.78], 20 up, 0 down of 20
+  pinv_open     control -1.07 [-1.76, +0.09], 3 up, 13 down of 20; largest structure 12 (-3.54)
+                held-out +4.83 [+3.68, +5.61], 20 up, 0 down of 20; largest structure 34 (+9.59)
+                stress RMS +9.10 [+7.86, +11.37], 20 up, 0 down of 20; largest structure 0 (+17.31)
+                stress mean +10.48 [+9.69, +14.82], 20 up, 0 down of 20
+  buzz_match    control -0.74 [-1.47, -0.40], 2 up, 18 down of 20; largest structure 15 (-2.81)
+                held-out +5.11 [+4.21, +5.55], 20 up, 0 down of 20; largest structure 34 (+8.95)
+                stress RMS +9.82 [+8.19, +10.38], 20 up, 0 down of 20; largest structure 0 (+15.15)
+                stress mean +11.36 [+10.28, +13.05], 20 up, 0 down of 20
+  min_drive     control -0.61 [-1.71, +0.32], 6 up, 13 down of 20; largest structure 15 (-3.62)
+                held-out +1.78 [-0.02, +2.78], 14 up, 4 down of 20; largest structure 34 (+4.01)
+                stress RMS +2.74 [+0.92, +4.49], 16 up, 2 down of 20; largest structure 2 (+7.12)
+                stress mean +6.49 [+4.21, +7.50], 20 up, 0 down of 20
+  shape_svd     control -0.43 [-0.57, -0.14], 0 up, 12 down of 20; largest structure 14 (-0.89)
+                held-out -0.52 [-0.67, -0.21], 1 up, 15 down of 20; largest structure 9 (-1.17)
+                stress RMS -0.21 [-0.61, +0.08], 4 up, 10 down of 20; largest structure 4 (-1.63)
+                stress mean +0.26 [-0.22, +0.78], 11 up, 6 down of 20
+  band_average  control -1.79 [-2.50, -1.56], 0 up, 20 down of 20; largest structure 12 (-3.41)
+                held-out -0.88 [-1.13, -0.50], 1 up, 17 down of 20; largest structure 17 (-2.11)
+                stress RMS -0.46 [-0.94, -0.24], 1 up, 16 down of 20; largest structure 3 (-1.97)
+                stress mean +1.11 [+0.60, +1.66], 17 up, 1 down of 20
+S1d (linear). The same twelve control gauges, six shakers minus three (6x12 minus 3x12)
+  pinv_closed   control -1.87 [-2.41, -1.75], 0 up, 20 down of 20; largest structure 17 (-3.55)
+                held-out -1.31 [-2.18, -1.02], 1 up, 18 down of 20; largest structure 14 (-4.29)
+                stress RMS -1.27 [-2.58, -0.40], 2 up, 17 down of 20; largest structure 17 (-5.40)
+                stress mean +4.45 [+3.52, +4.83], 20 up, 0 down of 20
+  pinv_open     control -2.49 [-2.87, -2.14], 0 up, 20 down of 20; largest structure 4 (-3.97)
+                held-out -1.82 [-2.33, -1.35], 0 up, 19 down of 20; largest structure 14 (-4.62)
+                stress RMS -1.31 [-2.49, -0.76], 1 up, 19 down of 20; largest structure 17 (-5.43)
+                stress mean +4.05 [+3.09, +4.48], 20 up, 0 down of 20
+  buzz_match    control -1.42 [-1.61, -1.08], 0 up, 20 down of 20; largest structure 4 (-2.58)
+                held-out -0.65 [-1.17, -0.30], 2 up, 18 down of 20; largest structure 14 (-2.29)
+                stress RMS -0.76 [-1.34, -0.09], 5 up, 15 down of 20; largest structure 12 (-2.89)
+                stress mean +2.58 [+1.77, +2.87], 20 up, 0 down of 20
+  min_drive     control -18.28 [-21.45, -16.33], 0 up, 18 down of 18; largest structure 9 (-25.68)
+                held-out -17.15 [-21.21, -15.02], 1 up, 17 down of 18; largest structure 1 (-23.91)
+                stress RMS -16.13 [-18.43, -14.26], 0 up, 18 down of 18; largest structure 1 (-26.01)
+                stress mean -20.42 [-22.40, -17.43], 2 up, 16 down of 18
+  shape_svd     control -1.45 [-1.91, -1.01], 0 up, 20 down of 20; largest structure 17 (-2.42)
+                held-out -1.39 [-1.77, -1.13], 1 up, 19 down of 20; largest structure 14 (-3.35)
+                stress RMS -1.30 [-1.98, -1.00], 0 up, 19 down of 20; largest structure 14 (-4.23)
+                stress mean +1.44 [+1.20, +2.28], 20 up, 0 down of 20
+  band_average  control -2.62 [-3.03, -2.20], 0 up, 20 down of 20; largest structure 4 (-3.48)
+                held-out -1.32 [-1.99, -0.97], 1 up, 18 down of 20; largest structure 14 (-2.93)
+                stress RMS -1.17 [-1.64, -0.64], 0 up, 19 down of 20; largest structure 12 (-2.73)
+                stress mean +1.53 [+0.69, +2.19], 16 up, 3 down of 20
+
+S1c (realistic), not one of the claims fixed in advance. The same twelve control gauges, twelve shakers minus six (12x12 minus 6x12; the six shakers of 6x12 are the first six of 12x12 on every structure)
+  pinv_closed   control -0.33 [-1.10, +0.04], 4 up, 11 down of 20; largest structure 12 (-2.47)
+                held-out +3.39 [+2.17, +3.91], 19 up, 0 down of 20; largest structure 0 (+5.18)
+                stress RMS +6.90 [+5.15, +8.66], 20 up, 0 down of 20; largest structure 0 (+11.28)
+                stress mean +8.27 [+7.38, +9.61], 20 up, 0 down of 20
+  pinv_open     control +1.23 [+0.27, +2.52], 15 up, 4 down of 20; largest structure 34 (+4.63)
+                held-out +4.98 [+3.89, +5.90], 20 up, 0 down of 20; largest structure 34 (+10.01)
+                stress RMS +9.77 [+8.50, +11.00], 20 up, 0 down of 20; largest structure 0 (+16.89)
+                stress mean +11.37 [+10.82, +13.96], 20 up, 0 down of 20
+  buzz_match    control +0.43 [-0.26, +0.69], 11 up, 6 down of 20; largest structure 9 (+1.96)
+                held-out +3.76 [+3.12, +4.57], 20 up, 0 down of 20; largest structure 0 (+6.85)
+                stress RMS +7.64 [+6.46, +9.00], 20 up, 0 down of 20; largest structure 0 (+12.63)
+                stress mean +9.08 [+8.37, +10.47], 20 up, 0 down of 20
+  min_drive     control +0.52 [-0.54, +1.22], 12 up, 7 down of 20; largest structure 34 (+2.91)
+                held-out +2.48 [+1.19, +3.52], 18 up, 1 down of 20; largest structure 34 (+6.43)
+                stress RMS +5.12 [+3.80, +7.55], 19 up, 1 down of 20; largest structure 34 (+11.08)
+                stress mean +9.19 [+7.72, +10.31], 20 up, 0 down of 20
+  shape_svd     control -0.36 [-0.60, -0.07], 0 up, 13 down of 20; largest structure 0 (-0.86)
+                held-out -0.39 [-0.66, -0.18], 3 up, 14 down of 20; largest structure 9 (-1.11)
+                stress RMS -0.26 [-0.46, +0.22], 5 up, 10 down of 20; largest structure 32 (-1.44)
+                stress mean +0.19 [-0.50, +0.71], 10 up, 7 down of 20
+  band_average  control -1.87 [-2.46, -1.64], 0 up, 20 down of 20; largest structure 12 (-3.57)
+                held-out -0.95 [-1.30, -0.55], 0 up, 19 down of 20; largest structure 15 (-2.08)
+                stress RMS -0.27 [-0.76, +0.21], 5 up, 11 down of 20; largest structure 34 (+1.67)
+                stress mean +1.35 [+0.68, +1.70], 17 up, 0 down of 20
+S1d (realistic). The same twelve control gauges, six shakers minus three (6x12 minus 3x12)
+  pinv_closed   control -1.95 [-2.37, -1.64], 0 up, 20 down of 20; largest structure 17 (-3.86)
+                held-out -1.26 [-2.20, -0.78], 1 up, 18 down of 20; largest structure 14 (-4.18)
+                stress RMS -1.43 [-2.12, -0.64], 1 up, 17 down of 20; largest structure 17 (-5.55)
+                stress mean +4.56 [+3.95, +5.18], 20 up, 0 down of 20
+  pinv_open     control -2.62 [-3.11, -2.30], 0 up, 20 down of 20; largest structure 4 (-4.34)
+                held-out -1.86 [-2.70, -1.57], 0 up, 20 down of 20; largest structure 14 (-4.47)
+                stress RMS -1.72 [-2.57, -0.98], 1 up, 19 down of 20; largest structure 17 (-6.23)
+                stress mean +4.28 [+3.70, +4.93], 20 up, 0 down of 20
+  buzz_match    control -1.35 [-1.60, -1.15], 0 up, 20 down of 20; largest structure 4 (-2.98)
+                held-out -0.70 [-1.17, -0.37], 2 up, 18 down of 20; largest structure 14 (-2.24)
+                stress RMS -0.46 [-1.33, -0.10], 2 up, 13 down of 20; largest structure 12 (-2.49)
+                stress mean +2.48 [+2.03, +3.07], 20 up, 0 down of 20
+  min_drive     control -17.22 [-20.50, -15.11], 0 up, 19 down of 19; largest structure 8 (-24.70)
+                held-out -16.05 [-19.97, -14.20], 1 up, 18 down of 19; largest structure 14 (-23.73)
+                stress RMS -15.76 [-19.43, -12.76], 0 up, 19 down of 19; largest structure 1 (-23.52)
+                stress mean -18.55 [-22.60, -15.60], 3 up, 16 down of 19
+  shape_svd     control -1.60 [-2.02, -1.20], 0 up, 20 down of 20; largest structure 4 (-2.79)
+                held-out -1.38 [-1.95, -1.20], 0 up, 19 down of 20; largest structure 14 (-3.47)
+                stress RMS -1.45 [-2.19, -0.99], 0 up, 19 down of 20; largest structure 14 (-3.61)
+                stress mean +1.77 [+1.38, +2.59], 20 up, 0 down of 20
+  band_average  control -2.82 [-3.10, -2.30], 0 up, 20 down of 20; largest structure 17 (-3.77)
+                held-out -1.44 [-1.99, -1.19], 1 up, 19 down of 20; largest structure 14 (-2.94)
+                stress RMS -1.02 [-1.71, -0.70], 2 up, 17 down of 20; largest structure 12 (-2.68)
+                stress mean +1.68 [+0.76, +2.28], 17 up, 1 down of 20
+
+S1c (strong), not one of the claims fixed in advance. The same twelve control gauges, twelve shakers minus six (12x12 minus 6x12; the six shakers of 6x12 are the first six of 12x12 on every structure)
+  pinv_closed   control +0.28 [-0.29, +0.62], 11 up, 7 down of 20; largest structure 12 (-1.90)
+                held-out +2.41 [+1.46, +3.15], 18 up, 1 down of 20; largest structure 9 (+3.81)
+                stress RMS +8.42 [+5.99, +10.11], 20 up, 0 down of 20; largest structure 17 (+13.66)
+                stress mean +8.93 [+7.74, +11.01], 20 up, 0 down of 20
+  pinv_open     control +2.57 [+1.43, +3.57], 19 up, 0 down of 20; largest structure 34 (+5.84)
+                held-out +4.60 [+3.70, +6.32], 20 up, 0 down of 20; largest structure 34 (+9.78)
+                stress RMS +9.62 [+8.49, +11.05], 20 up, 0 down of 20; largest structure 17 (+15.69)
+                stress mean +11.82 [+10.20, +12.60], 20 up, 0 down of 20
+  buzz_match    control +0.78 [+0.45, +1.62], 17 up, 3 down of 20; largest structure 0 (+2.70)
+                held-out +3.11 [+1.93, +3.69], 20 up, 0 down of 20; largest structure 0 (+6.11)
+                stress RMS +8.62 [+6.80, +10.78], 20 up, 0 down of 20; largest structure 17 (+14.06)
+                stress mean +9.42 [+8.04, +11.73], 20 up, 0 down of 20
+  min_drive     control +1.74 [+1.12, +2.64], 17 up, 2 down of 20; largest structure 34 (+4.80)
+                held-out +3.50 [+1.79, +4.11], 20 up, 0 down of 20; largest structure 34 (+6.83)
+                stress RMS +9.05 [+7.27, +10.91], 20 up, 0 down of 20; largest structure 17 (+14.83)
+                stress mean +10.92 [+9.25, +12.13], 20 up, 0 down of 20
+  shape_svd     control -0.35 [-0.59, -0.02], 1 up, 11 down of 20; largest structure 0 (-0.86)
+                held-out -0.38 [-0.77, -0.14], 1 up, 14 down of 20; largest structure 9 (-1.23)
+                stress RMS -0.38 [-0.84, -0.12], 2 up, 12 down of 20; largest structure 35 (-2.35)
+                stress mean -0.37 [-1.57, +0.09], 4 up, 13 down of 20
+  band_average  control -2.06 [-2.64, -1.72], 0 up, 20 down of 20; largest structure 3 (-3.80)
+                held-out -1.16 [-1.32, -0.77], 0 up, 19 down of 20; largest structure 6 (-2.64)
+                stress RMS +0.07 [-0.46, +1.06], 9 up, 8 down of 20; largest structure 13 (+2.73)
+                stress mean +0.92 [+0.15, +1.98], 14 up, 2 down of 20
+S1d (strong). The same twelve control gauges, six shakers minus three (6x12 minus 3x12)
+  pinv_closed   control -1.95 [-2.52, -1.60], 0 up, 20 down of 20; largest structure 4 (-4.54)
+                held-out -1.24 [-2.21, -0.76], 1 up, 17 down of 20; largest structure 14 (-4.34)
+                stress RMS +0.26 [-0.55, +1.75], 11 up, 6 down of 20; largest structure 35 (+3.75)
+                stress mean +5.24 [+3.74, +6.30], 20 up, 0 down of 20
+  pinv_open     control -2.89 [-3.46, -2.67], 0 up, 20 down of 20; largest structure 4 (-5.01)
+                held-out -2.20 [-3.24, -1.59], 0 up, 20 down of 20; largest structure 14 (-4.75)
+                stress RMS -0.61 [-1.38, +0.97], 7 up, 13 down of 20; largest structure 17 (-3.84)
+                stress mean +5.77 [+4.43, +6.45], 20 up, 0 down of 20
+  buzz_match    control -1.36 [-1.62, -1.03], 0 up, 20 down of 20; largest structure 4 (-3.64)
+                held-out -0.58 [-1.24, -0.25], 1 up, 15 down of 20; largest structure 14 (-2.37)
+                stress RMS +0.62 [-0.15, +1.44], 12 up, 4 down of 20; largest structure 35 (+3.56)
+                stress mean +2.47 [+1.58, +3.49], 19 up, 1 down of 20
+  min_drive     control -18.12 [-22.44, -14.13], 0 up, 20 down of 20; largest structure 14 (-25.07)
+                held-out -16.52 [-20.43, -13.49], 1 up, 19 down of 20; largest structure 14 (-25.72)
+                stress RMS -14.23 [-18.73, -10.90], 0 up, 20 down of 20; largest structure 14 (-22.85)
+                stress mean -15.48 [-19.43, -11.47], 2 up, 18 down of 20
+  shape_svd     control -1.86 [-2.21, -1.30], 0 up, 20 down of 20; largest structure 4 (-3.62)
+                held-out -1.34 [-2.34, -1.03], 0 up, 20 down of 20; largest structure 5 (-3.84)
+                stress RMS -0.88 [-1.99, -0.49], 2 up, 16 down of 20; largest structure 2 (-2.84)
+                stress mean +2.56 [+1.04, +3.35], 20 up, 0 down of 20
+  band_average  control -2.87 [-3.11, -2.28], 0 up, 20 down of 20; largest structure 4 (-4.51)
+                held-out -1.40 [-2.17, -1.22], 1 up, 18 down of 20; largest structure 14 (-2.84)
+                stress RMS -0.01 [-0.27, +0.54], 6 up, 7 down of 20; largest structure 9 (+2.39)
+                stress mean +2.55 [+1.09, +3.86], 19 up, 0 down of 20
+
+S2 (linear). Setup 6x6, tuned minus default, same structure and law (structures 0 to 9)
+  pinv_closed   control +0.23 [-0.29, +0.38], 5 up, 4 down of 10; largest structure 7 (+1.99)
+                held-out -3.05 [-3.32, -2.57], 0 up, 10 down of 10; largest structure 8 (-6.03)
+                stress RMS -6.39 [-8.41, -4.50], 0 up, 10 down of 10; largest structure 8 (-12.28)
+                stress mean -7.26 [-9.21, -5.50], 0 up, 10 down of 10
+  pinv_open     control -0.88 [-1.25, +0.64], 4 up, 6 down of 10; largest structure 4 (-2.45)
+                held-out -5.03 [-5.50, -3.16], 0 up, 10 down of 10; largest structure 8 (-8.47)
+                stress RMS -11.57 [-12.32, -9.26], 0 up, 10 down of 10; largest structure 8 (-17.49)
+                stress mean -12.44 [-13.31, -11.10], 0 up, 10 down of 10
+  buzz_match    control +0.06 [-0.16, +0.18], 2 up, 2 down of 10; largest structure 1 (+0.39)
+                held-out -0.04 [-0.17, +0.12], 1 up, 2 down of 10; largest structure 4 (+0.52)
+                stress RMS -0.04 [-0.20, +0.48], 4 up, 3 down of 10; largest structure 4 (+1.46)
+                stress mean -0.09 [-0.23, +0.42], 4 up, 4 down of 10
+  min_drive     control -0.06 [-0.39, +0.23], 3 up, 4 down of 10; largest structure 2 (-2.28)
+                held-out -0.21 [-0.77, -0.04], 1 up, 5 down of 10; largest structure 9 (-1.53)
+                stress RMS -0.72 [-1.99, +0.08], 2 up, 6 down of 10; largest structure 9 (-3.42)
+                stress mean -0.46 [-3.49, -0.14], 2 up, 6 down of 10
+  shape_svd     control -1.56 [-1.72, -0.99], 0 up, 10 down of 10; largest structure 0 (-2.44)
+                held-out -0.10 [-0.29, +0.16], 1 up, 4 down of 10; largest structure 5 (-1.43)
+                stress RMS -0.00 [-1.02, +1.30], 5 up, 5 down of 10; largest structure 0 (-2.05)
+                stress mean +2.67 [+2.23, +3.19], 10 up, 0 down of 10
+  band_average  control +0.00 [-0.06, +0.01], 0 up, 1 down of 10; largest structure 2 (-0.29)
+                held-out -0.01 [-0.11, +0.03], 0 up, 1 down of 10; largest structure 8 (-0.23)
+                stress RMS +0.00 [-0.04, +0.13], 2 up, 0 down of 10; largest structure 6 (+0.25)
+                stress mean +0.02 [-0.07, +0.08], 1 up, 0 down of 10
+S2 on 6x12 (linear), for comparison
+  pinv_closed   control +0.19 [-0.05, +0.29], 5 up, 0 down of 10; largest structure 0 (+0.37)
+                held-out -0.36 [-0.53, -0.06], 1 up, 6 down of 10; largest structure 5 (-0.77)
+                stress RMS +0.15 [-1.17, +0.49], 5 up, 3 down of 10; largest structure 7 (-2.11)
+                stress mean -1.80 [-2.26, -1.06], 0 up, 10 down of 10
+  pinv_open     control +0.00 [-0.05, +0.01], 0 up, 0 down of 10; largest structure 6 (-0.17)
+                held-out -0.02 [-0.04, +0.00], 0 up, 0 down of 10; largest structure 6 (-0.19)
+                stress RMS +0.01 [-0.15, +0.07], 1 up, 2 down of 10; largest structure 1 (+0.43)
+                stress mean -0.21 [-0.32, -0.11], 0 up, 6 down of 10
+  buzz_match    control +0.01 [-0.02, +0.04], 0 up, 0 down of 10; largest structure 4 (-0.07)
+                held-out +0.03 [+0.01, +0.08], 0 up, 0 down of 10; largest structure 1 (+0.17)
+                stress RMS +0.04 [+0.00, +0.07], 0 up, 0 down of 10; largest structure 6 (+0.11)
+                stress mean -0.02 [-0.06, -0.01], 0 up, 0 down of 10
+  min_drive     control -0.01 [-0.05, +0.06], 0 up, 1 down of 10; largest structure 1 (-0.21)
+                held-out +0.08 [+0.00, +0.23], 3 up, 0 down of 10; largest structure 2 (+0.63)
+                stress RMS -0.01 [-0.45, +0.01], 0 up, 4 down of 10; largest structure 1 (-0.93)
+                stress mean +0.14 [+0.06, +0.75], 5 up, 0 down of 10
+  shape_svd     control -0.66 [-0.92, -0.42], 0 up, 10 down of 10; largest structure 9 (-1.32)
+                held-out -0.54 [-0.68, -0.32], 0 up, 9 down of 10; largest structure 4 (-1.00)
+                stress RMS -0.53 [-0.74, -0.43], 0 up, 10 down of 10; largest structure 6 (-1.11)
+                stress mean +1.21 [+0.92, +2.05], 10 up, 0 down of 10
+  band_average  control -0.02 [-0.06, +0.04], 0 up, 0 down of 10; largest structure 6 (-0.13)
+                held-out -0.03 [-0.05, +0.04], 0 up, 0 down of 10; largest structure 6 (-0.16)
+                stress RMS -0.00 [-0.07, +0.08], 1 up, 1 down of 10; largest structure 5 (-0.29)
+                stress mean -0.04 [-0.23, +0.03], 0 up, 4 down of 10
+
+S2 (realistic). Setup 6x6, tuned minus default, same structure and law (structures 0 to 9)
+  pinv_closed   control -0.74 [-0.99, -0.31], 1 up, 8 down of 10; largest structure 8 (-2.16)
+                held-out -2.20 [-2.63, -1.86], 0 up, 10 down of 10; largest structure 8 (-5.46)
+                stress RMS -3.65 [-6.18, -2.96], 0 up, 10 down of 10; largest structure 8 (-11.25)
+                stress mean -4.35 [-6.30, -3.97], 0 up, 10 down of 10
+  pinv_open     control -1.63 [-2.86, -0.92], 1 up, 9 down of 10; largest structure 8 (-3.50)
+                held-out -4.87 [-4.99, -2.64], 0 up, 10 down of 10; largest structure 8 (-9.14)
+                stress RMS -9.54 [-11.58, -8.26], 0 up, 10 down of 10; largest structure 8 (-17.42)
+                stress mean -11.62 [-12.85, -9.43], 0 up, 10 down of 10
+  buzz_match    control +0.08 [+0.02, +0.34], 4 up, 0 down of 10; largest structure 4 (+0.81)
+                held-out -0.04 [-0.08, +0.40], 3 up, 1 down of 10; largest structure 4 (+0.79)
+                stress RMS +0.28 [-0.13, +0.66], 5 up, 2 down of 10; largest structure 4 (+3.83)
+                stress mean +0.38 [-0.20, +0.82], 6 up, 3 down of 10
+  min_drive     control -0.22 [-0.26, -0.09], 2 up, 6 down of 10; largest structure 0 (-1.72)
+                held-out -0.24 [-0.87, +0.00], 1 up, 7 down of 10; largest structure 4 (-1.16)
+                stress RMS -0.54 [-1.47, -0.03], 2 up, 6 down of 10; largest structure 3 (-4.66)
+                stress mean -0.79 [-3.28, -0.50], 1 up, 8 down of 10
+  shape_svd     control -1.03 [-1.82, -0.81], 0 up, 9 down of 10; largest structure 5 (-2.83)
+                held-out +0.01 [-0.30, +0.18], 1 up, 3 down of 10; largest structure 5 (-1.90)
+                stress RMS -0.12 [-0.66, +1.26], 4 up, 5 down of 10; largest structure 8 (+2.38)
+                stress mean +2.79 [+2.50, +3.30], 10 up, 0 down of 10
+  band_average  control +0.00 [-0.02, +0.03], 0 up, 1 down of 10; largest structure 4 (-0.42)
+                held-out +0.00 [-0.03, +0.04], 0 up, 0 down of 10; largest structure 2 (+0.14)
+                stress RMS -0.00 [-0.01, +0.01], 1 up, 0 down of 10; largest structure 4 (+0.27)
+                stress mean -0.02 [-0.07, -0.01], 0 up, 1 down of 10
+S2 on 6x12 (realistic), for comparison
+  pinv_closed   control +0.04 [-0.10, +0.20], 3 up, 0 down of 10; largest structure 4 (+0.27)
+                held-out -0.33 [-0.54, -0.04], 1 up, 6 down of 10; largest structure 1 (-0.71)
+                stress RMS -0.12 [-1.17, +0.29], 3 up, 5 down of 10; largest structure 7 (-1.71)
+                stress mean -1.44 [-2.03, -1.24], 0 up, 10 down of 10
+  pinv_open     control -0.00 [-0.03, +0.02], 0 up, 0 down of 10; largest structure 9 (+0.05)
+                held-out -0.03 [-0.09, -0.00], 0 up, 0 down of 10; largest structure 2 (-0.12)
+                stress RMS -0.04 [-0.15, +0.03], 0 up, 0 down of 10; largest structure 5 (-0.17)
+                stress mean -0.14 [-0.20, -0.05], 0 up, 3 down of 10
+  buzz_match    control +0.04 [+0.02, +0.06], 1 up, 0 down of 10; largest structure 1 (+0.22)
+                held-out +0.05 [+0.00, +0.15], 0 up, 0 down of 10; largest structure 1 (+0.20)
+                stress RMS +0.02 [+0.00, +0.06], 0 up, 0 down of 10; largest structure 6 (+0.18)
+                stress mean -0.01 [-0.05, +0.05], 0 up, 0 down of 10
+  min_drive     control -0.06 [-0.09, +0.02], 0 up, 1 down of 10; largest structure 2 (-0.21)
+                held-out +0.02 [-0.06, +0.16], 2 up, 0 down of 10; largest structure 2 (+0.71)
+                stress RMS -0.05 [-0.28, +0.11], 0 up, 4 down of 10; largest structure 1 (-0.62)
+                stress mean +0.05 [-0.16, +1.03], 4 up, 3 down of 10
+  shape_svd     control -0.54 [-0.94, -0.31], 0 up, 9 down of 10; largest structure 9 (-0.98)
+                held-out -0.38 [-0.51, -0.13], 1 up, 6 down of 10; largest structure 6 (-0.87)
+                stress RMS -0.63 [-0.80, -0.36], 1 up, 8 down of 10; largest structure 6 (-1.03)
+                stress mean +1.33 [+1.22, +1.83], 10 up, 0 down of 10
+  band_average  control +0.03 [+0.01, +0.06], 0 up, 0 down of 10; largest structure 1 (+0.18)
+                held-out -0.01 [-0.05, +0.03], 1 up, 0 down of 10; largest structure 6 (+0.29)
+                stress RMS -0.05 [-0.11, +0.02], 0 up, 1 down of 10; largest structure 6 (-0.43)
+                stress mean +0.16 [-0.05, +0.19], 2 up, 0 down of 10
+
+S2 (strong). Setup 6x6, tuned minus default, same structure and law (structures 0 to 9)
+  pinv_closed   control -0.67 [-1.17, -0.39], 0 up, 9 down of 10; largest structure 8 (-3.37)
+                held-out -1.46 [-1.92, -1.23], 0 up, 10 down of 10; largest structure 8 (-5.57)
+                stress RMS -3.11 [-3.76, -2.48], 0 up, 10 down of 10; largest structure 8 (-7.82)
+                stress mean -3.50 [-4.11, -3.16], 0 up, 10 down of 10
+  pinv_open     control -3.37 [-3.80, -1.83], 0 up, 10 down of 10; largest structure 8 (-5.55)
+                held-out -4.50 [-5.15, -2.73], 0 up, 10 down of 10; largest structure 8 (-10.01)
+                stress RMS -8.88 [-13.55, -7.04], 0 up, 10 down of 10; largest structure 6 (-16.00)
+                stress mean -9.86 [-15.28, -8.07], 0 up, 10 down of 10
+  buzz_match    control -0.01 [-0.09, +0.03], 1 up, 1 down of 10; largest structure 1 (+0.24)
+                held-out -0.02 [-0.13, +0.09], 2 up, 1 down of 10; largest structure 4 (+0.38)
+                stress RMS -0.09 [-0.20, +0.21], 3 up, 3 down of 10; largest structure 4 (+1.66)
+                stress mean -0.07 [-0.25, +0.17], 2 up, 3 down of 10
+  min_drive     control -0.14 [-0.26, +0.03], 1 up, 4 down of 10; largest structure 6 (-0.40)
+                held-out -0.04 [-0.27, +0.10], 1 up, 3 down of 10; largest structure 3 (-0.72)
+                stress RMS -0.46 [-0.67, -0.02], 1 up, 6 down of 10; largest structure 3 (-1.49)
+                stress mean -0.53 [-0.72, +0.06], 1 up, 6 down of 10
+  shape_svd     control -0.81 [-1.98, -0.52], 0 up, 9 down of 10; largest structure 5 (-3.64)
+                held-out +0.15 [-0.40, +0.36], 3 up, 3 down of 10; largest structure 5 (-2.31)
+                stress RMS +1.03 [+0.94, +2.26], 8 up, 1 down of 10; largest structure 3 (+3.49)
+                stress mean +2.99 [+2.32, +4.41], 10 up, 0 down of 10
+  band_average  control +0.02 [-0.01, +0.06], 1 up, 0 down of 10; largest structure 4 (+0.53)
+                held-out -0.00 [-0.04, +0.02], 0 up, 0 down of 10; largest structure 3 (+0.10)
+                stress RMS +0.05 [-0.01, +0.12], 2 up, 0 down of 10; largest structure 4 (+0.44)
+                stress mean -0.04 [-0.09, +0.06], 1 up, 0 down of 10
+S2 on 6x12 (strong), for comparison
+  pinv_closed   control +0.03 [-0.07, +0.03], 1 up, 0 down of 10; largest structure 4 (+0.34)
+                held-out -0.18 [-0.33, -0.07], 0 up, 4 down of 10; largest structure 2 (-0.79)
+                stress RMS -0.90 [-1.12, -0.44], 0 up, 8 down of 10; largest structure 2 (-3.51)
+                stress mean -1.31 [-1.60, -0.83], 0 up, 10 down of 10
+  pinv_open     control -0.01 [-0.03, +0.00], 0 up, 0 down of 10; largest structure 6 (-0.05)
+                held-out -0.02 [-0.06, -0.00], 0 up, 0 down of 10; largest structure 2 (-0.11)
+                stress RMS -0.06 [-0.11, -0.02], 0 up, 1 down of 10; largest structure 2 (-0.23)
+                stress mean -0.11 [-0.16, -0.04], 0 up, 1 down of 10
+  buzz_match    control +0.03 [+0.00, +0.05], 0 up, 0 down of 10; largest structure 0 (+0.07)
+                held-out +0.01 [-0.00, +0.05], 0 up, 0 down of 10; largest structure 0 (+0.12)
+                stress RMS -0.00 [-0.04, +0.07], 1 up, 1 down of 10; largest structure 1 (+0.41)
+                stress mean +0.03 [-0.04, +0.09], 1 up, 1 down of 10
+  min_drive     control -0.00 [-0.03, +0.07], 0 up, 0 down of 10; largest structure 0 (-0.17)
+                held-out +0.06 [-0.00, +0.14], 2 up, 0 down of 10; largest structure 2 (+0.75)
+                stress RMS +0.06 [-0.03, +0.38], 3 up, 0 down of 10; largest structure 2 (+2.80)
+                stress mean +0.05 [-0.02, +1.15], 4 up, 0 down of 10
+  shape_svd     control -0.50 [-0.75, -0.22], 0 up, 7 down of 10; largest structure 6 (-0.88)
+                held-out -0.13 [-0.47, +0.21], 3 up, 4 down of 10; largest structure 4 (-0.67)
+                stress RMS +0.86 [+0.25, +1.17], 8 up, 2 down of 10; largest structure 5 (+3.67)
+                stress mean +1.93 [+1.82, +2.17], 10 up, 0 down of 10
+  band_average  control -0.04 [-0.05, +0.04], 0 up, 0 down of 10; largest structure 6 (-0.13)
+                held-out -0.00 [-0.04, +0.04], 0 up, 1 down of 10; largest structure 6 (-0.26)
+                stress RMS +0.03 [-0.06, +0.12], 1 up, 0 down of 10; largest structure 6 (+0.24)
+                stress mean -0.08 [-0.11, +0.05], 0 up, 2 down of 10
+
+S3. Spearman rank correlation with stress RMS error over runs, default settings, six laws
+  linear    same count           n 240: per-channel control +0.25 held-out +0.85; summed control -0.09 held-out +0.91; |level, all gauges| +0.90; |tip response spectrum mean| +0.90
+  linear    more control gauges  n 358: per-channel control +0.72 held-out +0.55; summed control +0.67 held-out +0.63; |level, all gauges| +0.56; |tip response spectrum mean| +0.62
+  realistic same count           n 240: per-channel control +0.50 held-out +0.83; summed control +0.56 held-out +0.89; |level, all gauges| +0.89; |tip response spectrum mean| +0.90
+  realistic more control gauges  n 359: per-channel control +0.67 held-out +0.55; summed control +0.57 held-out +0.52; |level, all gauges| +0.58; |tip response spectrum mean| +0.60
+  strong    same count           n 240: per-channel control +0.53 held-out +0.75; summed control +0.67 held-out +0.81; |level, all gauges| +0.83; |tip response spectrum mean| +0.84
+  strong    more control gauges  n 360: per-channel control +0.23 held-out +0.27; summed control +0.09 held-out +0.23; |level, all gauges| +0.33; |tip response spectrum mean| +0.15
+  S3 within one law, linear, same count (per-channel control, held-out), n:
+    pinv_closed   n 40 control +0.39 held-out +0.70
+    pinv_open     n 40 control +0.39 held-out +0.73
+    buzz_match    n 40 control +0.29 held-out +0.66
+    min_drive     n 40 control +0.27 held-out +0.69
+    shape_svd     n 40 control +0.10 held-out +0.01
+    band_average  n 40 control +0.11 held-out +0.32
+  S3 within one setup, linear, six laws pooled:
+    6x6    n 120 control +0.17 held-out +0.78
+    12x12  n 120 control +0.31 held-out +0.89
+    3x12   n 118 control +0.74 held-out +0.59
+    6x12   n 120 control +0.14 held-out -0.17
+    12x24  n 120 control +0.57 held-out +0.32
+
+S4. Report card lines as the scorer applies them, default settings
+  linear    same count           n 240: exact-fit flag 1; control pattern A or B 238; held-out pattern A or B 74; level within 1.5 dB 87; over-test alarm 240; stress within 3 dB RMS 41
+  linear    more control gauges  n 358: exact-fit flag 0; control pattern A or B 304; held-out pattern A or B 253; level within 1.5 dB 211; over-test alarm 358; stress within 3 dB RMS 129
+  realistic same count           n 240: exact-fit flag 0; control pattern A or B 222; held-out pattern A or B 75; level within 1.5 dB 82; over-test alarm 240; stress within 3 dB RMS 26
+  realistic more control gauges  n 359: exact-fit flag 0; control pattern A or B 305; held-out pattern A or B 260; level within 1.5 dB 209; over-test alarm 359; stress within 3 dB RMS 128
+  strong    same count           n 240: exact-fit flag 0; control pattern A or B 194; held-out pattern A or B 86; level within 1.5 dB 81; over-test alarm 240; stress within 3 dB RMS 20
+  strong    more control gauges  n 360: exact-fit flag 0; control pattern A or B 306; held-out pattern A or B 268; level within 1.5 dB 214; over-test alarm 360; stress within 3 dB RMS 42
+  linear, same count: per-channel control band error min 0.91, median 3.90; runs under 0.5 dB 0, under 1 dB 1, under 2 dB 20, under 3 dB 73 of 240; summed control error min 0.28, median 1.72
+    flagged or under 1 dB: s15_12x12_none_min_drive_default_line_hold_divopen control 0.91 stress 3.30
+  alarm over all stages and setups: 1797 of 1797; worst band over target min 9.4 dB, median 22.8
+  linear same_count=1: share of bands over +6 dB, median 20.7 %; runs with stress within 3 dB RMS that still alarm 41 of 41
+  linear same_count=0: share of bands over +6 dB, median 10.2 %; runs with stress within 3 dB RMS that still alarm 129 of 129
+
+MEASURED AGAIN DURING THE TEST minus MEASURED ONCE AND KEPT (structures 0 to 9, setups 6x6 and 6x12)
+ realistic, 6x6
+  pinv_closed   control +1.73 [+1.07, +2.47], 10 up, 0 down of 10; largest structure 3 (+3.63)
+                held-out +2.16 [+1.57, +2.62], 10 up, 0 down of 10; largest structure 3 (+3.08)
+                stress RMS +4.85 [+4.63, +5.14], 10 up, 0 down of 10; largest structure 0 (+5.42)
+                stress mean +5.06 [+4.64, +5.47], 10 up, 0 down of 10
+  pinv_open     control +5.95 [+5.20, +6.72], 10 up, 0 down of 10; largest structure 3 (+7.23)
+                held-out +3.99 [+2.90, +4.76], 10 up, 0 down of 10; largest structure 1 (+5.07)
+                stress RMS +6.62 [+1.91, +9.04], 10 up, 0 down of 10; largest structure 2 (+12.76)
+                stress mean +6.76 [+2.34, +9.35], 10 up, 0 down of 10
+  buzz_match    control +1.96 [+1.31, +2.51], 10 up, 0 down of 10; largest structure 3 (+3.84)
+                held-out +2.13 [+1.30, +2.68], 10 up, 0 down of 10; largest structure 3 (+3.13)
+                stress RMS +4.65 [+3.86, +5.33], 10 up, 0 down of 10; largest structure 6 (+7.00)
+                stress mean +5.15 [+4.01, +5.97], 10 up, 0 down of 10
+  min_drive     control +0.40 [-0.16, +1.83], 5 up, 2 down of 10; largest structure 3 (+3.63)
+                held-out +0.72 [-0.27, +2.24], 7 up, 3 down of 10; largest structure 9 (+2.45)
+                stress RMS +1.86 [-0.60, +4.98], 6 up, 3 down of 10; largest structure 2 (+6.61)
+                stress mean +1.84 [-1.08, +5.47], 6 up, 3 down of 10
+  shape_svd     control -0.03 [-0.08, +0.20], 3 up, 1 down of 10; largest structure 7 (+0.39)
+                held-out +0.01 [-0.02, +0.18], 2 up, 2 down of 10; largest structure 8 (+0.49)
+                stress RMS -0.18 [-0.35, -0.13], 1 up, 5 down of 10; largest structure 8 (+0.82)
+                stress mean +0.25 [+0.01, +0.64], 5 up, 2 down of 10
+  band_average  control +0.08 [+0.06, +0.17], 2 up, 1 down of 10; largest structure 4 (-0.48)
+                held-out -0.07 [-0.14, -0.00], 1 up, 2 down of 10; largest structure 5 (-0.32)
+                stress RMS +0.02 [-0.16, +0.13], 0 up, 2 down of 10; largest structure 1 (-1.18)
+                stress mean -0.24 [-0.56, -0.02], 0 up, 6 down of 10
+ realistic, 6x12
+  pinv_closed   control +0.10 [-0.07, +0.24], 3 up, 2 down of 10; largest structure 7 (+0.50)
+                held-out +0.11 [+0.00, +0.17], 2 up, 1 down of 10; largest structure 7 (+0.40)
+                stress RMS +0.23 [+0.07, +0.45], 5 up, 0 down of 10; largest structure 5 (+0.92)
+                stress mean +0.48 [+0.31, +0.84], 8 up, 0 down of 10
+  pinv_open     control +3.12 [+2.49, +3.59], 10 up, 0 down of 10; largest structure 7 (+3.77)
+                held-out +3.39 [+3.05, +3.75], 10 up, 0 down of 10; largest structure 5 (+4.06)
+                stress RMS +5.56 [+3.66, +6.53], 10 up, 0 down of 10; largest structure 9 (+8.83)
+                stress mean +7.08 [+5.16, +8.03], 10 up, 0 down of 10
+  buzz_match    control +0.24 [+0.14, +0.36], 6 up, 0 down of 10; largest structure 7 (+0.61)
+                held-out +0.18 [+0.11, +0.28], 4 up, 0 down of 10; largest structure 9 (+0.43)
+                stress RMS +0.01 [-0.03, +0.10], 2 up, 1 down of 10; largest structure 9 (+1.35)
+                stress mean +0.21 [+0.09, +0.48], 5 up, 0 down of 10
+  min_drive     control +0.26 [+0.16, +0.33], 7 up, 0 down of 10; largest structure 4 (+0.47)
+                held-out +0.15 [+0.05, +0.29], 4 up, 0 down of 10; largest structure 4 (+0.47)
+                stress RMS -0.26 [-0.36, +0.08], 2 up, 6 down of 10; largest structure 5 (+0.46)
+                stress mean +0.45 [+0.37, +0.69], 9 up, 0 down of 10
+  shape_svd     control -0.02 [-0.11, +0.08], 2 up, 1 down of 10; largest structure 9 (+0.42)
+                held-out -0.20 [-0.29, -0.10], 1 up, 5 down of 10; largest structure 4 (+0.38)
+                stress RMS -0.18 [-0.28, -0.02], 0 up, 5 down of 10; largest structure 5 (-0.44)
+                stress mean +0.20 [+0.14, +0.42], 5 up, 1 down of 10
+  band_average  control +0.19 [+0.06, +0.23], 4 up, 0 down of 10; largest structure 9 (+0.28)
+                held-out -0.03 [-0.07, +0.01], 0 up, 0 down of 10; largest structure 5 (+0.16)
+                stress RMS +0.00 [-0.02, +0.05], 1 up, 1 down of 10; largest structure 9 (-0.31)
+                stress mean -0.13 [-0.27, -0.06], 0 up, 4 down of 10
+ strong, 6x6
+  pinv_closed   control +1.61 [+1.43, +2.41], 10 up, 0 down of 10; largest structure 7 (+4.92)
+                held-out +1.81 [+1.36, +2.50], 10 up, 0 down of 10; largest structure 9 (+4.11)
+                stress RMS +3.75 [+2.39, +4.89], 10 up, 0 down of 10; largest structure 9 (+5.74)
+                stress mean +4.24 [+2.60, +5.31], 10 up, 0 down of 10
+  pinv_open     control +5.33 [+4.03, +5.56], 10 up, 0 down of 10; largest structure 9 (+6.39)
+                held-out +2.74 [+2.25, +4.00], 10 up, 0 down of 10; largest structure 9 (+5.77)
+                stress RMS +1.73 [-0.04, +2.36], 7 up, 3 down of 10; largest structure 9 (+9.72)
+                stress mean +1.78 [-0.12, +2.17], 7 up, 3 down of 10
+  buzz_match    control +1.75 [+1.47, +2.33], 10 up, 0 down of 10; largest structure 7 (+4.50)
+                held-out +1.64 [+1.38, +2.47], 10 up, 0 down of 10; largest structure 7 (+3.75)
+                stress RMS +3.65 [+1.90, +4.54], 10 up, 0 down of 10; largest structure 7 (+5.32)
+                stress mean +3.97 [+1.98, +5.36], 10 up, 0 down of 10
+  min_drive     control +0.44 [+0.17, +0.94], 7 up, 2 down of 10; largest structure 7 (+3.40)
+                held-out -0.11 [-0.44, +0.20], 3 up, 5 down of 10; largest structure 7 (+2.74)
+                stress RMS -0.15 [-0.91, +0.25], 4 up, 4 down of 10; largest structure 7 (+4.29)
+                stress mean -0.09 [-0.77, +0.03], 2 up, 4 down of 10
+  shape_svd     control -0.14 [-0.25, +0.17], 2 up, 5 down of 10; largest structure 7 (+0.44)
+                held-out -0.14 [-0.35, +0.10], 1 up, 5 down of 10; largest structure 3 (-0.51)
+                stress RMS +0.05 [-0.14, +0.46], 5 up, 1 down of 10; largest structure 4 (+0.98)
+                stress mean +0.46 [+0.41, +0.88], 8 up, 2 down of 10
+  band_average  control +0.01 [-0.03, +0.10], 1 up, 1 down of 10; largest structure 4 (+0.87)
+                held-out -0.15 [-0.19, -0.06], 0 up, 2 down of 10; largest structure 5 (-0.34)
+                stress RMS +0.01 [-0.04, +0.09], 1 up, 1 down of 10; largest structure 4 (+0.59)
+                stress mean -0.02 [-0.23, +0.05], 1 up, 3 down of 10
+ strong, 6x12
+  pinv_closed   control +0.15 [+0.03, +0.20], 3 up, 0 down of 10; largest structure 7 (+0.86)
+                held-out +0.43 [+0.10, +0.55], 7 up, 1 down of 10; largest structure 5 (+1.22)
+                stress RMS +1.00 [+0.46, +1.64], 9 up, 0 down of 10; largest structure 5 (+4.86)
+                stress mean +1.53 [+0.73, +1.86], 10 up, 0 down of 10
+  pinv_open     control +1.90 [+1.52, +2.27], 10 up, 0 down of 10; largest structure 1 (+3.01)
+                held-out +2.56 [+2.06, +2.77], 10 up, 0 down of 10; largest structure 1 (+3.78)
+                stress RMS +4.48 [+3.59, +5.72], 10 up, 0 down of 10; largest structure 3 (+7.44)
+                stress mean +5.26 [+4.53, +6.16], 10 up, 0 down of 10
+  buzz_match    control +0.21 [+0.14, +0.40], 5 up, 0 down of 10; largest structure 7 (+0.75)
+                held-out +0.39 [+0.13, +0.52], 6 up, 0 down of 10; largest structure 7 (+0.70)
+                stress RMS +0.60 [+0.55, +1.45], 8 up, 0 down of 10; largest structure 3 (+3.90)
+                stress mean +0.77 [+0.59, +1.60], 10 up, 0 down of 10
+  min_drive     control +0.39 [+0.13, +0.44], 6 up, 0 down of 10; largest structure 4 (+0.57)
+                held-out +0.30 [+0.03, +0.46], 6 up, 0 down of 10; largest structure 1 (+0.70)
+                stress RMS +0.39 [+0.34, +0.56], 8 up, 0 down of 10; largest structure 5 (+1.42)
+                stress mean +0.99 [+0.81, +1.41], 10 up, 0 down of 10
+  shape_svd     control -0.08 [-0.25, +0.07], 1 up, 3 down of 10; largest structure 0 (-0.30)
+                held-out -0.08 [-0.26, -0.01], 1 up, 3 down of 10; largest structure 9 (-0.41)
+                stress RMS -0.07 [-0.11, +0.25], 3 up, 2 down of 10; largest structure 3 (+0.73)
+                stress mean +0.50 [+0.14, +0.78], 6 up, 1 down of 10
+  band_average  control +0.06 [+0.00, +0.14], 1 up, 1 down of 10; largest structure 7 (+0.30)
+                held-out +0.02 [-0.06, +0.09], 2 up, 1 down of 10; largest structure 6 (-0.48)
+                stress RMS -0.01 [-0.28, +0.08], 1 up, 4 down of 10; largest structure 5 (-0.73)
+                stress mean -0.22 [-0.41, -0.07], 0 up, 5 down of 10
+
+WHICH MEASUREMENT WARNS: linear, default settings. Over-test = stress mean over elements more than +3 dB.
+ same count: 150 of 240 runs over-test by more than 3 dB on average
+   control pattern graded C or worse (summed control error > 4.5 dB): catches 1 of 150; also flags 1 of 90 others
+   held-out pattern graded C or worse (summed held-out error > 4.5 dB): catches 144 of 150; also flags 22 of 90 others
+   level line outside 1.5 dB (all gauges): catches 141 of 150; also flags 12 of 90 others
+   control gauges read more than 1.5 dB high on average: catches 73 of 150; also flags 1 of 90 others
+   held-out gauges read more than 1.5 dB high on average: catches 148 of 150; also flags 16 of 90 others
+   component tips, response spectrum Q 10, more than 1.5 dB high on average: catches 146 of 150; also flags 13 of 90 others
+   over-test alarm (any band of any gauge more than 6 dB over): catches 150 of 150; also flags 90 of 90 others
+   Spearman of signed control_mean with signed stress mean: +0.76
+   Spearman of signed held_mean with signed stress mean: +0.91
+   Spearman of signed tip_q10_mean with signed stress mean: +0.94
+   Spearman of signed level_mean_all with signed stress mean: +0.92
+ more control gauges: 21 of 358 runs over-test by more than 3 dB on average
+   control pattern graded C or worse (summed control error > 4.5 dB): catches 16 of 21; also flags 38 of 337 others
+   held-out pattern graded C or worse (summed held-out error > 4.5 dB): catches 18 of 21; also flags 87 of 337 others
+   level line outside 1.5 dB (all gauges): catches 19 of 21; also flags 128 of 337 others
+   control gauges read more than 1.5 dB high on average: catches 3 of 21; also flags 26 of 337 others
+   held-out gauges read more than 1.5 dB high on average: catches 3 of 21; also flags 64 of 337 others
+   component tips, response spectrum Q 10, more than 1.5 dB high on average: catches 16 of 21; also flags 40 of 337 others
+   over-test alarm (any band of any gauge more than 6 dB over): catches 21 of 21; also flags 337 of 337 others
+   Spearman of signed control_mean with signed stress mean: +0.59
+   Spearman of signed held_mean with signed stress mean: +0.53
+   Spearman of signed tip_q10_mean with signed stress mean: +0.84
+   Spearman of signed level_mean_all with signed stress mean: +0.58
+
+FIGURE DATA
+  written

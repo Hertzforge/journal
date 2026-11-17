@@ -1,0 +1,15 @@
+setups,sign,over_tests_caught,over_tests,others_flagged,others
+same count,control pattern graded C or worse (summed control error > 4.5 dB),1,150,1,90
+same count,held-out pattern graded C or worse (summed held-out error > 4.5 dB),144,150,22,90
+same count,level line outside 1.5 dB (all gauges),141,150,12,90
+same count,control gauges read more than 1.5 dB high on average,73,150,1,90
+same count,held-out gauges read more than 1.5 dB high on average,148,150,16,90
+same count,"component tips, response spectrum Q 10, more than 1.5 dB high on average",146,150,13,90
+same count,over-test alarm (any band of any gauge more than 6 dB over),150,150,90,90
+more control gauges,control pattern graded C or worse (summed control error > 4.5 dB),16,21,38,337
+more control gauges,held-out pattern graded C or worse (summed held-out error > 4.5 dB),18,21,87,337
+more control gauges,level line outside 1.5 dB (all gauges),19,21,128,337
+more control gauges,control gauges read more than 1.5 dB high on average,3,21,26,337
+more control gauges,held-out gauges read more than 1.5 dB high on average,3,21,64,337
+more control gauges,"component tips, response spectrum Q 10, more than 1.5 dB high on average",16,21,40,337
+more control gauges,over-test alarm (any band of any gauge more than 6 dB over),21,21,337,337

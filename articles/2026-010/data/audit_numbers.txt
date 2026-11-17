@@ -1,0 +1,47 @@
+S1  6x6 minus 6x12, pinv_closed, ctrl                            study -2.65 [-3.29, -2.28] | audit -2.40 [-2.99, -1.82] | holds | same sign 10 of 10
+S1  6x6 minus 6x12, pinv_closed, held                            study +3.67 [+2.35, +5.02] | audit +5.29 [+3.04, +6.07] | weaker | same sign 10 of 10
+S1  6x6 minus 6x12, pinv_closed, stress                          study +7.39 [+5.65, +9.05] | audit +8.71 [+5.30, +9.93] | holds | same sign 10 of 10
+S1  12x12 minus 12x24, pinv_closed, stress                       study +9.40 [+7.59, +10.57] | audit +9.35 [+5.60, +11.89] | holds | same sign 10 of 10
+S1  6x6 minus 6x12, pinv_open, ctrl                              study -0.84 [-1.31, +0.28] | audit -0.99 [-1.64, -0.43] | holds | same sign 8 of 10
+S1  6x6 minus 6x12, pinv_open, held                              study +6.15 [+4.30, +7.20] | audit +7.01 [+4.57, +7.42] | holds | same sign 10 of 10
+S1  6x6 minus 6x12, pinv_open, stress                            study +11.50 [+10.04, +13.14] | audit +10.26 [+7.24, +12.14] | holds | same sign 10 of 10
+S1  12x12 minus 12x24, pinv_open, stress                         study +10.26 [+8.04, +13.66] | audit +8.18 [+6.19, +12.61] | holds | same sign 10 of 10
+S1  6x6 minus 6x12, shape_svd, ctrl                              study -0.84 [-1.13, -0.64] | audit -0.71 [-1.03, -0.22] | holds | same sign 8 of 10
+S1  6x6 minus 6x12, shape_svd, held                              study +0.39 [-0.27, +0.87] | audit +0.48 [-0.47, +1.39] | holds | same sign 7 of 10
+S1  6x6 minus 6x12, shape_svd, stress                            study -0.13 [-0.89, +0.22] | audit -0.54 [-1.16, +0.13] | holds | same sign 6 of 10
+S1  12x12 minus 12x24, shape_svd, stress                         study +0.28 [-0.26, +0.78] | audit -0.24 [-0.50, +0.23] | does not hold | same sign 3 of 10
+S1  6x6 minus 6x12, buzz_match, ctrl                             study -2.24 [-2.90, -1.75] | audit -2.02 [-2.52, -1.34] | holds | same sign 10 of 10
+S1  6x6 minus 6x12, buzz_match, held                             study +3.87 [+2.68, +5.13] | audit +5.22 [+2.89, +6.22] | weaker | same sign 10 of 10
+S1  6x6 minus 6x12, buzz_match, stress                           study +8.15 [+5.38, +8.92] | audit +8.26 [+5.14, +10.45] | holds | same sign 10 of 10
+S1  12x12 minus 12x24, buzz_match, stress                        study +9.80 [+7.82, +10.74] | audit +9.81 [+7.66, +12.00] | holds | same sign 10 of 10
+S1  6x6 minus 6x12, min_drive, ctrl                              study -1.63 [-2.13, -1.20] | audit -1.85 [-2.97, -1.41] | holds | same sign 10 of 10
+S1  6x6 minus 6x12, min_drive, held                              study +2.63 [+0.85, +3.15] | audit +2.47 [+0.86, +3.24] | holds | same sign 9 of 10
+S1  6x6 minus 6x12, min_drive, stress                            study +2.61 [+2.19, +3.78] | audit +2.28 [+0.67, +3.18] | holds | same sign 8 of 10
+S1  12x12 minus 12x24, min_drive, stress                         study +2.71 [+1.34, +4.57] | audit +3.50 [+0.79, +8.14] | holds | same sign 8 of 10
+S1  6x6 minus 6x12, band_average, ctrl                           study -2.12 [-2.55, -1.68] | audit -2.09 [-2.88, -1.70] | holds | same sign 10 of 10
+S1  6x6 minus 6x12, band_average, held                           study +1.10 [+0.34, +1.83] | audit +1.48 [-0.01, +2.42] | holds | same sign 7 of 10
+S1  6x6 minus 6x12, band_average, stress                         study +0.39 [-0.42, +0.70] | audit +0.41 [+0.01, +1.48] | holds | same sign 7 of 10
+S1  12x12 minus 12x24, band_average, stress                      study +0.12 [-0.23, +0.56] | audit +0.07 [-0.37, +0.80] | does not hold | same sign 5 of 10
+S2  6x6 linear tuned minus default, pinv_closed, ctrl            study +0.23 [-0.29, +0.38] | audit -0.07 [-0.26, +0.35] | does not hold | same sign 5 of 10
+S2  6x6 linear tuned minus default, pinv_closed, held            study -3.05 [-3.32, -2.57] | audit -3.41 [-4.20, -2.92] | weaker | same sign 10 of 10
+S2  6x6 linear tuned minus default, pinv_closed, stress          study -6.39 [-8.41, -4.50] | audit -6.30 [-8.18, -5.37] | holds | same sign 10 of 10
+S2  6x6 linear tuned minus default, pinv_open, ctrl              study -0.88 [-1.25, +0.64] | audit -0.72 [-1.42, +0.33] | holds | same sign 7 of 10
+S2  6x6 linear tuned minus default, pinv_open, held              study -5.03 [-5.50, -3.16] | audit -4.93 [-6.27, -3.96] | holds | same sign 10 of 10
+S2  6x6 linear tuned minus default, pinv_open, stress            study -11.57 [-12.32, -9.26] | audit -9.09 [-12.12, -6.42] | weaker | same sign 10 of 10
+S5  12x12 minus 6x12, pinv_closed, ctrl                          study -1.21 [-1.90, -0.77] | audit -0.95 [-1.37, -0.21] | holds | same sign 8 of 10
+S5  12x12 minus 6x12, pinv_closed, held                          study +4.78 [+3.97, +5.18] | audit +3.50 [+2.97, +5.04] | weaker | same sign 10 of 10
+S5  12x12 minus 6x12, pinv_closed, stress                        study +8.82 [+8.20, +10.33] | audit +8.53 [+5.75, +10.74] | holds | same sign 10 of 10
+S5  12x12 minus 6x12, shape_svd, stress                          study -0.21 [-0.61, +0.08] | audit -0.09 [-0.52, +0.03] | does not hold | same sign 7 of 10
+S5  12x12 minus 6x12, band_average, stress                       study -0.46 [-0.94, -0.24] | audit -0.74 [-1.31, -0.17] | holds | same sign 8 of 10
+
+S3 and S4 (square = as many shakers as control gauges)
+  study square     n 240: rho control +0.25 held-out +0.85; summed control -0.09 held-out +0.91; exact-fit flag 1; control A or B 238; held-out A or B 74; stress within 3 dB 41; alarm 240
+  study non-square n 358: rho control +0.72 held-out +0.55; summed control +0.67 held-out +0.63; exact-fit flag 0; control A or B 304; held-out A or B 253; stress within 3 dB 129; alarm 358
+  audit square     n 120: rho control +0.27 held-out +0.81; summed control -0.16 held-out +0.88; exact-fit flag 0; control A or B 120; held-out A or B 43; stress within 3 dB 17; alarm 120
+  audit non-square n 179: rho control +0.63 held-out +0.71; summed control +0.64 held-out +0.68; exact-fit flag 0; control A or B 159; held-out A or B 138; stress within 3 dB 57; alarm 179
+
+Default checks
+  study default runs 990, stopped 901 (growing error 840, drive change 61), completed once widened 901; stops at loops 6 to 34, 719 at loop 7, 864 by loop 12; widened runs 2803, 3 stopped on the drive voltage
+  audit default runs 870, stopped 811 (growing error 792, drive change 19), completed once widened 810; stops at loops 6 to 35, 654 at loop 7, 785 by loop 12; widened runs 1681, 1 stopped on the drive voltage
+
+Held-back structures: [20, 21, 22, 23, 26, 27, 28, 50, 51, 52]
