@@ -1,0 +1,13 @@
+TY  - JOUR
+AU  - Cross, Kevin
+TI  - Six Control Laws for Multi-Shaker Random Vibration: How Each Scores on the Open Benchmark Set
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-009
+PY  - 2026
+DA  - 2026/11/17
+ET  - Version 1
+DO  - 10.5281/zenodo.24311107
+UR  - https://hertzforge.com/journal/2026-009/v1/
+AB  - Hertzforge, an open-source structural dynamics suite, ships six control laws for multi-shaker random vibration tests, described in a companion article. This article reports how each one scores on the Open Benchmark Set, closed loop through the real control service on its simulator, at its defaults and at one tuned setting, on structures that do not change with level (stage 1) and on the same structures with modes that soften and modes that harden with level (stage 2), on five systems and 20 generated structures, with each finding tested again by an independent audit on ten held-back structures. At the controller's default checks, which are conservative on purpose, about nine runs in ten stopped early and completed once the checks were widened; the scores are of the widened runs. With as many shakers as control gauges, the two pseudo-inverse laws and the buzz-test law held their control gauges closely and over-tested the article's stress by about 8 to 11 dB more than the band-average law, on every structure of both sets, and a stronger regularization chosen on structures not scored lowered the pseudo-inverse laws' stress error there on every structure. At the strong size of stage 2 the stress error rose for five of the six laws on both sets of structures; the rise came with the softening joints, while the hardening member alone moved no law's median by more than 0.2 dB with more control gauges than shakers. Everything here is simulation.
+ER  - 

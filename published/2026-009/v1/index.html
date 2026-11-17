@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="en" data-register="reading"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Six Control Laws for Multi-Shaker Random Vibration: How Each Scores on the Open Benchmark Set | Hertzforge Journal</title>
+<meta name="description" content="Hertzforge, an open-source structural dynamics suite, ships six control laws for multi-shaker random vibration tests, described in a companion article. This article reports how each one scores on the Open Benchmark Set, closed loop through the real control service on its simulator, at its...">
+<link rel="canonical" href="https://hertzforge.com/journal/2026-009/v1/">
+<meta name="citation_title" content="Six Control Laws for Multi-Shaker Random Vibration: How Each Scores on the Open Benchmark Set">
+<meta name="citation_author" content="Kevin Cross">
+<meta name="citation_publication_date" content="2026/11/17">
+<meta name="citation_journal_title" content="Hertzforge Journal">
+<meta name="citation_volume" content="1">
+<meta name="citation_firstpage" content="2026-009">
+<meta name="citation_doi" content="10.5281/zenodo.24311107">
+<meta name="citation_pdf_url" content="https://hertzforge.com/journal/2026-009/v1/2026-009-v1.pdf">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Hertzforge Journal">
+<meta property="og:url" content="https://hertzforge.com/journal/2026-009/v1/">
+<meta property="og:title" content="Six Control Laws for Multi-Shaker Random Vibration: How Each Scores on the Open Benchmark Set">
+<meta property="og:description" content="Hertzforge, an open-source structural dynamics suite, ships six control laws for multi-shaker random vibration tests, described in a companion article. This article reports how each one scores on the Open Benchmark Set, closed loop through the real control service on its simulator, at its...">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/article.css">
+<script>(function(){var r=document.documentElement;r.classList.add('js');try{var s=localStorage.getItem('hf-theme');if(s==='light'||s==='dark')r.dataset.theme=s;}catch(e){}})();</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="bar"><a class="brand" href="/" aria-label="Hertzforge, home"><svg class="brand-mark" viewbox="0 0 32 32" aria-hidden="true" focusable="false"><rect width="32" height="32" rx="6"></rect><path d="M4 16h4l3-8 4 16 4-12 3 6 2-2h4"></path></svg><span class="wordmark"><span class="w-hertz">HERTZ</span><span class="w-forge">FORGE</span></span></a><button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span class="sr-only">Menu</span><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button><nav class="site-nav" id="site-nav" aria-label="Main"><ul><li><a href="/documentation/">Documentation</a></li><li><a href="/learn/">Learn</a></li><li><a href="/reference/">Reference</a></li><li><a href="/benchmarks/">Benchmarks</a></li><li><a href="/journal/" aria-current="page">Journal</a></li><li><a href="/community/">Community</a></li><li><a href="/about/">About</a></li></ul><div class="nav-actions"><a class="icon-btn" href="/search/" aria-label="Search the site"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M10.500 4a6.500 6.500 0 1 0 0 13 6.500 6.500 0 0 0 0-13Zm5 11.500L20 20"></path></svg></a><button class="icon-btn theme-toggle" type="button" aria-label="Switch between light and dark reading"><svg class="i-moon" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 14.500A8 8 0 0 1 9.500 4a8 8 0 1 0 10.500 10.500Z"></path></svg><svg class="i-sun" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0-5v2m0 14v2M3 12h2m14 0h2M5.600 5.600 7 7m10 10 1.400 1.400M5.600 18.400 7 17M17 7l1.400-1.400"></path></svg></button><a class="icon-btn" href="https://github.com/Hertzforge/Hertzforge" aria-label="Hertzforge on GitHub"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 7 4 12l5 5m6-10 5 5-5 5"></path></svg></a><a class="btn btn-primary btn-sm" href="/download/"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 19h14"></path></svg>Download</a></div></nav></div></header>
+
+<main id="main" data-pagefind-body="">
+<article class="hf-article" data-id="2026-009" data-version="1" data-record="../record.json">
+<div class="hf-status dark" id="hf-status" data-status="review-open"><div class="wrap"><span class="hf-status-mark" aria-hidden="true"><svg data-for="review-open" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="2.5" fill="currentColor" stroke="none"></circle></svg><svg data-for="reviewed" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M8 12.4l2.7 2.7L16 9.6"></path></svg><svg data-for="retracted" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"></circle><path d="M6 18L18 6"></path></svg></span><strong class="hf-status-name">Review open</strong><span class="hf-status-text">Published; reviews and comments are welcome.</span> <span class="hf-status-asof">As of 2026-11-17, when this version was published; the status now is at <a href="https://hertzforge.com/journal/2026-009/">hertzforge.com/journal/2026-009/</a>.</span><a class="hf-status-link" href="#hf-reviews">Reviews</a></div></div>
+<div class="page-head dark"><div class="wrap"><p class="eyebrow">Hertzforge Journal</p><h1 class="steel">Six Control Laws for Multi-Shaker Random Vibration: How Each Scores on the Open Benchmark Set</h1><p class="hf-kind" id="hf-type"><span class="tag tag-strong">Research Article</span></p><ul class="hf-authors" id="hf-authors"><li><span class="hf-author-name">Kevin Cross</span> <a class="hf-orcid" href="https://orcid.org/0009-0002-6608-9426" rel="noopener">ORCID 0009-0002-6608-9426</a></li></ul><p class="hf-evidence" id="hf-evidence"><span class="tag">Evidence</span><strong>Simulator.</strong> Closed-loop runs of the six laws through Hertzforge's control service on its simulator, on the Open Benchmark Set's MIMO Random suite (version 0.2): 20 generated structures, five systems, stage 1 and stage 2 at two sizes, one run per case, each finding tested again on ten held-back structures by an independent audit. The laws themselves are described in a companion article.</p></div><svg class="trace" viewbox="0 0 1200 100" preserveaspectratio="none" aria-hidden="true" focusable="false"><path class="trace-glow" d="M0 50.0L3 49.1L6 48.3L9 47.7L12 47.4L15 47.6L18 48.2L21 49.3L24 50.6L27 52.0L30 53.3L33 54.0L36 54.1L39 53.5L42 52.1L45 50.2L48 48.0L51 45.9L54 44.3L57 43.6L60 44.0L63 45.5L66 48.1L69 51.2L72 54.5L75 57.3L78 59.1L81 59.3L84 57.9L87 54.9L90 50.7L93 46.0L96 41.6L99 38.3L102 36.8L105 37.6L108 40.7L111 45.7L114 51.9L117 58.3L120 63.7L123 67.0L126 67.6L129 65.0L132 59.5L135 52.0L138 43.6L141 35.7L144 29.9L147 27.3L150 28.6L153 33.8L156 42.1L159 52.3L162 62.7L165 71.4L168 76.7L171 77.6L174 73.7L177 65.4L180 54.0L183 41.4L186 29.8L189 21.3L192 17.5L195 19.2L198 26.4L201 38.0L204 52.1L207 66.2L210 77.9L213 85.0L216 86.3L219 81.2L222 70.6L225 56.3L228 40.5L231 26.2L234 15.7L237 11.0L240 13.0L243 21.5L246 34.9L249 51.0L252 67.1L255 80.3L258 88.3L261 89.7L264 84.3L267 73.1L270 57.9L273 41.4L276 26.6L279 15.8L282 11.1L285 13.0L288 21.2L291 34.2L294 49.7L297 65.0L300 77.4L303 84.9L306 86.3L309 81.5L312 71.4L315 58.1L318 43.7L321 30.8L324 21.6L327 17.5L330 19.1L333 25.8L336 36.3L339 48.8L342 60.9L345 70.7L348 76.5L351 77.6L354 74.1L357 66.6L360 56.7L363 46.2L366 36.9L369 30.3L372 27.4L375 28.5L378 33.0L381 40.2L384 48.5L387 56.6L390 63.0L393 66.8L396 67.6L399 65.3L402 60.7L405 54.6L408 48.2L411 42.6L414 38.6L417 36.9L420 37.5L423 40.1L426 44.1L429 48.8L432 53.3L435 56.8L438 58.9L441 59.3L444 58.2L447 55.8L450 52.6L453 49.4L456 46.5L459 44.5L462 43.6L465 43.9L468 45.2L471 47.1L474 49.3L477 51.4L480 53.0L483 54.0L486 54.2L489 53.7L492 52.6L495 51.2L498 49.8L501 48.6L504 47.8L507 47.4L510 47.5L513 48.0L516 48.7L519 49.6L522 50.5L525 51.2L528 51.6L531 51.7L534 51.5L537 51.1L540 50.6L543 50.0L546 49.4L549 49.0L552 48.8L555 48.7L558 48.9L561 49.3L564 49.7L567 50.3L570 50.7L573 51.1L576 51.3L579 51.3L582 51.1L585 50.6L588 50.0L591 49.4L594 48.7L597 48.3L600 48.1L603 48.2L606 48.7L609 49.5L612 50.4L615 51.5L618 52.4L621 52.9L624 53.0L627 52.6L630 51.6L633 50.2L636 48.6L639 47.0L642 45.8L645 45.3L648 45.5L651 46.6L654 48.5L657 50.8L660 53.3L663 55.4L666 56.7L669 56.9L672 55.9L675 53.7L678 50.7L681 47.2L684 44.1L687 41.7L690 40.7L693 41.2L696 43.4L699 46.9L702 51.2L705 55.5L708 59.1L711 61.2L714 61.5L717 59.8L720 56.2L723 51.4L726 46.2L729 41.5L732 38.1L735 36.7L738 37.6L741 40.7L744 45.4L747 51.1L750 56.6L753 61.0L756 63.6L759 63.8L762 61.6L765 57.5L768 52.0L771 46.3L774 41.3L777 37.8L780 36.5L783 37.5L786 40.6L789 45.2L792 50.6L795 55.6L798 59.6L801 61.7L804 61.8L807 59.9L810 56.4L813 52.0L816 47.5L819 43.6L822 41.1L825 40.2L828 41.0L831 43.2L834 46.5L837 50.1L840 53.4L843 55.9L846 57.2L849 57.2L852 56.0L855 53.9L858 51.3L861 48.8L864 46.7L867 45.3L870 44.9L873 45.3L876 46.5L879 48.2L882 49.9L885 51.5L888 52.6L891 53.2L894 53.2L897 52.6L900 51.7L903 50.6L906 49.6L909 48.8L912 48.3L915 48.1L918 48.3L921 48.7L924 49.3L927 49.9L930 50.5L933 50.8L936 51.0L939 51.0L942 50.8L945 50.5L948 50.2L951 49.9L954 49.7L957 49.5L960 49.5L963 49.5L966 49.7L969 49.8L972 50.0L975 50.1L978 50.2L981 50.2L984 50.2L987 50.2L990 50.1L993 50.0L996 50.0L999 49.9L1002 49.9L1005 49.9L1008 49.9L1011 49.9L1014 50.0L1017 50.0L1020 50.0L1023 50.0L1026 50.0L1029 50.0L1032 50.0L1035 50.0L1038 50.0L1041 50.0L1044 50.0L1047 50.0L1050 50.0L1053 50.0L1056 50.0L1059 50.0L1062 50.0L1065 50.0L1068 50.0L1071 50.0L1074 50.0L1077 50.0L1080 50.0L1083 50.0L1086 50.0L1089 50.0L1092 50.0L1095 50.0L1098 50.0L1101 50.0L1104 50.0L1107 50.0L1110 50.0L1113 50.0L1116 50.0L1119 50.0L1122 50.0L1125 50.0L1128 50.0L1131 50.0L1134 50.0L1137 50.0L1140 50.0L1143 50.0L1146 50.0L1149 50.0L1152 50.0L1155 50.0L1158 50.0L1161 50.0L1164 50.0L1167 50.0L1170 50.0L1173 50.0L1176 50.0L1179 50.0L1182 50.0L1185 50.0L1188 50.0L1191 50.0L1194 50.0L1197 50.0L1200 50.0"></path><path class="trace-line" d="M0 50.0L3 49.1L6 48.3L9 47.7L12 47.4L15 47.6L18 48.2L21 49.3L24 50.6L27 52.0L30 53.3L33 54.0L36 54.1L39 53.5L42 52.1L45 50.2L48 48.0L51 45.9L54 44.3L57 43.6L60 44.0L63 45.5L66 48.1L69 51.2L72 54.5L75 57.3L78 59.1L81 59.3L84 57.9L87 54.9L90 50.7L93 46.0L96 41.6L99 38.3L102 36.8L105 37.6L108 40.7L111 45.7L114 51.9L117 58.3L120 63.7L123 67.0L126 67.6L129 65.0L132 59.5L135 52.0L138 43.6L141 35.7L144 29.9L147 27.3L150 28.6L153 33.8L156 42.1L159 52.3L162 62.7L165 71.4L168 76.7L171 77.6L174 73.7L177 65.4L180 54.0L183 41.4L186 29.8L189 21.3L192 17.5L195 19.2L198 26.4L201 38.0L204 52.1L207 66.2L210 77.9L213 85.0L216 86.3L219 81.2L222 70.6L225 56.3L228 40.5L231 26.2L234 15.7L237 11.0L240 13.0L243 21.5L246 34.9L249 51.0L252 67.1L255 80.3L258 88.3L261 89.7L264 84.3L267 73.1L270 57.9L273 41.4L276 26.6L279 15.8L282 11.1L285 13.0L288 21.2L291 34.2L294 49.7L297 65.0L300 77.4L303 84.9L306 86.3L309 81.5L312 71.4L315 58.1L318 43.7L321 30.8L324 21.6L327 17.5L330 19.1L333 25.8L336 36.3L339 48.8L342 60.9L345 70.7L348 76.5L351 77.6L354 74.1L357 66.6L360 56.7L363 46.2L366 36.9L369 30.3L372 27.4L375 28.5L378 33.0L381 40.2L384 48.5L387 56.6L390 63.0L393 66.8L396 67.6L399 65.3L402 60.7L405 54.6L408 48.2L411 42.6L414 38.6L417 36.9L420 37.5L423 40.1L426 44.1L429 48.8L432 53.3L435 56.8L438 58.9L441 59.3L444 58.2L447 55.8L450 52.6L453 49.4L456 46.5L459 44.5L462 43.6L465 43.9L468 45.2L471 47.1L474 49.3L477 51.4L480 53.0L483 54.0L486 54.2L489 53.7L492 52.6L495 51.2L498 49.8L501 48.6L504 47.8L507 47.4L510 47.5L513 48.0L516 48.7L519 49.6L522 50.5L525 51.2L528 51.6L531 51.7L534 51.5L537 51.1L540 50.6L543 50.0L546 49.4L549 49.0L552 48.8L555 48.7L558 48.9L561 49.3L564 49.7L567 50.3L570 50.7L573 51.1L576 51.3L579 51.3L582 51.1L585 50.6L588 50.0L591 49.4L594 48.7L597 48.3L600 48.1L603 48.2L606 48.7L609 49.5L612 50.4L615 51.5L618 52.4L621 52.9L624 53.0L627 52.6L630 51.6L633 50.2L636 48.6L639 47.0L642 45.8L645 45.3L648 45.5L651 46.6L654 48.5L657 50.8L660 53.3L663 55.4L666 56.7L669 56.9L672 55.9L675 53.7L678 50.7L681 47.2L684 44.1L687 41.7L690 40.7L693 41.2L696 43.4L699 46.9L702 51.2L705 55.5L708 59.1L711 61.2L714 61.5L717 59.8L720 56.2L723 51.4L726 46.2L729 41.5L732 38.1L735 36.7L738 37.6L741 40.7L744 45.4L747 51.1L750 56.6L753 61.0L756 63.6L759 63.8L762 61.6L765 57.5L768 52.0L771 46.3L774 41.3L777 37.8L780 36.5L783 37.5L786 40.6L789 45.2L792 50.6L795 55.6L798 59.6L801 61.7L804 61.8L807 59.9L810 56.4L813 52.0L816 47.5L819 43.6L822 41.1L825 40.2L828 41.0L831 43.2L834 46.5L837 50.1L840 53.4L843 55.9L846 57.2L849 57.2L852 56.0L855 53.9L858 51.3L861 48.8L864 46.7L867 45.3L870 44.9L873 45.3L876 46.5L879 48.2L882 49.9L885 51.5L888 52.6L891 53.2L894 53.2L897 52.6L900 51.7L903 50.6L906 49.6L909 48.8L912 48.3L915 48.1L918 48.3L921 48.7L924 49.3L927 49.9L930 50.5L933 50.8L936 51.0L939 51.0L942 50.8L945 50.5L948 50.2L951 49.9L954 49.7L957 49.5L960 49.5L963 49.5L966 49.7L969 49.8L972 50.0L975 50.1L978 50.2L981 50.2L984 50.2L987 50.2L990 50.1L993 50.0L996 50.0L999 49.9L1002 49.9L1005 49.9L1008 49.9L1011 49.9L1014 50.0L1017 50.0L1020 50.0L1023 50.0L1026 50.0L1029 50.0L1032 50.0L1035 50.0L1038 50.0L1041 50.0L1044 50.0L1047 50.0L1050 50.0L1053 50.0L1056 50.0L1059 50.0L1062 50.0L1065 50.0L1068 50.0L1071 50.0L1074 50.0L1077 50.0L1080 50.0L1083 50.0L1086 50.0L1089 50.0L1092 50.0L1095 50.0L1098 50.0L1101 50.0L1104 50.0L1107 50.0L1110 50.0L1113 50.0L1116 50.0L1119 50.0L1122 50.0L1125 50.0L1128 50.0L1131 50.0L1134 50.0L1137 50.0L1140 50.0L1143 50.0L1146 50.0L1149 50.0L1152 50.0L1155 50.0L1158 50.0L1161 50.0L1164 50.0L1167 50.0L1170 50.0L1173 50.0L1176 50.0L1179 50.0L1182 50.0L1185 50.0L1188 50.0L1191 50.0L1194 50.0L1197 50.0L1200 50.0"></path></svg></div>
+<div class="page-body"><div class="wrap"><div class="prose hf-prose">
+<section class="hf-meta" aria-label="About this version">
+<div class="hf-panel hf-version" id="hf-version"><h2 class="hf-label">Version</h2><p class="hf-version-line"><span><strong>Version 1</strong>, published 2026-11-17. First published 2026-11-17.</span><label class="hf-select-label" for="hf-version-select" id="hf-version-select-slot" hidden=""></label></p><p class="hf-note">Change note: First published. <a href="#version-history">Version history</a></p><p class="hf-versions">Versions: <strong>1 (this version)</strong>. Any later version is listed at <a href="../">the article's address</a>.</p><div class="note hf-notlatest" hidden=""></div></div>
+<div class="hf-panel" id="hf-doi"><h2 class="hf-label">Identifiers</h2><dl class="hf-ids"><dt>DOI of this version</dt><dd><a href="https://doi.org/10.5281/zenodo.24311107" rel="noopener">10.5281/zenodo.24311107</a></dd><dt>DOI that always gives the latest version</dt><dd><a href="https://doi.org/10.5281/zenodo.24311106" rel="noopener">10.5281/zenodo.24311106</a></dd></dl></div>
+<div class="hf-panel hf-cite" id="hf-cite"><h2 class="hf-label">Cite This Version</h2><p class="hf-citation">Cross, K. (2026). Six Control Laws for Multi-Shaker Random Vibration: How Each Scores on the Open Benchmark Set. <em>Hertzforge Journal</em> 1, <span class="hf-nowrap">2026-009</span>, version 1. <a href="https://doi.org/10.5281/zenodo.24311107" rel="noopener">https://doi.org/10.5281/zenodo.24311107</a></p><p class="hf-cite-files"><a class="btn btn-ghost btn-sm" href="2026-009-v1.bib" download="2026-009-v1.bib">BibTeX</a><a class="btn btn-ghost btn-sm" href="2026-009-v1.ris" download="2026-009-v1.ris">RIS</a></p><details><summary>Show the BibTeX entry</summary><pre><code>@article{cross2026hf2026009v1,
+  author = {Cross, Kevin},
+  title = {{Six Control Laws for Multi-Shaker Random Vibration: How Each Scores on the Open Benchmark Set}},
+  journal = {Hertzforge Journal},
+  year = {2026},
+  volume = {1},
+  number = {2026-009},
+  note = {Version 1},
+  doi = {10.5281/zenodo.24311107},
+  url = {https://hertzforge.com/journal/2026-009/v1/}
+}
+</code></pre></details></div>
+<div class="hf-downloads" id="hf-downloads"><h2 class="hf-label">Downloads</h2><ul class="dl"><li><a href="2026-009-v1.html" download="2026-009-v1.html">The Article in One File</a><span class="size">1.5 MB</span><span class="d">Opens without a network connection. It asks nothing of any server, so it can be carried onto a closed network.</span></li><li><a href="2026-009-v1.pdf" download="2026-009-v1.pdf">PDF Print Copy</a><span class="size">549 kB</span><span class="d">Static figures, from the same source as this page.</span></li><li><a href="2026-009-v1-bundle.zip" download="2026-009-v1-bundle.zip">Data and Code Bundle</a><span class="size">51 kB</span><span class="d">The data behind every figure and the code that draws it, with what is needed to run it again.</span></li></ul></div>
+</section>
+<nav class="hf-contents" id="hf-contents" aria-label="Contents">
+<details>
+<summary>Contents</summary>
+<ul>
+<li><a href="#summary" id="toc-summary">Summary</a></li>
+<li><a href="#the-six-laws" id="toc-the-six-laws">1. The Six Laws</a></li>
+<li><a href="#the-study" id="toc-the-study">2. The Study</a></li>
+<li><a href="#results" id="toc-results">3. Results</a>
+<ul>
+<li><a href="#default-checks" id="toc-default-checks">3.1 Default Checks</a></li>
+<li><a href="#scores-by-stage" id="toc-scores-by-stage">3.2 Scores by Stage</a></li>
+<li><a href="#tuning" id="toc-tuning">3.3 Tuning</a></li>
+<li><a href="#level-dependent-structures" id="toc-level-dependent-structures">3.4 Level-Dependent Structures</a></li>
+<li><a href="#response-measured-again" id="toc-response-measured-again">3.5 Response Measured Again</a></li>
+</ul></li>
+<li><a href="#limits" id="toc-limits">4. Limits</a></li>
+<li><a href="#contribution-statement" id="toc-contribution-statement">Contribution Statement</a></li>
+<li><a href="#how-this-was-made" id="toc-how-this-was-made">How This Was Made</a></li>
+<li><a href="#acknowledgments" id="toc-acknowledgments">Acknowledgments</a></li>
+<li><a href="#references" id="toc-references">References</a></li>
+<li><a href="#implemented-in" id="toc-implemented-in">Implemented In</a></li>
+<li><a href="#version-history" id="toc-version-history">Version History</a></li>
+</ul>
+</details>
+</nav>
+<section id="abstract" class="unnumbered unlisted hf-abstract">
+<h2 class="unnumbered unlisted">Abstract</h2>
+<p>Hertzforge, an open-source structural dynamics suite, ships six control laws for multi-shaker random vibration tests, described in a companion article. This article reports how each one scores on the Open Benchmark Set, closed loop through the real control service on its simulator, at its defaults and at one tuned setting, on structures that do not change with level (stage 1) and on the same structures with modes that soften and modes that harden with level (stage 2), on five systems and 20 generated structures, with each finding tested again by an independent audit on ten held-back structures. At the controller’s default checks, which are conservative on purpose, about nine runs in ten stopped early and completed once the checks were widened; the scores are of the widened runs. With as many shakers as control gauges, the two pseudo-inverse laws and the buzz-test law held their control gauges closely and over-tested the article’s stress by about 8 to 11 dB more than the band-average law, on every structure of both sets, and a stronger regularization chosen on structures not scored lowered the pseudo-inverse laws’ stress error there on every structure. At the strong size of stage 2 the stress error rose for five of the six laws on both sets of structures; the rise came with the softening joints, while the hardening member alone moved no law’s median by more than 0.2 dB with more control gauges than shakers. Everything here is simulation.</p>
+</section>
+<h2 id="summary">Summary</h2>
+<p>A random vibration test on one shaker has one control signal, which may be one accelerometer or a combination of several, and one target. With several shakers on one article, each shaker’s drive affects every accelerometer, and the target says not only how strong the vibration is at each accelerometer but how the motion at one point is related to the motion at another. The rule that decides the drives is the control law. Hertzforge ships six; a companion article describes each one, its equations, settings and sources <span class="citation" data-cites="primer2026">(<a href="#ref-primer2026" role="doc-biblioref">Cross 2026c</a>)</span>.</p>
+<p>This article reports how each law scores on the Open Benchmark Set: simulated test problems with a target, the limits of a fair run and a fixed scorecard <span class="citation" data-cites="obs2026">(<a href="#ref-obs2026" role="doc-biblioref">Cross 2026d</a>)</span>. Each law runs closed loop through Hertzforge’s real control service on its simulator, at its defaults and at one tuned setting, on structures that do not change with level and on the same structures with modes that soften and modes that harden as the level rises. Each result is stated against the lines of the scorecard; no law is graded as a whole. The study ran 2,880 cases on 20 generated structures and five systems, and an independent audit tested each finding on ten structures held back until the findings were written. What both found, law by law, is in Section 3.</p>
+<ul>
+<li><strong>The controller’s default checks are conservative on purpose.</strong> At those defaults 901 of 990 runs on the study’s structures stopped, and 811 of 870 on the held-back ones, most at the seventh loop, the first at full level. Once the checks were widened, all 901 completed, and 810 of the 811. That is a fact about the defaults, which the test engineer may widen for their own system, not about the laws.</li>
+<li><strong>With as many shakers as control gauges, holding the control gauges is not holding the stress.</strong> The two pseudo-inverse laws and the buzz-test law met their control gauges within about 4 dB and over-tested the article’s stress by a median 9 to 11 dB more than the band-average law on all 20 study structures, and by 7.7 to 9.1 dB on all ten held-back ones. The band-average law runs on a banded target and the others on the full line target, so each comparison is of a law with its own target.</li>
+<li><strong>Tuning.</strong> A regularization amount of 0.1, chosen on two structures that were not scored, lowered the stress error of the two pseudo-inverse laws on those systems on every structure of both sets, by a median 6.4 and 11.6 dB on the study’s linear structures and 6.3 and 9.1 dB on the held-back ones. Elsewhere tuning changed little; one change seen on the study’s structures was not borne out on the held-back ones.</li>
+<li><strong>Structures that change with level.</strong> At the realistic size the stress errors barely moved. At the strong size they rose for five of the six laws, by a median 0.8 to 1.9 dB on the study’s structures (0.8 to 1.6 dB on the held-back ones) with more control gauges than shakers, and by up to 5.8 dB (4.4 dB) with as many shakers as control gauges. The rise came with the softening joints; the hardening member alone, though it hardened as designed, moved no law’s median by more than 0.2 dB with more control gauges than shakers, and its larger moves on the system with six shakers and six control gauges did not repeat from one set of structures to the other.</li>
+</ul>
+<h2 id="the-six-laws">1. The Six Laws</h2>
+<p>The terms are those of the first article in this journal <span class="citation" data-cites="cross2026">(<a href="#ref-cross2026" role="doc-biblioref">Cross and Zwink 2026</a>)</span>. The accelerometers the controller reads and brings to their targets are the <strong>control gauges</strong>. A <strong>held-out gauge</strong> is recorded but never shown to the controller; it is used only to judge the test. A <strong>system</strong> is the article on its shakers with its gauges, as the controller sees it; the first article calls it the rig. A system is written shakers by control gauges: a 6 x 12 system has six shakers and twelve control gauges, and a <strong>square system</strong> has as many shakers as control gauges. The controller works line by line on a grid of narrow frequency slices, and what it knows of the system is the <strong>measured frequency response</strong>: on each line, the acceleration at each control gauge per volt of drive at each shaker, measured at the start of the run, about 20 dB under the target, and by default kept for the whole run. The target at the control gauges is a spectrum for each gauge and, for each pair, a cross spectrum that carries their coherence and phase. <a href="#tbl-laws" class="quarto-xref">Table&nbsp;1</a> lists the six laws; the companion article gives each one in full <span class="citation" data-cites="primer2026">(<a href="#ref-primer2026" role="doc-biblioref">Cross 2026c</a>)</span>.</p>
+<div id="tbl-laws" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[16,19,37,22,6]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-laws-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: The six control laws Hertzforge ships for multi-shaker random vibration, the published source of each as the companion article credits it, and the section of the companion article that describes each (“Primer”) <span class="citation" data-cites="primer2026">(<a href="#ref-primer2026" role="doc-biblioref">Cross 2026c</a>)</span>.
+</figcaption>
+<div aria-describedby="tbl-laws-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 5">
+<table class="caption-top">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 19%">
+<col style="width: 37%">
+<col style="width: 22%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Law</th>
+<th style="text-align: left;">Code name</th>
+<th style="text-align: left;">What it does</th>
+<th style="text-align: left;">Source</th>
+<th style="text-align: left;">Primer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Pseudo-inverse, closed loop (the default)</td>
+<td style="text-align: left;"><code>pinv_closed</code></td>
+<td style="text-align: left;">Inverts the measured frequency response, regularized, and corrects the drive every loop from the measured response</td>
+<td style="text-align: left;">Smallwood <span class="citation" data-cites="smallwood1999">(<a href="#ref-smallwood1999" role="doc-biblioref">Smallwood 1999</a>)</span>; regularization after Schultz <span class="citation" data-cites="schultz2018">(<a href="#ref-schultz2018" role="doc-biblioref">Schultz 2019</a>)</span></td>
+<td style="text-align: left;">2.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pseudo-inverse, open loop</td>
+<td style="text-align: left;"><code>pinv_open</code></td>
+<td style="text-align: left;">Plays the same inverse every loop with no correction</td>
+<td style="text-align: left;">The same</td>
+<td style="text-align: left;">2.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Shape-constrained</td>
+<td style="text-align: left;"><code>shape_svd</code></td>
+<td style="text-align: left;">Drives, on each line, only the patterns of shaker drive the system responds to most</td>
+<td style="text-align: left;">Schultz and Avitabile <span class="citation" data-cites="schultz2019 schultz2020">(<a href="#ref-schultz2019" role="doc-biblioref">Schultz and Avitabile 2019</a>, <a href="#ref-schultz2020" role="doc-biblioref">2020</a>)</span></td>
+<td style="text-align: left;">2.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Buzz-test matched</td>
+<td style="text-align: left;"><code>buzz_match</code></td>
+<td style="text-align: left;">Keeps the target’s spectra and takes the coherence and phase between gauges from the article’s own response to uncorrelated drive</td>
+<td style="text-align: left;">Daborn <span class="citation" data-cites="daborn2014">(<a href="#ref-daborn2014" role="doc-biblioref">Daborn 2014</a>)</span>, as stated by Schultz <span class="citation" data-cites="schultz2018">(<a href="#ref-schultz2018" role="doc-biblioref">Schultz 2019</a>)</span></td>
+<td style="text-align: left;">2.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Minimum drive</td>
+<td style="text-align: left;"><code>min_drive</code></td>
+<td style="text-align: left;">Chooses the coherence and phase between gauges that need the least drive to meet the spectra</td>
+<td style="text-align: left;">Coletti, Davis and Schultz <span class="citation" data-cites="coletti2026">(<a href="#ref-coletti2026" role="doc-biblioref">Coletti et al. 2026</a>)</span>; Smallwood <span class="citation" data-cites="smallwood2007 smallwood2013">(<a href="#ref-smallwood2007" role="doc-biblioref">Smallwood 2007</a>; <a href="#ref-smallwood2013" role="doc-biblioref">Smallwood 2013</a>)</span></td>
+<td style="text-align: left;">2.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Band average</td>
+<td style="text-align: left;"><code>band_average</code></td>
+<td style="text-align: left;">Fits one drive matrix per one-sixth-octave band so that band averages, not single lines, match the target</td>
+<td style="text-align: left;">Brandon Zwink</td>
+<td style="text-align: left;">2.7</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p><strong>The closed loop four of them share.</strong> <code>pinv_closed</code>, <code>shape_svd</code>, <code>buzz_match</code> and <code>min_drive</code> run the same correction and differ in the target and the directions they feed it. Following Smallwood <span class="citation" data-cites="smallwood1999">(<a href="#ref-smallwood1999" role="doc-biblioref">Smallwood 1999</a>)</span>, the loop never corrects the drive matrix directly, which could ask for negative power: it splits the target into a triangular factor, keeps a running copy of that factor, corrects the copy from the error each loop with a convergence factor of 0.5, and forms the drive from the copy in a way that cannot ask for negative power. Where the system has fewer independent directions than control gauges, the loop settles at the response closest to the target that the system can produce. Its safeguards and its known limits are in the companion article’s Sections 2.1 and 6 <span class="citation" data-cites="primer2026">(<a href="#ref-primer2026" role="doc-biblioref">Cross 2026c</a>)</span>.</p>
+<p><strong>The controller’s protective checks.</strong> Whatever law runs, the controller checks every drive the law returns, holds each drive’s change to +3.5 dB and -6 dB a loop (the change cap), holds each drive under its voltage ceiling, and can end a run (Section 3 of the companion article <span class="citation" data-cites="primer2026">(<a href="#ref-primer2026" role="doc-biblioref">Cross 2026c</a>)</span>). Three checks matter here. The <strong>growing-error check</strong>, on which most runs at the defaults ended, is given in full in Section 3.1. The <strong>drive-change check</strong> aborts a run when the change cap has held a drive back on 10 or more lines in 5 of the last 10 drives the law produced and the controller accepted. The <strong>drive-voltage abort</strong> is the drive ceiling plus 1 dB: with the problems’ ceiling of 5.0 V RMS, 5.61 V RMS. It is a rule of the controller applied to the problem’s ceiling, not a separate setting. A run climbs to full level in steps: by default a soft start, then -12, -9, -6 and -3 dB, one loop each, then full level; in the study’s runs the first loop at full level is loop 7.</p>
+<h2 id="the-study">2. The Study</h2>
+<p><strong>The runs.</strong> Each law runs closed loop through Hertzforge’s real multiple-shaker random control service, the same code that runs a test, on the software’s simulator. Nothing in the loop is re-implemented for the study: identification, the estimates, the level steps, the law calls, the checks, the caps and the protections are the service’s own. A tap on the simulator records the response at every gauge, held-out gauges included, as the simulator played it. Where an identification gate fails, the run goes on and the failure is recorded, because the gate is a property of the system and not of the law. The laws and the simulator are those of Hertzforge’s main branch at commit <code>b587d5a1</code>. The runs were made by two programs written for the study, a runner that runs one case through the control service and a player that plays a structure’s response on the simulator, built on top of that commit at commit <code>646c4ca4</code>; nothing in the laws or the simulator differs between the two. The same programs are the examples <code>x4_runner</code> and <code>obs_play</code> of the crate <code>sds-control</code> in the Hertzforge repository, main branch at commit 268c3bfd, where six cases rerun gave scorecards equal in every number to the study’s. The band-average law was run as shipped at commit <code>b587d5a1</code>, and its author took no part in designing, running or analyzing the study.</p>
+<p><strong>The problems.</strong> The problems are the MIMO Random suite of the Open Benchmark Set, version 0.2, Frames tier, in problem format 0.2-draft, under the fair-run limits <code>frames-fair-run/0.1-draft</code> <span class="citation" data-cites="obsdata2026">(<a href="#ref-obsdata2026" role="doc-biblioref">Cross 2026b</a>)</span>; the scorecards record the set’s version by its draft name, 0.2-draft. The benchmark article describes the problems in full <span class="citation" data-cites="obs2026">(<a href="#ref-obs2026" role="doc-biblioref">Cross 2026d</a>)</span>. In short: one frame article with jointed parts whose modes soften as the level rises and one member, a mass on two thin strips clamped at both ends, whose mode hardens. Stage 1 is the article with both effects switched off, so it does not change with level. Stage 2 is the same article with both effects on, at a realistic and at a strong size of change. The article on the shakers is a second unit of the same design as the one measured in service, and the target is the service response of the first unit at the control gauges.</p>
+<p>The study uses five systems: three with more control gauges than shakers (3 x 12, 6 x 12 and 12 x 24) and two square systems (6 x 6 and 12 x 12). The benchmark’s problem identifiers write control gauges first, so the 6 x 12 system is problem <code>frame-12x6</code>. The two classes are never pooled. No system with fewer control gauges than shakers is in this version of the suite.</p>
+<p><strong>The structures.</strong> Each structure is generated from a whole number, its seed, which is its label in the data set; structure 4 is the one generated from seed 4. A seed is not a level. The study uses 20 structures: 0 to 9, 12 to 15, 17, 19, and 32 to 35, which replace 10, 11, 16 and 18, on which the hardening member cannot be placed (the benchmark’s rule). Structures 30 and 31 are used only to choose the tuned settings and are never scored.</p>
+<p><strong>The cases.</strong> Every case is one law on one structure, system and stage, run once (<a href="#tbl-cases" class="quarto-xref">Table&nbsp;2</a>).</p>
+<div id="tbl-cases" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[44,11,16,19,10]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-cases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: The study’s cases. “First 10” is structures 0 to 9. Each case is run once, with one sequence of simulator noise fixed by its name, so the run at default checks and the run with the checks widened play the same simulator noise.
+</figcaption>
+<div aria-describedby="tbl-cases-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 5">
+<table class="caption-top">
+<colgroup>
+<col style="width: 44%">
+<col style="width: 11%">
+<col style="width: 16%">
+<col style="width: 19%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Runs</th>
+<th style="text-align: left;">Structures</th>
+<th style="text-align: left;">Systems</th>
+<th style="text-align: left;">Stages</th>
+<th style="text-align: right;">Cases</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Each law at its defaults, the frequency response measured once and kept</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">all five</td>
+<td style="text-align: left;">linear, realistic, strong</td>
+<td style="text-align: right;">1,800</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">The same, with only the softening joints or only the hardening member active</td>
+<td style="text-align: left;">first 10</td>
+<td style="text-align: left;">6 x 12, 6 x 6</td>
+<td style="text-align: left;">both sizes</td>
+<td style="text-align: right;">480</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Each law with the frequency response measured again during the run</td>
+<td style="text-align: left;">first 10</td>
+<td style="text-align: left;">6 x 12, 6 x 6</td>
+<td style="text-align: left;">realistic, strong</td>
+<td style="text-align: right;">240</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Each law at its one tuned setting</td>
+<td style="text-align: left;">first 10</td>
+<td style="text-align: left;">6 x 12, 6 x 6</td>
+<td style="text-align: left;">linear, realistic, strong</td>
+<td style="text-align: right;">360</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">All</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">2,880</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>With the frequency response measured again, the update is blended half and half with the identification’s every loop; <code>band_average</code> also has its own update (<code>use_tf_update</code>) switched on. Each law keeps its own target, as a test would: <code>band_average</code> runs on the banded specification (one-third-octave values at each control gauge, with no cross terms), which is its native form, and the five line-by-line laws run on the full line target, a full spectral matrix with its cross spectra. A comparison of <code>band_average</code> with another law is therefore a comparison of two laws each with its own target.</p>
+<p><strong>The checks.</strong> On structures 0 to 4, every case is first run with the controller’s checks at their defaults (Section 1) and no alarm or abort lines, since the target cannot be reached exactly and the benchmark scores tolerance on the scorecard, not at run time. Where that run stops, the case is run again with the checks widened so the run completes, with the same noise. On the other structures only the widened run is made. Widened means: the growing-error floor raised to 1,000 dB, so that check never acts; no limit on the lines outside the abort lines or on the lines the change cap holds back; and the overload indicator at the full input range. The drive-voltage abort, the drive ceiling of 5.0 V RMS and the change cap itself stay at their defaults. The result of a case is its widened run where it completed, else its completed run at default checks. A stopped run is not a result.</p>
+<p><strong>The tuned settings.</strong> Each law has one tuned setting for each class of system, chosen before any study structure was scored, on structures 30 and 31 only, systems 6 x 12 and 6 x 6, the linear and strong stages, from a grid of points per law with the defaults among them (336 runs, checks widened). The rule was fixed in code before those runs: the lowest mean error at the held-out gauges over the four tuning cases, and among the points within 0.10 dB of it, the one with the smallest mean level error. The stress, which a laboratory cannot measure, is never read. <a href="#tbl-tuned" class="quarto-xref">Table&nbsp;3</a> gives the choice; the tuning runs themselves are not part of the published records. The tuned settings were chosen on a build whose control-law, simulator and controller code is identical to the study’s.</p>
+<div id="tbl-tuned" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[22,39,39]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tuned-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: The tuned setting of each law, by class of system: the systems with more control gauges than shakers, and the square systems. Every other setting is the law’s default. The rule picked the defaults for <code>band_average</code> on both classes.
+</figcaption>
+<div aria-describedby="tbl-tuned-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 3">
+<table class="caption-top">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 39%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Law</th>
+<th style="text-align: left;">More control gauges</th>
+<th style="text-align: left;">Square</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>pinv_closed</code></td>
+<td style="text-align: left;">truncated, amount 0.1</td>
+<td style="text-align: left;">Tikhonov, amount 0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pinv_open</code></td>
+<td style="text-align: left;">Tikhonov, amount 0.01</td>
+<td style="text-align: left;">truncated, amount 0.1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>shape_svd</code></td>
+<td style="text-align: left;">ratio 0.1</td>
+<td style="text-align: left;">ratio 0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>buzz_match</code></td>
+<td style="text-align: left;">coherence floor 0.2</td>
+<td style="text-align: left;">coherence floor 0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>min_drive</code></td>
+<td style="text-align: left;">fixed trade-off 10⁻⁴</td>
+<td style="text-align: left;">fixed trade-off 0.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>band_average</code></td>
+<td style="text-align: left;">its defaults</td>
+<td style="text-align: left;">its defaults</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p><strong>Scores.</strong> Each run is scored by the benchmark’s scorer, version 0.2.1-draft (SHA-256 <code>a06e6beb...</code>), which reads the problem and the run’s records and writes a fixed scorecard <span class="citation" data-cites="obs2026">(<a href="#ref-obs2026" role="doc-biblioref">Cross 2026d</a>)</span>. This article uses six of its lines, each in decibels:</p>
+<ul>
+<li><strong>Control gauges:</strong> the RMS, over the control gauges and the one-third-octave bands, of the error of each gauge’s band against the target’s. Every law is scored against the same target.</li>
+<li><strong>Held-out gauges:</strong> the same at the held-out gauges, against their response in service.</li>
+<li><strong>Level:</strong> the mean of those band errors over the control and held-out gauges; positive is a test too strong.</li>
+<li><strong>Worst over-test:</strong> the largest of them.</li>
+<li><strong>Stress error:</strong> for every element of the article, its RMS stress on the shakers against its RMS stress in service, in decibels; the stress error is the RMS of those errors over the elements. 0 dB is a perfect match, and lower is closer.</li>
+<li><strong>Stress bias:</strong> the mean of the same errors; positive is stress too high.</li>
+</ul>
+<p><strong>How results are given.</strong> A structure’s value is the mean over the systems of the class; the median and quartiles are over structures; counts are of structures on which a difference passes 0.2 dB either way. A difference under 0.2 dB is not claimed: the simulator’s equalized step alone leaves about 0.13 dB at the 95th percentile. A change from the linear structure to stage 2 is taken on the same structure, system and law. Each table and figure of Section 3 is written by <code>code/study_results.py</code> from the scorecards, which are published with the audit’s record as the results of the study and its audit <span class="citation" data-cites="results2026">(<a href="#ref-results2026" role="doc-biblioref">Cross 2026a</a>)</span>.</p>
+<p><strong>The audit.</strong> The study’s findings were tested on ten structures held back from everyone until the findings were written down: 20 to 23 and 26 to 28, with 50 and 51 replacing 25 and 29 (the hardening member could not be placed) and 52 replacing 24. At the strong size one mode of structure 24 could rise past the simulator’s highest frequency, so the simulator refused it; its completed runs count in no verdict. A separate agent, which built none of the study, generated and checked those structures with the set’s own code and ran them through the study’s own runner, build and scorer: each law at its defaults and at its tuned setting, and the runs with one effect only; it did not run the frequency response measured again or the same case at both check settings. For each finding it fixed its test before the held-back structures were run. A finding <strong>holds</strong> where the held-back median has the same sign and lies inside the study’s quartiles; where it has the same sign and lies outside, this article says whether it came out larger or smaller. The audit’s record, its held-back problems and its scorecards are part of the results record <span class="citation" data-cites="results2026">(<a href="#ref-results2026" role="doc-biblioref">Cross 2026a</a>)</span>. The held-back numbers below are the audit’s, from the same scorecard lines.</p>
+<h2 id="results">3. Results</h2>
+<p>Every number in this section is from the study’s 20 structures, or the first ten where the runs were made on ten, with the checks widened unless it says otherwise; the held-back structures’ numbers are given beside them.</p>
+<h3 id="default-checks">3.1 Default Checks</h3>
+<p>The controller’s checks are protective, and their defaults are conservative on purpose: they protect the shakers, the amplifiers and the article. Widening them for a real test is the test engineer’s decision for that test’s hardware. The study widened them because a simulator has no hardware to protect. A run that a default check stopped is a fact about the default, not a failure of the law, and this article recommends no new default.</p>
+<p>The check that stopped most runs is the growing-error check (<code>check_divergence</code> in the control service, commit <code>646c4ca4</code>). It ends a run when one control gauge’s error, against what the system can reach, stays at or above 3 dB without improving on its best by 0.1 dB for five judged loops. It counts the loops of the level steps as well as the loops at full level. The error at the low steps of these problems is above 3 dB, so the count reaches five at the first loop at full level, loop 7, where the error was near 4 dB.</p>
+<p>On structures 0 to 4, 990 runs were made at default checks and 901 stopped: 840 on the growing-error check and 61 on the drive-change check. Every stop came at full level: most at the seventh loop (719), 864 by loop 12, a few as late as the 34th. All 901 cases completed once the checks were widened. The 12 cases that completed at default checks and were also run widened gave identical scorecards; the audit did not run such pairs. On the held-back structures the same held: 811 of 870 runs stopped (792 on the growing-error check, 19 on the drive-change check), 654 at the seventh loop, 785 by loop 12, a few as late as the 35th, and 810 of the 811 completed once widened. <a href="#tbl-outcomes" class="quarto-xref">Table&nbsp;4</a> gives the study’s counts by law.</p>
+<div id="tbl-outcomes" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[22,20,11,15,16,16]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-outcomes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: Runs at the controller’s default checks, the study’s structures 0 to 4: the runs, those completed, those stopped for a growing error and those stopped for a drive change. “Measured again” is the frequency response measured again during the run. Data: <code>data/study_outcomes.csv</code>; the held-back structures’ counts are in <code>data/audit_outcomes.csv</code>.
+</figcaption>
+<div aria-describedby="tbl-outcomes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 6">
+<table class="caption-top">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 20%">
+<col style="width: 11%">
+<col style="width: 15%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Law</th>
+<th style="text-align: left;">Settings</th>
+<th style="text-align: right;">Runs</th>
+<th style="text-align: right;">Completed</th>
+<th style="text-align: right;">Growing error</th>
+<th style="text-align: right;">Drive change</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>pinv_closed</code></td>
+<td style="text-align: left;">defaults</td>
+<td style="text-align: right;">115</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">87</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pinv_open</code></td>
+<td style="text-align: left;">defaults</td>
+<td style="text-align: right;">115</td>
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">78</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>shape_svd</code></td>
+<td style="text-align: left;">defaults</td>
+<td style="text-align: right;">115</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">115</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>buzz_match</code></td>
+<td style="text-align: left;">defaults</td>
+<td style="text-align: right;">115</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">109</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>min_drive</code></td>
+<td style="text-align: left;">defaults</td>
+<td style="text-align: right;">115</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">95</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>band_average</code></td>
+<td style="text-align: left;">defaults</td>
+<td style="text-align: right;">115</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">110</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">All six</td>
+<td style="text-align: left;">tuned</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">171</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">All six</td>
+<td style="text-align: left;">measured again</td>
+<td style="text-align: right;">120</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">75</td>
+<td style="text-align: right;">44</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>With the checks widened, 2,800 of 2,803 runs completed. The other three, and one of the 1,681 widened runs on the held-back structures (structure 23, linear), reached the drive-voltage abort of 5.61 V RMS, which the study did not widen. All four are <code>min_drive</code> at its defaults on the 3 x 12 system: the study’s structures 7 (linear and realistic) and 35 (linear). These cases have no result. They are the extreme of what <code>min_drive</code> does on that system at its default settings: on the linear structure its control gauges read low (level -11.00 dB on the study’s structures, -13.32 on the held-back ones) while the stress reads high (stress bias +19.27 and +17.49 dB), because it puts its drive into narrow lines that over-stress the article while the band averages at the gauges stay under the target, as the audit’s record describes <span class="citation" data-cites="results2026">(<a href="#ref-results2026" role="doc-biblioref">Cross 2026a</a>)</span>.</p>
+<h3 id="scores-by-stage">3.2 Scores by Stage</h3>
+<p><a href="#tbl-stage1" class="quarto-xref">Table&nbsp;5</a> and <a href="#tbl-stage1-stress" class="quarto-xref">Table&nbsp;6</a> give each law’s scorecard on the linear structure, and <a href="#fig-stress" class="quarto-xref">Figure&nbsp;1</a> each law’s stress error at every stage. The values at stage 2 on every line are in <code>data/study_scores.csv</code>, and the held-back structures’ in <code>data/audit_scores.csv</code>.</p>
+<div id="tbl-stage1" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[19,25,14,14,14,14]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stage1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: Each law at its defaults on the linear structure (stage 1), the study’s 20 structures: the gauge lines of the scorecard, medians over structures, in dB. The columns are the error at the control gauges and at the held-out gauges, the level, and the worst over-test. “More control gauges” is the 3 x 12, 6 x 12 and 12 x 24 systems; “square” is the 6 x 6 and 12 x 12 systems. Every law is scored against the same target; <code>band_average</code> runs on its banded form, the others on the line target. Data: <code>data/study_scores.csv</code>.
+</figcaption>
+<div aria-describedby="tbl-stage1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 6">
+<table class="caption-top">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 25%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Law</th>
+<th style="text-align: left;">Systems</th>
+<th style="text-align: right;">Control</th>
+<th style="text-align: right;">Held-out</th>
+<th style="text-align: right;">Level</th>
+<th style="text-align: right;">Over-test</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>pinv_closed</code></td>
+<td style="text-align: left;">more control gauges</td>
+<td style="text-align: right;">6.58</td>
+<td style="text-align: right;">6.44</td>
+<td style="text-align: right;">-0.25</td>
+<td style="text-align: right;">22.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pinv_open</code></td>
+<td style="text-align: left;">more control gauges</td>
+<td style="text-align: right;">5.93</td>
+<td style="text-align: right;">5.99</td>
+<td style="text-align: right;">-0.95</td>
+<td style="text-align: right;">21.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>shape_svd</code></td>
+<td style="text-align: left;">more control gauges</td>
+<td style="text-align: right;">7.13</td>
+<td style="text-align: right;">6.87</td>
+<td style="text-align: right;">-2.07</td>
+<td style="text-align: right;">20.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>buzz_match</code></td>
+<td style="text-align: left;">more control gauges</td>
+<td style="text-align: right;">6.04</td>
+<td style="text-align: right;">6.28</td>
+<td style="text-align: right;">+0.35</td>
+<td style="text-align: right;">23.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>min_drive</code></td>
+<td style="text-align: left;">more control gauges</td>
+<td style="text-align: right;">10.43</td>
+<td style="text-align: right;">11.46</td>
+<td style="text-align: right;">-3.60</td>
+<td style="text-align: right;">28.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>band_average</code></td>
+<td style="text-align: left;">more control gauges</td>
+<td style="text-align: right;">4.69</td>
+<td style="text-align: right;">5.35</td>
+<td style="text-align: right;">-0.64</td>
+<td style="text-align: right;">19.4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>pinv_closed</code></td>
+<td style="text-align: left;">square</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">10.73</td>
+<td style="text-align: right;">+4.24</td>
+<td style="text-align: right;">37.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pinv_open</code></td>
+<td style="text-align: left;">square</td>
+<td style="text-align: right;">4.53</td>
+<td style="text-align: right;">11.55</td>
+<td style="text-align: right;">+5.42</td>
+<td style="text-align: right;">38.8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>shape_svd</code></td>
+<td style="text-align: left;">square</td>
+<td style="text-align: right;">6.03</td>
+<td style="text-align: right;">6.47</td>
+<td style="text-align: right;">-0.73</td>
+<td style="text-align: right;">23.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>buzz_match</code></td>
+<td style="text-align: left;">square</td>
+<td style="text-align: right;">3.96</td>
+<td style="text-align: right;">10.77</td>
+<td style="text-align: right;">+4.25</td>
+<td style="text-align: right;">37.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>min_drive</code></td>
+<td style="text-align: left;">square</td>
+<td style="text-align: right;">3.37</td>
+<td style="text-align: right;">7.76</td>
+<td style="text-align: right;">+1.86</td>
+<td style="text-align: right;">29.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>band_average</code></td>
+<td style="text-align: left;">square</td>
+<td style="text-align: right;">2.12</td>
+<td style="text-align: right;">5.53</td>
+<td style="text-align: right;">+0.52</td>
+<td style="text-align: right;">22.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<div id="tbl-stage1-stress" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[19,25,16,24,16]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-stage1-stress-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: The stress of the same runs as <a href="#tbl-stage1" class="quarto-xref">Table&nbsp;5</a>: the stress error, median over structures with its quartiles in brackets, and the stress bias, in dB, on the systems with more control gauges than shakers (“more”) and on the square systems. Data: <code>data/study_scores.csv</code>.
+</figcaption>
+<div aria-describedby="tbl-stage1-stress-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 5">
+<table class="caption-top">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 25%">
+<col style="width: 16%">
+<col style="width: 24%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Law</th>
+<th style="text-align: right;">Error, more</th>
+<th style="text-align: right;">Bias, more</th>
+<th style="text-align: right;">Error, square</th>
+<th style="text-align: right;">Bias, square</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>pinv_closed</code></td>
+<td style="text-align: right;">3.69 [3.25, 4.41]</td>
+<td style="text-align: right;">-0.34</td>
+<td style="text-align: right;">11.68 [11.02, 12.99]</td>
+<td style="text-align: right;">+11.08</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pinv_open</code></td>
+<td style="text-align: right;">3.39 [3.08, 3.90]</td>
+<td style="text-align: right;">-0.64</td>
+<td style="text-align: right;">14.29 [12.55, 15.90]</td>
+<td style="text-align: right;">+13.15</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>shape_svd</code></td>
+<td style="text-align: right;">4.45 [3.74, 5.03]</td>
+<td style="text-align: right;">-2.92</td>
+<td style="text-align: right;">3.55 [2.94, 4.13]</td>
+<td style="text-align: right;">-1.84</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>buzz_match</code></td>
+<td style="text-align: right;">3.15 [2.99, 3.69]</td>
+<td style="text-align: right;">-0.02</td>
+<td style="text-align: right;">11.71 [10.79, 13.44]</td>
+<td style="text-align: right;">+10.94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>min_drive</code></td>
+<td style="text-align: right;">8.44 [7.13, 9.63]</td>
+<td style="text-align: right;">+5.99</td>
+<td style="text-align: right;">6.01 [5.10, 7.84]</td>
+<td style="text-align: right;">+4.37</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>band_average</code></td>
+<td style="text-align: right;">3.29 [2.93, 3.60]</td>
+<td style="text-align: right;">-1.94</td>
+<td style="text-align: right;">2.87 [2.65, 3.58]</td>
+<td style="text-align: right;">-0.12</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<div id="fig-stress" class="quarto-float quarto-figure quarto-figure-center" data="data/study_scores.csv" alt="Two panels, one per class of system, each with the six laws along the horizontal axis and the stress error in dB from 2 to 16 on the vertical axis. Each law has three markers: a filled blue circle with a solid bar for the linear structure, an open green square with a dashed bar for the realistic size, an open orange triangle with a dotted bar for the strong size. Left, more control gauges than shakers: pinv_closed, pinv_open, shape_svd, buzz_match and band_average lie between about 3 and 5.3 dB at every stage; min_drive sits near 8.4, 8.5 and 10 dB. The strong-size triangles of pinv_closed, pinv_open, buzz_match and band_average are above their circles; shape_svd's is below. Right, square systems: pinv_closed, pinv_open and buzz_match lie between about 10 and 15 dB; min_drive at 6, 7.7 and 12 dB; shape_svd and band_average between about 2.9 and 5.8 dB, band_average's strong-size triangle at 5.8 the highest of its three.">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-stress-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="hf-figure hf-figure-given" data-figure="fig1_stress_by_law">
+<img class="hf-static" src="figures/fig1_stress_by_law.png" alt="Two panels, one per class of system, each with the six laws along the horizontal axis and the stress error in dB from 2 to 16 on the vertical axis. Each law has three markers: a filled blue circle with a solid bar for the linear structure, an open green square with a dashed bar for the realistic size, an open orange triangle with a dotted bar for the strong size. Left, more control gauges than shakers: pinv_closed, pinv_open, shape_svd, buzz_match and band_average lie between about 3 and 5.3 dB at every stage; min_drive sits near 8.4, 8.5 and 10 dB. The strong-size triangles of pinv_closed, pinv_open, buzz_match and band_average are above their circles; shape_svd's is below. Right, square systems: pinv_closed, pinv_open and buzz_match lie between about 10 and 15 dB; min_drive at 6, 7.7 and 12 dB; shape_svd and band_average between about 2.9 and 5.8 dB, band_average's strong-size triangle at 5.8 the highest of its three.">
+<p class="hf-figure-links">This figure: <a href="data/study_scores.csv" download="study_scores.csv">Data (CSV)</a> <a href="code/fig1_stress_by_law.py" download="fig1_stress_by_law.py">Code</a> <a href="figures/fig1_stress_by_law.png" download="fig1_stress_by_law.png">Picture (PNG)</a></p>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-stress-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Each law’s stress error at its defaults on the linear structure (filled circles, solid bars) and at stage 2 at the realistic size (open squares, dashed bars) and the strong size (open triangles, dotted bars), by class of system. Median over the study’s 20 structures; the bars span the quartiles. Lower is closer to the stress in service.
+</figcaption>
+</figure>
+</div>
+<p><strong>On the square systems,</strong> the two pseudo-inverse laws and <code>buzz_match</code> hold their control gauges closely (3.9 to 4.5 dB) and over-test the article’s stress. Against <code>band_average</code>, structure by structure, their stress error is higher by a median 9.25 dB (<code>pinv_closed</code>), 11.21 dB (<code>pinv_open</code>) and 9.23 dB (<code>buzz_match</code>) on all 20 study structures each, with stress bias +10.9 to +13.2 dB; the same holds on the 6 x 6 and the 12 x 12 system alone, and without the flagged structures. On the ten held-back structures it holds for <code>pinv_closed</code> (7.71 dB) and <code>buzz_match</code> (8.17 dB), on all ten each; for <code>pinv_open</code> it has the same sign on all ten and is smaller, 9.07 dB against 11.21. The comparison is of the band-average law on its banded target with the three others on the line target. The follow-up article reads the same runs by how the control problem is set up, the number of shakers and control gauges and which gauges warn of the over-test <span class="citation" data-cites="followup2026">(<a href="#ref-followup2026" role="doc-biblioref">Cross 2026e</a>)</span>.</p>
+<p><code>band_average</code> and <code>shape_svd</code> give the lowest stress error on the square systems at every stage of the study: 2.87 and 3.55 dB on the linear structure. On the linear structure <code>band_average</code> is lower than <code>shape_svd</code> by a median 0.70 dB on the study’s structures (17 of 20) and 0.49 dB on the held-back ones (6 of 10), which holds. At the realistic size it is lower by 0.49 dB on the study’s structures (14 of 20) and by a larger 0.93 dB on the held-back ones (8 of 10). At the strong size no order between them is stated: <code>shape_svd</code> was lower by a median 0.73 dB on the study’s structures (13 of 20, 4 the other way) and by 0.26 dB on the held-back ones, which split five and five.</p>
+<p><strong>On the systems with more control gauges than shakers,</strong> five laws sit between 3.15 and 4.45 dB on the linear structure. <code>band_average</code> is lower than <code>pinv_closed</code> by a median 0.56 dB (lower on 13 of 20 study structures, higher on 2) and lower than <code>shape_svd</code> by 0.97 dB (19 of 20); on the held-back structures by 0.82 dB (8 of 10) and 1.42 dB (10 of 10), and both hold. <code>band_average</code> and <code>buzz_match</code> differ by a median 0.05 dB (8 study structures one way, 7 the other), and no difference between them is claimed. <code>min_drive</code>’s stress error in this class, 8.44 dB, is carried by the 3 x 12 system, where its median is 19.94 dB (19.54 on the held-back structures); on the 6 x 12 and 12 x 24 systems its medians are 3.26 and 2.57 dB, among the others.</p>
+<p>What each law did, line by line, on the study’s linear structures:</p>
+<ul>
+<li><strong><code>pinv_closed</code></strong> held its control gauges to 6.58 dB on the systems with more control gauges, with stress near unbiased (-0.34 dB); on the square systems it held them to 3.92 dB while the held-out gauges read 10.73 dB and the stress was over by +11.08 dB.</li>
+<li><strong><code>pinv_open</code></strong> came within about 0.6 dB of <code>pinv_closed</code> on every line on the first class (stress error 3.39 against 3.69 dB on the study’s structures, 3.84 against 4.03 on the held-back ones); on the square systems its level was +5.42 dB and its stress bias +13.15 dB, and its stress error was 14.29 dB against <code>pinv_closed</code>’s 11.68 on the study’s structures, but 12.32 against 12.15 on the held-back ones, a difference under 0.2 dB, which is not claimed.</li>
+<li><strong><code>shape_svd</code></strong> ran under the target on both classes (level -2.07 and -0.73 dB), with stress errors of 4.45 and 3.55 dB and the stress under rather than over (bias -2.92 and -1.84 dB).</li>
+<li><strong><code>buzz_match</code></strong> had a stress error of 3.15 dB and a bias of -0.02 dB on the first class; on the square systems it held its control gauges to 3.96 dB with the held-out gauges at 10.77 dB and the stress over by +10.94 dB.</li>
+<li><strong><code>min_drive</code></strong> ran under the target on the first class (level -3.60 dB) with the stress over (+5.99 dB), carried by the 3 x 12 system; on the square systems, its stress bias was +4.37 dB.</li>
+<li><strong><code>band_average</code></strong>, on its banded target, held its control gauges to 4.69 and 2.12 dB and its held-out gauges to 5.35 and 5.53 dB, with worst over-tests of 19.4 and 22.5 dB and stress errors of 3.29 and 2.87 dB.</li>
+</ul>
+<h3 id="tuning">3.3 Tuning</h3>
+<p>Each law’s tuned setting against its defaults, on the same case, structures 0 to 9, systems 6 x 12 and 6 x 6 (<a href="#tbl-tuned-change" class="quarto-xref">Table&nbsp;7</a>).</p>
+<div id="tbl-tuned-change" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[18,17,15,17,17,16]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tuned-change-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: Change in the stress error from each law’s defaults to its tuned setting, same case, median over the study’s 10 structures, dB. Negative is closer to the stress in service. The count is of structures moving more than 0.2 dB that way, where it is 8 or more. Data: <code>data/study_change_tuned.csv</code>; the held-back structures’ in <code>data/audit_change_tuned.csv</code>.
+</figcaption>
+<div aria-describedby="tbl-tuned-change-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 6">
+<table class="caption-top">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 17%">
+<col style="width: 15%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Law</th>
+<th style="text-align: right;">6 x 12, linear</th>
+<th style="text-align: right;">6 x 12, strong</th>
+<th style="text-align: right;">6 x 6, linear</th>
+<th style="text-align: right;">6 x 6, realistic</th>
+<th style="text-align: right;">6 x 6, strong</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>pinv_closed</code></td>
+<td style="text-align: right;">+0.15</td>
+<td style="text-align: right;">-0.90 (8 down)</td>
+<td style="text-align: right;">-6.39 (10 down)</td>
+<td style="text-align: right;">-3.65 (10 down)</td>
+<td style="text-align: right;">-3.11 (10 down)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pinv_open</code></td>
+<td style="text-align: right;">+0.01</td>
+<td style="text-align: right;">-0.06</td>
+<td style="text-align: right;">-11.57 (10 down)</td>
+<td style="text-align: right;">-9.54 (10 down)</td>
+<td style="text-align: right;">-8.88 (10 down)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>shape_svd</code></td>
+<td style="text-align: right;">-0.53 (10 down)</td>
+<td style="text-align: right;">+0.86 (8 up)</td>
+<td style="text-align: right;">-0.00</td>
+<td style="text-align: right;">-0.12</td>
+<td style="text-align: right;">+1.03 (8 up)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>buzz_match</code></td>
+<td style="text-align: right;">+0.04</td>
+<td style="text-align: right;">-0.00</td>
+<td style="text-align: right;">-0.04</td>
+<td style="text-align: right;">+0.28</td>
+<td style="text-align: right;">-0.09</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>min_drive</code></td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">+0.06</td>
+<td style="text-align: right;">-0.72</td>
+<td style="text-align: right;">-0.54</td>
+<td style="text-align: right;">-0.46</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>band_average</code></td>
+<td style="text-align: right;">-0.00</td>
+<td style="text-align: right;">+0.03</td>
+<td style="text-align: right;">+0.00</td>
+<td style="text-align: right;">-0.00</td>
+<td style="text-align: right;">+0.05</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>On the square systems, the tuned settings of <code>pinv_closed</code> and <code>pinv_open</code>, a regularization amount of 0.1, lowered the stress error on every one of the ten study structures at every stage, and on every one of the ten held-back structures. For <code>pinv_closed</code> the medians were 6.39, 3.65 and 3.11 dB (linear, realistic, strong) on the study’s structures and 6.30, 4.71 and 4.09 on the held-back ones, larger at the strong size. For <code>pinv_open</code> they were 11.57, 9.54 and 8.88 dB, and 9.09, 10.24 and 8.26, smaller on the linear structure. The held-out gauges moved the same way, by 3.05 and 5.03 dB on the study’s linear structures. On the 6 x 12 system <code>shape_svd</code>’s tuned ratio of 0.1 lowered the stress error on the linear structure by 0.53 dB (all 10 study structures) and by a larger 0.88 dB on the held-back ones (all 10), and <code>pinv_closed</code>’s tuned setting lowered the strong size by 0.90 dB on both sets (8 and 9 of 10). On the study’s structures <code>shape_svd</code>’s tuned setting raised the 6 x 12 system’s strong size by 0.86 dB (8 of 10); the held-back structures did not bear that out (-0.26 dB, 3 of 10 up), and it is not a finding. For <code>band_average</code>, whose tuned setting is its defaults, <code>buzz_match</code>, and <code>pinv_open</code> on the 6 x 12 system, the median change on the study’s structures is under 0.2 dB.</p>
+<h3 id="level-dependent-structures">3.4 Level-Dependent Structures</h3>
+<p>This section gives the change in each law’s scores from the linear structure to stage 2, on the same structure, system and law. The benchmark article gives the same runs pooled over the six laws.</p>
+<p><strong>The article as tested is not in its service state.</strong> The member’s mode rises in service by a median +0.35 percent at the realistic size (from 0.00 to +3.23 over the study’s 20 structures) and +1.00 percent at the strong size (-0.01 to +7.44). On the shakers it rises further, by an amount the system sets (<a href="#tbl-member" class="quarto-xref">Table&nbsp;8</a>), and the square systems drive it hardest. At the strong size, pooled over the laws, the member as tested sits beyond its service state by +0.57 to +3.41 percentage points on the four systems other than 3 x 12 on the study’s structures, and by a larger +1.38 to +3.91 points on the held-back ones. The softening modes, too, fall further as tested than in service: a median -4.72 percent against -3.02 on the study’s structures at the strong size, and -4.68 against -3.02 on the held-back ones. On 10 of the 20 study structures and 6 of the 10 held-back ones, the strong member changes in service by less than a quarter of its design change of 4 percent; at the realistic size, on 9 of 20 the member changes in service by less than a quarter of 1 percent. These are the structures listed below as changing little in service.</p>
+<div id="tbl-member" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[24,19,19,19,19]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-member-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8: The hardening member’s mode, change in frequency in percent: in service, and as tested on each system (per structure the median over the six laws, then the median over structures; the last two rows with only the hardening member active, over structures 0 to 9 and the ten held-back structures). The scorer reads a rise as tested about 1.2 times high, a limit the benchmark article states. Data: <code>data/study_member_state.csv</code>, <code>data/audit_member_state.csv</code>.
+</figcaption>
+<div aria-describedby="tbl-member-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 5">
+<table class="caption-top">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Study, realistic</th>
+<th style="text-align: right;">Study, strong</th>
+<th style="text-align: right;">Held back, realistic</th>
+<th style="text-align: right;">Held back, strong</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">In service</td>
+<td style="text-align: right;">+0.35</td>
+<td style="text-align: right;">+1.00</td>
+<td style="text-align: right;">+0.28</td>
+<td style="text-align: right;">+0.97</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3 x 12</td>
+<td style="text-align: right;">+0.54</td>
+<td style="text-align: right;">+0.70</td>
+<td style="text-align: right;">+0.47</td>
+<td style="text-align: right;">+0.87</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6 x 12</td>
+<td style="text-align: right;">+0.91</td>
+<td style="text-align: right;">+1.61</td>
+<td style="text-align: right;">+1.20</td>
+<td style="text-align: right;">+2.27</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12 x 24</td>
+<td style="text-align: right;">+1.26</td>
+<td style="text-align: right;">+2.29</td>
+<td style="text-align: right;">+1.10</td>
+<td style="text-align: right;">+2.89</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6 x 6</td>
+<td style="text-align: right;">+1.94</td>
+<td style="text-align: right;">+3.80</td>
+<td style="text-align: right;">+3.20</td>
+<td style="text-align: right;">+5.22</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12 x 12</td>
+<td style="text-align: right;">+1.92</td>
+<td style="text-align: right;">+3.52</td>
+<td style="text-align: right;">+2.37</td>
+<td style="text-align: right;">+4.61</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Member only, 6 x 12</td>
+<td style="text-align: right;">+1.75</td>
+<td style="text-align: right;">+4.92</td>
+<td style="text-align: right;">+2.10</td>
+<td style="text-align: right;">+5.62</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Member only, 6 x 6</td>
+<td style="text-align: right;">+2.43</td>
+<td style="text-align: right;">+6.60</td>
+<td style="text-align: right;">+3.40</td>
+<td style="text-align: right;">+7.63</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p><strong>At the realistic size, on the systems with more control gauges than shakers,</strong> no law’s stress error changes by more than 0.2 dB at the median on the study’s structures (the largest is <code>pinv_open</code>, +0.19 dB). <strong>At the strong size</strong> it rises for five laws (<a href="#tbl-change" class="quarto-xref">Table&nbsp;9</a>). These rises are on the 6 x 12 and 12 x 24 systems; on the 3 x 12 system every law’s median change at the strong size is between -1.56 and +0.04 dB.</p>
+<div id="tbl-change" class="quarto-float quarto-figure quarto-figure-center" data-tbl-colwidths="[19,27,18,18,18]">
+<figure class="quarto-float quarto-float-tbl">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-change-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9: Change in the stress error from the linear structure to stage 2, same law, structure and system, each law at its defaults: median over the study’s 20 structures, dB; the count is of structures moving more than 0.2 dB that way, where it is 15 or more. “Member moved” is the strong size again, leaving out the structures whose member changes little in service (10 left at the strong size). Data: <code>data/study_change_linear_to_stage2.csv</code>, with quartiles, the control and held-out gauges, and the same without the flagged structures; the held-back structures’ in <code>data/audit_change_linear_to_stage2.csv</code>.
+</figcaption>
+<div aria-describedby="tbl-change-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="table-wrap" style="--cols: 5">
+<table class="caption-top">
+<colgroup>
+<col style="width: 19%">
+<col style="width: 27%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Law</th>
+<th style="text-align: left;">Systems</th>
+<th style="text-align: right;">Realistic</th>
+<th style="text-align: right;">Strong</th>
+<th style="text-align: right;">Member moved</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>pinv_closed</code></td>
+<td style="text-align: left;">more control gauges</td>
+<td style="text-align: right;">+0.01</td>
+<td style="text-align: right;">+1.16 (16 up)</td>
+<td style="text-align: right;">+1.27</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pinv_open</code></td>
+<td style="text-align: left;">more control gauges</td>
+<td style="text-align: right;">+0.19</td>
+<td style="text-align: right;">+1.32 (18 up)</td>
+<td style="text-align: right;">+1.14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>shape_svd</code></td>
+<td style="text-align: left;">more control gauges</td>
+<td style="text-align: right;">+0.04</td>
+<td style="text-align: right;">-0.28 (11 down)</td>
+<td style="text-align: right;">-0.67</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>buzz_match</code></td>
+<td style="text-align: left;">more control gauges</td>
+<td style="text-align: right;">+0.13</td>
+<td style="text-align: right;">+1.91 (18 up)</td>
+<td style="text-align: right;">+2.03</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>min_drive</code></td>
+<td style="text-align: left;">more control gauges</td>
+<td style="text-align: right;">-0.14</td>
+<td style="text-align: right;">+0.93 (16 up)</td>
+<td style="text-align: right;">+1.32</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>band_average</code></td>
+<td style="text-align: left;">more control gauges</td>
+<td style="text-align: right;">-0.05</td>
+<td style="text-align: right;">+0.77 (15 up)</td>
+<td style="text-align: right;">+0.94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>pinv_closed</code></td>
+<td style="text-align: left;">square</td>
+<td style="text-align: right;">-1.72 (18 down)</td>
+<td style="text-align: right;">+0.46</td>
+<td style="text-align: right;">+0.93</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pinv_open</code></td>
+<td style="text-align: left;">square</td>
+<td style="text-align: right;">+0.10</td>
+<td style="text-align: right;">+1.12 (15 up)</td>
+<td style="text-align: right;">+1.72</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>shape_svd</code></td>
+<td style="text-align: left;">square</td>
+<td style="text-align: right;">-0.04</td>
+<td style="text-align: right;">+0.44</td>
+<td style="text-align: right;">+0.54</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>buzz_match</code></td>
+<td style="text-align: left;">square</td>
+<td style="text-align: right;">-1.50 (16 down)</td>
+<td style="text-align: right;">+0.48</td>
+<td style="text-align: right;">+0.58</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>min_drive</code></td>
+<td style="text-align: left;">square</td>
+<td style="text-align: right;">+1.55 (17 up)</td>
+<td style="text-align: right;">+5.79 (20 up)</td>
+<td style="text-align: right;">+6.29</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>band_average</code></td>
+<td style="text-align: left;">square</td>
+<td style="text-align: right;">+0.06</td>
+<td style="text-align: right;">+2.27 (16 up)</td>
+<td style="text-align: right;">+3.31</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+<p>On the systems with more control gauges than shakers, at the strong size, the medians on the study’s structures are <code>buzz_match</code> +1.91 dB [quartiles +0.89, +2.38], <code>pinv_open</code> +1.32 [+0.81, +1.69], <code>pinv_closed</code> +1.16 [+0.25, +1.83], <code>min_drive</code> +0.93 [+0.45, +1.62] and <code>band_average</code> +0.77 [+0.21, +1.14]; on the held-back structures +1.57, +1.41, +1.29, +0.76 and +0.75 dB, up on 9, 10, 9, 7 and 9 of 10. All five hold. <code>shape_svd</code> did not change: -0.28 dB [-0.87, +0.33] on the study’s structures, with 7 up and 11 down, and -0.02 dB on the held-back ones. Leaving out the study structures whose member changes little in service, and the flagged structures as well (9 left): +1.95, +0.90, +1.27, +1.52, +0.82 and -0.77 dB. Over the same runs the control gauges moved by a median of 0.21 dB or less for every law but <code>pinv_open</code> (+0.57 dB), and the held-out gauges by 0.29 dB or less.</p>
+<p>On the square systems, at the strong size, the stress error rose for <code>min_drive</code> by a median 5.79 dB [+3.40, +6.79] on all 20 study structures, for <code>band_average</code> by 2.27 dB [+0.59, +3.52] on 16, and for <code>pinv_open</code> by 1.12 dB on 15; on the held-back structures by 4.36, 1.00 and 2.17 dB (up on 9, 8 and 9 of 10), and all three hold. Without the study structures whose member changes little in service and the flagged structures (8 left): +6.57, +3.63 and +2.60 dB. At the realistic size <code>pinv_closed</code> and <code>buzz_match</code> read a lower stress error than on the linear structure, by a median 1.72 dB (18 of 20 down) and 1.50 dB (16 down), from their high values on the linear structure, while <code>min_drive</code> rose by 1.55 dB (17 up); on the held-back structures -2.13, -1.31 and +1.17 dB (9, 9 and 7 of 10 the same way), and all three hold. On this class the control gauges moved more: at the strong size by a median +1.56 dB (<code>pinv_closed</code>), +3.17 (<code>pinv_open</code>), +1.63 (<code>buzz_match</code>) and +2.18 (<code>min_drive</code>) on the study’s structures, and by 0.18 dB or less for <code>shape_svd</code> and <code>band_average</code>.</p>
+<p><strong>Softening joints alone, and the hardening member alone.</strong> On the 6 x 12 and 6 x 6 systems, each law was also run with only one of the two effects active, on structures 0 to 9 and on the ten held-back structures (<a href="#fig-effects" class="quarto-xref">Figure&nbsp;2</a>). At the strong size on the 6 x 12 system, with the softening joints only, the stress error rose by a median 1.97 dB for <code>pinv_closed</code> (9 of 10 study structures up), 1.32 for <code>pinv_open</code>, 1.17 for <code>buzz_match</code>, 0.66 for <code>min_drive</code> and 0.59 for <code>band_average</code>; on the held-back structures by 1.50, 1.62, 1.22, 0.69 and 0.61 dB (up on 9, 9, 8, 8 and 8 of 10), and all five hold. On the 6 x 6 system softening alone raised <code>min_drive</code>’s stress error by 3.72 dB on the study’s structures and 3.93 on the held-back ones, and <code>band_average</code>’s by 1.83 and a smaller 1.10.</p>
+<p>With the hardening member only, the median change in each law’s stress error was within 0.2 dB on every case with more control gauges than shakers, at both sizes, on both sets of structures (12 of 12 law and size combinations each). On the square 6 x 6 system it was not: on the study’s structures four laws moved by more than 0.2 dB (<code>pinv_closed</code> -0.22 dB at the realistic size; <code>min_drive</code> -1.34, <code>pinv_open</code> -0.43 and <code>buzz_match</code> +0.21 dB at the strong size), and those moves did not repeat on the held-back structures, where at the strong size <code>min_drive</code> moved +1.05 dB and <code>pinv_open</code> +1.13 dB. Hardening alone moves single laws on that system by up to about 1 dB with no stable sign. As tested in these runs the member did harden: its mode rose by a median 4.92 and 6.60 percent at the strong size on the 6 x 12 and 6 x 6 systems (5.62 and 7.63 on the held-back structures; <a href="#tbl-member" class="quarto-xref">Table&nbsp;8</a>). The same runs, structure by structure, are in <code>data/study_single_effects.csv</code> and <code>data/audit_single_effects.csv</code>.</p>
+<div id="fig-effects" class="quarto-float quarto-figure quarto-figure-center" data="data/study_single_effects.csv" alt="Two panels, the 6 x 12 system on the left and the 6 x 6 system on the right, each with the six laws along the horizontal axis and the change in stress error in dB from about minus 3 to plus 5 on the vertical axis, with a grey band from minus 0.2 to 0.2. Each law has three markers: a filled blue circle with a solid bar for both effects, an open orange square with a dashed bar for softening only, an open purple diamond with a dotted bar for hardening only. Left: the circles and squares of pinv_closed, pinv_open, buzz_match, min_drive and band_average lie between about 0.6 and 2 dB, shape_svd's near minus 0.7; every diamond lies on the grey band. Right: min_drive's circle and square near 4.4 and 3.7 dB, band_average's near 2.7 and 1.8, pinv_closed's near minus 1.7 and minus 1.6, the others between about minus 0.7 and 0.9; the diamonds lie near zero except min_drive's at minus 1.3 and pinv_open's at minus 0.4.">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-effects-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="hf-figure hf-figure-given" data-figure="fig2_effects_by_law">
+<img class="hf-static" src="figures/fig2_effects_by_law.png" alt="Two panels, the 6 x 12 system on the left and the 6 x 6 system on the right, each with the six laws along the horizontal axis and the change in stress error in dB from about minus 3 to plus 5 on the vertical axis, with a grey band from minus 0.2 to 0.2. Each law has three markers: a filled blue circle with a solid bar for both effects, an open orange square with a dashed bar for softening only, an open purple diamond with a dotted bar for hardening only. Left: the circles and squares of pinv_closed, pinv_open, buzz_match, min_drive and band_average lie between about 0.6 and 2 dB, shape_svd's near minus 0.7; every diamond lies on the grey band. Right: min_drive's circle and square near 4.4 and 3.7 dB, band_average's near 2.7 and 1.8, pinv_closed's near minus 1.7 and minus 1.6, the others between about minus 0.7 and 0.9; the diamonds lie near zero except min_drive's at minus 1.3 and pinv_open's at minus 0.4.">
+<p class="hf-figure-links">This figure: <a href="data/study_single_effects.csv" download="study_single_effects.csv">Data (CSV)</a> <a href="code/fig2_effects_by_law.py" download="fig2_effects_by_law.py">Code</a> <a href="figures/fig2_effects_by_law.png" download="fig2_effects_by_law.png">Picture (PNG)</a></p>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-effects-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: The change in each law’s stress error from the linear structure, at the strong size, on the study’s structures 0 to 9: with both effects (filled circles, solid bars), with only the softening joints (open squares, dashed bars), and with only the hardening member (open diamonds, dotted bars). Median over the ten structures; the bars span the quartiles. The grey band is the 0.2 dB under which no difference is claimed.
+</figcaption>
+</figure>
+</div>
+<h3 id="response-measured-again">3.5 Response Measured Again</h3>
+<p>With the frequency response measured again every loop, on structures 0 to 9 at both sizes of stage 2, the stress error rose for the pseudo-inverse laws and <code>buzz_match</code>: on the 6 x 12 system, <code>pinv_open</code> by a median 5.56 dB at the realistic size and 4.48 dB at the strong size (all 10 structures up); on the 6 x 6 system, <code>pinv_closed</code> by 4.85 and 3.75 dB and <code>buzz_match</code> by 4.65 and 3.65 dB (all 10). <code>band_average</code>, with its own update on as well, moved by a median of 0.02 dB or less. The audit did not run these cases, so this finding rests on the study’s ten structures alone. The other medians are in <code>data/study_change_measured_again.csv</code>.</p>
+<h2 id="limits">4. Limits</h2>
+<ul>
+<li><strong>One run per case.</strong> Each case was run once, with one sequence of simulator noise. How much a score moves from run to run on the same case is not measured; the spread given is over structures only.</li>
+<li><strong>The checks were widened.</strong> 97 percent of the results (2,800 of 2,877) are from runs with the checks widened. The scores describe what each law does when the growing-error and drive-change checks do not stop it, not what a run at the controller’s defaults would give past the first loops at full level. The comparison of a run at default checks with its widened run rests on 12 cases, two laws and the linear structure only, and was not audited.</li>
+<li><strong><code>buzz_match</code> leaves weak gauge pairs independent.</strong> A pair whose coherence under the identification is below the law’s floor is given no cross term, so its cross term starts at zero in the factor of the shared closed loop, and the loop cannot move a term at zero while its gauge reads high (the companion article’s Section 6 <span class="citation" data-cites="primer2026">(<a href="#ref-primer2026" role="doc-biblioref">Cross 2026c</a>)</span>). No run was rerun for it, and neither the study’s runs nor the audit’s isolate it.</li>
+<li><strong>The shared loop can hold a gauge high near a mode.</strong> The loop’s second form of correction will not let a cross term grow while its gauge reads high, which can hold a gauge high near a mode when the measured frequency response is off. On the companion article’s made-up structure the shipped loop does this with an independent target and with a target that has cross terms, and a line-by-line port of the published correction holds the gauge high in the same way when the target has cross terms (Section 6 of the companion article <span class="citation" data-cites="primer2026">(<a href="#ref-primer2026" role="doc-biblioref">Cross 2026c</a>)</span>); that is what was run, and no general claim is made from it. <code>pinv_closed</code>, <code>shape_svd</code> and <code>min_drive</code> ran targets with full cross terms, where the first limit does not act and this one can. No run here was rerun for it, and the study’s runs do not isolate it.</li>
+<li><strong><code>min_drive</code> keeps a floor, not an exact match.</strong> By default it may leave any control gauge up to 3 dB under its specified spectrum on average over the band, and further on single lines, since the study runs with no alarm lines; its results are read with that allowance (companion article, Section 6 <span class="citation" data-cites="primer2026">(<a href="#ref-primer2026" role="doc-biblioref">Cross 2026c</a>)</span>).</li>
+<li><strong>The tuned settings</strong> were chosen on two structures and two systems and scored on ten structures and the same two systems, on both sets of structures. Where tuning changed a score, it is shown for those cases only.</li>
+<li><strong>Simulator only.</strong> Nothing here has passed through real converters, amplifiers or shakers. Differences between laws under 0.2 dB are not claimed.</li>
+<li><strong>What the benchmark’s own limits mean here.</strong> The level rule is a stand-in for a true cubic stiffening to about a 4 percent rise; a mode follows its own amplitude where a real member follows its total motion; the envelope that sets a heavily damped mode’s level lags it; the scorer reads a member’s rise as tested about 1.2 times high. The member’s state differs from structure to structure: on half the study’s structures it changes in service by less than a quarter of its design size, and the findings on hardening rest on ten structures in each set. The structures the benchmark flags (5 and 33, driven above 30 g RMS; 15 on the 12 x 12 system at the realistic size, whose calculation under the reference drive does not settle; 1 on the square systems, where the member would yield at full level) are kept in every table. Leaving them out moves no median change from the linear structure by more than 0.4 dB; where it moves another result more, the value without them is given beside it.</li>
+<li><strong>One article.</strong> Every result is on one frame design with one hardening member. Structure 4, whose member changes most in service, is the largest rise of nearly every law on the systems with more control gauges than shakers; medians are not moved by it.</li>
+<li><strong>Targets differ by law.</strong> <code>band_average</code> runs on the banded specification, which gives no cross terms, and the other five on the line target, a full spectral matrix, so a comparison between them is a comparison of two laws each with its own target, as a test would run them.</li>
+</ul>
+<h2 class="unnumbered" id="contribution-statement">Contribution Statement</h2>
+<p>Kevin Cross is the sole author. Brandon Zwink, who wrote the band-average law, took no part in the design of this study, its runs or its analysis. Kevin Cross chose the five laws from the literature and directed their implementation in Hertzforge, and directed the study, its design rules and its analysis. The band-average law is Brandon Zwink’s: he designed it and wrote its Python implementation, which the shipped law is ported from.</p>
+<h2 class="unnumbered" id="how-this-was-made">How This Was Made</h2>
+<p>The text, the figures, the code that draws them, and the study’s runner and analysis scripts were written with Claude Code, an AI coding assistant running Anthropic’s Claude Opus models, under Kevin Cross’s direction. The author is responsible for every word, number and line of code.</p>
+<h2 class="unnumbered" id="acknowledgments">Acknowledgments</h2>
+<p>The closed-loop correction of a factor of the target, the extreme inputs and the minimum input trace are the published work of D. O. Smallwood; the regularization choices, the statement of the buzz-test method and the shape-constrained method are the published work of R. Schultz and of R. Schultz and P. Avitabile; and the Pareto-optimal target is the published work of K. Coletti, R. B. Davis and R. Schultz. These are works of Sandia National Laboratories, credited here to Sandia National Laboratories. The shape-constrained method is also the work of the University of Massachusetts Lowell, and the Pareto-optimal target of the University of Georgia. The buzz-test method is credited, as Schultz credits it, to P. M. Daborn. The band-average law is Brandon Zwink’s.</p>
+<h2 class="unnumbered" id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-coletti2026" class="csl-entry" role="listitem">
+Coletti, Keaton, R. Benjamin Davis, and Ryan Schultz. 2026. <span>“Pareto-Optimal Target Definition for Multi-Axis Random Vibration Testing.”</span> <em>Mechanical Systems and Signal Processing</em> 249: 114075. <a href="https://doi.org/10.1016/j.ymssp.2026.114075">https://doi.org/10.1016/j.ymssp.2026.114075</a>.
+</div>
+<div id="ref-results2026" class="csl-entry" role="listitem">
+Cross, Kevin. 2026a. <em>Hertzforge Open Benchmark Set, MIMO Random Suite: Results of the Control Law Study and Its Independent Audit</em>. Version 0.2. Data set, version 0.2, Zenodo. <a href="https://doi.org/10.5281/zenodo.24310746">https://doi.org/10.5281/zenodo.24310746</a>.
+</div>
+<div id="ref-obsdata2026" class="csl-entry" role="listitem">
+Cross, Kevin. 2026b. <em>Hertzforge Open Benchmark Set: MIMO Random Suite</em>. Version 0.2. Data set, version 0.2, Zenodo. <a href="https://doi.org/10.5281/zenodo.24310742">https://doi.org/10.5281/zenodo.24310742</a>.
+</div>
+<div id="ref-primer2026" class="csl-entry" role="listitem">
+Cross, Kevin. 2026c. <span>“Six Control Laws for Multi-Shaker Random Vibration: What Each Does and How It Is Built.”</span> <em>Hertzforge Journal</em> 1: 2026–07. <a href="https://doi.org/10.5281/zenodo.24291981">https://doi.org/10.5281/zenodo.24291981</a>.
+</div>
+<div id="ref-obs2026" class="csl-entry" role="listitem">
+Cross, Kevin. 2026d. <span>“The Open Benchmark Set: Public Test Problems, a Fair Run and a Scorecard for Multi-Shaker Control Laws.”</span> <em>Hertzforge Journal</em> 1: 2026–08. <a href="https://doi.org/10.5281/zenodo.24311105">https://doi.org/10.5281/zenodo.24311105</a>.
+</div>
+<div id="ref-followup2026" class="csl-entry" role="listitem">
+Cross, Kevin. 2026e. <span>“When the Control Gauges Read Right and the Stress Is Wrong: A Closed-Loop Check of the Proposed Practice for Multi-Shaker Tests.”</span> <em>Hertzforge Journal</em> 1: 2026–10. <a href="https://doi.org/10.5281/zenodo.24311109">https://doi.org/10.5281/zenodo.24311109</a>.
+</div>
+<div id="ref-cross2026" class="csl-entry" role="listitem">
+Cross, Kevin, and Brandon Zwink. 2026. <span>“What Is a Good Multi-Shaker Test? A Proposed Practice for Judging MIMO Vibration and Shock Tests on Flexible Articles.”</span> <em>Hertzforge Journal</em> 1: 2026–01. <a href="https://doi.org/10.5281/zenodo.24252422">https://doi.org/10.5281/zenodo.24252422</a>.
+</div>
+<div id="ref-daborn2014" class="csl-entry" role="listitem">
+Daborn, P. M. 2014. <span>“Smarter Dynamic Testing of Critical Structures.”</span> PhD thesis, University of Bristol.
+</div>
+<div id="ref-schultz2019" class="csl-entry" role="listitem">
+Schultz, R., and P. Avitabile. 2019. <em>Shape-Constrained Input Estimation for Multi-Shaker Vibration Testing</em>. Conference paper proposed for IMAC XXXVIII, 2020; SAND2019-12631C, OSTI 1642864. <a href="https://www.osti.gov/biblio/1642864">https://www.osti.gov/biblio/1642864</a>.
+</div>
+<div id="ref-schultz2020" class="csl-entry" role="listitem">
+Schultz, R., and P. Avitabile. 2020. <span>“Shape-Constrained Input Estimation for Efficient Multi-Shaker Vibration Testing.”</span> <em>Experimental Techniques</em> 44 (4): 409–23. <a href="https://doi.org/10.1007/s40799-020-00361-0">https://doi.org/10.1007/s40799-020-00361-0</a>.
+</div>
+<div id="ref-schultz2018" class="csl-entry" role="listitem">
+Schultz, Ryan A. 2019. <span>“A Demonstration of Force Estimation and Regularization Methods for Multi-Shaker Testing.”</span> <em>Sensors and Instrumentation, Aircraft/Aerospace, Energy Harvesting and Dynamic Environments Testing, Volume 7, Proceedings of IMAC XXXVII</em>, 229–43. <a href="https://doi.org/10.1007/978-3-030-12676-6_21">https://doi.org/10.1007/978-3-030-12676-6_21</a>.
+</div>
+<div id="ref-smallwood1999" class="csl-entry" role="listitem">
+Smallwood, D. O. 1999. <span>“Multiple Shaker Random Vibration Control: An Update.”</span> <em>Institute of Environmental Sciences and Technology Annual Meeting</em>. <a href="https://www.osti.gov/biblio/3874">https://www.osti.gov/biblio/3874</a>.
+</div>
+<div id="ref-smallwood2013" class="csl-entry" role="listitem">
+Smallwood, D. O. 2013. <span>“Minimum Input Trace for Multiple Input Multiple Output Linear Systems.”</span> <em>Journal of the IEST</em> 56 (2): 57–67. <a href="https://doi.org/10.17764/jiet.56.2.41344333010617q6">https://doi.org/10.17764/jiet.56.2.41344333010617q6</a>.
+</div>
+<div id="ref-smallwood2007" class="csl-entry" role="listitem">
+Smallwood, David O. 2007. <span>“Multiple-Input Multiple-Output (<span>MIMO</span>) Linear Systems Extreme Inputs/Outputs.”</span> <em>Shock and Vibration</em> 14 (2): 107–31. <a href="https://doi.org/10.1155/2007/701837">https://doi.org/10.1155/2007/701837</a>.
+</div>
+</div>
+<h2 class="unnumbered" id="implemented-in">Implemented In</h2>
+<p>The six laws, the control service and the simulator are in Hertzforge, github.com/Hertzforge/Hertzforge, main branch at commit b587d5a1: <code>crates/hertzforge-mimo-laws</code>, <code>crates/hertzforge-law-band-average-math</code> and <code>crates/hertzforge-mimo-random</code>. The study’s runs were made at commit 646c4ca4, which adds the runner and the player to that commit. The runner and the player are the examples <code>x4_runner</code> and <code>obs_play</code> of the crate <code>sds-control</code>, main branch at commit 268c3bfd. The problems are in the data set <span class="citation" data-cites="obsdata2026">(<a href="#ref-obsdata2026" role="doc-biblioref">Cross 2026b</a>)</span>, the scorecards and the audit’s record in the results record <span class="citation" data-cites="results2026">(<a href="#ref-results2026" role="doc-biblioref">Cross 2026a</a>)</span>, and the set’s code and documents at https://github.com/Hertzforge/benchmarks (tag v0.2).</p>
+<h2 class="unnumbered" id="version-history">Version History</h2>
+<p><strong>Version 1, 2026-11-17.</strong> DOI <a href="https://doi.org/10.5281/zenodo.24311107">10.5281/zenodo.24311107</a>. First published.</p>
+<div id="hf-history-later"></div>
+
+<section class="hf-end" id="hf-reviews"><h2>Reviews</h2><p>Review is public and signed, and stays open after publication.</p><div id="hf-reviews-static"><p>No invited review had been posted when this version was published.</p><p>Reviews posted since are listed at <a href="https://hertzforge.com/journal/2026-009/">https://hertzforge.com/journal/2026-009/</a>.</p></div><div id="hf-reviews-live"></div></section>
+<p class="hf-license" id="hf-license">Copyright 2026 Kevin Cross. Text, figures and data <a href="https://creativecommons.org/licenses/by/4.0/" rel="license noopener">CC BY 4.0</a>; code <a href="https://opensource.org/license/mit" rel="license noopener">MIT</a>.<br>Methods are published for research. Anyone who applies one to a test is responsible for protecting the equipment and the article under test.</p>
+</div></div></div></article></main>
+<footer class="site-footer dark"><svg class="trace" viewbox="0 0 1200 100" preserveaspectratio="none" aria-hidden="true" focusable="false"><path class="trace-glow" d="M0.0 50.0L1.7 49.8L3.3 50.9L5.0 52.4L6.7 53.7L8.3 54.4L10.0 54.3L11.7 53.4L13.3 52.2L15.0 51.0L16.7 50.1L18.3 49.4L20.0 49.1L21.7 48.7L23.3 48.2L25.0 47.4L26.7 46.5L28.3 45.7L30.0 45.4L31.7 45.6L33.3 46.4L35.0 47.7L36.7 49.2L38.3 50.4L40.0 51.4L41.7 51.9L43.3 52.1L45.0 52.3L46.7 52.7L48.3 53.4L50.0 54.4L51.7 55.4L53.3 56.2L55.0 56.5L56.7 56.4L58.3 56.1L60.0 55.8L61.7 55.8L63.3 56.2L65.0 57.0L66.7 57.8L68.3 58.2L70.0 58.0L71.7 57.0L73.3 55.5L75.0 54.0L76.7 53.1L78.3 53.1L80.0 53.9L81.7 55.2L83.3 56.1L85.0 55.8L86.7 53.6L88.3 49.5L90.0 44.1L91.7 38.5L93.3 34.0L95.0 31.8L96.7 32.6L98.3 36.2L100.0 41.5L101.7 47.2L103.3 52.0L105.0 54.9L106.7 55.6L108.3 54.7L110.0 53.2L111.7 52.2L113.3 52.2L115.0 53.2L116.7 54.5L118.3 55.0L120.0 53.6L121.7 49.9L123.3 44.3L125.0 38.1L126.7 32.8L128.3 30.2L130.0 31.3L131.7 36.0L133.3 42.9L135.0 50.2L136.7 55.6L138.3 57.5L140.0 55.4L141.7 50.3L143.3 43.9L145.0 38.5L146.7 36.0L148.3 37.3L150.0 42.0L151.7 48.4L153.3 54.3L155.0 57.8L156.7 57.6L158.3 54.0L160.0 48.4L161.7 42.8L163.3 39.6L165.0 40.1L166.7 44.4L168.3 51.3L170.0 58.7L171.7 64.0L173.3 65.3L175.0 62.1L176.7 54.8L178.3 45.5L180.0 36.6L181.7 30.5L183.3 28.7L185.0 31.7L186.7 38.5L188.3 47.4L190.0 56.4L191.7 63.6L193.3 67.7L195.0 68.4L196.7 66.1L198.3 61.4L200.0 55.4L201.7 48.9L203.3 42.7L205.0 37.4L206.7 33.6L208.3 31.8L210.0 32.3L211.7 35.3L213.3 40.3L215.0 46.5L216.7 52.6L218.3 57.2L220.0 59.4L221.7 58.8L223.3 55.8L225.0 52.0L226.7 49.2L228.3 49.0L230.0 52.6L231.7 59.8L233.3 69.4L235.0 79.2L236.7 86.9L238.3 90.5L240.0 88.9L241.7 82.5L243.3 72.7L245.0 61.7L246.7 51.7L248.3 44.3L250.0 40.2L251.7 39.2L253.3 40.6L255.0 43.1L256.7 46.1L258.3 49.3L260.0 52.6L261.7 56.2L263.3 59.9L265.0 63.1L266.7 64.6L268.3 63.3L270.0 58.2L271.7 49.5L273.3 38.4L275.0 27.4L276.7 19.4L278.3 16.9L280.0 21.1L281.7 31.7L283.3 46.2L285.0 61.0L286.7 72.2L288.3 76.9L290.0 74.0L291.7 64.8L293.3 52.3L295.0 40.7L296.7 33.6L298.3 33.0L300.0 38.8L301.7 48.5L303.3 58.4L305.0 64.4L306.7 63.6L308.3 55.6L310.0 42.0L311.7 26.5L313.3 13.4L315.0 6.5L316.7 7.6L318.3 16.4L320.0 30.2L321.7 45.3L323.3 57.7L325.0 64.5L326.7 64.6L328.3 59.1L330.0 50.4L331.7 41.5L333.3 35.4L335.0 33.5L336.7 36.0L338.3 42.1L340.0 49.9L341.7 57.7L343.3 64.3L345.0 68.9L346.7 71.6L348.3 72.7L350.0 72.1L351.7 69.9L353.3 65.7L355.0 59.2L356.7 50.4L358.3 40.2L360.0 29.9L361.7 21.4L363.3 16.2L365.0 15.6L366.7 19.4L368.3 26.5L370.0 34.9L371.7 42.4L373.3 47.3L375.0 48.8L376.7 47.3L378.3 44.4L380.0 41.7L381.7 41.0L383.3 43.3L385.0 48.4L386.7 55.3L388.3 62.5L390.0 68.5L391.7 72.1L393.3 73.0L395.0 71.5L396.7 68.3L398.3 64.1L400.0 59.5L401.7 54.7L403.3 49.9L405.0 45.2L406.7 41.5L408.3 39.7L410.0 41.0L411.7 46.5L413.3 56.0L415.0 68.5L416.7 81.7L418.3 92.5L420.0 98.1L421.7 96.4L423.3 87.4L425.0 72.8L426.7 56.0L428.3 40.9L430.0 31.1L431.7 28.6L433.3 33.0L435.0 42.3L436.7 52.7L438.3 60.7L440.0 63.9L441.7 61.7L443.3 55.5L445.0 48.3L446.7 43.4L448.3 43.1L450.0 48.0L451.7 56.3L453.3 65.1L455.0 70.8L456.7 70.5L458.3 63.6L460.0 51.4L461.7 37.4L463.3 25.7L465.0 20.1L466.7 22.3L468.3 31.7L470.0 45.4L471.7 59.3L473.3 69.0L475.0 71.7L476.7 66.8L478.3 55.9L480.0 42.4L481.7 30.2L483.3 22.5L485.0 20.8L486.7 24.5L488.3 31.5L490.0 38.8L491.7 43.7L493.3 44.9L495.0 42.7L496.7 38.6L498.3 34.9L500.0 33.8L501.7 36.2L503.3 41.8L505.0 49.1L506.7 56.0L508.3 60.6L510.0 61.9L511.7 59.9L513.3 55.9L515.0 51.4L516.7 48.0L518.3 46.7L520.0 47.5L521.7 49.6L523.3 51.7L525.0 52.9L526.7 52.9L528.3 51.7L530.0 50.1L531.7 49.1L533.3 49.1L535.0 49.9L536.7 50.8L538.3 50.7L540.0 48.5L541.7 44.0L543.3 37.5L545.0 30.3L546.7 24.0L548.3 20.0L550.0 19.1L551.7 21.1L553.3 25.1L555.0 29.6L556.7 33.5L558.3 36.0L560.0 37.6L561.7 39.3L563.3 42.3L565.0 47.7L566.7 55.7L568.3 65.5L570.0 75.5L571.7 83.9L573.3 89.0L575.0 90.4L576.7 88.2L578.3 83.9L580.0 78.7L581.7 73.7L583.3 69.3L585.0 64.8L586.7 59.2L588.3 51.4L590.0 41.6L591.7 30.8L593.3 21.7L595.0 17.2L596.7 19.8L598.3 30.6L600.0 48.3L601.7 69.4L603.3 88.8L605.0 101.6L606.7 104.1L608.3 95.1L610.0 76.9L611.7 54.3L613.3 33.5L615.0 20.3L616.7 18.3L618.3 28.1L620.0 46.6L621.7 68.6L623.3 87.9L625.0 99.3L626.7 100.1L628.3 90.6L630.0 74.1L631.7 55.2L633.3 38.9L635.0 28.7L636.7 25.8L638.3 29.1L640.0 35.8L641.7 42.6L643.3 46.8L645.0 47.2L646.7 44.1L648.3 39.3L650.0 34.8L651.7 32.3L653.3 32.5L655.0 34.9L656.7 38.2L658.3 40.9L660.0 42.2L661.7 42.0L663.3 41.1L665.0 40.8L666.7 42.2L668.3 45.7L670.0 50.5L671.7 55.2L673.3 58.1L675.0 57.7L676.7 53.9L678.3 47.5L680.0 40.6L681.7 35.6L683.3 34.6L685.0 38.5L686.7 46.7L688.3 57.1L690.0 67.0L691.7 73.5L693.3 74.8L695.0 70.5L696.7 61.6L698.3 50.3L700.0 39.2L701.7 30.3L703.3 25.1L705.0 23.8L706.7 25.6L708.3 29.2L710.0 33.4L711.7 37.1L713.3 39.8L715.0 41.5L716.7 42.3L718.3 42.3L720.0 41.6L721.7 40.3L723.3 38.6L725.0 37.2L726.7 36.9L728.3 38.6L730.0 42.9L731.7 49.5L733.3 57.3L735.0 64.2L736.7 67.8L738.3 66.0L740.0 58.2L741.7 45.3L743.3 30.2L745.0 17.0L746.7 9.9L748.3 12.1L750.0 24.4L751.7 45.1L753.3 69.7L755.0 92.7L756.7 108.8L758.3 114.1L760.0 107.7L761.7 91.7L763.3 70.5L765.0 49.6L766.7 33.9L768.3 26.3L770.0 27.3L771.7 34.9L773.3 45.4L775.0 54.9L776.7 60.7L778.3 61.8L780.0 59.1L781.7 55.0L783.3 52.1L785.0 52.1L786.7 55.5L788.3 61.2L790.0 66.9L791.7 70.6L793.3 70.7L795.0 67.2L796.7 61.7L798.3 56.4L800.0 53.7L801.7 55.1L803.3 60.3L805.0 67.8L806.7 74.8L808.3 78.4L810.0 76.9L811.7 69.7L813.3 58.5L815.0 45.9L816.7 34.9L818.3 28.0L820.0 26.1L821.7 28.6L823.3 33.6L825.0 38.3L826.7 40.6L828.3 39.4L830.0 35.1L831.7 29.3L833.3 24.5L835.0 22.8L836.7 25.4L838.3 32.2L840.0 41.8L841.7 52.1L843.3 60.9L845.0 66.8L846.7 69.0L848.3 68.3L850.0 65.7L851.7 62.7L853.3 60.2L855.0 58.8L856.7 58.0L858.3 57.2L860.0 55.8L861.7 53.3L863.3 49.9L865.0 46.1L866.7 42.6L868.3 40.0L870.0 38.6L871.7 38.2L873.3 38.4L875.0 38.6L876.7 38.8L878.3 39.1L880.0 39.8L881.7 41.3L883.3 43.7L885.0 46.5L886.7 48.6L888.3 48.9L890.0 46.5L891.7 41.2L893.3 33.9L895.0 26.2L896.7 20.5L898.3 18.8L900.0 22.4L901.7 30.9L903.3 42.9L905.0 55.5L906.7 65.9L908.3 71.6L910.0 71.9L911.7 67.5L913.3 60.3L915.0 53.1L916.7 48.2L918.3 46.8L920.0 48.6L921.7 51.9L923.3 54.2L925.0 53.5L926.7 48.8L928.3 40.8L930.0 31.6L931.7 24.4L933.3 21.9L935.0 26.0L936.7 36.3L938.3 50.7L940.0 65.8L941.7 77.8L943.3 83.8L945.0 82.8L946.7 75.5L948.3 64.6L950.0 53.6L951.7 45.8L953.3 43.1L955.0 45.9L956.7 52.8L958.3 61.3L960.0 68.7L961.7 73.1L963.3 73.7L965.0 70.9L966.7 66.4L968.3 61.7L970.0 58.2L971.7 56.3L973.3 55.6L975.0 55.2L976.7 53.9L978.3 51.4L980.0 47.9L981.7 44.4L983.3 42.3L985.0 42.7L986.7 45.8L988.3 51.2L990.0 57.2L991.7 61.8L993.3 63.4L995.0 61.1L996.7 55.3L998.3 47.3L1000.0 39.4L1001.7 33.7L1003.3 31.7L1005.0 33.9L1006.7 39.5L1008.3 46.6L1010.0 53.1L1011.7 57.2L1013.3 57.8L1015.0 54.9L1016.7 49.7L1018.3 43.5L1020.0 38.2L1021.7 35.2L1023.3 35.1L1025.0 38.2L1026.7 43.7L1028.3 50.8L1030.0 58.4L1031.7 65.4L1033.3 70.9L1035.0 74.1L1036.7 74.4L1038.3 71.5L1040.0 65.6L1041.7 57.3L1043.3 47.7L1045.0 38.2L1046.7 30.7L1048.3 26.3L1050.0 25.9L1051.7 29.2L1053.3 35.1L1055.0 41.7L1056.7 47.2L1058.3 49.9L1060.0 49.3L1061.7 46.0L1063.3 41.3L1065.0 37.2L1066.7 35.6L1068.3 37.5L1070.0 42.5L1071.7 49.5L1073.3 56.3L1075.0 60.9L1076.7 61.5L1078.3 58.1L1080.0 51.3L1081.7 43.3L1083.3 36.4L1085.0 32.5L1086.7 32.9L1088.3 37.3L1090.0 44.4L1091.7 52.1L1093.3 58.5L1095.0 62.0L1096.7 62.0L1098.3 59.0L1100.0 54.3L1101.7 49.2L1103.3 45.2L1105.0 42.7L1106.7 41.7L1108.3 41.7L1110.0 42.0L1111.7 42.1L1113.3 42.2L1115.0 42.5L1116.7 43.7L1118.3 46.3L1120.0 50.3L1121.7 55.3L1123.3 60.2L1125.0 63.8L1126.7 65.2L1128.3 63.8L1130.0 60.3L1131.7 55.6L1133.3 51.3L1135.0 48.7L1136.7 48.9L1138.3 51.7L1140.0 56.4L1141.7 61.5L1143.3 65.4L1145.0 67.0L1146.7 65.6L1148.3 61.5L1150.0 55.8L1151.7 49.8L1153.3 44.9L1155.0 42.1L1156.7 41.6L1158.3 43.1L1160.0 45.7L1161.7 48.6L1163.3 50.8L1165.0 51.9L1166.7 51.7L1168.3 50.6L1170.0 49.0L1171.7 47.4L1173.3 46.3L1175.0 45.9L1176.7 46.2L1178.3 47.1L1180.0 48.3L1181.7 49.8L1183.3 51.3L1185.0 52.6L1186.7 53.6L1188.3 54.1L1190.0 54.1L1191.7 53.5L1193.3 52.4L1195.0 51.3L1196.7 50.3L1198.3 49.7L1200.0 50.0" pathlength="1"></path><path class="trace-line" d="M0.0 50.0L1.7 49.8L3.3 50.9L5.0 52.4L6.7 53.7L8.3 54.4L10.0 54.3L11.7 53.4L13.3 52.2L15.0 51.0L16.7 50.1L18.3 49.4L20.0 49.1L21.7 48.7L23.3 48.2L25.0 47.4L26.7 46.5L28.3 45.7L30.0 45.4L31.7 45.6L33.3 46.4L35.0 47.7L36.7 49.2L38.3 50.4L40.0 51.4L41.7 51.9L43.3 52.1L45.0 52.3L46.7 52.7L48.3 53.4L50.0 54.4L51.7 55.4L53.3 56.2L55.0 56.5L56.7 56.4L58.3 56.1L60.0 55.8L61.7 55.8L63.3 56.2L65.0 57.0L66.7 57.8L68.3 58.2L70.0 58.0L71.7 57.0L73.3 55.5L75.0 54.0L76.7 53.1L78.3 53.1L80.0 53.9L81.7 55.2L83.3 56.1L85.0 55.8L86.7 53.6L88.3 49.5L90.0 44.1L91.7 38.5L93.3 34.0L95.0 31.8L96.7 32.6L98.3 36.2L100.0 41.5L101.7 47.2L103.3 52.0L105.0 54.9L106.7 55.6L108.3 54.7L110.0 53.2L111.7 52.2L113.3 52.2L115.0 53.2L116.7 54.5L118.3 55.0L120.0 53.6L121.7 49.9L123.3 44.3L125.0 38.1L126.7 32.8L128.3 30.2L130.0 31.3L131.7 36.0L133.3 42.9L135.0 50.2L136.7 55.6L138.3 57.5L140.0 55.4L141.7 50.3L143.3 43.9L145.0 38.5L146.7 36.0L148.3 37.3L150.0 42.0L151.7 48.4L153.3 54.3L155.0 57.8L156.7 57.6L158.3 54.0L160.0 48.4L161.7 42.8L163.3 39.6L165.0 40.1L166.7 44.4L168.3 51.3L170.0 58.7L171.7 64.0L173.3 65.3L175.0 62.1L176.7 54.8L178.3 45.5L180.0 36.6L181.7 30.5L183.3 28.7L185.0 31.7L186.7 38.5L188.3 47.4L190.0 56.4L191.7 63.6L193.3 67.7L195.0 68.4L196.7 66.1L198.3 61.4L200.0 55.4L201.7 48.9L203.3 42.7L205.0 37.4L206.7 33.6L208.3 31.8L210.0 32.3L211.7 35.3L213.3 40.3L215.0 46.5L216.7 52.6L218.3 57.2L220.0 59.4L221.7 58.8L223.3 55.8L225.0 52.0L226.7 49.2L228.3 49.0L230.0 52.6L231.7 59.8L233.3 69.4L235.0 79.2L236.7 86.9L238.3 90.5L240.0 88.9L241.7 82.5L243.3 72.7L245.0 61.7L246.7 51.7L248.3 44.3L250.0 40.2L251.7 39.2L253.3 40.6L255.0 43.1L256.7 46.1L258.3 49.3L260.0 52.6L261.7 56.2L263.3 59.9L265.0 63.1L266.7 64.6L268.3 63.3L270.0 58.2L271.7 49.5L273.3 38.4L275.0 27.4L276.7 19.4L278.3 16.9L280.0 21.1L281.7 31.7L283.3 46.2L285.0 61.0L286.7 72.2L288.3 76.9L290.0 74.0L291.7 64.8L293.3 52.3L295.0 40.7L296.7 33.6L298.3 33.0L300.0 38.8L301.7 48.5L303.3 58.4L305.0 64.4L306.7 63.6L308.3 55.6L310.0 42.0L311.7 26.5L313.3 13.4L315.0 6.5L316.7 7.6L318.3 16.4L320.0 30.2L321.7 45.3L323.3 57.7L325.0 64.5L326.7 64.6L328.3 59.1L330.0 50.4L331.7 41.5L333.3 35.4L335.0 33.5L336.7 36.0L338.3 42.1L340.0 49.9L341.7 57.7L343.3 64.3L345.0 68.9L346.7 71.6L348.3 72.7L350.0 72.1L351.7 69.9L353.3 65.7L355.0 59.2L356.7 50.4L358.3 40.2L360.0 29.9L361.7 21.4L363.3 16.2L365.0 15.6L366.7 19.4L368.3 26.5L370.0 34.9L371.7 42.4L373.3 47.3L375.0 48.8L376.7 47.3L378.3 44.4L380.0 41.7L381.7 41.0L383.3 43.3L385.0 48.4L386.7 55.3L388.3 62.5L390.0 68.5L391.7 72.1L393.3 73.0L395.0 71.5L396.7 68.3L398.3 64.1L400.0 59.5L401.7 54.7L403.3 49.9L405.0 45.2L406.7 41.5L408.3 39.7L410.0 41.0L411.7 46.5L413.3 56.0L415.0 68.5L416.7 81.7L418.3 92.5L420.0 98.1L421.7 96.4L423.3 87.4L425.0 72.8L426.7 56.0L428.3 40.9L430.0 31.1L431.7 28.6L433.3 33.0L435.0 42.3L436.7 52.7L438.3 60.7L440.0 63.9L441.7 61.7L443.3 55.5L445.0 48.3L446.7 43.4L448.3 43.1L450.0 48.0L451.7 56.3L453.3 65.1L455.0 70.8L456.7 70.5L458.3 63.6L460.0 51.4L461.7 37.4L463.3 25.7L465.0 20.1L466.7 22.3L468.3 31.7L470.0 45.4L471.7 59.3L473.3 69.0L475.0 71.7L476.7 66.8L478.3 55.9L480.0 42.4L481.7 30.2L483.3 22.5L485.0 20.8L486.7 24.5L488.3 31.5L490.0 38.8L491.7 43.7L493.3 44.9L495.0 42.7L496.7 38.6L498.3 34.9L500.0 33.8L501.7 36.2L503.3 41.8L505.0 49.1L506.7 56.0L508.3 60.6L510.0 61.9L511.7 59.9L513.3 55.9L515.0 51.4L516.7 48.0L518.3 46.7L520.0 47.5L521.7 49.6L523.3 51.7L525.0 52.9L526.7 52.9L528.3 51.7L530.0 50.1L531.7 49.1L533.3 49.1L535.0 49.9L536.7 50.8L538.3 50.7L540.0 48.5L541.7 44.0L543.3 37.5L545.0 30.3L546.7 24.0L548.3 20.0L550.0 19.1L551.7 21.1L553.3 25.1L555.0 29.6L556.7 33.5L558.3 36.0L560.0 37.6L561.7 39.3L563.3 42.3L565.0 47.7L566.7 55.7L568.3 65.5L570.0 75.5L571.7 83.9L573.3 89.0L575.0 90.4L576.7 88.2L578.3 83.9L580.0 78.7L581.7 73.7L583.3 69.3L585.0 64.8L586.7 59.2L588.3 51.4L590.0 41.6L591.7 30.8L593.3 21.7L595.0 17.2L596.7 19.8L598.3 30.6L600.0 48.3L601.7 69.4L603.3 88.8L605.0 101.6L606.7 104.1L608.3 95.1L610.0 76.9L611.7 54.3L613.3 33.5L615.0 20.3L616.7 18.3L618.3 28.1L620.0 46.6L621.7 68.6L623.3 87.9L625.0 99.3L626.7 100.1L628.3 90.6L630.0 74.1L631.7 55.2L633.3 38.9L635.0 28.7L636.7 25.8L638.3 29.1L640.0 35.8L641.7 42.6L643.3 46.8L645.0 47.2L646.7 44.1L648.3 39.3L650.0 34.8L651.7 32.3L653.3 32.5L655.0 34.9L656.7 38.2L658.3 40.9L660.0 42.2L661.7 42.0L663.3 41.1L665.0 40.8L666.7 42.2L668.3 45.7L670.0 50.5L671.7 55.2L673.3 58.1L675.0 57.7L676.7 53.9L678.3 47.5L680.0 40.6L681.7 35.6L683.3 34.6L685.0 38.5L686.7 46.7L688.3 57.1L690.0 67.0L691.7 73.5L693.3 74.8L695.0 70.5L696.7 61.6L698.3 50.3L700.0 39.2L701.7 30.3L703.3 25.1L705.0 23.8L706.7 25.6L708.3 29.2L710.0 33.4L711.7 37.1L713.3 39.8L715.0 41.5L716.7 42.3L718.3 42.3L720.0 41.6L721.7 40.3L723.3 38.6L725.0 37.2L726.7 36.9L728.3 38.6L730.0 42.9L731.7 49.5L733.3 57.3L735.0 64.2L736.7 67.8L738.3 66.0L740.0 58.2L741.7 45.3L743.3 30.2L745.0 17.0L746.7 9.9L748.3 12.1L750.0 24.4L751.7 45.1L753.3 69.7L755.0 92.7L756.7 108.8L758.3 114.1L760.0 107.7L761.7 91.7L763.3 70.5L765.0 49.6L766.7 33.9L768.3 26.3L770.0 27.3L771.7 34.9L773.3 45.4L775.0 54.9L776.7 60.7L778.3 61.8L780.0 59.1L781.7 55.0L783.3 52.1L785.0 52.1L786.7 55.5L788.3 61.2L790.0 66.9L791.7 70.6L793.3 70.7L795.0 67.2L796.7 61.7L798.3 56.4L800.0 53.7L801.7 55.1L803.3 60.3L805.0 67.8L806.7 74.8L808.3 78.4L810.0 76.9L811.7 69.7L813.3 58.5L815.0 45.9L816.7 34.9L818.3 28.0L820.0 26.1L821.7 28.6L823.3 33.6L825.0 38.3L826.7 40.6L828.3 39.4L830.0 35.1L831.7 29.3L833.3 24.5L835.0 22.8L836.7 25.4L838.3 32.2L840.0 41.8L841.7 52.1L843.3 60.9L845.0 66.8L846.7 69.0L848.3 68.3L850.0 65.7L851.7 62.7L853.3 60.2L855.0 58.8L856.7 58.0L858.3 57.2L860.0 55.8L861.7 53.3L863.3 49.9L865.0 46.1L866.7 42.6L868.3 40.0L870.0 38.6L871.7 38.2L873.3 38.4L875.0 38.6L876.7 38.8L878.3 39.1L880.0 39.8L881.7 41.3L883.3 43.7L885.0 46.5L886.7 48.6L888.3 48.9L890.0 46.5L891.7 41.2L893.3 33.9L895.0 26.2L896.7 20.5L898.3 18.8L900.0 22.4L901.7 30.9L903.3 42.9L905.0 55.5L906.7 65.9L908.3 71.6L910.0 71.9L911.7 67.5L913.3 60.3L915.0 53.1L916.7 48.2L918.3 46.8L920.0 48.6L921.7 51.9L923.3 54.2L925.0 53.5L926.7 48.8L928.3 40.8L930.0 31.6L931.7 24.4L933.3 21.9L935.0 26.0L936.7 36.3L938.3 50.7L940.0 65.8L941.7 77.8L943.3 83.8L945.0 82.8L946.7 75.5L948.3 64.6L950.0 53.6L951.7 45.8L953.3 43.1L955.0 45.9L956.7 52.8L958.3 61.3L960.0 68.7L961.7 73.1L963.3 73.7L965.0 70.9L966.7 66.4L968.3 61.7L970.0 58.2L971.7 56.3L973.3 55.6L975.0 55.2L976.7 53.9L978.3 51.4L980.0 47.9L981.7 44.4L983.3 42.3L985.0 42.7L986.7 45.8L988.3 51.2L990.0 57.2L991.7 61.8L993.3 63.4L995.0 61.1L996.7 55.3L998.3 47.3L1000.0 39.4L1001.7 33.7L1003.3 31.7L1005.0 33.9L1006.7 39.5L1008.3 46.6L1010.0 53.1L1011.7 57.2L1013.3 57.8L1015.0 54.9L1016.7 49.7L1018.3 43.5L1020.0 38.2L1021.7 35.2L1023.3 35.1L1025.0 38.2L1026.7 43.7L1028.3 50.8L1030.0 58.4L1031.7 65.4L1033.3 70.9L1035.0 74.1L1036.7 74.4L1038.3 71.5L1040.0 65.6L1041.7 57.3L1043.3 47.7L1045.0 38.2L1046.7 30.7L1048.3 26.3L1050.0 25.9L1051.7 29.2L1053.3 35.1L1055.0 41.7L1056.7 47.2L1058.3 49.9L1060.0 49.3L1061.7 46.0L1063.3 41.3L1065.0 37.2L1066.7 35.6L1068.3 37.5L1070.0 42.5L1071.7 49.5L1073.3 56.3L1075.0 60.9L1076.7 61.5L1078.3 58.1L1080.0 51.3L1081.7 43.3L1083.3 36.4L1085.0 32.5L1086.7 32.9L1088.3 37.3L1090.0 44.4L1091.7 52.1L1093.3 58.5L1095.0 62.0L1096.7 62.0L1098.3 59.0L1100.0 54.3L1101.7 49.2L1103.3 45.2L1105.0 42.7L1106.7 41.7L1108.3 41.7L1110.0 42.0L1111.7 42.1L1113.3 42.2L1115.0 42.5L1116.7 43.7L1118.3 46.3L1120.0 50.3L1121.7 55.3L1123.3 60.2L1125.0 63.8L1126.7 65.2L1128.3 63.8L1130.0 60.3L1131.7 55.6L1133.3 51.3L1135.0 48.7L1136.7 48.9L1138.3 51.7L1140.0 56.4L1141.7 61.5L1143.3 65.4L1145.0 67.0L1146.7 65.6L1148.3 61.5L1150.0 55.8L1151.7 49.8L1153.3 44.9L1155.0 42.1L1156.7 41.6L1158.3 43.1L1160.0 45.7L1161.7 48.6L1163.3 50.8L1165.0 51.9L1166.7 51.7L1168.3 50.6L1170.0 49.0L1171.7 47.4L1173.3 46.3L1175.0 45.9L1176.7 46.2L1178.3 47.1L1180.0 48.3L1181.7 49.8L1183.3 51.3L1185.0 52.6L1186.7 53.6L1188.3 54.1L1190.0 54.1L1191.7 53.5L1193.3 52.4L1195.0 51.3L1196.7 50.3L1198.3 49.7L1200.0 50.0" pathlength="1"></path></svg><div class="wrap"><div class="footer-grid"><div class="footer-about"><span class="wordmark"><span class="w-hertz">HERTZ</span><span class="w-forge">FORGE</span></span><p>Open-source structural dynamics testing and analysis. Free under the MIT license, developed in the open.</p></div><nav aria-label="Software"><h2>Software</h2><ul><li><a href="/download/">Download</a></li><li><a href="/documentation/">Documentation</a></li><li><a href="/learn/workflows/">Workflows</a></li><li><a href="/learn/tutorials/">Tutorials</a></li><li><a href="/reference/known-limits/">Known Limits</a></li></ul></nav><nav aria-label="Research"><h2>Research</h2><ul><li><a href="/journal/">Hertzforge Journal</a></li><li><a href="/benchmarks/">Open Benchmark Set</a></li><li><a href="/reference/laws/">Control Laws</a></li><li><a href="/reference/glossary/">Glossary</a></li><li><a href="/reference/standards/">Standards</a></li></ul></nav><nav aria-label="Community"><h2>Community</h2><ul><li><a href="/community/contribute/">Contribute</a></li><li><a href="/community/requests/">Requests</a></li><li><a href="/community/sponsors/">Sponsors</a></li><li><a href="/community/acknowledgments/">Acknowledgments</a></li><li><a href="https://github.com/Hertzforge/Hertzforge">GitHub</a></li></ul></nav><nav aria-label="About"><h2>About</h2><ul><li><a href="/about/">Why Hertzforge Exists</a></li><li><a href="/about/how-it-was-built/">How It Was Built</a></li><li><a href="/about/how-it-works/">How It Works</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="mailto:contact@hertzforge.com">Contact</a></li></ul></nav></div><div class="footer-legal"><span>Copyright 2026 Brandon Zwink and Kevin Cross. Software under the MIT license.</span><span>Hertzforge drives shakers. You are responsible for how you use it and for protecting your equipment.</span></div></div></footer>
+
+<script src="assets/article.js"></script>
+
+
+</body></html>

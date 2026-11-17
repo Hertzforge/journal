@@ -1,0 +1,73 @@
+rigs,structure,law,structures,control_db,held_out_db,level_db,worst_over_test_db,n,stress_db,stress_q1,stress_q3,stress_bias_db
+more_controls,none,pinv_closed,all,6.58,6.44,-0.25,22.92,20,3.69,3.25,4.41,-0.34
+more_controls,none,pinv_closed,not flagged,6.54,6.44,-0.26,22.92,18,3.69,3.30,4.38,-0.52
+more_controls,none,pinv_open,all,5.93,5.99,-0.95,21.77,20,3.39,3.08,3.90,-0.64
+more_controls,none,pinv_open,not flagged,5.86,5.91,-0.97,21.77,18,3.39,3.12,3.89,-0.86
+more_controls,none,shape_svd,all,7.13,6.87,-2.07,20.92,20,4.45,3.74,5.03,-2.92
+more_controls,none,shape_svd,not flagged,7.03,6.87,-2.07,21.22,18,4.45,3.76,5.08,-2.92
+more_controls,none,buzz_match,all,6.04,6.28,0.35,23.00,20,3.15,2.99,3.69,-0.02
+more_controls,none,buzz_match,not flagged,6.03,6.28,0.28,23.00,18,3.15,3.01,3.58,-0.14
+more_controls,none,min_drive,all,10.43,11.46,-3.60,28.17,20,8.44,7.13,9.63,5.99
+more_controls,none,min_drive,not flagged,10.43,11.46,-3.60,28.70,18,8.30,6.84,9.66,5.61
+more_controls,none,band_average,all,4.69,5.35,-0.64,19.40,20,3.29,2.93,3.60,-1.94
+more_controls,none,band_average,not flagged,4.62,5.35,-0.58,19.76,18,3.29,2.94,3.55,-2.05
+more_controls,realistic,pinv_closed,all,6.63,6.47,-0.22,21.89,20,3.80,3.29,4.29,-0.05
+more_controls,realistic,pinv_closed,not flagged,6.51,6.47,-0.22,22.25,18,3.80,3.37,4.27,-0.13
+more_controls,realistic,pinv_open,all,6.14,6.07,-1.23,20.58,20,3.69,3.24,4.23,-0.65
+more_controls,realistic,pinv_open,not flagged,6.04,6.07,-1.24,20.58,18,3.69,3.23,4.12,-0.77
+more_controls,realistic,shape_svd,all,7.02,6.90,-2.19,20.12,20,4.03,3.73,5.29,-2.64
+more_controls,realistic,shape_svd,not flagged,6.91,6.90,-2.19,20.25,18,4.14,3.77,5.30,-2.70
+more_controls,realistic,buzz_match,all,5.96,6.21,0.38,21.91,20,3.44,3.02,3.71,0.44
+more_controls,realistic,buzz_match,not flagged,5.90,6.21,0.29,22.12,18,3.44,3.03,3.67,0.35
+more_controls,realistic,min_drive,all,10.19,11.13,-3.27,28.14,20,8.54,7.67,9.74,6.25
+more_controls,realistic,min_drive,not flagged,10.19,11.13,-3.27,28.14,18,8.35,7.61,10.08,6.09
+more_controls,realistic,band_average,all,4.68,5.34,-0.75,18.42,20,3.07,3.01,3.37,-1.37
+more_controls,realistic,band_average,not flagged,4.61,5.34,-0.71,18.42,18,3.09,3.01,3.43,-1.48
+more_controls,strong,pinv_closed,all,6.53,6.51,-0.36,22.09,20,4.60,4.24,5.69,1.78
+more_controls,strong,pinv_closed,not flagged,6.38,6.58,-0.36,22.28,18,4.60,4.22,5.83,1.56
+more_controls,strong,pinv_open,all,6.54,6.39,-1.69,19.17,20,4.66,4.41,5.18,0.65
+more_controls,strong,pinv_open,not flagged,6.44,6.50,-1.69,19.75,18,4.78,4.48,5.19,0.45
+more_controls,strong,shape_svd,all,6.95,6.81,-2.22,19.68,20,3.89,3.43,4.41,-1.51
+more_controls,strong,shape_svd,not flagged,6.87,6.81,-2.22,19.97,18,3.94,3.45,4.55,-1.59
+more_controls,strong,buzz_match,all,6.09,6.25,0.37,22.09,20,5.31,4.38,5.70,2.80
+more_controls,strong,buzz_match,not flagged,5.96,6.33,0.32,22.78,18,5.31,4.19,5.77,2.60
+more_controls,strong,min_drive,all,10.81,11.31,-4.68,28.52,20,9.99,9.10,10.30,7.88
+more_controls,strong,min_drive,not flagged,10.81,11.31,-4.68,28.66,18,9.87,9.09,10.33,7.48
+more_controls,strong,band_average,all,4.98,5.42,-0.99,18.34,20,3.94,3.65,4.28,0.39
+more_controls,strong,band_average,not flagged,4.95,5.42,-0.97,18.34,18,3.94,3.61,4.42,0.29
+equal,none,pinv_closed,all,3.92,10.73,4.24,37.01,20,11.68,11.02,12.99,11.08
+equal,none,pinv_closed,not flagged,3.88,11.29,4.34,38.00,17,11.69,11.04,13.26,11.17
+equal,none,pinv_open,all,4.53,11.55,5.42,38.82,20,14.29,12.55,15.90,13.15
+equal,none,pinv_open,not flagged,4.53,11.81,5.60,39.77,17,14.44,13.00,15.97,13.55
+equal,none,shape_svd,all,6.03,6.47,-0.73,23.06,20,3.55,2.94,4.13,-1.84
+equal,none,shape_svd,not flagged,5.99,6.54,-0.83,23.04,17,3.43,2.93,3.94,-1.98
+equal,none,buzz_match,all,3.96,10.77,4.25,37.26,20,11.71,10.79,13.44,10.94
+equal,none,buzz_match,not flagged,3.85,11.03,4.33,37.93,17,11.88,10.90,13.33,11.04
+equal,none,min_drive,all,3.37,7.76,1.86,29.15,20,6.01,5.10,7.84,4.37
+equal,none,min_drive,not flagged,3.38,7.87,2.00,31.10,17,6.05,5.45,7.84,4.65
+equal,none,band_average,all,2.12,5.53,0.52,22.49,20,2.87,2.65,3.58,-0.12
+equal,none,band_average,not flagged,2.15,5.68,0.64,23.16,17,2.75,2.57,3.28,-0.09
+equal,realistic,pinv_closed,all,4.94,9.56,3.74,32.51,20,9.94,8.67,10.95,9.06
+equal,realistic,pinv_closed,not flagged,5.06,9.82,3.83,33.99,17,9.96,8.20,11.13,9.25
+equal,realistic,pinv_open,all,6.87,11.90,6.38,38.76,20,14.24,12.90,15.32,13.31
+equal,realistic,pinv_open,not flagged,6.90,12.08,6.77,39.13,17,14.40,13.24,16.44,13.62
+equal,realistic,shape_svd,all,6.11,6.54,-0.57,21.14,20,3.36,3.12,4.14,-1.56
+equal,realistic,shape_svd,not flagged,6.09,6.58,-0.55,21.23,17,3.34,3.10,4.02,-2.04
+equal,realistic,buzz_match,all,5.03,9.77,4.11,34.54,20,10.29,9.00,11.17,9.42
+equal,realistic,buzz_match,not flagged,5.12,9.82,4.18,34.63,17,10.37,8.84,11.47,9.50
+equal,realistic,min_drive,all,4.52,8.32,2.56,30.23,20,7.68,6.62,9.42,5.95
+equal,realistic,min_drive,not flagged,4.77,8.43,2.71,32.22,17,7.87,6.09,10.31,6.09
+equal,realistic,band_average,all,1.91,5.50,0.53,22.32,20,3.36,2.67,3.58,0.42
+equal,realistic,band_average,not flagged,1.98,5.66,0.62,22.95,17,3.22,2.72,3.57,0.54
+equal,strong,pinv_closed,all,5.48,8.94,3.41,30.00,20,12.58,10.00,14.27,11.07
+equal,strong,pinv_closed,not flagged,5.64,9.02,3.66,30.60,17,12.67,10.00,14.13,11.16
+equal,strong,pinv_open,all,7.81,11.59,6.66,36.96,20,15.19,14.13,16.16,14.35
+equal,strong,pinv_open,not flagged,8.24,11.96,6.88,39.46,17,15.52,14.26,16.62,14.44
+equal,strong,shape_svd,all,6.13,6.57,-0.75,20.34,20,4.02,3.58,4.61,-0.17
+equal,strong,shape_svd,not flagged,6.08,6.71,-0.70,20.37,17,4.18,3.62,4.91,-0.17
+equal,strong,buzz_match,all,5.70,9.16,3.80,30.20,20,12.75,9.90,14.19,11.50
+equal,strong,buzz_match,not flagged,5.72,9.35,3.88,31.30,17,12.77,9.94,14.07,11.74
+equal,strong,min_drive,all,5.50,9.06,3.60,30.22,20,12.01,9.96,13.32,10.88
+equal,strong,min_drive,not flagged,5.73,9.26,3.78,31.26,17,12.58,10.62,12.99,11.27
+equal,strong,band_average,all,2.05,5.56,0.20,21.19,20,5.76,3.87,6.28,2.11
+equal,strong,band_average,not flagged,2.15,5.74,0.42,21.50,17,6.13,3.96,6.54,2.27

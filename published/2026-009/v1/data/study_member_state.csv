@@ -1,0 +1,17 @@
+size,state,rig,structures,member_change_pct_median,min,max,structures_changing_little_in_service
+realistic,in service,,20,+0.35,-0.00,+3.23,2 3 5 6 7 15 19 32 34
+realistic,"as tested, both effects",3x12,20,+0.54,-0.05,+3.56,
+realistic,"as tested, both effects",6x12,20,+0.91,+0.04,+3.80,
+realistic,"as tested, both effects",12x24,20,+1.26,+0.08,+3.02,
+realistic,"as tested, both effects",6x6,20,+1.94,+0.43,+3.81,
+realistic,"as tested, both effects",12x12,20,+1.92,+0.12,+3.68,
+realistic,"as tested, hardening member only",6x12,10,+1.75,+0.50,+3.46,
+realistic,"as tested, hardening member only",6x6,10,+2.43,+0.80,+3.59,
+strong,in service,,20,+1.00,-0.01,+7.44,2 3 5 6 7 13 15 19 32 34
+strong,"as tested, both effects",3x12,20,+0.70,-0.24,+5.19,
+strong,"as tested, both effects",6x12,20,+1.61,-0.04,+8.22,
+strong,"as tested, both effects",12x24,20,+2.29,+0.04,+6.38,
+strong,"as tested, both effects",6x6,20,+3.80,+0.35,+8.29,
+strong,"as tested, both effects",12x12,20,+3.52,+0.10,+7.34,
+strong,"as tested, hardening member only",6x12,10,+4.92,+1.50,+7.20,
+strong,"as tested, hardening member only",6x6,10,+6.60,+3.22,+8.08,

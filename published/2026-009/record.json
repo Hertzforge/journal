@@ -1,0 +1,28 @@
+{
+  "id": "2026-009",
+  "title": "Six Control Laws for Multi-Shaker Random Vibration: How Each Scores on the Open Benchmark Set",
+  "type": "Research Article",
+  "evidence": "simulator",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    }
+  ],
+  "first_published": "2026-11-17",
+  "latest": 1,
+  "versions": [
+    {
+      "version": 1,
+      "date": "2026-11-17",
+      "note": "First published.",
+      "doi": "10.5281/zenodo.24311107"
+    }
+  ],
+  "doi_latest": "10.5281/zenodo.24311106",
+  "status": "Review open",
+  "retraction": "",
+  "thread": "",
+  "reviews": [],
+  "sample": false
+}
