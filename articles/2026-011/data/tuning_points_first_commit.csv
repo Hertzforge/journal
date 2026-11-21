@@ -1,0 +1,19 @@
+law,system,setting,cases,held_out_db,control_db,level_mean_db,level_min_db,level_max_db,level_size_db,stress_db,worst_over_test_db,chosen
+independent,6 x 12,defaults,4,9.05,8.35,-6.05,-6.76,-5.37,6.05,6.85,16.18,
+independent,6 x 12,convergence = 0.5,4,9.06,8.37,-6.08,-6.75,-5.45,6.08,6.90,15.25,
+independent,6 x 12,regularization_constant = 0.001,4,9.06,8.36,-6.06,-6.76,-5.40,6.06,6.87,16.25,
+independent,6 x 12,regularization_constant = 0.1,4,9.02,8.33,-6.02,-6.75,-5.32,6.02,6.82,16.14,
+independent,6 x 12,regularization_constant = 0.3,4,9.04,8.35,-6.03,-6.77,-5.34,6.03,6.83,15.81,
+independent,6 x 12,regularization_constant = 1.0,4,9.03,8.37,-6.05,-6.74,-5.41,6.05,6.88,14.52,
+independent,6 x 12,"convergence = 0.5, regularization_constant = 0.1",4,9.04,8.37,-6.06,-6.76,-5.40,6.06,6.87,15.02,
+independent,6 x 12,solve_weighting = none,4,4.92,6.07,+0.12,-0.20,+0.40,0.22,3.77,28.54,yes
+independent,6 x 12,solve = set_to_zero,4,11.18,11.29,-0.58,-3.88,+3.61,2.94,17.32,58.93,
+independent,6 x 6,defaults,4,6.67,5.04,-3.61,-4.50,-2.79,3.61,5.86,13.08,
+independent,6 x 6,convergence = 0.5,4,6.66,4.98,-3.62,-4.44,-2.83,3.62,5.89,12.95,
+independent,6 x 6,regularization_constant = 0.001,4,6.67,5.04,-3.62,-4.49,-2.81,3.62,5.88,13.07,
+independent,6 x 6,regularization_constant = 0.1,4,6.65,5.01,-3.58,-4.44,-2.76,3.58,5.83,13.05,
+independent,6 x 6,regularization_constant = 0.3,4,6.66,5.00,-3.60,-4.45,-2.76,3.60,5.85,12.97,
+independent,6 x 6,regularization_constant = 1.0,4,6.68,4.93,-3.63,-4.41,-2.80,3.63,5.87,12.65,
+independent,6 x 6,"convergence = 0.5, regularization_constant = 0.1",4,6.66,5.04,-3.63,-4.44,-2.81,3.63,5.88,12.90,
+independent,6 x 6,solve_weighting = none,4,4.66,4.09,-0.20,-0.76,+0.40,0.44,3.49,22.56,yes
+independent,6 x 6,solve = set_to_zero,4,13.57,13.45,+5.25,-0.23,+10.01,5.37,25.58,62.62,

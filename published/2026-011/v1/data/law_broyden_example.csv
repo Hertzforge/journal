@@ -1,0 +1,25 @@
+example,cycle,setting,rms_error_db
+two shakers three gauges,1,learning on,7.00
+two shakers three gauges,2,learning on,4.45
+two shakers three gauges,3,learning on,2.37
+two shakers three gauges,4,learning on,1.48
+two shakers three gauges,5,learning on,1.18
+two shakers three gauges,6,learning on,1.10
+two shakers three gauges,8,learning on,1.08
+two shakers three gauges,14,learning on,1.08
+two shakers three gauges,1,learning off,7.00
+two shakers three gauges,2,learning off,4.59
+two shakers three gauges,3,learning off,2.55
+two shakers three gauges,4,learning off,1.62
+two shakers three gauges,5,learning off,1.25
+two shakers three gauges,6,learning off,1.13
+two shakers three gauges,8,learning off,1.08
+two shakers three gauges,14,learning off,1.08
+complex two shakers three gauges,5,phase steering on,0.45
+complex two shakers three gauges,10,phase steering on,0.06
+complex two shakers three gauges,20,phase steering on,0.02
+complex two shakers three gauges,60,phase steering on,0.001
+complex two shakers three gauges,5,phase steering off,0.47
+complex two shakers three gauges,10,phase steering off,0.18
+complex two shakers three gauges,20,phase steering off,0.18
+complex two shakers three gauges,60,phase steering off,0.18

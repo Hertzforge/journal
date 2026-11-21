@@ -1,0 +1,14 @@
+TY  - JOUR
+AU  - Cross, Kevin
+AU  - Hunter, Norman
+TI  - Independent Drive Laws and a Broyden Congruence Law for Multi-Shaker Random Vibration: The Laws, Their Build in Hertzforge, and Their Scores on the Open Benchmark Set
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-011
+PY  - 2026
+DA  - 2026/11/20
+ET  - Version 1
+DO  - 10.5281/zenodo.24407970
+UR  - https://hertzforge.com/journal/2026-011/v1/
+AB  - Some multi-shaker random vibration tests ask for drives with no relation between them. This article adds three such control laws to Hertzforge, an open-source structural dynamics suite: an independent and a nearly independent drive law, built from the published papers with refinements from the second author's written notes, and a Broyden congruence law built from those notes alone. Each runs closed loop on Hertzforge's simulator, on ten structures of the Open Benchmark Set, beside the six laws of an earlier study. On linear structures, at the control gauges only the band-average law is lower than the Broyden law by more than 0.2 dB: by 0.5 dB on the 6 x 12 system and 0.8 dB on square systems. Its level is within about 1 dB of the target. The independent drive law has one of the highest errors at the control gauges, yet on square systems is 3.0 to 11.3 dB lower at the held-out gauges and in stress than the two pseudo-inverse laws, the buzz-test law and the nearly independent law, which behaves like those three there. Of 280 claims tested on five held-back structures, 254 held, 18 fell inside 0.2 dB and 8 were not borne out.
+ER  - 

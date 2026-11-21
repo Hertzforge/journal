@@ -1,0 +1,32 @@
+{
+  "id": "2026-011",
+  "title": "Independent Drive Laws and a Broyden Congruence Law for Multi-Shaker Random Vibration: The Laws, Their Build in Hertzforge, and Their Scores on the Open Benchmark Set",
+  "type": "Research Article",
+  "evidence": "simulator",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    },
+    {
+      "name": "Norman Hunter",
+      "orcid": ""
+    }
+  ],
+  "first_published": "2026-11-20",
+  "latest": 1,
+  "versions": [
+    {
+      "version": 1,
+      "date": "2026-11-20",
+      "note": "First published.",
+      "doi": "10.5281/zenodo.24407970"
+    }
+  ],
+  "doi_latest": "10.5281/zenodo.24407969",
+  "status": "Review open",
+  "retraction": "",
+  "thread": "",
+  "reviews": [],
+  "sample": false
+}
