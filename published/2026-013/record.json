@@ -10,13 +10,19 @@
     }
   ],
   "first_published": "2026-11-25",
-  "latest": 1,
+  "latest": 2,
   "versions": [
     {
       "version": 1,
       "date": "2026-11-25",
       "note": "First published.",
       "doi": "10.5281/zenodo.24536662"
+    },
+    {
+      "version": 2,
+      "date": "2026-11-25",
+      "note": "The data and code READMEs give the DOIs of the suite and of the results record, which version 1 left as to be assigned. Nothing else changed.",
+      "doi": "10.5281/zenodo.24538545"
     }
   ],
   "doi_latest": "10.5281/zenodo.24536661",

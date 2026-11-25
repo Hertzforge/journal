@@ -1,11 +1,11 @@
 ---
 # Filled in by the editors at publication.
 id: "2026-013"
-version: 1
+version: 2
 date: "2026-11-25"
-doi: "10.5281/zenodo.24536662"
+doi: "10.5281/zenodo.24538545"
 doi_latest: "10.5281/zenodo.24536661"
-note: First published.
+note: "The data and code READMEs give the DOIs of the suite and of the results record, which version 1 left as to be assigned. Nothing else changed."
 
 # Filled in by the authors.
 title: "The MIMO Shock Suite of the Open Benchmark Set: Pulse Problems on the Random Suite's Structures, Scored by Method 516.8"

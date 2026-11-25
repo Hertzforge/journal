@@ -8,7 +8,7 @@ named. Figure 1 is reproduced from 2026-008, whose code draws it.
    `../data`.
    It runs nothing and imports no study or scorer code:
    `python suite_results.py RECORD PROBLEMS AUDIT_PROBLEMS`, where RECORD is the `experiments` folder
-   of the unpacked results record of the study and its audit (DOI to be assigned), and PROBLEMS and
+   of the unpacked results record of the study and its audit (DOI 10.5281/zenodo.24526370), and PROBLEMS and
    AUDIT_PROBLEMS are the suite's draft 0.2 problem folders and the held-back problem folders.
 2. `target_self_check.py` (NumPy) reads each classical target, as the pulse itself, against Method
    516.8's time-domain tolerance, with the suite's own reading of a pulse, and writes

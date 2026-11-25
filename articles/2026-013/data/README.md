@@ -13,5 +13,5 @@ The data behind every figure and number, published under CC BY 4.0. Each file is
 | `target_self_check.csv` | Each classical target read as a pulse: largest compensation-pulse and sawtooth post-slope departure over the control gauges (Section 5.3) | `target_self_check.py` |
 | `fig_article_parts.csv`, `fig_article_rig.csv` | Copied unchanged from 2026-008, for Figure 1 | 2026-008 |
 
-The run files they are computed from are in the results record of the study and its audit (DOI to be
-assigned); the problems are the MIMO Shock suite, draft 0.2 (DOI to be assigned).
+The run files they are computed from are in the results record of the study and its audit (DOI
+10.5281/zenodo.24526370); the problems are the MIMO Shock suite, draft 0.2 (DOI 10.5281/zenodo.24526368).

@@ -1,0 +1,9 @@
+set,systems,kind,runs_at_full_level,all_controls_inside,mean_share_of_controls
+study,square,half_sine,484,0.688,0.8156
+study,square,sawtooth,374,0.5936,0.7449
+study,more gauges,half_sine,816,0.402,0.8606
+study,more gauges,sawtooth,768,0.0,0.1491
+audit,square,half_sine,316,0.7025,0.8452
+audit,square,sawtooth,258,0.5814,0.7287
+audit,more gauges,half_sine,479,0.5073,0.8988
+audit,more gauges,sawtooth,464,0.0,0.1387
