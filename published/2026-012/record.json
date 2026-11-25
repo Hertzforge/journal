@@ -1,0 +1,28 @@
+{
+  "id": "2026-012",
+  "title": "A Model Finder for Multi-Shaker Random Vibration Tests: Store the Full-Level Model Once, Check It at Low Level, Start Each Test at Full Level. A Simulation Study",
+  "type": "Research Article",
+  "evidence": "simulator",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    }
+  ],
+  "first_published": "2026-11-25",
+  "latest": 1,
+  "versions": [
+    {
+      "version": 1,
+      "date": "2026-11-25",
+      "note": "First published.",
+      "doi": "10.5281/zenodo.24526655"
+    }
+  ],
+  "doi_latest": "10.5281/zenodo.24526654",
+  "status": "Review open",
+  "retraction": "",
+  "thread": "",
+  "reviews": [],
+  "sample": false
+}

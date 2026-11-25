@@ -1,0 +1,13 @@
+TY  - JOUR
+AU  - Cross, Kevin
+TI  - A Model Finder for Multi-Shaker Random Vibration Tests: Store the Full-Level Model Once, Check It at Low Level, Start Each Test at Full Level. A Simulation Study
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-012
+PY  - 2026
+DA  - 2026/11/25
+ET  - Version 1
+DO  - 10.5281/zenodo.24526655
+UR  - https://hertzforge.com/journal/2026-012/v1/
+AB  - A multi-shaker random vibration test is usually started at low level and stepped up, on a frequency response measured at low level. This article tests a model finder: the structure's frequency response at full level is measured once and stored, each later test checks the stored model against its own low-level identification, and then starts at full level on it. Every run is closed loop on Hertzforge's simulator, on structures of the Open Benchmark Set; no hardware test was made. With the minimum-drive law, a test on the stored model has a lower control error than the same test on the ladder in all eight cells run (100 problems), by 1.7 to 3.7 dB on square systems, with typical element stress lower or unchanged, provided the stored model's two parts share one timing. A model stored during an ordinary ladder test serves nearly as well as one from a dedicated pretest. Over ten tests the route takes 60 percent less time outside the dwell and about 40 percent less equivalent full-level exposure. The low-level check stopped every structure whose mode frequencies had moved 1 percent or more and passed every unchanged one, but it does not see a change in how strongly the structure depends on level. Two further hopes were not borne out: a rule fixed beforehand did not classify softening and hardening modes from the pretest's levels, and interpolating a model for a lower level added nothing: the full-level model used unchanged controlled as well or better down to -12 dB.
+ER  - 

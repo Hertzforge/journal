@@ -1,0 +1,3997 @@
+{
+ "cells": {
+  "6x6 realistic": {
+   "n_true": 348,
+   "found": 261,
+   "dir_n": 255,
+   "dir_ok": 136,
+   "dir_n_tracked": 223,
+   "dir_ok_tracked": 136,
+   "member_found": 5,
+   "member_hard": 3,
+   "n_struct": 5,
+   "ferr_med": 0.42344779330633076,
+   "ferr_max": 6.7214315734585135,
+   "fbias_med": 0.34224200789979564,
+   "derr_med": 14.403217655223521,
+   "derr_max": 265.3301241697872
+  },
+  "6x6 strong": {
+   "n_true": 346,
+   "found": 218,
+   "dir_n": 215,
+   "dir_ok": 79,
+   "dir_n_tracked": 161,
+   "dir_ok_tracked": 79,
+   "member_found": 4,
+   "member_hard": 0,
+   "n_struct": 5,
+   "ferr_med": 1.1670236390522115,
+   "ferr_max": 18.230213602427035,
+   "fbias_med": 0.7554571304712709,
+   "derr_med": 36.795071805809,
+   "derr_max": 416.1403253699441
+  },
+  "12x12 realistic": {
+   "n_true": 348,
+   "found": 269,
+   "dir_n": 265,
+   "dir_ok": 96,
+   "dir_n_tracked": 231,
+   "dir_ok_tracked": 96,
+   "member_found": 5,
+   "member_hard": 3,
+   "n_struct": 5,
+   "ferr_med": 0.4473160411513133,
+   "ferr_max": 5.922725228931148,
+   "fbias_med": 0.3976085705421628,
+   "derr_med": 11.400992269936406,
+   "derr_max": 250.02419315609617
+  },
+  "12x12 strong": {
+   "n_true": 346,
+   "found": 238,
+   "dir_n": 235,
+   "dir_ok": 26,
+   "dir_n_tracked": 146,
+   "dir_ok_tracked": 26,
+   "member_found": 4,
+   "member_hard": 2,
+   "n_struct": 5,
+   "ferr_med": 1.5257421116354974,
+   "ferr_max": 18.772997427125947,
+   "fbias_med": 1.3131100526760697,
+   "derr_med": 31.64958057692435,
+   "derr_max": 213.626974632874
+  },
+  "pooled": {
+   "n_true": 1388,
+   "found": 986,
+   "dir_n": 970,
+   "dir_ok": 337,
+   "dir_n_tracked": 761,
+   "dir_ok_tracked": 337,
+   "member_found": 18,
+   "member_hard": 8,
+   "n_struct": 20,
+   "ferr_med": 0.6574414000365181,
+   "ferr_max": 18.772997427125947,
+   "fbias_med": 0.48815088845394206,
+   "derr_med": 19.187046236497206,
+   "derr_max": 416.1403253699441
+  }
+ },
+ "per_structure": {
+  "frame-6x6-realistic_s00": {
+   "name": "frame-6x6-realistic_s00",
+   "n_true": 76,
+   "n_found_map": 57,
+   "n_matched": 56,
+   "n_tracked": 56,
+   "spurious": 1,
+   "dir_n": 53,
+   "dir_ok": 47,
+   "dir_n_tracked": 53,
+   "dir_ok_tracked": 47,
+   "dir_calls_on_big": {
+    "softening": 46,
+    "hardening": 1,
+    "level-independent": 6,
+    "untracked": 0
+   },
+   "small_calls": {
+    "softening": 1,
+    "hardening": 0,
+    "level-independent": 2
+   },
+   "well": 42,
+   "n_tr_matched": 56,
+   "untracked_why": {
+    "bound": 1
+   },
+   "not_found": 20,
+   "not_found_close": 18,
+   "not_found_list": [
+    [
+     182.1,
+     -2.7
+    ],
+    [
+     183.1,
+     -0.06
+    ],
+    [
+     188.8,
+     -0.0
+    ],
+    [
+     230.1,
+     -1.44
+    ],
+    [
+     421.0,
+     -1.5
+    ],
+    [
+     543.6,
+     -0.64
+    ],
+    [
+     1026.6,
+     -2.3
+    ],
+    [
+     1041.8,
+     -2.16
+    ],
+    [
+     1116.3,
+     -0.74
+    ],
+    [
+     1118.5,
+     -1.04
+    ],
+    [
+     1162.6,
+     -0.99
+    ],
+    [
+     1224.9,
+     -1.77
+    ],
+    [
+     1238.9,
+     -1.41
+    ],
+    [
+     1318.3,
+     -1.04
+    ],
+    [
+     1365.1,
+     -1.46
+    ],
+    [
+     1368.6,
+     -2.11
+    ],
+    [
+     1398.0,
+     -2.46
+    ],
+    [
+     1413.0,
+     -1.57
+    ],
+    [
+     1689.5,
+     -1.13
+    ],
+    [
+     1941.8,
+     -0.78
+    ]
+   ],
+   "not_excited": 29,
+   "not_excited_modes": 7,
+   "member": [
+    {
+     "f": 110.9149522743998,
+     "fc": 3.2285988936494814,
+     "rise": 0.008542189493190864,
+     "found": true,
+     "call": "hardening",
+     "D": 1.177510134037707,
+     "tracked": true,
+     "why": "",
+     "top_gauge": "c02",
+     "top_gauge_dist_rank": 1,
+     "nearest_gauge": "c02",
+     "true_top_gauge": "c02",
+     "top_is_true_top": true,
+     "dist_top_m": 0.10000103011969422,
+     "dist_nearest_m": 0.10000103011969422
+    }
+   ],
+   "loc": [
+    {
+     "f": 74.4462893246138,
+     "call": "softening",
+     "member": false,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.3343202748633395,
+     "top_dist_rank": 6
+    },
+    {
+     "f": 92.10137662613177,
+     "call": "softening",
+     "member": false,
+     "top": "c03",
+     "true_top": "c02",
+     "top_ok": false,
+     "top_share": 0.356301856094794,
+     "top_dist_rank": 2
+    },
+    {
+     "f": 110.9161195807042,
+     "call": "hardening",
+     "member": true,
+     "top": "c02",
+     "true_top": "c02",
+     "top_ok": true,
+     "top_share": 0.49721952573755507,
+     "top_dist_rank": 1
+    },
+    {
+     "f": 529.5178734003268,
+     "call": "softening",
+     "member": false,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.9297356204501233,
+     "top_dist_rank": 6
+    },
+    {
+     "f": 622.4793979654951,
+     "call": "softening",
+     "member": false,
+     "top": "c02",
+     "true_top": "c02",
+     "top_ok": true,
+     "top_share": 0.6474034177295016,
+     "top_dist_rank": 1
+    },
+    {
+     "f": 689.1295540171496,
+     "call": "softening",
+     "member": false,
+     "top": "c02",
+     "true_top": "c02",
+     "top_ok": true,
+     "top_share": 0.6630903251948617,
+     "top_dist_rank": 1
+    },
+    {
+     "f": 710.938496621044,
+     "call": "softening",
+     "member": false,
+     "top": "c02",
+     "true_top": "c02",
+     "top_ok": true,
+     "top_share": 0.4510575342298078,
+     "top_dist_rank": 1
+    },
+    {
+     "f": 871.8561195089989,
+     "call": "softening",
+     "member": false,
+     "top": "c02",
+     "true_top": "c02",
+     "top_ok": true,
+     "top_share": 0.4764784112965621,
+     "top_dist_rank": 1
+    },
+    {
+     "f": 884.299522454543,
+     "call": "softening",
+     "member": false,
+     "top": "c02",
+     "true_top": "c06",
+     "top_ok": false,
+     "top_share": 0.37564070401770594,
+     "top_dist_rank": 1
+    },
+    {
+     "f": 1070.3155821321798,
+     "call": "softening",
+     "member": false,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.8892155388192742,
+     "top_dist_rank": 6
+    },
+    {
+     "f": 1439.7072396815322,
+     "call": "softening",
+     "member": false,
+     "top": "c03",
+     "true_top": "c03",
+     "top_ok": true,
+     "top_share": 0.6832627771605598,
+     "top_dist_rank": 2
+    },
+    {
+     "f": 1529.0464818180787,
+     "call": "softening",
+     "member": false,
+     "top": "c02",
+     "true_top": "c02",
+     "top_ok": true,
+     "top_share": 0.5627383301147196,
+     "top_dist_rank": 1
+    },
+    {
+     "f": 1598.5620933066537,
+     "call": "softening",
+     "member": false,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.4787383635900061,
+     "top_dist_rank": 6
+    }
+   ],
+   "hard_calls": [
+    [
+     110.9,
+     3.23,
+     true
+    ]
+   ],
+   "hard_calls_unmatched": 0
+  },
+  "frame-6x6-realistic_s01": {
+   "name": "frame-6x6-realistic_s01",
+   "n_true": 62,
+   "n_found_map": 58,
+   "n_matched": 49,
+   "n_tracked": 46,
+   "spurious": 9,
+   "dir_n": 49,
+   "dir_ok": 29,
+   "dir_n_tracked": 44,
+   "dir_ok_tracked": 29,
+   "dir_calls_on_big": {
+    "softening": 29,
+    "hardening": 0,
+    "level-independent": 15,
+    "untracked": 5
+   },
+   "small_calls": {
+    "softening": 0,
+    "hardening": 0,
+    "level-independent": 0
+   },
+   "well": 39,
+   "n_tr_matched": 44,
+   "untracked_why": {
+    "bound": 4,
+    "jump": 3,
+    "window misfit": 5
+   },
+   "not_found": 13,
+   "not_found_close": 11,
+   "not_found_list": [
+    [
+     191.0,
+     -0.0
+    ],
+    [
+     199.3,
+     -0.0
+    ],
+    [
+     284.4,
+     -1.58
+    ],
+    [
+     386.6,
+     -2.59
+    ],
+    [
+     637.7,
+     -1.26
+    ],
+    [
+     733.5,
+     -0.51
+    ],
+    [
+     940.2,
+     -2.48
+    ],
+    [
+     948.4,
+     -2.52
+    ],
+    [
+     1005.6,
+     -2.97
+    ],
+    [
+     1267.8,
+     -1.36
+    ],
+    [
+     1484.1,
+     -1.04
+    ],
+    [
+     1648.2,
+     -1.7
+    ],
+    [
+     1760.4,
+     -3.0
+    ]
+   ],
+   "not_excited": 6,
+   "not_excited_modes": 2,
+   "member": [
+    {
+     "f": 112.95759036577019,
+     "fc": 3.524729939419746,
+     "rise": 0.008993213849791666,
+     "found": true,
+     "call": "level-independent",
+     "D": 3.4540743377212024,
+     "tracked": true,
+     "why": "",
+     "top_gauge": "c03",
+     "top_gauge_dist_rank": 4,
+     "nearest_gauge": "c01",
+     "true_top_gauge": "c03",
+     "top_is_true_top": true,
+     "dist_top_m": 0.6382259975784439,
+     "dist_nearest_m": 0.11306176224082125
+    }
+   ],
+   "loc": [
+    {
+     "f": 730.0554274184906,
+     "call": "softening",
+     "member": false,
+     "top": "c05",
+     "true_top": "c05",
+     "top_ok": true,
+     "top_share": 0.5593203194265309,
+     "top_dist_rank": 6
+    },
+    {
+     "f": 972.935978778084,
+     "call": "softening",
+     "member": false,
+     "top": "c04",
+     "true_top": "c04",
+     "top_ok": true,
+     "top_share": 0.37869664600268604,
+     "top_dist_rank": 3
+    },
+    {
+     "f": 1060.4521601889699,
+     "call": "softening",
+     "member": false,
+     "top": "c04",
+     "true_top": "c04",
+     "top_ok": true,
+     "top_share": 0.4745894366134083,
+     "top_dist_rank": 3
+    },
+    {
+     "f": 1117.0419310353057,
+     "call": "softening",
+     "member": false,
+     "top": "c02",
+     "true_top": "c02",
+     "top_ok": true,
+     "top_share": 0.4304264012728954,
+     "top_dist_rank": 2
+    },
+    {
+     "f": 1633.6751369165975,
+     "call": "softening",
+     "member": false,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.6103689155670771,
+     "top_dist_rank": 5
+    },
+    {
+     "f": 1659.071756399497,
+     "call": "softening",
+     "member": false,
+     "top": "c01",
+     "true_top": "c06",
+     "top_ok": false,
+     "top_share": 0.37138157375639436,
+     "top_dist_rank": 1
+    },
+    {
+     "f": 1786.1529359920899,
+     "call": "softening",
+     "member": false,
+     "top": "c04",
+     "true_top": "c04",
+     "top_ok": true,
+     "top_share": 0.5846116984707539,
+     "top_dist_rank": 3
+    }
+   ],
+   "hard_calls": [],
+   "hard_calls_unmatched": 0
+  },
+  "frame-6x6-realistic_s02": {
+   "name": "frame-6x6-realistic_s02",
+   "n_true": 75,
+   "n_found_map": 66,
+   "n_matched": 61,
+   "n_tracked": 46,
+   "spurious": 5,
+   "dir_n": 61,
+   "dir_ok": 26,
+   "dir_n_tracked": 45,
+   "dir_ok_tracked": 26,
+   "dir_calls_on_big": {
+    "softening": 25,
+    "hardening": 1,
+    "level-independent": 19,
+    "untracked": 16
+   },
+   "small_calls": {
+    "softening": 0,
+    "hardening": 0,
+    "level-independent": 0
+   },
+   "well": 40,
+   "n_tr_matched": 45,
+   "untracked_why": {
+    "bound": 1,
+    "window misfit": 19
+   },
+   "not_found": 14,
+   "not_found_close": 11,
+   "not_found_list": [
+    [
+     82.2,
+     -1.65
+    ],
+    [
+     103.2,
+     -3.0
+    ],
+    [
+     184.3,
+     -2.6
+    ],
+    [
+     216.4,
+     -1.47
+    ],
+    [
+     251.8,
+     -0.01
+    ],
+    [
+     274.0,
+     -0.0
+    ],
+    [
+     714.7,
+     -1.43
+    ],
+    [
+     903.3,
+     -0.91
+    ],
+    [
+     1140.5,
+     -2.25
+    ],
+    [
+     1157.5,
+     -1.75
+    ],
+    [
+     1201.8,
+     -1.75
+    ],
+    [
+     1349.3,
+     -1.85
+    ],
+    [
+     1351.3,
+     -1.85
+    ],
+    [
+     1999.9,
+     -2.16
+    ]
+   ],
+   "not_excited": 14,
+   "not_excited_modes": 5,
+   "member": [
+    {
+     "f": 154.1320025448628,
+     "fc": 0.629568109660017,
+     "rise": 0.008090095433241733,
+     "found": true,
+     "call": "hardening",
+     "D": 1.0994454699221112,
+     "tracked": true,
+     "why": "",
+     "top_gauge": "c06",
+     "top_gauge_dist_rank": 1,
+     "nearest_gauge": "c06",
+     "true_top_gauge": "c06",
+     "top_is_true_top": true,
+     "dist_top_m": 0.0299994999999999,
+     "dist_nearest_m": 0.0299994999999999
+    }
+   ],
+   "loc": [
+    {
+     "f": 153.95483523515492,
+     "call": "hardening",
+     "member": true,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.3847729826733198,
+     "top_dist_rank": 1
+    },
+    {
+     "f": 472.95116453117595,
+     "call": "softening",
+     "member": false,
+     "top": "c05",
+     "true_top": "c05",
+     "top_ok": true,
+     "top_share": 0.5120945134185022,
+     "top_dist_rank": 2
+    },
+    {
+     "f": 705.858888092546,
+     "call": "softening",
+     "member": false,
+     "top": "c05",
+     "true_top": "c05",
+     "top_ok": true,
+     "top_share": 0.8523452638882086,
+     "top_dist_rank": 2
+    },
+    {
+     "f": 924.9773720520278,
+     "call": "softening",
+     "member": false,
+     "top": "c01",
+     "true_top": "c01",
+     "top_ok": true,
+     "top_share": 0.9037668286645888,
+     "top_dist_rank": 6
+    },
+    {
+     "f": 959.4042095745402,
+     "call": "softening",
+     "member": false,
+     "top": "c03",
+     "true_top": "c04",
+     "top_ok": false,
+     "top_share": 0.4981823602130662,
+     "top_dist_rank": 5
+    },
+    {
+     "f": 1003.0487938814933,
+     "call": "softening",
+     "member": false,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.34928569789263664,
+     "top_dist_rank": 1
+    },
+    {
+     "f": 1101.3392872047646,
+     "call": "softening",
+     "member": false,
+     "top": "c04",
+     "true_top": "c06",
+     "top_ok": false,
+     "top_share": 0.43930590034467254,
+     "top_dist_rank": 3
+    },
+    {
+     "f": 1133.9906108738453,
+     "call": "softening",
+     "member": false,
+     "top": "c03",
+     "true_top": "c04",
+     "top_ok": false,
+     "top_share": 0.4414171058806305,
+     "top_dist_rank": 5
+    }
+   ],
+   "hard_calls": [
+    [
+     154.0,
+     0.63,
+     true
+    ]
+   ],
+   "hard_calls_unmatched": 0
+  },
+  "frame-6x6-realistic_s03": {
+   "name": "frame-6x6-realistic_s03",
+   "n_true": 62,
+   "n_found_map": 46,
+   "n_matched": 44,
+   "n_tracked": 41,
+   "spurious": 2,
+   "dir_n": 43,
+   "dir_ok": 9,
+   "dir_n_tracked": 38,
+   "dir_ok_tracked": 9,
+   "dir_calls_on_big": {
+    "softening": 8,
+    "hardening": 1,
+    "level-independent": 29,
+    "untracked": 5
+   },
+   "small_calls": {
+    "softening": 0,
+    "hardening": 0,
+    "level-independent": 1
+   },
+   "well": 36,
+   "n_tr_matched": 39,
+   "untracked_why": {
+    "jump": 1,
+    "window misfit": 3,
+    "bound": 1
+   },
+   "not_found": 18,
+   "not_found_close": 18,
+   "not_found_list": [
+    [
+     188.0,
+     -0.14
+    ],
+    [
+     208.3,
+     -3.0
+    ],
+    [
+     460.2,
+     -1.77
+    ],
+    [
+     619.8,
+     -1.04
+    ],
+    [
+     813.1,
+     -1.4
+    ],
+    [
+     854.7,
+     -1.4
+    ],
+    [
+     1090.8,
+     -1.42
+    ],
+    [
+     1116.4,
+     -1.42
+    ],
+    [
+     1211.5,
+     -1.64
+    ],
+    [
+     1243.2,
+     -2.03
+    ],
+    [
+     1345.3,
+     -2.78
+    ],
+    [
+     1358.4,
+     -3.0
+    ],
+    [
+     1488.4,
+     -1.07
+    ],
+    [
+     1538.6,
+     -1.52
+    ],
+    [
+     1682.5,
+     -2.16
+    ],
+    [
+     1754.2,
+     -1.91
+    ],
+    [
+     1826.0,
+     -0.98
+    ],
+    [
+     1862.2,
+     -1.14
+    ]
+   ],
+   "not_excited": 9,
+   "not_excited_modes": 2,
+   "member": [
+    {
+     "f": 112.25212524056516,
+     "fc": 2.5491808211049793,
+     "rise": 0.008767510355764176,
+     "found": true,
+     "call": "hardening",
+     "D": 2.064351211562565,
+     "tracked": true,
+     "why": "",
+     "top_gauge": "c06",
+     "top_gauge_dist_rank": 5,
+     "nearest_gauge": "c02",
+     "true_top_gauge": "c06",
+     "top_is_true_top": true,
+     "dist_top_m": 0.6684832150144087,
+     "dist_nearest_m": 0.030000000000000027
+    }
+   ],
+   "loc": [
+    {
+     "f": 113.15249576891352,
+     "call": "hardening",
+     "member": true,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.5326027192988342,
+     "top_dist_rank": 5
+    },
+    {
+     "f": 678.8477006556071,
+     "call": "softening",
+     "member": false,
+     "top": "c04",
+     "true_top": "c04",
+     "top_ok": true,
+     "top_share": 0.9617172393445995,
+     "top_dist_rank": 3
+    },
+    {
+     "f": 1349.8352923521293,
+     "call": "softening",
+     "member": false,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.9908840415012736,
+     "top_dist_rank": 5
+    }
+   ],
+   "hard_calls": [
+    [
+     113.2,
+     2.55,
+     true
+    ]
+   ],
+   "hard_calls_unmatched": 0
+  },
+  "frame-6x6-realistic_s04": {
+   "name": "frame-6x6-realistic_s04",
+   "n_true": 73,
+   "n_found_map": 60,
+   "n_matched": 51,
+   "n_tracked": 52,
+   "spurious": 9,
+   "dir_n": 49,
+   "dir_ok": 25,
+   "dir_n_tracked": 43,
+   "dir_ok_tracked": 25,
+   "dir_calls_on_big": {
+    "softening": 25,
+    "hardening": 0,
+    "level-independent": 18,
+    "untracked": 6
+   },
+   "small_calls": {
+    "softening": 0,
+    "hardening": 0,
+    "level-independent": 2
+   },
+   "well": 45,
+   "n_tr_matched": 45,
+   "untracked_why": {
+    "window misfit": 5,
+    "jump": 3
+   },
+   "not_found": 22,
+   "not_found_close": 19,
+   "not_found_list": [
+    [
+     168.7,
+     -1.56
+    ],
+    [
+     252.3,
+     -1.4
+    ],
+    [
+     260.6,
+     -0.0
+    ],
+    [
+     279.9,
+     -0.0
+    ],
+    [
+     420.0,
+     -2.37
+    ],
+    [
+     459.2,
+     -1.09
+    ],
+    [
+     521.0,
+     -2.54
+    ],
+    [
+     532.9,
+     -2.54
+    ],
+    [
+     611.2,
+     -2.08
+    ],
+    [
+     662.8,
+     -2.3
+    ],
+    [
+     791.8,
+     -1.63
+    ],
+    [
+     854.6,
+     -0.49
+    ],
+    [
+     926.7,
+     -2.81
+    ],
+    [
+     954.3,
+     -2.62
+    ],
+    [
+     1011.6,
+     -3.0
+    ],
+    [
+     1066.5,
+     -0.93
+    ],
+    [
+     1076.3,
+     -1.0
+    ],
+    [
+     1228.7,
+     -1.91
+    ],
+    [
+     1736.9,
+     -1.96
+    ],
+    [
+     1752.5,
+     -2.4
+    ],
+    [
+     1908.2,
+     -0.54
+    ],
+    [
+     1918.6,
+     -0.57
+    ]
+   ],
+   "not_excited": 1,
+   "not_excited_modes": 1,
+   "member": [
+    {
+     "f": 166.37342422972753,
+     "fc": 3.4323516389735964,
+     "rise": 0.008862586370274214,
+     "found": true,
+     "call": "level-independent",
+     "D": -0.7609381833001971,
+     "tracked": true,
+     "why": "",
+     "top_gauge": "c03",
+     "top_gauge_dist_rank": 5,
+     "nearest_gauge": "c06",
+     "true_top_gauge": "c04",
+     "top_is_true_top": false,
+     "dist_top_m": 0.6326910520546344,
+     "dist_nearest_m": 0.34743668192348376
+    }
+   ],
+   "loc": [
+    {
+     "f": 744.8564546021574,
+     "call": "softening",
+     "member": false,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.6983209149084052,
+     "top_dist_rank": 1
+    },
+    {
+     "f": 859.179939603483,
+     "call": "softening",
+     "member": false,
+     "top": "c05",
+     "true_top": "c05",
+     "top_ok": true,
+     "top_share": 0.7649584662916223,
+     "top_dist_rank": 4
+    },
+    {
+     "f": 1005.0642709945638,
+     "call": "softening",
+     "member": false,
+     "top": "c01",
+     "true_top": "c04",
+     "top_ok": false,
+     "top_share": 0.5136057266712323,
+     "top_dist_rank": 3
+    },
+    {
+     "f": 1090.8998716516915,
+     "call": "softening",
+     "member": false,
+     "top": "c05",
+     "true_top": "c05",
+     "top_ok": true,
+     "top_share": 0.9359132057217885,
+     "top_dist_rank": 4
+    },
+    {
+     "f": 1157.9183851632017,
+     "call": "softening",
+     "member": false,
+     "top": "c02",
+     "true_top": "c02",
+     "top_ok": true,
+     "top_share": 0.9380070048501863,
+     "top_dist_rank": 2
+    },
+    {
+     "f": 1180.3778280190784,
+     "call": "softening",
+     "member": false,
+     "top": "c05",
+     "true_top": "c05",
+     "top_ok": true,
+     "top_share": 0.2871101959800923,
+     "top_dist_rank": 4
+    },
+    {
+     "f": 1960.7619149798375,
+     "call": "softening",
+     "member": false,
+     "top": "c04",
+     "true_top": "c04",
+     "top_ok": true,
+     "top_share": 0.5808291629564991,
+     "top_dist_rank": 6
+    }
+   ],
+   "hard_calls": [],
+   "hard_calls_unmatched": 2
+  },
+  "frame-6x6-strong_s00": {
+   "name": "frame-6x6-strong_s00",
+   "n_true": 76,
+   "n_found_map": 55,
+   "n_matched": 51,
+   "n_tracked": 46,
+   "spurious": 4,
+   "dir_n": 49,
+   "dir_ok": 18,
+   "dir_n_tracked": 42,
+   "dir_ok_tracked": 18,
+   "dir_calls_on_big": {
+    "softening": 18,
+    "hardening": 1,
+    "level-independent": 23,
+    "untracked": 7
+   },
+   "small_calls": {
+    "softening": 1,
+    "hardening": 0,
+    "level-independent": 1
+   },
+   "well": 38,
+   "n_tr_matched": 44,
+   "untracked_why": {
+    "bound": 3,
+    "jump": 6
+   },
+   "not_found": 25,
+   "not_found_close": 25,
+   "not_found_list": [
+    [
+     93.3,
+     -6.39
+    ],
+    [
+     182.0,
+     -8.55
+    ],
+    [
+     199.5,
+     -5.93
+    ],
+    [
+     264.9,
+     -5.97
+    ],
+    [
+     317.9,
+     -1.36
+    ],
+    [
+     406.5,
+     -7.19
+    ],
+    [
+     428.9,
+     -6.91
+    ],
+    [
+     543.6,
+     -1.79
+    ],
+    [
+     968.7,
+     -2.53
+    ],
+    [
+     1026.5,
+     -6.89
+    ],
+    [
+     1056.3,
+     -7.66
+    ],
+    [
+     1078.0,
+     -7.66
+    ],
+    [
+     1116.4,
+     -1.73
+    ],
+    [
+     1117.9,
+     -2.05
+    ],
+    [
+     1162.5,
+     -2.9
+    ],
+    [
+     1224.6,
+     -5.18
+    ],
+    [
+     1237.6,
+     -3.46
+    ],
+    [
+     1318.4,
+     -3.07
+    ],
+    [
+     1340.0,
+     -2.54
+    ],
+    [
+     1364.1,
+     -3.08
+    ],
+    [
+     1383.9,
+     -8.91
+    ],
+    [
+     1414.7,
+     -7.88
+    ],
+    [
+     1445.3,
+     -6.37
+    ],
+    [
+     1606.2,
+     -6.74
+    ],
+    [
+     1986.5,
+     -3.18
+    ]
+   ],
+   "not_excited": 21,
+   "not_excited_modes": 5,
+   "member": [
+    {
+     "f": 110.8408976906466,
+     "fc": 7.012487234683573,
+     "rise": 0.02444206488033882,
+     "found": true,
+     "call": "untracked",
+     "D": 7.010115797230743,
+     "tracked": false,
+     "why": "jump",
+     "top_gauge": "c02",
+     "top_gauge_dist_rank": 1,
+     "nearest_gauge": "c02",
+     "true_top_gauge": "c02",
+     "top_is_true_top": true,
+     "dist_top_m": 0.10000150709014026,
+     "dist_nearest_m": 0.10000150709014026
+    }
+   ],
+   "loc": [
+    {
+     "f": 161.6387570852696,
+     "call": "hardening",
+     "member": false,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.5192413264547585,
+     "top_dist_rank": 6
+    },
+    {
+     "f": 198.53542212569522,
+     "call": "softening",
+     "member": false,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.44932613344140043,
+     "top_dist_rank": 6
+    },
+    {
+     "f": 631.684732993609,
+     "call": "softening",
+     "member": false,
+     "top": "c02",
+     "true_top": "c02",
+     "top_ok": true,
+     "top_share": 0.6216790094096342,
+     "top_dist_rank": 1
+    },
+    {
+     "f": 881.3393417952631,
+     "call": "softening",
+     "member": false,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.45065703395477535,
+     "top_dist_rank": 6
+    },
+    {
+     "f": 1593.9012131475806,
+     "call": "softening",
+     "member": false,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.5175493246105816,
+     "top_dist_rank": 6
+    },
+    {
+     "f": 1751.8266983149642,
+     "call": "softening",
+     "member": false,
+     "top": "c03",
+     "true_top": "c03",
+     "top_ok": true,
+     "top_share": 0.5433360026962571,
+     "top_dist_rank": 2
+    }
+   ],
+   "hard_calls": [
+    [
+     161.6,
+     -9.0,
+     false
+    ]
+   ],
+   "hard_calls_unmatched": 0
+  },
+  "frame-6x6-strong_s01": {
+   "name": "frame-6x6-strong_s01",
+   "n_true": 62,
+   "n_found_map": 45,
+   "n_matched": 39,
+   "n_tracked": 32,
+   "spurious": 6,
+   "dir_n": 39,
+   "dir_ok": 19,
+   "dir_n_tracked": 29,
+   "dir_ok_tracked": 19,
+   "dir_calls_on_big": {
+    "softening": 19,
+    "hardening": 0,
+    "level-independent": 10,
+    "untracked": 10
+   },
+   "small_calls": {
+    "softening": 0,
+    "hardening": 0,
+    "level-independent": 0
+   },
+   "well": 27,
+   "n_tr_matched": 29,
+   "untracked_why": {
+    "bound": 5,
+    "jump": 6,
+    "window misfit": 2
+   },
+   "not_found": 23,
+   "not_found_close": 18,
+   "not_found_list": [
+    [
+     142.7,
+     -8.72
+    ],
+    [
+     195.3,
+     -1.33
+    ],
+    [
+     209.1,
+     -0.0
+    ],
+    [
+     297.8,
+     -8.19
+    ],
+    [
+     465.1,
+     -7.1
+    ],
+    [
+     528.0,
+     -9.0
+    ],
+    [
+     638.5,
+     -3.41
+    ],
+    [
+     705.2,
+     -4.03
+    ],
+    [
+     733.5,
+     -1.25
+    ],
+    [
+     905.5,
+     -4.67
+    ],
+    [
+     928.6,
+     -6.84
+    ],
+    [
+     984.6,
+     -8.91
+    ],
+    [
+     1005.4,
+     -8.88
+    ],
+    [
+     1343.4,
+     -5.09
+    ],
+    [
+     1434.5,
+     -5.48
+    ],
+    [
+     1480.0,
+     -2.83
+    ],
+    [
+     1491.4,
+     -2.41
+    ],
+    [
+     1659.1,
+     -5.36
+    ],
+    [
+     1662.2,
+     -4.06
+    ],
+    [
+     1725.4,
+     -6.95
+    ],
+    [
+     1788.0,
+     -8.99
+    ],
+    [
+     1864.9,
+     -1.71
+    ],
+    [
+     1936.9,
+     -3.06
+    ]
+   ],
+   "not_excited": 0,
+   "not_excited_modes": 0,
+   "member": [
+    {
+     "f": 112.918091252878,
+     "fc": 7.768347356309446,
+     "rise": 0.03592332154271259,
+     "found": true,
+     "call": "untracked",
+     "D": 7.790563262733907,
+     "tracked": false,
+     "why": "jump",
+     "top_gauge": "c03",
+     "top_gauge_dist_rank": 4,
+     "nearest_gauge": "c01",
+     "true_top_gauge": "c03",
+     "top_is_true_top": true,
+     "dist_top_m": 0.6382259975784439,
+     "dist_nearest_m": 0.11306176224082125
+    }
+   ],
+   "loc": [
+    {
+     "f": 84.20741545409692,
+     "call": "softening",
+     "member": false,
+     "top": "c02",
+     "true_top": "c02",
+     "top_ok": true,
+     "top_share": 0.4387638132243541,
+     "top_dist_rank": 2
+    },
+    {
+     "f": 723.1903227274959,
+     "call": "softening",
+     "member": false,
+     "top": "c05",
+     "true_top": "c05",
+     "top_ok": true,
+     "top_share": 0.5236381127192786,
+     "top_dist_rank": 6
+    },
+    {
+     "f": 961.4702850370826,
+     "call": "softening",
+     "member": false,
+     "top": "c04",
+     "true_top": "c04",
+     "top_ok": true,
+     "top_share": 0.464298192291243,
+     "top_dist_rank": 3
+    },
+    {
+     "f": 1647.3968012948653,
+     "call": "softening",
+     "member": false,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.7164212586397163,
+     "top_dist_rank": 5
+    },
+    {
+     "f": 1757.542435423648,
+     "call": "softening",
+     "member": false,
+     "top": "c04",
+     "true_top": "c04",
+     "top_ok": true,
+     "top_share": 0.6424470928070779,
+     "top_dist_rank": 3
+    }
+   ],
+   "hard_calls": [],
+   "hard_calls_unmatched": 0
+  },
+  "frame-6x6-strong_s02": {
+   "name": "frame-6x6-strong_s02",
+   "n_true": 74,
+   "n_found_map": 54,
+   "n_matched": 48,
+   "n_tracked": 34,
+   "spurious": 6,
+   "dir_n": 48,
+   "dir_ok": 10,
+   "dir_n_tracked": 32,
+   "dir_ok_tracked": 10,
+   "dir_calls_on_big": {
+    "softening": 10,
+    "hardening": 1,
+    "level-independent": 21,
+    "untracked": 16
+   },
+   "small_calls": {
+    "softening": 0,
+    "hardening": 0,
+    "level-independent": 0
+   },
+   "well": 27,
+   "n_tr_matched": 32,
+   "untracked_why": {
+    "jump": 8,
+    "bound": 2,
+    "window misfit": 10
+   },
+   "not_found": 26,
+   "not_found_close": 22,
+   "not_found_list": [
+    [
+     103.2,
+     -9.0
+    ],
+    [
+     184.3,
+     -5.31
+    ],
+    [
+     220.4,
+     -4.64
+    ],
+    [
+     264.9,
+     -0.13
+    ],
+    [
+     287.0,
+     -0.0
+    ],
+    [
+     321.9,
+     -8.38
+    ],
+    [
+     354.0,
+     -5.21
+    ],
+    [
+     487.3,
+     -6.26
+    ],
+    [
+     733.7,
+     -4.54
+    ],
+    [
+     896.0,
+     -4.0
+    ],
+    [
+     903.4,
+     -3.5
+    ],
+    [
+     939.8,
+     -9.0
+    ],
+    [
+     1004.2,
+     -6.41
+    ],
+    [
+     1108.4,
+     -7.12
+    ],
+    [
+     1140.6,
+     -7.12
+    ],
+    [
+     1190.3,
+     -5.53
+    ],
+    [
+     1204.2,
+     -5.53
+    ],
+    [
+     1302.1,
+     -5.86
+    ],
+    [
+     1323.1,
+     -5.86
+    ],
+    [
+     1353.1,
+     -5.86
+    ],
+    [
+     1363.5,
+     -5.86
+    ],
+    [
+     1383.5,
+     -7.17
+    ],
+    [
+     1514.6,
+     -8.35
+    ],
+    [
+     1567.2,
+     -2.66
+    ],
+    [
+     1950.2,
+     -6.85
+    ],
+    [
+     1964.1,
+     -6.82
+    ]
+   ],
+   "not_excited": 2,
+   "not_excited_modes": 1,
+   "member": [
+    {
+     "f": 154.13395035782838,
+     "fc": 1.5556698605657449,
+     "rise": 0.03233214442750081,
+     "found": true,
+     "call": "level-independent",
+     "D": 2.212327939725567,
+     "tracked": true,
+     "why": "",
+     "top_gauge": "c06",
+     "top_gauge_dist_rank": 1,
+     "nearest_gauge": "c06",
+     "true_top_gauge": "c06",
+     "top_is_true_top": true,
+     "dist_top_m": 0.02999950000082296,
+     "dist_nearest_m": 0.02999950000082296
+    }
+   ],
+   "loc": [
+    {
+     "f": 108.50410053662654,
+     "call": "softening",
+     "member": false,
+     "top": "c04",
+     "true_top": "c04",
+     "top_ok": true,
+     "top_share": 0.45088471897905913,
+     "top_dist_rank": 3
+    },
+    {
+     "f": 256.96874620406646,
+     "call": "hardening",
+     "member": false,
+     "top": "c03",
+     "true_top": "c03",
+     "top_ok": true,
+     "top_share": 0.534983917108919,
+     "top_dist_rank": 5
+    },
+    {
+     "f": 1124.9630408946516,
+     "call": "softening",
+     "member": false,
+     "top": "c03",
+     "true_top": "c04",
+     "top_ok": false,
+     "top_share": 0.7590413812017155,
+     "top_dist_rank": 5
+    },
+    {
+     "f": 1445.7879311758923,
+     "call": "softening",
+     "member": false,
+     "top": "c03",
+     "true_top": "c03",
+     "top_ok": true,
+     "top_share": 0.45185420008114224,
+     "top_dist_rank": 5
+    }
+   ],
+   "hard_calls": [
+    [
+     257.0,
+     -3.73,
+     false
+    ]
+   ],
+   "hard_calls_unmatched": 0
+  },
+  "frame-6x6-strong_s03": {
+   "name": "frame-6x6-strong_s03",
+   "n_true": 61,
+   "n_found_map": 42,
+   "n_matched": 37,
+   "n_tracked": 30,
+   "spurious": 5,
+   "dir_n": 36,
+   "dir_ok": 12,
+   "dir_n_tracked": 27,
+   "dir_ok_tracked": 12,
+   "dir_calls_on_big": {
+    "softening": 12,
+    "hardening": 0,
+    "level-independent": 15,
+    "untracked": 9
+   },
+   "small_calls": {
+    "softening": 1,
+    "hardening": 0,
+    "level-independent": 0
+   },
+   "well": 26,
+   "n_tr_matched": 28,
+   "untracked_why": {
+    "window misfit": 1,
+    "bound": 4,
+    "jump": 7
+   },
+   "not_found": 24,
+   "not_found_close": 20,
+   "not_found_list": [
+    [
+     112.2,
+     4.26
+    ],
+    [
+     196.0,
+     -8.0
+    ],
+    [
+     205.2,
+     -9.0
+    ],
+    [
+     207.7,
+     -8.99
+    ],
+    [
+     228.5,
+     -6.25
+    ],
+    [
+     239.6,
+     -6.15
+    ],
+    [
+     294.4,
+     -1.9
+    ],
+    [
+     352.4,
+     -6.47
+    ],
+    [
+     464.7,
+     -5.15
+    ],
+    [
+     813.0,
+     -4.05
+    ],
+    [
+     854.7,
+     -3.96
+    ],
+    [
+     873.6,
+     -9.0
+    ],
+    [
+     1090.8,
+     -4.1
+    ],
+    [
+     1125.6,
+     -4.1
+    ],
+    [
+     1237.9,
+     -5.85
+    ],
+    [
+     1352.5,
+     -9.0
+    ],
+    [
+     1355.8,
+     -8.95
+    ],
+    [
+     1488.5,
+     -0.85
+    ],
+    [
+     1545.5,
+     -4.41
+    ],
+    [
+     1682.8,
+     -6.83
+    ],
+    [
+     1747.8,
+     -5.05
+    ],
+    [
+     1825.9,
+     -2.03
+    ],
+    [
+     1869.3,
+     -4.35
+    ],
+    [
+     1998.5,
+     -2.97
+    ]
+   ],
+   "not_excited": 1,
+   "not_excited_modes": 1,
+   "member": [
+    {
+     "f": 112.24040872033034,
+     "fc": 4.260110648509685,
+     "rise": 0.03511824762390489,
+     "found": false
+    }
+   ],
+   "loc": [
+    {
+     "f": 131.3405879373062,
+     "call": "softening",
+     "member": false,
+     "top": "c03",
+     "true_top": "c03",
+     "top_ok": true,
+     "top_share": 0.44839758804018837,
+     "top_dist_rank": 6
+    },
+    {
+     "f": 203.62574758687478,
+     "call": "softening",
+     "member": false,
+     "top": "c03",
+     "true_top": "c04",
+     "top_ok": false,
+     "top_share": 0.3574686599308434,
+     "top_dist_rank": 6
+    },
+    {
+     "f": 1338.4768272010924,
+     "call": "softening",
+     "member": false,
+     "top": "c06",
+     "true_top": "c02",
+     "top_ok": false,
+     "top_share": 0.9403746159181627,
+     "top_dist_rank": 5
+    },
+    {
+     "f": 1410.706931997806,
+     "call": "softening",
+     "member": false,
+     "top": "c02",
+     "true_top": "c02",
+     "top_ok": true,
+     "top_share": 0.9691670972674984,
+     "top_dist_rank": 1
+    }
+   ],
+   "hard_calls": [],
+   "hard_calls_unmatched": 0
+  },
+  "frame-6x6-strong_s04": {
+   "name": "frame-6x6-strong_s04",
+   "n_true": 73,
+   "n_found_map": 53,
+   "n_matched": 43,
+   "n_tracked": 36,
+   "spurious": 10,
+   "dir_n": 43,
+   "dir_ok": 20,
+   "dir_n_tracked": 31,
+   "dir_ok_tracked": 20,
+   "dir_calls_on_big": {
+    "softening": 20,
+    "hardening": 0,
+    "level-independent": 11,
+    "untracked": 12
+   },
+   "small_calls": {
+    "softening": 0,
+    "hardening": 0,
+    "level-independent": 0
+   },
+   "well": 25,
+   "n_tr_matched": 31,
+   "untracked_why": {
+    "window misfit": 6,
+    "jump": 6,
+    "bound": 5
+   },
+   "not_found": 30,
+   "not_found_close": 22,
+   "not_found_list": [
+    [
+     81.9,
+     -3.08
+    ],
+    [
+     168.7,
+     -4.82
+    ],
+    [
+     207.3,
+     -3.16
+    ],
+    [
+     233.4,
+     -4.73
+    ],
+    [
+     267.8,
+     -7.73
+    ],
+    [
+     273.4,
+     -0.0
+    ],
+    [
+     291.7,
+     -3.36
+    ],
+    [
+     293.2,
+     -0.0
+    ],
+    [
+     421.2,
+     -5.33
+    ],
+    [
+     460.6,
+     -3.3
+    ],
+    [
+     504.1,
+     -4.09
+    ],
+    [
+     533.5,
+     -7.48
+    ],
+    [
+     611.3,
+     -6.39
+    ],
+    [
+     755.1,
+     -8.99
+    ],
+    [
+     792.4,
+     -3.0
+    ],
+    [
+     881.2,
+     -8.82
+    ],
+    [
+     954.2,
+     -5.24
+    ],
+    [
+     980.4,
+     -6.66
+    ],
+    [
+     987.1,
+     -8.82
+    ],
+    [
+     1011.7,
+     -8.96
+    ],
+    [
+     1067.3,
+     -1.92
+    ],
+    [
+     1101.1,
+     -8.82
+    ],
+    [
+     1180.9,
+     -8.9
+    ],
+    [
+     1443.0,
+     -7.99
+    ],
+    [
+     1579.8,
+     -6.62
+    ],
+    [
+     1608.3,
+     -6.62
+    ],
+    [
+     1756.6,
+     -7.41
+    ],
+    [
+     1903.1,
+     -1.01
+    ],
+    [
+     1912.1,
+     -1.68
+    ],
+    [
+     1918.7,
+     -1.56
+    ]
+   ],
+   "not_excited": 0,
+   "not_excited_modes": 0,
+   "member": [
+    {
+     "f": 166.34275123557785,
+     "fc": 4.114146193443657,
+     "rise": 0.03553075531113627,
+     "found": true,
+     "call": "untracked",
+     "D": -14.99999999999998,
+     "tracked": false,
+     "why": "bound",
+     "top_gauge": "c04",
+     "top_gauge_dist_rank": 6,
+     "nearest_gauge": "c06",
+     "true_top_gauge": "c04",
+     "top_is_true_top": true,
+     "dist_top_m": 0.6326910520546343,
+     "dist_nearest_m": 0.34743668192348376
+    }
+   ],
+   "loc": [
+    {
+     "f": 715.9836654742785,
+     "call": "softening",
+     "member": false,
+     "top": "c01",
+     "true_top": "c01",
+     "top_ok": true,
+     "top_share": 0.5370124981276919,
+     "top_dist_rank": 3
+    },
+    {
+     "f": 740.6041635879802,
+     "call": "softening",
+     "member": false,
+     "top": "c04",
+     "true_top": "c06",
+     "top_ok": false,
+     "top_share": 0.8024234487368495,
+     "top_dist_rank": 6
+    },
+    {
+     "f": 1087.6223271606627,
+     "call": "softening",
+     "member": false,
+     "top": "c05",
+     "true_top": "c05",
+     "top_ok": true,
+     "top_share": 0.950354143228746,
+     "top_dist_rank": 4
+    },
+    {
+     "f": 1159.0507654741436,
+     "call": "softening",
+     "member": false,
+     "top": "c02",
+     "true_top": "c02",
+     "top_ok": true,
+     "top_share": 0.9373332257556203,
+     "top_dist_rank": 2
+    },
+    {
+     "f": 1776.8465468445518,
+     "call": "softening",
+     "member": false,
+     "top": "c04",
+     "true_top": "c04",
+     "top_ok": true,
+     "top_share": 0.5143516654717228,
+     "top_dist_rank": 6
+    },
+    {
+     "f": 1950.697651911659,
+     "call": "softening",
+     "member": false,
+     "top": "c04",
+     "true_top": "c04",
+     "top_ok": true,
+     "top_share": 0.5067961315338181,
+     "top_dist_rank": 6
+    }
+   ],
+   "hard_calls": [],
+   "hard_calls_unmatched": 1
+  },
+  "frame-12x12-realistic_s00": {
+   "name": "frame-12x12-realistic_s00",
+   "n_true": 76,
+   "n_found_map": 65,
+   "n_matched": 60,
+   "n_tracked": 59,
+   "spurious": 5,
+   "dir_n": 58,
+   "dir_ok": 14,
+   "dir_n_tracked": 54,
+   "dir_ok_tracked": 14,
+   "dir_calls_on_big": {
+    "softening": 13,
+    "hardening": 1,
+    "level-independent": 40,
+    "untracked": 4
+   },
+   "small_calls": {
+    "softening": 0,
+    "hardening": 0,
+    "level-independent": 0
+   },
+   "well": 53,
+   "n_tr_matched": 54,
+   "untracked_why": {
+    "window misfit": 6
+   },
+   "not_found": 16,
+   "not_found_close": 15,
+   "not_found_list": [
+    [
+     183.1,
+     -0.22
+    ],
+    [
+     188.8,
+     -0.02
+    ],
+    [
+     421.0,
+     -2.21
+    ],
+    [
+     543.6,
+     -0.85
+    ],
+    [
+     964.9,
+     -1.29
+    ],
+    [
+     1057.4,
+     -2.35
+    ],
+    [
+     1116.3,
+     -2.94
+    ],
+    [
+     1118.5,
+     -2.99
+    ],
+    [
+     1238.9,
+     -1.83
+    ],
+    [
+     1318.3,
+     -1.62
+    ],
+    [
+     1365.1,
+     -1.65
+    ],
+    [
+     1384.6,
+     -2.74
+    ],
+    [
+     1398.0,
+     -2.47
+    ],
+    [
+     1436.8,
+     -2.72
+    ],
+    [
+     1694.8,
+     -1.43
+    ],
+    [
+     1956.5,
+     -2.12
+    ]
+   ],
+   "not_excited": 36,
+   "not_excited_modes": 13,
+   "member": [
+    {
+     "f": 110.9149522743998,
+     "fc": 1.440354238961583,
+     "rise": 0.008542189493190864,
+     "found": true,
+     "call": "hardening",
+     "D": 2.5893058979581607,
+     "tracked": true,
+     "why": "",
+     "top_gauge": "c04",
+     "top_gauge_dist_rank": 5,
+     "nearest_gauge": "c10",
+     "true_top_gauge": "c04",
+     "top_is_true_top": true,
+     "dist_top_m": 0.3171454533490903,
+     "dist_nearest_m": 0.02999999999999997
+    }
+   ],
+   "loc": [
+    {
+     "f": 77.31888739169204,
+     "call": "softening",
+     "member": false,
+     "top": "c09",
+     "true_top": "c09",
+     "top_ok": true,
+     "top_share": 0.4213439432907124,
+     "top_dist_rank": 8
+    },
+    {
+     "f": 110.92583003586756,
+     "call": "hardening",
+     "member": true,
+     "top": "c04",
+     "true_top": "c04",
+     "top_ok": true,
+     "top_share": 0.6181192914682537,
+     "top_dist_rank": 5
+    },
+    {
+     "f": 1095.3791308394268,
+     "call": "softening",
+     "member": false,
+     "top": "c12",
+     "true_top": "c12",
+     "top_ok": true,
+     "top_share": 0.4493109234527551,
+     "top_dist_rank": 10
+    },
+    {
+     "f": 1376.2802922169967,
+     "call": "softening",
+     "member": false,
+     "top": "c04",
+     "true_top": "c04",
+     "top_ok": true,
+     "top_share": 0.8533491376054099,
+     "top_dist_rank": 5
+    },
+    {
+     "f": 1978.5187284599235,
+     "call": "softening",
+     "member": false,
+     "top": "c09",
+     "true_top": "c09",
+     "top_ok": true,
+     "top_share": 0.5969405473333118,
+     "top_dist_rank": 8
+    }
+   ],
+   "hard_calls": [
+    [
+     110.9,
+     1.44,
+     true
+    ]
+   ],
+   "hard_calls_unmatched": 0
+  },
+  "frame-12x12-realistic_s01": {
+   "name": "frame-12x12-realistic_s01",
+   "n_true": 62,
+   "n_found_map": 52,
+   "n_matched": 50,
+   "n_tracked": 50,
+   "spurious": 2,
+   "dir_n": 50,
+   "dir_ok": 32,
+   "dir_n_tracked": 49,
+   "dir_ok_tracked": 32,
+   "dir_calls_on_big": {
+    "softening": 31,
+    "hardening": 1,
+    "level-independent": 17,
+    "untracked": 1
+   },
+   "small_calls": {
+    "softening": 0,
+    "hardening": 0,
+    "level-independent": 0
+   },
+   "well": 48,
+   "n_tr_matched": 49,
+   "untracked_why": {
+    "window misfit": 1,
+    "bound": 1
+   },
+   "not_found": 12,
+   "not_found_close": 12,
+   "not_found_list": [
+    [
+     191.0,
+     -0.0
+    ],
+    [
+     199.3,
+     -0.0
+    ],
+    [
+     257.7,
+     -1.76
+    ],
+    [
+     634.5,
+     -1.25
+    ],
+    [
+     733.5,
+     -0.38
+    ],
+    [
+     948.4,
+     -2.52
+    ],
+    [
+     1435.2,
+     -2.02
+    ],
+    [
+     1484.1,
+     -1.12
+    ],
+    [
+     1648.2,
+     -2.05
+    ],
+    [
+     1662.9,
+     -2.05
+    ],
+    [
+     1760.4,
+     -3.0
+    ],
+    [
+     1849.9,
+     -0.65
+    ]
+   ],
+   "not_excited": 32,
+   "not_excited_modes": 10,
+   "member": [
+    {
+     "f": 112.95759036577019,
+     "fc": 0.6496483196234193,
+     "rise": 0.008993213849791666,
+     "found": true,
+     "call": "hardening",
+     "D": 1.6300838887646885,
+     "tracked": true,
+     "why": "",
+     "top_gauge": "c07",
+     "top_gauge_dist_rank": 7,
+     "nearest_gauge": "c05",
+     "true_top_gauge": "c07",
+     "top_is_true_top": true,
+     "dist_top_m": 0.557576631402357,
+     "dist_nearest_m": 0.029999999999999916
+    }
+   ],
+   "loc": [
+    {
+     "f": 112.97072027385366,
+     "call": "hardening",
+     "member": true,
+     "top": "c07",
+     "true_top": "c07",
+     "top_ok": true,
+     "top_share": 0.32103783615825837,
+     "top_dist_rank": 7
+    },
+    {
+     "f": 297.9190342192901,
+     "call": "softening",
+     "member": false,
+     "top": "c02",
+     "true_top": "c02",
+     "top_ok": true,
+     "top_share": 0.294723749266454,
+     "top_dist_rank": 6
+    },
+    {
+     "f": 400.07118484113414,
+     "call": "softening",
+     "member": false,
+     "top": "c08",
+     "true_top": "c08",
+     "top_ok": true,
+     "top_share": 0.4548205858885319,
+     "top_dist_rank": 5
+    },
+    {
+     "f": 463.591774419184,
+     "call": "softening",
+     "member": false,
+     "top": "c08",
+     "true_top": "c08",
+     "top_ok": true,
+     "top_share": 0.7219873608877758,
+     "top_dist_rank": 5
+    },
+    {
+     "f": 527.1021494487813,
+     "call": "softening",
+     "member": false,
+     "top": "c12",
+     "true_top": "c12",
+     "top_ok": true,
+     "top_share": 0.4003253790769851,
+     "top_dist_rank": 9
+    },
+    {
+     "f": 731.296328037227,
+     "call": "softening",
+     "member": false,
+     "top": "c12",
+     "true_top": "c12",
+     "top_ok": true,
+     "top_share": 0.5109679199068331,
+     "top_dist_rank": 9
+    },
+    {
+     "f": 975.3226087467277,
+     "call": "softening",
+     "member": false,
+     "top": "c03",
+     "true_top": "c03",
+     "top_ok": true,
+     "top_share": 0.24489486671979924,
+     "top_dist_rank": 4
+    },
+    {
+     "f": 1121.401828027361,
+     "call": "softening",
+     "member": false,
+     "top": "c01",
+     "true_top": "c01",
+     "top_ok": true,
+     "top_share": 0.3673545430060177,
+     "top_dist_rank": 3
+    },
+    {
+     "f": 1782.8044039180138,
+     "call": "softening",
+     "member": false,
+     "top": "c08",
+     "true_top": "c08",
+     "top_ok": true,
+     "top_share": 0.5167952410343036,
+     "top_dist_rank": 5
+    }
+   ],
+   "hard_calls": [
+    [
+     113.0,
+     0.65,
+     true
+    ]
+   ],
+   "hard_calls_unmatched": 0
+  },
+  "frame-12x12-realistic_s02": {
+   "name": "frame-12x12-realistic_s02",
+   "n_true": 75,
+   "n_found_map": 70,
+   "n_matched": 61,
+   "n_tracked": 50,
+   "spurious": 9,
+   "dir_n": 61,
+   "dir_ok": 16,
+   "dir_n_tracked": 47,
+   "dir_ok_tracked": 16,
+   "dir_calls_on_big": {
+    "softening": 15,
+    "hardening": 2,
+    "level-independent": 30,
+    "untracked": 14
+   },
+   "small_calls": {
+    "softening": 0,
+    "hardening": 0,
+    "level-independent": 0
+   },
+   "well": 46,
+   "n_tr_matched": 47,
+   "untracked_why": {
+    "bound": 5,
+    "window misfit": 14,
+    "jump": 1
+   },
+   "not_found": 14,
+   "not_found_close": 11,
+   "not_found_list": [
+    [
+     103.2,
+     -3.0
+    ],
+    [
+     184.3,
+     -1.79
+    ],
+    [
+     216.4,
+     -1.47
+    ],
+    [
+     251.8,
+     -0.0
+    ],
+    [
+     274.0,
+     -0.0
+    ],
+    [
+     903.3,
+     -1.2
+    ],
+    [
+     919.4,
+     -2.85
+    ],
+    [
+     1069.3,
+     -2.31
+    ],
+    [
+     1140.5,
+     -2.25
+    ],
+    [
+     1157.5,
+     -1.75
+    ],
+    [
+     1188.8,
+     -1.75
+    ],
+    [
+     1349.3,
+     -1.85
+    ],
+    [
+     1351.3,
+     -1.85
+    ],
+    [
+     1999.9,
+     -1.88
+    ]
+   ],
+   "not_excited": 32,
+   "not_excited_modes": 8,
+   "member": [
+    {
+     "f": 154.1320025448628,
+     "fc": 1.2801559424781672,
+     "rise": 0.008090095433241733,
+     "found": true,
+     "call": "hardening",
+     "D": 2.225741753607924,
+     "tracked": true,
+     "why": "",
+     "top_gauge": "c12",
+     "top_gauge_dist_rank": 1,
+     "nearest_gauge": "c12",
+     "true_top_gauge": "c12",
+     "top_is_true_top": true,
+     "dist_top_m": 0.0299994999999999,
+     "dist_nearest_m": 0.0299994999999999
+    }
+   ],
+   "loc": [
+    {
+     "f": 154.00794684636472,
+     "call": "hardening",
+     "member": true,
+     "top": "c12",
+     "true_top": "c12",
+     "top_ok": true,
+     "top_share": 0.30723288564173823,
+     "top_dist_rank": 1
+    },
+    {
+     "f": 709.2855156670065,
+     "call": "softening",
+     "member": false,
+     "top": "c07",
+     "true_top": "c07",
+     "top_ok": true,
+     "top_share": 0.21930989026549802,
+     "top_dist_rank": 11
+    },
+    {
+     "f": 958.6698981716005,
+     "call": "softening",
+     "member": false,
+     "top": "c01",
+     "true_top": "c05",
+     "top_ok": false,
+     "top_share": 0.40919388304796706,
+     "top_dist_rank": 9
+    },
+    {
+     "f": 986.5150465948316,
+     "call": "softening",
+     "member": false,
+     "top": "c12",
+     "true_top": "c01",
+     "top_ok": false,
+     "top_share": 0.31069195755854284,
+     "top_dist_rank": 1
+    },
+    {
+     "f": 1322.7117788216462,
+     "call": "hardening",
+     "member": false,
+     "top": "c03",
+     "true_top": "c03",
+     "top_ok": true,
+     "top_share": 0.7092443415957485,
+     "top_dist_rank": 7
+    }
+   ],
+   "hard_calls": [
+    [
+     154.0,
+     1.28,
+     true
+    ],
+    [
+     1322.7,
+     -1.84,
+     false
+    ]
+   ],
+   "hard_calls_unmatched": 0
+  },
+  "frame-12x12-realistic_s03": {
+   "name": "frame-12x12-realistic_s03",
+   "n_true": 62,
+   "n_found_map": 44,
+   "n_matched": 44,
+   "n_tracked": 43,
+   "spurious": 0,
+   "dir_n": 43,
+   "dir_ok": 19,
+   "dir_n_tracked": 42,
+   "dir_ok_tracked": 19,
+   "dir_calls_on_big": {
+    "softening": 19,
+    "hardening": 0,
+    "level-independent": 23,
+    "untracked": 1
+   },
+   "small_calls": {
+    "softening": 0,
+    "hardening": 0,
+    "level-independent": 1
+   },
+   "well": 41,
+   "n_tr_matched": 43,
+   "untracked_why": {
+    "jump": 1
+   },
+   "not_found": 18,
+   "not_found_close": 18,
+   "not_found_list": [
+    [
+     188.0,
+     -0.03
+    ],
+    [
+     194.2,
+     -0.03
+    ],
+    [
+     272.0,
+     -3.0
+    ],
+    [
+     298.0,
+     -0.66
+    ],
+    [
+     311.7,
+     -2.48
+    ],
+    [
+     813.1,
+     -1.4
+    ],
+    [
+     1090.8,
+     -1.42
+    ],
+    [
+     1116.4,
+     -1.42
+    ],
+    [
+     1211.5,
+     -1.64
+    ],
+    [
+     1243.2,
+     -2.02
+    ],
+    [
+     1353.7,
+     -3.0
+    ],
+    [
+     1358.4,
+     -3.0
+    ],
+    [
+     1488.4,
+     -1.08
+    ],
+    [
+     1538.6,
+     -1.53
+    ],
+    [
+     1598.0,
+     -1.54
+    ],
+    [
+     1682.5,
+     -2.16
+    ],
+    [
+     1826.0,
+     -0.54
+    ],
+    [
+     1896.2,
+     -1.49
+    ]
+   ],
+   "not_excited": 36,
+   "not_excited_modes": 10,
+   "member": [
+    {
+     "f": 112.25212524056516,
+     "fc": 0.345012752720697,
+     "rise": 0.008767510355764176,
+     "found": true,
+     "call": "level-independent",
+     "D": -0.7967288990302523,
+     "tracked": true,
+     "why": "",
+     "top_gauge": "c09",
+     "top_gauge_dist_rank": 7,
+     "nearest_gauge": "c03",
+     "true_top_gauge": "c09",
+     "top_is_true_top": true,
+     "dist_top_m": 0.3332375301072795,
+     "dist_nearest_m": 0.030000000000000027
+    }
+   ],
+   "loc": [
+    {
+     "f": 203.98573970338842,
+     "call": "softening",
+     "member": false,
+     "top": "c08",
+     "true_top": "c08",
+     "top_ok": true,
+     "top_share": 0.2165771092912218,
+     "top_dist_rank": 12
+    },
+    {
+     "f": 772.1458690368507,
+     "call": "softening",
+     "member": false,
+     "top": "c12",
+     "true_top": "c12",
+     "top_ok": true,
+     "top_share": 0.7644642539634231,
+     "top_dist_rank": 4
+    },
+    {
+     "f": 1082.9749079871526,
+     "call": "softening",
+     "member": false,
+     "top": "c09",
+     "true_top": "c09",
+     "top_ok": true,
+     "top_share": 0.7708669330061032,
+     "top_dist_rank": 7
+    },
+    {
+     "f": 1348.991110977846,
+     "call": "softening",
+     "member": false,
+     "top": "c10",
+     "true_top": "c10",
+     "top_ok": true,
+     "top_share": 0.5659743180565731,
+     "top_dist_rank": 10
+    },
+    {
+     "f": 1613.3744732863502,
+     "call": "softening",
+     "member": false,
+     "top": "c12",
+     "true_top": "c10",
+     "top_ok": false,
+     "top_share": 0.3795935168796512,
+     "top_dist_rank": 4
+    }
+   ],
+   "hard_calls": [],
+   "hard_calls_unmatched": 0
+  },
+  "frame-12x12-realistic_s04": {
+   "name": "frame-12x12-realistic_s04",
+   "n_true": 73,
+   "n_found_map": 55,
+   "n_matched": 54,
+   "n_tracked": 41,
+   "spurious": 1,
+   "dir_n": 53,
+   "dir_ok": 15,
+   "dir_n_tracked": 39,
+   "dir_ok_tracked": 15,
+   "dir_calls_on_big": {
+    "softening": 16,
+    "hardening": 0,
+    "level-independent": 23,
+    "untracked": 14
+   },
+   "small_calls": {
+    "softening": 1,
+    "hardening": 0,
+    "level-independent": 0
+   },
+   "well": 28,
+   "n_tr_matched": 40,
+   "untracked_why": {
+    "window misfit": 13,
+    "bound": 1
+   },
+   "not_found": 19,
+   "not_found_close": 17,
+   "not_found_list": [
+    [
+     168.7,
+     -1.57
+    ],
+    [
+     260.6,
+     -0.0
+    ],
+    [
+     279.9,
+     -0.0
+    ],
+    [
+     420.0,
+     -3.0
+    ],
+    [
+     521.0,
+     -2.54
+    ],
+    [
+     532.9,
+     -2.54
+    ],
+    [
+     637.4,
+     -2.08
+    ],
+    [
+     662.8,
+     -2.3
+    ],
+    [
+     832.9,
+     -0.49
+    ],
+    [
+     979.2,
+     -3.0
+    ],
+    [
+     986.8,
+     -3.0
+    ],
+    [
+     1007.3,
+     -2.78
+    ],
+    [
+     1011.6,
+     -3.0
+    ],
+    [
+     1066.5,
+     -1.52
+    ],
+    [
+     1587.1,
+     -2.15
+    ],
+    [
+     1736.9,
+     -2.43
+    ],
+    [
+     1752.5,
+     -2.4
+    ],
+    [
+     1908.2,
+     -0.54
+    ],
+    [
+     1918.6,
+     -0.57
+    ]
+   ],
+   "not_excited": 30,
+   "not_excited_modes": 8,
+   "member": [
+    {
+     "f": 166.37342422972753,
+     "fc": 0.8049813547926332,
+     "rise": 0.008862586370274214,
+     "found": true,
+     "call": "softening",
+     "D": -0.8560823367176784,
+     "tracked": true,
+     "why": "",
+     "top_gauge": "c12",
+     "top_gauge_dist_rank": 7,
+     "nearest_gauge": "c04",
+     "true_top_gauge": "c12",
+     "top_is_true_top": true,
+     "dist_top_m": 0.48122426953552544,
+     "dist_nearest_m": 0.03
+    }
+   ],
+   "loc": [
+    {
+     "f": 560.1064894144764,
+     "call": "softening",
+     "member": false,
+     "top": "c11",
+     "true_top": "c11",
+     "top_ok": true,
+     "top_share": 0.7451502903710482,
+     "top_dist_rank": 3
+    },
+    {
+     "f": 652.1795105425498,
+     "call": "softening",
+     "member": false,
+     "top": "c11",
+     "true_top": "c11",
+     "top_ok": true,
+     "top_share": 0.7881322442235423,
+     "top_dist_rank": 3
+    },
+    {
+     "f": 751.4123749282693,
+     "call": "softening",
+     "member": false,
+     "top": "c02",
+     "true_top": "c07",
+     "top_ok": false,
+     "top_share": 0.6846572949959278,
+     "top_dist_rank": 9
+    },
+    {
+     "f": 849.5521818393167,
+     "call": "softening",
+     "member": false,
+     "top": "c11",
+     "true_top": "c11",
+     "top_ok": true,
+     "top_share": 0.7891282938170592,
+     "top_dist_rank": 3
+    },
+    {
+     "f": 856.730305610421,
+     "call": "softening",
+     "member": false,
+     "top": "c11",
+     "true_top": "c11",
+     "top_ok": true,
+     "top_share": 0.3871041284867901,
+     "top_dist_rank": 3
+    }
+   ],
+   "hard_calls": [],
+   "hard_calls_unmatched": 0
+  },
+  "frame-12x12-strong_s00": {
+   "name": "frame-12x12-strong_s00",
+   "n_true": 76,
+   "n_found_map": 61,
+   "n_matched": 57,
+   "n_tracked": 37,
+   "spurious": 4,
+   "dir_n": 56,
+   "dir_ok": 2,
+   "dir_n_tracked": 33,
+   "dir_ok_tracked": 2,
+   "dir_calls_on_big": {
+    "softening": 2,
+    "hardening": 0,
+    "level-independent": 31,
+    "untracked": 23
+   },
+   "small_calls": {
+    "softening": 0,
+    "hardening": 0,
+    "level-independent": 1
+   },
+   "well": 33,
+   "n_tr_matched": 34,
+   "untracked_why": {
+    "bound": 8,
+    "window misfit": 6,
+    "jump": 10
+   },
+   "not_found": 19,
+   "not_found_close": 19,
+   "not_found_list": [
+    [
+     93.3,
+     -6.6
+    ],
+    [
+     186.1,
+     -0.47
+    ],
+    [
+     199.5,
+     -5.93
+    ],
+    [
+     263.2,
+     -5.98
+    ],
+    [
+     264.9,
+     -5.95
+    ],
+    [
+     543.6,
+     -2.77
+    ],
+    [
+     797.3,
+     -2.98
+    ],
+    [
+     968.7,
+     -3.59
+    ],
+    [
+     1026.5,
+     -7.66
+    ],
+    [
+     1116.4,
+     -8.98
+    ],
+    [
+     1224.6,
+     -5.96
+    ],
+    [
+     1318.4,
+     -5.36
+    ],
+    [
+     1340.0,
+     -5.33
+    ],
+    [
+     1364.1,
+     -5.38
+    ],
+    [
+     1396.7,
+     -8.91
+    ],
+    [
+     1445.3,
+     -8.9
+    ],
+    [
+     1587.5,
+     -6.76
+    ],
+    [
+     1606.2,
+     -6.76
+    ],
+    [
+     1986.5,
+     -6.9
+    ]
+   ],
+   "not_excited": 12,
+   "not_excited_modes": 6,
+   "member": [
+    {
+     "f": 110.8408976906466,
+     "fc": 3.5148637442378616,
+     "rise": 0.02444206488033882,
+     "found": true,
+     "call": "level-independent",
+     "D": 4.335223975652558,
+     "tracked": true,
+     "why": "",
+     "top_gauge": "c04",
+     "top_gauge_dist_rank": 5,
+     "nearest_gauge": "c10",
+     "true_top_gauge": "c04",
+     "top_is_true_top": true,
+     "dist_top_m": 0.31714530295165866,
+     "dist_nearest_m": 0.03000000000498968
+    }
+   ],
+   "loc": [
+    {
+     "f": 1079.9099587668902,
+     "call": "softening",
+     "member": false,
+     "top": "c05",
+     "true_top": "c05",
+     "top_ok": true,
+     "top_share": 0.45481019790425375,
+     "top_dist_rank": 11
+    }
+   ],
+   "hard_calls": [],
+   "hard_calls_unmatched": 0
+  },
+  "frame-12x12-strong_s01": {
+   "name": "frame-12x12-strong_s01",
+   "n_true": 62,
+   "n_found_map": 49,
+   "n_matched": 42,
+   "n_tracked": 39,
+   "spurious": 7,
+   "dir_n": 42,
+   "dir_ok": 9,
+   "dir_n_tracked": 32,
+   "dir_ok_tracked": 9,
+   "dir_calls_on_big": {
+    "softening": 8,
+    "hardening": 1,
+    "level-independent": 23,
+    "untracked": 10
+   },
+   "small_calls": {
+    "softening": 0,
+    "hardening": 0,
+    "level-independent": 0
+   },
+   "well": 29,
+   "n_tr_matched": 32,
+   "untracked_why": {
+    "jump": 7,
+    "window misfit": 1,
+    "bound": 2
+   },
+   "not_found": 20,
+   "not_found_close": 19,
+   "not_found_list": [
+    [
+     82.7,
+     -5.46
+    ],
+    [
+     195.3,
+     -1.31
+    ],
+    [
+     209.1,
+     -0.0
+    ],
+    [
+     257.6,
+     -4.75
+    ],
+    [
+     297.8,
+     -8.19
+    ],
+    [
+     638.5,
+     -3.41
+    ],
+    [
+     705.2,
+     -4.03
+    ],
+    [
+     733.5,
+     -2.04
+    ],
+    [
+     905.5,
+     -4.67
+    ],
+    [
+     1005.4,
+     -8.9
+    ],
+    [
+     1434.5,
+     -5.52
+    ],
+    [
+     1453.1,
+     -3.03
+    ],
+    [
+     1491.4,
+     -3.02
+    ],
+    [
+     1628.0,
+     -5.53
+    ],
+    [
+     1659.1,
+     -5.56
+    ],
+    [
+     1662.2,
+     -5.56
+    ],
+    [
+     1725.4,
+     -9.0
+    ],
+    [
+     1788.0,
+     -9.0
+    ],
+    [
+     1844.5,
+     -1.76
+    ],
+    [
+     1864.9,
+     -1.77
+    ]
+   ],
+   "not_excited": 12,
+   "not_excited_modes": 4,
+   "member": [
+    {
+     "f": 112.918091252878,
+     "fc": 1.61202471182873,
+     "rise": 0.03592332154271259,
+     "found": true,
+     "call": "hardening",
+     "D": 6.233281990144035,
+     "tracked": true,
+     "why": "",
+     "top_gauge": "c07",
+     "top_gauge_dist_rank": 7,
+     "nearest_gauge": "c05",
+     "true_top_gauge": "c07",
+     "top_is_true_top": true,
+     "dist_top_m": 0.557576631402357,
+     "dist_nearest_m": 0.029999999999999916
+    }
+   ],
+   "loc": [
+    {
+     "f": 112.93845356566965,
+     "call": "hardening",
+     "member": true,
+     "top": "c07",
+     "true_top": "c07",
+     "top_ok": true,
+     "top_share": 0.32995622313198864,
+     "top_dist_rank": 7
+    },
+    {
+     "f": 521.9477103436781,
+     "call": "softening",
+     "member": false,
+     "top": "c12",
+     "true_top": "c12",
+     "top_ok": true,
+     "top_share": 0.34202116864474597,
+     "top_dist_rank": 9
+    },
+    {
+     "f": 1290.4328617669078,
+     "call": "softening",
+     "member": false,
+     "top": "c11",
+     "true_top": "c11",
+     "top_ok": true,
+     "top_share": 0.7677490194986635,
+     "top_dist_rank": 12
+    },
+    {
+     "f": 1399.157782165354,
+     "call": "softening",
+     "member": false,
+     "top": "c12",
+     "true_top": "c12",
+     "top_ok": true,
+     "top_share": 0.437171196962403,
+     "top_dist_rank": 9
+    }
+   ],
+   "hard_calls": [
+    [
+     112.9,
+     1.61,
+     true
+    ]
+   ],
+   "hard_calls_unmatched": 0
+  },
+  "frame-12x12-strong_s02": {
+   "name": "frame-12x12-strong_s02",
+   "n_true": 74,
+   "n_found_map": 59,
+   "n_matched": 52,
+   "n_tracked": 28,
+   "spurious": 7,
+   "dir_n": 52,
+   "dir_ok": 2,
+   "dir_n_tracked": 25,
+   "dir_ok_tracked": 2,
+   "dir_calls_on_big": {
+    "softening": 2,
+    "hardening": 1,
+    "level-independent": 22,
+    "untracked": 27
+   },
+   "small_calls": {
+    "softening": 0,
+    "hardening": 0,
+    "level-independent": 0
+   },
+   "well": 22,
+   "n_tr_matched": 25,
+   "untracked_why": {
+    "bound": 2,
+    "window misfit": 29
+   },
+   "not_found": 22,
+   "not_found_close": 20,
+   "not_found_list": [
+    [
+     103.2,
+     -9.0
+    ],
+    [
+     184.3,
+     -3.83
+    ],
+    [
+     200.9,
+     -4.95
+    ],
+    [
+     220.4,
+     -4.66
+    ],
+    [
+     264.9,
+     -0.04
+    ],
+    [
+     287.0,
+     -0.0
+    ],
+    [
+     290.2,
+     -2.15
+    ],
+    [
+     296.2,
+     -2.33
+    ],
+    [
+     354.0,
+     -5.23
+    ],
+    [
+     714.8,
+     -4.62
+    ],
+    [
+     903.4,
+     -3.99
+    ],
+    [
+     1069.1,
+     -7.3
+    ],
+    [
+     1108.4,
+     -7.12
+    ],
+    [
+     1140.6,
+     -7.12
+    ],
+    [
+     1157.9,
+     -5.53
+    ],
+    [
+     1175.7,
+     -5.53
+    ],
+    [
+     1204.2,
+     -5.53
+    ],
+    [
+     1353.1,
+     -5.86
+    ],
+    [
+     1363.5,
+     -5.86
+    ],
+    [
+     1383.5,
+     -7.17
+    ],
+    [
+     1950.2,
+     -6.85
+    ],
+    [
+     1964.1,
+     -6.82
+    ]
+   ],
+   "not_excited": 10,
+   "not_excited_modes": 4,
+   "member": [
+    {
+     "f": 154.13395035782838,
+     "fc": 0.8401032847459744,
+     "rise": 0.03233214442750081,
+     "found": true,
+     "call": "level-independent",
+     "D": 2.6510713552097442,
+     "tracked": true,
+     "why": "",
+     "top_gauge": "c12",
+     "top_gauge_dist_rank": 1,
+     "nearest_gauge": "c12",
+     "true_top_gauge": "c12",
+     "top_is_true_top": true,
+     "dist_top_m": 0.02999950000082296,
+     "dist_nearest_m": 0.02999950000082296
+    }
+   ],
+   "loc": [
+    {
+     "f": 448.7466934184967,
+     "call": "softening",
+     "member": false,
+     "top": "c04",
+     "true_top": "c04",
+     "top_ok": true,
+     "top_share": 0.8893998994442638,
+     "top_dist_rank": 12
+    },
+    {
+     "f": 861.8836958282063,
+     "call": "hardening",
+     "member": false,
+     "top": "c02",
+     "true_top": "c02",
+     "top_ok": true,
+     "top_share": 0.5668877691175627,
+     "top_dist_rank": 8
+    }
+   ],
+   "hard_calls": [
+    [
+     861.9,
+     -4.0,
+     false
+    ]
+   ],
+   "hard_calls_unmatched": 0
+  },
+  "frame-12x12-strong_s03": {
+   "name": "frame-12x12-strong_s03",
+   "n_true": 61,
+   "n_found_map": 39,
+   "n_matched": 37,
+   "n_tracked": 33,
+   "spurious": 2,
+   "dir_n": 36,
+   "dir_ok": 6,
+   "dir_n_tracked": 32,
+   "dir_ok_tracked": 6,
+   "dir_calls_on_big": {
+    "softening": 6,
+    "hardening": 1,
+    "level-independent": 25,
+    "untracked": 4
+   },
+   "small_calls": {
+    "softening": 0,
+    "hardening": 0,
+    "level-independent": 1
+   },
+   "well": 29,
+   "n_tr_matched": 33,
+   "untracked_why": {
+    "window misfit": 2,
+    "bound": 2,
+    "jump": 2
+   },
+   "not_found": 24,
+   "not_found_close": 19,
+   "not_found_list": [
+    [
+     112.2,
+     0.7
+    ],
+    [
+     196.0,
+     -7.85
+    ],
+    [
+     205.2,
+     -9.0
+    ],
+    [
+     207.7,
+     -9.0
+    ],
+    [
+     239.6,
+     -6.16
+    ],
+    [
+     294.4,
+     -1.91
+    ],
+    [
+     322.7,
+     -8.66
+    ],
+    [
+     352.4,
+     -6.47
+    ],
+    [
+     374.4,
+     -4.92
+    ],
+    [
+     464.7,
+     -5.15
+    ],
+    [
+     804.3,
+     -7.88
+    ],
+    [
+     873.6,
+     -9.0
+    ],
+    [
+     1090.8,
+     -4.1
+    ],
+    [
+     1125.6,
+     -4.1
+    ],
+    [
+     1237.9,
+     -5.85
+    ],
+    [
+     1352.5,
+     -9.0
+    ],
+    [
+     1355.8,
+     -9.0
+    ],
+    [
+     1488.5,
+     -2.88
+    ],
+    [
+     1545.5,
+     -4.47
+    ],
+    [
+     1623.9,
+     -4.24
+    ],
+    [
+     1682.8,
+     -6.83
+    ],
+    [
+     1846.1,
+     -4.35
+    ],
+    [
+     1869.3,
+     -4.35
+    ],
+    [
+     1998.5,
+     -4.09
+    ]
+   ],
+   "not_excited": 6,
+   "not_excited_modes": 2,
+   "member": [
+    {
+     "f": 112.24040872033034,
+     "fc": 0.7043694504680786,
+     "rise": 0.03511824762390489,
+     "found": false
+    }
+   ],
+   "loc": [
+    {
+     "f": 656.482202314804,
+     "call": "hardening",
+     "member": false,
+     "top": "c12",
+     "true_top": "c12",
+     "top_ok": true,
+     "top_share": 0.611474525596134,
+     "top_dist_rank": 4
+    },
+    {
+     "f": 1073.131524856941,
+     "call": "softening",
+     "member": false,
+     "top": "c09",
+     "true_top": "c09",
+     "top_ok": true,
+     "top_share": 0.8340132460748007,
+     "top_dist_rank": 7
+    },
+    {
+     "f": 1229.4650839009403,
+     "call": "softening",
+     "member": false,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.2853469720365414,
+     "top_dist_rank": 11
+    }
+   ],
+   "hard_calls": [
+    [
+     656.5,
+     -8.96,
+     false
+    ]
+   ],
+   "hard_calls_unmatched": 0
+  },
+  "frame-12x12-strong_s04": {
+   "name": "frame-12x12-strong_s04",
+   "n_true": 73,
+   "n_found_map": 58,
+   "n_matched": 50,
+   "n_tracked": 31,
+   "spurious": 8,
+   "dir_n": 49,
+   "dir_ok": 7,
+   "dir_n_tracked": 24,
+   "dir_ok_tracked": 7,
+   "dir_calls_on_big": {
+    "softening": 6,
+    "hardening": 3,
+    "level-independent": 15,
+    "untracked": 25
+   },
+   "small_calls": {
+    "softening": 0,
+    "hardening": 0,
+    "level-independent": 1
+   },
+   "well": 16,
+   "n_tr_matched": 25,
+   "untracked_why": {
+    "bound": 7,
+    "window misfit": 16,
+    "jump": 4
+   },
+   "not_found": 23,
+   "not_found_close": 16,
+   "not_found_list": [
+    [
+     81.9,
+     -3.08
+    ],
+    [
+     168.7,
+     -4.83
+    ],
+    [
+     252.3,
+     -4.28
+    ],
+    [
+     267.8,
+     -7.73
+    ],
+    [
+     293.2,
+     -0.0
+    ],
+    [
+     460.6,
+     -3.36
+    ],
+    [
+     487.4,
+     -4.09
+    ],
+    [
+     637.5,
+     -6.39
+    ],
+    [
+     663.5,
+     -7.07
+    ],
+    [
+     755.1,
+     -9.0
+    ],
+    [
+     792.4,
+     -7.11
+    ],
+    [
+     833.2,
+     -1.52
+    ],
+    [
+     1011.7,
+     -9.0
+    ],
+    [
+     1074.9,
+     -4.67
+    ],
+    [
+     1101.1,
+     -9.0
+    ],
+    [
+     1267.9,
+     -7.46
+    ],
+    [
+     1406.3,
+     -7.99
+    ],
+    [
+     1443.0,
+     -7.99
+    ],
+    [
+     1579.8,
+     -6.62
+    ],
+    [
+     1787.7,
+     -7.49
+    ],
+    [
+     1871.9,
+     -1.75
+    ],
+    [
+     1912.1,
+     -1.75
+    ],
+    [
+     1918.7,
+     -1.74
+    ]
+   ],
+   "not_excited": 12,
+   "not_excited_modes": 4,
+   "member": [
+    {
+     "f": 166.34275123557785,
+     "fc": 1.83353911887425,
+     "rise": 0.03553075531113627,
+     "found": true,
+     "call": "hardening",
+     "D": 3.942810995865953,
+     "tracked": true,
+     "why": "",
+     "top_gauge": "c12",
+     "top_gauge_dist_rank": 7,
+     "nearest_gauge": "c04",
+     "true_top_gauge": "c12",
+     "top_is_true_top": true,
+     "dist_top_m": 0.4812242695355254,
+     "dist_nearest_m": 0.029999999999999943
+    }
+   ],
+   "loc": [
+    {
+     "f": 154.90942803015926,
+     "call": "softening",
+     "member": false,
+     "top": "c04",
+     "true_top": "c04",
+     "top_ok": true,
+     "top_share": 0.39891404828211396,
+     "top_dist_rank": 1
+    },
+    {
+     "f": 166.7028236110468,
+     "call": "hardening",
+     "member": true,
+     "top": "c12",
+     "true_top": "c12",
+     "top_ok": true,
+     "top_share": 0.4078391816773671,
+     "top_dist_rank": 7
+    },
+    {
+     "f": 231.00623490616726,
+     "call": "softening",
+     "member": false,
+     "top": "c06",
+     "true_top": "c06",
+     "top_ok": true,
+     "top_share": 0.5326640283160164,
+     "top_dist_rank": 5
+    },
+    {
+     "f": 936.33740476777,
+     "call": "hardening",
+     "member": false,
+     "top": "c11",
+     "true_top": "c11",
+     "top_ok": true,
+     "top_share": 0.7395425745190886,
+     "top_dist_rank": 3
+    },
+    {
+     "f": 1951.2420116666567,
+     "call": "hardening",
+     "member": false,
+     "top": "c07",
+     "true_top": "c07",
+     "top_ok": true,
+     "top_share": 0.7654891418049291,
+     "top_dist_rank": 10
+    }
+   ],
+   "hard_calls": [
+    [
+     166.7,
+     1.83,
+     true
+    ],
+    [
+     936.3,
+     -8.69,
+     false
+    ],
+    [
+     1951.2,
+     -9.0,
+     false
+    ]
+   ],
+   "hard_calls_unmatched": 0
+  }
+ }
+}
