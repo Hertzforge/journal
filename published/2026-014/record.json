@@ -1,0 +1,28 @@
+{
+  "id": "2026-014",
+  "title": "Five Control Laws for Multi-Shaker Shock Testing: The Laws, Their Build in Hertzforge, and How Each Scores on the MIMO Shock Suite",
+  "type": "Research Article",
+  "evidence": "simulator",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    }
+  ],
+  "first_published": "2026-11-25",
+  "latest": 1,
+  "versions": [
+    {
+      "version": 1,
+      "date": "2026-11-25",
+      "note": "First published.",
+      "doi": "10.5281/zenodo.24537418"
+    }
+  ],
+  "doi_latest": "10.5281/zenodo.24537417",
+  "status": "Review open",
+  "retraction": "",
+  "thread": "",
+  "reviews": [],
+  "sample": false
+}

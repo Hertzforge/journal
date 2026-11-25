@@ -1,0 +1,5 @@
+set,law,runs,ends_port,ends_rust,exposure_port,exposure_rust,strict_port,strict_rust,ends_pass_to_miss,ends_miss_to_pass,runs_same_exposure,exposure_change_median_abs_db,exposure_change_max_up_db,exposure_change_max_down_db,largest_cell_change_ends
+study,followed,1140,0.764,0.761,0.902,0.904,0.629,0.621,14,10,481,0.016,18.564,-29.752,0.067
+study,followed-hold,1140,0.522,0.53,0.982,0.981,0.489,0.494,12,21,623,0.0,17.959,-23.937,0.1
+audit,followed,690,0.79,0.774,0.909,0.923,0.63,0.633,16,5,301,0.011,31.643,-29.063,0.1
+audit,followed-hold,690,0.548,0.543,0.983,0.981,0.522,0.517,14,11,390,0.0,36.332,-34.194,0.067

@@ -1,0 +1,13 @@
+TY  - JOUR
+AU  - Cross, Kevin
+TI  - Five Control Laws for Multi-Shaker Shock Testing: The Laws, Their Build in Hertzforge, and How Each Scores on the MIMO Shock Suite
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-014
+PY  - 2026
+DA  - 2026/11/25
+ET  - Version 1
+DO  - 10.5281/zenodo.24537418
+UR  - https://hertzforge.com/journal/2026-014/v1/
+AB  - Hertzforge, an open-source structural dynamics suite, has five control laws for shock tests with several shakers: three it ships (a waveform law through the regularized inverse, an SRS law that shapes each control gauge's target, and a decentralized law that pairs each gauge with one shaker) and two that follow a structure softening with level. This article describes each law, its build in Hertzforge's Rust law mathematics and how the study ran it, and how each scores on the MIMO Shock suite, draft 0.2, under Method 516.8's tolerances: 1,140 runs a law on 380 structures, each finding tested again on ten held-back structures. No law is best under every reading. The followed law ends inside the SRS tolerance most often, 76.1 percent of its runs (77.4 percent held back); the followed law with the hold over-tests least, 98.1 percent of its runs never more than 3 dB over, but ends in tolerance in 53.0 percent, mostly because it stops at its probes; the inverse and shape laws end in tolerance in 69.9 percent each. Near full level, on a pulse at -3 dB or above, the shape law put the article more than 3 dB over the full-level target in 116 runs, the followed law in 96, the inverse law in 69 and the followed law with the hold in 19. The inverse law put the article more than 6 dB over in 204 runs, by up to 80.99 dB, 196 of them on pulses below -3 dB, mostly on square systems that soften. On square systems the inverse law meets the classical pulses' time-domain tolerance in 58.8 percent of its half-sine runs and 45.6 percent of its sawtooth runs, against 39.4 to 55.6 and 30.6 to 31.9 percent for the SRS laws; of the runs that reach full level, in 96.9 and 89.0 percent. The decentralized law ends in tolerance in no run: on these coupled frames each gauge's own shaker is a small part of what moves it. Everything here is simulation.
+ER  - 

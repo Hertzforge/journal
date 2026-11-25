@@ -1,0 +1,11 @@
+set,law,runs,over_3db,over_3db_at_or_near_full,over_6db,over_6db_at_or_near_full,over_3db_runs,largest_exposure_median_db,largest_exposure_max_db
+study,followed,1140,109,96,14,7,109,4.378,11.153
+study,followed-hold,1140,22,19,2,1,22,4.795,7.308
+study,inverse,1140,287,69,204,8,287,10.891,80.99
+study,shape,1140,201,116,66,14,201,4.862,18.603
+study,paired,1140,1136,0,1131,0,1136,25.761,57.901
+audit,followed,690,53,42,6,2,53,4.566,9.509
+audit,followed-hold,690,13,12,2,2,13,3.747,9.509
+audit,inverse,690,170,43,117,1,170,12.872,97.496
+audit,shape,690,128,70,45,8,128,5.176,18.124
+audit,paired,690,690,0,683,0,690,25.642,62.08
