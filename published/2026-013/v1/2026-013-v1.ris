@@ -1,0 +1,13 @@
+TY  - JOUR
+AU  - Cross, Kevin
+TI  - The MIMO Shock Suite of the Open Benchmark Set: Pulse Problems on the Random Suite's Structures, Scored by Method 516.8
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-013
+PY  - 2026
+DA  - 2026/11/25
+ET  - Version 1
+DO  - 10.5281/zenodo.24536662
+UR  - https://hertzforge.com/journal/2026-013/v1/
+AB  - The Open Benchmark Set gives control laws for multi-shaker vibration tests shared simulated problems, a fair run and a fixed scorecard. This article proposes its second suite, MIMO Shock: pulse problems on the same 380 structures as the MIMO Random suite, with three targets (an SRS target and two classical pulses), a full level sized so that a pulse moves each structure as far as Random's full level does, and the time-domain level rule Random already uses. Every target is projected onto what the shakers can reach, and the gap is stored with the problem. Runs are scored by the tolerances of MIL-STD-810H Method 516.8, read from the standard's text, under several readings. The article describes the screen that chose the laws and the study, run on the Random study's whole matrix, and reports what the problems show pooled over five control laws, with each finding tested again on ten held-back structures. Pooled, 53.8 percent of the study's 5,700 runs end inside the SRS tolerance at full level (55.6 percent of the 3,450 held-back runs), and the share falls from about 70 percent on linear structures to 13 percent on the hardest cell. One property of the suite limits what its readings mean: on systems with more control gauges than shakers the projected sawtooth targets cannot meet Method 516.8's time-domain tolerance at all. Everything here is simulation.
+ER  - 

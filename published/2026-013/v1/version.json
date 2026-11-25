@@ -1,0 +1,41 @@
+{
+  "id": "2026-013",
+  "version": 1,
+  "date": "2026-11-25",
+  "first_published": "2026-11-25",
+  "note": "First published.",
+  "title": "The MIMO Shock Suite of the Open Benchmark Set: Pulse Problems on the Random Suite's Structures, Scored by Method 516.8",
+  "type": "Proposed Standard",
+  "evidence": "simulator",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    }
+  ],
+  "doi": "10.5281/zenodo.24536662",
+  "doi_latest": "10.5281/zenodo.24536661",
+  "issn": "",
+  "volume": 1,
+  "address": "https://hertzforge.com/journal/2026-013/v1/",
+  "sample": false,
+  "outputs": {
+    "page": "index.html",
+    "single_file": "2026-013-v1.html",
+    "pdf": "2026-013-v1.pdf",
+    "bundle": "2026-013-v1-bundle.zip"
+  },
+  "built": "2026-11-25T15:58:22Z",
+  "built_with": {
+    "quarto": "1.11.9",
+    "pandoc": "pandoc 3.10",
+    "typst": "",
+    "python": "3.14.10",
+    "plotly": "7.1.0",
+    "plotly.js": "4.1.1",
+    "kaleido": "1.5.1",
+    "numpy": "2.5.4",
+    "theme": "70db5f680c78",
+    "build": "fb876c495f3a"
+  }
+}

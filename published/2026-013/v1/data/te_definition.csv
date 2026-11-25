@@ -1,0 +1,11 @@
+set,tier,runs_at_full_level,te_ok_10pct,te_ok_516
+study,none,330,0.9242,0.9909
+study,realistic,165,0.1333,0.5818
+study,strong,4,0.0,0.25
+study,one effect,154,0.3377,0.8377
+study,all,653,0.5804,0.8469
+audit,none,169,0.9527,1.0
+audit,realistic,77,0.1948,0.5974
+audit,strong,3,0.0,1.0
+audit,one effect,165,0.5515,0.8242
+audit,all,414,0.6449,0.8551
