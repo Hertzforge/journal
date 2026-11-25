@@ -13,5 +13,5 @@ law (and set, study or held back) unless said.
 | `law_port_rust.csv` | followed and followed-hold, port against Rust law math: shares, runs that changed end, change of largest exposure (Section 5.7; Figure 6) | `law_results.py` |
 | `screen.csv` | The screen, six laws on 12 problems: shares and median run time (Section 2.6) | `law_results.py` |
 
-They are computed from the results record of the study and its audit (DOI to be assigned); the
-problems are the MIMO Shock suite, draft 0.2 (DOI to be assigned).
+They are computed from the results record of the study and its audit (DOI 10.5281/zenodo.24526370); the
+problems are the MIMO Shock suite, draft 0.2 (DOI 10.5281/zenodo.24526368).

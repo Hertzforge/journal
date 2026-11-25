@@ -1,11 +1,11 @@
 ---
 # Filled in by the editors at publication.
 id: "2026-014"
-version: 1
+version: 2
 date: "2026-11-25"
-doi: "10.5281/zenodo.24537418"
+doi: "10.5281/zenodo.24538548"
 doi_latest: "10.5281/zenodo.24537417"
-note: First published.
+note: "The data and code READMEs give the DOIs of the suite and of the results record, which version 1 left as to be assigned. Nothing else changed."
 
 # Filled in by the authors.
 title: "Five Control Laws for Multi-Shaker Shock Testing: The Laws, Their Build in Hertzforge, and How Each Scores on the MIMO Shock Suite"

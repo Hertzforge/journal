@@ -1,0 +1,11 @@
+set,law,runs,ends,te,ends_and_te,te_of_full_level,ratio_median,te_misses_at_full,furthest_ratio_median,furthest_ratio_largest
+study,followed,380,0.534,0.458,0.447,0.837,1.0,34,1.27,1.873
+study,followed-hold,380,0.147,0.126,0.126,0.857,1.0,8,1.399,1.745
+study,inverse,380,0.526,0.489,0.476,0.903,1.0,20,1.22,14.66
+study,shape,380,0.461,0.382,0.376,0.792,1.0,38,1.391,3.491
+study,paired,380,0.0,0.0,0.0,,,,,
+audit,followed,230,0.543,0.452,0.452,0.832,1.0,21,1.33,14.579
+audit,followed-hold,230,0.157,0.143,0.143,0.917,1.0,3,1.381,2.904
+audit,inverse,230,0.57,0.526,0.522,0.917,1.0,11,0.799,2.894
+audit,shape,230,0.509,0.417,0.409,0.793,1.0,25,1.345,14.579
+audit,paired,230,0.0,0.0,0.0,,,,,
