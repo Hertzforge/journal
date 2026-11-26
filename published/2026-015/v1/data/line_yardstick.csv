@@ -1,0 +1,5 @@
+system,size,run,line_rms_db,share_lines_within_3_db,share_lines_over_6_db,stress_minus_band_control_db,q1,q3,structures_worse,structures
+6 x 12,strong,N1,5.3673,0.5922,0.1167,0.822,0.3006,1.4028,17,20
+6 x 12,strong,N2,4.7037,0.6494,0.1252,1.4278,0.6082,2.2496,17,20
+6 x 6,strong,N1,5.5239,0.7763,0.1288,3.6611,3.435,5.2099,10,10
+6 x 6,strong,N2,4.0016,0.8714,0.0779,5.4579,4.2019,6.0562,10,10

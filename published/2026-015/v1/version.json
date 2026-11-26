@@ -1,0 +1,41 @@
+{
+  "id": "2026-015",
+  "version": 1,
+  "date": "2026-11-26",
+  "first_published": "2026-11-26",
+  "note": "First published.",
+  "title": "A Banded Specification: Convert It to Narrowband, or Control the Band? A Closed-Loop Simulation Study",
+  "type": "Research Article",
+  "evidence": "simulator",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    }
+  ],
+  "doi": "10.5281/zenodo.24563517",
+  "doi_latest": "10.5281/zenodo.24563516",
+  "issn": "",
+  "volume": 1,
+  "address": "https://hertzforge.com/journal/2026-015/v1/",
+  "sample": false,
+  "outputs": {
+    "page": "index.html",
+    "single_file": "2026-015-v1.html",
+    "pdf": "2026-015-v1.pdf",
+    "bundle": "2026-015-v1-bundle.zip"
+  },
+  "built": "2026-11-26T17:47:32Z",
+  "built_with": {
+    "quarto": "1.11.9",
+    "pandoc": "pandoc 3.10",
+    "typst": "",
+    "python": "3.14.10",
+    "plotly": "7.1.0",
+    "plotly.js": "4.1.1",
+    "kaleido": "1.5.1",
+    "numpy": "2.5.4",
+    "theme": "70db5f680c78",
+    "build": "9a23e3ec9dba"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "2026-015",
+  "title": "A Banded Specification: Convert It to Narrowband, or Control the Band? A Closed-Loop Simulation Study",
+  "type": "Research Article",
+  "evidence": "simulator",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    }
+  ],
+  "first_published": "2026-11-26",
+  "latest": 1,
+  "versions": [
+    {
+      "version": 1,
+      "date": "2026-11-26",
+      "note": "First published.",
+      "doi": "10.5281/zenodo.24563517"
+    }
+  ],
+  "doi_latest": "10.5281/zenodo.24563516",
+  "status": "Review open",
+  "retraction": "",
+  "thread": "",
+  "reviews": [],
+  "sample": false
+}

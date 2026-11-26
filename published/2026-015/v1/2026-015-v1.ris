@@ -1,0 +1,13 @@
+TY  - JOUR
+AU  - Cross, Kevin
+TI  - A Banded Specification: Convert It to Narrowband, or Control the Band? A Closed-Loop Simulation Study
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-015
+PY  - 2026
+DA  - 2026/11/26
+ET  - Version 1
+DO  - 10.5281/zenodo.24563517
+UR  - https://hertzforge.com/journal/2026-015/v1/
+AB  - A multi-shaker random vibration specification is often written in bands: one level per one-third-octave band at each control gauge. A test operator can run it in two ways: measure the system's frequency response at low level, convert the bands once into a narrowband reference and run narrowband control to it, or control the band levels directly. This article compares the two closed loop on Hertzforge's simulator, on 20 structures of the Open Benchmark Set, 10 of them on both of two systems, with Hertzforge's band-average law for band control and three line-by-line laws on the converted reference. A conversion from a model measured at full level, the model finder of an earlier article, was run beside two low-level conversions. With more control gauges than shakers, band control and every converted reference were the same test on average at the realistic size of level change. At the strong size the reference converted by a fit in decibels put the stress 0.82 dB further from service than band control, and the reference converted from the band-average law's own first solve did not: the gap depends on how the conversion is made, not on converting. With as many shakers as control gauges, the default pseudo-inverse law on any converted reference put the stress 1.7 to 6.1 dB further from service than band control, an over-test, while two other laws on the same reference showed no such excess. No claim that held put a converted reference closer to service than band control, and band control needed less drive and over-tested narrow peaks less. For a specification written in bands the article recommends band control as the default way to run the test. Of 136 claims written by rule, 113 held on five held-back structures, 15 were weaker and 8 did not hold. Every result is from runs with the controller's checks widened; at their defaults, which are conservative by design, 68 of 76 runs stopped for the operator to look before going on. Band control stopped on a divergence check that judges each control's error line by line, which a band law does not try to reduce; the article recommends that, for a band law, the check judge the band error instead, at the same thresholds.
+ER  - 
