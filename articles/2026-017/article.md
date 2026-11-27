@@ -11,7 +11,7 @@ note: First published.
 title: "Six Control Laws for Multi-Shaker Sine Testing: The Laws, Their Build in Hertzforge, and How Each Scores on the MIMO Sine Suite"
 type: Research Article
 evidence: simulator
-evidence_note: "Closed-loop runs of Hertzforge's five MIMO Sine control laws and one candidate law on the Open Benchmark Set's MIMO Sine suite, draft 0.1: 380 generated structures on five systems, five tests and a limit case, 4,140 runs in the Hertzforge version and 2,200 in the Python version, one sequence of measurement noise, every finding a claim of a rule fixed before an independent audit on 230 held-back problems. The five shipped laws ran as Hertzforge's Rust law mathematics inside its shipped MIMO Sine engine, on the simulator, driven by a closed-loop runner built for the study. The candidate, followed poles, ran only in the suite's Python harness, beside the Python port of matrix; it has no Rust build."
+evidence_note: "Closed-loop runs of Hertzforge's five MIMO Sine control laws and one candidate law on the Open Benchmark Set's MIMO Sine suite, draft 0.1: 380 generated structures on five systems, five tests and a limit case, 4,140 runs in the Hertzforge version and 2,200 in the Python version, one sequence of measurement noise, every finding a claim of a rule fixed before an independent audit on 230 held-back problems. The five shipped laws ran as Hertzforge's Rust law mathematics inside its shipped MIMO Sine engine, on the simulator, driven by a closed-loop runner built for the study. The candidate, followed poles, ran only in the suite's Python harness, beside the Python port of matrix; its Rust build in Hertzforge was made after the study."
 authors:
   - name: "Kevin Cross"
     orcid: "https://orcid.org/0009-0002-6608-9426"
@@ -140,7 +140,7 @@ had seen, tested every claim; Section 5.7 gives its verdicts.
   23 cells (R1630), and
   over-testing more in one cell (R2018);
   on the held-back structures, R1630 and R2018 hold weaker (the direction held and the size fell outside the study's quartiles) and the other one holds. It was admitted after
-  the screen, post hoc, and its Rust build waits on the audit.
+  the screen, post hoc, and was built in Rust after the study.
 - **What did not work.** Three more candidates (the family inverse, the level ladder and the dither
   identification) and four predictive leads built on followed poles were screened and left out. Section 6 gives
   each one's idea, readings and the reason as far as it is known.
@@ -150,7 +150,7 @@ had seen, tested every claim; Section 5.7 gives its verdicts.
   60 hold weaker and 17 do not hold.
   Every claim was tested.
 - **Implemented.** The five laws' mathematics is on Hertzforge's main branch and each is a
-  selectable law. The study's runner is on a research branch, and followed poles is in the suite's Python code.
+  selectable law; the study's runner and followed poles' Rust build are on main too. The study's runs of followed poles ran the suite's Python code.
 
 ## 1. The Test and the Laws' Common Frame
 
@@ -378,9 +378,13 @@ from the same mathematics; over whole recorded runs the law file gives the nativ
 within rounding (matrix within about 1e-7, because its modal fit is an
 iterative search that the platforms' rounding moves) [@hertzforge2026].
 
-Followed poles is not in Hertzforge. Its Rust build, about 1,500 to 2,000 lines with its tests, plus a
-declared block delay in the engine so the modal fit can take the right delay out, waits on the
-audit.
+Followed poles was built in Rust after the study, in the same crate as the five laws. The station's
+delay is one of its settings (`station_delay_s`), so the modal fit can take the right delay out; it
+is refused when the setting is left at zero. Sweeps only. On the parity
+cases its fit agrees with the Python version's to about 2.4e-11 and its drives to about 3.9e-13.
+Where the stable-pole selection splits one mode over two clusters, the Rust fit keeps the mode once
+and the Python fit keeps it twice. It is selectable on the simulator only: it fails the law check's
+steep reference, so a hardware station refuses it.
 
 ### 3.2 How the Study Ran Them
 
@@ -390,8 +394,8 @@ scorer [@sinesuite2026].
 - **The Hertzforge version** is a closed-loop runner on Hertzforge's own MIMO Sine engine: the
   engine as shipped, its identification measured at its own low level with noise, its tracking
   filters, guards, ladder and pipeline, and the five laws as Rust law mathematics, on the simulator
-  station. The runner is an example program on a research branch; the three MIMO Sine crates are
-  the same at the commit the study ran and on main (a diff between the two lists
+  station. The runner is an example program, on Hertzforge's main branch since the study; the three MIMO Sine crates are
+  the same at the commit the study ran and on main at `a501b9b9f89d75450f6dbae1bcb4564d1ae82d15` (a diff between the two lists
   0 files in them). Every Hertzforge
   run's card names the same runner (one SHA-256 over 4,140 runs).
 - **The Python version** is the suite's own harness, which restates the engine's loop in Python and
@@ -919,13 +923,13 @@ The engine's measured lag less its pipeline (8 and
 14 samples on two structures) is a cross-correlation's peak, not the
 identification's pure delay, and a fit with it is worse than one with no delay taken out. The
 simulator block's own delay (Section 2.6) gave the fit the screen used; it is the declared delay
-the Rust build of followed poles needs. A refined fit, M9d, took 22 to
+the Rust build of followed poles takes as a setting. A refined fit, M9d, took 22 to
 31 times as long to run as followed poles on M7d and was not carried into the study.
 The research round's own modal fit misses most of the frames' modes; M7d replaced it.
 
 ## 7. What Was Not Tested
 
-- **Followed poles in Hertzforge.** Followed poles has no Rust build; its results are the Python
+- **Followed poles in Hertzforge.** Its Rust build, made after the study, was not run on the suite; its results are the Python
   version's, on the exact identification. The engine's measured identification, with noise and
   untrusted lines, was not given to it.
 - **Hertzforge's control service.** The laws ran in the study's runner on the engine, not in the
@@ -949,10 +953,10 @@ The research round's own modal fit misses most of the frames' modes; M7d replace
 
 ## Data Availability
 
-The problems are the MIMO Sine suite, draft 0.1 [@sinesuite2026], and the study's run records, the
-claims and the screens' records are the benchmark's results record [@sineresults2026]; both are
+The problems are the MIMO Sine suite, draft 0.1 [@sinesuite2026], and the study's and the audit's run
+records and the claims are the benchmark's results record [@sineresults2026]; both are
 published as data sets, the suite with DOI 10.5281/zenodo.24594791 and the results record with DOI
-10.5281/zenodo.24594793. The data behind every figure and every number in
+10.5281/zenodo.24594793. The screens' run files are in neither; their tables are with this article. The data behind every figure and every number in
 this article, and the code that computes and draws them, are with the article in `data/` and `code/`:
 the code under the MIT license and the data under CC BY 4.0. `data/number_sources.csv` names the file
 each number in the text was read from.
@@ -996,9 +1000,14 @@ The five laws' mathematics is in Hertzforge, https://github.com/Hertzforge/Hertz
 `secant.rs`), made selectable by `crates/hertzforge-mimo-sine-laws` and run by the engine
 `crates/hertzforge-mimo-sine`, on the main branch at `a501b9b9f89d75450f6dbae1bcb4564d1ae82d15`. The study ran commit
 `4411a4d768588c91ff7932d4164d640c7931002f` on a research branch that leaves main at `4fd2a5c95cab1294653b54c9ca5ad4034d94c324`; the three crates are
-the same at the study's commit and on main (0 files differ). The study's runner,
-`crates/sds-control/examples/msnb_run` on that branch, is not on main. Every Hertzforge run file names
-the runner by its SHA-256, `7e5218dbd874d1847cae77c909b4e829782d5f087eaf807b92bab0faf5b43343`. The Python version, the Python ports, followed
-poles (`FollowedPoles`) and the M7d fit
+the same at the study's commit and at that main commit (0 files differ). The study's runner,
+`crates/sds-control/examples/msnb_run`, is on main since merge commit
+`1311099ba8a53b84321e7be02981226bfb6e952d` (Hertzforge pull request 477); rebased onto main, it wrote
+the same run files as the study's build on six cases chosen before any was run, apart from the
+recorded commit and the program's checksum. Every Hertzforge run file names
+the runner by its SHA-256, `7e5218dbd874d1847cae77c909b4e829782d5f087eaf807b92bab0faf5b43343`. Followed poles' Rust build is on main since merge commit `fa72c0716ccb75b65b51a2adc57ba81fce4e2ff4` (Hertzforge pull request
+478): `crates/hertzforge-mimo-sine-law-math/src/followed.rs` and `modal_fit.rs`, selectable as
+`followed_poles`. The Python version, the Python ports, followed
+poles (`FollowedPoles`) and the M7d fit the study ran
  are in the suite's code (`sine/pyloop/`) [@sinesuite2026]; every
 Python run file names its harness by SHA-256, `4f1e403c22fbcddd1cfb36e0a02b3665e8f378000e1247a53a41c3e6ff428a0e`.

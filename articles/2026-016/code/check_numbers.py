@@ -26,6 +26,8 @@ ALLOWED = [
     r'R\d{4}',                                  # claim identifiers
     r'\d{4}-\d{3}',                             # journal article numbers
     r'\d{4}-\d{2}-\d{2}',                       # dates
+    r'pull request \d+',                         # Hertzforge pull request numbers
+    r'sample of 205 jobs',                       # the release's identity sample of the published code
     r'10\.5281/zenodo\.\d+',                    # DOIs
     r'[0-9a-f]{40}', r'[0-9a-f]{64}',           # commits and hashes
     r'\d+ x \d+',                               # systems, shakers x control gauges

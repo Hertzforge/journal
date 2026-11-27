@@ -813,10 +813,10 @@ moving resonances are like those of real articles.
 
 ## Data Availability
 
-The problems are the MIMO Sine suite, draft 0.1 [@sinesuite2026], and the screens' run tables, the
-study's run records and claims, and the records of what did not work are the benchmark's results
-record [@sineresults2026]; both are published as data sets, the suite with DOI 10.5281/zenodo.24594791 and the
-results record with DOI 10.5281/zenodo.24594793. The data
+The problems are the MIMO Sine suite, draft 0.1 [@sinesuite2026], and the study's run records and
+claims are the benchmark's results record [@sineresults2026]; both are published as data sets, the
+suite with DOI 10.5281/zenodo.24594791 and the results record with DOI 10.5281/zenodo.24594793. The
+screens' run files are in neither; the tables this article draws on are with it. The data
 behind every figure and every number in this article, and the code that computes and draws them,
 are with the article in `data/` and `code/`: the code under the MIT license and the data under
 CC BY 4.0. `data/number_sources.csv` names the file each number in the text was read from.
@@ -857,8 +857,9 @@ computations use NumPy [@harris2020] and the figures Matplotlib [@hunter2007].
 
 ## Implemented In
 
-Nothing in this article is in Hertzforge. The family inverse, the level ladder, the dither identification, the four
+Of the code in this article, only followed poles and its M7d fit were later built in Hertzforge (merge commit
+`fa72c0716ccb75b65b51a2adc57ba81fce4e2ff4`, Hertzforge pull request 478) [@sinelaws2026]; every run here used the Python code. The family inverse, the level ladder, the dither identification, the four
 predictive variants and their check run, followed poles (`FollowedPoles`) and the modal fits are in the MIMO Sine suite's Python
-code (`sine/pyloop/`) at the commits the screens ran, with the screens' run tables and records
-[@sinesuite2026; @sineresults2026]. The shipped laws `matrix`, `paired` and `ratio` are in Hertzforge,
+code (`sine/pyloop/`) at the commits the screens ran
+[@sinesuite2026]. The shipped laws `matrix`, `paired` and `ratio` are in Hertzforge,
 https://github.com/Hertzforge/Hertzforge [@sinelaws2026].

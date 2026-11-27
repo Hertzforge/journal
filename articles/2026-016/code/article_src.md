@@ -693,9 +693,9 @@ and after the study, all before any audit run:
 ## Data Availability
 
 The suite, draft 0.1, is published as a data set with the problem maker, the scorer, the claims
-rule, both versions' runners, the format document and the 380 problem folders, DOI
-10.5281/zenodo.24594791. The study's and the audit's run records, the 230 held-back problem
-folders, the readings file and the claims file are published as a separate results record,
+rule, both versions' runners, the format document, the 380 problem folders and the 230 held-back problem folders, DOI
+10.5281/zenodo.24594791. The study's and the audit's run records, the readings file and the
+claims file are published as a separate results record,
 DOI 10.5281/zenodo.24594793. The claims file's SHA-256 is
 `2e9b0a5e7bac506a4322295f391d8cff36dbe60131ae0fb6a3ffecc9f227d233` and the readings file's
 `b4f4ce9d48f0688fbd78fc01a0ec007be15efb00dd886e47cbdb50437b5b8bca`. The structures are those of the
@@ -730,15 +730,20 @@ computations use NumPy [@harris2020] and the figures Matplotlib [@hunter2007].
 ## Implemented In
 
 The suite's code is in the Hertzforge Open Benchmark Set's repository, https://github.com/Hertzforge/benchmarks,
-folder `sine/`, on branch `research/mimo-sine-suite`, not yet released. The study ran from that
+folder `sine/`, released as tag `sine-v0.1-draft` at commit `6dff0a71cac5145e747f056b2b25280724f96cbc`,
+the code of the suite record (code SHA-256
+`4c5f06b3d163a0b48c2413e391c95f2e33624a028a621fc389edd09bd4c6c0c2`). The study ran from that
 repository's commit `ae217770152f7f6c06e8192b58e665bff1bec175`, whose code SHA-256, recorded in every
 run's batch file, is `5da282e0a6afd44eb408811d57fc8cdab16f3315401663c3bb7e475ec2083cd5`; the amended
 scorer is that repository's commit `45f555674217ee7012639b55f0b71b623b870e2a`, whose scorer SHA-256,
-recorded in every card, is `188366f3f5df104cc98def0686163c52898b0d4432c40e7aa40db1bf81ebd0ca`. The
+recorded in every card, is `188366f3f5df104cc98def0686163c52898b0d4432c40e7aa40db1bf81ebd0ca`. Both
+are ancestors of the released commit, which changes only comments, docstrings and two of the claims
+rule's output strings, and gave the same runs on a sample of 205 jobs. The
 Hertzforge version's runner is in the Hertzforge repository, on branch
 `research/mimo-sine-benchmark-runner` at commit `4411a4d768588c91ff7932d4164d640c7931002f`, built as
 the program whose SHA-256, recorded in every run file, is
-`7e5218dbd874d1847cae77c909b4e829782d5f087eaf807b92bab0faf5b43343`; its MIMO Sine engine, law
+`7e5218dbd874d1847cae77c909b4e829782d5f087eaf807b92bab0faf5b43343`, and is on the main branch since
+merge commit `1311099ba8a53b84321e7be02981226bfb6e952d` (Hertzforge pull request 477); its MIMO Sine engine, law
 mathematics, simulated station and signal processing are identical to the Hertzforge repository's
 main branch at `18e04bc8ef752089ae65bfc1e02163eba7430876`. The Python version's runner is the suite's
 `sine/pyloop/harness.py`, SHA-256 `4f1e403c22fbcddd1cfb36e0a02b3665e8f378000e1247a53a41c3e6ff428a0e`
