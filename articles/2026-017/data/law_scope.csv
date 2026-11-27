@@ -1,0 +1,44 @@
+key,value,note
+problems,380,problem folders
+problem_format,0.1-draft,problem.json format
+readings_rows,6340,readings.csv rows
+readings_sha256,b4f4ce9d48f0688fbd78fc01a0ec007be15efb00dd886e47cbdb50437b5b8bca,
+claims_sha256,2e9b0a5e7bac506a4322295f391d8cff36dbe60131ae0fb6a3ffecc9f227d233,
+claims_schema,hertzforge-benchmark-sine-claims/0.1-draft,
+claims_rule_sha256,6ed439efad5b2eb38bd70395fd2d76612b81f23255e8bf6ab2c3cf389cd2cf6d,sine/make_claims.py
+claims,2544,every claim
+claims_late,0,claims added after the freeze
+claims_level,1895,
+claims_pair,436,
+claims_effect,213,
+claims_followed_poles,388,claims carrying admitted_after_screen
+claims_law,2331,level and pair claims
+threshold_completion,0.05,claims rule
+threshold_iec_share,0.05,claims rule
+threshold_worst_over_db,0.2,claims rule
+scorer_version,0.1-draft,6340 cards of study and study_py
+scorer_sha256,188366f3f5df104cc98def0686163c52898b0d4432c40e7aa40db1bf81ebd0ca,
+runs_hertzforge,4140,readings.csv
+runs_hertzforge_aborted,1845,readings.csv
+runs_hertzforge_completed,2231,readings.csv
+runs_hertzforge_held_by_identification,62,readings.csv
+runs_hertzforge_law_fault,2,readings.csv
+runs_hertzforge_unscored,665,readings.csv
+runs_python,2200,readings.csv
+runs_python_aborted,1062,readings.csv
+runs_python_completed,1138,readings.csv
+runs_python_unscored,51,readings.csv
+structures,380,readings.csv
+structure_numbers,0 1 2 3 4 5 6 7 8 9 12 13 14 15 17 19 32 33 34 35,readings.csv seeds
+structures_T1,380,
+structures_T2,380,
+structures_T3,380,
+structures_T4,380,
+structures_T5,300,
+structures_L1,40,
+cells_T1,23,system and structure kind
+cells_T2,23,system and structure kind
+cells_T3,23,system and structure kind
+cells_T4,23,system and structure kind
+cells_T5,15,system and structure kind
+cells_L1,4,system and structure kind

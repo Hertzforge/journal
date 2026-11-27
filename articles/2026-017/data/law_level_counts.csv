@@ -1,0 +1,101 @@
+version,law,test,line,cells_inside,cells,ids_inside
+hertzforge,matrix,T1,iec_check_point,0,23,
+hertzforge,matrix,T1,iec_reference_point,2,23,R0411 R0931
+hertzforge,matrix,T1,mil_composite,1,23,R0412
+hertzforge,matrix,T1,mil_average_individual,0,23,
+hertzforge,matrix,T1,mil_maxi_individual,0,23,
+hertzforge,matrix,T2,iec_check_point,0,23,
+hertzforge,matrix,T2,iec_reference_point,0,23,
+hertzforge,matrix,T2,mil_composite,0,23,
+hertzforge,matrix,T2,mil_average_individual,0,23,
+hertzforge,matrix,T2,mil_maxi_individual,0,23,
+hertzforge,matrix,T3,iec_check_point,0,23,
+hertzforge,matrix,T3,iec_reference_point,0,23,
+hertzforge,matrix,T3,mil_composite,0,23,
+hertzforge,matrix,T3,mil_average_individual,0,23,
+hertzforge,matrix,T3,mil_maxi_individual,0,23,
+hertzforge,matrix,T4,iec_check_point,16,23,R0037 R0103 R0168 R0239 R0456 R0613 R0836 R0970 R1043 R1183 R1257 R1327 R1393 R1461 R1531 R1594
+hertzforge,matrix,T4,iec_reference_point,23,23,R0038 R0104 R0169 R0240 R0314 R0381 R0457 R0538 R0614 R0687 R0761 R0837 R0906 R0971 R1044 R1114 R1184 R1258 R1328 R1394 R1462 R1532 R1595
+hertzforge,matrix,T4,mil_composite,23,23,R0039 R0105 R0170 R0241 R0315 R0382 R0458 R0539 R0615 R0688 R0762 R0838 R0907 R0972 R1045 R1115 R1185 R1259 R1329 R1395 R1463 R1533 R1596
+hertzforge,matrix,T4,mil_average_individual,16,23,R0040 R0106 R0171 R0242 R0459 R0616 R0839 R0973 R1046 R1186 R1260 R1330 R1396 R1464 R1534 R1597
+hertzforge,matrix,T4,mil_maxi_individual,15,23,R0041 R0107 R0172 R0243 R0460 R0617 R0840 R0974 R1187 R1261 R1331 R1397 R1465 R1535 R1598
+hertzforge,matrix,T5,iec_check_point,0,15,
+hertzforge,matrix,T5,iec_reference_point,2,15,R0482 R0996
+hertzforge,matrix,T5,mil_composite,2,15,R0483 R0997
+hertzforge,matrix,T5,mil_average_individual,0,15,
+hertzforge,matrix,T5,mil_maxi_individual,0,15,
+hertzforge,matrix,L1,iec_check_point,0,4,
+hertzforge,matrix,L1,iec_reference_point,0,4,
+hertzforge,matrix,L1,mil_composite,0,4,
+hertzforge,matrix,L1,mil_average_individual,0,4,
+hertzforge,matrix,L1,mil_maxi_individual,0,4,
+hertzforge,paired,T3,iec_check_point,0,23,
+hertzforge,paired,T3,iec_reference_point,0,23,
+hertzforge,paired,T3,mil_composite,0,23,
+hertzforge,paired,T3,mil_average_individual,0,23,
+hertzforge,paired,T3,mil_maxi_individual,0,23,
+hertzforge,paired,T4,iec_check_point,0,23,
+hertzforge,paired,T4,iec_reference_point,0,23,
+hertzforge,paired,T4,mil_composite,0,23,
+hertzforge,paired,T4,mil_average_individual,0,23,
+hertzforge,paired,T4,mil_maxi_individual,0,23,
+hertzforge,ratio,T3,iec_check_point,0,23,
+hertzforge,ratio,T3,iec_reference_point,0,23,
+hertzforge,ratio,T3,mil_composite,0,23,
+hertzforge,ratio,T3,mil_average_individual,0,23,
+hertzforge,ratio,T3,mil_maxi_individual,0,23,
+hertzforge,ratio,T4,iec_check_point,11,23,R0047 R0113 R0178 R0980 R1193 R1267 R1337 R1403 R1471 R1541 R1604
+hertzforge,ratio,T4,iec_reference_point,11,23,R0048 R0114 R0179 R0981 R1194 R1268 R1338 R1404 R1472 R1542 R1605
+hertzforge,ratio,T4,mil_composite,11,23,R0049 R0115 R0180 R0982 R1195 R1269 R1339 R1405 R1473 R1543 R1606
+hertzforge,ratio,T4,mil_average_individual,11,23,R0050 R0116 R0181 R0983 R1196 R1270 R1340 R1406 R1474 R1544 R1607
+hertzforge,ratio,T4,mil_maxi_individual,10,23,R0051 R0117 R0182 R0984 R1197 R1341 R1407 R1475 R1545 R1608
+hertzforge,steepest_descent,T4,iec_check_point,16,23,R0052 R0118 R0183 R0254 R0471 R0628 R0851 R0985 R1058 R1198 R1272 R1342 R1408 R1476 R1546 R1609
+hertzforge,steepest_descent,T4,iec_reference_point,23,23,R0053 R0119 R0184 R0255 R0329 R0396 R0472 R0553 R0629 R0702 R0776 R0852 R0921 R0986 R1059 R1129 R1199 R1273 R1343 R1409 R1477 R1547 R1610
+hertzforge,steepest_descent,T4,mil_composite,23,23,R0054 R0120 R0185 R0256 R0330 R0397 R0473 R0554 R0630 R0703 R0777 R0853 R0922 R0987 R1060 R1130 R1200 R1274 R1344 R1410 R1478 R1548 R1611
+hertzforge,steepest_descent,T4,mil_average_individual,16,23,R0055 R0121 R0186 R0257 R0474 R0631 R0854 R0988 R1061 R1201 R1275 R1345 R1411 R1479 R1549 R1612
+hertzforge,steepest_descent,T4,mil_maxi_individual,10,23,R0056 R0122 R0258 R0475 R0632 R0855 R0989 R1202 R1346 R1550
+hertzforge,secant,T4,iec_check_point,16,23,R0057 R0123 R0188 R0259 R0476 R0633 R0856 R0990 R1063 R1203 R1277 R1347 R1413 R1481 R1551 R1614
+hertzforge,secant,T4,iec_reference_point,23,23,R0058 R0124 R0189 R0260 R0334 R0401 R0477 R0558 R0634 R0707 R0781 R0857 R0926 R0991 R1064 R1134 R1204 R1278 R1348 R1414 R1482 R1552 R1615
+hertzforge,secant,T4,mil_composite,23,23,R0059 R0125 R0190 R0261 R0335 R0402 R0478 R0559 R0635 R0708 R0782 R0858 R0927 R0992 R1065 R1135 R1205 R1279 R1349 R1415 R1483 R1553 R1616
+hertzforge,secant,T4,mil_average_individual,16,23,R0060 R0126 R0191 R0262 R0479 R0636 R0859 R0993 R1066 R1206 R1280 R1350 R1416 R1484 R1554 R1617
+hertzforge,secant,T4,mil_maxi_individual,15,23,R0061 R0127 R0192 R0263 R0480 R0637 R0860 R0994 R1207 R1281 R1351 R1417 R1485 R1555 R1618
+python,matrix,T1,iec_check_point,0,23,
+python,matrix,T1,iec_reference_point,6,23,R1718 R1818 R1898 R1985 R2031 R2096
+python,matrix,T1,mil_composite,3,23,R1719 R1819 R2032
+python,matrix,T1,mil_average_individual,0,23,
+python,matrix,T1,mil_maxi_individual,0,23,
+python,matrix,T2,iec_check_point,0,23,
+python,matrix,T2,iec_reference_point,1,23,R2042
+python,matrix,T2,mil_composite,0,23,
+python,matrix,T2,mil_average_individual,0,23,
+python,matrix,T2,mil_maxi_individual,0,23,
+python,matrix,T5,iec_check_point,0,15,
+python,matrix,T5,iec_reference_point,3,15,R1741 R1841 R2053
+python,matrix,T5,mil_composite,3,15,R1742 R1842 R2054
+python,matrix,T5,mil_average_individual,0,15,
+python,matrix,T5,mil_maxi_individual,0,15,
+python,matrix,L1,iec_check_point,0,4,
+python,matrix,L1,iec_reference_point,0,4,
+python,matrix,L1,mil_composite,0,4,
+python,matrix,L1,mil_average_individual,0,4,
+python,matrix,L1,mil_maxi_individual,0,4,
+python,followed_poles,T1,iec_check_point,0,23,
+python,followed_poles,T1,iec_reference_point,13,23,R1723 R1790 R1823 R1868 R1903 R1926 R1958 R1990 R2013 R2036 R2068 R2101 R2211
+python,followed_poles,T1,mil_composite,8,23,R1724 R1824 R1904 R1991 R2037 R2069 R2102 R2212
+python,followed_poles,T1,mil_average_individual,0,23,
+python,followed_poles,T1,mil_maxi_individual,0,23,
+python,followed_poles,T2,iec_check_point,0,23,
+python,followed_poles,T2,iec_reference_point,6,23,R1735 R1835 R1915 R2002 R2047 R2078
+python,followed_poles,T2,mil_composite,4,23,R1836 R1916 R2003 R2048
+python,followed_poles,T2,mil_average_individual,0,23,
+python,followed_poles,T2,mil_maxi_individual,0,23,
+python,followed_poles,T5,iec_check_point,0,15,
+python,followed_poles,T5,iec_reference_point,5,15,R1746 R1846 R1892 R2058 R2091
+python,followed_poles,T5,mil_composite,4,15,R1747 R1847 R2059 R2092
+python,followed_poles,T5,mil_average_individual,0,15,
+python,followed_poles,T5,mil_maxi_individual,0,15,
+python,followed_poles,L1,iec_check_point,0,4,
+python,followed_poles,L1,iec_reference_point,1,4,R1948
+python,followed_poles,L1,mil_composite,0,4,
+python,followed_poles,L1,mil_average_individual,0,4,
+python,followed_poles,L1,mil_maxi_individual,0,4,

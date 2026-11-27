@@ -1,0 +1,479 @@
+key,value,source
+law_n,2331,verdicts.csv
+law_holds,1897,verdicts.csv
+law_weaker,378,verdicts.csv
+law_does_not_hold,56,verdicts.csv
+law_not_tested,0,verdicts.csv
+law_holds_pct,81,verdicts.csv
+law_does_not_hold_ids,"R0281, R0282, R0305, R0353, R0375, R0377, R0467, R0548, R0685, R0697, R0698, R0728, R0834, R0874, R1267, R1268, R1269, R1270, R1272, R1275, R1385, R1392, R1403, R1405, R1406, R1407, R1475, R1476, R1479, R1481, R1484, R1485, R1609, R1612, R1614, R1617, R1618, R1790, R1850, R1868, R1892, R1898, R1916, R1926, R1948, R1958, R1985, R2003, R2013, R2091, R2092, R2101, R2102, R2121, R2211 and R2212",verdicts.csv
+law_hertzforge_n,1618,verdicts.csv
+law_hertzforge_holds,1343,verdicts.csv
+law_hertzforge_weaker,238,verdicts.csv
+law_hertzforge_does_not_hold,37,verdicts.csv
+law_hertzforge_not_tested,0,verdicts.csv
+law_hertzforge_holds_pct,83,verdicts.csv
+law_hertzforge_does_not_hold_ids,"R0281, R0282, R0305, R0353, R0375, R0377, R0467, R0548, R0685, R0697, R0698, R0728, R0834, R0874, R1267, R1268, R1269, R1270, R1272, R1275, R1385, R1392, R1403, R1405, R1406, R1407, R1475, R1476, R1479, R1481, R1484, R1485, R1609, R1612, R1614, R1617 and R1618",verdicts.csv
+law_python_n,713,verdicts.csv
+law_python_holds,554,verdicts.csv
+law_python_weaker,140,verdicts.csv
+law_python_does_not_hold,19,verdicts.csv
+law_python_not_tested,0,verdicts.csv
+law_python_holds_pct,78,verdicts.csv
+law_python_does_not_hold_ids,"R1790, R1850, R1868, R1892, R1898, R1916, R1926, R1948, R1958, R1985, R2003, R2013, R2091, R2092, R2101, R2102, R2121, R2211 and R2212",verdicts.csv
+level_n,1895,verdicts.csv
+level_holds,1558,verdicts.csv
+level_weaker,294,verdicts.csv
+level_does_not_hold,43,verdicts.csv
+level_not_tested,0,verdicts.csv
+level_holds_pct,82,verdicts.csv
+level_does_not_hold_ids,"R0467, R0548, R0697, R0698, R1267, R1268, R1269, R1270, R1272, R1275, R1403, R1405, R1406, R1407, R1475, R1476, R1479, R1481, R1484, R1485, R1609, R1612, R1614, R1617, R1618, R1790, R1868, R1892, R1898, R1916, R1926, R1948, R1958, R1985, R2003, R2013, R2091, R2092, R2101, R2102, R2121, R2211 and R2212",verdicts.csv
+pair_n,436,verdicts.csv
+pair_holds,339,verdicts.csv
+pair_weaker,84,verdicts.csv
+pair_does_not_hold,13,verdicts.csv
+pair_not_tested,0,verdicts.csv
+pair_holds_pct,78,verdicts.csv
+pair_does_not_hold_ids,"R0281, R0282, R0305, R0353, R0375, R0377, R0685, R0728, R0834, R0874, R1385, R1392 and R1850",verdicts.csv
+pair_hertzforge_n,373,verdicts.csv
+pair_hertzforge_holds,287,verdicts.csv
+pair_hertzforge_weaker,74,verdicts.csv
+pair_hertzforge_does_not_hold,12,verdicts.csv
+pair_hertzforge_not_tested,0,verdicts.csv
+pair_hertzforge_holds_pct,77,verdicts.csv
+pair_hertzforge_does_not_hold_ids,"R0281, R0282, R0305, R0353, R0375, R0377, R0685, R0728, R0834, R0874, R1385 and R1392",verdicts.csv
+followed_poles_n,388,verdicts.csv
+followed_poles_holds,311,verdicts.csv
+followed_poles_weaker,60,verdicts.csv
+followed_poles_does_not_hold,17,verdicts.csv
+followed_poles_not_tested,0,verdicts.csv
+followed_poles_holds_pct,80,verdicts.csv
+followed_poles_does_not_hold_ids,"R1790, R1850, R1868, R1892, R1916, R1926, R1948, R1958, R2003, R2013, R2091, R2092, R2101, R2102, R2121, R2211 and R2212",verdicts.csv
+followed_poles_level_n,325,verdicts.csv
+followed_poles_level_holds,259,verdicts.csv
+followed_poles_level_weaker,50,verdicts.csv
+followed_poles_level_does_not_hold,16,verdicts.csv
+followed_poles_level_not_tested,0,verdicts.csv
+followed_poles_level_holds_pct,80,verdicts.csv
+followed_poles_level_does_not_hold_ids,"R1790, R1868, R1892, R1916, R1926, R1948, R1958, R2003, R2013, R2091, R2092, R2101, R2102, R2121, R2211 and R2212",verdicts.csv
+followed_poles_pair_n,63,verdicts.csv
+followed_poles_pair_holds,52,verdicts.csv
+followed_poles_pair_weaker,10,verdicts.csv
+followed_poles_pair_does_not_hold,1,verdicts.csv
+followed_poles_pair_not_tested,0,verdicts.csv
+followed_poles_pair_holds_pct,83,verdicts.csv
+followed_poles_pair_does_not_hold_ids,R1850,verdicts.csv
+followed_poles_favoured_T1_worst_over_db_n,12,verdicts.csv
+followed_poles_favoured_T1_worst_over_db_holds,11,verdicts.csv
+followed_poles_favoured_T1_worst_over_db_weaker,1,verdicts.csv
+followed_poles_favoured_T1_worst_over_db_does_not_hold,0,verdicts.csv
+followed_poles_favoured_T1_worst_over_db_not_tested,0,verdicts.csv
+followed_poles_favoured_T1_worst_over_db_holds_pct,92,verdicts.csv
+followed_poles_favoured_T1_worst_over_db_does_not_hold_ids,,verdicts.csv
+followed_poles_favoured_T5_completion_n,5,verdicts.csv
+followed_poles_favoured_T5_completion_holds,4,verdicts.csv
+followed_poles_favoured_T5_completion_weaker,1,verdicts.csv
+followed_poles_favoured_T5_completion_does_not_hold,0,verdicts.csv
+followed_poles_favoured_T5_completion_not_tested,0,verdicts.csv
+followed_poles_favoured_T5_completion_holds_pct,80,verdicts.csv
+followed_poles_favoured_T5_completion_does_not_hold_ids,,verdicts.csv
+followed_poles_favoured_T2_iec_share_n,19,verdicts.csv
+followed_poles_favoured_T2_iec_share_holds,15,verdicts.csv
+followed_poles_favoured_T2_iec_share_weaker,4,verdicts.csv
+followed_poles_favoured_T2_iec_share_does_not_hold,0,verdicts.csv
+followed_poles_favoured_T2_iec_share_not_tested,0,verdicts.csv
+followed_poles_favoured_T2_iec_share_holds_pct,79,verdicts.csv
+followed_poles_favoured_T2_iec_share_does_not_hold_ids,,verdicts.csv
+followed_poles_favoured_n,62,verdicts.csv
+followed_poles_favoured_holds,52,verdicts.csv
+followed_poles_favoured_weaker,9,verdicts.csv
+followed_poles_favoured_does_not_hold,1,verdicts.csv
+followed_poles_favoured_not_tested,0,verdicts.csv
+followed_poles_favoured_holds_pct,84,verdicts.csv
+followed_poles_favoured_does_not_hold_ids,R1850,verdicts.csv
+matrix_favoured_over_followed_poles_n,1,verdicts.csv
+matrix_favoured_over_followed_poles_holds,0,verdicts.csv
+matrix_favoured_over_followed_poles_weaker,1,verdicts.csv
+matrix_favoured_over_followed_poles_does_not_hold,0,verdicts.csv
+matrix_favoured_over_followed_poles_not_tested,0,verdicts.csv
+matrix_favoured_over_followed_poles_holds_pct,0,verdicts.csv
+matrix_favoured_over_followed_poles_does_not_hold_ids,,verdicts.csv
+pair_ids_hertzforge_T3_matrix_paired_completion,R0012 R0078 R0144 R0208 R0280 R0354 R0421 R0502 R0578 R0649 R0727 R0801 R0872 R0941 R1011 R1084 R1154 R1229 R1298 R1363 R1434 R1502 R1567,claims.json
+pair_ids_hertzforge_T3_matrix_paired_iec_share,R0011 R0077 R0143 R0279 R0353 R0420 R0501 R0577 R0648 R0726 R0800 R0871 R0940 R1010 R1083 R1153 R1228 R1297 R1362 R1433 R1501 R1566,claims.json
+pair_ids_hertzforge_T3_matrix_ratio_completion,R0015 R0081 R0209 R0282 R0424 R0505 R0581 R0652 R0728 R0804 R0874 R0944 R1013 R1157 R1232 R1301 R1505,claims.json
+pair_ids_hertzforge_T3_matrix_ratio_iec_share,R0013 R0079 R0145 R0281 R0422 R0503 R0579 R0650 R0802 R0942 R1155 R1230 R1299 R1364 R1503,claims.json
+pair_ids_hertzforge_T3_matrix_ratio_worst_over_db,R0014 R0080 R0146 R0423 R0504 R0580 R0651 R0803 R0873 R0943 R1012 R1085 R1156 R1231 R1300 R1365 R1435 R1504 R1568,claims.json
+pair_ids_hertzforge_T3_paired_ratio_completion,R0017 R0083 R0148 R0211 R0284 R0356 R0426 R0507 R0583 R0654 R0730 R0806 R0876 R0946 R1015 R1087 R1159 R1234 R1303 R1367 R1437 R1507 R1570,claims.json
+pair_ids_hertzforge_T3_paired_ratio_iec_share,R0016 R0082 R0147 R0210 R0283 R0355 R0425 R0506 R0582 R0653 R0729 R0805 R0875 R0945 R1014 R1086 R1158 R1233 R1302 R1366 R1436 R1506 R1569,claims.json
+pair_ids_hertzforge_T4_matrix_paired_completion,R0228 R0301 R0443 R0524 R0600 R0671 R0747 R0823 R0893 R0963 R1032,claims.json
+pair_ids_hertzforge_T4_matrix_paired_iec_share,R0033 R0099 R0164 R0227 R0300 R0372 R0442 R0523 R0599 R0670 R0746 R0822 R0892 R0962 R1031 R1103 R1175 R1250 R1319 R1383 R1453 R1523 R1586,claims.json
+pair_ids_hertzforge_T4_matrix_paired_worst_over_db,R1176 R1251 R1320 R1384 R1454 R1524 R1587,claims.json
+pair_ids_hertzforge_T4_matrix_ratio_iec_share,R0229 R0302 R0373 R0444 R0525 R0601 R0672 R0748 R0824 R0894 R1033 R1104,claims.json
+pair_ids_hertzforge_T4_matrix_ratio_worst_over_db,R0230 R0303 R0445 R0526 R0602 R0673 R0749 R0825 R0895 R1034 R1105,claims.json
+pair_ids_hertzforge_T4_matrix_steepest_descent_worst_over_db,R0674 R1385,claims.json
+pair_ids_hertzforge_T4_paired_ratio_completion,R0305 R0447 R0528 R0604 R0676 R0751 R0827 R0897 R0965 R1036,claims.json
+pair_ids_hertzforge_T4_paired_ratio_iec_share,R0034 R0100 R0165 R0304 R0446 R0527 R0603 R0675 R0750 R0826 R0896 R0964 R1035 R1106 R1177 R1252 R1321 R1386 R1455 R1525 R1588,claims.json
+pair_ids_hertzforge_T4_paired_ratio_worst_over_db,R1178 R1322 R1387 R1456 R1526 R1589,claims.json
+pair_ids_hertzforge_T4_paired_secant_completion,R0234 R0309 R0377 R0451 R0532 R0608 R0680 R0755 R0831 R0901 R0969 R1040,claims.json
+pair_ids_hertzforge_T4_paired_secant_iec_share,R0036 R0102 R0167 R0233 R0308 R0376 R0450 R0531 R0607 R0679 R0754 R0830 R0900 R0968 R1039 R1108 R1181 R1255 R1325 R1390 R1459 R1529 R1592,claims.json
+pair_ids_hertzforge_T4_paired_secant_worst_over_db,R1182 R1256 R1326 R1391 R1460 R1530 R1593,claims.json
+pair_ids_hertzforge_T4_paired_steepest_descent_completion,R0232 R0307 R0375 R0449 R0530 R0606 R0678 R0753 R0829 R0899 R0967 R1038,claims.json
+pair_ids_hertzforge_T4_paired_steepest_descent_iec_share,R0035 R0101 R0166 R0231 R0306 R0374 R0448 R0529 R0605 R0677 R0752 R0828 R0898 R0966 R1037 R1107 R1179 R1253 R1323 R1388 R1457 R1527 R1590,claims.json
+pair_ids_hertzforge_T4_paired_steepest_descent_worst_over_db,R1180 R1254 R1324 R1389 R1458 R1528 R1591,claims.json
+pair_ids_hertzforge_T4_ratio_secant_iec_share,R0237 R0312 R0379 R0454 R0535 R0611 R0683 R0758 R0834 R0903 R1042 R1111,claims.json
+pair_ids_hertzforge_T4_ratio_secant_worst_over_db,R0238 R0455 R0536 R0612 R0684 R0759 R0835 R0904 R1112,claims.json
+pair_ids_hertzforge_T4_ratio_steepest_descent_iec_share,R0235 R0310 R0378 R0452 R0533 R0609 R0681 R0756 R0832 R1041 R1109,claims.json
+pair_ids_hertzforge_T4_ratio_steepest_descent_worst_over_db,R0236 R0311 R0453 R0534 R0610 R0682 R0757 R0833 R0902 R1110,claims.json
+pair_ids_hertzforge_T4_steepest_descent_secant_worst_over_db,R0685 R1392,claims.json
+pair_ids_python_L1_matrix_followed_poles_iec_share,R2158,claims.json
+pair_ids_python_L1_matrix_followed_poles_worst_over_db,R1850,claims.json
+pair_ids_python_T1_matrix_followed_poles_completion,R1685,claims.json
+pair_ids_python_T1_matrix_followed_poles_iec_share,R1684,claims.json
+pair_ids_python_T1_matrix_followed_poles_worst_over_db,R1619 R1716 R1816 R1861 R1896 R1919 R1983 R2006 R2029 R2125 R2204 R2288,claims.json
+pair_ids_python_T2_matrix_followed_poles_iec_share,R1630 R1662 R1727 R1760 R1794 R1827 R1872 R1907 R1930 R1962 R1994 R2017 R2136 R2179 R2215 R2236 R2267 R2299 R2321,claims.json
+pair_ids_python_T2_matrix_followed_poles_worst_over_db,R1728 R1828 R1873 R1908 R1931 R1995 R2018 R2040 R2180 R2300,claims.json
+pair_ids_python_T5_matrix_followed_poles_completion,R1673 R1773 R1885 R2084 R2193,claims.json
+pair_ids_python_T5_matrix_followed_poles_iec_share,R1771 R1884 R2082 R2191,claims.json
+pair_ids_python_T5_matrix_followed_poles_worst_over_db,R1641 R1739 R1772 R1805 R1839 R2051 R2083 R2147 R2192,claims.json
+dwell_check_inside_matrix_n,16,verdicts.csv
+dwell_check_inside_matrix_holds,14,verdicts.csv
+dwell_check_inside_matrix_weaker,2,verdicts.csv
+dwell_check_inside_matrix_does_not_hold,0,verdicts.csv
+dwell_check_inside_matrix_not_tested,0,verdicts.csv
+dwell_check_inside_matrix_holds_pct,88,verdicts.csv
+dwell_check_inside_matrix_does_not_hold_ids,,verdicts.csv
+dwell_check_inside_steepest_descent_n,16,verdicts.csv
+dwell_check_inside_steepest_descent_holds,10,verdicts.csv
+dwell_check_inside_steepest_descent_weaker,3,verdicts.csv
+dwell_check_inside_steepest_descent_does_not_hold,3,verdicts.csv
+dwell_check_inside_steepest_descent_not_tested,0,verdicts.csv
+dwell_check_inside_steepest_descent_holds_pct,62,verdicts.csv
+dwell_check_inside_steepest_descent_does_not_hold_ids,"R1272, R1476 and R1609",verdicts.csv
+dwell_check_inside_secant_n,16,verdicts.csv
+dwell_check_inside_secant_holds,13,verdicts.csv
+dwell_check_inside_secant_weaker,1,verdicts.csv
+dwell_check_inside_secant_does_not_hold,2,verdicts.csv
+dwell_check_inside_secant_not_tested,0,verdicts.csv
+dwell_check_inside_secant_holds_pct,81,verdicts.csv
+dwell_check_inside_secant_does_not_hold_ids,R1481 and R1614,verdicts.csv
+dwell_check_inside_ratio_n,11,verdicts.csv
+dwell_check_inside_ratio_holds,9,verdicts.csv
+dwell_check_inside_ratio_weaker,0,verdicts.csv
+dwell_check_inside_ratio_does_not_hold,2,verdicts.csv
+dwell_check_inside_ratio_not_tested,0,verdicts.csv
+dwell_check_inside_ratio_holds_pct,82,verdicts.csv
+dwell_check_inside_ratio_does_not_hold_ids,R1267 and R1403,verdicts.csv
+dwell_check_inside_paired_n,0,verdicts.csv
+dwell_check_inside_paired_holds,0,verdicts.csv
+dwell_check_inside_paired_weaker,0,verdicts.csv
+dwell_check_inside_paired_does_not_hold,0,verdicts.csv
+dwell_check_inside_paired_not_tested,0,verdicts.csv
+dwell_check_inside_paired_holds_pct,,verdicts.csv
+dwell_check_inside_paired_does_not_hold_ids,,verdicts.csv
+sweep_step_check_hertzforge_n,134,verdicts.csv
+sweep_step_check_hertzforge_holds,112,verdicts.csv
+sweep_step_check_hertzforge_weaker,22,verdicts.csv
+sweep_step_check_hertzforge_does_not_hold,0,verdicts.csv
+sweep_step_check_hertzforge_not_tested,0,verdicts.csv
+sweep_step_check_hertzforge_holds_pct,84,verdicts.csv
+sweep_step_check_hertzforge_does_not_hold_ids,,verdicts.csv
+sweep_step_hertzforge_n,670,verdicts.csv
+sweep_step_hertzforge_holds,570,verdicts.csv
+sweep_step_hertzforge_weaker,100,verdicts.csv
+sweep_step_hertzforge_does_not_hold,0,verdicts.csv
+sweep_step_hertzforge_not_tested,0,verdicts.csv
+sweep_step_hertzforge_holds_pct,85,verdicts.csv
+sweep_step_hertzforge_does_not_hold_ids,,verdicts.csv
+sweep_step_check_python_n,130,verdicts.csv
+sweep_step_check_python_holds,104,verdicts.csv
+sweep_step_check_python_weaker,26,verdicts.csv
+sweep_step_check_python_does_not_hold,0,verdicts.csv
+sweep_step_check_python_not_tested,0,verdicts.csv
+sweep_step_check_python_holds_pct,80,verdicts.csv
+sweep_step_check_python_does_not_hold_ids,,verdicts.csv
+sweep_step_python_n,650,verdicts.csv
+sweep_step_python_holds,502,verdicts.csv
+sweep_step_python_weaker,130,verdicts.csv
+sweep_step_python_does_not_hold,18,verdicts.csv
+sweep_step_python_not_tested,0,verdicts.csv
+sweep_step_python_holds_pct,77,verdicts.csv
+sweep_step_python_does_not_hold_ids,"R1790, R1868, R1892, R1898, R1916, R1926, R1948, R1958, R1985, R2003, R2013, R2091, R2092, R2101, R2102, R2121, R2211 and R2212",verdicts.csv
+job_hertzforge_matrix_n,555,verdicts.csv
+job_hertzforge_matrix_holds,473,verdicts.csv
+job_hertzforge_matrix_weaker,82,verdicts.csv
+job_hertzforge_matrix_does_not_hold,0,verdicts.csv
+job_hertzforge_matrix_not_tested,0,verdicts.csv
+job_hertzforge_matrix_holds_pct,85,verdicts.csv
+job_hertzforge_matrix_does_not_hold_ids,,verdicts.csv
+job_hertzforge_matrix_dwell_n,115,verdicts.csv
+job_hertzforge_matrix_dwell_holds,104,verdicts.csv
+job_hertzforge_matrix_dwell_weaker,11,verdicts.csv
+job_hertzforge_matrix_dwell_does_not_hold,0,verdicts.csv
+job_hertzforge_matrix_dwell_not_tested,0,verdicts.csv
+job_hertzforge_matrix_dwell_holds_pct,90,verdicts.csv
+job_hertzforge_matrix_dwell_does_not_hold_ids,,verdicts.csv
+job_hertzforge_matrix_sweep_step_n,440,verdicts.csv
+job_hertzforge_matrix_sweep_step_holds,369,verdicts.csv
+job_hertzforge_matrix_sweep_step_weaker,71,verdicts.csv
+job_hertzforge_matrix_sweep_step_does_not_hold,0,verdicts.csv
+job_hertzforge_matrix_sweep_step_not_tested,0,verdicts.csv
+job_hertzforge_matrix_sweep_step_holds_pct,84,verdicts.csv
+job_hertzforge_matrix_sweep_step_does_not_hold_ids,,verdicts.csv
+job_hertzforge_paired_n,230,verdicts.csv
+job_hertzforge_paired_holds,217,verdicts.csv
+job_hertzforge_paired_weaker,13,verdicts.csv
+job_hertzforge_paired_does_not_hold,0,verdicts.csv
+job_hertzforge_paired_not_tested,0,verdicts.csv
+job_hertzforge_paired_holds_pct,94,verdicts.csv
+job_hertzforge_paired_does_not_hold_ids,,verdicts.csv
+job_hertzforge_paired_dwell_n,115,verdicts.csv
+job_hertzforge_paired_dwell_holds,108,verdicts.csv
+job_hertzforge_paired_dwell_weaker,7,verdicts.csv
+job_hertzforge_paired_dwell_does_not_hold,0,verdicts.csv
+job_hertzforge_paired_dwell_not_tested,0,verdicts.csv
+job_hertzforge_paired_dwell_holds_pct,94,verdicts.csv
+job_hertzforge_paired_dwell_does_not_hold_ids,,verdicts.csv
+job_hertzforge_paired_sweep_step_n,115,verdicts.csv
+job_hertzforge_paired_sweep_step_holds,109,verdicts.csv
+job_hertzforge_paired_sweep_step_weaker,6,verdicts.csv
+job_hertzforge_paired_sweep_step_does_not_hold,0,verdicts.csv
+job_hertzforge_paired_sweep_step_not_tested,0,verdicts.csv
+job_hertzforge_paired_sweep_step_holds_pct,95,verdicts.csv
+job_hertzforge_paired_sweep_step_does_not_hold_ids,,verdicts.csv
+job_hertzforge_ratio_n,230,verdicts.csv
+job_hertzforge_ratio_holds,186,verdicts.csv
+job_hertzforge_ratio_weaker,31,verdicts.csv
+job_hertzforge_ratio_does_not_hold,13,verdicts.csv
+job_hertzforge_ratio_not_tested,0,verdicts.csv
+job_hertzforge_ratio_holds_pct,81,verdicts.csv
+job_hertzforge_ratio_does_not_hold_ids,"R0467, R0548, R0697, R0698, R1267, R1268, R1269, R1270, R1403, R1405, R1406, R1407 and R1475",verdicts.csv
+job_hertzforge_ratio_dwell_n,115,verdicts.csv
+job_hertzforge_ratio_dwell_holds,94,verdicts.csv
+job_hertzforge_ratio_dwell_weaker,8,verdicts.csv
+job_hertzforge_ratio_dwell_does_not_hold,13,verdicts.csv
+job_hertzforge_ratio_dwell_not_tested,0,verdicts.csv
+job_hertzforge_ratio_dwell_holds_pct,82,verdicts.csv
+job_hertzforge_ratio_dwell_does_not_hold_ids,"R0467, R0548, R0697, R0698, R1267, R1268, R1269, R1270, R1403, R1405, R1406, R1407 and R1475",verdicts.csv
+job_hertzforge_ratio_sweep_step_n,115,verdicts.csv
+job_hertzforge_ratio_sweep_step_holds,92,verdicts.csv
+job_hertzforge_ratio_sweep_step_weaker,23,verdicts.csv
+job_hertzforge_ratio_sweep_step_does_not_hold,0,verdicts.csv
+job_hertzforge_ratio_sweep_step_not_tested,0,verdicts.csv
+job_hertzforge_ratio_sweep_step_holds_pct,80,verdicts.csv
+job_hertzforge_ratio_sweep_step_does_not_hold_ids,,verdicts.csv
+job_hertzforge_secant_n,115,verdicts.csv
+job_hertzforge_secant_holds,88,verdicts.csv
+job_hertzforge_secant_weaker,21,verdicts.csv
+job_hertzforge_secant_does_not_hold,6,verdicts.csv
+job_hertzforge_secant_not_tested,0,verdicts.csv
+job_hertzforge_secant_holds_pct,77,verdicts.csv
+job_hertzforge_secant_does_not_hold_ids,"R1481, R1484, R1485, R1614, R1617 and R1618",verdicts.csv
+job_hertzforge_secant_dwell_n,115,verdicts.csv
+job_hertzforge_secant_dwell_holds,88,verdicts.csv
+job_hertzforge_secant_dwell_weaker,21,verdicts.csv
+job_hertzforge_secant_dwell_does_not_hold,6,verdicts.csv
+job_hertzforge_secant_dwell_not_tested,0,verdicts.csv
+job_hertzforge_secant_dwell_holds_pct,77,verdicts.csv
+job_hertzforge_secant_dwell_does_not_hold_ids,"R1481, R1484, R1485, R1614, R1617 and R1618",verdicts.csv
+job_hertzforge_secant_sweep_step_n,0,verdicts.csv
+job_hertzforge_secant_sweep_step_holds,0,verdicts.csv
+job_hertzforge_secant_sweep_step_weaker,0,verdicts.csv
+job_hertzforge_secant_sweep_step_does_not_hold,0,verdicts.csv
+job_hertzforge_secant_sweep_step_not_tested,0,verdicts.csv
+job_hertzforge_secant_sweep_step_holds_pct,,verdicts.csv
+job_hertzforge_secant_sweep_step_does_not_hold_ids,,verdicts.csv
+job_hertzforge_steepest_descent_n,115,verdicts.csv
+job_hertzforge_steepest_descent_holds,92,verdicts.csv
+job_hertzforge_steepest_descent_weaker,17,verdicts.csv
+job_hertzforge_steepest_descent_does_not_hold,6,verdicts.csv
+job_hertzforge_steepest_descent_not_tested,0,verdicts.csv
+job_hertzforge_steepest_descent_holds_pct,80,verdicts.csv
+job_hertzforge_steepest_descent_does_not_hold_ids,"R1272, R1275, R1476, R1479, R1609 and R1612",verdicts.csv
+job_hertzforge_steepest_descent_dwell_n,115,verdicts.csv
+job_hertzforge_steepest_descent_dwell_holds,92,verdicts.csv
+job_hertzforge_steepest_descent_dwell_weaker,17,verdicts.csv
+job_hertzforge_steepest_descent_dwell_does_not_hold,6,verdicts.csv
+job_hertzforge_steepest_descent_dwell_not_tested,0,verdicts.csv
+job_hertzforge_steepest_descent_dwell_holds_pct,80,verdicts.csv
+job_hertzforge_steepest_descent_dwell_does_not_hold_ids,"R1272, R1275, R1476, R1479, R1609 and R1612",verdicts.csv
+job_hertzforge_steepest_descent_sweep_step_n,0,verdicts.csv
+job_hertzforge_steepest_descent_sweep_step_holds,0,verdicts.csv
+job_hertzforge_steepest_descent_sweep_step_weaker,0,verdicts.csv
+job_hertzforge_steepest_descent_sweep_step_does_not_hold,0,verdicts.csv
+job_hertzforge_steepest_descent_sweep_step_not_tested,0,verdicts.csv
+job_hertzforge_steepest_descent_sweep_step_holds_pct,,verdicts.csv
+job_hertzforge_steepest_descent_sweep_step_does_not_hold_ids,,verdicts.csv
+job_python_followed_poles_n,325,verdicts.csv
+job_python_followed_poles_holds,259,verdicts.csv
+job_python_followed_poles_weaker,50,verdicts.csv
+job_python_followed_poles_does_not_hold,16,verdicts.csv
+job_python_followed_poles_not_tested,0,verdicts.csv
+job_python_followed_poles_holds_pct,80,verdicts.csv
+job_python_followed_poles_does_not_hold_ids,"R1790, R1868, R1892, R1916, R1926, R1948, R1958, R2003, R2013, R2091, R2092, R2101, R2102, R2121, R2211 and R2212",verdicts.csv
+job_python_followed_poles_dwell_n,0,verdicts.csv
+job_python_followed_poles_dwell_holds,0,verdicts.csv
+job_python_followed_poles_dwell_weaker,0,verdicts.csv
+job_python_followed_poles_dwell_does_not_hold,0,verdicts.csv
+job_python_followed_poles_dwell_not_tested,0,verdicts.csv
+job_python_followed_poles_dwell_holds_pct,,verdicts.csv
+job_python_followed_poles_dwell_does_not_hold_ids,,verdicts.csv
+job_python_followed_poles_sweep_step_n,325,verdicts.csv
+job_python_followed_poles_sweep_step_holds,259,verdicts.csv
+job_python_followed_poles_sweep_step_weaker,50,verdicts.csv
+job_python_followed_poles_sweep_step_does_not_hold,16,verdicts.csv
+job_python_followed_poles_sweep_step_not_tested,0,verdicts.csv
+job_python_followed_poles_sweep_step_holds_pct,80,verdicts.csv
+job_python_followed_poles_sweep_step_does_not_hold_ids,"R1790, R1868, R1892, R1916, R1926, R1948, R1958, R2003, R2013, R2091, R2092, R2101, R2102, R2121, R2211 and R2212",verdicts.csv
+job_python_matrix_n,325,verdicts.csv
+job_python_matrix_holds,243,verdicts.csv
+job_python_matrix_weaker,80,verdicts.csv
+job_python_matrix_does_not_hold,2,verdicts.csv
+job_python_matrix_not_tested,0,verdicts.csv
+job_python_matrix_holds_pct,75,verdicts.csv
+job_python_matrix_does_not_hold_ids,R1898 and R1985,verdicts.csv
+job_python_matrix_dwell_n,0,verdicts.csv
+job_python_matrix_dwell_holds,0,verdicts.csv
+job_python_matrix_dwell_weaker,0,verdicts.csv
+job_python_matrix_dwell_does_not_hold,0,verdicts.csv
+job_python_matrix_dwell_not_tested,0,verdicts.csv
+job_python_matrix_dwell_holds_pct,,verdicts.csv
+job_python_matrix_dwell_does_not_hold_ids,,verdicts.csv
+job_python_matrix_sweep_step_n,325,verdicts.csv
+job_python_matrix_sweep_step_holds,243,verdicts.csv
+job_python_matrix_sweep_step_weaker,80,verdicts.csv
+job_python_matrix_sweep_step_does_not_hold,2,verdicts.csv
+job_python_matrix_sweep_step_not_tested,0,verdicts.csv
+job_python_matrix_sweep_step_holds_pct,75,verdicts.csv
+job_python_matrix_sweep_step_does_not_hold_ids,R1898 and R1985,verdicts.csv
+rounding_n,7,R_Audit.md
+rounding_ids,"R1177, R1179, R1181, R1321, R1323, R1325 and R1523",R_Audit.md
+rounding_places,6,claims.json
+rounding_hertzforge_pairs,7,R_Audit.md
+rounding_tests,T4,claims.json
+rounding_law_words_holds,1904,verdicts.csv
+rounding_law_words_weaker,371,verdicts.csv
+dwell_other_lines_n,460,verdicts.csv
+dwell_other_lines_holds,387,verdicts.csv
+dwell_other_lines_weaker,55,verdicts.csv
+dwell_other_lines_does_not_hold,18,verdicts.csv
+dwell_other_lines_not_tested,0,verdicts.csv
+dwell_other_lines_holds_pct,84,verdicts.csv
+dwell_other_lines_does_not_hold_ids,"R0467, R0548, R0697, R0698, R1268, R1269, R1270, R1275, R1405, R1406, R1407, R1475, R1479, R1484, R1485, R1612, R1617 and R1618",verdicts.csv
+all_not_tested_text,Every claim was tested.,verdicts.csv
+all_n,2544,verdicts.csv
+all_holds,2086,verdicts.csv
+all_weaker,400,verdicts.csv
+all_does_not_hold,58,verdicts.csv
+heldout_hertzforge_dwell_over_6db,283,readings.csv (audit)
+heldout_hertzforge_dwell_over_6db_pct_of_runs,25,readings.csv (audit)
+heldout_hertzforge_dwell_over_6db_pct_of_scored,33,readings.csv (audit)
+heldout_hertzforge_dwell_runs,1150,readings.csv (audit)
+heldout_hertzforge_matrix_L1_all_completed,4,readings.csv (audit)
+heldout_hertzforge_matrix_L1_all_completed_pct,10,readings.csv (audit)
+heldout_hertzforge_matrix_L1_all_runs,40,readings.csv (audit)
+heldout_hertzforge_matrix_T1_all_completed,81,readings.csv (audit)
+heldout_hertzforge_matrix_T1_all_completed_pct,35,readings.csv (audit)
+heldout_hertzforge_matrix_T1_all_runs,230,readings.csv (audit)
+heldout_hertzforge_matrix_T2_all_completed,121,readings.csv (audit)
+heldout_hertzforge_matrix_T2_all_completed_pct,53,readings.csv (audit)
+heldout_hertzforge_matrix_T2_all_runs,230,readings.csv (audit)
+heldout_hertzforge_matrix_T3_all_completed,92,readings.csv (audit)
+heldout_hertzforge_matrix_T3_all_completed_pct,40,readings.csv (audit)
+heldout_hertzforge_matrix_T3_all_runs,230,readings.csv (audit)
+heldout_hertzforge_matrix_T4_all_completed,229,readings.csv (audit)
+heldout_hertzforge_matrix_T4_all_completed_pct,100,readings.csv (audit)
+heldout_hertzforge_matrix_T4_all_runs,230,readings.csv (audit)
+heldout_hertzforge_matrix_T5_all_completed,36,readings.csv (audit)
+heldout_hertzforge_matrix_T5_all_completed_pct,24,readings.csv (audit)
+heldout_hertzforge_matrix_T5_all_runs,150,readings.csv (audit)
+heldout_hertzforge_matrix_dwell_over_6db,33,readings.csv (audit)
+heldout_hertzforge_matrix_dwell_over_6db_pct_of_runs,14,readings.csv (audit)
+heldout_hertzforge_matrix_dwell_over_6db_pct_of_scored,17,readings.csv (audit)
+heldout_hertzforge_matrix_dwell_runs,230,readings.csv (audit)
+heldout_hertzforge_matrix_sweep_step_over_6db,746,readings.csv (audit)
+heldout_hertzforge_matrix_sweep_step_over_6db_pct_of_runs,85,readings.csv (audit)
+heldout_hertzforge_matrix_sweep_step_over_6db_pct_of_scored,96,readings.csv (audit)
+heldout_hertzforge_matrix_sweep_step_runs,880,readings.csv (audit)
+heldout_hertzforge_paired_T3_all_completed,0,readings.csv (audit)
+heldout_hertzforge_paired_T3_all_completed_pct,0,readings.csv (audit)
+heldout_hertzforge_paired_T3_all_runs,230,readings.csv (audit)
+heldout_hertzforge_paired_T4_all_completed,104,readings.csv (audit)
+heldout_hertzforge_paired_T4_all_completed_pct,45,readings.csv (audit)
+heldout_hertzforge_paired_T4_all_runs,230,readings.csv (audit)
+heldout_hertzforge_paired_dwell_over_6db,89,readings.csv (audit)
+heldout_hertzforge_paired_dwell_over_6db_pct_of_runs,39,readings.csv (audit)
+heldout_hertzforge_paired_dwell_over_6db_pct_of_scored,100,readings.csv (audit)
+heldout_hertzforge_paired_dwell_runs,230,readings.csv (audit)
+heldout_hertzforge_paired_sweep_step_over_6db,18,readings.csv (audit)
+heldout_hertzforge_paired_sweep_step_over_6db_pct_of_runs,8,readings.csv (audit)
+heldout_hertzforge_paired_sweep_step_over_6db_pct_of_scored,100,readings.csv (audit)
+heldout_hertzforge_paired_sweep_step_runs,230,readings.csv (audit)
+heldout_hertzforge_ratio_T3_all_completed,0,readings.csv (audit)
+heldout_hertzforge_ratio_T3_all_completed_pct,0,readings.csv (audit)
+heldout_hertzforge_ratio_T3_all_runs,230,readings.csv (audit)
+heldout_hertzforge_ratio_T4_all_completed,209,readings.csv (audit)
+heldout_hertzforge_ratio_T4_all_completed_pct,91,readings.csv (audit)
+heldout_hertzforge_ratio_T4_all_runs,230,readings.csv (audit)
+heldout_hertzforge_ratio_dwell_over_6db,84,readings.csv (audit)
+heldout_hertzforge_ratio_dwell_over_6db_pct_of_runs,37,readings.csv (audit)
+heldout_hertzforge_ratio_dwell_over_6db_pct_of_scored,47,readings.csv (audit)
+heldout_hertzforge_ratio_dwell_runs,230,readings.csv (audit)
+heldout_hertzforge_ratio_sweep_step_over_6db,168,readings.csv (audit)
+heldout_hertzforge_ratio_sweep_step_over_6db_pct_of_runs,73,readings.csv (audit)
+heldout_hertzforge_ratio_sweep_step_over_6db_pct_of_scored,99,readings.csv (audit)
+heldout_hertzforge_ratio_sweep_step_runs,230,readings.csv (audit)
+heldout_hertzforge_secant_T4_all_completed,221,readings.csv (audit)
+heldout_hertzforge_secant_T4_all_completed_pct,96,readings.csv (audit)
+heldout_hertzforge_secant_T4_all_runs,230,readings.csv (audit)
+heldout_hertzforge_secant_dwell_over_6db,37,readings.csv (audit)
+heldout_hertzforge_secant_dwell_over_6db_pct_of_runs,16,readings.csv (audit)
+heldout_hertzforge_secant_dwell_over_6db_pct_of_scored,19,readings.csv (audit)
+heldout_hertzforge_secant_dwell_runs,230,readings.csv (audit)
+heldout_hertzforge_steepest_descent_T4_all_completed,227,readings.csv (audit)
+heldout_hertzforge_steepest_descent_T4_all_completed_pct,99,readings.csv (audit)
+heldout_hertzforge_steepest_descent_T4_all_runs,230,readings.csv (audit)
+heldout_hertzforge_steepest_descent_dwell_over_6db,40,readings.csv (audit)
+heldout_hertzforge_steepest_descent_dwell_over_6db_pct_of_runs,17,readings.csv (audit)
+heldout_hertzforge_steepest_descent_dwell_over_6db_pct_of_scored,21,readings.csv (audit)
+heldout_hertzforge_steepest_descent_dwell_runs,230,readings.csv (audit)
+heldout_hertzforge_sweep_step_over_6db,932,readings.csv (audit)
+heldout_hertzforge_sweep_step_over_6db_pct_of_runs,70,readings.csv (audit)
+heldout_hertzforge_sweep_step_over_6db_pct_of_scored,97,readings.csv (audit)
+heldout_hertzforge_sweep_step_runs,1340,readings.csv (audit)
+heldout_python_followed_poles_L1_all_completed,15,readings.csv (audit)
+heldout_python_followed_poles_L1_all_completed_pct,38,readings.csv (audit)
+heldout_python_followed_poles_L1_all_runs,40,readings.csv (audit)
+heldout_python_followed_poles_T1_all_completed,125,readings.csv (audit)
+heldout_python_followed_poles_T1_all_completed_pct,54,readings.csv (audit)
+heldout_python_followed_poles_T1_all_runs,230,readings.csv (audit)
+heldout_python_followed_poles_T2_all_completed,163,readings.csv (audit)
+heldout_python_followed_poles_T2_all_completed_pct,71,readings.csv (audit)
+heldout_python_followed_poles_T2_all_runs,230,readings.csv (audit)
+heldout_python_followed_poles_T5_all_completed,75,readings.csv (audit)
+heldout_python_followed_poles_T5_all_completed_pct,50,readings.csv (audit)
+heldout_python_followed_poles_T5_all_runs,150,readings.csv (audit)
+heldout_python_followed_poles_sweep_step_over_6db,548,readings.csv (audit)
+heldout_python_followed_poles_sweep_step_over_6db_pct_of_runs,84,readings.csv (audit)
+heldout_python_followed_poles_sweep_step_over_6db_pct_of_scored,86,readings.csv (audit)
+heldout_python_followed_poles_sweep_step_runs,650,readings.csv (audit)
+heldout_python_matrix_L1_all_completed,4,readings.csv (audit)
+heldout_python_matrix_L1_all_completed_pct,10,readings.csv (audit)
+heldout_python_matrix_L1_all_runs,40,readings.csv (audit)
+heldout_python_matrix_T1_all_completed,99,readings.csv (audit)
+heldout_python_matrix_T1_all_completed_pct,43,readings.csv (audit)
+heldout_python_matrix_T1_all_runs,230,readings.csv (audit)
+heldout_python_matrix_T2_all_completed,133,readings.csv (audit)
+heldout_python_matrix_T2_all_completed_pct,58,readings.csv (audit)
+heldout_python_matrix_T2_all_runs,230,readings.csv (audit)
+heldout_python_matrix_T5_all_completed,52,readings.csv (audit)
+heldout_python_matrix_T5_all_completed_pct,35,readings.csv (audit)
+heldout_python_matrix_T5_all_runs,150,readings.csv (audit)
+heldout_python_matrix_sweep_step_over_6db,611,readings.csv (audit)
+heldout_python_matrix_sweep_step_over_6db_pct_of_runs,94,readings.csv (audit)
+heldout_python_matrix_sweep_step_over_6db_pct_of_scored,98,readings.csv (audit)
+heldout_python_matrix_sweep_step_runs,650,readings.csv (audit)
+heldout_python_sweep_step_over_6db,1159,readings.csv (audit)
+heldout_python_sweep_step_over_6db_pct_of_runs,89,readings.csv (audit)
+heldout_python_sweep_step_over_6db_pct_of_scored,92,readings.csv (audit)
+heldout_python_sweep_step_runs,1300,readings.csv (audit)
+heldout_runs_hertzforge,2490,readings.csv (audit)
+heldout_runs_python,1300,readings.csv (audit)

@@ -1,0 +1,6 @@
+set,runs,completed,stopped_by_protective_default,record_completed,completed_on_record_stopped_at_defaults
+hertzforge,140,23,117,81,58
+hertzforge_dwell,60,23,37,54,31
+hertzforge_sweep_or_step,80,0,80,27,27
+python,88,1,87,48,47
+python_sweep_or_step,88,1,87,48,47

@@ -1,0 +1,479 @@
+key,text,value,source,how
+shift_realistic_med_lo,0.4,0.37303619197035287,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)","lowest structure median, bandwidths"
+shift_realistic_med_hi,0.7,0.6524592702632268,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)",highest structure median
+shift_realistic_over1_pct,14,0.14084507042253522,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)",pooled share of modes over one bandwidth
+shift_realistic_over025_pct,83,0.8333333333333334,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)",pooled share over a quarter bandwidth
+shift_realistic_max,2.3,2.3175509067921256,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)","largest, bandwidths"
+shift_realistic_modes,426,426,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)","modes in band, six structures"
+damping_realistic_med,1.8,1.783139859299769,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)",median damping factor at full level
+shift_realistic_wide_med,0.26,0.2564421843608138,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)",pooled median shift in the full-level bandwidth (damping grown)
+shift_realistic_wide_over1_pct,1,0.007042253521126761,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)",
+change_realistic_med_lo,1.3,0.012735641890631921,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)","median frequency change, lowest structure, percent"
+change_realistic_med_hi,1.8,0.017683268597324553,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)",
+shift_strong_med_lo,1.2,1.197015905951373,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)","lowest structure median, bandwidths"
+shift_strong_med_hi,1.7,1.7311979221860438,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)",highest structure median
+shift_strong_over1_pct,70,0.7004716981132075,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)",pooled share of modes over one bandwidth
+shift_strong_over025_pct,96,0.964622641509434,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)",pooled share over a quarter bandwidth
+shift_strong_max,7.1,7.104790892182823,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)","largest, bandwidths"
+shift_strong_modes,424,424,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)","modes in band, six structures"
+damping_strong_med,4.1,4.137896388256555,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)",median damping factor at full level
+shift_strong_wide_med,0.36,0.36180910308562536,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)",pooled median shift in the full-level bandwidth (damping grown)
+shift_strong_wide_over1_pct,6,0.0589622641509434,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)",
+change_strong_med_lo,3.9,0.03912731353577642,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)","median frequency change, lowest structure, percent"
+change_strong_med_hi,5.5,0.05489815095510253,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)",
+sine_random_median_gap,4.2e-06,4.236386410783055e-06,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes) and problem.json checks.state.full_level","largest difference, sine and Random median change"
+zeta_med_lo,1.4,0.013597248666687564,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)","median damping ratio, lowest structure"
+zeta_med_hi,1.7,0.016732415102273697,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)",
+q_median,33,33.07264662530051,"data/fig1_mode_shift.csv (problems: structure.json level_targets, modes)",Q at the median damping ratio
+ladder_start,-12,-12.0,problems: test_T1.json ladder,dB
+ladder_step,3,3.0,problems: test_T1.json ladder,dB
+ladder_rungs,5,5,problems: test_T1.json ladder,
+rung_s,2,2.0,problems: test_T1.json ladder,s
+sysid_db,-20,-20.0,problems: test_T1.json ladder,dB
+noise_pct,0.1,0.001,problems: test_T1.json noise,percent of the full-level amplitude
+band_lo,20,20.0,problems: test_T1.json,Hz
+band_hi,2000,2000.0,problems: test_T1.json,Hz
+t3_per_octave,12,12,problems: test_T3.json,
+rate_T1,1,1.0,"problems: test_T1.json, test_T2.json",octaves a minute
+rate_T2,4,4.0,"problems: test_T1.json, test_T2.json",octaves a minute
+bw_seconds_1,2.6,2.617320090346755,computed: 60 / (Q s ln 2),seconds in a bandwidth at 1 octaves a minute
+bw_seconds_4,0.7,0.6543300225866887,computed: 60 / (Q s ln 2),seconds in a bandwidth at 4 octaves a minute
+g_runs,344,344,experiments/G/screen_runs.csv,runs in the first screen
+screen_structures,12,12,experiments/G/screen_runs.csv,nonlinear structures in the screens
+screen_linear,6,6,experiments/G/screen_runs.csv,"linear structures, the control"
+screen_per_cell,6,6,experiments/G/screen_runs.csv,structures on one test and tier
+screen_structures_each,3,3,experiments/G/screen_runs.csv,structures of each system and tier
+leads,4,4,experiments/J/screen_runs.csv,
+j_runs,270,270,experiments/J/screen_runs.csv,"runs in the second screen, the yardsticks apart"
+g_hours,14.35,14.35,G_Screen.md 4.1,
+j_hours,4.86,4.86,J_Screen.md 4,
+g_sweepstep_runs,308,308,data/screen_cells.csv,"sweeps and stepped sines, every arm and tier"
+g_sweepstep_ends,3,3,data/screen_cells.csv,"of them, ending in tolerance"
+g_sweepstep_ends_nonlinear,0,0,data/screen_cells.csv,on the realistic and strong tiers
+g_matrix_t3_linear_ends,3,3,data/screen_cells.csv,matrix T3 linear ends in tolerance
+g_matrix_t4_linear_ends,6,6,data/screen_cells.csv,matrix dwells ending in tolerance
+g_matrix_t4_realistic_ends,6,6,data/screen_cells.csv,matrix dwells ending in tolerance
+g_matrix_t4_strong_ends,4,4,data/screen_cells.csv,matrix dwells ending in tolerance
+family_inverse_linear_completed,3,3,data/screen_cells.csv,
+family_inverse_linear_completed_yard,24,24,data/screen_cells.csv,
+family_inverse_linear_runs,24,24,data/screen_cells.csv,
+family_inverse_realistic_completed,5,5,data/screen_cells.csv,
+family_inverse_realistic_completed_yard,12,12,data/screen_cells.csv,
+family_inverse_realistic_runs,24,24,data/screen_cells.csv,
+family_inverse_strong_completed,3,3,data/screen_cells.csv,
+family_inverse_strong_completed_yard,0,0,data/screen_cells.csv,
+family_inverse_strong_runs,24,24,data/screen_cells.csv,
+family_inverse_linear_over_lo,13.0,12.967942530926003,data/screen_cells.csv,"paired median over-test, linear cells"
+family_inverse_linear_over_hi,22.3,22.30639953121609,data/screen_cells.csv,
+family_inverse_linear_p95_lo,3.5,3.4961276126071548,data/screen_cells.csv,"paired median p95, linear cells"
+family_inverse_linear_p95_hi,8.7,8.657248020125362,data/screen_cells.csv,
+family_inverse_T1_linear_completed,0,0,data/screen_cells.csv,
+family_inverse_T1_linear_completed_yard,6,6,data/screen_cells.csv,
+family_inverse_T2_linear_completed,0,0,data/screen_cells.csv,
+family_inverse_T2_linear_completed_yard,6,6,data/screen_cells.csv,
+family_inverse_T3_linear_completed,3,3,data/screen_cells.csv,
+family_inverse_T3_linear_completed_yard,6,6,data/screen_cells.csv,
+family_inverse_T5_linear_completed,0,0,data/screen_cells.csv,
+family_inverse_T5_linear_completed_yard,6,6,data/screen_cells.csv,
+family_inverse_T2_strong_completed,1,1,data/screen_cells.csv,
+family_inverse_T2_strong_completed_yard,0,0,data/screen_cells.csv,
+family_inverse_T2_strong_over,-0.81,-0.8095032554380346,data/screen_cells.csv,
+family_inverse_T3_strong_completed,2,2,data/screen_cells.csv,
+family_inverse_T3_strong_completed_yard,0,0,data/screen_cells.csv,
+family_inverse_T3_strong_over,-0.45,-0.4470779018865727,data/screen_cells.csv,
+family_inverse_T1_realistic_completed,0,0,data/screen_cells.csv,
+family_inverse_T1_realistic_completed_yard,3,3,data/screen_cells.csv,
+family_inverse_T1_realistic_over,2.5,2.464634389767392,data/screen_cells.csv,
+family_inverse_T2_realistic_completed,1,1,data/screen_cells.csv,
+family_inverse_T2_realistic_completed_yard,5,5,data/screen_cells.csv,
+family_inverse_T2_realistic_over,11.0,11.001891759813395,data/screen_cells.csv,
+family_inverse_T3_realistic_over,-4.3,-4.2687987052218475,data/screen_cells.csv,
+family_inverse_T5_realistic_over,12.9,12.886776877718418,data/screen_cells.csv,
+family_inverse_T1_strong_over,2.9,2.86741627928307,data/screen_cells.csv,
+family_inverse_T5_strong_over,8.2,8.216659113810604,data/screen_cells.csv,
+family_inverse_nl_p95_lower,14,14,data/screen_cells.csv,nonlinear pairs with lower p95
+family_inverse_nl_pairs,43,43,data/screen_cells.csv,
+level_ladder_T1_realistic_completed,2,2,data/screen_cells.csv,
+level_ladder_T1_realistic_completed_yard,3,3,data/screen_cells.csv,
+level_ladder_T1_realistic_p95,+0.7,0.6793818501846745,data/screen_cells.csv,
+level_ladder_T1_realistic_iec_pts,-3,-2.58375258375258,data/screen_cells.csv,"paired median IEC share, points"
+level_ladder_T1_strong_completed,0,0,data/screen_cells.csv,
+level_ladder_T1_strong_completed_yard,0,0,data/screen_cells.csv,
+level_ladder_T1_strong_p95,+0.1,0.12423681938301301,data/screen_cells.csv,
+level_ladder_T1_strong_iec_pts,+0,0.18173576902025257,data/screen_cells.csv,"paired median IEC share, points"
+level_ladder_T5_realistic_completed,0,0,data/screen_cells.csv,
+level_ladder_T5_realistic_completed_yard,1,1,data/screen_cells.csv,
+level_ladder_T5_realistic_p95,+12.5,12.491646257499415,data/screen_cells.csv,
+level_ladder_T5_realistic_iec_pts,-53,-53.125,data/screen_cells.csv,"paired median IEC share, points"
+level_ladder_T5_strong_completed,0,0,data/screen_cells.csv,
+level_ladder_T5_strong_completed_yard,0,0,data/screen_cells.csv,
+level_ladder_T5_strong_p95,+9.1,9.10750973063059,data/screen_cells.csv,
+level_ladder_T5_strong_iec_pts,-37,-36.666666666666664,data/screen_cells.csv,"paired median IEC share, points"
+level_ladder_linear_p95_lower,12,12,data/screen_cells.csv,
+level_ladder_linear_pairs,12,12,data/screen_cells.csv,
+level_ladder_sw_nl_runs,24,24,data/fig3_whole_sweep_stops.csv (experiments/G/screen_runs.csv),
+level_ladder_sw_nl_below_full,24,24,data/fig3_whole_sweep_stops.csv (experiments/G/screen_runs.csv),stopped on a pass below full level
+level_ladder_sw_nl_at_m12,21,21,data/fig3_whole_sweep_stops.csv (experiments/G/screen_runs.csv),
+level_ladder_sw_nl_at_m9,3,3,data/fig3_whole_sweep_stops.csv (experiments/G/screen_runs.csv),
+mxsw_nl_below_full,22,22,data/fig3_whole_sweep_stops.csv (experiments/G/screen_runs.csv),matrix on the same rungs
+mxsw_nl_completed,2,2,data/fig3_whole_sweep_stops.csv (experiments/G/screen_runs.csv),
+mxsw_nl_runs,24,24,data/fig3_whole_sweep_stops.csv (experiments/G/screen_runs.csv),
+level_ladder_sw_T1_linear_completed,3,3,data/screen_cells.csv,
+level_ladder_sw_T1_linear_completed_yard,6,6,data/screen_cells.csv,
+level_ladder_sw_T5_linear_completed,3,3,data/screen_cells.csv,
+level_ladder_sw_T5_linear_completed_yard,6,6,data/screen_cells.csv,
+rls_dither_completed,18,18,data/screen_cells.csv,
+rls_dither_runs,18,18,data/screen_cells.csv,
+rls_dither_completed_yard,18,18,data/screen_cells.csv,
+rls_dither_linear_ends,6,6,data/screen_cells.csv,
+rls_dither_linear_ends_yard,6,6,data/screen_cells.csv,
+rls_dither_realistic_ends,5,5,data/screen_cells.csv,
+rls_dither_realistic_ends_yard,6,6,data/screen_cells.csv,
+rls_dither_strong_ends,3,3,data/screen_cells.csv,
+rls_dither_strong_ends_yard,4,4,data/screen_cells.csv,
+rls_dither_over_higher,18,18,data/screen_cells.csv,pairs with higher worst over-test
+rls_dither_pairs,18,18,data/screen_cells.csv,
+rls_dither_over_lo,0.07,0.07242185579407157,data/screen_cells.csv,
+rls_dither_over_hi,0.30,0.3009736878494194,data/screen_cells.csv,
+followed_poles_nl_completed,16,16,data/screen_cells.csv,
+followed_poles_nl_runs,36,36,data/screen_cells.csv,
+mx_nl_sweep_completed,9,9,data/screen_cells.csv,"matrix, the same sweeps"
+followed_poles_nl_p95_lower,30,30,data/screen_cells.csv,
+followed_poles_nl_pairs,33,33,data/screen_cells.csv,
+followed_poles_strong_over_lo,+0.35,0.3543395446116655,data/screen_cells.csv,"paired median over-test, strong"
+followed_poles_strong_over_hi,+7.19,7.188302024772604,data/screen_cells.csv,
+followed_poles_real_over_lo,-5.51,-5.506929880356601,data/screen_cells.csv,"paired median over-test, realistic"
+followed_poles_real_over_hi,-2.48,-2.483334920576741,data/screen_cells.csv,
+followed_poles_cells_vs_matrix,4,4,data/screen_cells.csv,followed_poles by the second rule against matrix
+pole_trajectory_completed,12,12,data/screen_cells.csv,nonlinear sweeps completed
+pole_trajectory_gained,3,3,data/screen_cells.csv,against followed_poles
+pole_trajectory_lost,7,7,data/screen_cells.csv,against followed_poles
+pole_trajectory_p95_lower_followed_poles,12,12,data/screen_cells.csv,
+pole_trajectory_pairs_followed_poles,36,36,data/screen_cells.csv,
+pole_trajectory_p95_lower_mx,28,28,data/screen_cells.csv,
+pole_trajectory_pairs_mx,33,33,data/screen_cells.csv,
+pole_trajectory_cells_mx,3,3,data/screen_cells.csv,cells passing against matrix
+pole_trajectory_cells_followed_poles,0,0,data/screen_cells.csv,cells passing against followed_poles
+pole_trajectory_linear_completed,18,18,data/screen_cells.csv,
+pole_trajectory_T1_linear_p95,+0.00,0.0010002394640722112,data/screen_cells.csv,"linear control, paired median p95 against followed_poles"
+pole_trajectory_T2_linear_p95,+0.07,0.06870467705129885,data/screen_cells.csv,"linear control, paired median p95 against followed_poles"
+pole_trajectory_T5_linear_p95,+0.00,0.0006026376649763548,data/screen_cells.csv,"linear control, paired median p95 against followed_poles"
+amplitude_indexed_completed,12,12,data/screen_cells.csv,nonlinear sweeps completed
+amplitude_indexed_gained,1,1,data/screen_cells.csv,against followed_poles
+amplitude_indexed_lost,5,5,data/screen_cells.csv,against followed_poles
+amplitude_indexed_p95_lower_followed_poles,10,10,data/screen_cells.csv,
+amplitude_indexed_pairs_followed_poles,35,35,data/screen_cells.csv,
+amplitude_indexed_p95_lower_mx,31,31,data/screen_cells.csv,
+amplitude_indexed_pairs_mx,33,33,data/screen_cells.csv,
+amplitude_indexed_cells_mx,1,1,data/screen_cells.csv,cells passing against matrix
+amplitude_indexed_cells_followed_poles,0,0,data/screen_cells.csv,cells passing against followed_poles
+amplitude_indexed_linear_completed,18,18,data/screen_cells.csv,
+amplitude_indexed_T1_linear_p95,+0.01,0.005332647145985803,data/screen_cells.csv,"linear control, paired median p95 against followed_poles"
+amplitude_indexed_T2_linear_p95,+0.06,0.06132663474762645,data/screen_cells.csv,"linear control, paired median p95 against followed_poles"
+amplitude_indexed_T5_linear_p95,+0.00,0.0037931896705064513,data/screen_cells.csv,"linear control, paired median p95 against followed_poles"
+placed_poles_completed,18,18,data/screen_cells.csv,nonlinear sweeps completed
+placed_poles_gained,5,5,data/screen_cells.csv,against followed_poles
+placed_poles_lost,3,3,data/screen_cells.csv,against followed_poles
+placed_poles_p95_lower_followed_poles,10,10,data/screen_cells.csv,
+placed_poles_pairs_followed_poles,35,35,data/screen_cells.csv,
+placed_poles_p95_lower_mx,30,30,data/screen_cells.csv,
+placed_poles_pairs_mx,33,33,data/screen_cells.csv,
+placed_poles_cells_mx,3,3,data/screen_cells.csv,cells passing against matrix
+placed_poles_cells_followed_poles,1,1,data/screen_cells.csv,cells passing against followed_poles
+placed_poles_linear_completed,18,18,data/screen_cells.csv,
+placed_poles_T1_linear_p95,+0.02,0.01541326703531369,data/screen_cells.csv,"linear control, paired median p95 against followed_poles"
+placed_poles_T2_linear_p95,+0.10,0.10415034946157031,data/screen_cells.csv,"linear control, paired median p95 against followed_poles"
+placed_poles_T5_linear_p95,+0.00,0.001421463852691339,data/screen_cells.csv,"linear control, paired median p95 against followed_poles"
+preview_completed,15,15,data/screen_cells.csv,nonlinear sweeps completed
+preview_gained,3,3,data/screen_cells.csv,against followed_poles
+preview_lost,4,4,data/screen_cells.csv,against followed_poles
+preview_p95_lower_followed_poles,12,12,data/screen_cells.csv,
+preview_pairs_followed_poles,35,35,data/screen_cells.csv,
+preview_p95_lower_mx,24,24,data/screen_cells.csv,
+preview_pairs_mx,33,33,data/screen_cells.csv,
+preview_cells_mx,2,2,data/screen_cells.csv,cells passing against matrix
+preview_cells_followed_poles,0,0,data/screen_cells.csv,cells passing against followed_poles
+preview_linear_completed,18,18,data/screen_cells.csv,
+preview_T1_linear_p95,+6.66,6.664080123847076,data/screen_cells.csv,"linear control, paired median p95 against followed_poles"
+preview_T2_linear_p95,+0.13,0.12663982769996007,data/screen_cells.csv,"linear control, paired median p95 against followed_poles"
+preview_T5_linear_p95,+0.02,0.01571124016175695,data/screen_cells.csv,"linear control, paired median p95 against followed_poles"
+preview_frozen_completed,6,6,data/screen_cells.csv,nonlinear sweeps completed
+preview_frozen_gained,1,1,data/screen_cells.csv,against followed_poles
+preview_frozen_lost,11,11,data/screen_cells.csv,against followed_poles
+preview_frozen_p95_lower_followed_poles,3,3,data/screen_cells.csv,
+preview_frozen_pairs_followed_poles,33,33,data/screen_cells.csv,
+preview_frozen_p95_lower_mx,4,4,data/screen_cells.csv,
+preview_frozen_pairs_mx,33,33,data/screen_cells.csv,
+preview_frozen_cells_mx,0,0,data/screen_cells.csv,cells passing against matrix
+preview_frozen_cells_followed_poles,0,0,data/screen_cells.csv,cells passing against followed_poles
+preview_frozen_linear_completed,18,18,data/screen_cells.csv,
+preview_frozen_T1_linear_p95,+6.65,6.653041085762802,data/screen_cells.csv,"linear control, paired median p95 against followed_poles"
+preview_frozen_T2_linear_p95,+0.02,0.01964424183412461,data/screen_cells.csv,"linear control, paired median p95 against followed_poles"
+preview_frozen_T5_linear_p95,+0.98,0.9802982902751469,data/screen_cells.csv,"linear control, paired median p95 against followed_poles"
+first_three_leads_linear_p95_maxabs,0.10,0.10415034946157031,data/screen_cells.csv,"largest absolute linear paired median p95 against followed_poles: pole_trajectory, amplitude_indexed and placed_poles"
+lead_runs_nl,36,36,data/screen_cells.csv,
+followed_poles_j_completed,16,16,data/screen_cells.csv,
+mx_j_completed,9,9,data/screen_cells.csv,
+amplitude_indexed_t5r_over_followed_poles,7.6,7.61952235060008,data/screen_cells.csv,
+amplitude_indexed_t5r_over_mx,16.5,16.500087612242595,data/screen_cells.csv,
+placed_poles_t2s_completed,3,3,data/screen_cells.csv,
+placed_poles_t2s_completed_followed_poles,2,2,data/screen_cells.csv,
+placed_poles_t2s_p95_lower,4,4,data/screen_cells.csv,
+placed_poles_t2s_n,6,6,data/screen_cells.csv,
+placed_poles_t2s_over,+0.41,0.40525977496044874,data/screen_cells.csv,
+win_lo,30,30,dnw_data.py,"the start window, Hz (the record names 30 to 50 Hz, DNW-J4)"
+win_hi,50,50,dnw_data.py,
+win_above,400,400,dnw_data.py,"the upper part of the band read for comparison, Hz"
+start_err_followed_poles,0.3,0.29724619103215844,"data/fig5_start_error.csv (run files, frame-6x6 structure 0, T1)","largest control error, 30 to 50 Hz, full level"
+above400_err_followed_poles,17.5,17.496415466719412,"data/fig5_start_error.csv (run files, frame-6x6 structure 0, T1)",largest control error above 400 Hz
+start_err_preview,28.7,28.66125324728506,"data/fig5_start_error.csv (run files, frame-6x6 structure 0, T1)","largest control error, 30 to 50 Hz, full level"
+above400_err_preview,16.3,16.312517845677874,"data/fig5_start_error.csv (run files, frame-6x6 structure 0, T1)",largest control error above 400 Hz
+start_err_preview_frozen,20.7,20.731803717103176,"data/fig5_start_error.csv (run files, frame-6x6 structure 0, T1)","largest control error, 30 to 50 Hz, full level"
+above400_err_preview_frozen,20.1,20.105682216431077,"data/fig5_start_error.csv (run files, frame-6x6 structure 0, T1)",largest control error above 400 Hz
+start_err_matrix,0.3,0.2710499156377324,"data/fig5_start_error.csv (run files, frame-6x6 structure 0, T1)","largest control error, 30 to 50 Hz, full level"
+above400_err_matrix,16.1,16.090018892704947,"data/fig5_start_error.csv (run files, frame-6x6 structure 0, T1)",largest control error above 400 Hz
+matrix_T3_runs,380,380,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+matrix_T3_completed,160,160,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+matrix_T3_completed_pct,42,0.42105263157894735,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+matrix_T4_runs,380,380,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+matrix_T4_completed,374,374,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+matrix_T4_completed_pct,98,0.9842105263157894,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+matrix_T3_aborted,210,210,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+matrix_T3_aborted_m12,2,2,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",aborts on the first rung
+matrix_T3_aborted_full,203,203,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",aborts at full level
+matrix_T3_full_abort_cov_med,46,0.462,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",median share of steps judged before an abort at full level
+matrix_T3_held,10,10,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+matrix_T3_aborted_mid,5,5,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",aborts on the middle rungs
+matrix_T3_linear_runs,100,100,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+matrix_T3_linear_completed,81,81,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+matrix_T3_square_runs,160,160,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+matrix_T3_square_completed,68,68,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+paired_T3_runs,380,380,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+paired_T3_completed,0,0,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+paired_T3_completed_pct,0,0.0,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+paired_T4_runs,380,380,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+paired_T4_completed,171,171,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+paired_T4_completed_pct,45,0.45,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+paired_T3_aborted,370,370,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+paired_T3_aborted_m12,185,185,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",aborts on the first rung
+paired_T3_aborted_full,110,110,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",aborts at full level
+paired_T3_full_abort_cov_med,15,0.1495,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",median share of steps judged before an abort at full level
+paired_T3_held,10,10,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+paired_T3_aborted_mid,75,75,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",aborts on the middle rungs
+paired_T3_linear_runs,100,100,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+paired_T3_linear_completed,0,0,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+paired_T3_square_runs,160,160,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+paired_T3_square_completed,0,0,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+ratio_T3_runs,380,380,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+ratio_T3_completed,4,4,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+ratio_T3_completed_pct,1,0.010526315789473684,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+ratio_T4_runs,380,380,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+ratio_T4_completed,341,341,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+ratio_T4_completed_pct,90,0.8973684210526316,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+ratio_T3_aborted,364,364,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+ratio_T3_aborted_m12,5,5,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",aborts on the first rung
+ratio_T3_aborted_full,348,348,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",aborts at full level
+ratio_T3_full_abort_cov_med,47,0.474,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",median share of steps judged before an abort at full level
+ratio_T3_held,10,10,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+ratio_T3_aborted_mid,11,11,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",aborts on the middle rungs
+ratio_T3_linear_runs,100,100,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+ratio_T3_linear_completed,1,1,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+ratio_T3_square_runs,160,160,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+ratio_T3_square_completed,4,4,"data/fig6_stepped_runs.csv (study cards, Hertzforge version)",
+trace_matrix_outcome,completed,completed,study card frame-6x6_s00 T3,
+trace_paired_outcome,aborted,aborted,study card frame-6x6_s00 T3,
+trace_paired_at_hz,25,25.198421,study card frame-6x6_s00 T3,
+trace_ratio_outcome,aborted,aborted,study card frame-6x6_s00 T3,
+trace_ratio_at_hz,453,452.54834,study card frame-6x6_s00 T3,
+coupling_structures,380,380,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",
+coupling_12x12_largest_med,8,0.0823,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",median share of steps and pairs where the paired shaker is the largest path
+coupling_12x12_chance,8,0.0833,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",one over the number of shakers
+coupling_12x12_ownshare_med,6,0.060899999999999996,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",median own share of the summed path magnitudes
+coupling_12x3_largest_med,24,0.24075000000000002,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",median share of steps and pairs where the paired shaker is the largest path
+coupling_12x3_chance,33,0.3333,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",one over the number of shakers
+coupling_12x3_ownshare_med,26,0.26495,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",median own share of the summed path magnitudes
+coupling_12x6_largest_med,18,0.17595,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",median share of steps and pairs where the paired shaker is the largest path
+coupling_12x6_chance,17,0.1667,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",one over the number of shakers
+coupling_12x6_ownshare_med,14,0.1439,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",median own share of the summed path magnitudes
+coupling_24x12_largest_med,6,0.06275,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",median share of steps and pairs where the paired shaker is the largest path
+coupling_24x12_chance,8,0.0833,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",one over the number of shakers
+coupling_24x12_ownshare_med,6,0.05885,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",median own share of the summed path magnitudes
+coupling_6x6_largest_med,10,0.0967,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",median share of steps and pairs where the paired shaker is the largest path
+coupling_6x6_chance,17,0.1667,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",one over the number of shakers
+coupling_6x6_ownshare_med,12,0.12040000000000001,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",median own share of the summed path magnitudes
+coupling_largest_max,72,0.716,"data/fig6_coupling.csv (problems: structure.json, test_T3.json)",largest over every structure
+t3_pair_claims_versions,hertzforge,hertzforge,claims.json,
+t3_pair_claims,142,142,data/stepped_pair_claims.csv (claims.json),pair claims on T3 with paired or ratio
+t3_pair_claims_mx,96,96,data/stepped_pair_claims.csv (claims.json),"of them, against matrix"
+t3_pair_claims_mx_better,96,96,data/stepped_pair_claims.csv (claims.json),matrix on the better side
+t3_pair_claim_first,R0011,R0011,data/stepped_pair_claims.csv (claims.json),first id
+t3_pair_claim_last,R1568,R1568,data/stepped_pair_claims.csv (claims.json),last id
+followed_poles_claims,63,63,data/followed_poles_pair_claims.csv (claims.json),"pair claims, followed_poles against matrix"
+followed_poles_claims_completion_higher,6,6,data/followed_poles_pair_claims.csv (claims.json),
+followed_poles_claims_completion_higher_first,R1673,R1673,data/followed_poles_pair_claims.csv (claims.json),
+followed_poles_claims_completion_lower,0,0,data/followed_poles_pair_claims.csv (claims.json),
+followed_poles_claims_iec_share_higher,25,25,data/followed_poles_pair_claims.csv (claims.json),
+followed_poles_claims_iec_share_higher_first,R1630,R1630,data/followed_poles_pair_claims.csv (claims.json),
+followed_poles_claims_iec_share_lower,0,0,data/followed_poles_pair_claims.csv (claims.json),
+followed_poles_claims_worst_over_db_higher,1,1,data/followed_poles_pair_claims.csv (claims.json),
+followed_poles_claims_worst_over_db_higher_first,R2018,R2018,data/followed_poles_pair_claims.csv (claims.json),
+followed_poles_claims_worst_over_db_lower,31,31,data/followed_poles_pair_claims.csv (claims.json),
+followed_poles_claims_worst_over_db_lower_first,R1619,R1619,data/followed_poles_pair_claims.csv (claims.json),
+followed_poles_claims_versions,python,python,data/followed_poles_pair_claims.csv (claims.json),
+effect_sweep_claims,145,145,data/sweep_effect_claims.csv (claims.json),"effect claims, a nonlinear tier against linear, on sweeps"
+effect_sweep_harder,145,145,data/sweep_effect_claims.csv (claims.json),"of them, the nonlinear tier on the harder side"
+effect_sweep_first,R2335,R2335,data/sweep_effect_claims.csv (claims.json),
+t3_pair_readings,"completion, iec_share, worst_over_db","completion, iec_share, worst_over_db",data/stepped_pair_claims.csv (claims.json),
+delay_err_6x6_block,0.09,0.0909,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),in-band model error
+delay_found_6x6_block,82,0.816,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),modes found
+delay_samples_6x6_block,2,2,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),
+delay_err_6x6_lag,0.56,0.5595,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),in-band model error
+delay_found_6x6_lag,97,0.974,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),modes found
+delay_samples_6x6_lag,8,8,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),
+delay_err_6x6_est,0.09,0.0912,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),in-band model error
+delay_found_6x6_est,82,0.816,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),modes found
+delay_err_6x6_none,0.50,0.4998,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),in-band model error
+delay_found_6x6_none,91,0.908,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),modes found
+delay_err_12x6_block,0.14,0.135,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),in-band model error
+delay_found_12x6_block,93,0.934,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),modes found
+delay_samples_12x6_block,4,4,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),
+delay_err_12x6_lag,0.78,0.7783,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),in-band model error
+delay_found_12x6_lag,97,0.974,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),modes found
+delay_samples_12x6_lag,14,14,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),
+delay_err_12x6_est,0.14,0.1401,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),in-band model error
+delay_found_12x6_est,92,0.921,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),modes found
+delay_err_12x6_none,0.70,0.7028,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),in-band model error
+delay_found_12x6_none,99,0.987,data/fig8_fits.csv (experiments/G/port_check_output_sys.txt),modes found
+fit_m0_found_lo,19,0.1925,"data/fig8_fits.csv (modal-fit records E9, E10, E10b)","modes found, frame sets"
+fit_m0_found_hi,22,0.216,"data/fig8_fits.csv (modal-fit records E9, E10, E10b)",
+fit_m0_within_lo,2,0.0188,"data/fig8_fits.csv (modal-fit records E9, E10, E10b)",within 10 percent
+fit_m0_within_hi,7,0.0657,"data/fig8_fits.csv (modal-fit records E9, E10, E10b)",
+fit_m7d_found_lo,73,0.7324,"data/fig8_fits.csv (modal-fit records E9, E10, E10b)","modes found, frame sets"
+fit_m7d_found_hi,84,0.8404,"data/fig8_fits.csv (modal-fit records E9, E10, E10b)",
+fit_m7d_within_lo,48,0.4789,"data/fig8_fits.csv (modal-fit records E9, E10, E10b)",within 10 percent
+fit_m7d_within_hi,71,0.7136,"data/fig8_fits.csv (modal-fit records E9, E10, E10b)",
+fit_m9d_found_lo,72,0.7183,"data/fig8_fits.csv (modal-fit records E9, E10, E10b)","modes found, frame sets"
+fit_m9d_found_hi,84,0.8404,"data/fig8_fits.csv (modal-fit records E9, E10, E10b)",
+fit_m9d_within_lo,54,0.5399,"data/fig8_fits.csv (modal-fit records E9, E10, E10b)",within 10 percent
+fit_m9d_within_hi,76,0.7606,"data/fig8_fits.csv (modal-fit records E9, E10, E10b)",
+fit_real_undelayed_within_max,0,0.0,"data/fig8_fits.csv (modal-fit records E9, E10, E10b)","M3 to M9 on the realistic frames, delay left in"
+fit_m7c_within_lo,24,0.2394,"data/fig8_fits.csv (modal-fit records E9, E10, E10b)",
+fit_m7c_within_hi,57,0.5681,"data/fig8_fits.csv (modal-fit records E9, E10, E10b)",
+bar1_found,95,0.95,C_Modal_Fit.md 4.3,
+bar1_within,90,0.9,C_Modal_Fit.md 4.3,
+m9d_min_lo,4.1,4.1,C_Modal_Fit.md 4.3,
+m9d_min_hi,40.0,40.0,C_Modal_Fit.md 4.3,
+c10_phase_deg,86.4,86.4,C_Modal_Fit.md 4.3,
+rr_dwell_laws_sweep_lo,0,0,MIMO_Sine/Claims_Ledger.md MSN-C-T-07,
+rr_dwell_laws_sweep_hi,5,5,MIMO_Sine/Claims_Ledger.md MSN-C-T-07,
+rr_dwell_laws_sweep_n,20,20,MIMO_Sine/Claims_Ledger.md MSN-C-T-07,
+rr_fixed_gain_completed,0,0,MIMO_Sine/Claims_Ledger.md MSN-C-A-08,
+rr_fixed_gain_runs,20,20,MIMO_Sine/Claims_Ledger.md MSN-C-A-08,
+rr_fixed_gain,0.5,0.5,MIMO_Sine/Claims_Ledger.md MSN-C-T-04,
+rr_update_ms,10,10,MIMO_Sine/Claims_Ledger.md MSN-C-T-04,
+rr_carry_worse_db,5.0,5.0,MIMO_Sine/Claims_Ledger.md MSN-C-A-13,
+rr_carry_down,2,2,MIMO_Sine/Claims_Ledger.md MSN-C-A-13,
+rr_carry_down_n,20,20,MIMO_Sine/Claims_Ledger.md MSN-C-A-13,
+rr_carry_down_pub,8,8,MIMO_Sine/Claims_Ledger.md MSN-C-A-13,
+rr_pilot_s,11,11,MIMO_Sine/Claims_Ledger.md MSN-C-L2-11,
+rr_pilot_hz,50,50,MIMO_Sine/Claims_Ledger.md MSN-C-L2-11,
+rr_pilot_q,50,50,MIMO_Sine/Claims_Ledger.md MSN-C-L2-11,
+rr_pilot_in_bw_s,1.7,1.7,MIMO_Sine/Claims_Ledger.md MSN-C-L2-11,
+tb_family_inverse_half,11,11,"MIMO_Sine/Candidate_Laws.md, family_inverse (MSN-C-A-15)",
+tb_family_inverse_right,12,12,"MIMO_Sine/Candidate_Laws.md, family_inverse (MSN-C-A-15)",
+tb_family_inverse_double,9,9,"MIMO_Sine/Candidate_Laws.md, family_inverse (MSN-C-A-15)",
+tb_family_inverse_n,20,20,"MIMO_Sine/Candidate_Laws.md, family_inverse (MSN-C-A-15)",
+tb_family_inverse_tol_lo,2,2,"MIMO_Sine/Candidate_Laws.md, family_inverse (MSN-C-A-15)",
+tb_family_inverse_tol_hi,4,4,"MIMO_Sine/Candidate_Laws.md, family_inverse (MSN-C-A-15)",
+tb_level_ladder_up,12,12,MIMO_Sine/Claims_Ledger.md MSN-C-A-01,
+tb_level_ladder_down,13,13,MIMO_Sine/Claims_Ledger.md MSN-C-A-01,
+tb_level_ladder_hb_up,7,7,MIMO_Sine/Claims_Ledger.md MSN-C-A-01,
+tb_level_ladder_hb_down,7,7,MIMO_Sine/Claims_Ledger.md MSN-C-A-01,
+tb_level_ladder_pub_up,8,8,MIMO_Sine/Claims_Ledger.md MSN-C-A-01,
+tb_level_ladder_pub_down,2,2,MIMO_Sine/Claims_Ledger.md MSN-C-A-01,
+tb_level_ladder_pub_hb_up,3,3,MIMO_Sine/Claims_Ledger.md MSN-C-A-01,
+tb_level_ladder_pub_hb_down,1,1,MIMO_Sine/Claims_Ledger.md MSN-C-A-01,
+tb_level_ladder_ident_up,7,7,MIMO_Sine/Claims_Ledger.md MSN-C-A-02,
+tb_level_ladder_ident_down,10,10,MIMO_Sine/Claims_Ledger.md MSN-C-A-02,
+tb_rls_dither_completed,30,30,"MIMO_Sine/Candidate_Laws.md, rls_dither (MSN-C-A-04)",
+tb_rls_dither_n,40,40,"MIMO_Sine/Candidate_Laws.md, rls_dither (MSN-C-A-04)",
+tb_rls_dither_pub_stops,39,39,"MIMO_Sine/Candidate_Laws.md, rls_dither (MSN-C-A-04)",
+f8_completed,0,0,Did_Not_Work.md DNW-F8,
+f8_runs,8,8,Did_Not_Work.md DNW-F8,
+f8_earlier,3,3,Did_Not_Work.md DNW-F8,
+f9_completed,0,0,Did_Not_Work.md DNW-F9,
+f9_runs,8,8,Did_Not_Work.md DNW-F9,
+jdev_pole_trajectory_first,2.40,2.40,Did_Not_Work.md DNW-J6,
+jdev_amplitude_indexed_first,2.89,2.89,Did_Not_Work.md DNW-J6,
+jdev_followed_poles,1.24,1.24,Did_Not_Work.md DNW-J6,
+jdev_pole_trajectory_after,1.76,1.76,Did_Not_Work.md DNW-J6,
+jdev_amplitude_indexed_after,1.99,1.99,Did_Not_Work.md DNW-J6,
+jdev_structures,5,5,J_Screen.md 1.4,structures named in the list
+jdev_test,T2,T2,J_Screen.md 1.4,
+jdev_preview_abort_hz,372,372,J_Screen.md 1.4,
+jdev_runs,49,49,J_Screen.md 1.4,
+j_mutations,49,49,J_Screen.md 1.3,
+c1_found_lo,81,0.812,Did_Not_Work.md DNW-C1,
+c1_found_hi,88,0.875,Did_Not_Work.md DNW-C1,
+c1_followed_poles_up,11,11,Did_Not_Work.md DNW-C1,
+c1_followed_poles_down,13,13,Did_Not_Work.md DNW-C1,
+c1_followed_poles_n,20,20,Did_Not_Work.md DNW-C1,
+c1_followed_poles_true_up,15,15,Did_Not_Work.md DNW-C1,
+c1_followed_poles_true_down,14,14,Did_Not_Work.md DNW-C1,
+c11_deg_lo,8,8,Did_Not_Work.md DNW-C11,
+c11_hz_lo,94,94,Did_Not_Work.md DNW-C11,
+c11_deg_hi,88,88,Did_Not_Work.md DNW-C11,
+c11_hz_hi,1000,1000,Did_Not_Work.md DNW-C11,
+m9d_cost_lo,22,22,G_Screen.md 5,
+m9d_cost_hi,31,31,G_Screen.md 5,
+d5_agree_aborts,24,24,Claims_Ledger.md MSNB-C-D-5,
+d5_agree_runs,24,24,Claims_Ledger.md MSNB-C-D-5,
+d5_pilot_aborts,9,9,Claims_Ledger.md MSNB-C-D-5,
+d5_py_paired,12,12,Claims_Ledger.md MSNB-C-D-5,
+d5_py_n,12,12,Claims_Ledger.md MSNB-C-D-5,
+d5_py_ratio_lo,8,8,Claims_Ledger.md MSNB-C-D-5,
+d5_py_ratio_hi,11,11,Claims_Ledger.md MSNB-C-D-5,
+abort_band_db,20,20,G_Screen.md 4,
+abort_updates,100,100,G_Screen.md 4,
+g_over_cell_med_lo,22,22,G_Screen.md 4,
+g_over_cell_med_hi,41,41,G_Screen.md 4,
+iec_pct_low,25,25,G_Screen.md 3,
+iec_split_hz,500,500,G_Screen.md 3,
+iec_pct_high,50,50,G_Screen.md 3,
+followed_poles_window,40,40,J_Leads.md 2,
+followed_poles_step_bw,0.25,0.25,J_Leads.md 2,
+amplitude_indexed_fp_passes,3,3,J_Screen.md 7,
+j5_nonfinite_hz,45,45,Did_Not_Work.md DNW-J5,
+j5_gate,0.2,0.2,Did_Not_Work.md DNW-J5,
+j5_p95,1.44,1.44,Did_Not_Work.md DNW-J5,
+j5_followed_poles,1.48,1.48,Did_Not_Work.md DNW-J5,
+j6_bw_lo,10,10,Did_Not_Work.md DNW-J6,
+j6_bw_hi,12,12,Did_Not_Work.md DNW-J6,
+c1_frame_exact_lo,17,0.174,Did_Not_Work.md DNW-C1,
+c1_frame_exact_hi,19,0.192,Did_Not_Work.md DNW-C1,
+c2_err_before,0.055,0.055,Did_Not_Work.md DNW-C2,
+c2_err_after,0.022,0.022,Did_Not_Work.md DNW-C2,
+c2_found,81,0.812,Did_Not_Work.md DNW-C2,
+c4_band_lo,30,30,Did_Not_Work.md DNW-C4,
+c4_band_hi,500,500,Did_Not_Work.md DNW-C4,
+c4_miss_lo,42,42,Did_Not_Work.md DNW-C4,
+c4_miss_hi,73,73,Did_Not_Work.md DNW-C4,
+c4_lines_low,9,9,Did_Not_Work.md DNW-C4,
+c4_lines_high,93,93,Did_Not_Work.md DNW-C4,
+c4_at_hz,390,390,Did_Not_Work.md DNW-C4,
+c15_exact_lo,86,0.864,Did_Not_Work.md DNW-C15,
+c15_exact_hi,93,0.934,Did_Not_Work.md DNW-C15,
+c15_ident_lo,8,0.08,Did_Not_Work.md DNW-C15,points
+c15_ident_hi,13,0.13,Did_Not_Work.md DNW-C15,points
+rule_db,1,1,G_Screen.md 3,
+rule_j_p95,4,4,J_Screen.md 2,
+rule_j_n,6,6,J_Screen.md 2,
+family_inverse_drop_pct,5,0.05,G_Screen.md 1,
+tb_rls_dither_pub_n,40,40,"MIMO_Sine/Candidate_Laws.md, rls_dither",
+tb_rls_dither_dither_pct,1,1,"MIMO_Sine/Candidate_Laws.md, rls_dither",
+tb_rls_dither_drift_bw,2,2,"MIMO_Sine/Candidate_Laws.md, rls_dither",
+tb_level_ladder_n,20,20,MIMO_Sine/Claims_Ledger.md MSN-C-A-01,seeds counted from the range
+quote_followed_poles,Include [followed poles],Include [followed poles],DECISIONS.md 2026-11-25,"Kevin's words, the law's name in brackets for its code"
+quote_leads,Don't add any of the four,Don't add any of the four,DECISIONS.md 2026-11-25,
+quote_reactive,something predictive rather than reactive based on the system Id/frf since reactive laws clearly can't handle the nonlinear shifts,something predictive rather than reactive based on the system Id/frf since reactive laws clearly can't handle the nonlinear shifts,DECISIONS.md 2026-11-25,
+pipeline_samples,264,264,J_Leads.md 2,
