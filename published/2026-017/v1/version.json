@@ -1,0 +1,41 @@
+{
+  "id": "2026-017",
+  "version": 1,
+  "date": "2026-11-27",
+  "first_published": "2026-11-27",
+  "note": "First published.",
+  "title": "Six Control Laws for Multi-Shaker Sine Testing: The Laws, Their Build in Hertzforge, and How Each Scores on the MIMO Sine Suite",
+  "type": "Research Article",
+  "evidence": "simulator",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    }
+  ],
+  "doi": "10.5281/zenodo.24595042",
+  "doi_latest": "10.5281/zenodo.24595041",
+  "issn": "",
+  "volume": 1,
+  "address": "https://hertzforge.com/journal/2026-017/v1/",
+  "sample": false,
+  "outputs": {
+    "page": "index.html",
+    "single_file": "2026-017-v1.html",
+    "pdf": "2026-017-v1.pdf",
+    "bundle": "2026-017-v1-bundle.zip"
+  },
+  "built": "2026-11-27T19:07:08Z",
+  "built_with": {
+    "quarto": "1.11.9",
+    "pandoc": "pandoc 3.10",
+    "typst": "",
+    "python": "3.14.10",
+    "plotly": "7.1.0",
+    "plotly.js": "4.1.1",
+    "kaleido": "1.5.1",
+    "numpy": "2.5.4",
+    "theme": "70db5f680c78",
+    "build": "c8b2f0009d61"
+  }
+}

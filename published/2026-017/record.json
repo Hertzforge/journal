@@ -1,0 +1,28 @@
+{
+  "id": "2026-017",
+  "title": "Six Control Laws for Multi-Shaker Sine Testing: The Laws, Their Build in Hertzforge, and How Each Scores on the MIMO Sine Suite",
+  "type": "Research Article",
+  "evidence": "simulator",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    }
+  ],
+  "first_published": "2026-11-27",
+  "latest": 1,
+  "versions": [
+    {
+      "version": 1,
+      "date": "2026-11-27",
+      "note": "First published.",
+      "doi": "10.5281/zenodo.24595042"
+    }
+  ],
+  "doi_latest": "10.5281/zenodo.24595041",
+  "status": "Review open",
+  "retraction": "",
+  "thread": "",
+  "reviews": [],
+  "sample": false
+}

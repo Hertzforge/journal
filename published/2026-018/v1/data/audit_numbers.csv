@@ -1,0 +1,23 @@
+key,text,value,source,how
+audit_t3_mx_n,96,96,data/stepped_pair_claims.csv,claims
+audit_t3_mx_holds,61,61,verdicts.csv (audit),claims whose verdict is holds
+audit_t3_mx_weaker,30,30,verdicts.csv (audit),claims whose verdict is weaker
+audit_t3_mx_does_not_hold,5,5,verdicts.csv (audit),claims whose verdict is does not hold
+audit_t3_mx_not_tested,0,0,verdicts.csv (audit),claims whose verdict is not tested
+audit_t3_mx_not_judged,0,0,verdicts.csv (audit),claims whose verdict is not judged
+audit_t3_mx_holds_phrase,61 hold,61,verdicts.csv (audit),count with its verb
+audit_t3_mx_weaker_phrase,30 hold weaker,30,verdicts.csv (audit),count with its verb
+audit_t3_mx_does_not_hold_phrase,5 do not hold,5,verdicts.csv (audit),count with its verb
+audit_t3_mx_does_not_hold_ids,"R0281, R0282, R0353, R0728 and R0874",5,verdicts.csv (audit),"ids, does not hold"
+audit_followed_poles_n,63,63,data/followed_poles_pair_claims.csv,claims
+audit_followed_poles_holds,52,52,verdicts.csv (audit),claims whose verdict is holds
+audit_followed_poles_weaker,10,10,verdicts.csv (audit),claims whose verdict is weaker
+audit_followed_poles_does_not_hold,1,1,verdicts.csv (audit),claims whose verdict is does not hold
+audit_followed_poles_not_tested,0,0,verdicts.csv (audit),claims whose verdict is not tested
+audit_followed_poles_not_judged,0,0,verdicts.csv (audit),claims whose verdict is not judged
+audit_followed_poles_holds_phrase,52 hold,52,verdicts.csv (audit),count with its verb
+audit_followed_poles_weaker_phrase,10 hold weaker,10,verdicts.csv (audit),count with its verb
+audit_followed_poles_does_not_hold_phrase,1 does not hold,1,verdicts.csv (audit),count with its verb
+audit_followed_poles_does_not_hold_ids,R1850,1,verdicts.csv (audit),"ids, does not hold"
+audit_rounding_n,7,7,R_Audit.md,verdicts that turn on rounding
+audit_rounding_places,6,6,verdicts.csv (audit),decimals of the stored quartiles

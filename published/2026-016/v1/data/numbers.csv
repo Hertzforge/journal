@@ -1,0 +1,856 @@
+key,value,text,source
+problems_made,380,380,make_problems.log
+problems_refused,0,0,make_problems.log
+heldout_made,230,230,heldout problems.make.log
+heldout_refused,0,0,heldout problems.make.log
+heldout_seeds,"[90, 91, 100, 93, 94, 101, 96, 97, 98, 99]","90, 91, 100, 93, 94, 101, 96, 97, 98, 99",heldout_seeds.json
+heldout_dropped,"[92, 95]",92 and 95,heldout_seeds.json
+study_seeds,"[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 17, 19, 32, 33, 34, 35]","0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 17, 19, 32, 33, 34, 35",problems.csv
+modes_first,125,125,"problem.json structure.modes, first problem"
+modes_min,103,103,"problems.csv modes, study"
+modes_max,136,136,"problems.csv modes, study"
+spec_g_min,0.6584710546413108,0.66,problems.csv spec_g_pk
+spec_g_max,38.65032580745597,38.7,problems.csv spec_g_pk
+spec_g_median,8.035861150399008,8.04,problems.csv spec_g_pk
+state_change_realistic,0.016422973587126022,1.64,problems.csv state_median_abs_change
+state6_change_realistic,0.01717146242893397,1.72,problems.csv state6_median_abs_change
+state_drop_realistic,-0.02999999999213293,3.0,problems.csv state_largest_drop
+state_rise_realistic,0.031683309435282414,3.2,problems.csv state_largest_rise
+state_change_strong,0.04988374004039983,4.99,problems.csv state_median_abs_change
+state6_change_strong,0.053640486209747484,5.36,problems.csv state6_median_abs_change
+state_drop_strong,-0.08999999999879088,9.0,problems.csv state_largest_drop
+state_rise_strong,0.06737123582037352,6.7,problems.csv state_largest_rise
+sizing_sized,200,200,problems.csv sizing
+sizing_from_member,180,180,problems.csv sizing
+ideal_v_median,1.997660711875581,2.00,problems.csv ideal_drive_peak_v
+ideal_v_min,0.17724255894633686,0.18,problems.csv ideal_drive_peak_v
+ideal_v_max,94.58074198925921,94.6,problems.csv ideal_drive_peak_v
+ideal_v_over_10,22,22,problems.csv ideal_drive_peak_v >= 10
+ideal_v_6db_over_9,55,55,problems.csv ideal_drive_peak_v x 6 dB > 9 V
+held_ideal_v_over_10,18,18,problems.csv heldout ideal_drive_peak_v >= 10
+declared_rms_12x3,15.607647916175933,15.61,problems.csv declared_rms_db
+declared_under6_12x3,0.6932040736388563,69.3,problems.csv declared_share_under_6db
+declared_min_12x3,-81.73633374013099,-81.7,problems.csv declared_min_db (least)
+declared_rms_12x6,10.751547885540425,10.75,problems.csv declared_rms_db
+declared_under6_12x6,0.38993341167254214,39.0,problems.csv declared_share_under_6db
+declared_min_12x6,-76.46419658413375,-76.5,problems.csv declared_min_db (least)
+declared_rms_24x12,9.695619160783622,9.70,problems.csv declared_rms_db
+declared_under6_24x12,0.3211744353048701,32.1,problems.csv declared_share_under_6db
+declared_min_24x12,-77.0919074306323,-77.1,problems.csv declared_min_db (least)
+declared_rms_6x6,0.09340411119901507,0.09,problems.csv declared_rms_db
+declared_under6_6x6,0.0,0.0,problems.csv declared_share_under_6db
+declared_min_6x6,-19.422405491671668,-19.4,problems.csv declared_min_db (least)
+declared_rms_12x12,0.6043198603874608,0.60,problems.csv declared_rms_db
+declared_under6_12x12,0.0015994255124689907,0.2,problems.csv declared_share_under_6db
+declared_min_12x12,-44.122568072163574,-44.1,problems.csv declared_min_db (least)
+declared_rms_square_max,1.3621213908861303,1.36,problems.csv declared_rms_db square
+play_db_linear,5.738823256888457,5.7,problems.csv play_control_peak_over_spec (dB)
+play_db_linear_max,38.2234288925521,38.2,problems.csv play_control_peak_over_spec (dB)
+play_dwell_db_linear,1.745829617594899,1.7,problems.csv play_dwell_peak_over_spec (dB)
+play_db_realistic,13.47355163087932,13.5,problems.csv play_control_peak_over_spec (dB)
+play_db_realistic_max,39.783508673814254,39.8,problems.csv play_control_peak_over_spec (dB)
+play_dwell_db_realistic,2.928556945504292,2.9,problems.csv play_dwell_peak_over_spec (dB)
+play_db_strong,16.327263774000564,16.3,problems.csv play_control_peak_over_spec (dB)
+play_db_strong_max,44.89161421799955,44.9,problems.csv play_control_peak_over_spec (dB)
+play_dwell_db_strong,3.484022519313342,3.5,problems.csv play_dwell_peak_over_spec (dB)
+highest_reachable_max,4006.1318248821353,4006,problems.csv highest_reachable_hz
+t3_step_s_min,1.1360272068558077,1.14,problems.csv t3_step_s
+t3_step_s_median,1.8170932953145664,1.82,problems.csv t3_step_s
+t3_step_s_max,3.031801864246897,3.03,problems.csv t3_step_s
+t3_seconds_median,147.18455692047988,147,problems.csv t3_seconds
+t3_seconds_max,245.57595100399865,246,problems.csv t3_seconds
+t3_steps,81,81,test_T3.json frequencies_hz
+t4_hz_min,73.4265636321693,73.4,problems.csv t4_dwell_hz
+t4_hz_max,150.67952217714029,150.7,problems.csv t4_dwell_hz
+t4_seconds_median,10.005436345522748,10.0,problems.csv t4_seconds
+t4_seconds_max,10.012512937763576,10.0,problems.csv t4_seconds
+t4_at_floor_share,1.0,100,problems.csv t4_seconds < 10.5 s
+t4_offset_realistic,0.6654332962510887,0.67,problems.csv |t4_offset_bandwidths|
+t4_offset_over1_realistic,0.26,26,problems.csv |t4_offset| > 1
+t4_offset_strong,0.8389450222955388,0.84,problems.csv |t4_offset_bandwidths|
+t4_offset_over1_strong,0.44,44,problems.csv |t4_offset| > 1
+l1_gap_median,8.154805863677757,8.2,problems.csv l1_gap_db
+l1_problems,40,40,problems.csv l1_gap_db
+l1_bite_median,4.077402931838877,4.1,problems.csv l1_bite_db
+cases_study,4140,"4,140","study problem folders, cases/"
+cases_study_python,2200,"2,200","study cases: matrix on T1, T2, T5 and L1, each run by two laws in the Python version"
+cases_heldout,2490,"2,490","heldout problem folders, cases/"
+cases_heldout_python,1300,"1,300","heldout cases: matrix on T1, T2, T5 and L1, each run by two laws in the Python version"
+rescore_hertzforge_equal,4278,"4,278",rescore/report_hertzforge.json
+rescore_hertzforge_new,62,62,rescore/report_hertzforge.json
+rescore_hertzforge_differs,0,0,rescore/report_hertzforge.json
+rescore_hertzforge_n,4340,"4,340",rescore/report_hertzforge.json
+rescore_python_equal,2336,"2,336",rescore/report_python.json
+rescore_python_new,0,0,rescore/report_python.json
+rescore_python_differs,0,0,rescore/report_python.json
+rescore_python_n,2336,"2,336",rescore/report_python.json
+repeat_sets,3,3,study_repeat_* folders
+grid_per_octave,384,384,sine_model.py of the problem folder
+size_per_octave,1536,"1,536",sine_model.py of the problem folder
+tikhonov,0.001,1e-3,sine_model.py of the problem folder
+headroom_db,6.0,6,sine_model.py of the problem folder
+ceiling_v,1.9952623149688795,2.00,sine_model.py of the problem folder
+engine_v,10.0,10,sine_model.py of the problem folder
+engine_controls,16,16,sine_model.py of the problem folder
+engine_drives,8,8,sine_model.py of the problem folder
+step_settle_tau,6.0,6,sine_model.py of the problem folder
+step_judge_tau,4.0,4,sine_model.py of the problem folder
+step_tau,10.0,10,sine_model.py of the problem folder
+step_min_cycles,20,20,sine_model.py of the problem folder
+dwell_settle_tau,20.0,20,sine_model.py of the problem folder
+dwell_tau,30.0,30,sine_model.py of the problem folder
+dwell_min_s,10.0,10,sine_model.py of the problem folder
+ratio_points,1601,"1,601",sine_model.py of the problem folder
+ratio_lo,1e-05,1e-5,sine_model.py of the problem folder
+ratio_hi,1000.0,1e3,sine_model.py of the problem folder
+tol_check_lo,0.25,25,sine_model.py of the problem folder
+tol_check_hi,0.5,50,sine_model.py of the problem folder
+tol_split_hz,500,500,"sine_model.py of the problem folder (keys below_500, above_500)"
+tol_ref,0.15000000000000002,15,sine_model.py of the problem folder
+tol_mil,0.09999999999999998,10,sine_model.py of the problem folder
+tol_maxi_hi,0.10000000000000009,10,sine_model.py of the problem folder
+tol_rate,0.1,10,sine_model.py of the problem folder
+tol_duration,0.05,5,sine_model.py of the problem folder
+tol_freq_text,"+/-1 Hz from 5 to 50 Hz, +/-2 % above 50 Hz (and +/-0.05 Hz to 0.25 Hz, +/-20 % 0.25 to 5 Hz)","1 Hz from 5 to 50 Hz, 2 % above 50 Hz",sine_model.py of the problem folder
+tol_freq_fixed,2,2,sine_model.py of the problem folder FREQ_TOL['iec_fixed']
+tol_freq_mil,0.1,0.1,sine_model.py of the problem folder FREQ_TOL['mil']
+phase_analogy,10.0,10,sine_model.py of the problem folder
+g0,9.80665,9.80665,sine_model.py of the problem folder
+abort_db,20.0,20,study run.json settings
+abort_ticks,100,100,study run.json settings
+divergence_s,60.0,60,study run.json settings
+max_step_db,1.0,1,study run.json settings
+ceiling_exact,1.99526231,1.99526231,study run.json settings
+abort_vpk,10.0,10,study run.json settings
+id_lines_hz,0.25,0.25,study run.json identification
+frames_ahead,8,8,study run.json identification
+default_abort_db,3.0,3,study_defaults run.json settings
+default_abort_ticks,3,3,study_defaults run.json settings
+default_divergence_s,1.0,1,study_defaults run.json settings
+default_ceiling,9.0,9,study_defaults run.json settings
+pipeline_frames,264,264,study_py run.json pipeline
+sim_block,256,256,pipeline less frames ahead
+pipeline_ms,32.2265625,32.2,pipeline frames over fs
+lag_same,67,67,lag_check_output.json
+lag_n,70,70,lag_check_output.json
+example_points,2553,"2,553",reference_hz.f8 of frame-12x6-realistic_s00
+example_spec_g,6.739200013358423,6.74,problem.json frame-12x6-realistic_s00
+example_gain,3.546194550352192,3.55,problem.json frame-12x6-realistic_s00 ideal_drive_peak_v
+fs_hz,8192.0,8192,problem.json fs_hz
+band_lo,20.0,20,problem.json band_hz
+band_hi,2000.0,2000,problem.json band_hz
+t1_seconds,398.63137138648347,398.6,test_T1.json seconds
+t1_rate,1.0,1,test_T1.json
+ladder,"[-12.0, -9.0, -6.0, -3.0, 0.0]","-12, -9, -6, -3 and 0",test_T1.json ladder.table_db
+rung_s,2.0,2,test_T1.json ladder.per_rung
+sysid_db,-20.0,-20,test_T1.json ladder
+noise_rel,0.001,1e-3,test_T1.json noise.relative
+t2_seconds,99.65784284662087,99.7,test_T2.json seconds
+t2_rate,4.0,4,test_T2.json
+t3_per_octave,12,12,test_T3.json
+readings_rows,6340,"6,340",readings.csv
+readings_sha,b4f4ce9d48f0688fbd78fc01a0ec007be15efb00dd886e47cbdb50437b5b8bca,b4f4ce9d48f0688fbd78fc01a0ec007be15efb00dd886e47cbdb50437b5b8bca,readings.csv
+runs_hertzforge,4140,"4,140",readings.csv
+runs_python,2200,"2,200",readings.csv
+held_runs,62,62,readings.csv outcome held_by_identification
+held_problems,11,11,"readings.csv, distinct problem folders (system, kind and structure)"
+held_t4,0,0,readings.csv
+hf_completed,2231,"2,231",readings.csv
+hf_done,4078,"4,078",readings.csv
+shared_hertzforge_linear_T1_done,75,75,"readings.csv, the law both versions run"
+shared_hertzforge_linear_T1_n,100,100,"readings.csv, the law both versions run"
+shared_hertzforge_linear_T2_done,80,80,"readings.csv, the law both versions run"
+shared_hertzforge_linear_T2_n,100,100,"readings.csv, the law both versions run"
+shared_hertzforge_linear_T5_done,71,71,"readings.csv, the law both versions run"
+shared_hertzforge_linear_T5_n,100,100,"readings.csv, the law both versions run"
+shared_hertzforge_realistic_T1_done,29,29,"readings.csv, the law both versions run"
+shared_hertzforge_realistic_T1_n,100,100,"readings.csv, the law both versions run"
+shared_hertzforge_realistic_T2_done,66,66,"readings.csv, the law both versions run"
+shared_hertzforge_realistic_T2_n,100,100,"readings.csv, the law both versions run"
+shared_hertzforge_realistic_T5_done,3,3,"readings.csv, the law both versions run"
+shared_hertzforge_realistic_T5_n,100,100,"readings.csv, the law both versions run"
+shared_hertzforge_strong_T1_done,0,0,"readings.csv, the law both versions run"
+shared_hertzforge_strong_T1_n,100,100,"readings.csv, the law both versions run"
+shared_hertzforge_strong_T2_done,16,16,"readings.csv, the law both versions run"
+shared_hertzforge_strong_T2_n,100,100,"readings.csv, the law both versions run"
+shared_hertzforge_strong_T5_done,0,0,"readings.csv, the law both versions run"
+shared_hertzforge_strong_T5_n,100,100,"readings.csv, the law both versions run"
+shared_python_linear_T1_done,98,98,"readings.csv, the law both versions run"
+shared_python_linear_T1_n,100,100,"readings.csv, the law both versions run"
+shared_python_linear_T2_done,96,96,"readings.csv, the law both versions run"
+shared_python_linear_T2_n,100,100,"readings.csv, the law both versions run"
+shared_python_linear_T5_done,99,99,"readings.csv, the law both versions run"
+shared_python_linear_T5_n,100,100,"readings.csv, the law both versions run"
+shared_python_realistic_T1_done,35,35,"readings.csv, the law both versions run"
+shared_python_realistic_T1_n,100,100,"readings.csv, the law both versions run"
+shared_python_realistic_T2_done,66,66,"readings.csv, the law both versions run"
+shared_python_realistic_T2_n,100,100,"readings.csv, the law both versions run"
+shared_python_realistic_T5_done,2,2,"readings.csv, the law both versions run"
+shared_python_realistic_T5_n,100,100,"readings.csv, the law both versions run"
+shared_python_strong_T1_done,0,0,"readings.csv, the law both versions run"
+shared_python_strong_T1_n,100,100,"readings.csv, the law both versions run"
+shared_python_strong_T2_done,13,13,"readings.csv, the law both versions run"
+shared_python_strong_T2_n,100,100,"readings.csv, the law both versions run"
+shared_python_strong_T5_done,0,0,"readings.csv, the law both versions run"
+shared_python_strong_T5_n,100,100,"readings.csv, the law both versions run"
+done_hertzforge_linear_T1,0.75,75,pooled.csv completed_share
+iec_hertzforge_linear_T1,0.9069,91,pooled.csv iec_share_median
+over_hertzforge_linear_T1,15.004,15.0,pooled.csv worst_over_db_median
+done_hertzforge_linear_T2,0.8,80,pooled.csv completed_share
+iec_hertzforge_linear_T2,0.8074,81,pooled.csv iec_share_median
+over_hertzforge_linear_T2,21.149,21.1,pooled.csv worst_over_db_median
+done_hertzforge_linear_T3,0.2733,27,pooled.csv completed_share
+iec_hertzforge_linear_T3,0.1372,14,pooled.csv iec_share_median
+over_hertzforge_linear_T3,18.25,18.2,pooled.csv worst_over_db_median
+done_hertzforge_linear_T4,0.86,86,pooled.csv completed_share
+iec_hertzforge_linear_T4,1.0,100,pooled.csv iec_share_median
+over_hertzforge_linear_T4,0.072,0.1,pooled.csv worst_over_db_median
+done_hertzforge_linear_T5,0.71,71,pooled.csv completed_share
+iec_hertzforge_linear_T5,0.9234,92,pooled.csv iec_share_median
+over_hertzforge_linear_T5,14.974,15.0,pooled.csv worst_over_db_median
+done_hertzforge_realistic_T1,0.29,29,pooled.csv completed_share
+iec_hertzforge_realistic_T1,0.5603,56,pooled.csv iec_share_median
+over_hertzforge_realistic_T1,28.796,28.8,pooled.csv worst_over_db_median
+done_hertzforge_realistic_T2,0.66,66,pooled.csv completed_share
+iec_hertzforge_realistic_T2,0.678,68,pooled.csv iec_share_median
+over_hertzforge_realistic_T2,30.414,30.4,pooled.csv worst_over_db_median
+done_hertzforge_realistic_T3,0.1133,11,pooled.csv completed_share
+iec_hertzforge_realistic_T3,0.1379,14,pooled.csv iec_share_median
+over_hertzforge_realistic_T3,32.044,32.0,pooled.csv worst_over_db_median
+done_hertzforge_realistic_T4,0.83,83,pooled.csv completed_share
+iec_hertzforge_realistic_T4,0.9167,92,pooled.csv iec_share_median
+over_hertzforge_realistic_T4,2.427,2.4,pooled.csv worst_over_db_median
+done_hertzforge_realistic_T5,0.03,3,pooled.csv completed_share
+iec_hertzforge_realistic_T5,0.0794,8,pooled.csv iec_share_median
+over_hertzforge_realistic_T5,34.657,34.7,pooled.csv worst_over_db_median
+done_hertzforge_realistic_L1,0.45,45,pooled.csv completed_share
+iec_hertzforge_realistic_L1,0.7723,77,pooled.csv iec_share_median
+over_hertzforge_realistic_L1,29.55,29.6,pooled.csv worst_over_db_median
+done_hertzforge_strong_T1,0.0,0,pooled.csv completed_share
+iec_hertzforge_strong_T1,0.2876,29,pooled.csv iec_share_median
+over_hertzforge_strong_T1,27.231,27.2,pooled.csv worst_over_db_median
+done_hertzforge_strong_T2,0.16,16,pooled.csv completed_share
+iec_hertzforge_strong_T2,0.25,25,pooled.csv iec_share_median
+over_hertzforge_strong_T2,36.658,36.7,pooled.csv worst_over_db_median
+done_hertzforge_strong_T3,0.01,1,pooled.csv completed_share
+iec_hertzforge_strong_T3,0.143,14,pooled.csv iec_share_median
+over_hertzforge_strong_T3,36.004,36.0,pooled.csv worst_over_db_median
+done_hertzforge_strong_T4,0.84,84,pooled.csv completed_share
+iec_hertzforge_strong_T4,0.75,75,pooled.csv iec_share_median
+over_hertzforge_strong_T4,6.591,6.6,pooled.csv worst_over_db_median
+done_hertzforge_strong_T5,0.0,0,pooled.csv completed_share
+iec_hertzforge_strong_T5,0.0103,1,pooled.csv iec_share_median
+over_hertzforge_strong_T5,34.489,34.5,pooled.csv worst_over_db_median
+done_hertzforge_strong_L1,0.0,0,pooled.csv completed_share
+iec_hertzforge_strong_L1,0.317,32,pooled.csv iec_share_median
+over_hertzforge_strong_L1,33.042,33.0,pooled.csv worst_over_db_median
+done_hertzforge_realistic_soft_T1,0.35,35,pooled.csv completed_share
+iec_hertzforge_realistic_soft_T1,0.7066,71,pooled.csv iec_share_median
+over_hertzforge_realistic_soft_T1,30.05,30.1,pooled.csv worst_over_db_median
+done_hertzforge_realistic_soft_T2,0.65,65,pooled.csv completed_share
+iec_hertzforge_realistic_soft_T2,0.7104,71,pooled.csv iec_share_median
+over_hertzforge_realistic_soft_T2,27.79,27.8,pooled.csv worst_over_db_median
+done_hertzforge_realistic_soft_T3,0.1,10,pooled.csv completed_share
+iec_hertzforge_realistic_soft_T3,0.2819,28,pooled.csv iec_share_median
+over_hertzforge_realistic_soft_T3,37.316,37.3,pooled.csv worst_over_db_median
+done_hertzforge_realistic_soft_T4,0.89,89,pooled.csv completed_share
+iec_hertzforge_realistic_soft_T4,0.9726,97,pooled.csv iec_share_median
+over_hertzforge_realistic_soft_T4,2.514,2.5,pooled.csv worst_over_db_median
+done_hertzforge_realistic_hard_T1,0.9,90,pooled.csv completed_share
+iec_hertzforge_realistic_hard_T1,0.9076,91,pooled.csv iec_share_median
+over_hertzforge_realistic_hard_T1,19.145,19.1,pooled.csv worst_over_db_median
+done_hertzforge_realistic_hard_T2,0.95,95,pooled.csv completed_share
+iec_hertzforge_realistic_hard_T2,0.8069,81,pooled.csv iec_share_median
+over_hertzforge_realistic_hard_T2,21.222,21.2,pooled.csv worst_over_db_median
+done_hertzforge_realistic_hard_T3,0.3333,33,pooled.csv completed_share
+iec_hertzforge_realistic_hard_T3,0.3474,35,pooled.csv iec_share_median
+over_hertzforge_realistic_hard_T3,20.3,20.3,pooled.csv worst_over_db_median
+done_hertzforge_realistic_hard_T4,0.89,89,pooled.csv completed_share
+iec_hertzforge_realistic_hard_T4,1.0,100,pooled.csv iec_share_median
+over_hertzforge_realistic_hard_T4,0.282,0.3,pooled.csv worst_over_db_median
+done_hertzforge_strong_soft_T1,0.0,0,pooled.csv completed_share
+iec_hertzforge_strong_soft_T1,0.3011,30,pooled.csv iec_share_median
+over_hertzforge_strong_soft_T1,31.697,31.7,pooled.csv worst_over_db_median
+done_hertzforge_strong_soft_T2,0.1,10,pooled.csv completed_share
+iec_hertzforge_strong_soft_T2,0.2022,20,pooled.csv iec_share_median
+over_hertzforge_strong_soft_T2,38.801,38.8,pooled.csv worst_over_db_median
+done_hertzforge_strong_soft_T3,0.0167,2,pooled.csv completed_share
+iec_hertzforge_strong_soft_T3,0.2278,23,pooled.csv iec_share_median
+over_hertzforge_strong_soft_T3,37.148,37.1,pooled.csv worst_over_db_median
+done_hertzforge_strong_soft_T4,0.93,93,pooled.csv completed_share
+iec_hertzforge_strong_soft_T4,0.8333,83,pooled.csv iec_share_median
+over_hertzforge_strong_soft_T4,5.69,5.7,pooled.csv worst_over_db_median
+done_hertzforge_strong_hard_T1,0.65,65,pooled.csv completed_share
+iec_hertzforge_strong_hard_T1,0.8555,86,pooled.csv iec_share_median
+over_hertzforge_strong_hard_T1,15.627,15.6,pooled.csv worst_over_db_median
+done_hertzforge_strong_hard_T2,1.0,100,pooled.csv completed_share
+iec_hertzforge_strong_hard_T2,0.7969,80,pooled.csv iec_share_median
+over_hertzforge_strong_hard_T2,24.105,24.1,pooled.csv worst_over_db_median
+done_hertzforge_strong_hard_T3,0.3,30,pooled.csv completed_share
+iec_hertzforge_strong_hard_T3,0.3196,32,pooled.csv iec_share_median
+over_hertzforge_strong_hard_T3,19.859,19.9,pooled.csv worst_over_db_median
+done_hertzforge_strong_hard_T4,0.9,90,pooled.csv completed_share
+iec_hertzforge_strong_hard_T4,1.0,100,pooled.csv iec_share_median
+over_hertzforge_strong_hard_T4,0.535,0.5,pooled.csv worst_over_db_median
+done_python_linear_T1,0.98,98,pooled.csv completed_share
+iec_python_linear_T1,0.989,99,pooled.csv iec_share_median
+over_python_linear_T1,7.848,7.8,pooled.csv worst_over_db_median
+done_python_linear_T2,0.97,97,pooled.csv completed_share
+iec_python_linear_T2,0.9328,93,pooled.csv iec_share_median
+over_python_linear_T2,16.538,16.5,pooled.csv worst_over_db_median
+done_python_linear_T5,0.995,100,pooled.csv completed_share
+iec_python_linear_T5,0.9891,99,pooled.csv iec_share_median
+over_python_linear_T5,7.5,7.5,pooled.csv worst_over_db_median
+done_python_realistic_T1,0.44,44,pooled.csv completed_share
+iec_python_realistic_T1,0.7909,79,pooled.csv iec_share_median
+over_python_realistic_T1,28.773,28.8,pooled.csv worst_over_db_median
+done_python_realistic_T2,0.75,75,pooled.csv completed_share
+iec_python_realistic_T2,0.8196,82,pooled.csv iec_share_median
+over_python_realistic_T2,29.41,29.4,pooled.csv worst_over_db_median
+done_python_realistic_T5,0.29,29,pooled.csv completed_share
+iec_python_realistic_T5,0.2066,21,pooled.csv iec_share_median
+over_python_realistic_T5,31.094,31.1,pooled.csv worst_over_db_median
+done_python_realistic_L1,0.4,40,pooled.csv completed_share
+iec_python_realistic_L1,0.7617,76,pooled.csv iec_share_median
+over_python_realistic_L1,27.545,27.5,pooled.csv worst_over_db_median
+done_python_strong_T1,0.005,0,pooled.csv completed_share
+iec_python_strong_T1,0.3464,35,pooled.csv iec_share_median
+over_python_strong_T1,29.841,29.8,pooled.csv worst_over_db_median
+done_python_strong_T2,0.175,18,pooled.csv completed_share
+iec_python_strong_T2,0.389,39,pooled.csv iec_share_median
+over_python_strong_T2,38.572,38.6,pooled.csv worst_over_db_median
+done_python_strong_T5,0.02,2,pooled.csv completed_share
+iec_python_strong_T5,0.0163,2,pooled.csv iec_share_median
+over_python_strong_T5,33.265,33.3,pooled.csv worst_over_db_median
+done_python_strong_L1,0.025,2,pooled.csv completed_share
+iec_python_strong_L1,0.3494,35,pooled.csv iec_share_median
+over_python_strong_L1,32.366,32.4,pooled.csv worst_over_db_median
+done_python_realistic_soft_T1,0.45,45,pooled.csv completed_share
+iec_python_realistic_soft_T1,0.7985,80,pooled.csv iec_share_median
+over_python_realistic_soft_T1,27.254,27.3,pooled.csv worst_over_db_median
+done_python_realistic_soft_T2,0.8,80,pooled.csv completed_share
+iec_python_realistic_soft_T2,0.8252,83,pooled.csv iec_share_median
+over_python_realistic_soft_T2,28.712,28.7,pooled.csv worst_over_db_median
+done_python_realistic_hard_T1,0.875,88,pooled.csv completed_share
+iec_python_realistic_hard_T1,0.9823,98,pooled.csv iec_share_median
+over_python_realistic_hard_T1,12.041,12.0,pooled.csv worst_over_db_median
+done_python_realistic_hard_T2,0.975,98,pooled.csv completed_share
+iec_python_realistic_hard_T2,0.9103,91,pooled.csv iec_share_median
+over_python_realistic_hard_T2,17.853,17.9,pooled.csv worst_over_db_median
+done_python_strong_soft_T1,0.0,0,pooled.csv completed_share
+iec_python_strong_soft_T1,0.3561,36,pooled.csv iec_share_median
+over_python_strong_soft_T1,32.999,33.0,pooled.csv worst_over_db_median
+done_python_strong_soft_T2,0.1,10,pooled.csv completed_share
+iec_python_strong_soft_T2,0.3822,38,pooled.csv iec_share_median
+over_python_strong_soft_T2,37.695,37.7,pooled.csv worst_over_db_median
+done_python_strong_hard_T1,0.8,80,pooled.csv completed_share
+iec_python_strong_hard_T1,0.9758,98,pooled.csv iec_share_median
+over_python_strong_hard_T1,11.927,11.9,pooled.csv worst_over_db_median
+done_python_strong_hard_T2,0.9,90,pooled.csv completed_share
+iec_python_strong_hard_T2,0.9067,91,pooled.csv iec_share_median
+over_python_strong_hard_T2,20.03,20.0,pooled.csv worst_over_db_median
+laws_hertzforge_T1,1,1,readings.csv
+laws_hertzforge_T2,1,1,readings.csv
+laws_hertzforge_T3,3,3,readings.csv
+laws_hertzforge_T4,5,5,readings.csv
+laws_hertzforge_T5,1,1,readings.csv
+laws_hertzforge_L1,1,1,readings.csv
+laws_python_T1,2,2,readings.csv
+laws_python_T2,2,2,readings.csv
+laws_python_T5,2,2,readings.csv
+laws_python_L1,2,2,readings.csv
+t3_cell_done_max,0.3333,33,pooled.csv T3 cells
+inside_all_T1,0.0,0,readings.csv completed runs with excursion_iec_check_point <= 0
+inside_all_T2,0.0,0,readings.csv completed runs with excursion_iec_check_point <= 0
+inside_all_T3,0.006097560975609756,1,readings.csv completed runs with excursion_iec_check_point <= 0
+inside_all_T4,0.5799507995079951,58,readings.csv completed runs with excursion_iec_check_point <= 0
+inside_all_T5,0.0,0,readings.csv completed runs with excursion_iec_check_point <= 0
+claims_sha,2e9b0a5e7bac506a4322295f391d8cff36dbe60131ae0fb6a3ffecc9f227d233,2e9b0a5e7bac506a4322295f391d8cff36dbe60131ae0fb6a3ffecc9f227d233,claims.json
+claims_n,2544,"2,544",claims.json
+claims_level,1895,"1,895",claims.json
+claims_pair,436,436,claims.json
+claims_effect,213,213,claims.json
+threshold_completion,0.05,0.05,claims.json rule.thresholds
+threshold_iec_share,0.05,0.05,claims.json rule.thresholds
+threshold_worst_over_db,0.2,0.2,claims.json rule.thresholds
+effects_T1,63,63,claims.json effect claims
+effects_T2,63,63,claims.json effect claims
+effects_T3,0,0,claims.json effect claims
+effects_T4,7,7,claims.json effect claims
+effects_T5,72,72,claims.json effect claims
+effects_L1,8,8,claims.json effect claims
+level_hertzforge_T1_iec_check_point_inside,0,0,levels.csv
+level_hertzforge_T1_iec_check_point_outside,23,23,levels.csv
+level_hertzforge_T1_iec_reference_point_inside,2,2,levels.csv
+level_hertzforge_T1_iec_reference_point_outside,21,21,levels.csv
+level_hertzforge_T1_mil_composite_inside,1,1,levels.csv
+level_hertzforge_T1_mil_composite_outside,22,22,levels.csv
+level_hertzforge_T2_iec_check_point_inside,0,0,levels.csv
+level_hertzforge_T2_iec_check_point_outside,23,23,levels.csv
+level_hertzforge_T2_iec_reference_point_inside,0,0,levels.csv
+level_hertzforge_T2_iec_reference_point_outside,23,23,levels.csv
+level_hertzforge_T2_mil_composite_inside,0,0,levels.csv
+level_hertzforge_T2_mil_composite_outside,23,23,levels.csv
+level_hertzforge_T3_iec_check_point_inside,0,0,levels.csv
+level_hertzforge_T3_iec_check_point_outside,69,69,levels.csv
+level_hertzforge_T3_iec_reference_point_inside,0,0,levels.csv
+level_hertzforge_T3_iec_reference_point_outside,69,69,levels.csv
+level_hertzforge_T3_mil_composite_inside,0,0,levels.csv
+level_hertzforge_T3_mil_composite_outside,69,69,levels.csv
+level_hertzforge_T4_iec_check_point_inside,59,59,levels.csv
+level_hertzforge_T4_iec_check_point_outside,56,56,levels.csv
+level_hertzforge_T4_iec_reference_point_inside,80,80,levels.csv
+level_hertzforge_T4_iec_reference_point_outside,35,35,levels.csv
+level_hertzforge_T4_mil_composite_inside,80,80,levels.csv
+level_hertzforge_T4_mil_composite_outside,35,35,levels.csv
+level_hertzforge_T5_iec_check_point_inside,0,0,levels.csv
+level_hertzforge_T5_iec_check_point_outside,15,15,levels.csv
+level_hertzforge_T5_iec_reference_point_inside,2,2,levels.csv
+level_hertzforge_T5_iec_reference_point_outside,13,13,levels.csv
+level_hertzforge_T5_mil_composite_inside,2,2,levels.csv
+level_hertzforge_T5_mil_composite_outside,13,13,levels.csv
+level_hertzforge_L1_iec_check_point_inside,0,0,levels.csv
+level_hertzforge_L1_iec_check_point_outside,4,4,levels.csv
+level_hertzforge_L1_iec_reference_point_inside,0,0,levels.csv
+level_hertzforge_L1_iec_reference_point_outside,4,4,levels.csv
+level_hertzforge_L1_mil_composite_inside,0,0,levels.csv
+level_hertzforge_L1_mil_composite_outside,4,4,levels.csv
+level_python_T1_iec_check_point_inside,0,0,levels.csv
+level_python_T1_iec_check_point_outside,46,46,levels.csv
+level_python_T1_iec_reference_point_inside,19,19,levels.csv
+level_python_T1_iec_reference_point_outside,27,27,levels.csv
+level_python_T1_mil_composite_inside,11,11,levels.csv
+level_python_T1_mil_composite_outside,35,35,levels.csv
+level_python_T2_iec_check_point_inside,0,0,levels.csv
+level_python_T2_iec_check_point_outside,46,46,levels.csv
+level_python_T2_iec_reference_point_inside,7,7,levels.csv
+level_python_T2_iec_reference_point_outside,39,39,levels.csv
+level_python_T2_mil_composite_inside,4,4,levels.csv
+level_python_T2_mil_composite_outside,42,42,levels.csv
+level_python_T3_iec_check_point_inside,0,0,levels.csv
+level_python_T3_iec_check_point_outside,0,0,levels.csv
+level_python_T3_iec_reference_point_inside,0,0,levels.csv
+level_python_T3_iec_reference_point_outside,0,0,levels.csv
+level_python_T3_mil_composite_inside,0,0,levels.csv
+level_python_T3_mil_composite_outside,0,0,levels.csv
+level_python_T4_iec_check_point_inside,0,0,levels.csv
+level_python_T4_iec_check_point_outside,0,0,levels.csv
+level_python_T4_iec_reference_point_inside,0,0,levels.csv
+level_python_T4_iec_reference_point_outside,0,0,levels.csv
+level_python_T4_mil_composite_inside,0,0,levels.csv
+level_python_T4_mil_composite_outside,0,0,levels.csv
+level_python_T5_iec_check_point_inside,0,0,levels.csv
+level_python_T5_iec_check_point_outside,30,30,levels.csv
+level_python_T5_iec_reference_point_inside,8,8,levels.csv
+level_python_T5_iec_reference_point_outside,22,22,levels.csv
+level_python_T5_mil_composite_inside,7,7,levels.csv
+level_python_T5_mil_composite_outside,23,23,levels.csv
+level_python_L1_iec_check_point_inside,0,0,levels.csv
+level_python_L1_iec_check_point_outside,8,8,levels.csv
+level_python_L1_iec_reference_point_inside,1,1,levels.csv
+level_python_L1_iec_reference_point_outside,7,7,levels.csv
+level_python_L1_mil_composite_inside,0,0,levels.csv
+level_python_L1_mil_composite_outside,8,8,levels.csv
+level_nondwell_check_n,264,264,levels.csv
+level_nondwell_check_inside,0,0,levels.csv
+level_dwell_check_n,115,115,levels.csv
+level_dwell_check_inside,59,59,levels.csv
+nondwell_hertzforge_iec_check_point_inside,0,0,levels.csv
+nondwell_hertzforge_iec_check_point_n,134,134,levels.csv
+nondwell_hertzforge_iec_reference_point_inside,4,4,levels.csv
+nondwell_hertzforge_iec_reference_point_n,134,134,levels.csv
+stepped_hertzforge_iec_reference_point_inside,0,0,levels.csv
+nondwell_hertzforge_mil_composite_inside,3,3,levels.csv
+nondwell_hertzforge_mil_composite_n,134,134,levels.csv
+stepped_hertzforge_mil_composite_inside,0,0,levels.csv
+nondwell_python_iec_check_point_inside,0,0,levels.csv
+nondwell_python_iec_check_point_n,130,130,levels.csv
+nondwell_python_iec_reference_point_inside,35,35,levels.csv
+nondwell_python_iec_reference_point_n,130,130,levels.csv
+stepped_python_iec_reference_point_inside,0,0,levels.csv
+nondwell_python_mil_composite_inside,22,22,levels.csv
+nondwell_python_mil_composite_n,130,130,levels.csv
+stepped_python_mil_composite_inside,0,0,levels.csv
+threshold_completion_points,5.0,5,"claims.json rule.thresholds, in points"
+threshold_iec_share_points,5.0,5,"claims.json rule.thresholds, in points"
+dwell_kinds_inside,7,7,levels.csv
+dwell_kinds_all,7,7,levels.csv
+dwell_cells_n,23,23,levels.csv
+dwell_cells_inside,16,16,levels.csv
+effects_against_harder,213,213,claims.json effect sides
+eff_hertzforge_T1_realistic_linear_cells,5,5,readings.csv systems with both kinds
+eff_hertzforge_T1_realistic_linear_iec_n,4,4,claims.json effect claims
+eff_hertzforge_T1_realistic_linear_iec_min,0.082905,8,claims.json effect study.median
+eff_hertzforge_T1_realistic_linear_iec_max,0.411569,41,claims.json effect study.median
+eff_hertzforge_T1_realistic_linear_iec_ids,"[""R2340"", ""R2364"", ""R2388"", ""R2411""]","R2340, R2364, R2388, R2411",claims.json effect ids
+eff_hertzforge_T1_realistic_linear_over_n,4,4,claims.json effect claims
+eff_hertzforge_T1_realistic_linear_over_min,11.719252,11.7,claims.json effect study.median
+eff_hertzforge_T1_realistic_linear_over_max,15.167079,15.2,claims.json effect study.median
+eff_hertzforge_T1_realistic_linear_over_ids,"[""R2341"", ""R2365"", ""R2389"", ""R2412""]","R2341, R2365, R2389, R2412",claims.json effect ids
+eff_hertzforge_T1_realistic_linear_done_n,1,1,claims.json effect claims
+eff_hertzforge_T1_realistic_linear_done_min,0.413496,41,claims.json effect study.median
+eff_hertzforge_T1_realistic_linear_done_max,0.413496,41,claims.json effect study.median
+eff_hertzforge_T1_realistic_linear_done_ids,"[""R2413""]",R2413,claims.json effect ids
+eff_hertzforge_T1_strong_realistic_cells,5,5,readings.csv systems with both kinds
+eff_hertzforge_T1_strong_realistic_iec_n,3,3,claims.json effect claims
+eff_hertzforge_T1_strong_realistic_iec_min,0.36584,37,claims.json effect study.median
+eff_hertzforge_T1_strong_realistic_iec_max,0.451191,45,claims.json effect study.median
+eff_hertzforge_T1_strong_realistic_iec_ids,"[""R2342"", ""R2366"", ""R2390""]","R2342, R2366, R2390",claims.json effect ids
+eff_hertzforge_T1_strong_realistic_over_n,0,0,claims.json effect claims
+eff_hertzforge_T1_strong_realistic_done_n,3,3,claims.json effect claims
+eff_hertzforge_T1_strong_realistic_done_min,0.444435,44,claims.json effect study.median
+eff_hertzforge_T1_strong_realistic_done_max,0.517252,52,claims.json effect study.median
+eff_hertzforge_T1_strong_realistic_done_ids,"[""R2343"", ""R2367"", ""R2391""]","R2343, R2367, R2391",claims.json effect ids
+eff_hertzforge_T1_strong_linear_cells,5,5,readings.csv systems with both kinds
+eff_hertzforge_T1_strong_linear_iec_n,4,4,claims.json effect claims
+eff_hertzforge_T1_strong_linear_iec_min,0.546279,55,claims.json effect study.median
+eff_hertzforge_T1_strong_linear_iec_max,0.644757,64,claims.json effect study.median
+eff_hertzforge_T1_strong_linear_iec_ids,"[""R2344"", ""R2368"", ""R2392"", ""R2414""]","R2344, R2368, R2392, R2414",claims.json effect ids
+eff_hertzforge_T1_strong_linear_over_n,3,3,claims.json effect claims
+eff_hertzforge_T1_strong_linear_over_min,12.282993,12.3,claims.json effect study.median
+eff_hertzforge_T1_strong_linear_over_max,15.650583,15.7,claims.json effect study.median
+eff_hertzforge_T1_strong_linear_over_ids,"[""R2369"", ""R2393"", ""R2415""]","R2369, R2393, R2415",claims.json effect ids
+eff_hertzforge_T1_strong_linear_done_n,4,4,claims.json effect claims
+eff_hertzforge_T1_strong_linear_done_min,0.579522,58,claims.json effect study.median
+eff_hertzforge_T1_strong_linear_done_max,0.626655,63,claims.json effect study.median
+eff_hertzforge_T1_strong_linear_done_ids,"[""R2345"", ""R2370"", ""R2394"", ""R2416""]","R2345, R2370, R2394, R2416",claims.json effect ids
+eff_hertzforge_T2_realistic_linear_cells,5,5,readings.csv systems with both kinds
+eff_hertzforge_T2_realistic_linear_iec_n,3,3,claims.json effect claims
+eff_hertzforge_T2_realistic_linear_iec_min,0.116617,12,claims.json effect study.median
+eff_hertzforge_T2_realistic_linear_iec_max,0.162676,16,claims.json effect study.median
+eff_hertzforge_T2_realistic_linear_iec_ids,"[""R2346"", ""R2371"", ""R2417""]","R2346, R2371, R2417",claims.json effect ids
+eff_hertzforge_T2_realistic_linear_over_n,4,4,claims.json effect claims
+eff_hertzforge_T2_realistic_linear_over_min,5.733015,5.7,claims.json effect study.median
+eff_hertzforge_T2_realistic_linear_over_max,12.800329,12.8,claims.json effect study.median
+eff_hertzforge_T2_realistic_linear_over_ids,"[""R2347"", ""R2372"", ""R2395"", ""R2418""]","R2347, R2372, R2395, R2418",claims.json effect ids
+eff_hertzforge_T2_realistic_linear_done_n,0,0,claims.json effect claims
+eff_hertzforge_T2_strong_realistic_cells,5,5,readings.csv systems with both kinds
+eff_hertzforge_T2_strong_realistic_iec_n,5,5,claims.json effect claims
+eff_hertzforge_T2_strong_realistic_iec_min,0.212874,21,claims.json effect study.median
+eff_hertzforge_T2_strong_realistic_iec_max,0.354541,35,claims.json effect study.median
+eff_hertzforge_T2_strong_realistic_iec_ids,"[""R2332"", ""R2348"", ""R2373"", ""R2396"", ""R2419""]","R2332, R2348, R2373, R2396, R2419",claims.json effect ids
+eff_hertzforge_T2_strong_realistic_over_n,3,3,claims.json effect claims
+eff_hertzforge_T2_strong_realistic_over_min,8.163515,8.2,claims.json effect study.median
+eff_hertzforge_T2_strong_realistic_over_max,8.620179,8.6,claims.json effect study.median
+eff_hertzforge_T2_strong_realistic_over_ids,"[""R2349"", ""R2374"", ""R2397""]","R2349, R2374, R2397",claims.json effect ids
+eff_hertzforge_T2_strong_realistic_done_n,3,3,claims.json effect claims
+eff_hertzforge_T2_strong_realistic_done_min,0.217341,22,claims.json effect study.median
+eff_hertzforge_T2_strong_realistic_done_max,0.391231,39,claims.json effect study.median
+eff_hertzforge_T2_strong_realistic_done_ids,"[""R2333"", ""R2375"", ""R2420""]","R2333, R2375, R2420",claims.json effect ids
+eff_hertzforge_T2_strong_linear_cells,5,5,readings.csv systems with both kinds
+eff_hertzforge_T2_strong_linear_iec_n,4,4,claims.json effect claims
+eff_hertzforge_T2_strong_linear_iec_min,0.342487,34,claims.json effect study.median
+eff_hertzforge_T2_strong_linear_iec_max,0.496699,50,claims.json effect study.median
+eff_hertzforge_T2_strong_linear_iec_ids,"[""R2350"", ""R2376"", ""R2398"", ""R2421""]","R2350, R2376, R2398, R2421",claims.json effect ids
+eff_hertzforge_T2_strong_linear_over_n,4,4,claims.json effect claims
+eff_hertzforge_T2_strong_linear_over_min,13.168603,13.2,claims.json effect study.median
+eff_hertzforge_T2_strong_linear_over_max,17.146981,17.1,claims.json effect study.median
+eff_hertzforge_T2_strong_linear_over_ids,"[""R2351"", ""R2377"", ""R2399"", ""R2422""]","R2351, R2377, R2399, R2422",claims.json effect ids
+eff_hertzforge_T2_strong_linear_done_n,2,2,claims.json effect claims
+eff_hertzforge_T2_strong_linear_done_min,0.212837,21,claims.json effect study.median
+eff_hertzforge_T2_strong_linear_done_max,0.611128,61,claims.json effect study.median
+eff_hertzforge_T2_strong_linear_done_ids,"[""R2378"", ""R2423""]","R2378, R2423",claims.json effect ids
+eff_hertzforge_T3_realistic_linear_cells,5,5,readings.csv systems with both kinds
+eff_hertzforge_T3_realistic_linear_iec_n,0,0,claims.json effect claims
+eff_hertzforge_T3_realistic_linear_over_n,0,0,claims.json effect claims
+eff_hertzforge_T3_realistic_linear_done_n,0,0,claims.json effect claims
+eff_hertzforge_T3_strong_realistic_cells,5,5,readings.csv systems with both kinds
+eff_hertzforge_T3_strong_realistic_iec_n,0,0,claims.json effect claims
+eff_hertzforge_T3_strong_realistic_over_n,0,0,claims.json effect claims
+eff_hertzforge_T3_strong_realistic_done_n,0,0,claims.json effect claims
+eff_hertzforge_T3_strong_linear_cells,5,5,readings.csv systems with both kinds
+eff_hertzforge_T3_strong_linear_iec_n,0,0,claims.json effect claims
+eff_hertzforge_T3_strong_linear_over_n,0,0,claims.json effect claims
+eff_hertzforge_T3_strong_linear_done_n,0,0,claims.json effect claims
+eff_hertzforge_T4_realistic_linear_cells,5,5,readings.csv systems with both kinds
+eff_hertzforge_T4_realistic_linear_iec_n,1,1,claims.json effect claims
+eff_hertzforge_T4_realistic_linear_iec_min,0.083333,8,claims.json effect study.median
+eff_hertzforge_T4_realistic_linear_iec_max,0.083333,8,claims.json effect study.median
+eff_hertzforge_T4_realistic_linear_iec_ids,"[""R2352""]",R2352,claims.json effect ids
+eff_hertzforge_T4_realistic_linear_over_n,1,1,claims.json effect claims
+eff_hertzforge_T4_realistic_linear_over_min,2.460453,2.5,claims.json effect study.median
+eff_hertzforge_T4_realistic_linear_over_max,2.460453,2.5,claims.json effect study.median
+eff_hertzforge_T4_realistic_linear_over_ids,"[""R2424""]",R2424,claims.json effect ids
+eff_hertzforge_T4_realistic_linear_done_n,0,0,claims.json effect claims
+eff_hertzforge_T4_strong_realistic_cells,5,5,readings.csv systems with both kinds
+eff_hertzforge_T4_strong_realistic_iec_n,0,0,claims.json effect claims
+eff_hertzforge_T4_strong_realistic_over_n,0,0,claims.json effect claims
+eff_hertzforge_T4_strong_realistic_done_n,0,0,claims.json effect claims
+eff_hertzforge_T4_strong_linear_cells,5,5,readings.csv systems with both kinds
+eff_hertzforge_T4_strong_linear_iec_n,2,2,claims.json effect claims
+eff_hertzforge_T4_strong_linear_iec_min,0.166667,17,claims.json effect study.median
+eff_hertzforge_T4_strong_linear_iec_max,0.25,25,claims.json effect study.median
+eff_hertzforge_T4_strong_linear_iec_ids,"[""R2353"", ""R2379""]","R2353, R2379",claims.json effect ids
+eff_hertzforge_T4_strong_linear_over_n,3,3,claims.json effect claims
+eff_hertzforge_T4_strong_linear_over_min,1.45129,1.5,claims.json effect study.median
+eff_hertzforge_T4_strong_linear_over_max,5.6808,5.7,claims.json effect study.median
+eff_hertzforge_T4_strong_linear_over_ids,"[""R2334"", ""R2400"", ""R2425""]","R2334, R2400, R2425",claims.json effect ids
+eff_hertzforge_T4_strong_linear_done_n,0,0,claims.json effect claims
+eff_hertzforge_T5_realistic_linear_cells,5,5,readings.csv systems with both kinds
+eff_hertzforge_T5_realistic_linear_iec_n,5,5,claims.json effect claims
+eff_hertzforge_T5_realistic_linear_iec_min,0.517386,52,claims.json effect study.median
+eff_hertzforge_T5_realistic_linear_iec_max,0.831269,83,claims.json effect study.median
+eff_hertzforge_T5_realistic_linear_iec_ids,"[""R2335"", ""R2354"", ""R2380"", ""R2401"", ""R2426""]","R2335, R2354, R2380, R2401, R2426",claims.json effect ids
+eff_hertzforge_T5_realistic_linear_over_n,5,5,claims.json effect claims
+eff_hertzforge_T5_realistic_linear_over_min,13.904248,13.9,claims.json effect study.median
+eff_hertzforge_T5_realistic_linear_over_max,27.621235,27.6,claims.json effect study.median
+eff_hertzforge_T5_realistic_linear_over_ids,"[""R2336"", ""R2355"", ""R2381"", ""R2402"", ""R2427""]","R2336, R2355, R2381, R2402, R2427",claims.json effect ids
+eff_hertzforge_T5_realistic_linear_done_n,5,5,claims.json effect claims
+eff_hertzforge_T5_realistic_linear_done_min,0.60557,61,claims.json effect study.median
+eff_hertzforge_T5_realistic_linear_done_max,0.895821,90,claims.json effect study.median
+eff_hertzforge_T5_realistic_linear_done_ids,"[""R2337"", ""R2356"", ""R2382"", ""R2403"", ""R2428""]","R2337, R2356, R2382, R2403, R2428",claims.json effect ids
+eff_hertzforge_T5_strong_realistic_cells,5,5,readings.csv systems with both kinds
+eff_hertzforge_T5_strong_realistic_iec_n,3,3,claims.json effect claims
+eff_hertzforge_T5_strong_realistic_iec_min,0.109082,11,claims.json effect study.median
+eff_hertzforge_T5_strong_realistic_iec_max,0.185767,19,claims.json effect study.median
+eff_hertzforge_T5_strong_realistic_iec_ids,"[""R2357"", ""R2383"", ""R2404""]","R2357, R2383, R2404",claims.json effect ids
+eff_hertzforge_T5_strong_realistic_over_n,0,0,claims.json effect claims
+eff_hertzforge_T5_strong_realistic_done_n,3,3,claims.json effect claims
+eff_hertzforge_T5_strong_realistic_done_min,0.128176,13,claims.json effect study.median
+eff_hertzforge_T5_strong_realistic_done_max,0.201232,20,claims.json effect study.median
+eff_hertzforge_T5_strong_realistic_done_ids,"[""R2358"", ""R2384"", ""R2405""]","R2358, R2384, R2405",claims.json effect ids
+eff_hertzforge_T5_strong_linear_cells,5,5,readings.csv systems with both kinds
+eff_hertzforge_T5_strong_linear_iec_n,5,5,claims.json effect claims
+eff_hertzforge_T5_strong_linear_iec_min,0.568638,57,claims.json effect study.median
+eff_hertzforge_T5_strong_linear_iec_max,0.93861,94,claims.json effect study.median
+eff_hertzforge_T5_strong_linear_iec_ids,"[""R2338"", ""R2359"", ""R2385"", ""R2406"", ""R2429""]","R2338, R2359, R2385, R2406, R2429",claims.json effect ids
+eff_hertzforge_T5_strong_linear_over_n,4,4,claims.json effect claims
+eff_hertzforge_T5_strong_linear_over_min,16.762108,16.8,claims.json effect study.median
+eff_hertzforge_T5_strong_linear_over_max,34.474215,34.5,claims.json effect study.median
+eff_hertzforge_T5_strong_linear_over_ids,"[""R2360"", ""R2386"", ""R2407"", ""R2430""]","R2360, R2386, R2407, R2430",claims.json effect ids
+eff_hertzforge_T5_strong_linear_done_n,5,5,claims.json effect claims
+eff_hertzforge_T5_strong_linear_done_min,0.896339,90,claims.json effect study.median
+eff_hertzforge_T5_strong_linear_done_max,0.982794,98,claims.json effect study.median
+eff_hertzforge_T5_strong_linear_done_ids,"[""R2339"", ""R2361"", ""R2387"", ""R2408"", ""R2431""]","R2339, R2361, R2387, R2408, R2431",claims.json effect ids
+eff_hertzforge_L1_strong_realistic_cells,2,2,readings.csv systems with both kinds
+eff_hertzforge_L1_strong_realistic_iec_n,2,2,claims.json effect claims
+eff_hertzforge_L1_strong_realistic_iec_min,0.231475,23,claims.json effect study.median
+eff_hertzforge_L1_strong_realistic_iec_max,0.504831,50,claims.json effect study.median
+eff_hertzforge_L1_strong_realistic_iec_ids,"[""R2362"", ""R2409""]","R2362, R2409",claims.json effect ids
+eff_hertzforge_L1_strong_realistic_over_n,0,0,claims.json effect claims
+eff_hertzforge_L1_strong_realistic_done_n,2,2,claims.json effect claims
+eff_hertzforge_L1_strong_realistic_done_min,0.326395,33,claims.json effect study.median
+eff_hertzforge_L1_strong_realistic_done_max,0.656864,66,claims.json effect study.median
+eff_hertzforge_L1_strong_realistic_done_ids,"[""R2363"", ""R2410""]","R2363, R2410",claims.json effect ids
+eff_python_T1_realistic_linear_cells,5,5,readings.csv systems with both kinds
+eff_python_T1_realistic_linear_iec_n,5,5,claims.json effect claims
+eff_python_T1_realistic_linear_iec_min,0.078057,8,claims.json effect study.median
+eff_python_T1_realistic_linear_iec_max,0.464381,46,claims.json effect study.median
+eff_python_T1_realistic_linear_iec_ids,"[""R2432"", ""R2452"", ""R2475"", ""R2498"", ""R2523""]","R2432, R2452, R2475, R2498, R2523",claims.json effect ids
+eff_python_T1_realistic_linear_over_n,5,5,claims.json effect claims
+eff_python_T1_realistic_linear_over_min,18.019516,18.0,claims.json effect study.median
+eff_python_T1_realistic_linear_over_max,25.9354,25.9,claims.json effect study.median
+eff_python_T1_realistic_linear_over_ids,"[""R2433"", ""R2453"", ""R2476"", ""R2499"", ""R2524""]","R2433, R2453, R2476, R2499, R2524",claims.json effect ids
+eff_python_T1_realistic_linear_done_n,2,2,claims.json effect claims
+eff_python_T1_realistic_linear_done_min,0.222992,22,claims.json effect study.median
+eff_python_T1_realistic_linear_done_max,0.439407,44,claims.json effect study.median
+eff_python_T1_realistic_linear_done_ids,"[""R2434"", ""R2525""]","R2434, R2525",claims.json effect ids
+eff_python_T1_strong_realistic_cells,5,5,readings.csv systems with both kinds
+eff_python_T1_strong_realistic_iec_n,5,5,claims.json effect claims
+eff_python_T1_strong_realistic_iec_min,0.261438,26,claims.json effect study.median
+eff_python_T1_strong_realistic_iec_max,0.480136,48,claims.json effect study.median
+eff_python_T1_strong_realistic_iec_ids,"[""R2435"", ""R2454"", ""R2477"", ""R2500"", ""R2526""]","R2435, R2454, R2477, R2500, R2526",claims.json effect ids
+eff_python_T1_strong_realistic_over_n,0,0,claims.json effect claims
+eff_python_T1_strong_realistic_done_n,5,5,claims.json effect claims
+eff_python_T1_strong_realistic_done_min,0.268364,27,claims.json effect study.median
+eff_python_T1_strong_realistic_done_max,0.560653,56,claims.json effect study.median
+eff_python_T1_strong_realistic_done_ids,"[""R2436"", ""R2455"", ""R2478"", ""R2501"", ""R2527""]","R2436, R2455, R2478, R2501, R2527",claims.json effect ids
+eff_python_T1_strong_linear_cells,5,5,readings.csv systems with both kinds
+eff_python_T1_strong_linear_iec_n,5,5,claims.json effect claims
+eff_python_T1_strong_linear_iec_min,0.569683,57,claims.json effect study.median
+eff_python_T1_strong_linear_iec_max,0.691764,69,claims.json effect study.median
+eff_python_T1_strong_linear_iec_ids,"[""R2437"", ""R2456"", ""R2479"", ""R2502"", ""R2528""]","R2437, R2456, R2479, R2502, R2528",claims.json effect ids
+eff_python_T1_strong_linear_over_n,5,5,claims.json effect claims
+eff_python_T1_strong_linear_over_min,21.217665,21.2,claims.json effect study.median
+eff_python_T1_strong_linear_over_max,24.181955,24.2,claims.json effect study.median
+eff_python_T1_strong_linear_over_ids,"[""R2438"", ""R2457"", ""R2480"", ""R2503"", ""R2529""]","R2438, R2457, R2480, R2503, R2529",claims.json effect ids
+eff_python_T1_strong_linear_done_n,5,5,claims.json effect claims
+eff_python_T1_strong_linear_done_min,0.550681,55,claims.json effect study.median
+eff_python_T1_strong_linear_done_max,0.632348,63,claims.json effect study.median
+eff_python_T1_strong_linear_done_ids,"[""R2439"", ""R2458"", ""R2481"", ""R2504"", ""R2530""]","R2439, R2458, R2481, R2504, R2530",claims.json effect ids
+eff_python_T2_realistic_linear_cells,5,5,readings.csv systems with both kinds
+eff_python_T2_realistic_linear_iec_n,4,4,claims.json effect claims
+eff_python_T2_realistic_linear_iec_min,0.071977,7,claims.json effect study.median
+eff_python_T2_realistic_linear_iec_max,0.163809,16,claims.json effect study.median
+eff_python_T2_realistic_linear_iec_ids,"[""R2440"", ""R2459"", ""R2482"", ""R2505""]","R2440, R2459, R2482, R2505",claims.json effect ids
+eff_python_T2_realistic_linear_over_n,5,5,claims.json effect claims
+eff_python_T2_realistic_linear_over_min,10.188936,10.2,claims.json effect study.median
+eff_python_T2_realistic_linear_over_max,16.643997,16.6,claims.json effect study.median
+eff_python_T2_realistic_linear_over_ids,"[""R2441"", ""R2460"", ""R2483"", ""R2506"", ""R2531""]","R2441, R2460, R2483, R2506, R2531",claims.json effect ids
+eff_python_T2_realistic_linear_done_n,0,0,claims.json effect claims
+eff_python_T2_strong_realistic_cells,5,5,readings.csv systems with both kinds
+eff_python_T2_strong_realistic_iec_n,5,5,claims.json effect claims
+eff_python_T2_strong_realistic_iec_min,0.308537,31,claims.json effect study.median
+eff_python_T2_strong_realistic_iec_max,0.393964,39,claims.json effect study.median
+eff_python_T2_strong_realistic_iec_ids,"[""R2442"", ""R2461"", ""R2484"", ""R2507"", ""R2532""]","R2442, R2461, R2484, R2507, R2532",claims.json effect ids
+eff_python_T2_strong_realistic_over_n,3,3,claims.json effect claims
+eff_python_T2_strong_realistic_over_min,8.881623,8.9,claims.json effect study.median
+eff_python_T2_strong_realistic_over_max,10.797527,10.8,claims.json effect study.median
+eff_python_T2_strong_realistic_over_ids,"[""R2462"", ""R2485"", ""R2508""]","R2462, R2485, R2508",claims.json effect ids
+eff_python_T2_strong_realistic_done_n,4,4,claims.json effect claims
+eff_python_T2_strong_realistic_done_min,0.199409,20,claims.json effect study.median
+eff_python_T2_strong_realistic_done_max,0.45331,45,claims.json effect study.median
+eff_python_T2_strong_realistic_done_ids,"[""R2443"", ""R2486"", ""R2509"", ""R2533""]","R2443, R2486, R2509, R2533",claims.json effect ids
+eff_python_T2_strong_linear_cells,5,5,readings.csv systems with both kinds
+eff_python_T2_strong_linear_iec_n,5,5,claims.json effect claims
+eff_python_T2_strong_linear_iec_min,0.401838,40,claims.json effect study.median
+eff_python_T2_strong_linear_iec_max,0.591798,59,claims.json effect study.median
+eff_python_T2_strong_linear_iec_ids,"[""R2444"", ""R2463"", ""R2487"", ""R2510"", ""R2534""]","R2444, R2463, R2487, R2510, R2534",claims.json effect ids
+eff_python_T2_strong_linear_over_n,5,5,claims.json effect claims
+eff_python_T2_strong_linear_over_min,20.548066,20.5,claims.json effect study.median
+eff_python_T2_strong_linear_over_max,25.39685,25.4,claims.json effect study.median
+eff_python_T2_strong_linear_over_ids,"[""R2445"", ""R2464"", ""R2488"", ""R2511"", ""R2535""]","R2445, R2464, R2488, R2511, R2535",claims.json effect ids
+eff_python_T2_strong_linear_done_n,4,4,claims.json effect claims
+eff_python_T2_strong_linear_done_min,0.218121,22,claims.json effect study.median
+eff_python_T2_strong_linear_done_max,0.582518,58,claims.json effect study.median
+eff_python_T2_strong_linear_done_ids,"[""R2446"", ""R2489"", ""R2512"", ""R2536""]","R2446, R2489, R2512, R2536",claims.json effect ids
+eff_python_T5_realistic_linear_cells,5,5,readings.csv systems with both kinds
+eff_python_T5_realistic_linear_iec_n,5,5,claims.json effect claims
+eff_python_T5_realistic_linear_iec_min,0.628555,63,claims.json effect study.median
+eff_python_T5_realistic_linear_iec_max,0.927194,93,claims.json effect study.median
+eff_python_T5_realistic_linear_iec_ids,"[""R2447"", ""R2465"", ""R2490"", ""R2513"", ""R2537""]","R2447, R2465, R2490, R2513, R2537",claims.json effect ids
+eff_python_T5_realistic_linear_over_n,5,5,claims.json effect claims
+eff_python_T5_realistic_linear_over_min,19.380071,19.4,claims.json effect study.median
+eff_python_T5_realistic_linear_over_max,27.37829,27.4,claims.json effect study.median
+eff_python_T5_realistic_linear_over_ids,"[""R2448"", ""R2466"", ""R2491"", ""R2514"", ""R2538""]","R2448, R2466, R2491, R2514, R2538",claims.json effect ids
+eff_python_T5_realistic_linear_done_n,5,5,claims.json effect claims
+eff_python_T5_realistic_linear_done_min,0.528684,53,claims.json effect study.median
+eff_python_T5_realistic_linear_done_max,0.94252,94,claims.json effect study.median
+eff_python_T5_realistic_linear_done_ids,"[""R2449"", ""R2467"", ""R2492"", ""R2515"", ""R2539""]","R2449, R2467, R2492, R2515, R2539",claims.json effect ids
+eff_python_T5_strong_realistic_cells,5,5,readings.csv systems with both kinds
+eff_python_T5_strong_realistic_iec_n,4,4,claims.json effect claims
+eff_python_T5_strong_realistic_iec_min,0.108452,11,claims.json effect study.median
+eff_python_T5_strong_realistic_iec_max,0.268313,27,claims.json effect study.median
+eff_python_T5_strong_realistic_iec_ids,"[""R2468"", ""R2493"", ""R2516"", ""R2540""]","R2468, R2493, R2516, R2540",claims.json effect ids
+eff_python_T5_strong_realistic_over_n,0,0,claims.json effect claims
+eff_python_T5_strong_realistic_done_n,4,4,claims.json effect claims
+eff_python_T5_strong_realistic_done_min,0.128315,13,claims.json effect study.median
+eff_python_T5_strong_realistic_done_max,0.317526,32,claims.json effect study.median
+eff_python_T5_strong_realistic_done_ids,"[""R2469"", ""R2494"", ""R2517"", ""R2541""]","R2469, R2494, R2517, R2541",claims.json effect ids
+eff_python_T5_strong_linear_cells,5,5,readings.csv systems with both kinds
+eff_python_T5_strong_linear_iec_n,5,5,claims.json effect claims
+eff_python_T5_strong_linear_iec_min,0.934625,93,claims.json effect study.median
+eff_python_T5_strong_linear_iec_max,0.976093,98,claims.json effect study.median
+eff_python_T5_strong_linear_iec_ids,"[""R2450"", ""R2470"", ""R2495"", ""R2518"", ""R2542""]","R2450, R2470, R2495, R2518, R2542",claims.json effect ids
+eff_python_T5_strong_linear_over_n,4,4,claims.json effect claims
+eff_python_T5_strong_linear_over_min,21.685123,21.7,claims.json effect study.median
+eff_python_T5_strong_linear_over_max,38.677687,38.7,claims.json effect study.median
+eff_python_T5_strong_linear_over_ids,"[""R2471"", ""R2496"", ""R2519"", ""R2543""]","R2471, R2496, R2519, R2543",claims.json effect ids
+eff_python_T5_strong_linear_done_n,5,5,claims.json effect claims
+eff_python_T5_strong_linear_done_min,0.919113,92,claims.json effect study.median
+eff_python_T5_strong_linear_done_max,0.995137,100,claims.json effect study.median
+eff_python_T5_strong_linear_done_ids,"[""R2451"", ""R2472"", ""R2497"", ""R2520"", ""R2544""]","R2451, R2472, R2497, R2520, R2544",claims.json effect ids
+eff_python_L1_strong_realistic_cells,2,2,readings.csv systems with both kinds
+eff_python_L1_strong_realistic_iec_n,2,2,claims.json effect claims
+eff_python_L1_strong_realistic_iec_min,0.22193,22,claims.json effect study.median
+eff_python_L1_strong_realistic_iec_max,0.445318,45,claims.json effect study.median
+eff_python_L1_strong_realistic_iec_ids,"[""R2473"", ""R2521""]","R2473, R2521",claims.json effect ids
+eff_python_L1_strong_realistic_over_n,0,0,claims.json effect claims
+eff_python_L1_strong_realistic_done_n,2,2,claims.json effect claims
+eff_python_L1_strong_realistic_done_min,0.240319,24,claims.json effect study.median
+eff_python_L1_strong_realistic_done_max,0.484822,48,claims.json effect study.median
+eff_python_L1_strong_realistic_done_ids,"[""R2474"", ""R2522""]","R2474, R2522",claims.json effect ids
+dwell_in_linear,18,18,levels.csv T4 check point inside
+dwell_all_linear,25,25,levels.csv T4 check point
+dwell_in_linear_id,R0037,R0037,levels.csv first inside T4 claim
+dwell_in_realistic,11,11,levels.csv T4 check point inside
+dwell_all_realistic,25,25,levels.csv T4 check point
+dwell_in_realistic_id,R0103,R0103,levels.csv first inside T4 claim
+dwell_in_strong,8,8,levels.csv T4 check point inside
+dwell_all_strong,25,25,levels.csv T4 check point
+dwell_in_strong_id,R0168,R0168,levels.csv first inside T4 claim
+dwell_in_realistic_soft,4,4,levels.csv T4 check point inside
+dwell_all_realistic_soft,10,10,levels.csv T4 check point
+dwell_in_realistic_soft_id,R1393,R1393,levels.csv first inside T4 claim
+dwell_in_realistic_hard,7,7,levels.csv T4 check point inside
+dwell_all_realistic_hard,10,10,levels.csv T4 check point
+dwell_in_realistic_hard_id,R0613,R0613,levels.csv first inside T4 claim
+dwell_in_strong_soft,4,4,levels.csv T4 check point inside
+dwell_all_strong_soft,10,10,levels.csv T4 check point
+dwell_in_strong_soft_id,R1594,R1594,levels.csv first inside T4 claim
+dwell_in_strong_hard,7,7,levels.csv T4 check point inside
+dwell_all_strong_hard,10,10,levels.csv T4 check point
+dwell_in_strong_hard_id,R0836,R0836,levels.csv first inside T4 claim
+level_check_T1_first_id,R0001,R0001,levels.csv first check-point claim
+level_check_T1_none,0,0,levels.csv median None
+level_check_T1_least,5.816919,5.8,levels.csv least median excursion
+level_check_T2_first_id,R0006,R0006,levels.csv first check-point claim
+level_check_T2_none,0,0,levels.csv median None
+level_check_T2_least,17.707228,17.7,levels.csv least median excursion
+level_check_T3_first_id,R0018,R0018,levels.csv first check-point claim
+level_check_T3_none,17,17,levels.csv median None
+level_check_T3_least,11.769511,11.8,levels.csv least median excursion
+level_check_T5_first_id,R0062,R0062,levels.csv first check-point claim
+level_check_T5_none,2,2,levels.csv median None
+level_check_T5_least,6.806488,6.8,levels.csv least median excursion
+level_check_L1_first_id,R0486,R0486,levels.csv first check-point claim
+level_check_L1_none,0,0,levels.csv median None
+level_check_L1_least,30.534569,30.5,levels.csv least median excursion
+agree_a_T1_pairs,12,12,agreement.csv
+agree_a_T1_outcome,12,12,agreement.csv
+agree_a_T1_both,5,5,agreement.csv
+agree_a_T2_pairs,12,12,agreement.csv
+agree_a_T2_outcome,12,12,agreement.csv
+agree_a_T2_both,0,0,agreement.csv
+agree_a_T3_pairs,36,36,agreement.csv
+agree_a_T3_outcome,28,28,agreement.csv
+agree_a_T3_both,9,9,agreement.csv
+agree_a_T4_pairs,60,60,agreement.csv
+agree_a_T4_outcome,60,60,agreement.csv
+agree_a_T4_both,43,43,agreement.csv
+agree_a_T5_pairs,12,12,agreement.csv
+agree_a_T5_outcome,12,12,agreement.csv
+agree_a_T5_both,3,3,agreement.csv
+agree_a_all_pairs,132,132,agreement.csv
+agree_a_all_outcome,124,124,agreement.csv
+agree_a_all_both,60,60,agreement.csv
+agree_a_worst_under,36,36,"pair files, beyond"
+agree_b_T1_pairs,12,12,agreement.csv
+agree_b_T1_outcome,12,12,agreement.csv
+agree_b_T1_both,3,3,agreement.csv
+agree_b_T2_pairs,12,12,agreement.csv
+agree_b_T2_outcome,12,12,agreement.csv
+agree_b_T2_both,2,2,agreement.csv
+agree_b_T3_pairs,36,36,agreement.csv
+agree_b_T3_outcome,23,23,agreement.csv
+agree_b_T3_both,9,9,agreement.csv
+agree_b_T4_pairs,60,60,agreement.csv
+agree_b_T4_outcome,58,58,agreement.csv
+agree_b_T4_both,47,47,agreement.csv
+agree_b_T5_pairs,12,12,agreement.csv
+agree_b_T5_outcome,11,11,agreement.csv
+agree_b_T5_both,2,2,agreement.csv
+agree_b_all_pairs,132,132,agreement.csv
+agree_b_all_outcome,116,116,agreement.csv
+agree_b_all_both,63,63,agreement.csv
+agree_b_worst_under,33,33,"pair files, beyond"
+defaults_hertzforge_n,140,140,defaults.csv
+defaults_hertzforge_done,0.16428571428571428,16,defaults.csv
+defaults_hertzforge_study_done,0.5785714285714286,58,defaults.csv
+defaults_hertzforge_lower,98,98,defaults.csv iec more than 0.05 lower
+defaults_hertzforge_higher,0,0,defaults.csv iec more than 0.05 higher
+defaults_hertzforge_t4_n,60,60,defaults.csv
+defaults_hertzforge_t4_done,23,23,defaults.csv
+defaults_hertzforge_other_done,0,0,defaults.csv
+defaults_hertzforge_other_n,80,80,defaults.csv
+defaults_hertzforge_same_outcome,23,23,defaults.csv
+defaults_python_n,88,88,defaults.csv
+defaults_python_done,0.011363636363636364,1,defaults.csv
+defaults_python_study_done,0.5454545454545454,55,defaults.csv
+defaults_python_lower,79,79,defaults.csv iec more than 0.05 lower
+defaults_python_higher,0,0,defaults.csv iec more than 0.05 higher
+defaults_python_t4_n,0,0,defaults.csv
+defaults_python_t4_done,0,0,defaults.csv
+defaults_python_other_done,1,1,defaults.csv
+defaults_python_other_n,88,88,defaults.csv
+defaults_python_same_outcome,1,1,defaults.csv
+repeat_hertzforge_units,20,20,repeats.csv
+repeat_hertzforge_same_outcome,17,17,repeats.csv
+repeat_hertzforge_span_median,0.02304999999999996,2.3,repeats.csv iec span
+repeat_hertzforge_span_max,0.6446999999999999,64.5,repeats.csv iec span
+repeat_hertzforge_span_over_threshold,7,7,repeats.csv iec span > 0.05
+repeat_python_units,16,16,repeats.csv
+repeat_python_same_outcome,14,14,repeats.csv
+repeat_python_span_median,0.0,0.0,repeats.csv iec span
+repeat_python_span_max,0.8024,80.2,repeats.csv iec span
+repeat_python_span_over_threshold,2,2,repeats.csv iec span > 0.05

@@ -1,0 +1,28 @@
+{
+  "id": "2026-016",
+  "title": "The MIMO Sine Suite of the Open Benchmark Set: Swept, Stepped and Dwell Problems on the Random Suite's Structures, Scored by IEC 60068-2-6 and Method 514.8",
+  "type": "Proposed Standard",
+  "evidence": "simulator",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    }
+  ],
+  "first_published": "2026-11-27",
+  "latest": 1,
+  "versions": [
+    {
+      "version": 1,
+      "date": "2026-11-27",
+      "note": "First published.",
+      "doi": "10.5281/zenodo.24595040"
+    }
+  ],
+  "doi_latest": "10.5281/zenodo.24595039",
+  "status": "Review open",
+  "retraction": "",
+  "thread": "",
+  "reviews": [],
+  "sample": false
+}

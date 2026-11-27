@@ -1,0 +1,13 @@
+TY  - JOUR
+AU  - Cross, Kevin
+TI  - The MIMO Sine Suite of the Open Benchmark Set: Swept, Stepped and Dwell Problems on the Random Suite's Structures, Scored by IEC 60068-2-6 and Method 514.8
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-016
+PY  - 2026
+DA  - 2026/11/27
+ET  - Version 1
+DO  - 10.5281/zenodo.24595040
+UR  - https://hertzforge.com/journal/2026-016/v1/
+AB  - The Open Benchmark Set gives control laws for multi-shaker vibration tests shared simulated problems, a fair run and a fixed scorecard. This article proposes its third suite, MIMO Sine: sine problems on the MIMO Random suite's structures, 380 in all, with five tests (up sweeps at one and four octaves a minute, a down sweep, a stepped sine and a dwell at the first resonance) and a test with a limit channel. Full level is sized so that a steady tone moves each structure's modes as far as Random's full level does. Every specification is projected onto what the shakers can reach, the gap is stored with the problem, and the drive is scaled so that the ideal full-level drive peaks at 1 V with a ceiling 6 dB over it. Runs are scored by the amplitude tolerances of IEC 60068-2-6 and MIL-STD-810H Method 514.8, read from the standards' text, under several readings; phase is reported, not judged. The suite runs in two versions, on the shipped Hertzforge engine and in a Python restatement of its loop, which agree on the outcome of 124 of 132 compared pairs of runs. Pooled over the laws, every claim the study makes about the structure says the level-dependent structures are harder, most of all on the down sweep. No law's median sweep or stepped sine stays inside the IEC check-point band at every point on any kind of structure, while the dwell does on every kind. Everything here is simulation.
+ER  - 

@@ -1,0 +1,13 @@
+TY  - JOUR
+AU  - Cross, Kevin
+TI  - Six Control Laws for Multi-Shaker Sine Testing: The Laws, Their Build in Hertzforge, and How Each Scores on the MIMO Sine Suite
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-017
+PY  - 2026
+DA  - 2026/11/27
+ET  - Version 1
+DO  - 10.5281/zenodo.24595042
+UR  - https://hertzforge.com/journal/2026-017/v1/
+AB  - Hertzforge, an open-source structural dynamics suite, ships five control laws for sine tests with several shakers: matrix, its default, which corrects the drive through the inverse of a measured model and carries the drive along a sweep; paired, which pairs each control with one shaker; ratio, an amplitude-ratio law; and steepestdescent and secant, two published laws for a dwell. This article describes each law, its build in Hertzforge's Rust law mathematics, and how each scores on the MIMO Sine suite of the Open Benchmark Set, draft 0.1, under the tolerances of IEC 60068-2-6 and MIL-STD-810H Method 514.8: 4,140 runs on 380 structures, each finding a claim of a rule fixed before an audit on held-back structures. A sixth law, followed poles, which follows the frequency and damping of the modes near the tone, entered the study after a screen that no candidate passed, and runs in the suite's Python version only. At a dwell, matrix, steepestdescent and secant complete 98, 98 and 97 percent of their runs, and each is inside the IEC check-point band in the median on 16 of the 23 cells: every square system, and 6 of 13 with more controls than shakers. On a sweep or a stepped sine no law's median run is inside that band in any cell; matrix completes 37 percent of its sweeps up at one octave a minute and 25 percent of its sweeps down. Safety: the study widened the engine's control abort band from 3 to 20 dB so that runs would go on far enough to be read, and 96 percent of the scored sweeps and stepped sines then put a resonance more than 6 dB over its reference (70 percent of all of them); at the engine's default protections, 0 of 80 sweeps and stepped sines on a sample of 12 structures completed, against 27 with the band widened. paired completes 0 of its 380 stepped sines and ratio 4. The followed-poles law completes more sweeps than the Python matrix (52 against 45 percent up, 53 against 34 percent down), and over-tests less in 12 of 23 cells of the slow sweep up and more in one cell of the fast one. On the held-back structures, 1,897 of the 2,331 claims about the laws hold, 378 hold weaker and 56 do not hold. Everything here is simulation.
+ER  - 

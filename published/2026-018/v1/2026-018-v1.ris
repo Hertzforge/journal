@@ -1,0 +1,13 @@
+TY  - JOUR
+AU  - Cross, Kevin
+TI  - Multi-Shaker Sine Control: Ideas for a Resonance That Moves With Level That Did Not Work in Simulation, and Why
+JO  - Hertzforge Journal
+VL  - 1
+SP  - 2026-018
+PY  - 2026
+DA  - 2026/11/27
+ET  - Version 1
+DO  - 10.5281/zenodo.24595046
+UR  - https://hertzforge.com/journal/2026-018/v1/
+AB  - A sine test with several shakers is controlled from a model of the test article measured at a low level. Where the article's resonances move as the level rises, that model is wrong near each resonance at full level. This article reports, with numbers, the ideas for following such a resonance that were built and screened in simulation and did not work. A model that expects every mode to drop 5 percent failed where nothing moves. A ladder of low-level passes that predicts each mode's shift stopped on its own low-level passes, and on short rungs it was worse than the default law sweeping down. A dither that identifies the response at a dwell cost a little over-test and gained nothing. Four predictive variants of the best law found, which follows the poles of a fitted modal model, were none better than it: the one with the most completed sweeps met the rule on one test and tier where two were needed, and the one that plans the drive over a horizon failed at the start of a sweep on a linear structure. Two shipped amplitude laws stopped on the stepped sine on almost every structure, linear ones included. The lessons of the modal fit and of the loop's delay are given with them. Every result is screen evidence on 12 simulated structures, and the predictive variants were tuned on 5 others: what is claimed is that each did not work as built, not that it cannot work.
+ER  - 

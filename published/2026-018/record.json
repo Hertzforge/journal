@@ -1,0 +1,28 @@
+{
+  "id": "2026-018",
+  "title": "Multi-Shaker Sine Control: Ideas for a Resonance That Moves With Level That Did Not Work in Simulation, and Why",
+  "type": "Negative Result",
+  "evidence": "simulator",
+  "authors": [
+    {
+      "name": "Kevin Cross",
+      "orcid": "0009-0002-6608-9426"
+    }
+  ],
+  "first_published": "2026-11-27",
+  "latest": 1,
+  "versions": [
+    {
+      "version": 1,
+      "date": "2026-11-27",
+      "note": "First published.",
+      "doi": "10.5281/zenodo.24595046"
+    }
+  ],
+  "doi_latest": "10.5281/zenodo.24595045",
+  "status": "Review open",
+  "retraction": "",
+  "thread": "",
+  "reviews": [],
+  "sample": false
+}
